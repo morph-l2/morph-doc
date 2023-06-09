@@ -16,6 +16,9 @@
     "vuepress-theme-hope": "^1.22.0"
   },
   "dependencies": {
-    "check-md": "^1.0.2"
+    "check-md": "^1.0.2",
+    "@mr-hope/vuepress-plugin-comment" : "^1.18.1",
+    "bcryptjs": "^2.4.3",
+    "lodash.throttle": "^4.1.1"
   }
 }
