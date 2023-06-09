@@ -186,9 +186,9 @@ module.exports = {
         {
           title: 'Practice Examples',
           children: [
-            '/docs/developers/contract.md',
-            '/docs/developers/nft.md',
-            '/docs/developers/token.md',
+            '/docs/developers/examples/contract.md',
+            '/docs/developers/examples/nft.md',
+            '/docs/developers/examples/token.md',
           ],
         },
       
