@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "check-md": "^1.0.2",
-    "@mr-hope/vuepress-plugin-comment" : "^1.18.1",
+    "@mr-hope/vuepress-plugin-comment" : "^1.18",
     "bcryptjs": "^2.4.3",
     "lodash.throttle": "^4.1.1"
   }
