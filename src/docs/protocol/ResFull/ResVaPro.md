@@ -3,6 +3,11 @@ title: Why Responsive Validity Proof?
 lang: en-US
 ---
 
+::: tip <nbsp />
+ This part is also published as Medium post, [check here](https://medium.com/@Morphism_EN/responsive-validity-proof-optimistic-zk-rollup-7838fe87dbcc) if you want to view in Medium.
+:::
+
+
 ## Challenge Process
 
 Consistent with all Rollup Projects, when L2 transactions are executed on L2, the execution results will be uploaded to Ethereum's contract in the form of a commitment.

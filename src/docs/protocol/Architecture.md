@@ -43,7 +43,7 @@ To achieve these features, we designed several modules, they are:
 The skeletal architecture of Morphism is shown below:
 
 
-![arichitecture](../../\assets\docs\protocol\archi.png)
+![arichitecture](../../assets/docs/protocol/archi.png)
 
 
 ### L2 Node

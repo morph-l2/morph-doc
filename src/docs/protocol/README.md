@@ -5,7 +5,7 @@ lang: en-US
 
 ## Overview
 
-![overviewPic](../../\assets\docs\protocol\overview.png)
+![overviewPic](../../assets/docs/protocol/overview.png)
 
 
 Welcome to the Morphism Documentation.
