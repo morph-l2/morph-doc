@@ -12,6 +12,8 @@ lang: en-US
 
 ## Overview
 
+
+
 A General Layer2 workflow is like this:
 1. Users send transactions to sequencers
 2. Sequencer receives the transaction, generates block and excute block
@@ -29,6 +31,7 @@ To achieve these features, we designed several modules, they are:
 3. ZK Proof Contract
 4. Challenge Contract
 5. Bridge Contract
+
 - Sequencer
   - Txns/State Submitter
   - Consensus Module
@@ -39,6 +42,8 @@ To achieve these features, we designed several modules, they are:
 
 The skeletal architecture of Morphism is shown below:
 
+
+![arichitecture](../../\assets\docs\protocol\archi.png)
 
 
 ### L2 Node

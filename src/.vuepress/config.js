@@ -155,6 +155,15 @@ module.exports = {
       '/docs/protocol/': [
         '/docs/protocol/Architecture.md',
         {
+          title: 'Responsive Validity Proof',
+          children: [
+            '/docs/protocol/ResFull/ResVaProOv.md',
+            '/docs/protocol/ResFull/ResVaPro.md'
+          ],
+          collapsable: true,          
+        },
+        '/docs/protocol/DeSequencers.md',
+        {
           title: 'General Protocol Design',
           children: [
             '/docs/protocol/General/L1-L2-Msg.md',
@@ -166,15 +175,8 @@ module.exports = {
           ],
           collapsable: true,          
         },
-        '/docs/protocol/DeSequencers.md',
-        {
-          title: 'Responsive Validity Proof',
-          children: [
-            '/docs/protocol/ResFull/ResVaProOv.md',
-            '/docs/protocol/ResFull/ResVaPro.md'
-          ],
-          collapsable: true,          
-        },
+        
+
         // '/docs/protocol/ZKProver.md'
       ],
       '/docs/Module/' :[

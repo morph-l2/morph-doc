@@ -1,5 +1,5 @@
 ---
-title: How it works
+title: Why Responsive Validity Proof?
 lang: en-US
 ---
 
