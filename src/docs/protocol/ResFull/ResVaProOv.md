@@ -5,6 +5,9 @@ lang: en-US
 
 ## Summary
 
+![RVP](../../../assets/docs/protocol/ResVaPro/res1.jpg)
+
+
 1. The verification of layer 2 state can be categorized into two types: fraud proof and validity proof. However, Morphism proposes a new verification method called Responsive Validity Proof that combines the benefits of both methods.
 
 2. The problem with fraud proofs is the wastage of capital efficiency and low security assumptions. Additionally, no OP-Rollup has implemented a permissionless fraud-proof challenge mechanism. On the other hand, although validity proofs have high security assumptions and theoretical timeliness, practical operation faces cost and efficiency issues that impede the scalability of Rollups. 

@@ -53,11 +53,14 @@ module.exports = {
       {
         text: 'How Morphism Works',
         link: '/docs/protocol/',
-      },      
-      {
+      },     
+      /* When you update here, don't forget to update the tiles
+            {
         text: 'Module Deployment Guidence',
         link: '/docs/Module/'        
       },
+         in src/README.md */ 
+
       {
         text: 'Build on Morph',
         link: '/docs/developers/',
@@ -111,7 +114,15 @@ module.exports = {
             iconClass: 'color-Morphism',
             text: 'Morphism.io',
             link: 'https://www.Morphism.io/',
-          }*/
+          }
+            - title: Module Deployment Guide
+    icon: shield
+    details: Step by step guide on how to become part of Moprhism.
+    link: /docs/Module/
+                '/docs/Module/' :[
+
+      ],
+          */
           {
             icon: 'twitter',
             iconPrefix: 'fab fa-',
@@ -158,7 +169,8 @@ module.exports = {
           title: 'Responsive Validity Proof',
           children: [
             '/docs/protocol/ResFull/ResVaProOv.md',
-            '/docs/protocol/ResFull/ResVaPro.md'
+            '/docs/protocol/ResFull/ResVaPro.md',
+            '/docs/protocol/ResFull/Practice.md'
           ],
           collapsable: true,          
         },
@@ -179,12 +191,16 @@ module.exports = {
 
         // '/docs/protocol/ZKProver.md'
       ],
-      '/docs/Module/' :[
 
-      ],
       '/docs/developers/': [
-        '/docs/developers/buildon.md',
-        '/docs/developers/bridge.md',
+        {
+          title: 'Build on Morphism',
+          children: [
+            '/docs/developers/buildon/diff.md',
+            '/docs/developers/buildon/txfee.md',
+            '/docs/developers/buildon/bridge.md'
+          ],
+        },
         {
           title: 'Practice Examples',
           children: [
