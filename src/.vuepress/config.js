@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   title: 'Morphism Docs',
-  description: 'This is the documentation center for Morphism, the first Optimistic ZK-EVM scaling solutions for Ethereum',
+  description: description,
 
   head: [ 
     ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -21,7 +21,7 @@ module.exports = {
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
-    hostname: 'https://doc.Morphism.xyz',
+    hostname: 'https://docs.Morphism.xyz',
     logo: '/assets/logos/logo.png',
     docsDir: 'src',
     docsRepo: 'https://github.com/morphism-labs/morphism-doc',
