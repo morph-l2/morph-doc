@@ -14,7 +14,7 @@ lang: en-US
 
 
 
-A General Layer2 workflow is like this:
+A General Layer 2 workflow is like this:
 1. Users send transactions to sequencers
 2. Sequencer receives the transaction, generates block and excute block
 3. Transactions will be put into batches and submitted to Layer1 Contracts for data availability
@@ -84,8 +84,8 @@ When a Validator identifies an incorrect state, they can trigger a challenge by 
 
 ### Prover
 
-Prover is an indispensable part of the Morphism architecture. When Sequencer is challenged by Validator, in order to prove its innocence, Sequencer needs to call Prover to generate zk proof for the corresponding state change. In other words, the main function of Prover is to generate verifiable zero-knowledge proofs for Layer2's state changes, which determines the complexity of Prover.
+Prover is an indispensable part of the Morphism architecture. When Sequencer is challenged by Validator, in order to prove its innocence, Sequencer needs to call Prover to generate zk proof for the corresponding state change. In other words, the main function of Prover is to generate verifiable zero-knowledge proofs for Layer 2's state changes, which determines the complexity of Prover.
 
-The Prover module needs to maintain two components: L2 Node and zkEVM. It will synchronize the required Layer2 transaction information through L2 Node and generate corresponding proofs through zkEVM component.
+The Prover module needs to maintain two components: L2 Node and zkEVM. It will synchronize the required Layer 2 transaction information through L2 Node and generate corresponding proofs through zkEVM component.
 
-Prover is an important component of Morphism. Under the current framework of Morphism, Prover is only called when Sequencer is challenged due to inefficient performance and high cost in generating ZK Proof with current technology conditions. After relevant issues are properly resolved in the future, Morphism will be converted into a complete ZK Rollup that generates ZK Proof for each Layer2 transaction.
+Under the current framework of Morphism, Prover is only called when Sequencer is challenged due to inefficient performance and high cost in generating ZK Proof with current technology conditions. After relevant issues are properly resolved in the future, Morphism will be converted into a complete ZK Rollup that generates ZK Proof for each Layer 2 transaction.

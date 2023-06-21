@@ -1,7 +1,7 @@
 {
-  "name": "Morphism-hub",
+  "name": "Morphism Docs",
   "version": "0.0.2",
-  "description": "The Morphism Community Hub",
+  "description": "The Morphism Documentation",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev src",

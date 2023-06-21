@@ -32,7 +32,7 @@ Blocks are not determined by single sequencer. New blocks need to pass the seque
 
 The consensus module is responsible for reaching consensus on block production, while L2 Node provides user transaction data for the consensus layer and also executes successfully-consensed L2 blocks through integration with the L2Geth execution layer. 
 
-We use the tendermint-BFT consensus algorithm to determine the blocks of Layer2 and adjust it to fit the logic of L2 block generation.
+We use the tendermint-BFT consensus algorithm to determine the blocks of Layer 2 and adjust it to fit the logic of L2 block generation.
 
 
 ## Block Consensus Process

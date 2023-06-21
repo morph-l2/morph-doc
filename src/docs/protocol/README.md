@@ -14,7 +14,7 @@ Morphism is the first decentralize Optimistic ZK-Rollup that utilized responvise
 
 Rollup technology has long been divided into two categories based on the state verification mechanism used, namely [Optimistic Rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/) (using Fraud Proof) and [ZK Rollup](https://ethereum.org/en/developers/docs/scaling/zk-rollups/) (using Validity Proof). 
 
-Morphism has achieved a balance and harmony between the two by using Validity Proof to verify the Layer2 state and building on the foundation of Optimistic Rollup. This innovation enables Morphism to combine the advantages of the two Rollup technologies and become one of the best solutions for Ethereum's scalability at present.
+Morphism has achieved a balance and harmony between the two by using Validity Proof to verify the Layer 2 state and building on the foundation of Optimistic Rollup. This innovation enables Morphism to combine the advantages of the two Rollup technologies and become one of the best solutions for Ethereum's scalability at present.
 
 The documentation will presents details on:
 - What is Morphism and its Architecture
