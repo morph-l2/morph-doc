@@ -13,18 +13,18 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/logos/favicon.png"}],
     ['meta', { property: 'og:image', content: 'https://community.Morphism.io/assets/logos/twitter-logo.png' }],
     ['meta', { name: 'twitter:image', content: 'https://community.Morphism.io/assets/logos/twitter-logo.png' }],
-    ['meta', { name: 'twitter:title', content: 'OP Docs' }],
-    ['meta', { property: 'og:title', content: 'OP Docs' }],
+    ['meta', { name: 'twitter:title', content: 'Morphism Docs' }],
+    ['meta', { property: 'og:title', content: 'Morphism Docs' }],
     ['meta', { name: 'twitter:card', content: 'summary' } ],    
   ],
 
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
-    hostname: 'https://community.Morphism.io',
+    hostname: 'https://docs.morphism.xyz',
     logo: '/assets/logos/logo.png',
     docsDir: 'src',
-    docsRepo: 'https://github.com/ethereum-Morphism/community-hub',
+    docsRepo: 'https://github.com/morphism-labs/morphism-doc',
     docsBranch: 'main',
     lastUpdated: false,
     darkmode: 'disable',
@@ -62,7 +62,7 @@ module.exports = {
          in src/README.md */ 
 
       {
-        text: 'Build on Morph',
+        text: 'Build on Morphism',
         link: '/docs/developers/',
       },
       {

@@ -10,7 +10,7 @@ lang: en-US
 
 Welcome to the Morphism Documentation.
 
-Morphism is the first decentralize Optimistic ZK-Rollup that utilized responvise validity proof (RVP) to address the blockchain trillema.
+Morphism is the first Optimistic zkEVM scaling solution that utilized responvise validity proof (RVP) to address the blockchain trillema.
 
 Rollup technology has long been divided into two categories based on the state verification mechanism used, namely [Optimistic Rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/) (using Fraud Proof) and [ZK Rollup](https://ethereum.org/en/developers/docs/scaling/zk-rollups/) (using Validity Proof). 
 

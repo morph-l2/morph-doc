@@ -1,13 +1,13 @@
 # Morphism Documentation Center
 
 
-Morphism is the first Optimistic ZK-Rollup Solution for Ethereum.
+Morphism is the first Optimistic zkEVM scaling Solution for Ethereum.
 
 Please note that this repository is undergoing rapid development.
 
 ------
 
-This is the source for the [Morphism Documentation]().
+This is the source for the [Morphism Documentation](docs.morphism.xyz).
 
 # Usage
 ## Serve Locally
