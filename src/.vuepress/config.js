@@ -21,7 +21,7 @@ module.exports = {
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     contributor: false,
-    hostname: 'https://docs.Morphism.xyz',
+    hostname: 'https://docs.morphism.xyz',
     logo: '/assets/logos/logo.png',
     docsDir: 'src',
     docsRepo: 'https://github.com/morphism-labs/morphism-doc',
