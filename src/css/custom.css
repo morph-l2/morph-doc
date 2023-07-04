@@ -61,8 +61,11 @@
 }
 [data-theme='light'] .footer {
   background-color: #fff !important;
+  box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.02) !important;
 }
 [data-theme='light'] .theme-doc-sidebar-container {
+  gap: 10px;
+  flex-shrink: 0;
   background-color: #fff !important;
   border-right: none !important;
 }
