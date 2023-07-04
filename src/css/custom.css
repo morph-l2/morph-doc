@@ -40,9 +40,20 @@
   --ifm-menu-color-active: #fff !important; */
 }
 
-
+.menu__link {
+  line-height: 1.75;
+}
+@media screen and (max-width: 996px) {
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+  }
+  .navbar__logo img {
+    width: 70%;
+  }
+}
 [data-theme='light'] #__docusaurus {
-  background-color: #F2F3F7;
+  background-color: rgba(242, 243, 247, 1);
 }
 [data-theme='light'] .navbar {
   background: rgba(255, 255, 255, 0.90) !important;
