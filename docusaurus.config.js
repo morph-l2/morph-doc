@@ -6,9 +6,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Morphism Docs',
-  tagline: 'The first optimistic zkEVM solutions for ethereum scaling',
-  favicon: 'img/favicon.ico',
+
+  title: 'Morphism docs – The Optimistic zkEVM Scaling Solution docs',
+  tagline: '',
+  favicon: 'https://www.morphism.xyz/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://docs.morphism.xyz',
@@ -42,14 +43,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/morphism-labs/morphism-doc/blob/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/morphism-labs/morphism-doc/blob/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -66,29 +67,30 @@ const config = {
       navbar: {
         title: 'Morphsim Docs',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Morphism Doc Logo',
+          src: 'img/index/logo_dark.svg',
+          srcDark: 'img/index/logo_light.svg',
         },
         items: [
           {
             type: 'doc',
-            position: 'left',
+            position: 'right',
             docId: 'quick-start/startintro',
             label: 'Quick Start',
           },
           {
             type: 'doc',
-            position: 'left',
+            position: 'right',
             docId: 'How Morphism Works/howintro',
             label: 'How Morhsim works',
           },
           {
             type: 'doc',
-            position: 'left',
+            position: 'right',
             docId: 'Build on Morphism/devintro',
             label: 'Build on Morphism',
           },
-          {label: 'Website', position: 'left', href: 'https://www.morphism.xyz',},
+          // {label: 'Website', position: 'left', href: 'https://www.morphism.xyz',},
           /*
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -99,7 +101,6 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
             title: 'Morphism',
