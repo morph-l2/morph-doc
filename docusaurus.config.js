@@ -62,6 +62,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'keywords', content: 'Morphism,EVM-equivalent,Optimistic,zkEVM'}],
       algolia: {
         // The application ID provided by Algolia
         appId: 'X5WFC1AF7V',
