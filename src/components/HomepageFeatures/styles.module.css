@@ -6,6 +6,11 @@
   min-height: 800px;
 }
 
+.featureA {
+  color: var(--ifm-heading-color) !important;
+  text-decoration: none !important;
+}
+
 .featureSvg {
   height: 200px;
   width: 200px;
