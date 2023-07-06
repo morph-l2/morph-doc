@@ -21,6 +21,7 @@
   /* --ifm-menu-color: rgba(0, 0, 0, 1);
   --ifm-menu-color-active: rgba(0, 0, 0, 0.9); */
 
+  --ifm-container-width-xl: 1200px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -38,10 +39,27 @@
 
   /* --ifm-menu-color: rgba(120, 124, 128, 1);
   --ifm-menu-color-active: #fff !important; */
+
+  --ifm-container-width-xl: 1200px;
 }
 
 .menu__link {
   line-height: 1.75;
+}
+.footer__links {
+  display: flex;
+}
+.footer__col:nth-child(1) {
+  flex: 3;
+}
+.footer__col:nth-child(2) {
+  flex: 3;
+}
+.footer__col:nth-child(3) {
+  flex: 1;
+}
+.footer__bottom {
+  margin-top:  48px;
 }
 @media screen and (max-width: 996px) {
   .navbar__logo {
@@ -61,8 +79,11 @@
 }
 [data-theme='light'] .footer {
   background-color: #fff !important;
+  box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.02) !important;
 }
 [data-theme='light'] .theme-doc-sidebar-container {
+  gap: 10px;
+  flex-shrink: 0;
   background-color: #fff !important;
   border-right: none !important;
 }
@@ -83,4 +104,16 @@
 [data-theme='dark'] .theme-doc-sidebar-container {
   background-color: #0A080F;
   border-right: none !important;
+}
+
+@media (max-width: 996px) {
+  .col {
+    --ifm-col-width: 50% !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .col {
+    --ifm-col-width: 100% !important;
+  }
 }
