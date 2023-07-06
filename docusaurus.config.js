@@ -69,7 +69,7 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: 'd727e463b46c13b8524d8f6c9fd58894',
   
-        indexName: 'morphism_doc',
+        indexName: 'morphism_docs',
   
         // Optional: see doc section below
         contextualSearch: true,

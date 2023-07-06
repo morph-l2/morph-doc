@@ -6,17 +6,18 @@ const FeatureList = [
   {
     title: 'Quick Start',
     url: '/docs/quick-start/startintro',
-    Svg: require('@site/static/img/index/quick_start.svg').default,
+    svg: '/img/index/quick_start.svg',
     description: (
       <>
         A go-to guide on how to easily start to experience Morphism ecosystem.
       </>
     ),
   },
+
   {
     title: 'How Morphism works',
-    url: '/docs/How Morphism Works/howintro',
-    Svg: require('@site/static/img/index/how_morphism_works.svg').default,
+    url: '/docs/how morphism works/howintro',
+    svg: '/img/index/developer_docs.svg',
     description: (
       <>
         General explaination of what makes morphism different from others
@@ -25,23 +26,23 @@ const FeatureList = [
   },
   {
     title: 'Developer Docs',
-    url: '/docs/Build on Morphism/devintro',
-    Svg: require('@site/static/img/index/developer_docs.svg').default,
-    
+    url: '/docs/Developer Docs/devintro',
+    svg: '/img/index/how_morphism_works.svg',
     description: (
       <>
         Everything you need to know on how to launch your dapp on Morphism
       </>
     ),
-  }
+  },
 ];
 
-function Feature({Svg, title, url, description}) {
+function Feature({svg, title, url, description}) {
   return (
     <div className={clsx(styles.feature, 'col col--4')}>
       <a href={url} className={styles.featureA} alt="description">
         <div className="text--center">
-          <Svg className={styles.featureSvg} role="img" />
+          <img className={styles.featuresvg} src={svg} alt={description} role="img" />
+          {/* <svg className={styles.featuresvg} role="img" /> */}
         </div>
         <div className="text--center padding-horiz--md">
           <h3>{title}</h3>
