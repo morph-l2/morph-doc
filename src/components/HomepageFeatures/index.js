@@ -6,7 +6,7 @@ const FeatureList = [
   {
     title: 'Quick Start',
     url: '/docs/quick-start/startintro',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/index/quick_start.svg').default,
     description: (
       <>
         A go-to guide on how to easily start to experience Morphism ecosystem.
@@ -14,25 +14,26 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Developer Docs',
-    url: '',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Everything you need to know on how to launch your dapp on Morphism
-      </>
-    ),
-  },
-  {
     title: 'How Morphism works',
-    url: '',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    url: '/docs/How Morphism Works/howintro',
+    Svg: require('@site/static/img/index/how_morphism_works.svg').default,
     description: (
       <>
         General explaination of what makes morphism different from others
       </>
     ),
   },
+  {
+    title: 'Developer Docs',
+    url: '/docs/Build on Morphism/devintro',
+    Svg: require('@site/static/img/index/developer_docs.svg').default,
+    
+    description: (
+      <>
+        Everything you need to know on how to launch your dapp on Morphism
+      </>
+    ),
+  }
 ];
 
 function Feature({Svg, title, url, description}) {
