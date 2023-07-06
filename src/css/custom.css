@@ -105,3 +105,15 @@
   background-color: #0A080F;
   border-right: none !important;
 }
+
+@media (max-width: 996px) {
+  .col {
+    --ifm-col-width: 50% !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .col {
+    --ifm-col-width: 100% !important;
+  }
+}
