@@ -13,23 +13,24 @@ const FeatureList = [
       </>
     ),
   },
-  {
-    title: 'Developer Docs',
-    url: '',
-    svg: '/img/index/how_morphism_works.svg',
-    description: (
-      <>
-        Everything you need to know on how to launch your dapp on Morphism
-      </>
-    ),
-  },
+
   {
     title: 'How Morphism works',
-    url: '',
+    url: '/docs/how morphism works/howintro',
     svg: '/img/index/developer_docs.svg',
     description: (
       <>
         General explaination of what makes morphism different from others
+      </>
+    ),
+  },
+  {
+    title: 'Developer Docs',
+    url: '/docs/Build on Morphism/devintro',
+    svg: '/img/index/how_morphism_works.svg',
+    description: (
+      <>
+        Everything you need to know on how to launch your dapp on Morphism
       </>
     ),
   },
