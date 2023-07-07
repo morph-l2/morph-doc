@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Quick Start',
-    url: '/docs/quick-start/startintro',
+    url: '/docs/quick start/quickintro',
     svg: '/img/index/quick_start.svg',
     description: (
       <>
@@ -16,8 +16,8 @@ const FeatureList = [
 
   {
     title: 'How Morphism works',
-    url: '/docs/how morphism works/howintro',
-    svg: '/img/index/developer_docs.svg',
+    url: '/docs/How Morphism Works/howintro',
+    svg: '/img/index/how_morphism_works.svg',
     description: (
       <>
         General explaination of what makes morphism different from others
@@ -27,7 +27,7 @@ const FeatureList = [
   {
     title: 'Developer Docs',
     url: '/docs/Build on Morphism/devintro',
-    svg: '/img/index/how_morphism_works.svg',
+    svg: '/img/index/developer_docs.svg',
     description: (
       <>
         Everything you need to know on how to launch your dapp on Morphism
