@@ -109,7 +109,7 @@ const config = {
           {
             type: 'doc',
             position: 'right',
-            docId: 'quick-start/startintro',
+            docId: 'quick start/quickintro',
             label: 'Quick Start',
           },
           {

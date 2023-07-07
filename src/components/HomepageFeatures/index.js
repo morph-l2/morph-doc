@@ -26,7 +26,7 @@ const FeatureList = [
   },
   {
     title: 'Developer Docs',
-    url: '/docs/Developer Docs/devintro',
+    url: '/docs/Build on Morphism/devintro',
     svg: '/img/index/how_morphism_works.svg',
     description: (
       <>
