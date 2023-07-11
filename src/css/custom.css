@@ -107,7 +107,7 @@
 }
 
 @media (max-width: 996px) {
-  .col {
+  .features_src-components-HomepageFeatures-styles-module .col {
     --ifm-col-width: 50% !important;
   }
 }
