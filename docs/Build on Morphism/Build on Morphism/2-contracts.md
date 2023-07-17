@@ -23,11 +23,34 @@ For info on new / different behavior between morphism and Ethereum, see [differe
 
 ## Step 1: Network Configuration
 
-This section provides an overview of the available public RPC endpoints for different Arbitrum chains and necessary details to interact with them.
+Before you doing anything, make sure you are connected to the following Morphism Testnet.
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Underlying L1 |
 | ------------------------- | ------------------------------------- | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
-| Morphism Testnet             | https://          | xxxx    | https://      | Ethereum      |
+| Morphism Testnet             | https://rpc.testnet.morphism.xyz        | 2710    | https://explorer.testnet.morphism.xyz      | Ethereum      |
+
+
+{
+  "name": "Morphism Testnet",
+  "chain": "ETH",
+  "rpc": ["https://rpc.testnet.morphism.xyz"],
+  "faucets": [],
+  "nativeCurrency": {
+    "name": "Ether",
+    "symbol": "ETH",
+    "decimals": 18
+  },
+  "infoURL": "https://morphism.xyz",
+  "shortName": "morphism",
+  "chainId": 2710,
+  "networkId": 2710,
+  "explorers": [
+    {
+      "name": "Morphism Testnet Explorer",
+      "url": "https://explorer.testnet.morphism.xyz",
+      "standard": "EIP3091"
+    }
+
 
 ## Step 2: Set up your developing framework
 

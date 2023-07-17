@@ -1,8 +1,8 @@
 {
   "index_name": "morphism_docs",
-  "start_urls": ["https://pre-docs.morphism.xyz/"],
+  "start_urls": ["https://docs.morphism.xyz/"],
   "sitemap_urls": [
-    "https://pre-docs.morphism.xyz/sitemap.xml"
+    "https://docs.morphism.xyz/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": ["/tests"],
