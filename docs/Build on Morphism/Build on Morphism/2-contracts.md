@@ -1,5 +1,5 @@
 ---
-title: Start Developing on Morphism
+title: Devlopement Setup
 lang: en-US
 ---
 
@@ -28,28 +28,6 @@ Before you doing anything, make sure you are connected to the following Morphism
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Underlying L1 |
 | ------------------------- | ------------------------------------- | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
 | Morphism Testnet             | https://rpc.testnet.morphism.xyz        | 2710    | https://explorer.testnet.morphism.xyz      | Ethereum      |
-
-
-{
-  "name": "Morphism Testnet",
-  "chain": "ETH",
-  "rpc": ["https://rpc.testnet.morphism.xyz"],
-  "faucets": [],
-  "nativeCurrency": {
-    "name": "Ether",
-    "symbol": "ETH",
-    "decimals": 18
-  },
-  "infoURL": "https://morphism.xyz",
-  "shortName": "morphism",
-  "chainId": 2710,
-  "networkId": 2710,
-  "explorers": [
-    {
-      "name": "Morphism Testnet Explorer",
-      "url": "https://explorer.testnet.morphism.xyz",
-      "standard": "EIP3091"
-    }
 
 
 ## Step 2: Set up your developing framework
@@ -152,6 +130,6 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 To start building on Morphism, you may need to acquire some testnet ETH. 
 
-Use faucet to acquire Sepolia Ether. 
+Use [faucet](../../quick%20start/faucet) to acquire Sepolia Ether. 
 
 And then you can bridge the test Ethereum Ether to Morphism testnet.
