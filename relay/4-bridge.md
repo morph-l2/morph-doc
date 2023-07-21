@@ -22,22 +22,21 @@ The token transfer from Sepolia to Morphism Testnet may take 8 to 14 minutes (aw
 
 1. Click your wallet address at the top-right corner of the Bridge web app.
    
-【pic】
 
 The pop-up panel will display your recent transactions in the Bridge app. (see the image below).
 For deposit transactions (L1 -> L2), once your transaction is confirmed as Safe on Sepolia (8 to 14 minutes), you will see the success status. Your funds will then be relayed to L2.
 
 2. Click on the most recent transaction’s Sepolia transaction hash:
    
-【pic】
+
 
 It will open the Transaction Details page in the exploer. You can see this transaction is confirmed on Sepolia.
 
-【pic】
+
 
 3. Go back to the Bridge app. Once your transaction status shows success on L2, you may see the funds in your Morphism L2 wallet and a transaction hash:
    
-【pic】
+
 
 
 
@@ -53,19 +52,19 @@ To withdraw funds from Morphism Testnet, follow these steps:
 ### Initiate the withdrawal
 1. Click "Connect Wallet" and select MetaMask. If prompted, approve the connection in your wallet.
 2. Select Withdraw.
-3. Choose the asset and amount you wish to withdraw.【pic】
-4. Click Withdraw. 【pic】
-5. Click the checkboxes and accept the withdrawal: 【pic】
-6. Approve the withdrawal again in your wallet.【pic】
+3. Choose the asset and amount you wish to withdraw.
+4. Click Withdraw. 
+5. Click the checkboxes and accept the withdrawal: 
+6. Approve the withdrawal again in your wallet.
    
 ### Waiting for the verification challenge period
 Click your address in the top right corner. Click "Transactions" and then "Withdrawals". This will display a list of your recent withdrawals and their status.
-【pic】
+
 You can search for the transaction hash on Morphism Explorer. Click the L1 State Root Submission Tx to see when the transaction was written to L1 （Sepolia）.
-【pic】
+
 
 ### Claim the withdrawal
-1. Once the challenge period is over, the status will change to Claim.【pic】
+1. Once the challenge period is over, the status will change to Claim.
 2. Click Claim.
 3. Confirm the withdrawal in the wallet.
 4. Wait until the withdrawal completes.
