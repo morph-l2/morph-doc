@@ -110,19 +110,19 @@ const config = {
           {
             type: 'doc',
             position: 'right',
-            docId: 'quick start/quickintro',
+            docId: 'quick-start/quickintro',
             label: 'Quick Start',
           },
           {
             type: 'doc',
             position: 'right',
-            docId: 'How Morphism Works/howintro',
+            docId: 'How-Morphism-Works/howintro',
             label: 'How Morhsim works',
           },
           {
             type: 'doc',
             position: 'right',
-            docId: 'Build on Morphism/devintro',
+            docId: 'Build-on-Morphism/devintro',
             label: 'Build on Morphism',
           },
           // {label: 'Website', position: 'left', href: 'https://www.morphism.xyz',},

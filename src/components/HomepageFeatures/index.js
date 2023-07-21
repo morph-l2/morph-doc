@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Quick Start',
-    url: '/docs/quick start/quickintro',
+    url: '/docs/quick-start/quickintro',
     svg: '/img/index/quick_start.svg',
     description: (
       <>
@@ -16,7 +16,7 @@ const FeatureList = [
 
   {
     title: 'How Morphism works',
-    url: '/docs/How Morphism Works/howintro',
+    url: '/docs/How-Morphism-Works/howintro',
     svg: '/img/index/how_morphism_works.svg',
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList = [
   },
   {
     title: 'Developer Docs',
-    url: '/docs/Build on Morphism/devintro',
+    url: '/docs/Build-on-Morphism/devintro',
     svg: '/img/index/developer_docs.svg',
     description: (
       <>
