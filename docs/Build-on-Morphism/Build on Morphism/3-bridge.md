@@ -14,7 +14,7 @@ For the most common usecase, moving tokens around, we've created [the Standard T
 
 ### Sending data
 
-If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#sending-data-between-l1-and-l2). You can use this functionality to have a contract on Ethereum trigger a contract function on Morphism and vice versa. We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. We even [use this API under the hood](https://github.com/ethereum-optimism/optimism/blob/a21cec6d3d00c9d7ed100c0257d4b966b034620f/packages/contracts/contracts/L1/messaging/L1StandardBridge.sol#L202) inside the Standard Token Bridge.
+If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](## Send messages between Morphism and Ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morphism and vice versa. We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
 
 
 ## Utilize Standard Bridge Contract
