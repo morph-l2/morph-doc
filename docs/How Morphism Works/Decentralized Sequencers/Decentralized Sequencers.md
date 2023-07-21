@@ -64,6 +64,7 @@ Based on the above design principles, our implementation will be based on the BF
 
 :::tip
 **Why BLS signature?** 
+
 If we use the current basic signature algorithm, such as ECDSA, in Ethereum, there will be a problem of excessive cost. Because the signature data needs to be submitted to the Layer1 contract and requires payment of the corresponding cost, as the number of validators increases, this cost will also increase proportionally.
 :::
 
@@ -89,7 +90,7 @@ At the same time, the election results will be periodically synchronized to the 
 #### Produce Layer 2 Blocks
 In particular, based on Morphism's modular design, each Sequencer will run a consensus client that runs BFT to communicate with other Sequencers.
 
-![Sequencer Network Archi](../../../morphism-doc/assets/docs/protocol/Dese/consensusBlock.png)
+![2](../../../assets/docs/protocol/Dese/consensusBlock.png)
 
 The Sequencer will follow the BFT consensus process. The selected sequencer will extract transactions from the mempool to construct blocks and synchronize the blocks with other sequencers for verification and voting. Ultimately, it will generate new Layer 2 blocks.
 
@@ -97,9 +98,9 @@ The Sequencer will follow the BFT consensus process. The selected sequencer will
 
 Considering the cost of uploading signatures to Layer 1 and the cost of validating signatures on Layer 1, sequencers will perform the corresponding BLS signatures on multiple blocks, i.e., a batch, at designated checkpoints to ensure that the scalability goal is not compromised.
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/dese1.png)
-
 After the signing is completed, the selected sequencer will submit these blocks as a batch to Layer 1 through its batch submitter component.
+
+For more detail on how batch is generated, please go to the [rollup](../../How%20Morphism%20Works/3-Rollups.md) section.
 
 #### Consensus verification
 

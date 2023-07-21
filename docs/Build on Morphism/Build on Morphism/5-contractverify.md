@@ -15,7 +15,7 @@ Most smart contract tooling has plugins for verifying your contracts easily on E
 
 :::info
 
-Use [harthat-verrify plugin](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)
+Use [harthat-verify plugin](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)
 
 :::
 

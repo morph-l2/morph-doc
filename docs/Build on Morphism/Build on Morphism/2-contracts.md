@@ -26,7 +26,7 @@ For info on new / different behavior between morphism and Ethereum, see [differe
 Before you doing anything, make sure you are connected to the following Morphism Testnet.
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Underlying L1 |
-| ------------------------- | ------------------------------------- | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
+| ------------------------- | ------------------------------------- | -------- | -------------------------- | ------------- |
 | Morphism Testnet             | https://rpc.testnet.morphism.xyz        | 2710    | https://explorer.testnet.morphism.xyz      | Ethereum      |
 
 
