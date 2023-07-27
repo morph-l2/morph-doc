@@ -4,7 +4,7 @@ lang: en-US
 ---
 
 Transaction fees on Morphism work a lot like fees on Ethereum.
-However, Layer 2 introduces some new paradigms that means it can never be exactly like Ethereum.
+However, Layer 2 introduces some new paradigms that mean it can never be exactly like Ethereum.
 Luckily, Morphism's EVM equivalence makes these differences easy to understand and even easier to handle within your app.
 
 This page includes the formula for calculating the gas cost of transactions on Morphism.
@@ -13,19 +13,19 @@ This page includes the formula for calculating the gas cost of transactions on M
 <!--You can also [use our SDK]() to calculate those costs for you. -->
  
 
-There are two costs for transaction on Morphism: the L2 execution fee and the L1 data/security fee.
+There are two kinds of cost for transaction on Morphism: the L2 execution fee and the L1 data/security fee.
 
 ## The L2 execution fee
 
 Just like on Ethereum, transactions on Morphism have to pay **gas** for the amount of computation and storage that they use.
 
-Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction, multiplied by the gas price attached to the transaction.
 
-We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fee.
+We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fees.
 
-In EIP-1559 the cost of a unit of gas is composed of two components:
+In EIP-1559, the cost of a unit of gas is composed of two components:
 
-- **Base fee**: This fee is the same for all transactions in a block. It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size. When the block uses more gas than the target block size the base fee goes up to discourage demand. When the block uses less gas than the target block size the base fee goes down to encourage demand.
+- **Base fee**: This fee is the same for all transactions in a block. It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size. When the block uses more gas than the target block size，the base fee goes up to discourage demand. When the block uses less gas than the target block size，the base fee goes down to encourage demand.
 - **Priority fee**: This fee is specified in the transaction itself and varies between transactions. Block proposers are expected to select the transactions that offer them the highest priority fees first.
 
 There are some differences between Ethereum and Morphism in this regard:
@@ -46,7 +46,7 @@ There are some differences between Ethereum and Morphism in this regard:
 
 From an application development perspective, EIP-1559 introduces the following changes:
 
-- The `BASEFEE` opcode is now supported. The `BASEFEE` opcodes returns the base fee of the current block.
+- The `BASEFEE` opcode is now supported. The `BASEFEE` opcodes return the base fee of the current block.
 - The `eth_maxPriorityFeePerGas` and `eth_feeHistory` RPC methods are now supported. `eth_maxPriorityFeePerGas` returns a fee per gas that is an estimate of how much you can pay as a priority fee, or 'tip', to get a transaction included in the current block. `eth_feeHistory` returns a collection of historical gas information from which you can decide what to submit as your `maxFeePerGas` and/or `maxPriorityFeePerGas`.
 
 
@@ -72,7 +72,7 @@ Thanks to EVM equivalence, transactions typically use approximately the same amo
 
 Morphism differs from Ethereum because all transactions on Morphism are also published to Ethereum.
 
-This step is crucial to the security properties of Morphism because it means that all of the data you need to sync an Morphism node is always publicly available on Ethereum.
+This step is crucial to the security properties of Morphism because it means that all of the data you need to sync a Morphism node is always publicly available on Ethereum.
 
 It's what makes Morphism an L2.
 
@@ -85,9 +85,9 @@ Because the cost of gas is so expensive on Ethereum, the L1 data fee typically d
 This fee is based on four factors:
 
 1. The current gas price on Ethereum - l1_base_fee
-2. The gas cost to publish the transaction to Ethereum. This scales roughly with the size of the transaction (in bytes) - tx_data_gas
+2. The gas cost to publish the transaction to Ethereum scales roughly with the size of the transaction (in bytes) - tx_data_gas
 3. A fixed overhead cost denominated in gas. This is currently set to 2100.
-4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.0. (which shows in GasPriceOracle.sol as scaler/1e9 )
+4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.0. (as shown in GasPriceOracle.sol as scaler/1e9 )
 
 Here's the math:
 
@@ -120,25 +120,25 @@ The L1 gas price used to charge the data fee is automatically updated when new d
 
 ### Sending transactions
 
-The process of sending a transaction on Morphism is identical to the process of sending a transaction on Ethereum.
+The process of sending a transaction on Morphism is identical to sending a transaction on Ethereum.
 
-When sending a transaction, you should provide a gas price greater than or equal to the current L2 gas price.
+When sending a transaction, you should provide a gas price that is greater than or equal to the current L2 gas price.
 
 Like on Ethereum, you can query this gas price with the `eth_gasPrice` RPC method.
 
-Similarly, you should set your transaction gas limit in the same way that you would set your transaction gas limit on Ethereum (e.g. via `eth_estimateGas`).
+Similarly, you should set your transaction gas limit in the same way that you would set it on Ethereum (e.g. via `eth_estimateGas`).
 
 ### Responding to gas price updates
 
 Gas prices on L2 default to 0.001 Gwei but can increase dynamically if the network is congested.
 
-When this happens, the lowest fee that the network will accept increases.
+When this happens, the lowest fee that the network will accept also increases.
 
 Unlike Ethereum, Morphism currently does not have a mempool to hold transactions with too low a fee.
 
 Instead, Morphism nodes will reject the transaction with the message `Fee too low`.
 
-You may need to handle this case explicitly and retry the transaction with a new gas price when this happens.
+In such cases, you may need to handle this case explicitly and retry the transaction with a new gas price when this happens.
 
 ### Displaying fees to users
 
