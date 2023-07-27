@@ -52,11 +52,11 @@ Related to this, we maintain two types of codehash for each contract bytecode: K
 KeccakCodeHash is kept to maintain compatibility for EXTCODEHASH. PoseidonCodeHash is used for verifying correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
 
 ### CodeSize
-When verifying EXTCODESIZE, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation. This way, we do not need to load the code — a storage proof is sufficient to verify this opcode.
+When verifying EXTCODESIZE, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation, eliminating the need to load the code — a storage proof is sufficient to verify this opcode.
 
 ## Block Time
 
-:::warning Block Time Subject to Change
+:::Warning Block Time Subject to Change
 
 Currently blocks are produced every second and empty block if no transctions for 5 seconds
 However, that value may change in the future.
@@ -76,13 +76,13 @@ We also introduce the concept of system transactions that are created by the `op
 - All system transactions are unsigned, and set their `v`, `r`, and `s` fields to `null`.
 
 
-:::warning Known Issue
+:::Warning Known Issue
 Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
 :::
 -->
 
 ## Future EIPs
-We keep a close on eye on all emerging EIPs adopted by Ethereum and adopt them when suitable. If you’re interested in more specifics, reach out in our community forum or on the Morphism Discord.
+We keep a close eye on all emerging Ethereum Improvement Proposals (EIPs) and adopt them when they are suitable. If you are interested in more specifics, feel free to reach out on our community forum or on the Morphism Discord.
 
 EVM Target version
 To ensure no unexpected behaviour happens in your contracts, we recommend using london as target version when compiling your smart contracts.
