@@ -16,7 +16,7 @@ const FeatureList = [
 
   {
     title: 'How Morphism works',
-    url: '/docs/How Morphism Works/howintro',
+    url: '/docs/how-morphism-works/howintro',
     svg: '/img/index/how_morphism_works.svg',
     description: (
       <>
