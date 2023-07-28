@@ -104,7 +104,7 @@ Considering the cost of uploading signatures to Layer 1 and the cost of validati
 
 Once the signing is completed, the selected sequencer will submit these blocks as a batch to Layer 1 through its batch submitter component.
 
-For more detail on how batch is generated, please refer to the [rollup](../../How%20Morphism%20Works/3-Rollups.md) section.
+For more detail on how batch is generated, please refer to the [rollup](../../how-morphism-works/general-protocol-design/1-rollup.md) section.
 
 #### Consensus verification
 

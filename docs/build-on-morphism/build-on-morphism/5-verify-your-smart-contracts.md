@@ -9,7 +9,7 @@ After deploying your smart contracts, it's important to verify your code on our 
 
 ## Verify with develop framwork
 
-Most smart contract tooling has plugins for verifying your contracts easily on Etherscan. Blockscout supports Etherscan's contract verification APIs, and it's straight forward to use these tools with the Scroll Alpha Testnet.
+Most smart contract tooling has plugins for verifying your contracts easily on Etherscan. Blockscout supports Etherscan's contract verification APIs, and it's straight forward to use these tools with the Morphism Testnet.
 
 ### Hardhat
 

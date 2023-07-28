@@ -1,5 +1,5 @@
 ---
-title: Transactions fees on Morphism
+title: Transaction fees on Morphism
 lang: en-US
 ---
 

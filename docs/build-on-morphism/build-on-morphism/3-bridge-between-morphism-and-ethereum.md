@@ -399,7 +399,7 @@ This means that any messages you send from Layer 2 will only be received on Laye
 
 :::tip
 
-Read about Morphism's unique challenge design based on [Responsive validity proof](../../How-Morphism-Works/Responsive%20Validity%20Proof/1Overview.md)
+Read about Morphism's unique challenge design based on [Responsive validity proof](../../how-morphism-works/responsive-validity-proof/1-overview.md)
 
 :::
 
@@ -417,6 +417,8 @@ Otherwise you might be making decisions based on an invalid transaction result.
 
 As a result, L2 ⇒ L1 messages sent using the standard messenger contracts cannot be relayed until they've waited out the full challenge period.
 
+<!--
 ::: tip On the length of the challenge period
 The challenge period on Morphism testnet is currently for test purposes.
 :::
+-->

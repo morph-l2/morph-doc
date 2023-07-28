@@ -8,7 +8,7 @@ lang: en-US
 
 To interact with our testnet, you first need to receive testnet ETH on sepolia. 
 
-Then you may bridge from sepolia Testnet to Scroll Alpha Testnet. 
+Then you may bridge from sepolia Testnet to morphism testnet. 
 
 Here are a few sepolia faucet apps:
 

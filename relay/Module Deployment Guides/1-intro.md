@@ -1,5 +1,5 @@
 ---
-title: Be part of the Morphism network
+title: Be part of the Morphism
 lang: en-US
 ---
 

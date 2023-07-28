@@ -3,6 +3,15 @@ title: Devlopement Setup
 lang: en-US
 ---
 
+:::info
+
+Morphism is currently under rapid development, stay tuned for what's coming next
+
+:::
+
+<!-- For examples of deploying with hardhat see [practice examples](../Practice-Examples/1-ERC20.md). -->
+
+<!--
 # Start Developing on Morphism
 
 Developing on Morphism is as easy as developing on Ethereum — literally!
@@ -17,9 +26,9 @@ To deploy contracts onto an morphism chain, simply set the RPC endpoint of your 
 
 ...it all just works!
 
-<!-- For examples of deploying with hardhat see [practice examples](../Practice%20Examples/1-ERC20.md). -->
 
-For info on new / different behavior between morphism and Ethereum, see [differences with Ethereum](./1-diff.md).
+
+For info on new / different behavior between morphism and Ethereum, see [differences with Ethereum](./1-difference-between-morphism-and-ethereum.md).
 
 ## Step 1: Network Configuration
 
@@ -118,7 +127,7 @@ brownie run token.py --network morphism
 
 ### ethers.js
 
-Setting up a Morphism Alpha Testnet provider in an ethers script:
+Setting up a Morphism  provider in an ethers script:
 import { ethers } from 'ethers';
 
 ```
@@ -133,3 +142,5 @@ To start building on Morphism, you may need to acquire some testnet ETH.
 Use [faucet](../../quick-start/faucet) to acquire Sepolia Ether. 
 
 And then you can bridge the test Ethereum Ether to Morphism testnet.
+
+-->

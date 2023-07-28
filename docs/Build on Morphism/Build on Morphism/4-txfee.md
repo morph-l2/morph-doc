@@ -164,7 +164,7 @@ You can use the SDK [(see here)](https://github.com/ethereum-optimism/optimism-t
 -->
 <!--
 Alternatively, you can estimate the L1 data fee using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`]().
-[The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) is located at the same address on every Morphism network (mainnet and testnet).
+[The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) is located at the same address on every Morphism (mainnet and testnet).
 To do so, call `GasPriceOracle.getL1Fee(<unsigned RLP encoded transaction>)`.
 -->
 
