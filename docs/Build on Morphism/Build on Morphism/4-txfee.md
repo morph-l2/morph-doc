@@ -21,7 +21,9 @@ Just like on Ethereum, transactions on Morphism have to pay **gas** for the amou
 
 Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction, multiplied by the gas price attached to the transaction.
 
-We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fees.
+
+<!--
+We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fee.
 
 In EIP-1559, the cost of a unit of gas is composed of two components:
 
@@ -49,16 +51,16 @@ From an application development perspective, EIP-1559 introduces the following c
 - The `BASEFEE` opcode is now supported. The `BASEFEE` opcodes return the base fee of the current block.
 - The `eth_maxPriorityFeePerGas` and `eth_feeHistory` RPC methods are now supported. `eth_maxPriorityFeePerGas` returns a fee per gas that is an estimate of how much you can pay as a priority fee, or 'tip', to get a transaction included in the current block. `eth_feeHistory` returns a collection of historical gas information from which you can decide what to submit as your `maxFeePerGas` and/or `maxPriorityFeePerGas`.
 
-
+-->
 
 Here's the (simple) math:
 
 ```
-l2_execution_fee = transaction_gas_price * l2_gas_used
-
-transaction_gas_price = l2_base_fee + l2_priority_fee
-
+l2_execution_fee = l2_gas_price * l2_gas_used
 ```
+<!--
+transaction_gas_price = l2_base_fee + l2_priority_fee
+-->
 
 The amount of L2 gas used depends on the particular transaction that you're trying to send.
 Thanks to EVM equivalence, transactions typically use approximately the same amount of gas on Morphism as they do on Ethereum.

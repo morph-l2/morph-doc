@@ -18,15 +18,17 @@ Opcode  | Solidity equivalent | Ethereum Behavior | Morphism Behavior|
 - | - | - | -|
 COINBASE   | block.coinbase   | In Ethereum Clique, the eth address of the signer. | Returns the pre-deployed fee vault contract address.|
 DIFFICULTY/PREVRANDAO | block.difficulty | After PoS, the previous block’s randao value. | Returns 0.|
-BLOCKHASH     | block.blockhash    | **Input**: blockNumber from top of the stack, and the valid range is [NUMBER-256, NUMBER-1]. **Output**: hash of the given block number, or 0 if the block number is not in the valid range. | Matches Ethereum, but limits the range of input blockNumber to be NUMBER-1.|
+BLOCKHASH     | block.blockhash    | **Input**: blockNumber from top of the stack, and the valid range is [NUMBER-256, NUMBER-1]. **Output**: hash of the given block number, or 0 if the block number is not in the valid range. | returns keccak(chain_id || block_height) of the last 256 block hashes based on the provided parameter. |
 SELFDESTRUCT  | selfdestruct  | [Plans to deprecate and substitute with SENDALL](https://eips.ethereum.org/EIPS/eip-4758) | Disabled in the sequencer. Runtime error, same behavior as the INVALID opcode. *Will change to adopt Ethereum’s solution in the future.*|
 PUSH0 | /| Part of EVM as of Shanghai hard fork | Runtime Error, will act as an INVALID opcode. Will be supported |
 
+<!--
 ## EVM Precompiles
 
 The *SHA2-256* (address 0x2), *RIPEMD-160* (address 0x3), and *blake2f* (address 0x9) precompiles are currently not supported. Calls to these precompiled contracts will revert. We plan to enable these 3 precompiles in a future hard fork.
 
 The other EVM precompiles are all supported: *ecRecover*, *identity*, *modexp*, *ecAdd*, *ecMul*, *ecPairing*.
+-->
 
 ## State Account
 
