@@ -17,7 +17,7 @@ To deploy contracts onto an morphism chain, simply set the RPC endpoint of your 
 
 ...it all just works!
 
-For examples of deploying with hardhat see [practice examples](../Practice%20Examples/1-ERC20.md).
+<!-- For examples of deploying with hardhat see [practice examples](../Practice%20Examples/1-ERC20.md). -->
 
 For info on new / different behavior between morphism and Ethereum, see [differences with Ethereum](./1-diff.md).
 
@@ -130,6 +130,6 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 To start building on Morphism, you may need to acquire some testnet ETH. 
 
-Use [faucet](../../quick%20start/faucet) to acquire Sepolia Ether. 
+Use [faucet](../../quick-start/faucet) to acquire Sepolia Ether. 
 
 And then you can bridge the test Ethereum Ether to Morphism testnet.

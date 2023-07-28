@@ -20,3 +20,9 @@ If you are a web3 enthusiast who wants to try out the Morphism network, you can 
 If you are a researcher who wants to understand what sets Morphism apart from other solutions, head straight to the [How Morphism Works](../How%20Morphism%20Works/1-howintro.md) section to find all the information you need.
 
 If you are a skilled developer eager to create amazing things on top of Morphism, please refer to the [developer documentation](../Build%20on%20Morphism/1-devintro.md) for all the resources and guides you require.
+
+:::tip
+
+Having issues while developing? Join our discord channel and talk to us in the developer feedback section. We would love to hear your thoughts or feedback on how we can improve your experience, too.
+
+:::
