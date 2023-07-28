@@ -44,31 +44,35 @@ When designing this system, we followed the following principles.
 
 ### The Principles
 
-#### Scalability on the essence 
-Morphism is first and foremost an Ethereum scaling solution. The solution we are seeking aims to ensure fast execution and confirmation of transactions at the Layer 2 level while preserving decentralization to the greatest extent possible.
 
-#### Layer 1 Level Safety 
-Simply decentralizing the sequencer at Layer 2 level does not entirely address the potential security impacts caused by a single sequencer. In a centralized design, Layer 1 contracts and other Layer 2 nodes (such as Layer 2 validators and full nodes) can only obtain block and state information from a single sequencer.
+#### Efficiency
+Morphism is first and foremost an Ethereum scaling solution, aiming to improve efficiency and reduce costs. Our solution must ensure fast execution and confirmation of transactions at the Layer 2 level while maintaining decentralization to the maximum extent possible.
 
-Even with a decentralized sequencer, there may still be issues because Layer 1 contracts and other Layer 2 nodes lack an effective way to verify whether the synchronized information has been through consensus. Consequently, the sequencer could potentially synchronize incorrect information to other nodes.
+#### Layer 1 Level Safety
 
-#### Modular
+Merely decentralizing the Sequencer at the Layer 2 level does not fully address the potential security implications of a single Sequencer. In a centralized design, Layer 1 contracts and other Layer 2 nodes (such as Layer 2 validation nodes and full nodes) can only obtain blocks and state information from a single Sequencer.
 
-The various components of the Sequencer network are decomposed into independent modules, each having specific functions and responsibilities while being able to interact with other modules. This modular structure allows different aspects of the system to develop and improve independently without impacting the entire network.
+Even after decentralizing the Sequencer, there may still be issues because Layer 1 contracts and other Layer 2 nodes do not have an effective way to confirm that the information they are synchronizing has undergone consensus. The Sequencer may still propagate incorrect information to other nodes.
 
-By adopting a modular design, we can more easily introduce new, more efficient, and secure modules. For instance, when more efficient protocols or algorithms emerge, we can upgrade them as independent modules into the Sequencer network. This flexibility empowers the entire system to stay up-to-date and adapt to future, potentially more efficient and secure requirements.
+Our design requires Layer 1 to obtain data and state from multiple independent roles (especially roles outside of the Sequencer) and be able to validate this data against a unified standard to determine if it has undergone consensus within the Sequencer network.
 
-Simultaneously, the modular design will support sharing our decentralized sequencer network with other architecturally similar rollups in the foreseeable future.
-
-Based on the above design principles, our implementation will be based on the BFT algorithm and will require participants to perform BLS aggregated signatures during the consensus process. This signature can be used to verify whether the received information has undergone consensus validation among Layer 1 and other Layer 2 nodes.
+#### Scalable and Manageable
+  
+The design of the Sequencer network should be easy to maintain, expand, and upgrade. When a functionality in the network needs maintenance, it should not affect the normal operation of other functionalities. At the same time, when new and more efficient solutions emerge, the Sequencer network should have sufficient flexibility to be upgraded, allowing the entire system to stay updated.
+ 
+#### Solution based on the principles：
+Based on the above design principles, the design of the sequencer network involves the following key points:
+1. Modular design, where the components are independent of each other and can be upgraded or replaced quickly.
+2.  For L2 consensus, the BLS aggregated signatures of the sequencers in the network are used to identify the consensus result. The L1 contract verifies the consensus existence based on the sequencer set it maintains.
+3. The sequencers use a Byzantine Fault Tolerant (BFT) consensus algorithm and process to ensure efficiency and security.
 
 :::tip
 **Why BLS signature?** 
 
-If we use the current basic signature algorithm, such as ECDSA, in Ethereum, there will be a problem of excessive cost. This issue arises because the signature data needs to be submitted to the Layer1 contract and requires payment of the corresponding cost. As the number of validators increases, this cost will also increase proportionally.
+If we use the current basic signature algorithm, such as ECDSA, in Ethereum, there will be a problem of excessive cost. This issue arises because the signature data needs to be submitted to the Layer1 contract and requires payment of the corresponding cost. As the number of validators increases, this cost will also increase proportionally. By using BLS signatures, the cost of uploading signatures can be maintained at a constant level, unaffected by the gradual growth of the sequencer's quantity.
 :::
 
-By using BLS signatures, the cost of uploading signatures can be maintained at a constant level, unaffected by the gradual growth of the sequencer's quantity.
+
 
 ### Architecture
 
