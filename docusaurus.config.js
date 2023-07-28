@@ -113,24 +113,28 @@ const config = {
           srcDark: 'img/index/logo_light.svg',
         },
         items: [
+        /*
           {
             type: 'doc',
             position: 'right',
             docId: 'quick-start/welcome-to-morphism',
             label: 'Quick Start',
           },
+        */
           {
             type: 'doc',
             position: 'right',
             docId: 'how-morphism-works/intro',
             label: 'How Morphsim works',
           },
+          /*
           {
             type: 'doc',
             position: 'right',
             docId: 'build-on-morphism/intro',
             label: 'Build on Morphism',
           },
+          */
           // {label: 'Website', position: 'left', href: 'https://www.morphism.xyz',},
           /*
           {

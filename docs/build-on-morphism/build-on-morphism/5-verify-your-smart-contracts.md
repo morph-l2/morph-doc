@@ -69,8 +69,8 @@ When contract is deployed, adding a script:
 
 ~~~
 await hre.run("verify:verify", {
-    address: contract.address, // 部署完成后的合约地址
-    constructorArguments: [xxx], // 合约传递参数
+    address: contract.address, 
+    constructorArguments: [xxx], 
 });
 ~~~
 
