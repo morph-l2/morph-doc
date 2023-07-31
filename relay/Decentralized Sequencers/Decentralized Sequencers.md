@@ -64,7 +64,7 @@ Based on the above design principles, our implementation will be based on the BF
 
 :::tip
 **Why BLS signature?** 
-If we use the current basic signature algorithm, such as ECDSA, in Ethereum, there will be a problem of excessive cost. Because the signature data needs to be submitted to the Layer1 contract and requires payment of the corresponding cost, as the number of validators increases, this cost will also increase proportionally.
+If we use the current basic signature algorithm, such as ECDSA, in Ethereum, there will be a problem of excessive cost. Because the signature data needs to be submitted to the Layer 1 contract and requires payment of the corresponding cost, as the number of validators increases, this cost will also increase proportionally.
 :::
 
 By using BLS signatures, the cost of uploading signatures can be maintained at a constant level, unaffected by the gradual growth of the sequencer's quantity.

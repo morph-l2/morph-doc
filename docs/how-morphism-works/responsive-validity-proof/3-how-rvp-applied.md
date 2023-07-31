@@ -86,7 +86,7 @@ Therefore, when initiating challenges, Validators need to stake some funds. If t
 In most cases, Sequencer wants to extract long-term benefits by reliably providing services, but we can not assume that fraudulent situations will not occur. 
 Depending on the reasons, we need to have different handling for a successful challenge:
 
-First of all, regardless of the reason for the successful challenge, the main contract will be paused to prevent subsequent batches from being submitted to Layer1.
+First of all, regardless of the reason for the successful challenge, the main contract will be paused to prevent subsequent batches from being submitted to Layer 1.
 
 This pause operation will be executed by the account that controls the main contract and is controlled by the DAO, and all other ongoing challenges will be canceled, with the stake returned to each party.
 
