@@ -1,5 +1,5 @@
 ---
-title: Understand Transaction cost on Morphism
+title: understand Transaction cost on Morphism
 lang: en-US
 ---
 
@@ -65,10 +65,6 @@ transaction_gas_price = l2_base_fee + l2_priority_fee
 The amount of L2 gas used depends on the particular transaction that you're trying to send.
 Thanks to EVM equivalence, transactions typically use approximately the same amount of gas on Morphism as they do on Ethereum.
 
-<!---->
-<!--
-/* Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public Morphism dashboard](https://optimism.io/gas-tracker).-->
-
 
 ## The L1 data fee
 
@@ -107,16 +103,6 @@ You can read the parameter values from the [gas oracle contract](https://github.
 :::
 
 
-<!--
-::: warning NOTE
-Ethereum has limited support for adding custom transaction types.
-As a result, unlike the L2 execution fee, **users are not able to set limits for the L1 data fee that they may be charged**.
-The L1 gas price used to charge the data fee is automatically updated when new data is received from Ethereum.
-**Spikes in Ethereum gas prices may result in users paying a higher or lower than estimated L1 data fee, by up to 25%.**
-
-[See here for a detailed explanation why the difference is capped at 25%](https://help.optimism.io/hc/en-us/articles/4416677738907-What-happens-if-the-L1-gas-price-spikes-while-a-transaction-is-in-process).
-:::
--->
 
 ## Transaction fees' effect on software development
 
@@ -150,24 +136,12 @@ However, as discussed earlier, users on Morphism are charged both an L2 executio
 
 As a result, you should display the sum of both of these fees to give users the most accurate estimate of the total cost of a transaction.
 
-<!--
-[See here for a code sample using the JavaScript SDK](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas)
--->
 
 #### Estimating the L2 execution fee
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
 #### Estimating the L1 data fee
-<!--
-You can use the SDK [(see here)](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/sdk-estimate-gas).
--->
-<!--
-Alternatively, you can estimate the L1 data fee using the `GasPriceOracle` predeployed smart contract located at [`0x420000000000000000000000000000000000000F`]().
-[The `GasPriceOracle` contract](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/L2/predeploys/OVM_GasPriceOracle.sol) is located at the same address on every Morphism (mainnet and testnet).
-To do so, call `GasPriceOracle.getL1Fee(<unsigned RLP encoded transaction>)`.
--->
-
 
 
 

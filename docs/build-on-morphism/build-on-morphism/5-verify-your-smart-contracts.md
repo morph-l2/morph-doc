@@ -3,11 +3,11 @@ title: Verify your smart contracts
 lang: en-US
 ---
 
-After deploying your smart contracts, it's important to verify your code on our [block explorer](www.google.com). This can be done in an automated way using your develop framwork such as hardhat.
+After deploying your smart contracts, it's important to verify your code on our [block explorer](explorer.testnet.morphism.xyz). This can be done in an automated way using your develop framework such as hardhat.
 
 
 
-## Verify with develop framwork
+## Verify with develop framework
 
 Most smart contract tooling has plugins for verifying your contracts easily on Etherscan. Blockscout supports Etherscan's contract verification APIs, and it's straight forward to use these tools with the Morphism Testnet.
 
@@ -74,7 +74,7 @@ await hre.run("verify:verify", {
 });
 ~~~
 
-Final step, excute
+Final step, execute
 
 > NODE_ENV=devnet npx hardhat run scripts/lock.js --network devnet
 
