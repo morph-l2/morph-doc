@@ -5,7 +5,7 @@ lang: en-US
 
 ## Bridging basics
 
-Although Morphism is an Ethereum Layer2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system. 
+Although Morphism is an Ethereum Layer 2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system. 
 App developers commonly need to move data and assets between Morphism and Ethereum. We call the process of moving data and assets between the two networks "bridging".
 
 ### Sending tokens
