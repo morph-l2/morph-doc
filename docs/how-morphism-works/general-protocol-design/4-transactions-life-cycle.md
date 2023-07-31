@@ -37,8 +37,8 @@ When a user submits a transaction to Sequencers, the transaction will go through
 
 ### Confirmed
 
-This means the Sequener has excuted the transactions and updated the local L2 state. Now the transaction will be put into a batch and submitted to Layer1 and wait for a challenge period before it can be finalized.
+This means the Sequener has excuted the transactions and updated the local L2 state. Now the transaction will be put into a batch and submitted to Layer 1 and wait for a challenge period before it can be finalized.
 
 ### Finalized
 
-Transactions need to go through the challenge period or the corresponding block & batch is verified by a ZK-Proof to be finalized and be part of the finalized Layer1 & Layer2 state. 
+Transactions need to go through the challenge period or the corresponding block & batch is verified by a ZK-Proof to be finalized and be part of the finalized Layer 1 & Layer 2 state. 

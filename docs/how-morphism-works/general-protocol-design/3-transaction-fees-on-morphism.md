@@ -35,10 +35,6 @@ transaction_gas_price = l2_base_fee + l2_priority_fee
 The amount of L2 gas used depends on the particular transaction that you're trying to send.
 Thanks to EVM equivalence, transactions typically use approximately the same amount of gas on Morphism as they do on Ethereum.
 
-<!---->
-<!--
-/* Gas prices fluctuate with time and congestion, but you can always check the current estimated L2 gas price on the [public Morphism dashboard](https://optimism.io/gas-tracker).-->
-
 
 ## The L1 data fee
 
@@ -72,17 +68,4 @@ Where `tx_data_gas` is:
 ```
 tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
-<!--You can read the parameter values from the [gas oracle contract]().-->
-
-
-<!--
-::: warning NOTE
-Ethereum has limited support for adding custom transaction types.
-As a result, unlike the L2 execution fee, **users are not able to set limits for the L1 data fee that they may be charged**.
-The L1 gas price used to charge the data fee is automatically updated when new data is received from Ethereum.
-**Spikes in Ethereum gas prices may result in users paying a higher or lower than estimated L1 data fee, by up to 25%.**
-
-[See here for a detailed explanation why the difference is capped at 25%](https://help.optimism.io/hc/en-us/articles/4416677738907-What-happens-if-the-L1-gas-price-spikes-while-a-transaction-is-in-process).
-:::
--->
 
