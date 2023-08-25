@@ -71,10 +71,10 @@ const config = {
       }],
       algolia: {
         // The application ID provided by Algolia
-        appId: 'X5WFC1AF7V',
+        appId: 'ZPAGKYIZIQ',
   
         // Public API key: it is safe to commit it
-        apiKey: 'd727e463b46c13b8524d8f6c9fd58894',
+        apiKey: '27fd51373bda15bdf1891fa3300527c8',
   
         indexName: 'morphism_docs',
   
