@@ -16,7 +16,7 @@ For the most common usecase, moving tokens around, we've created [the Standard T
 
 ### Sending data
 
-If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](## Send messages between Morphism and Ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morphism and vice versa. We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
+If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](## Send messages between Morphism and Ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morphism, and vice versa. We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
 
 
 ## Utilize Standard Bridge Contract
@@ -67,7 +67,7 @@ Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2Standar
 
 Apps on Morphism can be made to interact with apps on Ethereum via a process called "bridging".
 In a nutshell, **contracts on Morphism can trigger contract functions on Ethereum, and vice versa**.
-With just a little bit of elbow grease, you too can create contracts that bridge the gap between Layer 1 and Layer 2!
+With just a little bit of elbow grease, you also can create contracts that bridge the gap between Layer 1 and Layer 2!
 
 <details>
 
@@ -215,11 +215,11 @@ Read about Morphism's unique challenge design based on [Responsive validity proo
 
 We call this period of time the "challenge period" because it is the time during which a transaction can be challenged.
 
-Unlike the basic Optismtic Rollup which you when you find out that some incorrect transactions or state are submitted to Layer 1 (such as a fake withdraw transction which want to withdraw your ETH to hacker's address) you need to spend a long time and energy to interact with sequencer to prove it is wrong.
+Unlike the basic Optismtic Rollup, when you find out that some incorrect transactions or state are submitted to Layer 1 (such as a fake withdraw transction which want to withdraw your ETH to hacker's address) you need to spend a long time and energy to interact with sequencer to prove it is wrong.
 
 Morphism's responsive validity proof makes sequencer to prove they are right by submitting zk validity proof.
 
-And this require a cetain period for you or any other chanllenge to find out the problem and start a challenge/
+And this require a cetain period for you or any other challengers to find out the problem and start a challenge/
 
 Anyway, the point here is that **you don't want to be making decisions about Layer 2 transaction results from inside a smart contract on Layer 1 until this challenge period has elapsed**.
 
