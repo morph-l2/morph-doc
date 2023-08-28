@@ -40,7 +40,7 @@ If you want to deposit using a smart contract wallet and you know what you're do
 
 ### Depositing ERC20s
 
-ERC20 deposits into L2 can be triggered via the `depositERC20To` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/morphism-labs/contracts/blob/main/contracts/L1/L1StandardBridge.sol).
+ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/morphism-labs/contracts/blob/main/contracts/L1/L1StandardBridge.sol).
 
 You **must** approve the Standard Token Bridge to use the amount of tokens that you want to deposit or the deposit will fail.
 
