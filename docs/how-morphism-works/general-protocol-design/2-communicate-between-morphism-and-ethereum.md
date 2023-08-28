@@ -5,9 +5,9 @@ keywords: [morphism,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morphism - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-Although as a Layer 2, Morphism is built on top of Ethereum, these two are still two separate and different blockchains.
+Although as a Layer 2, Morphism is built on top of Ethereum, these two are still separate and distinct blockchains.
 
-Thus, we need to construct a communication channel for Morphism and Ethereum to allow a smooth transfer of assets and messages.
+Therefore, we need to construct a communication channel for Morphism and Ethereum to allow a smooth transfer of assets and messages.
 
 Typically, there are two ways: Ethereum to Morphism and Morphism to Ethereum.
 
@@ -32,9 +32,9 @@ This means that data payloads can be sent from one network to another using the 
 
 ### Construct a deposit request through Standard Bridge (Optional)
 
-Any bridge request, ETH bridge, ERC20/721 bridge is esstentially a cross-chain message, thus, we need to construct a message first. But for the most of the time, the message would look the same, especially for ETH & ERC20 token bridge.
+Any bridge request, ETH bridge, ERC20/721 bridge is esstentially a cross-chain message, thus, we need to construct a message first. But most of the time, the message would look the same, especially for ETH & ERC20 token bridge.
 
-Using standard bridge will build a typical token bridge message and passes it to ```CrossDomainMessenger```.
+Using a standard bridge will build a typical token bridge message and pass it to ```CrossDomainMessenger```.
 
 Any bridge request, whether it is for an ETH bridge or an ERC20/721 bridge, essentially involves a cross-chain message. Therefore, we need to construct a message first. However, most of the time, the message will appear the same, particularly for an ETH and ERC20 token bridge.
 
