@@ -35,7 +35,7 @@ The batch submitter will continue fetching and reconstructing the blocks until i
 - BlockWitness : Encoides of block's blockinfos, this is for zkProof
 - PreStateRoot : stateRoot that before apply the batch
 - PostStateRoot : stateRoot that after applying the batch
-- WithdrawRoot : L2 withdraw merkle tree root
+- WithdrawalRoot : L2 withdraw merkle tree root
 - Signature : Batch BLS signature
 
 
