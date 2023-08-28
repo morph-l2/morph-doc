@@ -1,6 +1,8 @@
 ---
 title: Transactions Life Cycle
 lang: en-US
+keywords: [morphism,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
+description: Upgrade your blockchain experience with Morphism - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
 ## How does a L2 transaction processed on Morphism

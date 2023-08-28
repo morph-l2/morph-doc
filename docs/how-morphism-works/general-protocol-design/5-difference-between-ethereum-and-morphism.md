@@ -60,12 +60,12 @@ When verifying EXTCODESIZE, it is expensive to load the whole contract data into
 
 ## Block Time
 
-:::Warning Block Time Subject to Change
+:::warning Block Time Subject to Change
 
 Currently blocks are produced every second and empty block if no transctions for 5 seconds
 However, that value may change in the future.
 
-:::
+::: 
 
 - `TIMESTAMP` will return the timestamp of the block. It will update every second.
 - `BLOCKNUMBER` will return an actual block number. It will update every second. The one-to-one mapping between blocks and transactions will no longer apply.
@@ -92,4 +92,4 @@ EVM Target version
 To ensure no unexpected behaviour happens in your contracts, we recommend using london as target version when compiling your smart contracts.
 You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
 
-## [Transaction Fees](./4-txfee.md)
+## [Transaction Fees](./3-transaction-fees-on-morphism.md)
