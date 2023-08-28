@@ -23,7 +23,7 @@ Within [Morphism's architecture](../2-morphism-modular-design.md), this process 
 
 The L2 Node of the sequencer will generate L2 blocks based on the consensus results and update the local state of L2. The batch submitter will need to query the L2 node to retrieve the latest L2 blocks.
 
-Then batch submitter will need to reconstructe L2 blocks into:
+Then batch submitter will need to reconstruct L2 blocks into:
 
 - Transactions : All the transactions within the blocks
 - Blockinfo : Each blocks important information
@@ -41,7 +41,7 @@ The batch submitter will continue fetching and reconstructing the blocks until i
 
 :::info
 
-Blockinfo (BlockWitness) is needed because morphism leverages zk technology to prove the correctness of the submitted batch data. It will be used as the ZK Proof witness.
+Blockinfo (BlockWitness) is needed because Morphism leverages zk technology to prove the correctness of the submitted batch data. It will be used as the ZK Proof witness.
 
 :::
 
@@ -50,9 +50,9 @@ Blockinfo (BlockWitness) is needed because morphism leverages zk technology to p
 
 For the majority of roll-up projects, it is common practice to include only one batch in each L1 roll-up transaction, even if there is available space to accommodate more batches.
 
-However, in the morphism approach, we maximize efficiency by including as many batches as possible within a single roll-up transaction on Layer 1.
+However, in the Morphism approach, we maximize efficiency by including as many batches as possible within a single roll-up transaction on Layer 1.
 
-This strategic approach significantly aids in reducing overall costs, given that the L1 fee constitutes the major portion of the transaction costs associated with Layer 2. By optimizing the utilization of available space, morphism ensures cost-effectiveness while maintaining transaction integrity.
+This strategic approach significantly aids in reducing overall costs, as the L1 fee constitutes the major portion of the transaction costs associated with Layer 2. By optimizing the utilization of available space, Morphism ensures cost-effectiveness while maintaining transaction integrity.
 
 
 ## Submit batch data to Rollup contract
@@ -68,9 +68,9 @@ Based on the development process of ERC-4337, future batch data will be likely p
 
 ::: 
 
-Once submitted and transaction is confirmed on Ethereum, validator nodes could use the transactions within the batch data to reconstruct and verify the validity of sequencers' submission.
+Once the transaction is submitted and confirmed on Ethereum, validator nodes could use the transactions within the batch data to reconstruct and verify the validity of sequencers' submissions.
 
 
 ## Finalize the batches
 
-If batches are proven to be valid under the rules of morphism's [responsive validity proof](../responsive-validity-proof/1-overview.md), all the transactions within the batches will be finalized, including withdraw transactions. Withdrawal requests will be fulfilled, and the locked assets on Layer 1 will be freed.
+If batches are proven to be valid under the rules of Morphism's [responsive validity proof](../responsive-validity-proof/1-overview.md), all the transactions within the batches will be finalized, including withdraw transactions. Withdrawal requests will be fulfilled, and the locked assets on Layer 1 will be freed.
