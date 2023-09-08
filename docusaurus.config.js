@@ -161,7 +161,7 @@ const config = {
             items: [
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/Morphism_EN',
+                href: 'https://twitter.com/Morphism_xyz',
               },
             ],
           },
@@ -170,7 +170,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://medium.com/@Morphism_EN',
+                to: 'https://medium.com/@Morphism_xyz',
               },
             ],
           },
