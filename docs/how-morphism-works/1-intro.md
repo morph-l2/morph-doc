@@ -8,6 +8,6 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 This section will introduce the overall protocol design of Morphism, which includes the following:
 
 - The Decentralized Sequencer Network
-- Responsive Validity Proof & Optimis
+- Responsive Validity Proof (RVP)
 - Morphism's Modular Architecture
 - General Protocol Design
