@@ -91,6 +91,22 @@
   background-color: #fff !important;
   border-right: none !important;
 }
+[data-theme='light'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: none !important;
+  cursor: pointer !important;
+}
+[data-theme='light'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: block !important;
+  cursor: pointer !important;
+}
+[data-theme='dark'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: block !important;
+  cursor: pointer !important;
+}
+[data-theme='dark'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: none !important;
+  cursor: pointer !important;
+}
 [data-theme='dark'] #__docusaurus {
   background-color: #000;
 }
