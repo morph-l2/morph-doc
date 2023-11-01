@@ -49,7 +49,7 @@ However, the problems are also obvious. As can be seen from the above descriptio
 
 Regarding the first point, as of the time of writing this article, only Arbitrum has implemented a complete interactive fraud proof mechanism on its mainnet among all the optimistic rollup projects, while OP, as another giant in the optimistic rollup, has been operating without a fraud proof mechanism for more than a year, and its Cannon framework, which is currently under development, has not yet determined its final launch time. In comparison, several ZK-rollup projects have already launched on the mainnet.
 
-For the second and third points, we need to consider the characteristics of interactive fraud proof in cryptoeconomics. In the following text, we will introduce why such problems occur and how our solutions can do better.
+For the second and third points, we need to consider the characteristics of interactive fraud proof in crypto economics. In the following text, we will introduce why such problems occur and how our solutions can do better.
 
 ## Why is RVP a better solution for optimistic rollup than interactive fraud proof?
 
@@ -64,7 +64,7 @@ Of course, the specific process is much more complicated than described here. In
 
 ### What are the advantages of RVP compared to interactive fraud proof?
 
-1. Shorten the challenge period. Under the matching cryptoeconomics design, RVP can shorten the challenge period from 7 days to 1-3 days.
+1. Shorten the challenge period. Under the matching crypto economics design, RVP can shorten the challenge period from 7 days to 1-3 days.
 2. Greatly reduce the L2 submission cost. Based on validity proof, L2 does not need to include most transaction bytes.
 3. More friendly to challengers. In addition to basic maintenance and identification of L2 status, only the responsibility of triggering the challenge needs to be assumed, sequencers need to prove they are right (by generating and verifying the corresponding ZK-proof).
 4. Regarding architectural design, a seamless transition to complete ZK-rollup is super easy. The only necessary change is to adjust the sequencer's ZK-proofs submission methods from responsive to active.

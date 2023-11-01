@@ -23,7 +23,7 @@ The main issue with centralized sequencers arises from their monopoly over the p
 
 The operation of the sequencer directly affects on Layer 2 activity. If the sequencer stops working, it will prevent the processing of transactions from all Layer 2 users, essentially causing Layer 2 to be down.
 
-When a signle entity is running the sequencer, any failure on their part will lead to the entire Layer 2 being paralyzed, resulting in a single point of failure. Therefore, centralized sequencers pose significant potential risks to the operation of Layer 2. 
+When a single entity is running the sequencer, any failure on their part will lead to the entire Layer 2 being paralyzed, resulting in a single point of failure. Therefore, centralized sequencers pose significant potential risks to the operation of Layer 2. 
 
 #### Excessive transaction censorship
 
@@ -106,7 +106,7 @@ Considering the cost of uploading signatures to Layer 1 and the cost of validati
 
 Once the signing is completed, the selected sequencer will submit these blocks as a batch to Layer 1 through its batch submitter component.
 
-For more detail on how batch is generated, please refer to the [rollup](../../how-morphism-works/general-protocol-design/1-rollup.md) section.
+For more detail on how the batch is generated, please refer to the [rollup](../../how-morphism-works/general-protocol-design/1-rollup.md) section.
 
 #### Consensus verification
 

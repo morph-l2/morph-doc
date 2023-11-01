@@ -46,7 +46,7 @@ Using a standard bridge will create a typical token bridge message and pass it t
 
 There are both messgeners on Layer 1 and Layer 2, in the case of deposit, L1 messenger will send message to L2's.
 
-The interaction will basiclly like one contract calling another on Layer 1, so you can create your own message (contract interactions) to perform any form of cross-layer interactions.
+The interaction will basically like one contract calling another on Layer 1, so you can create your own message (contract interactions) to perform any form of cross-layer interactions.
 
 ### Execute the message on Layer 2
 
@@ -78,13 +78,13 @@ An exit leaf, in particular, is a Keccak256 hash of the ABI encoded packed struc
 
 Morphism pre-deployed a Simple Merkel Tree contract to construct the Layer 2 withdraw tree.
 
-The withdraw tree are used to store withdraw transctions and verify if a withdraw request is valid
+The withdraw tree are used to store withdraw transactions and verify if a withdraw request is valid
 
 This tree have 3 methods:
 
-1. ```getTreeroot``` - return current tree's roothash
+1. ```getTreeroot``` - return current tree's root hash
 2. ```appendMessageHash``` - append a new leaf node to the tree
-3. ```verifyMerkleProof``` - verify if a leaf node exsited in the tree (which means bridge request represented by the leaf is valid)
+3. ```verifyMerkleProof``` - verify if a leaf node existed in the tree (which means bridge request represented by the leaf is valid)
 
 ### Verify the withdraw tree
 

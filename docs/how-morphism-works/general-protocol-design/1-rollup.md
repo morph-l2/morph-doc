@@ -32,7 +32,7 @@ The batch submitter will continue fetching and reconstructing the blocks until i
 
 - lastBlocknumber : The block number of the last block within the batch
 - Transactions : Encodes of all the transactions within the batch
-- BlockWitness : Encoides of block's blockinfos, this is for zkProof
+- BlockWitness : Encodes of block's blockinfos, this is for zkProof
 - PreStateRoot : stateRoot that before apply the batch
 - PostStateRoot : stateRoot that after applying the batch
 - WithdrawalRoot : L2 withdraw merkle tree root

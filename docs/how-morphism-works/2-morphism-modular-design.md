@@ -33,7 +33,7 @@ Following this, we first divided Morphism (or any other Layer 2) into 3 Modules,
 
 ![Sequencer Network](../../assets/docs/protocol/Consensus.png)
 
-Sequencer network responsible for the excution & consensus of the Layer 2 transactions, for more details please refer to Morphism's[decentralized sequencers](../how-morphism-works/decentralized-sequencers/1-morphism-decentralized-sequencer-network.md)
+Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morphism's[decentralized sequencers](../how-morphism-works/decentralized-sequencers/1-morphism-decentralized-sequencer-network.md)
 
 #### Optimistic zkEVM - Settlement
 
@@ -65,7 +65,7 @@ As the most important part of the network, sequencers serve the following functi
 
 1. Receiving Layer 2 users' transactions and form the block (L2 Node)
 2. Reach block consensus with other sequencers (Consensus)
-3. Excute blocks and apply state transmission (L2 Node)
+3. Execute blocks and apply state transmission (L2 Node)
 4. Batch the blocks and submit them to Layer 1 along with the new Layer 2 state ()
 5. Sync the blocks with full nodes
 6. Utilize provers to generate validity proof when being challenged

@@ -12,7 +12,7 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 1. Validators will need to constantly verify the transactions and new state sequencers submitted to Layer 1.
 2. If they find the txns & states are not correct, they will initial the challenge.
 3. Sequencers need to answer the challenge by providing ZK-Proof and pass verification
-4. If Sequencer can't finish the verification process during a certain period, the fraud behaviour is settled.
+4. If Sequencer can't finish the verification process during a certain period, the fraud behavior is settled.
 
 
 :::tip
@@ -20,7 +20,7 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 In this sections, the two challenger counter parties would be referred as the role in the challenge process sometime.
 
 - Challenger is Validator
-- The challenged is Seuqencer
+- The challenged is Sequencer
 :::
 
 ## Pre Challenge
