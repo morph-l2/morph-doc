@@ -26,7 +26,7 @@ The L2 Node of the sequencer will generate L2 blocks based on the consensus resu
 Then batch submitter will need to reconstruct L2 blocks into:
 
 - Transactions : All the transactions within the blocks
-- Blockinfo : Each blocks important information
+- Blockinfo : Each block's important information
 
 The batch submitter will continue fetching and reconstructing the blocks until it processes a block with BLS signature, which means the batch point has been reached. All the reconstructed block information will be used to construct a batch. Each batch contains:
 

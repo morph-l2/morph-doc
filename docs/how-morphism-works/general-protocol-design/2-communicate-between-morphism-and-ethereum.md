@@ -1,5 +1,5 @@
 ---
-title: Communicate between morphism and ethereum
+title: Communication between Morphism and Ethereum
 lang: en-US
 keywords: [morphism,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morphism - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
@@ -26,13 +26,13 @@ Furthermore, the bridge will not only be utilized to process asset bridging, as 
 This means that data payloads can be sent from one network to another using the same logic.
 
 
-## Deposit (L1 -> L2 message) 
+## Deposit (L1 to L2 message) 
 
 ![Deposit Process](../../../assets/docs/protocol/General/bridge/deposit.png)
 
 ### Construct a deposit request through Standard Bridge (Optional)
 
-Any bridge request, ETH bridge, ERC20/721 bridge is esstentially a cross-chain message, thus, we need to construct a message first. But most of the time, the message would look the same, especially for ETH & ERC20 token bridge.
+Any bridge request, ETH bridge, ERC20/721 bridge is essentially a cross-chain message, thus, we need to construct a message first. But most of the time, the message would look the same, especially for ETH & ERC20 token bridge.
 
 Using a standard bridge will build a typical token bridge message and pass it to ```CrossDomainMessenger```.
 
@@ -48,11 +48,11 @@ There are both messgeners on Layer 1 and Layer 2, in the case of deposit, L1 mes
 
 The interaction will basiclly like one contract calling another on Layer 1, so you can create your own message (contract interactions) to perform any form of cross-layer interactions.
 
-### Excute the message on Layer 2
+### Execute the message on Layer 2
 
-The cross-domain message will passes to ```MophismPortal``` to generate a event called TransactionDeposited.
+The cross-domain message will pass to ```MophismPortal``` to generate an event called TransactionDeposited.
 
-Sequencer will monitor this event and include a Layer 2 transaction in its next block.
+Sequencer will monitor this event and include the Layer 2 transaction in its next block.
 
 Based on the cross-chain message it holds, there will be a Layer 2 executor to interact with L2 messenger to execute the message, including transferring L2 ETH or ERC20 tokens to the receiver.
 
@@ -66,7 +66,7 @@ Most of the withdrawal process is simply the reverse of the deposit process, but
 
 Withdraw means interacting with L1 assets/contracts based on a Layer 2 transaction, so we have to make sure there is actually a Layer 2 transaction that initiates a withdraw request. And this needs to be verifiable on Layer 1.
 
-To achieve this, we introduce a withdraw tree, which will record every L2 withdraw transaction into a Merkel tree. Thus, we can leverage the Merkel tree's features to verify if a withdraw request has actually occurred.
+To achieve this, we introduce a withdraw tree, which will record every L2 withdraw transaction into a Merkle tree. Thus, we can leverage the Merkle tree's features to verify if a withdraw request has actually occurred.
 
 The Morphism bridge utilizes a special Merkle Tree called Withdraw Tree to achieve this.
 
@@ -89,7 +89,7 @@ This tree have 3 methods:
 ### Verify the withdraw tree
 
 A withdrawal request on Layer2 will eventually emit an event.
-
+s
 Our official bridge frontend and SDK provide a service that uses a Tree Prover to construct the corresponding Merkel proof.
 
 Bridgers need this proof to use ```proveWithdrawTransaction``` in the ```MorphismPortal``` contract to prove their withdrawal request. Once successful, the withdrawal request will be marked as proven and will wait for finalization.
