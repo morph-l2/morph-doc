@@ -6,7 +6,7 @@ const FeatureList = [
   {
     title: 'Quick Start',
     // url: '/docs/quick start/quickintro',
-    svg: '/img/index/quick_start.svg',
+    svg: '/img/index/QuickStart.svg',
     description: (
       <>
         A go-to guide on how to easily start to experience Morphism ecosystem.
@@ -17,7 +17,7 @@ const FeatureList = [
   {
     title: 'How Morphism works',
     url: '/docs/how-morphism-works/intro',
-    svg: '/img/index/how_morphism_works.svg',
+    svg: '/img/index/HowMorphismWorks.svg',
     description: (
       <>
         General explaination of what makes morphism different from others
@@ -27,7 +27,7 @@ const FeatureList = [
   {
     title: 'Developer Docs',
     // url: '/docs/Build on Morphism/devintro',
-    svg: '/img/index/developer_docs.svg',
+    svg: '/img/index/DeveloperDocs.svg',
     description: (
       <>
         Everything you need to know on how to launch your dapp on Morphism
