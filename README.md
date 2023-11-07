@@ -6,7 +6,7 @@ Morphism is at the forefront of shaping a decentralized future. Built upon power
 
 Our unique combination of a decentralized sequencer and optimistic zkEVM ensures unparalleled security and performance in the blockchain space. 
 
-By empowering developers with tools like autonomous agents and zkDID, Morphism champions the rise of the Decentralized Social (DeSoc) era.s
+By empowering developers with tools like autonomous agents and zkDID, Morphism champions the rise of the Decentralized Social (DeSoc) era.
 
 ## Dive deeper into our vision and objectives here
 
