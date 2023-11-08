@@ -15,7 +15,7 @@ The skeletal architecture of Morphism is shown below:
 
 ## Overview
 
-Modular is generally a term to describle an arichiture design idea in which, a Layer 1 blockchain can be divided into four functionality:
+Modular is generally a term to describe an architectural design idea in which, a Layer 1 blockchain can be divided into four functions:
 
 1. Consensus
 2. Execution
@@ -45,7 +45,7 @@ For zkRollups, it's zkEVM, and for optimistic rollups, it's fraud proof.
 
 Morphism has the unique design of this, we introduced [Optimistic zkEVM](../how-morphism-works/responsive-validity-proof/2-why-rvp.md) as a new hybrid solution of state verifications. 
 
-The state verfication process finalize and settle the Layer 2 transactions and states.
+The state verification process finalizes and settles Layer 2 transactions and states.
 
 #### Rollup - Data Avaibility
 
@@ -102,17 +102,17 @@ Nodes can be categorized as general or archive nodes based on the kind of data t
 
 Every Layer 2 needs a Layer 1, for Morphism, it's Ethereum.
 
-Layer 1 serves the role that provide data avaibility and final settlements.
+Layer 1 serves the role that provides data availability and final settlements.
 
-Morphism deployed several important contracts to let Layer 1 as the final judges and data storage place. This is a must for all layer 2s if they want to ulitimately inherit the safety of Ethereum.
+Morphism deployed several important contracts to let Layer 1 as the final judges and data storage place. This is a must for all layer 2s if they want to ultimately inherit the safety of Ethereum.
 
 ### 6 Morphism Components
 
 #### L2 Node
 
-L2 node plays a pivotal role in overall architecture design, serving as a hub for multiple other modules to interact and exchange information through. Various roles require L2 node as an integral part of their normal operation.
+The L2 node plays a pivotal role in overall architectural design, serving as a hub for multiple other modules to interact and exchange information through. Various roles require L2 nodes as an integral part of their normal operation.
 
-L2 node itself is also divided into different components, each with its own specific function:
+The L2 node itself is also divided into different components, each with its own specific function:
 
 ##### Transactions Manager (Mempool)
 
@@ -129,7 +129,7 @@ Based on this logic, the execution layer ensures Ethereum compatibility and allo
 
 ##### Synchronizer
 
-There is often a need for synchronization between L2 nodes to restore network status, so the L2 node includes a synchronizer to synchronize data with each other. The frequency and functionality of synchronization vary depending on the role used. For example, for an L2 node running a sequencer, it will first synchronize blocks among various sequencers to achieve consensus, and then synchronize blocks to full nodes. As for full nodes, other roles in the network such as validator and prover will synchronize blocks from the full node to complete their work.
+There is often a need for synchronization between L2 nodes to restore network status, so the L2 node includes a synchronizer to synchronize data with each other. The frequency and functionality of synchronization vary depending on the role used. For example, for an L2 node running a sequencer, it will first synchronize blocks among various sequencers to achieve consensus, and then synchronize blocks to full nodes. As for full nodes, other roles in the network, such as validator and prover, will synchronize blocks from the full node to complete their work.
 
 #### Batch Submitter
 
@@ -165,7 +165,7 @@ The existence of these contracts allows Layer 2 to inherit the security of Layer
 
 The underlying layer is the components, and different components together you can perform the duty of the roles we talked about.
 
-For examples, if you run a L2 node, you can become the role of Node.
+For example, if you run a L2 node, you can become the role of Node.
 
 If you run batch submitter & consensus client too, you can perform the duty of sequencers.
 

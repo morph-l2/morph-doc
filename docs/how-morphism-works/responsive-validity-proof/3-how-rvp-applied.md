@@ -10,14 +10,14 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 ## TL;DR
 
 1. Validators will need to constantly verify the transactions and new state sequencers submitted to Layer 1.
-2. If they find the txns & states are not correct, they will initial the challenge.
+2. If they find the transactions & states are not correct, they will initial the challenge.
 3. Sequencers need to answer the challenge by providing ZK-Proof and pass verification
 4. If Sequencer can't finish the verification process during a certain period, the fraud behavior is settled.
 
 
 :::tip
 
-In this sections, the two challenger counter parties would be referred as the role in the challenge process sometime.
+In this section, the two challenger counter parties would be referred to as the role in the challenge process sometimes.
 
 - Challenger is Validator
 - The challenged is Sequencer
@@ -113,9 +113,9 @@ The handling methods for these four situations are as follows:
 
 #### The Sequencer submitted an incorrect Commitment, resulting in the inability to generate the correct Proof.
 
-- The Sequencer corresponding to this Batch will have 80% of the staked funds penalized and given to the corresponding challenger, with an additional 20% of the staked funds penalize and deposited into the DAO treasury.
+- The sequencer corresponding to this batch will have 80% of the staked funds penalized and given to the corresponding challenger, with an additional 20% of the staked funds penalized and deposited into the DAO treasury.
 
-- The investigation team will continue to investigate the validity of the previous Batch's state, and ultimately provide a Batch validity report to the DAO. Once approved by the DAO, Layer 2 will be restarted and all Layer 2 states will be considered valid.
+- The investigation team will continue to investigate the validity of the previous batch's state, and ultimately provide a batch validity report to the DAO. Once approved by the DAO, Layer 2 will be restarted and all Layer 2 states will be considered valid.
 
 - All nodes need to continue operating according to the new Layer 2 state.
 

@@ -5,27 +5,25 @@ keywords: [morphism,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morphism - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-Transaction fees on Morphism work a lot like fees on Ethereum.
-However, Layer 2 introduces some new paradigms that means it can never be exactly like Ethereum.
-Luckily, Morphism's EVM equivalence makes these differences easy to understand and even easier to handle within your app.
+On Morphism, transaction fees share similarities with those on Ethereum, but the Layer 2 environment introduces distinct aspects that preclude a direct one-to-one comparison. Fortunately, Morphism’s commitment to EVM equivalence simplifies these distinctions, facilitating a seamless and manageable experience within your applications.
 
-This page includes the formula for calculating the gas cost of transactions on Morphism.
+Outlined below is the formula used to calculate gas costs associated with transactions on Morphism.
+
+There are two cost components for a transaction on Morphism: the L2 execution fee and the L1 data/security fee.
 
 
 <!--You can also [use our SDK]() to calculate those costs for you. -->
- 
 
-There are two costs for transaction on Morphism: the L2 execution fee and the L1 data/security fee.
 
 ## The L2 execution fee
 
-Just like on Ethereum, transactions on Morphism have to pay **gas** for the amount of computation and storage that they use.
+Transactions on Morphism, much like those on Ethereum, incur **gas** fees proportional to the computation and storage they consume.
 
-Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+Every L2 transaction incurs some **execution fee**, which is the product of the gas used by the transaction and the gas price specified for that transaction.
 
-This is exactly how fees work on Ethereum with the added bonus that gas prices on Morphism are seriously low.
+This mirrors fees on  Ethereum, with the added advantage that gas prices on Morphism are significantly lower.
 
-Here's the (simple) math:
+The calculation is straightforward:
 
 ```
 l2_execution_fee = transaction_gas_price * l2_gas_used
@@ -34,23 +32,17 @@ transaction_gas_price = l2_base_fee + l2_priority_fee
 
 ```
 
-The amount of L2 gas used depends on the particular transaction that you're trying to send.
-Thanks to EVM equivalence, transactions typically use approximately the same amount of gas on Morphism as they do on Ethereum.
+The amount of L2 gas consumed depends on the particular transaction in question. Due to EVM equivalence, transactions typically use approximately the same amount of gas on Morphism as they do on Ethereum.
 
 
 ## The L1 data fee
 
-Morphism differs from Ethereum because all transactions on Morphism are also published to Ethereum.
+Morphism diverges from Ethereum in that it also commits all transactions to Ethereum’s blockchain. This step is crucial to Morphism’s security model, ensuring the data necessary to synchronize a Morphism node is always publicly available on Ethereum, thereby classifying Morphism as a true Layer 2 solution.
 
-This step is crucial to the security properties of Morphism because it means that all of the data you need to sync an Morphism node is always publicly available on Ethereum.
+Users on Morphism cover the costs associated with transmitting their transactions to Ethereum. This is referred to as the L1 data fee, and it's the primary cost discrepancy between Morphism (or other L2s) and Ethereum.
 
-It's what makes Morphism an L2.
+Due to Ethereum’s higher gas costs, the **L1 data fee** typically constitutes the majority of a transaction’s total cost on Morphism.
 
-Users on Morphism have to pay for the cost of submitting their transactions to Ethereum.
-
-We call this the **L1 data fee**, and it's the primary discrepancy between Morphism (and other L2s) and Ethereum.
-
-Because the cost of gas is so expensive on Ethereum, the L1 data fee typically dominates the total cost of a transaction on Morphism.
 
 This fee is based on four factors:
 
@@ -59,7 +51,7 @@ This fee is based on four factors:
 3. A fixed overhead cost denominated in gas. This is currently set to 2100.
 4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.0. (which shows in GasPriceOracle.sol as scaler/1e9 )
 
-Here's the math:
+The mathematical representation is as follows:
 
 ```
 l1_data_fee = l1_base_fee * (tx_data_gas + fixed_overhead) * dynamic_overhead

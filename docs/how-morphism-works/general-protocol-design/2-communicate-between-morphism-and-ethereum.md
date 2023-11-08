@@ -5,25 +5,16 @@ keywords: [morphism,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morphism - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-Although as a Layer 2, Morphism is built on top of Ethereum, these two are still separate and distinct blockchains.
+Although Morphism is a Layer 2 solution built atop Ethereum, it remains as a separate and distinct blockchain. Thus, it’s essential to establish a communication channel between Morphism and Ethereum to facilitate the smooth transfer of assets and messages. The communication can occur in two directions: from Ethereum to Morphism and from Morphism to Ethereum.
 
-Therefore, we need to construct a communication channel for Morphism and Ethereum to allow a smooth transfer of assets and messages.
+## The Basic Idea of the Morphism <=> Ethereum Bridge​
 
-Typically, there are two ways: Ethereum to Morphism and Morphism to Ethereum.
+To transfer an asset between Ethereum and Morphism, a user must lock the asset in the cross-layer bridge. When the lock is confirmed, Morphism mints a Wrapped Token that reflects the value of the locked asset–a process referred to as a "deposit".
 
-Now let's dive into how cross-layer communication are achieved in Morphism.
+Once the minting is complete, a user or intended recipient can claim the asset in Morphism. In the reverse scenario, the bridge can unlock the original asset on Ethereum by burning the Wrapped Token, a process called "withdraw".
 
-## The basic idea of the Morphism <=> Ethereum Bridge
+Furthermore, the bridge’s utility extends beyond asset bridging, as token transfers operate under the same principle as message transfers. The bridge can, therefore, also facilitate cross-layer message bridging, allowing for data payloads to be transported between networks.
 
-To transfer an asset between Ethereum and Morphism, a user must lock the asset in the cross-layer bridge. When the lock is confirmed, Morphism will then mint a Wrapped Token that represents an equivalent value of the locked asset. This process is also called "deposit".
-
-Once the minting process is finished, the user or intended recipient can claim the asset in Morphism.
-
-Conversely, the bridge can also unlock the original asset in Ethereum by burning the Wrapped Token. This process is also called "withdraw".
-
-Furthermore, the bridge will not only be utilized to process asset bridging, as token transfer is essentially the same as message transfers. The bridge can also be utilized to process cross-layer message bridging.
-
-This means that data payloads can be sent from one network to another using the same logic.
 
 
 ## Deposit (L1 to L2 message) 
@@ -32,55 +23,48 @@ This means that data payloads can be sent from one network to another using the 
 
 ### Construct a deposit request through Standard Bridge (Optional)
 
-Any bridge request, ETH bridge, ERC20/721 bridge is essentially a cross-chain message, thus, we need to construct a message first. But most of the time, the message would look the same, especially for ETH & ERC20 token bridge.
+A bridge request, whether it is for ETH, ERC20, or ERC721, is essentially a cross-chain message, which necessitates the initial construction of a message. Generally, the message structure remains consistent, especially for ETH & ERC20 token bridges.
 
-Using a standard bridge will build a typical token bridge message and pass it to ```CrossDomainMessenger```.
-
-Any bridge request, whether it is for an ETH bridge or an ERC20/721 bridge, essentially involves a cross-chain message. Therefore, we need to construct a message first. However, most of the time, the message will appear the same, particularly for an ETH and ERC20 token bridge.
-
-Using a standard bridge will create a typical token bridge message and pass it to the ```CrossDomainMessenger```.
+Employing a standard bridge assembles a conventional token bridge message and relays it to the ```CrossDomainMessenger```
 
 ### Pass the message through CrossDomainMessenger
 
-```CrossDomainMessenger`` are the basic unit of the cross-layer communication.
 
-There are both messgeners on Layer 1 and Layer 2, in the case of deposit, L1 messenger will send message to L2's.
+The ```CrossDomainMessenger`` is the basic unit of cross-layer communication.
+There are messenger contracts on both Layer 1 and Layer 2. For a deposit, the L1 messenger sends a message to the L2 messenger.
 
-The interaction will basically like one contract calling another on Layer 1, so you can create your own message (contract interactions) to perform any form of cross-layer interactions.
+The interaction mirrors a contract call on Layer 1, which means custom messages (contract interactions) can be constructed to perform various types of cross-layer interactions.
 
 ### Execute the message on Layer 2
 
-The cross-domain message will pass to ```MophismPortal``` to generate an event called TransactionDeposited.
+The cross-domain message is delivered to the ```MophismPortal```, which then triggers an event called ```TransactionDeposited```.
 
-Sequencer will monitor this event and include the Layer 2 transaction in its next block.
+The Sequencer will monitor this event and include a Layer 2 transaction in its next block.
 
-Based on the cross-chain message it holds, there will be a Layer 2 executor to interact with L2 messenger to execute the message, including transferring L2 ETH or ERC20 tokens to the receiver.
+A Layer 2 executor, holding the cross-chain message, interacts with the L2 messenger to execute the message, which may include transferring L2 ETH or ERC20 tokens to the recipient.
+
 
 ## Withdraw (L2 -> L1 message) 
 
 ![Withdraw Process](../../../assets/docs/protocol/General/bridge/withdraw.png)
 
-Most of the withdrawal process is simply the reverse of the deposit process, but there are two main differences here.
+The withdrawal process is, in essence, the inverse of the deposit process, yet it has two main differences.
 
 ### Withdraw Tree 
 
-Withdraw means interacting with L1 assets/contracts based on a Layer 2 transaction, so we have to make sure there is actually a Layer 2 transaction that initiates a withdraw request. And this needs to be verifiable on Layer 1.
+The action of withdrawal means interacting with L1 assets/contracts as a result of a Layer 2 transaction. Consequently, it’s imperative to verify the existence of a Layer 2 transaction that triggers a withdrawal request in a manner that is verifiable on Layer 1.
 
-To achieve this, we introduce a withdraw tree, which will record every L2 withdraw transaction into a Merkle tree. Thus, we can leverage the Merkle tree's features to verify if a withdraw request has actually occurred.
+To achieve this, we introduce a structure known as a Withdraw Tree, which records every L2 withdrawal transaction within a Merkel tree. Thus, a Merkel tree's characteristics can be leveraged to confirm the occurrence of a withdrawal request.
 
-The Morphism bridge utilizes a special Merkle Tree called Withdraw Tree to achieve this.
+The term Withdraw Tree refers to an append-only Sparse Merkle Tree (SMT) whose leaf nodes record information on assets being transferred out of the network.
+A leaf within the Withdraw Tree is termed a Withdraw leaf. These withdraw leaves are classified into two types: type 0 for recording asset(s) information and type 1 for recording messaging information.
 
-The term Withdraw Tree refers to an append-only Sparse Merkle Tree (SMT) whose leaf nodes record information about assets being transferred out of the network. 
+A withdraw leaf, in particular, is a Keccak256 hash of the ABI encoded packed structure with the following parameters:
 
-A leaf of a Withdraw Tree is referred to as a Withdraw leaf. Exit leaves are classified into two types: type 0 for recording asset(s) information and type 1 for recording messaging information.
+The Withdraw Tree is instrumental in cataloging withdrawal transactions and ascertaining the legitimacy of withdrawal requests.
+Morphism has pre-deployed a Simple Merkle Tree contract dedicated to constructing the Layer 2 withdraw tree.
 
-An exit leaf, in particular, is a Keccak256 hash of the ABI encoded packed structure with the following parameters:
-
-Morphism pre-deployed a Simple Merkel Tree contract to construct the Layer 2 withdraw tree.
-
-The withdraw tree are used to store withdraw transactions and verify if a withdraw request is valid
-
-This tree have 3 methods:
+This tree incorporates three methods:
 
 1. ```getTreeroot``` - return current tree's root hash
 2. ```appendMessageHash``` - append a new leaf node to the tree
@@ -88,16 +72,14 @@ This tree have 3 methods:
 
 ### Verify the withdraw tree
 
-A withdrawal request on Layer2 will eventually emit an event.
-s
-Our official bridge frontend and SDK provide a service that uses a Tree Prover to construct the corresponding Merkel proof.
+A withdrawal request on Layer 2 will culminate in the emission of an event. Our official bridge frontend and SDK provide a service that uses a Tree Prover to construct the appropriate Merkel proof.
 
-Bridgers need this proof to use ```proveWithdrawTransaction``` in the ```MorphismPortal``` contract to prove their withdrawal request. Once successful, the withdrawal request will be marked as proven and will wait for finalization.
+Bridgers require this proof to invoke ```proveWithdrawTransaction``` within the ```MorphismPortal``` contract to substantiate their withdrawal request. Once validated, the withdrawal request will be marked as proven and await finalization.
 
 ### Challenge Period
 
-Additionally, because of the Optimistic zkEVM design, every transactions(including withdraw transactions) on Layer 2 will need to be submitted to Layer 1 and go through the challenge period to be finalized.
+Additionally, because of the Optimistic zkEVM design, every transaction (including withdrawals) on Layer 2 must be submitted to Layer 1 and face a challenge period before finalization.
 
-This is done to ensure that the Layer 2 state, including the withdrawal transactions, is validated. Additionally, the withdraw tree root, which is used to verify the withdraw request, is also submitted by sequencers once the challenge period, batches, and states have been finalized.
+This process is vital to validate the Layer 2 state, including withdrawal transactions. The withdraw tree root, integral for withdrawal request verification, is also submitted by sequencers once the challenge period, batches, and states have been finalized.
 
-If the withdrawal is proven and finalized, bridgers can then use the "MorphismPortal" to process the withdrawal on Layer 1.
+If the withdrawal is proven and finalized, bridgers may then employ the "MorphismPortal" to process the withdrawal on Layer 1.

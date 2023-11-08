@@ -9,38 +9,36 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 
 1. Submit Transaction
    
-When users initial a transaction, it will be sent to the mempool and waiting for sequencers to process.
+Users-initiated transactions are first sent to the mempool, where they await selection and processing by a sequencer.
+
 
 2. Transaction Consensus
    
-Transactions need to go through consensus within the sequencer network, selected sequencer will propose the block which contains the transaction. Other Sequencer will check the validity of the block hence the the validity of the transaction.
+Within the sequencer network, transactions undergo a consensus process. A selected sequencer proposes a block containing the transaction. Other sequencers then validate this block, effectively verifying the transaction's legitimacy.
 
 3. Transaction Execution
    
-Selected sequencer will order the transactions it pulled from mempool, then executed them with the order, and update the local L2 state.
+The chosen sequencer orders transactions retrieved from the mempool, executes them sequentially, and updates the local L2 state accordingly.
    
 4. Transaction Batching
    
-Selected sequencer will put transactions into blocks, and blocks into batches by the rules
+The sequencer compiles transactions into blocks and subsequently groups these blocks into batches according to specific rules.
    
 5. Batch Sequencing
    
-Batch will eventually be submitted to Layer 1 contract for verfication and data availability.
+These batches are ultimately submitted to the Layer 1 (L1) contract for both verification and to ensure data availability.
    
 6. Batch Verification 
    
-Once the batch pass through the challenge period or get proved by sequencers, the batch and the block/transaction within the batch will be marked with finalized and to be considered part of the L1/L2 state.
+After successfully facing a challenge period and once validated by sequencers, the batches, along with the transactions they contain, are marked as finalized, solidifying their status within the L1 and L2 state.
 
 ## Morphism Transaction Status
 
-### Processing
+### Processing​
+Once submitted, a transaction enters the consensus phase managed by sequencers and is placed into a block pre-execution.
 
-When a user submits a transaction to Sequencers, the transaction will go through the consensus process and be put into a block before they are executed.
+### Confirmed​
+Post-execution by the Sequencer, the transaction’s updated state is local to L2. It is then batched and sent to L1, where it must undergo a challenge period before finalization.
 
-### Confirmed
-
-This means the Sequencer has executed the transactions and updated the local L2 state. Now the transaction will be put into a batch and submitted to Layer 1 and wait for a challenge period before it can be finalized.
-
-### Finalized
-
-Transactions need to go through the challenge period or the corresponding block & batch is verified by a ZK-Proof to be finalized and be part of the finalized Layer 1 & Layer 2 state. 
+### Finalized​
+A transaction is considered finalized after it survives the challenge period or is verified by a Zero-Knowledge Proof (ZK-Proof). Only then is it officially integrated into the final L1 and L2 state.

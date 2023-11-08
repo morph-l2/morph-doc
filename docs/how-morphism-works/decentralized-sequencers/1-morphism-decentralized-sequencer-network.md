@@ -9,67 +9,67 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 
 ### What is sequencer & What does it do?
 
-In classical Layer 1 blockchains, transactions are packaged and processed by miners (or validator nodes in POS) who gain the power to package, sequence, and produce blocks through computational power competition or stake-based elections.
+In traditional Layer 1 blockchain, transactions are packaged and processed by miners in proof-of-work systems or validators nodes in proof-of-stake systems. These entities earn the authority to package, sequence, and produce blocks either through the competitive task of computational mining or via staking-based elections.
 
-However, in current Layer 2 designs, there often exists a single role responsible for all the packaging and sequencing of Layer 2 transactions, and this process lacks competition or staking costs.
+However, many current Layer 2 designs employ a single role, unburdened by competition or staking costs, responsible for packaging and sequencing all Layer 2 transactions. This entity is known as the “sequencer”. Its duties extend beyond sequencing; it is also tasked with generating L2 blocks, periodically committing Layer 2 transactions and state changes to Layer 1, and addressing any potential challenges to its submissions.
 
-This role is known as the sequencer, who not only sequences and generates L2 blocks but also periodically commits Layer 2 transactions and state changes to Layer 1, addressing any potential challenges to the states it submits.
+Centralized sequencers present a challenge due to their sole dominion over the sequencing and packaging of Layer 2 transactions. This monopoly raises concerns, largely stemming from this centralized control.
 
-The main issue with centralized sequencers arises from their monopoly over the power to sequence and package Layer 2 transactions. The problems that arise from this power largely revolve around this characteristic.
 
 ### What are the problems with centralized sequencers?
 
-#### Potential single point of failure
+#### Vulnerability of a Single Point of Failure
 
-The operation of the sequencer directly affects on Layer 2 activity. If the sequencer stops working, it will prevent the processing of transactions from all Layer 2 users, essentially causing Layer 2 to be down.
+The efficient functioning of Layer 2 is intrinsically tied to the operation of the sequencer. If the sequencer stops working, transactions from all Layer 2 users will not be processed, effectively bringing down Layer 2 operations. The problem is magnified when a single entity controls the sequencer. Should the entity fail, the entirety of the Layer 2 is paralyzed, rendering the system vulnerable to a single point of failure. Therefore, centralized sequencers pose a significant risk to the stability of Layer 2.
 
-When a single entity is running the sequencer, any failure on their part will lead to the entire Layer 2 being paralyzed, resulting in a single point of failure. Therefore, centralized sequencers pose significant potential risks to the operation of Layer 2. 
+#### Excessive Transaction Censorship
 
-#### Excessive transaction censorship
+Centralized sequencers have the ability to reject user-submitted transactions, rendering them unprocessable — a blatant form of transaction censorship. Imagine a scenario where a centralized Layer 2 deliberately blocks transactions involving its governance tokens, which could spur panic and selling among users. These actions are entirely feasible for centralized sequencers.
 
-Centralized sequencers possess the authority to reject user-submitted transactions, causing these transactions to be unprocessable, essentially constituting a form of censorship. Imagine a scenario where a centralized Layer 2 refuses to process any transactions involving their governance tokens (even though this might cause more panic and selling among users). This is entirely feasible for centralized sequencers.
+Some solutions allow users to submit their intended transactions directly on Layer 1. However, this process is time-consuming, often taking several hours, and burdens users with equivalent Layer 1 gas fees. Therefore, this alternative does not fundamentally solve the problem.
 
-In some schemes, users can submit the transactions they intend to execute on Layer 1, but this process often takes several hours and incurs equivalent Gas Fees on Layer 1. Therefore, this does not fundamentally solve the problem.
-
-On the other hand, with decentralized sequencers, even if a single sequencer refuses to include a transaction, users can still submit it to other sequencers, and the content of the next block is ultimately determined through consensus, without any single entity being able to censor transactions according to their own interests. 
-
-#### Monopoly on MEV
-
-Since the sequencer has the freedom to order (or "sequence") the received transactions, it effectively monopolizes all the MEV (Miner Extractable Value). In the case of a single centralized sequencer, users will have to bear any potential losses caused by its control over MEV, relying on an additional assumption of trust in the sequencer.
-Decentralized sequencers, on the other hand, introduce a game among multiple parties to vie for MEV, eliminating the monopoly status of a single sequencer and reducing the impact of uncontrolled MEV on users.
+In a decentralized sequencer framework on the other hand, should one sequencer decline a transaction, users can still relay it to alternative sequencers. The content of the next block is ultimately determined through consensus, ensuring no single entity can censor transactions based on personal interests.
 
 
-## What's Morphism's solution?
+#### Monopoly Over MEV
 
-Unlike most Rollup project，Morphism has decentralizing sequencer network setup at the beginning. 
-When designing this system, we followed the following principles.
+Because the sequencer can determine the order (or "sequence") of received transactions, it effectively has a monopoly over all Miner Extractable Value (MEV). In this scenario, users must bear any potential losses incurred by the sequencer’s exclusive control over MEV, necessitating an additional and unwarranted layer of trust in the sequencer.
 
-### The Principles
+Decentralized sequencers introduce a competitive dynamic among multiple entities aiming for MEV. This competition eliminates the monopoly of any single sequencer, mitigating the adverse effects of unchecked MEV on users.
 
 
-#### Efficiency
-Morphism is first and foremost an Ethereum scaling solution, aiming to improve efficiency and reduce costs. Our solution must ensure fast execution and confirmation of transactions at the Layer 2 level while maintaining decentralization to the maximum extent possible.
 
-#### Layer 1 Level Safety
+## What's Morphism's Approach to Decentralized Sequencers?
 
-Merely decentralizing the Sequencer at the Layer 2 level does not fully address the potential security implications of a single Sequencer. In a centralized design, Layer 1 contracts and other Layer 2 nodes (such as Layer 2 validation nodes and full nodes) can only obtain blocks and state information from a single Sequencer.
+Morphism stands apart from other Rollup projects due to the emphasis on establishing a decentralized sequencer network right from inception. This design was guided by the following core principles:
 
-Even after decentralizing the Sequencer, there may still be issues because Layer 1 contracts and other Layer 2 nodes do not have an effective way to confirm that the information they are synchronizing has undergone consensus. The Sequencer may still propagate incorrect information to other nodes.
+Morphism stands apart from other Rollup projects due to the emphasis on establishing a decentralized sequencer network right from inception. This design was guided by the following core principles:
 
-Our design requires Layer 1 to obtain data and state from multiple independent roles (especially roles outside of the Sequencer) and be able to validate this data against a unified standard to determine if it has undergone consensus within the Sequencer network.
+#### Efficiency: 
 
-#### Scalable and Manageable
-  
-The design of the Sequencer network should be easy to maintain, expand, and upgrade. When a functionality in the network needs maintenance, it should not affect the normal operation of other functionalities. At the same time, when new and more efficient solutions emerge, the Sequencer network should have sufficient flexibility to be upgraded, allowing the entire system to stay updated.
- 
-#### Solution based on the principles：
-Based on the above design principles, the design of the sequencer network involves the following key points:
-1. Modular design, where the components are independent of each other and can be upgraded or replaced quickly.
-2.  For L2 consensus, the BLS aggregated signatures of the sequencers in the network are used to identify the consensus result. The L1 contract verifies the consensus existence based on the sequencer set it maintains.
-3. The sequencers use a Byzantine Fault Tolerant (BFT) consensus algorithm and process to ensure efficiency and security.
+Morphism is first and foremost an Ethereum scaling solution, focused on improved efficiency and cost reduction. Our solution must guarantee fast execution and transaction confirmation at Layer 2 while maintaining the highest possible level of decentralization.
+
+#### Scalable and Manageable: 
+
+The sequencer network’s design prioritizes ease of maintenance, expansion, and updating. If one network functionality requires maintenance, it should not disrupt the operation of other functionalities. In addition, the sequencer network should be adaptable and easily upgradable as new and more efficient solutions emerge.
+
+### Solutions Formulated on These Principles
+
+With these principles at the forefront, Morphism’s sequencer network design includes:
+
+*Modularity*: The structure emphasizes modular components that are loosely connected, allowing for swift upgrades or replacements. 
+
+*Byzantine Fault Tolerant (BFT) Consensus*: Sequencers employ a BFT consensus for L2 block generation.
+
+*BLS Signature for Batch Signing*: Sequencers sign a collective of L2 blocks using the BLS signature method. Then the L1 contract verifies this L2 consensus through the BLS signature.
+
+:::Tip
+Why BLS signatures?
+Employing Ethereum's existing basic signature algorithm, such as ECDSA, would introduce a cost dilemma. This arises given that the signature data must be simultaneously committed to the Layer1 contract, incurring the associated costs. As the set of sequencers expands, the cost will rise proportionately. By opting for the BLS aggregate signature, costs remain consistent even as the sequencer count grows.
+:::
 
 :::tip
-**Why BLS signature?** 
+Why BLS signature?
 
 If we use the current basic signature algorithm, such as ECDSA, in Ethereum, there will be a problem of excessive cost. This issue arises because the signature data needs to be submitted to the Layer 1 contract and requires payment of the corresponding cost. As the number of validators increases, this cost will also increase proportionally. By using BLS signatures, the cost of uploading signatures can be maintained at a constant level, unaffected by the gradual growth of the sequencer's quantity.
 :::
@@ -78,53 +78,54 @@ If we use the current basic signature algorithm, such as ECDSA, in Ethereum, the
 
 ### Architecture
 
-Here is a brief architecture of the Morphism decentralized sequencing network.
+Here is a simple illustration of the Morphism decentralized sequencing network architecture.
+
+![Sequencer Network Archi](../../../assets/docs/protocol/Dese/Consensus.png)
 
 #### Sequencer Set Selection
 
 A complete Morphism decentralized sequencer network consists of two parts:
 
-- Sequencer Set
-- Sequencer Staking Contract
+- **Sequencer Set** : This forms the core group that provides sequencing services
+- **Sequencer Staking Contract**: This contract facilitates the selection of the sequencer set via an election process. 
+- 
+Through the sequencer staking contract, members are elected into the sequencer set, where they collaboratively provide services for the Morphism network. Periodically, the election results are synchronized to the Layer 1 Rollup contract. This synchronized data is utilized to obtain the BLS aggregate signatures of sequencer network participants for comparison and verification.
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/dese1.png)
+### Layer 2 Blocks Generation
 
-The sequencer staking contract will determine the composition of the sequencer set through elections, and the selected sequencers will collectively provide services for the network.
+Given Morphism's modular design, each sequencer operates a consensus client that runs BFT to communicate with other sequencers.
 
-Simultaneously, the election results will be periodically synchronized to the Layer 1 Rollup contract, which can be used to obtain BLS aggregate signatures of sequencer network participants for comparison and verification.
+![Block Generation](../../../assets/docs/protocol/Dese/blockCon.png)
 
-#### Produce Layer 2 Blocks
-In particular, leveraging Morphism's modular design, each Sequencer will run a consensus client implementing BFT to communicate with other Sequencers.
+Following the BFT consensus protocol, the selected sequencer extracts transactions from the mempool, constructs blocks, and synchronizes these blocks with other sequencers to undergo verification and voting. The end result is the generation of new Layer 2 blocks.
 
-![2](../../../assets/docs/protocol/Dese/consensusBlock.png)
+### Batching
 
-The Sequencer will follow the BFT consensus process. The selected sequencer will extract transactions from the mempool to construct blocks and synchronize these blocks with other sequencers for verification and voting. Ultimately, it will generate new Layer 2 blocks.
+Considering the costs of uploading to and validating signatures on Layer 1, sequencers will sign a batch of blocks with BLS signatures at designated checkpoints.
 
-#### Generate Batch
+![BlockSign](../../../assets/docs/protocol/Dese/batchSign.png)
 
-Considering the cost of uploading signatures to Layer 1 and the cost of validating signatures on Layer 1, sequencers will perform the corresponding BLS signatures on multiple blocks, i.e., a batch, at designated checkpoints to ensure that the scalability goal is not compromised.
+Post-signing, the designated sequencer forwards the collective batch of blocks to Layer 1 through its batch submitter component.
 
-Once the signing is completed, the selected sequencer will submit these blocks as a batch to Layer 1 through its batch submitter component.
+###Consensus Verification
 
-For more detail on how the batch is generated, please refer to the [rollup](../../how-morphism-works/general-protocol-design/1-rollup.md) section.
+The selected sequencer must submit to the Layer 1 contract:
 
-#### Consensus verification
+- The aggregated BLS signatures
+- The batch of transactions
+- The consensus-determined state 
 
-The Sequencer responsible for constructing blocks needs to submit the aggregated BLS signatures, transaction batch, and state acquired from consensus to the Layer 1 contract. The Layer 1 contract will verify this signature to confirm the transaction's consensus.
+The Layer 1 contract will verify the submitted signature to confirm the transaction's consensus.
 
-Simultaneously, other participants in Layer 2 networks, such as full nodes and archival nodes, can also verify transactions by validating this signature when synchronizing transactions through consensus.
-
-### Wrap up
+## Wrap up
 
 - Morphism builds a native centralized sequencer network based on BFT consensus.
 - Through protocol and network optimization, Morphism maximizes the scalability of Ethereum while ensuring decentralization.
-- Leveraging BLS signatures, other participants in Layer 1 and Layer 2 can effectively verify the consensus results of Layer 2, ensuring that the security provided by the Sequencer Network is at Layer 1 level.
+- Based on BLS signatures, other participants in Layer 1 and Layer 2 can effectively verify the consensus results of Layer 2, ensuring the security provided by the sequencer network is confirmable at the Layer 1 level.
 
-### What's on the Roadmap?
+## Roadmap
 
-- Decentralized Sequencer Network Live
-
-- Open election of sequencer network
-
-- Shared Sequencer Network
-
+**Stage 1**: Close beta test on testnet
+**Stage 2**: Decentralized sequencer network live on mainnet
+**Stage 3**: Open election of sequencer set
+**Stage 4**: Share Morphism's sequencer network with other rollups

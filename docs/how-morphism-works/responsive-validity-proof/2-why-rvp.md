@@ -6,7 +6,7 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 ---
 
 :::tip
- This part is also published as Medium post, [check here](https://medium.com/@Morphism_EN/responsive-validity-proof-optimistic-zk-rollup-7838fe87dbcc) if you want to view in Medium.
+ This part is also published as Medium post, [check here](https://medium.com/@Morphism_xyz/responsive-validity-proof-optimistic-zk-rollup-5ce4ab71fa4b) if you want to view it in Medium.
 
 - Responsive Validity Proof will be referred to as RVP in the following text.
 - The sequencer mentioned in the text is equivalent to the rollup operator.
@@ -32,11 +32,11 @@ When a new state submitted by the sequencer is challenged, L1 executes all corre
 
 In the case of fraudulent behavior, non-interactive fraud proofs require L1 to fully re-execute the transactions in the relevant batch, resulting in significant high gas costs.
 
-In addition, because L2 and L1 are not completely equivalent in some cases, some transactions may result in different outcomes when executed in L2 and L1, or L1 may not be able to execute L2 transactions, which poses many problems for actual implementations.
+In addition, because L2 and L1 are not completely equivalent in some cases, some transactions may result in different outcomes when executed in L2 and L1, or L1 may not be able to execute L2 transactions, which pose many problems for actual implementations.
 
 Optimism (OP) once used this approach to implement fraud proof, but it was abandoned later due to the above issues, which is one of the reasons why the 1.3B TVL L2 network runs without an available fraud proof system.
 
-2. **Interactive fraud proof**
+1. **Interactive fraud proof**
 
 To address the issues with non-interactive fraud proofs, multi-round interactive fraud proofs have been introduced. The core idea is to determine the specific instruction execution that caused incorrectness (in the EVM, transaction execution is divided into multiple EVM instructions to complete state transitions) through multiple rounds of interaction between the sequencer and the challenger and then confirm whether there is fraud by executing the corresponding instructions on L1.
 
@@ -67,7 +67,7 @@ Of course, the specific process is much more complicated than described here. In
 1. Shorten the challenge period. Under the matching crypto economics design, RVP can shorten the challenge period from 7 days to 1-3 days.
 2. Greatly reduce the L2 submission cost. Based on validity proof, L2 does not need to include most transaction bytes.
 3. More friendly to challengers. In addition to basic maintenance and identification of L2 status, only the responsibility of triggering the challenge needs to be assumed, sequencers need to prove they are right (by generating and verifying the corresponding ZK-proof).
-4. Regarding architectural design, a seamless transition to complete ZK-rollup is super easy. The only necessary change is to adjust the sequencer's ZK-proofs submission methods from responsive to active.
+4. Regarding architectural design, a seamless transition to complete ZK-rollup is super easy. The only necessary change is to adjust the sequencer's ZK-proof submission methods from responsive to active.
 
 ### How can RVP shorten the challenge period of optimistic rollup?
 
