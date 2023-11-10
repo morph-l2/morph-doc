@@ -49,7 +49,7 @@ The state verification process finalizes and settles Layer 2 transactions and st
 
 #### Rollup - Data Avaibility
 
-![Rollup](../../assets/docs/protocol/General/rollup/Rollup.png)
+![Rollup](../../assets/docs/protocol/General/rollup/rollup.png)
 
 [Rollup](../how-morphism-works/general-protocol-design/1-rollup.md) is the process where Layer 2 submits L2 transactions and states to Layer 1.
 

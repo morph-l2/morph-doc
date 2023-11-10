@@ -15,7 +15,7 @@ Within [Morphism's architecture](../2-morphism-modular-design.md), this Rollup p
 
 ### An overview of Morphism Rollup Design:
 
-![rollup](../../../assets/docs/protocol/General/rollup/Rollup.png)
+![rollup](../../../assets/docs/protocol/General/rollup/rollup.png)
 
 
 ## Constructing the Batch​
