@@ -170,7 +170,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://medium.com/@Morphism_xyz',
+                to: 'https://medium.com/@morphlayer2',
               },
             ],
           },
