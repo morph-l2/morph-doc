@@ -27,7 +27,7 @@ L2 contract references.
 
 #### Defined in
 
-[src/interfaces/types.ts:56](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L56)
+[src/interfaces/types.ts:56](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L56)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:51](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L51)
+[src/interfaces/types.ts:51](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L51)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:52](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L52)
+[src/interfaces/types.ts:52](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L52)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:53](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L53)
+[src/interfaces/types.ts:53](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L53)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:50](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L50)
+[src/interfaces/types.ts:50](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L50)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:47](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L47)
+[src/interfaces/types.ts:47](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L47)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:48](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L48)
+[src/interfaces/types.ts:48](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L48)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:49](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L49)
+[src/interfaces/types.ts:49](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L49)
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:54](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L54)
+[src/interfaces/types.ts:54](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L54)
 
 ___
 
@@ -117,4 +117,4 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:55](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L55)
+[src/interfaces/types.ts:55](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L55)

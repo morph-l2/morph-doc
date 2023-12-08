@@ -1,8 +1,8 @@
-[@morphism/sdk](../README) / [Exports](../modules) / ProvenWithdrawal
+[@morph-l2/sdk](../README) / [Exports](../modules) / ProvenWithdrawal
 
 # Interface: ProvenWithdrawal
 
-ProvenWithdrawal in MorphismPortal
+ProvenWithdrawal in MorphPortal
 
 ## Table of contents
 
@@ -20,7 +20,7 @@ ProvenWithdrawal in MorphismPortal
 
 #### Defined in
 
-[src/interfaces/types.ts:255](https://github.com/morphism-labs/sdk/blob/97c4394/src/interfaces/types.ts#L255)
+[src/interfaces/types.ts:255](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L255)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:253](https://github.com/morphism-labs/sdk/blob/97c4394/src/interfaces/types.ts#L253)
+[src/interfaces/types.ts:253](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L253)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:254](https://github.com/morphism-labs/sdk/blob/97c4394/src/interfaces/types.ts#L254)
+[src/interfaces/types.ts:254](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L254)

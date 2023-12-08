@@ -1,8 +1,8 @@
-[@morphism/sdk](../README) / [Exports](../modules) / OEContracts
+[@morph-l2/sdk](../README) / [Exports](../modules) / OEContracts
 
 # Interface: OEContracts
 
-Represents Morphism contracts, assumed to be connected to their appropriate
+Represents Morph contracts, assumed to be connected to their appropriate
 providers and addresses.
 
 ## Table of contents
@@ -20,7 +20,7 @@ providers and addresses.
 
 #### Defined in
 
-[src/interfaces/types.ts:64](https://github.com/morphism-labs/sdk/blob/97c4394/src/interfaces/types.ts#L64)
+[src/interfaces/types.ts:64](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L64)
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 #### Defined in
 
-[src/interfaces/types.ts:65](https://github.com/morphism-labs/sdk/blob/97c4394/src/interfaces/types.ts#L65)
+[src/interfaces/types.ts:65](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L65)

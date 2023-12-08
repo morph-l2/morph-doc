@@ -19,4 +19,4 @@ CrossChainMessage
 
 #### Defined in
 
-[src/interfaces/types.ts:230](https://github.com/morph-l2/sdk/blob/97c4394/src/interfaces/types.ts#L230)
+[src/interfaces/types.ts:230](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L230)
