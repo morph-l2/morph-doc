@@ -1,5 +1,5 @@
 ---
-title: Morphism's decentralized sequencer network
+title: Morph's decentralized sequencer network
 lang: en-US
 ---
 
@@ -37,15 +37,15 @@ Since the sequencer has the freedom to order (or "sequence") the received transa
 Decentralized sequencers, on the other hand, introduce a game among multiple parties to compete for MEV, eliminating the monopoly status of a single sequencer and reducing the impact of uncontrolled MEV on users.
 
 
-## What's Morphism's solution?
+## What's Morph's solution?
 
-Unlike most Rollup project，Morphism have decentralizing sequencer network setup at the beginning. 
+Unlike most Rollup project，Morph have decentralizing sequencer network setup at the beginning. 
 When designing this system, we followed the following principles.
 
 ### The principles
 
 #### Scalability on the essence 
-Morphism is first and foremost an Ethereum scaling solution. The solution we are seeking aims to ensure fast execution and confirmation of transactions at the Layer 2 level while preserving decentralization to the greatest extent possible.
+Morph is first and foremost an Ethereum scaling solution. The solution we are seeking aims to ensure fast execution and confirmation of transactions at the Layer 2 level while preserving decentralization to the greatest extent possible.
 
 #### Layer 1 Level Safety 
 Simply decentralizing the sequencer at Layer 2 level does not completely solve the potential security impacts of a single sequencer. In a centralized design, Layer 1 contracts and other Layer 2 nodes (such as Layer 2 validator and full nodes) can only obtain block and state information from a single sequencer.
@@ -71,11 +71,11 @@ By using BLS signatures, the cost of uploading signatures can be maintained at a
 
 ### Architecture
 
-Here is a brief architecture of the Morphism decentralized sequencing network.
+Here is a brief architecture of the Morph decentralized sequencing network.
 
 #### Sequencer Set Selection
 
-A complete Morphism decentralized sequencer network consists of two parts:
+A complete Morph decentralized sequencer network consists of two parts:
 
 - Sequencer Set
 - Sequencer Staking Contract
@@ -87,9 +87,9 @@ The sequencer staking contract will determine the composition of the sequencer s
 At the same time, the election results will be periodically synchronized to the Layer 1 Rollup contract, which can be used to obtain BLS aggregate signatures of sequencer network participants for comparison and verification.
 
 #### Produce Layer 2 Blocks
-In particular, based on Morphism's modular design, each Sequencer will run a consensus client that runs BFT to communicate with other Sequencers.
+In particular, based on Morph's modular design, each Sequencer will run a consensus client that runs BFT to communicate with other Sequencers.
 
-![Sequencer Network Archi](../../../morphism-doc/assets/docs/protocol/Dese/consensusBlock.png)
+![Sequencer Network Archi](../../../morph-doc/assets/docs/protocol/Dese/consensusBlock.png)
 
 The Sequencer will follow the BFT consensus process. The selected sequencer will extract transactions from the mempool to construct blocks and synchronize the blocks with other sequencers for verification and voting. Ultimately, it will generate new Layer 2 blocks.
 
@@ -109,8 +109,8 @@ At the same time, other participants in Layer 2 networks, such as full nodes and
 
 ### Wrap up
 
-- Morphism builds a native centralized sequencer network based on BFT consensus.
-- Through protocol and network optimization, Morphism maximizes the scalability of Ethereum while ensuring decentralization.
+- Morph builds a native centralized sequencer network based on BFT consensus.
+- Through protocol and network optimization, Morph maximizes the scalability of Ethereum while ensuring decentralization.
 - Based on BLS signatures, other participants in Layer 1 and Layer 2 can effectively verify the consensus results of Layer 2, ensuring that the security provided by the Sequencer Network is at Layer 1 level.
 
 ### What's on the Roadmap?

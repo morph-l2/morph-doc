@@ -6,31 +6,31 @@ const FeatureList = [
   {
     title: 'Quick Start',
     // url: '/docs/quick start/quickintro',
-    svg: '/img/index/QuickStart.svg',
+    svg: '/img/index/QuickStart.png',
     description: (
       <>
-        A go-to guide on how to easily start to experience Morphism ecosystem.
+        A go-to guide on how to easily start to experience Morph ecosystem.
       </>
     ),
   },
 
   {
-    title: 'How Morphism works',
-    url: '/docs/how-morphism-works/intro',
-    svg: '/img/index/HowMorphismWorks.svg',
+    title: 'How Morph works',
+    url: '/docs/how-morph-works/intro',
+    svg: '/img/index/HowMorphWorks.png',
     description: (
       <>
-        General explaination of what makes morphism different from others
+        General explaination of what makes morph different from others
       </>
     ),
   },
   {
-    title: 'Developer Docs',
-    // url: '/docs/Build on Morphism/devintro',
-    svg: '/img/index/DeveloperDocs.svg',
+    title: 'Build on Morph',
+    // url: '/docs/Build on Morph/devintro',
+    svg: '/img/index/BuildOnMorph.png',
     description: (
       <>
-        Everything you need to know on how to launch your dapp on Morphism
+        Everything you need to know on how to launch your dapp on Morph
       </>
     ),
   },

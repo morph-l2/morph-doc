@@ -7,20 +7,20 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 
-  title: 'Morphism docs – The Optimistic zkEVM Scaling Solution docs',
+  title: 'Morph docs – The Optimistic zkEVM Scaling Solution docs',
   tagline: '',
-  favicon: 'https://www.morphism.xyz/favicon.ico',
+  favicon: 'https://www.morphl2.io/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.morphism.xyz',
+  url: 'https://docs.morphl2.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'morphism labs', // Usually your GitHub org/user name.
-  projectName: 'morphism docs', // Usually your repo name.
+  organizationName: 'morph labs', // Usually your GitHub org/user name.
+  projectName: 'morph docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -43,14 +43,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/morphism-labs/morphism-doc/blob/main',
+            'https://github.com/morph-l2/morph-doc/tree/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/morphism-labs/morphism-doc/blob/main',
+            'https://github.com/morph-l2/morph-doc/tree/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,7 +64,7 @@ const config = {
     ({
       metadata: [{
         name: 'keywords',
-        content: 'Morphism,EVM-equivalent,Optimistic,zkEVM'
+        content: 'Morph,EVM-equivalent,Optimistic,zkEVM'
       }, {
         name: 'google-site-verification',
         content: 'mDvOrPPWpVMPyzZmqjzK2nerPAPuWXsSOthN_2eQO20'
@@ -76,13 +76,13 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: '27fd51373bda15bdf1891fa3300527c8',
   
-        indexName: 'morphism_docs',
+        indexName: 'morph_docs',
   
         // Optional: see doc section below
         contextualSearch: true,
   
         // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        // externalUrlRegex: 'morphism\\.xyz|morphism\\.xyz',
+        // externalUrlRegex: 'morph\\.xyz|morph\\.xyz',
   
         // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
         replaceSearchResultPathname: {
@@ -108,34 +108,34 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'Morphism Doc Logo',
-          src: 'img/index/logo_dark.svg',
-          srcDark: 'img/index/logo_light.svg',
+          alt: 'Morph Doc Logo',
+          src: 'img/index/logo_light.png',
+          srcDark: 'img/index/logo_dark.png',
         },
         items: [
         /*
           {
             type: 'doc',
             position: 'right',
-            docId: 'quick-start/welcome-to-morphism',
+            docId: 'quick-start/welcome-to-morph',
             label: 'Quick Start',
           },
         */
           {
             type: 'doc',
             position: 'right',
-            docId: 'how-morphism-works/intro',
-            label: 'How Morphsim works',
+            docId: 'how-morph-works/intro',
+            label: 'How Morph works',
           },
           /*
           {
             type: 'doc',
             position: 'right',
-            docId: 'build-on-morphism/intro',
-            label: 'Build on Morphism',
+            docId: 'build-on-morph/intro',
+            label: 'Build on Morph',
           },
           */
-          // {label: 'Website', position: 'left', href: 'https://www.morphism.xyz',},
+          // {label: 'Website', position: 'left', href: 'https://www.morphl2.io',},
           /*
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -148,11 +148,11 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Morphism',
+            title: 'Morph',
             items: [
               {
                 label: 'About',
-                to: 'https://www.morphism.xyz/',
+                to: 'https://www.morphl2.io/',
               },
             ],
           },
@@ -161,7 +161,7 @@ const config = {
             items: [
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/Morphism_xyz',
+                href: 'https://twitter.com/Morph_xyz',
               },
             ],
           },
@@ -170,12 +170,12 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://medium.com/@Morphism_xyz',
+                to: 'https://medium.com/@Morph_xyz',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Morphism. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Morph. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,

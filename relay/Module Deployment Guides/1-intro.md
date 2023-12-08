@@ -1,5 +1,5 @@
 ---
-title: Be part of the Morphism
+title: Be part of the Morph
 lang: en-US
 ---
 
