@@ -1,16 +1,16 @@
 ---
-title: Bridge into Morphism
+title: Bridge into Morph
 lang: en-US
 ---
 
-### Bridge from Sepolia to Morphism Testnet (Deposit)
+### Bridge from Sepolia to Morph Testnet (Deposit)
 
 
 TBD
 
 
 
-### Bridge from Morphism Testnet to Sepolia (Withdraw)
+### Bridge from Morph Testnet to Sepolia (Withdraw)
 
 
 TBD

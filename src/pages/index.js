@@ -13,10 +13,12 @@ function HomepageHeader() {
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <img src={`/img/index/banner_${colorMode}.svg`} alt="banner" />
+      <img src={`/img/index/morphbanner_${colorMode}.svg`} alt="banner" />
+      {/*
       <div className={clsx(styles.headerContainer)}>
         <img src={`/img/index/header_${colorMode}.svg`} alt="banner" />
       </div>
+  */}
     </header>
   );
 }
@@ -26,7 +28,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Morphism is a secure, decentralized, and EVM-equivalent rollup that is cost-efficient and high-performing.">
+      description="Morph is a secure, decentralized, and EVM-compatiable rollup that is cost-efficient and high-performing.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -3,22 +3,22 @@ title: Bridge
 lang: en-US
 ---
 
-## Deposit from Sepolia to Morphism Testnet
+## Deposit from Sepolia to Morph Testnet
 
 ### Instructions
 
 1. Switch to the Sepolia network in your wallet. Click Connect wallet, select MetaMask, and approve the connection in the wallet itself if asked.
    
-2. Make sure that Sepolia is listed at the top and Morphism Testnet is at the bottom. If not, click the "↓" button to switch their positions. 
+2. Make sure that Sepolia is listed at the top and Morph Testnet is at the bottom. If not, click the "↓" button to switch their positions. 
 
 3. Select the token that you want to transfer. If this is your first time transferring an ERC20 token, you need to approve the Sepolia Bridge contract to access your ERC20 token. 
 4. Click the Send button to initiate the deposit. A window will pop up asking for confirmation of the transfer transaction.
    
 5. Once the transfer transaction is sent and confirmed, the token will be deducted from your Sepolia wallet address.
    
-### When will the token arrive at Morphism Testnet  ?
+### When will the token arrive at Morph Testnet  ?
 
-The token transfer from Sepolia to Morphism Testnet may take 8 to 14 minutes (awaiting block to become Safe on Sepolia) before it appears in your Morphism wallet. To check the progress of deposit transactions, follow these steps:
+The token transfer from Sepolia to Morph Testnet may take 8 to 14 minutes (awaiting block to become Safe on Sepolia) before it appears in your Morph wallet. To check the progress of deposit transactions, follow these steps:
 
 1. Click your wallet address at the top-right corner of the Bridge web app.
    
@@ -34,16 +34,16 @@ It will open the Transaction Details page in the exploer. You can see this trans
 
 
 
-3. Go back to the Bridge app. Once your transaction status shows success on L2, you may see the funds in your Morphism L2 wallet and a transaction hash:
+3. Go back to the Bridge app. Once your transaction status shows success on L2, you may see the funds in your Morph L2 wallet and a transaction hash:
    
 
 
 
 
-## Withdraw from Morphism Testnet to Sepolia
+## Withdraw from Morph Testnet to Sepolia
 
-To withdraw funds from Morphism Testnet, follow these steps:
-1. Initiate the withdrawal on Morphism Testnet.
+To withdraw funds from Morph Testnet, follow these steps:
+1. Initiate the withdrawal on Morph Testnet.
 2. Wait for the withdrawals root to be published on L1 (Sepolia). This usually takes a few minutes, but it may take longer during outages.
 3. Prove the withdrawal.
 4. Wait for the verification challenge period, which lasts for seven days from the time the withdrawal is proven on L1 (Sepolia).
@@ -60,7 +60,7 @@ To withdraw funds from Morphism Testnet, follow these steps:
 ### Waiting for the verification challenge period
 Click your address in the top right corner. Click "Transactions" and then "Withdrawals". This will display a list of your recent withdrawals and their status.
 
-You can search for the transaction hash on Morphism Explorer. Click the L1 State Root Submission Tx to see when the transaction was written to L1 （Sepolia）.
+You can search for the transaction hash on Morph Explorer. Click the L1 State Root Submission Tx to see when the transaction was written to L1 （Sepolia）.
 
 
 ### Claim the withdrawal

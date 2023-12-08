@@ -1,8 +1,8 @@
 ---
 title: Faucet
 lang: en-US
-keywords: [morphism,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
-description: Upgrade your blockchain experience with Morphism - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
+keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
 
@@ -10,7 +10,7 @@ description: Upgrade your blockchain experience with Morphism - the secure decen
 
 To interact with our testnet, you first need to receive testnet ETH on sepolia. 
 
-Then you may bridge from sepolia Testnet to morphism testnet. 
+Then you may bridge from sepolia Testnet to morph testnet. 
 
 Here are a few sepolia faucet apps:
 
