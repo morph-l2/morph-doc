@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/cross-chain-messenger.ts:64](https://github.com/morph-l2/sdk/blob/97c4394/src/cross-chain-messenger.ts#L64)
+[src/cross-chain-messenger.ts:64](https://github.com/morph-l2/sdk/tree/97c4394/src/cross-chain-messenger.ts#L64)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/cross-chain-messenger.ts:65](https://github.com/morph-l2/sdk/blob/97c4394/src/cross-chain-messenger.ts#L65)
+[src/cross-chain-messenger.ts:65](https://github.com/morph-l2/sdk/tree/97c4394/src/cross-chain-messenger.ts#L65)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/cross-chain-messenger.ts:66](https://github.com/morph-l2/sdk/blob/97c4394/src/cross-chain-messenger.ts#L66)
+[src/cross-chain-messenger.ts:66](https://github.com/morph-l2/sdk/tree/97c4394/src/cross-chain-messenger.ts#L66)

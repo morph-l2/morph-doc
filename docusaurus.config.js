@@ -161,7 +161,7 @@ const config = {
             items: [
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/Morph_xyz',
+                href: 'https://twitter.com/Morphl2',
               },
             ],
           },
@@ -170,7 +170,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://medium.com/@Morph_xyz',
+                to: 'https://medium.com/@Morphl2',
               },
             ],
           },
