@@ -13,7 +13,7 @@ function HomepageHeader() {
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <img src={`/img/index/Banner_${colorMode}.svg`} alt="banner" />
+      <img src={`/img/index/morphbanner_${colorMode}.svg`} alt="banner" />
       {/*
       <div className={clsx(styles.headerContainer)}>
         <img src={`/img/index/header_${colorMode}.svg`} alt="banner" />
