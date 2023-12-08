@@ -13,7 +13,7 @@ By empowering developers with tools like autonomous agents and zkDID, Morph cham
 1. [What is & Why Responsive Validity Proof?](https://docs.morphl2.io/docs/how-morph-works/responsive-validity-proof/why-rvp)
 
 
-2. [How Does RVP Run in Morph?](https://medium.com/@Morphl2/how-does-rvp-run-in-morph-6025233a21cc)
+2. [How Does RVP Run in Morph?](https://medium.com/@Morphism_xyz/how-does-rvp-run-in-morph-6025233a21cc)
 
 ## Learn more
 
@@ -21,7 +21,7 @@ Website: https://www.morphl2.io/
 
 Twitter: https://twitter.com/Morphl2
 
-Medium: [Morph – Medium](https://medium.com/@Morphl2)
+Medium: [Morph – Medium](https://medium.com/@Morphism_xyz)
 
 Telegram: https://t.me/morphoffical
 
