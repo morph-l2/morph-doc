@@ -21,7 +21,7 @@ Website: https://www.morphl2.io/
 
 Twitter: https://twitter.com/Morphl2
 
-Medium: [Morph – Medium](https://medium.com/@Morphl2)
+Medium: [Morph – Medium](https://medium.com/@morphlayer2)
 
 Telegram: https://t.me/morphoffical
 

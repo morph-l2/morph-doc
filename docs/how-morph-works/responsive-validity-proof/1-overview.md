@@ -1,7 +1,7 @@
 ---
 title: Overview
 lang: en-US
-keywords: [morphp,layer2,validity proof,optimstic zk-rollup]
+keywords: [morph,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 

@@ -113,6 +113,13 @@ const config = {
           srcDark: 'img/index/logo_dark.png',
         },
         items: [
+
+          {
+            type: 'doc',
+            position: 'right',
+            docId: 'about-morph/overview-of-morph',
+            label: 'About Morph',
+          },
         /*
           {
             type: 'doc',
@@ -161,7 +168,7 @@ const config = {
             items: [
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/Morph_xyz',
+                href: 'https://twitter.com/Morphl2',
               },
             ],
           },
@@ -170,7 +177,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: 'https://medium.com/@Morph_xyz',
+                to: 'https://medium.com/@morphlayer2',
               },
             ],
           },

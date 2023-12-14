@@ -4,6 +4,17 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
+    title: 'About Morph',
+    url: '/docs/about-morph/overview-of-morph',
+    svg: '/img/index/AboutMorph.png',
+    description: (
+      <>
+        Get a quick overview of what is Morph and what our mission is.
+      </>
+    ),
+  },
+  
+  {
     title: 'Quick Start',
     // url: '/docs/quick start/quickintro',
     svg: '/img/index/QuickStart.png',
@@ -24,6 +35,8 @@ const FeatureList = [
       </>
     ),
   },
+
+  [/*
   {
     title: 'Build on Morph',
     // url: '/docs/Build on Morph/devintro',
@@ -34,6 +47,7 @@ const FeatureList = [
       </>
     ),
   },
+  */]
 ];
 
 function Feature({svg, title, url, description}) {

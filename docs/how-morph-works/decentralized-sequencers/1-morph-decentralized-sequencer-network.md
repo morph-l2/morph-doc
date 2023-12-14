@@ -62,10 +62,6 @@ With these principles at the forefront, Morph’s sequencer network design inclu
 
 *BLS Signature for Batch Signing*: Sequencers sign a collective of L2 blocks using the BLS signature method. Then the L1 contract verifies this L2 consensus through the BLS signature.
 
-:::Tip
-Why BLS signatures?
-Employing Ethereum's existing basic signature algorithm, such as ECDSA, would introduce a cost dilemma. This arises given that the signature data must be simultaneously committed to the Layer1 contract, incurring the associated costs. As the set of sequencers expands, the cost will rise proportionately. By opting for the BLS aggregate signature, costs remain consistent even as the sequencer count grows.
-:::
 
 :::tip
 Why BLS signature?
