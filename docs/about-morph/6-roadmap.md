@@ -9,6 +9,8 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
  The roadmap is subject to changes based on technological developments, community feedback, and external factors.
 :::
 
+![1](../../assets/docs/about/Roadmap/roadmap.png)
+
 ## Phase 1: Testnet Beta (2024 Q1)
 
 - EVM Equivalence
