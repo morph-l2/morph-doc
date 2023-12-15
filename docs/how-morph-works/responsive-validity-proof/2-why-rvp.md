@@ -1,12 +1,12 @@
 ---
 title: Why Responsive Validity Proof?
 lang: en-US
-keywords: [morphp,layer2,validity proof,optimstic zk-rollup]
+keywords: [morph,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
 :::tip
- This part is also published as Medium post, [check here](https://medium.com/@Morph_xyz/responsive-validity-proof-optimistic-zk-rollup-5ce4ab71fa4b) if you want to view it in Medium.
+ This part is also published as Medium post, [check here](https://medium.com/@morphlayer2/responsive-validity-proof-optimistic-zk-rollup-5ce4ab71fa4b) if you want to view it in Medium.
 
 - Responsive Validity Proof will be referred to as RVP in the following text.
 - The sequencer mentioned in the text is equivalent to the rollup operator.

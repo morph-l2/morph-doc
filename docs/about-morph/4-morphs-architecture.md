@@ -11,7 +11,9 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 :::
 
+
 ![Archi](../../assets/docs/about/architecture/archi.png)
+
 
 ## The Modular Approach in Layer 2
 
@@ -35,7 +37,9 @@ In the context of Layer 2, Morph reinterprets these layers with unique functiona
 
 - Data Availability through 'Rollup' Process: This entails transferring essential Layer 2 data to Ethereum. In Morph, this is achieved through the 'Rollup' process, where a batch submitter compiles blocks into batches and submits them as Layer 1 transactions on Ethereum.
 
+
 ![Archi](../../assets/docs/about/architecture/rollup.png)
+
 ## Independent yet Collaborative Functions
 Each of these major functions operates independently, facilitating asynchronous tasks and switchable implementations:
 
