@@ -31,7 +31,7 @@ Following this, we first divided Morph (or any other Layer 2) into 3 Modules, ea
 
 #### Sequencer Network - Consensus & Execution
 
-![Sequencer Network](../../assets/docs/protocol/Dese/seq1.png/)
+![Sequencer Network](../../assets/docs/protocol/dese/seq1.png/)
 
 Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network)
 
@@ -49,7 +49,7 @@ The state verification process finalizes and settles Layer 2 transactions and st
 
 #### Rollup - Data Avaibility
 
-![Rollup](../../assets/docs/protocol/General/rollup/rollup.png)
+![Rollup](../../assets/docs/protocol/general/rollup/rollup.png)
 
 [Rollup](../how-morph-works/general-protocol-design/1-rollup.md) is the process where Layer 2 submits L2 transactions and states to Layer 1.
 
@@ -161,7 +161,7 @@ The existence of these contracts allows Layer 2 to inherit the security of Layer
 
 ### Components -> Roles -> Modules
 
-![modular](../../assets/docs/about/Overview/modu.png)
+![modular](../../assets/docs/about/overview/modu.png)
 
 The underlying layer is the components, and different components together you can perform the duty of the roles we talked about.
 

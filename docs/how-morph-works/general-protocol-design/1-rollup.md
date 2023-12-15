@@ -15,7 +15,7 @@ Within [Morph's architecture](../2-morph-modular-design.md), this Rollup process
 
 ### An overview of Morph Rollup Design:
 
-![rollup](../../../assets/docs/protocol/General/rollup/rollup.png)
+![rollup](../../../assets/docs/protocol/general/rollup/rollup.png)
 
 
 ## Constructing the Batch​
