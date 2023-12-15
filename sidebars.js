@@ -39,6 +39,40 @@
 }
 */
 module.exports = {
+  AboutSidebar: [
+    {
+      type: 'doc',
+      id:'about-morph/overview-of-morph'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/what-makes-morph-different'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/where-should-i-start'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/morphs-architecture'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/morphs-vision-and-mission'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/key-concepts'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/roadmap'
+    },
+    {
+      type: 'doc',
+      id:'about-morph/faqs'
+    },
+  ],
   StartSidebar: [
     {
       type: 'doc',

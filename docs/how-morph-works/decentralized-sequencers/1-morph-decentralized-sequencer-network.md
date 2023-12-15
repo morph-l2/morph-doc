@@ -5,7 +5,11 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
+![RVP](../../../assets/docs/protocol/Dese/dseq1.jpg)
+
 ## The Importance of Decentralized Sequencers
+
+
 
 ### What is a sequencer and what does it do?
 
@@ -62,10 +66,6 @@ With these principles at the forefront, Morph’s sequencer network design inclu
 
 *BLS Signature for Batch Signing*: Sequencers sign a collective of L2 blocks using the BLS signature method. Then the L1 contract verifies this L2 consensus through the BLS signature.
 
-:::Tip
-Why BLS signatures?
-Employing Ethereum's existing basic signature algorithm, such as ECDSA, would introduce a cost dilemma. This arises given that the signature data must be simultaneously committed to the Layer1 contract, incurring the associated costs. As the set of sequencers expands, the cost will rise proportionately. By opting for the BLS aggregate signature, costs remain consistent even as the sequencer count grows.
-:::
 
 :::tip
 Why BLS signature?
@@ -79,7 +79,7 @@ If we use the current basic signature algorithm, such as ECDSA, in Ethereum, the
 
 Here is a simple illustration of the Morph decentralized sequencing network architecture.
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/Consensus.png)
+![Sequencer Network Archi](../../../assets/docs/protocol/Dese/seq1.png)
 
 #### Sequencer Set Selection
 
