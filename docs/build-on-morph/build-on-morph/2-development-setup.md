@@ -11,7 +11,7 @@ Morph is currently under rapid development, stay tuned for what's coming next
 
 :::
 
-<!-- For examples of deploying with hardhat see [practice examples](../Practice-Examples/1-ERC20.md). -->
+<!-- For examples of deploying with hardhat see [practice examples](../exmaples/1-bridge-erc20.md). -->
 
 <!--
 # Start Developing on Morph

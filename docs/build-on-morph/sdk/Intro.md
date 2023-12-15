@@ -21,7 +21,7 @@ The `CrossChainMessenger` automatically connects to all relevant contracts so co
 
 ### L2Provider and related utilities 
 
-The Morph SDK includes [various utilities](https://github.com/morph-l2/sdk/tree/main/src/l2-provider.ts) for handling Morph's [transaction fee model](../Build%20on%20Morph/4-txfee.md).
+The Morph SDK includes [various utilities](https://github.com/morph-l2/sdk/tree/main/src/l2-provider.ts) for handling Morph's [transaction fee model](../build-on-morph/4-understand-transaction-cost-on-morph.md).
 For instance, [`estimateTotalGasCost`](../SDK/modules#estimateTotalGasCost) will estimate the total cost (in wei) to send at transaction on Morph including both the L2 execution cost and the L1 data cost.
 You can also use the [`asL2Provider`](../SDK/modules#asL2Provider) function to wrap an ethers Provider object into an `L2Provider` which will have all of these helper functions attached.
 

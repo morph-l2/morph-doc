@@ -7,6 +7,6 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 Welcome to the Morph developer docs!
 
-Whether you're just looking to [deploy a basic contract](./build-on-morph/2-development-setup.md) or you're ready to [build a cross-chain app](./build-on-morph/3-bridge-between-morph-and-ethereum.md), you'll be able to find everything you need to start building on Morph within this section.
+Whether you're just looking to [deploy a basic contract](../build-on-morph/build-on-morph/2-development-setup.md) or you're ready to [build a cross-chain app](./build-on-morph/3-bridge-between-morph-and-ethereum.md), you'll be able to find everything you need to start building on Morph within this section.
 
 
