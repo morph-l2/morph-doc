@@ -5,7 +5,9 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-![RVP](../../../assets/docs/protocol/Dese/dseq1.jpg)
+
+![RVP](../../../assets/docs/protocol/dese/dseq1.jpg)
+
 
 ## The Importance of Decentralized Sequencers
 
@@ -79,7 +81,9 @@ If we use the current basic signature algorithm, such as ECDSA, in Ethereum, the
 
 Here is a simple illustration of the Morph decentralized sequencing network architecture.
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/seq1.png)
+
+![Sequencer Network Archi](../../../assets/docs/protocol/dese/seq1.png)
+
 
 #### Sequencer Set Selection
 
@@ -94,7 +98,7 @@ Through the sequencer staking contract, members are elected into the sequencer s
 
 Given Morph's modular design, each sequencer operates a consensus client that runs BFT to communicate with other sequencers.
 
-![Block Generation](../../../assets/docs/protocol/Dese/blockCon.png)
+![Block Generation](../../../assets/docs/protocol/dese/blockCon.png)
 
 Following the BFT consensus protocol, the selected sequencer extracts transactions from the mempool, constructs blocks, and synchronizes these blocks with other sequencers to undergo verification and voting. The end result is the generation of new Layer 2 blocks.
 
@@ -102,7 +106,7 @@ Following the BFT consensus protocol, the selected sequencer extracts transactio
 
 Considering the costs of uploading to and validating signatures on Layer 1, sequencers will sign a batch of blocks with BLS signatures at designated checkpoints.
 
-![BlockSign](../../../assets/docs/protocol/Dese/batchSign.png)
+![BlockSign](../../../assets/docs/protocol/dese/batchSign.png)
 
 Post-signing, the designated sequencer forwards the collective batch of blocks to Layer 1 through its batch submitter component.
 

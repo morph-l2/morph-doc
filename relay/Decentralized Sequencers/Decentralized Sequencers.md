@@ -80,7 +80,7 @@ A complete Morph decentralized sequencer network consists of two parts:
 - Sequencer Set
 - Sequencer Staking Contract
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/dese1.png)
+![Sequencer Network Archi](../../../assets/docs/protocol/dese/dese1.png)
 
 The sequencer staking contract will determine the composition of the sequencer set through election, and the selected sequencers will collectively provide services for the network.
 
@@ -89,7 +89,7 @@ At the same time, the election results will be periodically synchronized to the 
 #### Produce Layer 2 Blocks
 In particular, based on Morph's modular design, each Sequencer will run a consensus client that runs BFT to communicate with other Sequencers.
 
-![Sequencer Network Archi](../../../morph-doc/assets/docs/protocol/Dese/consensusBlock.png)
+![Sequencer Network Archi](../../../morph-doc/assets/docs/protocol/dese/consensusBlock.png)
 
 The Sequencer will follow the BFT consensus process. The selected sequencer will extract transactions from the mempool to construct blocks and synchronize the blocks with other sequencers for verification and voting. Ultimately, it will generate new Layer 2 blocks.
 
@@ -97,7 +97,7 @@ The Sequencer will follow the BFT consensus process. The selected sequencer will
 
 Considering the cost of uploading signatures to Layer 1 and the cost of validating signatures on Layer 1, sequencers will perform the corresponding BLS signatures on multiple blocks, i.e., a batch, at designated checkpoints to ensure that the scalability goal is not compromised.
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/dese1.png)
+![Sequencer Network Archi](../../../assets/docs/protocol/dese/dese1.png)
 
 After the signing is completed, the selected sequencer will submit these blocks as a batch to Layer 1 through its batch submitter component.
 

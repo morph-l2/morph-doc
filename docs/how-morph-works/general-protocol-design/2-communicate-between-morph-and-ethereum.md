@@ -19,7 +19,7 @@ Furthermore, the bridge’s utility extends beyond asset bridging, as token tran
 
 ## Deposit (L1 to L2 message) 
 
-![Deposit Process](../../../assets/docs/protocol/General/bridge/deposit.png)
+![Deposit Process](../../../assets/docs/protocol/general/bridge/deposit.png)
 
 ### Construct a deposit request through Standard Bridge (Optional)
 
@@ -46,7 +46,7 @@ A Layer 2 executor, holding the cross-chain message, interacts with the L2 messe
 
 ## Withdraw (L2 -> L1 message) 
 
-![Withdraw Process](../../../assets/docs/protocol/General/bridge/withdraw.png)
+![Withdraw Process](../../../assets/docs/protocol/general/bridge/withdraw.png)
 
 The withdrawal process is, in essence, the inverse of the deposit process, yet it has two main differences.
 
