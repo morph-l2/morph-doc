@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / StateRootBatchHeader
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / StateRootBatchHeader
 
 # Interface: StateRootBatchHeader
 

@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / L2Block
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / L2Block
 
 # Interface: L2Block
 

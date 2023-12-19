@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / BridgeAdapters
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / BridgeAdapters
 
 # Interface: BridgeAdapters
 

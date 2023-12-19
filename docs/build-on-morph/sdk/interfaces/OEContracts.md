@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / OEContracts
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / OEContracts
 
 # Interface: OEContracts
 

@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / OEL2Contracts
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / OEL2Contracts
 
 # Interface: OEL2Contracts
 

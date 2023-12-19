@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / IBridgeAdapter
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / IBridgeAdapter
 
 # Interface: IBridgeAdapter
 

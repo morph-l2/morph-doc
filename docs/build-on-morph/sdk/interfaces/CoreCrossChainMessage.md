@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / CoreCrossChainMessage
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / CoreCrossChainMessage
 
 # Interface: CoreCrossChainMessage
 

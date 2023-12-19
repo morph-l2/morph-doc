@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / TokenBridgeMessage
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / TokenBridgeMessage
 
 # Interface: TokenBridgeMessage
 

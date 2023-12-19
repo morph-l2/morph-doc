@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / MessageReceipt
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / MessageReceipt
 
 # Interface: MessageReceipt
 

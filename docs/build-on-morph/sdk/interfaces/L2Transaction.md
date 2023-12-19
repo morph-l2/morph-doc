@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / L2Transaction
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / L2Transaction
 
 # Interface: L2Transaction
 

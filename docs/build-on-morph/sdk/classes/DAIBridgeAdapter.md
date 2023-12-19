@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / DAIBridgeAdapter
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / DAIBridgeAdapter
 
 # Class: DAIBridgeAdapter
 
