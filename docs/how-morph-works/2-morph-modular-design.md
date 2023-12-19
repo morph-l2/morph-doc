@@ -32,7 +32,7 @@ Following this, we first divided Morph (or any other Layer 2) into 3 Modules, ea
 #### Sequencer Network - Consensus & Execution
 
 
-![Sequencer Network](../../assets/docs/protocol/dese/seq1.png/)
+![Sequencer Network](../../assets/docs/protocol/dese/seq1.png)
 
 
 Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network)
