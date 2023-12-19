@@ -7,7 +7,7 @@ description: Explain how rollup process works in Morph
 
 :::info
 
-As the foundation of a Layer 2 project, the "Rollup" process refers to the method by which Layer 2 assembles L2 transactions into batches and subsequently submits them to L1, along with the L2 state.
+As the foundation of a Layer 2 project, the "Rollup" process refers to the method by which Layer 2 assembles L2 transactions and state into batches and subsequently submits them to L1, along with the L2 state.
 
 Within [Morph's architecture](../2-morph-modular-design.md), this Rollup process is executed by the ```Batch Submitter``` components.
 
