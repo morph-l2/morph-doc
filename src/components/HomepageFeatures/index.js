@@ -16,7 +16,7 @@ const FeatureList = [
   
   {
     title: 'Quick Start',
-    // url: '/docs/quick start/quickintro',
+    url: '/docs/quick-start/intro',
     svg: '/img/index/QuickStart.png',
     description: (
       <>
@@ -36,18 +36,18 @@ const FeatureList = [
     ),
   },
 
-  [/*
+
   {
     title: 'Build on Morph',
-    // url: '/docs/Build on Morph/devintro',
+    url: '/docs/build-on-morph/intro',
     svg: '/img/index/BuildOnMorph.png',
     description: (
       <>
         Everything you need to know on how to launch your dapp on Morph
       </>
     ),
-  },
-  */]
+  }
+
 ];
 
 function Feature({svg, title, url, description}) {
