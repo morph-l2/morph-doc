@@ -14,7 +14,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 
 
-![RVP](../../../assets/docs/protocol/ResVaPro/res1.jpg)
+![RVP](../../../assets/docs/protocol/resvapro/banner.jpg)
 
 The industry's definition of rollup is currently divided into two types: **optimistic rollup** and **ZK-rollup**.
 
@@ -57,6 +57,8 @@ Due to the problems with non-interactive/interactive fraud proofs mentioned earl
 To address these issues, Morph proposes a new solution - Responsive Validity Proof (RVP).
 
 ### What is RVP?
+
+![RVP](../../../assets/docs/protocol/resvapro/compare3.png)
 
 In short, we integrate ZK-based validity proof into the optimistic rollup. When challengers discover that the sequencer has submitted incorrect data, they will initiate a challenge request to the sequencer on L1. At this time, the sequencer needs to generate the corresponding ZK-proof within the specified time (challenge period) and pass the verification of the L1 contract.
 If the verification passes, the challenge fails; otherwise, the challenge succeeds.

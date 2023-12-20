@@ -113,6 +113,13 @@ const config = {
           srcDark: 'img/index/logo_dark.png',
         },
         items: [
+
+          {
+            type: 'doc',
+            position: 'right',
+            docId: 'about-morph/overview-of-morph',
+            label: 'About Morph',
+          },
         /*
           {
             type: 'doc',

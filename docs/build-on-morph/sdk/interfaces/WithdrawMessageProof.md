@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / WithdrawMessageProof
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / WithdrawMessageProof
 
 # Interface: WithdrawMessageProof
 

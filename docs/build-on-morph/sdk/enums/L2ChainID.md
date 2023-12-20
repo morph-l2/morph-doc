@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / L2ChainID
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / L2ChainID
 
 # Enumeration: L2ChainID
 

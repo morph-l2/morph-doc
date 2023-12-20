@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / StateRoot
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / StateRoot
 
 # Interface: StateRoot
 

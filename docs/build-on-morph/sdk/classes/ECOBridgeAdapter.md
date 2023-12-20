@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / ECOBridgeAdapter
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / ECOBridgeAdapter
 
 # Class: ECOBridgeAdapter
 

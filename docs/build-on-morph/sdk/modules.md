@@ -1,4 +1,4 @@
-[@morph-l2/sdk](README) / Exports
+[@morph-l2/sdk](../1-intro.md) / Exports
 
 # @morph-l2/sdk
 

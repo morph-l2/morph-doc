@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / WithdrawalEntry
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / WithdrawalEntry
 
 # Interface: WithdrawalEntry
 

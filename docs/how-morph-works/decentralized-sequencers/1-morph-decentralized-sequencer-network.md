@@ -5,7 +5,13 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
+
+![RVP](../../../assets/docs/protocol/dese/dseq1.jpg)
+
+
 ## The Importance of Decentralized Sequencers
+
+
 
 ### What is a sequencer and what does it do?
 
@@ -62,10 +68,6 @@ With these principles at the forefront, Morph’s sequencer network design inclu
 
 *BLS Signature for Batch Signing*: Sequencers sign a collective of L2 blocks using the BLS signature method. Then the L1 contract verifies this L2 consensus through the BLS signature.
 
-:::Tip
-Why BLS signatures?
-Employing Ethereum's existing basic signature algorithm, such as ECDSA, would introduce a cost dilemma. This arises given that the signature data must be simultaneously committed to the Layer1 contract, incurring the associated costs. As the set of sequencers expands, the cost will rise proportionately. By opting for the BLS aggregate signature, costs remain consistent even as the sequencer count grows.
-:::
 
 :::tip
 Why BLS signature?
@@ -79,7 +81,9 @@ If we use the current basic signature algorithm, such as ECDSA, in Ethereum, the
 
 Here is a simple illustration of the Morph decentralized sequencing network architecture.
 
-![Sequencer Network Archi](../../../assets/docs/protocol/Dese/Consensus.png)
+
+![Sequencer Network Archi](../../../assets/docs/protocol/dese/seq1.png)
+
 
 #### Sequencer Set Selection
 
@@ -94,7 +98,7 @@ Through the sequencer staking contract, members are elected into the sequencer s
 
 Given Morph's modular design, each sequencer operates a consensus client that runs BFT to communicate with other sequencers.
 
-![Block Generation](../../../assets/docs/protocol/Dese/blockCon.png)
+![Block Generation](../../../assets/docs/protocol/dese/block-con.png)
 
 Following the BFT consensus protocol, the selected sequencer extracts transactions from the mempool, constructs blocks, and synchronizes these blocks with other sequencers to undergo verification and voting. The end result is the generation of new Layer 2 blocks.
 
@@ -102,11 +106,11 @@ Following the BFT consensus protocol, the selected sequencer extracts transactio
 
 Considering the costs of uploading to and validating signatures on Layer 1, sequencers will sign a batch of blocks with BLS signatures at designated checkpoints.
 
-![BlockSign](../../../assets/docs/protocol/Dese/batchSign.png)
+![BlockSign](../../../assets/docs/protocol/dese/batch-sign.png)
 
 Post-signing, the designated sequencer forwards the collective batch of blocks to Layer 1 through its batch submitter component.
 
-###Consensus Verification
+### Consensus Verification
 
 The selected sequencer must submit to the Layer 1 contract:
 

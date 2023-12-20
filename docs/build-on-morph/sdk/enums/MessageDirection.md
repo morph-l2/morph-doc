@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / MessageDirection
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / MessageDirection
 
 # Enumeration: MessageDirection
 

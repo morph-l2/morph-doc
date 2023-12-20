@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / ETHBridgeAdapter
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / ETHBridgeAdapter
 
 # Class: ETHBridgeAdapter
 

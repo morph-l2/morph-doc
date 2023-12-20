@@ -1,4 +1,4 @@
-[@morph-l2/sdk](../README) / [Exports](../modules) / StandardBridgeAdapter
+[@morph-l2/sdk](../intro.md) / [Exports](../modules) / StandardBridgeAdapter
 
 # Class: StandardBridgeAdapter
 
