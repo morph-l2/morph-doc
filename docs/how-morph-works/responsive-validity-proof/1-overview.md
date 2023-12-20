@@ -7,7 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Summary
 
-![RVP](../../../assets/docs/protocol/ResVaPro/banner.jpg)
+![RVP](../../../assets/docs/protocol/resvapro/banner.jpg)
 
 
 1. The verification of Layer 2 state can be categorized into two types: fraud proof and validity proof. However, Morph proposes a new verification method called Responsive Validity Proof that combines the benefits of both methods.

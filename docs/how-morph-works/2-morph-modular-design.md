@@ -39,7 +39,7 @@ Sequencer network responsible for the execution & consensus of the Layer 2 trans
 
 #### Optimistic zkEVM - Settlement
 
-![Optimistic zkEVM](../../assets/docs/protocol/ResVaPro/opzk.png)
+![Optimistic zkEVM](../../assets/docs/protocol/resvapro/opzk.png)
 
 For every Layer 2 project, they need to conduct the state verification methods to make sure the state change on Layer 2 is valid on Layer 1.
 

@@ -14,7 +14,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 
 
-![RVP](../../../assets/docs/protocol/ResVaPro/banner.jpg)
+![RVP](../../../assets/docs/protocol/resvapro/banner.jpg)
 
 The industry's definition of rollup is currently divided into two types: **optimistic rollup** and **ZK-rollup**.
 
