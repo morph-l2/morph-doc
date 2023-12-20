@@ -110,7 +110,7 @@ Considering the costs of uploading to and validating signatures on Layer 1, sequ
 
 Post-signing, the designated sequencer forwards the collective batch of blocks to Layer 1 through its batch submitter component.
 
-###Consensus Verification
+### Consensus Verification
 
 The selected sequencer must submit to the Layer 1 contract:
 
