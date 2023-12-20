@@ -58,6 +58,8 @@ To address these issues, Morph proposes a new solution - Responsive Validity Pro
 
 ### What is RVP?
 
+![RVP](../../../assets/docs/protocol/resvapro/compare3.png)
+
 In short, we integrate ZK-based validity proof into the optimistic rollup. When challengers discover that the sequencer has submitted incorrect data, they will initiate a challenge request to the sequencer on L1. At this time, the sequencer needs to generate the corresponding ZK-proof within the specified time (challenge period) and pass the verification of the L1 contract.
 If the verification passes, the challenge fails; otherwise, the challenge succeeds.
 Of course, the specific process is much more complicated than described here. In our next article, we will discuss the detailed process of RVP, while in this article, we will mainly discuss why we should use RVP.

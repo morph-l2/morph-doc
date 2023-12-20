@@ -98,7 +98,7 @@ Through the sequencer staking contract, members are elected into the sequencer s
 
 Given Morph's modular design, each sequencer operates a consensus client that runs BFT to communicate with other sequencers.
 
-![Block Generation](../../../assets/docs/protocol/dese/blockCon.png)
+![Block Generation](../../../assets/docs/protocol/dese/block-con.png)
 
 Following the BFT consensus protocol, the selected sequencer extracts transactions from the mempool, constructs blocks, and synchronizes these blocks with other sequencers to undergo verification and voting. The end result is the generation of new Layer 2 blocks.
 
@@ -106,7 +106,7 @@ Following the BFT consensus protocol, the selected sequencer extracts transactio
 
 Considering the costs of uploading to and validating signatures on Layer 1, sequencers will sign a batch of blocks with BLS signatures at designated checkpoints.
 
-![BlockSign](../../../assets/docs/protocol/dese/batchSign.png)
+![BlockSign](../../../assets/docs/protocol/dese/batch-sign.png)
 
 Post-signing, the designated sequencer forwards the collective batch of blocks to Layer 1 through its batch submitter component.
 
