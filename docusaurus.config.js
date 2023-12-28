@@ -67,7 +67,7 @@ const config = {
         content: 'Morph,EVM-equivalent,Optimistic,zkEVM'
       }, {
         name: 'google-site-verification',
-        content: 'mDvOrPPWpVMPyzZmqjzK2nerPAPuWXsSOthN_2eQO20'
+        content: '-GPotcMH5Ecuj8EnU-Tasmm8TOZXEHWEPD5qP5d0FEU'
       }],
       algolia: {
         // The application ID provided by Algolia
