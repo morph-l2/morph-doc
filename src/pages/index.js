@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useColorMode} from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { log } from '@site/src/components/log';
 
 import styles from './index.module.css';
 
@@ -25,6 +26,12 @@ function HomepageHeader() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+
+  useEffect(() => {
+    log({
+      page: 'docs_page',
+    });
+  }, [])
   return (
     <Layout
       title={`${siteConfig.title}`}
