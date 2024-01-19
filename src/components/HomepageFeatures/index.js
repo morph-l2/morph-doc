@@ -6,7 +6,7 @@ const FeatureList = [
   {
     title: 'About Morph',
     url: '/docs/about-morph/overview-of-morph',
-    svg: '/img/index/AboutMorph.png',
+    svg: '/img/index/about-morph.png',
     description: (
       <>
         Get a quick overview of what is Morph and what our mission is.
@@ -16,8 +16,8 @@ const FeatureList = [
   
   {
     title: 'Quick Start',
-    // url: '/docs/quick start/quickintro',
-    svg: '/img/index/QuickStart.png',
+    url: '/docs/quick-start/welcome-to-morph',
+    svg: '/img/index/quick-start.png',
     description: (
       <>
         A go-to guide on how to easily start to experience Morph ecosystem.
@@ -28,7 +28,7 @@ const FeatureList = [
   {
     title: 'How Morph works',
     url: '/docs/how-morph-works/intro',
-    svg: '/img/index/HowMorphWorks.png',
+    svg: '/img/index/how-morph-works.png',
     description: (
       <>
         General explaination of what makes morph different from others
@@ -36,18 +36,18 @@ const FeatureList = [
     ),
   },
 
-  [/*
+
   {
     title: 'Build on Morph',
-    // url: '/docs/Build on Morph/devintro',
-    svg: '/img/index/BuildOnMorph.png',
+    url: '/docs/build-on-morph/intro',
+    svg: '/img/index/build-on-morph.png',
     description: (
       <>
         Everything you need to know on how to launch your dapp on Morph
       </>
     ),
-  },
-  */]
+  }
+
 ];
 
 function Feature({svg, title, url, description}) {

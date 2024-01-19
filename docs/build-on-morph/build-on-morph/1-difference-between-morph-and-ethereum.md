@@ -6,9 +6,9 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ---
 
 
-There are a number of technical details that differ between Ethereum mainnet's EVM and Morph's modified design for a zkEVM. Below you can see those differences as they exist now.
+There are a number of technical details that differ between Ethereum EVM and Morph's opzkEVM.
 
-For open-source contributors and infrastructure builders, please contact our team for additional support.
+We prepared a list of these differences to let you better understand it.
 
 :::tip
 For the average Solidity developer, these details won't affect your development experience.
@@ -16,30 +16,35 @@ For the average Solidity developer, these details won't affect your development 
 
 ## EVM Opcodes
 
-Opcode  | Solidity equivalent | Ethereum Behavior | Morph Behavior|
-- | - | - | -|
-COINBASE   | block.coinbase   | In Ethereum Clique, the eth address of the signer. | Returns the pre-deployed fee vault contract address.|
-DIFFICULTY/PREVRANDAO | block.difficulty | After PoS, the previous block’s randao value. | Returns 0.|
-BLOCKHASH     | block.blockhash    | **Input**: blockNumber from top of the stack, and the valid range is [NUMBER-256, NUMBER-1]. **Output**: hash of the given block number, or 0 if the block number is not in the valid range. | returns keccak(chain_id || block_height) of the last 256 block hashes based on the provided parameter. |
-SELFDESTRUCT  | selfdestruct  | [Plans to deprecate and substitute with SENDALL](https://eips.ethereum.org/EIPS/eip-4758) | Disabled in the sequencer. Runtime error, same behavior as the INVALID opcode. *Will change to adopt Ethereum’s solution in the future.*|
-PUSH0 | /| Part of EVM as of Shanghai hard fork | Runtime Error, will act as an INVALID opcode. Will be supported |
+| Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
+| --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
+| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../developer-resources/1-contracts.md). |
+| `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
+| `BASEFEE`                   | `block.basefee`     | Disabled. If the opcode is encountered, the transaction will be reverted.                        |
+| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
 
-<!--
+
+[^eip1559]: We have currently disabled EIP-1559 on Scroll.
+[^willadpot]: Will change to adopt Ethereum’s solution in the future.
+
 ## EVM Precompiles
 
-The *SHA2-256* (address 0x2), *RIPEMD-160* (address 0x3), and *blake2f* (address 0x9) precompiles are currently not supported. Calls to these precompiled contracts will revert. We plan to enable these 3 precompiles in a future hard fork.
+The `SHA2-256` (address `0x2`), `RIPEMD-160` (address `0x3`), and `blake2f` (address `0x9`) precompiles are currently not supported. Calls to these precompiled contracts will revert. We plan to enable these three precompiles in a future hard fork.
 
-The other EVM precompiles are all supported: *ecRecover*, *identity*, *modexp*, *ecAdd*, *ecMul*, *ecPairing*.
--->
+The `modexp` precompile is supported but only supports inputs of size less than or equal to 32 bytes (i.e. `u256`).
+
+The `ecPairing` precompile is supported, but the number of points(sets, pairs) is limited to 4, instead of 6.
+
+The other EVM precompiles are all supported: `ecRecover`, `identity`, `ecAdd`, `ecMul`.
 
 ## State Account
 
-### Additional Fields
+### **Additional Fields**
 
-We added two fields in the current StateAccount object: PoseidonCodehash and CodeSize.
+We added two fields in the current `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
 
-
-```
+```go
 type StateAccount struct {
 	Nonce    uint64
 	Balance  *big.Int
@@ -51,24 +56,38 @@ type StateAccount struct {
 }
 ```
 
-### CodeHash
+### **CodeHash**
+
 Related to this, we maintain two types of codehash for each contract bytecode: Keccak hash and Poseidon hash.
-KeccakCodeHash is kept to maintain compatibility for EXTCODEHASH. PoseidonCodeHash is used for verifying correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
+
+`KeccakCodeHash` is kept to maintain compatibility for `EXTCODEHASH`. `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
 
 ### CodeSize
-When verifying EXTCODESIZE, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation, eliminating the need to load the code — a storage proof is sufficient to verify this opcode.
+
+When verifying `EXTCODESIZE`, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation. This way, we do not need to load the code — a storage proof is sufficient to verify this opcode.
+
+
 
 ## Block Time
+:::tip Block Time Subject to Change
 
-:::Warning Block Time Subject to Change
-
-Currently blocks are produced every second and empty block if no transctions for 5 seconds
-However, that value may change in the future.
+Currently blocks are produced every second and empty block if no transctions for 5 seconds. However, that value may change in the future.
 
 :::
 
+To compare, Ethereum has a block time of ~12 seconds.
+
+This was chosen for two reasons:
+
+- Having faster, constant block time results in quicker feedback and a better user experience.
+- As we optimize the zkEVM circuits in our testnets, even if we maintain a smaller gas limit per block or batch, we can still reach higher throughput than Ethereum.
+
+
+Notice:
 - `TIMESTAMP` will return the timestamp of the block. It will update every second.
 - `BLOCKNUMBER` will return an actual block number. It will update every second. The one-to-one mapping between blocks and transactions will no longer apply.
+
+
 
 
 <!--
@@ -88,7 +107,8 @@ Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature
 ## Future EIPs
 We keep a close eye on all emerging Ethereum Improvement Proposals (EIPs) and adopt them when they are suitable. If you are interested in more specifics, feel free to reach out on our community forum or on the Morph Discord.
 
-EVM Target version
+## EVM Target version 
+
 To ensure no unexpected behaviour happens in your contracts, we recommend using london as target version when compiling your smart contracts.
 You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
 

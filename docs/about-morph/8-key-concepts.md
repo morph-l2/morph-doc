@@ -46,4 +46,4 @@ Data availability is crucial in Layer 2 scaling solutions, ensuring that all nec
 
 EIP-4844 proposes a new transaction type for Ethereum, allowing "blobs" of data to be stored temporarily in beacon nodes. This proposal aligns with Ethereum's scaling roadmap, balancing data size with disk usage management.
 
-[Discover how EIP-4844 impacts Morphism and other rollups.](https://www.eip4844.com/)
+[Discover how EIP-4844 impacts Morph and other rollups.](https://www.eip4844.com/)
