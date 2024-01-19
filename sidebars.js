@@ -90,6 +90,16 @@ module.exports = {
       type: 'doc',
       id:'quick-start/bridge'
     },
+    {
+      type: 'link',
+      href: "https://explorer-testnet.morphl2.io/",
+      label: 'Morph Sepolia Explorer'
+    },
+    {
+      type: 'link',
+      href: "https://sepolia.etherscan.io/",
+      label: 'Ethereum Sepolia Explorer'
+    }
   ],
   DevSidebar: [
     {

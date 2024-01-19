@@ -17,7 +17,7 @@ Morph is currently on beta testnet stage, every aspect of it is brand new and wa
 
 :::
 
-If you are a web3 enthusiast who wants to try out the Morph, you can start with how to [Connect to Morph](./1-welcome-to-morph.md).
+If you are a web3 enthusiast who wants to try out the Morph, you can start with how to [Connect to Morph](./2-wallet-setup.md).
 
 If you are a researcher who wants to understand what sets Morph apart from other solutions, head straight to the [How Morph Works](../how-morph-works/1-intro.md) section to find all the information you need.
 
