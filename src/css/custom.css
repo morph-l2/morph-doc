@@ -205,3 +205,13 @@
    color: #fff;
  }
  
+[data-theme='light']  .morph-logo {
+  background-size: 160px 25px;
+  background-image: url(/img/index/logo_light.svg);
+}
+
+[data-theme='dark']  .morph-logo {
+  background-size: 160px 25px;
+  background-image: url(/img/index/logo_dark.svg);
+}
+ 
