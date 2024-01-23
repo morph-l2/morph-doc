@@ -5,26 +5,25 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-Thank you for using Morph!
+Thank you for choosing Morph! We're excited to have you onboard with the first optimistic ZK-EVM scaling solution for Ethereum. Morph is designed to meet a variety of needs, and you can easily navigate to the most relevant information for your interests.
 
-Morph is the first optimistic ZK-EVM scaling solution for Ethereum. 
-
-Depending on your needs, you can directly proceed to the respective page by following.
 
 :::tip
 
-Morph is currently on beta testnet stage, every aspect of it is brand new and waiting for you to explorer as much as you want.
+Beta Testnet Stage: Morph is currently in the beta testnet phase, offering a brand-new platform for exploration. We encourage you to delve into its features and capabilities.
+
 
 :::
 
-If you are a web3 enthusiast who wants to try out the Morph, you can start with how to [Connect to Morph](./2-wallet-setup.md).
+**Web3 Enthusiasts**: If you are a web3 enthusiast who wants to try out the Morph, you can start with how to [connect to Morph](./2-wallet-setup.md).
 
-If you are a researcher who wants to understand what sets Morph apart from other solutions, head straight to the [How Morph Works](../how-morph-works/1-intro.md) section to find all the information you need.
+**Researchers**: For those seeking in-depth understanding of Morph's unique offerings compared to other solutions, the [how Morph works](../how-morph-works/1-intro.md) section is your go-to resource for comprehensive details.
 
-If you are a skilled developer eager to create amazing things on top of Morph, please refer to the [developer documentation](../build-on-morph/1-intro.md) for all the resources and guides you require.
+**Developers**: As a skilled developer ready to build on Morph, the [developer documentation](../build-on-morph/1-intro.md) provides all necessary resources and guides to kickstart your development journey.
 
-:::tip
 
-Having issues while developing? Join our discord channel and talk to us in the developer feedback section. We would love to hear your thoughts or feedback on how we can improve your experience, too.
 
-:::
+### Looking for help
+
+Having issues while developing or exploring? Join our discord channel and talk to us in the developer feedback section. We would love to hear your thoughts or feedback on how we can improve your experience, too.
+

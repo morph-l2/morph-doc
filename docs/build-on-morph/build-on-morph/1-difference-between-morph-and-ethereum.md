@@ -6,12 +6,13 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ---
 
 
-There are a number of technical details that differ between Ethereum EVM and Morph's opzkEVM.
+There are several technical differences between Ethereum’s EVM and Morph's optimistic zkEVM.
 
-We prepared a list of these differences to let you better understand it.
+We’ve compiled a list to help you understand these distinctions better.
+
 
 :::tip
-For the average Solidity developer, these details won't affect your development experience.
+For most Solidity developers, these technical details won't significantly impact your development experience.
 :::
 
 ## EVM Opcodes
@@ -30,19 +31,21 @@ For the average Solidity developer, these details won't affect your development 
 
 ## EVM Precompiles
 
-The `SHA2-256` (address `0x2`), `RIPEMD-160` (address `0x3`), and `blake2f` (address `0x9`) precompiles are currently not supported. Calls to these precompiled contracts will revert. We plan to enable these three precompiles in a future hard fork.
+The `SHA2-256` (address `0x2`), `RIPEMD-160` (address `0x3`), and `blake2f` (address `0x9`) precompiles are currently not supported. Calls to these contracts will be reverted. We plan to enable these three precompiles in a future hard fork.
 
-The `modexp` precompile is supported but only supports inputs of size less than or equal to 32 bytes (i.e. `u256`).
 
-The `ecPairing` precompile is supported, but the number of points(sets, pairs) is limited to 4, instead of 6.
+The `modexp` precompile is supported, but only for inputs up to 32 bytes (i.e. `u256`).
 
-The other EVM precompiles are all supported: `ecRecover`, `identity`, `ecAdd`, `ecMul`.
+The `ecPairing` precompile is supported but limits the number of points(sets, pairs) to 4, instead of 6.
+
+Other EVM precompiles like `ecRecover`, `identity`, `ecAdd`, and `ecMul` are fully supported.
+
 
 ## State Account
 
 ### **Additional Fields**
 
-We added two fields in the current `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
+We have introduced two additional fields in the `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
 
 ```go
 type StateAccount struct {
@@ -58,29 +61,33 @@ type StateAccount struct {
 
 ### **CodeHash**
 
-Related to this, we maintain two types of codehash for each contract bytecode: Keccak hash and Poseidon hash.
 
-`KeccakCodeHash` is kept to maintain compatibility for `EXTCODEHASH`. `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
+- There are two types of codehash for each contract bytecode: `KeccakCodeHash`and `PoseidonCodeHash`.
+
+- `KeccakCodeHash` is kept to maintain compatibility for EXTCODEHASH. 
+
+- `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
 
 ### CodeSize
 
-When verifying `EXTCODESIZE`, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation. This way, we do not need to load the code — a storage proof is sufficient to verify this opcode.
+When verifying `EXTCODESIZE`, loading the entire contract data into the zkEVM is costly. Instead, we store the contract size in storage at contract creation. This approach avoids the need to load the code, as storage proof is sufficient to verify this opcode.
 
 
 
 ## Block Time
 :::tip Block Time Subject to Change
 
-Currently blocks are produced every second and empty block if no transctions for 5 seconds. However, that value may change in the future.
-
+Blocks are produced every second, with an empty block generated if there are no transactions for 5 seconds. However, this frequency may change in the future.
 :::
 
 To compare, Ethereum has a block time of ~12 seconds.
 
-This was chosen for two reasons:
+Reasons for Faster Block Time in Morph
+User Experience: 
 
-- Having faster, constant block time results in quicker feedback and a better user experience.
-- As we optimize the zkEVM circuits in our testnets, even if we maintain a smaller gas limit per block or batch, we can still reach higher throughput than Ethereum.
+- A faster, consistent block time provides quicker feedback, enhancing the user experience.
+
+- Optimization: As we refine the zkEVM circuits in our testnets, we can achieve higher throughput than Ethereum, even with a smaller gas limit per block or batch.
 
 
 Notice:
@@ -105,11 +112,14 @@ Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature
 -->
 
 ## Future EIPs
-We keep a close eye on all emerging Ethereum Improvement Proposals (EIPs) and adopt them when they are suitable. If you are interested in more specifics, feel free to reach out on our community forum or on the Morph Discord.
 
-## EVM Target version 
+Morph closely monitors emerging Ethereum Improvement Proposals (EIPs) and adopts them when suitable. For more specifics, join our community forum or Discord for discussions.
 
-To ensure no unexpected behaviour happens in your contracts, we recommend using london as target version when compiling your smart contracts.
+<!-- ## EVM Target version 
+
+To avoid unexpected behaviors in your contracts, we recommend using ‘london’ as the target version when compiling your smart contracts.
+
 You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
+-->
 
 ## [Transaction Fees](../build-on-morph/4-understand-transaction-cost-on-morph.md)

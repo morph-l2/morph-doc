@@ -9,7 +9,8 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 Developing on Morph is as easy as developing on Ethereum — literally!
 
-To deploy contracts onto an morphl2 chain, simply set the RPC endpoint of your target morphl2 chain and deploy using your favorite Ethereum development framework :
+To deploy contracts onto a MorphL2 chain, simply set the RPC endpoint of your target MorphL2 chain and deploy using your preferred Ethereum development framework :
+
 
 - [Hardhat](https://hardhat.org/)
 - [Foundry](https://github.com/foundry-rs/foundry)
@@ -20,7 +21,7 @@ To deploy contracts onto an morphl2 chain, simply set the RPC endpoint of your t
 
 ## Step 1: Network Configuration
 
-Before you doing anything, make sure you are connected to the following networks.
+Before you start, ensure you are connected to the following networks:
 
 | Network Name | Morph Testnet | Sepolia Testnet |
 | --- | --- | --- |
@@ -73,13 +74,12 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need to acquire some testnet ETH. 
-Use faucet to acquire Sepolia Ether. 
-And then you can bridge the test Ethereum Ether to Morph testnet. 
+To start building on Morph, you may need some testnet ETH. Use a faucet to acquire Sepolia Ether,  then bridge the test Ethereum Ether to the Morph testnet.
 
-Each faucet has its own rules and requirements, so you may need to try a few before you find one that works for you.
+Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
-Here are a few Sepolia faucet apps:
+Here are some Sepolia faucet apps:
+
 
 - **[https://sepoliafaucet.com](https://sepoliafaucet.com//)**
 - **[https://sepolia-faucet.pk910.de](https://sepolia-faucet.pk910.de/)**

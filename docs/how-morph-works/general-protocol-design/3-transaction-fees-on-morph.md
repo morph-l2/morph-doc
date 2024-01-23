@@ -5,7 +5,7 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-On Morph, transaction fees share similarities with those on Ethereum, but the Layer 2 environment introduces distinct aspects that preclude a direct one-to-one comparison. Fortunately, Morph’s commitment to EVM equivalence simplifies these distinctions, facilitating a seamless and manageable experience within your applications.
+On Morph, transaction fees share similarities with those on Ethereum, but the Layer 2 environment introduces distinct aspects that preclude a direct one-to-one comparison. Fortunately, Morph’s commitment to EVM compatibility simplifies these distinctions, facilitating a seamless and manageable experience within your applications.
 
 Outlined below is the formula used to calculate gas costs associated with transactions on Morph.
 
@@ -32,7 +32,7 @@ transaction_gas_price = l2_base_fee + l2_priority_fee
 
 ```
 
-The amount of L2 gas consumed depends on the particular transaction in question. Due to EVM equivalence, transactions typically use approximately the same amount of gas on Morph as they do on Ethereum.
+The amount of L2 gas consumed depends on the particular transaction in question. Due to EVM compatibility, transactions typically use approximately the same amount of gas on Morph as they do on Ethereum.
 
 
 ## The L1 data fee

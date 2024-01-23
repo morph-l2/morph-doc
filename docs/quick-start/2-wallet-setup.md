@@ -7,7 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Wallet
 
-You need to have a wallet to interact with dApps on the morph. You can find some example wallets and configuration tips below.
+To interact with dApps on Morph, you need a compatible wallet. Below are some example wallets and configuration tips.
 
 ### Bitget Wallet
 
@@ -15,15 +15,12 @@ TBD
 
 
 ### MetaMask
-You can install MetaMask from their [official website](https://metamask.io/download/).
 
-You need to import the  configurations to your MetaMask wallet. 
 
-To do this, click "add to wallet" buttons on the Morph Testnet homepage. 
+- Installation: MetaMask can be installed from their [official website](https://metamask.io/download/).
+- Importing Configurations: To set up MetaMask for Morph Testnet, click the "add to wallet" buttons on the Morph Testnet homepage. This will automatically import the chain ID and RPC URLs for the Morph Testnet.
+- Using Ethereum Sepolia Testnet: Morph Testnet utilizes the Ethereum Sepolia testnet as its underlying L1, which is already configured in MetaMask by default. To access it, enable "Show/hide test networks" in the MetaMask network selection dropdown.
 
-This will import the chain ID and RPC URLs for the Morph Testnet. 
-
-Morph testnet usuing Ethereum sepolia testnet as the underlying L1 and it is configured on Metamask by default. To show it, click "Show/hide test networks" in the MetaMask network selection dropdown menu.
 
 
 ### Manual network configuration
