@@ -9,7 +9,7 @@ const FeatureList = [
     svg: '/img/index/about-morph.png',
     description: (
       <>
-        Get a quick overview of what is Morph and what our mission is.
+        Learn more on what Morph is and our mission to revolutionize the industry.
       </>
     ),
   },
@@ -20,7 +20,7 @@ const FeatureList = [
     svg: '/img/index/quick-start.png',
     description: (
       <>
-        A go-to guide on how to easily start to experience Morph ecosystem.
+        This guide will lead you through a seamless start with the vibrant Morph ecosystem.
       </>
     ),
   },
@@ -31,7 +31,8 @@ const FeatureList = [
     svg: '/img/index/how-morph-works.png',
     description: (
       <>
-        General explaination of what makes morph different from others
+        Gain insights into our unique approach and what distinguishes us from the rest.
+
       </>
     ),
   },
@@ -43,7 +44,7 @@ const FeatureList = [
     svg: '/img/index/build-on-morph.png',
     description: (
       <>
-        Everything you need to know on how to launch your dapp on Morph
+       Access comprehensive resources to bring your DApp from concept to launch on the Morph platform.
       </>
     ),
   }
