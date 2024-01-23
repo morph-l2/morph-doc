@@ -36,7 +36,7 @@ Currently, the Add to wallet links may not be compatible with all wallets yet. I
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
-| Morph Testnet             | https://rpc.testnet.morphl2.io        | 2710    | https://explorer.testnet.morphl2.io      | ETH      |
+| Morph Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
 | Ethereum Sepolia            | https://api.zan.top/node/v1/eth/sepolia/public       | 11155111    | https://sepolia.etherscan.io/      | ETH      |
 
 

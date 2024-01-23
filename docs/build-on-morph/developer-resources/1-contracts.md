@@ -13,7 +13,7 @@ Contract address could be dynamic during the public testnet stage, so it is reco
 
 | Network Name | Morph Alpha Testnet | Sepolia Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc.testnet.morphl2.io | https://eth-sepolia-public.unifra.io/ |
+| RPC URL | https://rpc-testnet.morphl2.io | https://eth-sepolia-public.unifra.io/ |
 | Chain ID | 2710 | 11155111 |
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer-testnet.morphl2.io/ | https://sepolia.etherscan.io/ |

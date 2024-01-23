@@ -86,8 +86,8 @@ This fee is based on four factors:
 
 1. The current gas price on Ethereum - l1_base_fee
 2. The gas cost to publish the transaction to Ethereum scales roughly with the size of the transaction (in bytes) - tx_data_gas
-3. A fixed overhead cost denominated in gas. This is currently set to 2100.
-4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.0. (as shown in GasPriceOracle.sol as scaler/1e9 )
+3. A fixed overhead cost denominated in gas. This is currently set to 2500.
+4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.15.
 
 Here's the math:
 
@@ -143,7 +143,7 @@ As a result, you should display the sum of both of these fees to give users the 
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
-#### Estimating the L1 data fee
+#### [Estimating the L1 data fee](./4-understand-transaction-cost-on-morph.md/#the-l1-data-fee)
 
 
 
