@@ -33,6 +33,21 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    // 'docusaurus-tailwindcss',
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -105,15 +120,17 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
+      sidebar: {
+        autoCollapseCategories: true,
+      },
       navbar: {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'img/index/logo_light.png',
-          srcDark: 'img/index/logo_dark.png',
+          src: 'img/index/logo_dark.svg',
+          srcDark: 'img/index/logo_dark.svg',
         },
         items: [
-
           {
             type: 'doc',
             position: 'right',
@@ -155,34 +172,37 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Morph',
+            title: 'Learn More',
             items: [
               {
-                label: 'About',
-                to: 'https://www.morphl2.io/',
+                label: "Website",
+                href: 'https://www.morphl2.io/',
+              },
+              {
+                label: "About",
+                href: 'https://www.morphl2.io/about',
+              },
+              {
+                label: "Contact us",
+                href: 'https://t.me/MorphL2official',
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Technology",
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/Morphl2',
+                label: "Docs",
+                href: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
               {
-                label: 'Blog',
-                to: 'https://medium.com/@morphlayer2',
+                label: "Tools",
+                href: 'https://www.morphl2.io/build',
               },
             ],
-          },
+          }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Morph. All rights reserved.`,
+        copyright: `© ${new Date().getFullYear()} Morph. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
