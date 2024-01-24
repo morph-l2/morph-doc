@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import clsx from 'clsx';
+import classnames from 'classnames';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {useColorMode} from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import { log } from '@site/src/components/log';
@@ -15,7 +14,7 @@ function HomepageHeader() {
   return (
     <div>
       <header
-        className={clsx('bg-bg-gradient hero hero--primary', styles.heroBanner, styles['header-bg'])}
+        className={classnames('hero hero--primary header-bg', styles.heroBanner)}
         >
       </header>
     </div>

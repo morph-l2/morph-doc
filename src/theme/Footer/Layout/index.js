@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import classnames from 'classnames';
 
 
 import { links } from "@site/src/components/config";
@@ -12,7 +12,7 @@ export default function FooterLayout({style, links, logo, copyright}) {
   console.log('style', style);
   return (
     <footer
-      className={clsx('footer', {
+      className={classnames('footer', {
         'footer--dark': style === 'dark',
       })}>
         <div className='flex flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-0 py-6 md:py-10'>

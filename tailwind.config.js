@@ -82,9 +82,6 @@ module.exports = {
             title: "#FFF", // #0B0D0C
             bg: "#FFF",
             card: "#F5F5F5",
-            "linear-purple":
-              "linear-gradient(90deg, #4F60FF -7.22%, #8762F3 131.45%)",
-
             red: "#F53F5F",
             green: "#00CB9A",
             yellow: "#F7A01E",
@@ -124,9 +121,6 @@ module.exports = {
               500: "#1A1A1A",
               600: "#999",
             },
-
-
-            "bg-gradient": "linear-gradient(0deg, #664EF1 0%, #3A2E83 38.91%, #17132B 100%)",
           }, // light theme colors
         },
         dark: {
@@ -136,9 +130,6 @@ module.exports = {
             title: "#000", // #0B0D0C
             bg: "#000", // #0B0D0C
             card: "#1A1A1A",
-            "linear-purple":
-              "linear-gradient(90deg, #4F60FF -7.22%, #8762F3 131.45%)",
-
             red: "#F4294D",
             green: "#62FFA4",
             yellow: "#F7A01E",
@@ -199,12 +190,6 @@ module.exports = {
             "base-color": "#3CFFC8",
 
             divider: "#666",
-
-            "blue-gradient":
-              "linear-gradient(90deg, #4F60FF -7.22%, #8762F3 131.45%)",
-            "btn-bg-green":
-              "linear-gradient(85deg, #40F0C1 22.5%, #BFFD3E 236.7%)",
-            "bg-gradient": "linear-gradient(0deg, #664EF1 0%, #3A2E83 38.91%, #17132B 100%)",
           }, // dark theme colors
         },
         // ... custom themes

@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
@@ -12,7 +12,7 @@ function LogoImage({logo}) {
   };
   return (
     <ThemedImage
-      className={clsx('footer__logo', logo.className)}
+      className={classnames('footer__logo', logo.className)}
       alt={logo.alt}
       sources={sources}
       width={logo.width}
