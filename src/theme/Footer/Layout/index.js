@@ -15,7 +15,7 @@ export default function FooterLayout({style, links, logo, copyright}) {
         'footer--dark': style === 'dark',
       })}>
         <div className='flex flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-0 py-6 md:py-10'>
-          <div className="order-3 md:order-1 mt-0 md:mt-[58px] md:w-[284px]">
+          <div className="order-3 md:order-1 mt-0 md:w-[284px]">
             {/* <img
               src={`/img/index/logo_${style}.svg`}
               alt="morph logo"
