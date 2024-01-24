@@ -9,7 +9,6 @@ import Link from "@site/src/components/Link";
 
 
 export default function FooterLayout({style, links, logo, copyright}) {
-  console.log('style', style);
   return (
     <footer
       className={classnames('footer', {

@@ -5,19 +5,15 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import { log } from '@site/src/components/log';
 
-import styles from './index.module.css';
-
 function HomepageHeader() {
   // const {siteConfig} = useDocusaurusContext();
   // const {colorMode, setColorMode} = useColorMode();
 
   return (
-    <div>
-      <header
-        className={classnames('hero hero--primary header-bg', styles.heroBanner)}
-        >
-      </header>
-    </div>
+    <header
+      className={"header-bg " + classnames('heroBanner')}
+      >
+    </header>
   );
 }
 

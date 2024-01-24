@@ -191,7 +191,7 @@
  
  .theme-doc-sidebar-item-link,
  .menu__list-item-collapsible {
-   font-size: 20px;
+   font-size: 18px;
    font-weight: 700;
    color: hsl(var(--morui-title-1));
  }
@@ -215,3 +215,72 @@
   background-image: url(/img/index/logo_dark.svg);
 }
  
+
+.hero-banner {
+  /* padding: 4rem 0; */
+  position: relative;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a080f;
+}
+
+.header-bg {
+  background-image: url(/img/bg.svg);
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 440px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+@media (min-width: 375px){
+  .header-bg {
+  height: 115px;
+  }
+}
+
+@media (min-width: 425px){
+  .header-bg {
+  height: 130px;
+  }
+}
+
+@media (min-width: 768px){
+  .header-bg {
+  height: 235px;
+  }
+}
+
+@media (min-width: 1080px){
+  .header-bg {
+  height: 330px;
+  }
+}
+
+@media (min-width: 1440px){
+  .header-bg {
+  height: 440px;
+  }
+}
+
+@media (min-width: 1920px){
+  .header-bg {
+  height: 440px;
+  }
+}
+
+@media (min-width: 2560px){
+  .header-bg {
+    height: 440px;
+  }
+}

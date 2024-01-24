@@ -34,7 +34,7 @@ const config = {
   },
 
   plugins: [
-    // 'docusaurus-tailwindcss',
+    'docusaurus-plugin-sass',
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",

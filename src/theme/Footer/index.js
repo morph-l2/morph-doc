@@ -6,7 +6,7 @@ import FooterCopyright from '@theme/Footer/Copyright';
 import FooterLayout from '@theme/Footer/Layout';
 function Footer() {
   const {footer} = useThemeConfig();
-  console.log('footer', footer);
+  
   if (!footer) {
     return null;
   }
