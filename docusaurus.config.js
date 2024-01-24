@@ -68,7 +68,7 @@ const config = {
             'https://github.com/morph-l2/morph-doc/tree/main',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
