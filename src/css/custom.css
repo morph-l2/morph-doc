@@ -9,202 +9,216 @@
  @tailwind utilities;
  
  /* You can override the default Infima variables here. */
- :root {
-   --ifm-color-primary: #00CB9A;
-   --ifm-color-primary-dark: #00b78b;
-   --ifm-color-primary-darker: #00ad83;
-   --ifm-color-primary-darkest: #008e6c;
-   --ifm-color-primary-light: #00dfa9;
-   --ifm-color-primary-lighter: #00e9b1;
-   --ifm-color-primary-lightest: #09ffc4;
- 
-   --ifm-heading-color: #595959;
- 
-   --ifm-menu-color-background-active: #D9F7F0;
-   --ifm-menu-color-background-hover: #D9F7F0;
+:root {
+  --ifm-color-primary: #00CB9A;
+  --ifm-color-primary-dark: #00b78b;
+  --ifm-color-primary-darker: #00ad83;
+  --ifm-color-primary-darkest: #008e6c;
+  --ifm-color-primary-light: #00dfa9;
+  --ifm-color-primary-lighter: #00e9b1;
+  --ifm-color-primary-lightest: #09ffc4;
 
-   --ifm-color-emphasis-600: #fff;
- 
-   /* #00CB9A */
-   --ifm-code-font-size: 95%;
-   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
- 
-   --ifm-footer-background-color: #fff;
- 
-   --ifm-color-emphasis-200: '#000000',
- 
-   /* --ifm-menu-color: rgba(0, 0, 0, 1);
-   --ifm-menu-color-active: rgba(0, 0, 0, 0.9); */
- 
-   --ifm-container-width-xl: 1200px;
- 
-   --ifm-bg-color: #fff;
- 
-   --ifm-navbar-link-color: #fff;
-   --ifm-feature-h3-color: #1A1A1A;
-   --ifm-feature-p-color: #595959;
- 
-   --ifm-footer-color: #999;
- }
- 
- [data-theme='light'] .navbar-sidebar__brand {
-   background-color: #6A51FF;
- }
+  --ifm-heading-color: #595959;
 
- /* For readability concerns, you should choose a lighter palette in dark mode. */
- [data-theme='dark'] {
-   --ifm-color-primary: #62ffa4;
-   --ifm-color-primary-dark: #3fff90;
-   --ifm-color-primary-darker: #2dff85;
-   --ifm-color-primary-darkest: #00f768;
-   --ifm-color-primary-light: #85ffb8;
-   --ifm-color-primary-lighter: #97ffc3;
-   --ifm-color-primary-lightest: #ccffe1;
- 
-   /* --ifm-navbar-background-color: #6A51FF; */
- 
-   --ifm-heading-color: #CCC;
- 
-   --ifm-menu-color-background-active: #0F2518;
-   --ifm-menu-color-background-hover: #0F2518;
+  --ifm-menu-color-background-active: #D9F7F0;
+  --ifm-menu-color-background-hover: #D9F7F0;
 
-   --ifm-color-emphasis-600: #000;
- 
-   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
- 
-   --ifm-footer-background-color: #0A080F;
- 
-   --ifm-color-emphasis-200: '#fff',
- 
-   /* --ifm-menu-color: rgba(120, 124, 128, 1);
-   --ifm-menu-color-active: #fff !important; */
- 
-   --ifm-container-width-xl: 1200px;
- 
-   --ifm-bg-color: #000;
- 
-   --ifm-navbar-link-color: #fff;
-   --ifm-feature-h3-color: #F7F7F7;
-   --ifm-feature-p-color: #CCC;
-   
-   --ifm-footer-color: #999;
- }
- 
- .menu__link {
-   line-height: 1.75;
- }
- .footer__links {
-   display: flex;
- }
- .footer__col:nth-child(1) {
-   flex: 3;
- }
- .footer__col:nth-child(2) {
-   flex: 3;
- }
- .footer__col:nth-child(3) {
-   flex: 1;
- }
- .footer__bottom {
-   margin-top:  48px;
- }
- @media screen and (max-width: 996px) {
-   .navbar__logo {
-     display: flex;
-     align-items: center;
-   }
-   .navbar__logo img {
-     width: 70%;
-   }
- }
- [data-theme='light'] #__docusaurus {
-   background-color: var(--ifm-bg-color);
- }
- [data-theme='light'] .navbar {
-   /* background: rgba(255, 255, 255, 0.90) !important; */
-   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05) !important;
-   background: #6A51FF;
-   /* backdrop-filter: blur(5px); */
- }
- [data-theme='light'] .footer {
-   background-color: #fff !important;
-   box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.02) !important;
- }
- [data-theme='light'] .theme-doc-sidebar-container {
-   gap: 10px;
-   flex-shrink: 0;
-   background-color: #fff !important;
-   border-right: none !important;
- }
- [data-theme='light'] .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Sidebar-styles-module {
-   background-color: #fff !important;
-   border-right: none !important;
- }
- [data-theme='light'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-   display: none !important;
-   cursor: pointer !important;
- }
- [data-theme='light'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-   display: block !important;
-   cursor: pointer !important;
- }
- [data-theme='light'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-   color: #F7F7F7 !important;
- }
- [data-theme='light'] .clean-btn.navbar-sidebar__close {
-   color: #F7F7F7 !important;
- }
- [data-theme='dark'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-   display: block !important;
-   cursor: pointer !important;
- }
- [data-theme='dark'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-   display: none !important;
-   cursor: pointer !important;
- }
- [data-theme='dark'] #__docusaurus {
-   background-color: #000;
- }
- [data-theme='dark'] .navbar {
-   background-color: rgba(10, 8, 15, 0.90) !important;
-   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.85) !important;
- }
- [data-theme='dark'] .footer {
-   background-color: #0A080F;
- }
- [data-theme='dark'] .theme-doc-sidebar-container {
-   background-color: #0A080F;
-   border-right: none !important;
- }
- 
- @media (max-width: 996px) {
-   .features_src-components-HomepageFeatures-styles-module .col {
-     --ifm-col-width: 50% !important;
-   }
- }
- 
- @media (max-width: 426px) {
-   .col {
-     --ifm-col-width: 100% !important;
-   }
- }
- 
- .theme-doc-sidebar-item-link,
- .menu__list-item-collapsible {
-   font-size: 18px;
-   font-weight: 700;
-   color: hsl(var(--morui-title-1));
- }
- 
- .theme-doc-sidebar-item-link-level-2 {
-   font-size: 16px;
-   font-weight: 600;
-   color: hsl(var(--morui-title-1));
- }
- .navbar__toggle.clean-btn {
-   color: #fff;
- }
- 
+  --ifm-color-emphasis-600: #fff;
+
+  /* #00CB9A */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-footer-background-color: #fff;
+
+  --ifm-color-emphasis-200: '#000000',
+
+  /* --ifm-menu-color: rgba(0, 0, 0, 1);
+  --ifm-menu-color-active: rgba(0, 0, 0, 0.9); */
+
+  --ifm-container-width-xl: 1200px;
+
+  --ifm-bg-color: #fff;
+
+  --ifm-navbar-link-color: #fff;
+  --ifm-feature-h3-color: #1A1A1A;
+  --ifm-feature-p-color: #595959;
+
+  --ifm-footer-color: #999;
+}
+
+[data-theme='light'] .navbar-sidebar__brand {
+  background-color: #6A51FF;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #62ffa4;
+  --ifm-color-primary-dark: #3fff90;
+  --ifm-color-primary-darker: #2dff85;
+  --ifm-color-primary-darkest: #00f768;
+  --ifm-color-primary-light: #85ffb8;
+  --ifm-color-primary-lighter: #97ffc3;
+  --ifm-color-primary-lightest: #ccffe1;
+
+  /* --ifm-navbar-background-color: #6A51FF; */
+
+  --ifm-heading-color: #CCC;
+
+  --ifm-menu-color-background-active: #0F2518;
+  --ifm-menu-color-background-hover: #0F2518;
+
+  --ifm-color-emphasis-600: #000;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-footer-background-color: #0A080F;
+
+  --ifm-color-emphasis-200: '#fff',
+
+  /* --ifm-menu-color: rgba(120, 124, 128, 1);
+  --ifm-menu-color-active: #fff !important; */
+
+  --ifm-container-width-xl: 1200px;
+
+  --ifm-bg-color: #000;
+
+  --ifm-navbar-link-color: #fff;
+  --ifm-feature-h3-color: #F7F7F7;
+  --ifm-feature-p-color: #CCC;
+  
+  --ifm-footer-color: #999;
+}
+
+.menu__link {
+  line-height: 1.75;
+}
+.footer__links {
+  display: flex;
+}
+.footer__col:nth-child(1) {
+  flex: 3;
+}
+.footer__col:nth-child(2) {
+  flex: 3;
+}
+.footer__col:nth-child(3) {
+  flex: 1;
+}
+.footer__bottom {
+  margin-top:  48px;
+}
+@media screen and (max-width: 996px) {
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+  }
+  .navbar__logo img {
+    width: 70%;
+  }
+}
+[data-theme='light'] #__docusaurus {
+  background-color: var(--ifm-bg-color);
+}
+[data-theme='light'] .navbar {
+  /* background: rgba(255, 255, 255, 0.90) !important; */
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05) !important;
+  background: #6A51FF;
+  /* backdrop-filter: blur(5px); */
+}
+[data-theme='light'] .footer {
+  background-color: #fff !important;
+  box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.02) !important;
+}
+[data-theme='light'] .theme-doc-sidebar-container {
+  gap: 10px;
+  flex-shrink: 0;
+  background-color: #fff !important;
+  border-right: none !important;
+}
+[data-theme='light'] .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Sidebar-styles-module {
+  background-color: #fff !important;
+  border-right: none !important;
+}
+[data-theme='light'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: none !important;
+  cursor: pointer !important;
+}
+[data-theme='light'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: block !important;
+  cursor: pointer !important;
+}
+[data-theme='light'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  color: #F7F7F7 !important;
+}
+[data-theme='light'] .clean-btn.navbar-sidebar__close {
+  color: #F7F7F7 !important;
+}
+[data-theme='dark'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: block !important;
+  cursor: pointer !important;
+}
+[data-theme='dark'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: none !important;
+  cursor: pointer !important;
+}
+[data-theme='dark'] #__docusaurus {
+  background-color: #000;
+}
+[data-theme='dark'] .navbar {
+  background-color: rgba(10, 8, 15, 0.90) !important;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.85) !important;
+}
+[data-theme='dark'] .footer {
+  background-color: #0A080F;
+}
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #0A080F;
+  border-right: none !important;
+}
+
+@media (max-width: 996px) {
+  .features_src-components-HomepageFeatures-styles-module .col {
+    --ifm-col-width: 50% !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .col {
+    --ifm-col-width: 100% !important;
+  }
+}
+
+.theme-doc-sidebar-item-link,
+.menu__list-item-collapsible {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(var(--morui-title-1));
+}
+
+.theme-doc-sidebar-item-link-level-2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: hsl(var(--morui-title-1));
+}
+.navbar__items.navbar__items--right button.clean-btn {
+  color: #fff;
+}
+[data-theme='dark'] .navbar__items.navbar__items--right button.clean-btn svg:nth-child(1) {
+  display: block !important;
+}
+[data-theme='dark'] .navbar__items.navbar__items--right button.clean-btn svg:nth-child(2) {
+  display: none !important;
+}
+[data-theme='light'] .navbar__items.navbar__items--right button.clean-btn svg:nth-child(1) {
+  display: none !important;
+}
+[data-theme='light'] .navbar__items.navbar__items--right button.clean-btn svg:nth-child(2) {
+  display: block !important;
+}
+.navbar__logo img {
+height: 28px;
+}
 [data-theme='light']  .morph-logo {
   background-size: 160px 25px;
   background-image: url(/img/index/logo_light.svg);
@@ -238,10 +252,9 @@
   background-size: auto 100%;
   background-repeat: no-repeat;
   height: 440px;
-  margin-top: 0;
+  margin-top: -10px;
   padding-top: 0;
 }
-
 
 @media (min-width: 375px){
   .header-bg {
