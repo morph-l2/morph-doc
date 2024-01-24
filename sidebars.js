@@ -86,12 +86,10 @@ module.exports = {
       type: 'doc',
       id:'quick-start/faucet'
     },
-    /*
     {
       type: 'doc',
       id:'quick-start/bridge'
     },
-    */
     {
       type: 'link',
       href: "https://bridge-testnet.morphl2.io/",
