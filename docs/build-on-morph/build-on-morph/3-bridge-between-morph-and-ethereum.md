@@ -8,7 +8,8 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ## Bridging basics
 
 Although Morph is an Ethereum Layer 2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system. 
-App developers commonly need to move data and assets between Morph and Ethereum. We call the process of moving data and assets between the two networks "bridging".
+
+App developers often have a need to move data and assets between Morph and Ethereum, a process we call "bridging".
 
 ### Sending tokens
 
@@ -16,18 +17,20 @@ For the most common usecase, moving tokens around, we've created [the Standard T
 
 ### Sending data
 
-If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](## Send messages between Morph and Ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
+If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
+
+We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
 
 
 ## Utilize Standard Bridge Contract
 
-Certain interactions, like transferring ETH and ERC20 tokens between the two networks, are common enough that we've built the "Standard Bridge" to make moving these assets between L1 and L2 as easy as possible.
+To facilitate common interactions like transferring ETH and ERC20 tokens between the two networks, we offer the "Standard Bridge". This bridge simplifies the transfer of assets between L1 and L2.
 
-The standard bridge functionality provides a method for an ERC20 token to be deposited and locked on L1 in exchange of the same amount of an equivalent token on L2. This process is known as "bridging a token", e.g. depositing 100 USDC on L1 in exchange for 100 USDC on L2 and also the reverse - withdrawing 100 USDC on L2 in exchange for the same amount on L1. In addition to bridging tokens the standard bridge is also used for ETH.
+- Standard Bridge Functionality: It allows for ETH or ERC20 token to be deposited on L1 and locked in exchange for an equivalent amount on L2, and vice versa. This is known as "bridging a token," e.g., depositing 100 USDC on L1 for 100 USDC on L2. .
 
 The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol) (for Layer 2).
 
-Here we'll go over the basics of using this bridge to move ERC20 assets between Layer 1 and Layer 2.
+Here we'll go over the basics of using this bridge to move tokens between Layer 1 and Layer 2.
 
 ## Deposits
 <!-- 
@@ -42,7 +45,7 @@ If you want to deposit using a smart contract wallet and you know what you're do
 
 ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol).
 
-You **must** approve the Standard Token Bridge to use the amount of tokens that you want to deposit or the deposit will fail.
+Ensure the Standard Token Bridge is **approved** to use the tokens you wish to deposit.
 
 
 ### Depositing ETH
@@ -158,7 +161,7 @@ It's dead simple:
 
 ```solidity
 // Pretend this is on L2
-contract MyOptimisticContract {
+contract MyContract {
     function doSomething(uint256 myFunctionParam) public {
         // ... some sort of code goes here
     }
@@ -179,7 +182,9 @@ contract MyOtherContract {
 }
 ```
 
-::: tip Using the messenger contracts
+:::tip 
+
+Using the messenger contracts
 Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
 
 :::
@@ -203,9 +208,10 @@ The L1 proof and finalization transactions are typically significantly more expe
 
 ### Understanding the challenge period
 
-One of the most important things to understand about L1 ⇔ L2 interaction is that **messages sent from Layer 2 to Layer 1 cannot be relayed for the challenge period**.
-
+ne of the most important things to understand about L1 ⇔ L2 interactions is that **messages sent from Layer 2 to Layer 1 cannot be relayed during the challenge period**
+.
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this period has elapsed.
+
 
 :::tip
 
@@ -213,19 +219,16 @@ Read about Morph's unique challenge design based on [Responsive validity proof](
 
 :::
 
-We call this period of time the "challenge period" because it is the time during which a transaction can be challenged.
+We call this period of time the "challenge period" because it is the time during which a transaction can be challenged.This period is critical for ensuring the integrity of transactions between Layer 2 and Layer 1.
 
-Unlike the basic Optismtic Rollup, when you find out that some incorrect transactions or state are submitted to Layer 1 (such as a fake withdraw transction which want to withdraw your ETH to hacker's address) you need to spend a long time and energy to interact with sequencer to prove it is wrong.
+Comparing Rollup Approaches:
+- In a basic Optimistic Rollup, identifying and correcting incorrect transactions or states (like a fraudulent withdrawal transaction aiming to redirect your ETH to a hacker's address) requires significant time and effort. This involves interactions with the sequencer to prove the transaction is incorrect.
+- Morph’s approach differs. With Responsive Validity Proof, the sequencer is required to prove their correctness by submitting a zk (zero-knowledge) validity proof. This system necessitates a specific period for challengers to detect issues and initiate a challenge.
 
-Morph's responsive validity proof makes sequencer to prove they are right by submitting zk validity proof.
+Implications for Smart Contracts:
+- It’s crucial not to make decisions about Layer 2 transaction results from within a smart contract on Layer 1 until the challenge period has elapsed. Doing so prematurely might lead to decisions based on invalid transaction results.
+- Consequently, messages sent from Layer 2 to Layer 1, using the standard messenger contracts, cannot be relayed until they have completed the full challenge period.
 
-And this require a cetain period for you or any other challengers to find out the problem and start a challenge/
-
-Anyway, the point here is that **you don't want to be making decisions about Layer 2 transaction results from inside a smart contract on Layer 1 until this challenge period has elapsed**.
-
-Otherwise you might be making decisions based on an invalid transaction result.
-
-As a result, L2 ⇒ L1 messages sent using the standard messenger contracts cannot be relayed until they've waited out the full challenge period.
 
 <!--
 ::: tip On the length of the challenge period

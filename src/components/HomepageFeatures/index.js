@@ -35,10 +35,9 @@ const FeatureList = [
       </>
     ),
   },
-
   {
     title: 'Build on Morph',
-    url: 'https://www.morphl2.io/build',
+    url: '/docs/build-on-morph/intro',
     svg: '/img/banner4.svg',
     description: (
       <>

@@ -8,9 +8,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Faucet
 
-To interact with our public testnet, you first need to receive testnet ETH on sepolia. 
-
-Then you may bridge from sepolia Testnet to morph testnet. 
+To use Morph's public testnet, obtain testnet ETH on Sepolia, then bridge it to the Morph testnet.
 
 Here are a few sepolia faucet apps:
 

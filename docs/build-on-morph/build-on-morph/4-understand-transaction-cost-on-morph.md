@@ -1,27 +1,26 @@
 ---
-title: Understand Transaction cost on Morph
+title: Understand Transaction Cost on Morph
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-Transaction fees on Morph work a lot like fees on Ethereum.
-However, Layer 2 introduces some new paradigms that mean it can never be exactly like Ethereum.
-Luckily, Morph's EVM equivalence makes these differences easy to understand and even easier to handle within your app.
+Transaction fees on Morph work a lot like fees on Ethereum. 
+
+However, Layer 2 introduces some unique aspects. Morph's optimistic zkEVM makes these differences easy to understand and even easier to handle within your app.
 
 This page includes the formula for calculating the gas cost of transactions on Morph.
 
-
-<!--You can also [use our SDK]() to calculate those costs for you. -->
- 
-
-There are two kinds of cost for transaction on Morph: the L2 execution fee and the L1 data/security fee.
+There are two kinds of costs for transactions on Morph: the L2 execution fee and the L1 data/security fee.
 
 ## The L2 execution fee
 
-Just like on Ethereum, transactions on Morph have to pay **gas** for the amount of computation and storage that they use.
+Like Ethereum, transactions on Morph incur gas costs for computation and storage usage.
 
-Every L2 transaction will pay some **execution fee**, equal to the amount of gas used by the transaction, multiplied by the gas price attached to the transaction.
+Every L2 transaction will pay some **execution** fee, equal to the amount of gas used multiplied by the gas price of the transaction.
+
+The formula is straightforward:
+
 
 
 <!--
@@ -55,7 +54,7 @@ From an application development perspective, EIP-1559 introduces the following c
 
 -->
 
-Here's the (simple) math:
+
 
 ```
 l2_execution_fee = l2_gas_price * l2_gas_used
@@ -64,30 +63,25 @@ l2_execution_fee = l2_gas_price * l2_gas_used
 transaction_gas_price = l2_base_fee + l2_priority_fee
 -->
 
-The amount of L2 gas used depends on the particular transaction that you're trying to send.
-Thanks to EVM equivalence, transactions typically use approximately the same amount of gas on Morph as they do on Ethereum.
+The amount of L2 gas used depends on the specific transaction. Due to EVM compatibility, gas usage on Morph is typically similar to Ethereum.
 
 
 ## The L1 data fee
 
-Morph differs from Ethereum because all transactions on Morph are also published to Ethereum.
-
-This step is crucial to the security properties of Morph because it means that all of the data you need to sync a Morph node is always publicly available on Ethereum.
-
+Morph transactions are also published to Ethereum, crucial to Morph’s security as it ensures all data needed to verify Morph's state is always publicly available on Ethereum.
 It's what makes Morph an L2.
 
-Users on Morph have to pay for the cost of submitting their transactions to Ethereum.
+Users must pay for the cost of submitting their transactions to Ethereum, known as the **L1 data fee**. This is the primary difference between Morph (and other L2s) and other Layer 1s.
 
-We call this the **L1 data fee**, and it's the primary discrepancy between Morph (and other L2s) and Ethereum.
+Because gas costs are quite more expensive on Ethereum, the L1 data fee typically represents most of the total cost of a transaction on Morph.
 
-Because the cost of gas is so expensive on Ethereum, the L1 data fee typically dominates the total cost of a transaction on Morph.
 
 This fee is based on four factors:
 
 1. The current gas price on Ethereum - l1_base_fee
 2. The gas cost to publish the transaction to Ethereum scales roughly with the size of the transaction (in bytes) - tx_data_gas
-3. A fixed overhead cost denominated in gas. This is currently set to 2100.
-4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.0. (as shown in GasPriceOracle.sol as scaler/1e9 )
+3. A fixed overhead cost denominated in gas. This is currently set to 2500.
+4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.15.
 
 Here's the math:
 
@@ -143,7 +137,7 @@ As a result, you should display the sum of both of these fees to give users the 
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
-#### Estimating the L1 data fee
+#### [Estimating the L1 data fee](./4-understand-transaction-cost-on-morph.md/#the-l1-data-fee)
 
 
 
