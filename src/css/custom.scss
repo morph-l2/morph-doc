@@ -211,6 +211,13 @@
 .navbar-sidebar button.clean-btn svg, .navbar__items button.clean-btn svg {
   color: #fff;
 }
+.menu__link--sublist-caret:after {
+  min-width: 16px;
+}
+.menu__caret:before, .menu__link--sublist-caret:after {
+  width: 16px;
+  height: 16px;
+}
 [data-theme='dark'] button.clean-btn svg:nth-child(1) {
   display: block !important;
 }

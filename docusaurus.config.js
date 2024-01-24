@@ -1,5 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+// If you are using dotenv (https://www.npmjs.com/package/dotenv)
+require('dotenv').config();
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -86,12 +88,12 @@ const config = {
       }],
       algolia: {
         // The application ID provided by Algolia
-        appId: 'ZPAGKYIZIQ',
+        appId: process.env.ALGOLIA_APP_ID,
   
         // Public API key: it is safe to commit it
-        apiKey: '27fd51373bda15bdf1891fa3300527c8',
+        apiKey: process.env.ALGOLIA_API_KEY,
   
-        indexName: 'morph_docs',
+        indexName: process.env.ALGOLIA_INDEX_NAME,
   
         // Optional: see doc section below
         contextualSearch: true,

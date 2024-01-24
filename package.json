@@ -23,6 +23,7 @@
     "@morui/theme": "^2.1.0",
     "autoprefixer": "^10.4.17",
     "classnames": "^2.5.1",
+    "dotenv": "^16.0.3",
     "docusaurus-tailwindcss": "^0.1.0",
     "docusaurus-plugin-sass": "^0.2.5",
     "postcss": "^8.4.33",
