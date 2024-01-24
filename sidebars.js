@@ -86,10 +86,12 @@ module.exports = {
       type: 'doc',
       id:'quick-start/faucet'
     },
+    /*
     {
       type: 'doc',
       id:'quick-start/bridge'
     },
+    */
     {
       type: 'link',
       href: "https://explorer-testnet.morphl2.io/",
@@ -124,6 +126,12 @@ module.exports = {
           type: 'doc',
           id:'build-on-morph/developer-resources/contracts'
         },
+        /*
+        {
+          type: 'doc',
+          id:'build-on-morph/developer-resources/how-to-run-a-morph-node'
+        },
+        */
         {
           type: 'link',
           href: "https://explorer-testnet.morphl2.io/",

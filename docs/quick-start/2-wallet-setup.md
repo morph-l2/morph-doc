@@ -9,10 +9,11 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 To interact with dApps on Morph, you need a compatible wallet. Below are some example wallets and configuration tips.
 
+<!--
 ### Bitget Wallet
 
 TBD
-
+-->
 
 ### MetaMask
 
