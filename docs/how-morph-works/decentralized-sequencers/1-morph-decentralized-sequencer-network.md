@@ -1,5 +1,5 @@
 ---
-title: Morph's decentralized sequencer network
+title: Morph's Decentralized Sequencer Network
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
@@ -128,7 +128,10 @@ The Layer 1 contract will verify the submitted signature to confirm the transact
 
 ## Roadmap
 
-**Stage 1**: Close beta test on testnet
+**Stage 1**: Close test on morph beta testnet
+
 **Stage 2**: Decentralized sequencer network live on mainnet
+
 **Stage 3**: Open election of sequencer set
-**Stage 4**: Share Morph's sequencer network with other rollups
+
+**Stage 4**: Open Morph's sequencer network to the public l2 space
