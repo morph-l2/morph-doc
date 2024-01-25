@@ -19,7 +19,7 @@ According to limitations of the current geth implementation, we only support arc
 ### Build executable binary
 
 #### Build Geth
-1. Clone [go-ethereum](https://github.com/morph-labs/go-ethereum)
+1. Clone [go-ethereum](https://github.com/morph-l2/go-ethereum)
 
 ```
 
@@ -40,7 +40,7 @@ make nccc_geth
 ```
 
 #### Build Node
-1. Clone [node](https://github.com/morph-labs/node)
+1. Clone [node](https://github.com/morph-l2/node)
 
 ```
 cd ~/.morph
