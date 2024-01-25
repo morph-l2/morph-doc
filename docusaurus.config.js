@@ -1,5 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+// If you are using dotenv (https://www.npmjs.com/package/dotenv)
+require('dotenv').config();
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -33,6 +35,21 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    'docusaurus-plugin-sass',
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -53,7 +70,7 @@ const config = {
             'https://github.com/morph-l2/morph-doc/tree/main',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
@@ -67,16 +84,16 @@ const config = {
         content: 'Morph,EVM-equivalent,Optimistic,zkEVM'
       }, {
         name: 'google-site-verification',
-        content: 'mDvOrPPWpVMPyzZmqjzK2nerPAPuWXsSOthN_2eQO20'
+        content: '-GPotcMH5Ecuj8EnU-Tasmm8TOZXEHWEPD5qP5d0FEU'
       }],
       algolia: {
         // The application ID provided by Algolia
-        appId: 'ZPAGKYIZIQ',
+        appId: process.env.ALGOLIA_APP_ID,
   
         // Public API key: it is safe to commit it
-        apiKey: '27fd51373bda15bdf1891fa3300527c8',
+        apiKey: process.env.ALGOLIA_API_KEY,
   
-        indexName: 'morph_docs',
+        indexName: process.env.ALGOLIA_INDEX_NAME,
   
         // Optional: see doc section below
         contextualSearch: true,
@@ -105,15 +122,17 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
+      sidebar: {
+        autoCollapseCategories: true,
+      },
       navbar: {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'img/index/logo_light.png',
-          srcDark: 'img/index/logo_dark.png',
+          src: 'img/index/logo_dark.svg',
+          srcDark: 'img/index/logo_dark.svg',
         },
         items: [
-
           {
             type: 'doc',
             position: 'right',
@@ -155,34 +174,37 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Morph',
+            title: 'Learn More',
             items: [
               {
-                label: 'About',
-                to: 'https://www.morphl2.io/',
+                label: "Website",
+                href: 'https://www.morphl2.io/',
+              },
+              {
+                label: "About",
+                href: 'https://www.morphl2.io/about',
+              },
+              {
+                label: "Contact us",
+                href: 'https://t.me/MorphL2official',
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Technology",
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/Morphl2',
+                label: "Docs",
+                href: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
               {
-                label: 'Blog',
-                to: 'https://medium.com/@morphlayer2',
+                label: "Tools",
+                href: 'https://www.morphl2.io/build',
               },
             ],
-          },
+          }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Morph. All rights reserved.`,
+        copyright: `© ${new Date().getFullYear()} Morph. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,

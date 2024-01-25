@@ -1,30 +1,30 @@
-import React from 'react';
-import clsx from 'clsx';
+import React, { useEffect } from 'react';
+import classnames from 'classnames';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {useColorMode} from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import styles from './index.module.css';
+import { log } from '@site/src/components/log';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  const {colorMode, setColorMode} = useColorMode();
+  // const {siteConfig} = useDocusaurusContext();
+  // const {colorMode, setColorMode} = useColorMode();
 
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <img src={`/img/index/morphbanner_${colorMode}.svg`} alt="banner" />
-      {/*
-      <div className={clsx(styles.headerContainer)}>
-        <img src={`/img/index/header_${colorMode}.svg`} alt="banner" />
-      </div>
-  */}
+    <header
+      className={"header-bg " + classnames('heroBanner')}
+      >
     </header>
   );
 }
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+
+  useEffect(() => {
+    log({
+      page: 'docs_page',
+    });
+  }, [])
   return (
     <Layout
       title={`${siteConfig.title}`}

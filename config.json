@@ -1,5 +1,5 @@
 {
-  "index_name": "morph_docs",
+  "index_name": "morph_doc",
   "start_urls": ["https://docs.morphl2.io/"],
   "sitemap_urls": [
     "https://docs.morphl2.io/sitemap.xml"
