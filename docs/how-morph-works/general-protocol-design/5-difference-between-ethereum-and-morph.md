@@ -92,4 +92,4 @@ EVM Target version
 To ensure no unexpected behaviour happens in your contracts, we recommend using london as target version when compiling your smart contracts.
 You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
 
-## [Transaction Fees](./3-transaction-fees-on-morph.md)
+## [Transaction Fees](./../../build-on-morph/build-on-morph/4-understand-transaction-cost-on-morph.md)

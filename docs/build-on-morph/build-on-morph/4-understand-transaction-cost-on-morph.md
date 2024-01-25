@@ -13,6 +13,16 @@ This page includes the formula for calculating the gas cost of transactions on M
 
 There are two kinds of costs for transactions on Morph: the L2 execution fee and the L1 data/security fee.
 
+
+<!--
+:::tip
+
+The transaction fees are collected into the `SequencerFeeVault` contract balance. This contract also tracks the amount we’ve historically withdrawn to L1 using `totalProcessed()(uint256)`.
+
+The block producer receives no direct reward, and the `COINBASE` opcode returns the fee vault address.
+
+:::
+-->
 ## The L2 execution fee
 
 Like Ethereum, transactions on Morph incur gas costs for computation and storage usage.
@@ -75,6 +85,9 @@ Users must pay for the cost of submitting their transactions to Ethereum, known 
 
 Because gas costs are quite more expensive on Ethereum, the L1 data fee typically represents most of the total cost of a transaction on Morph.
 
+ 
+
+
 
 This fee is based on four factors:
 
@@ -94,8 +107,9 @@ Where `tx_data_gas` is:
 ```
 tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
+
 :::tip
-You can read the parameter values from the [gas oracle contract](https://github.com/morph-l2/contracts/tree/main/contracts/L2/GasPriceOracle.sol).
+You can read the parameter values from the [gas oracle contract](https://github.com/morph-l2/contracts/tree/main/contracts/L2/GasPriceOracle.sol). Morph has pre-deployed `GasPriceOracle`, accessible on Morph Sepolia at [`0x5300000000000000000000000000000000000002`](https://explorer-testnet.morphl2.io/address/0x5300000000000000000000000000000000000002).
 :::
 
 
@@ -112,17 +126,6 @@ Like on Ethereum, you can query this gas price with the `eth_gasPrice` RPC metho
 
 Similarly, you should set your transaction gas limit in the same way that you would set it on Ethereum (e.g. via `eth_estimateGas`).
 
-### Responding to gas price updates
-
-Gas prices on L2 default to 0.001 Gwei but can increase dynamically if the network is congested.
-
-When this happens, the lowest fee that the network will accept also increases.
-
-Unlike Ethereum, Morph currently does not have a mempool to hold transactions with too low a fee.
-
-Instead, Morph nodes will reject the transaction with the message `Fee too low`.
-
-In such cases, you may need to handle this case explicitly and retry the transaction with a new gas price when this happens.
 
 ### Displaying fees to users
 
