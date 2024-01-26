@@ -17,7 +17,7 @@ function HomepageHeader() {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
 
-  useEffect(() => {
+  React.useEffect(() => {
     log({
       page: 'docs_page',
     });
