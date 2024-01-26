@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Layout from '@theme/Layout';
+import React from 'react';
 import classnames from 'classnames';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import { log } from '@site/src/components/log';
 
 function HomepageHeader() {
-  // const {siteConfig} = useDocusaurusContext();
-  // const {colorMode, setColorMode} = useColorMode();
-
   return (
     <header
       className={"header-bg " + classnames('heroBanner')}
@@ -20,11 +16,6 @@ function HomepageHeader() {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
 
-  useEffect(() => {
-    log({
-      page: 'docs_page',
-    });
-  }, [])
   return (
     <Layout
       title={`${siteConfig.title}`}

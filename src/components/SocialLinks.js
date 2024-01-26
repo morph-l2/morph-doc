@@ -1,10 +1,8 @@
-import React from 'react';
+import { Discord, Github, LinkedIn, Medium, Telegram, TwitterX } from './logo';
 
-import cls from 'classnames';
-
-import { websiteTabClick } from './log';
-import { Discord, Github, Medium, Telegram, TwitterX, LinkedIn } from './logo';
 import Link from './Link';
+import React from 'react';
+import cls from 'classnames';
 import { links } from './config';
 
 const socialLinks = [{
@@ -45,9 +43,6 @@ export default function SocialLinks(props) {
         key={key} href={val.link || ''}
         className={props.bgClass + " social-link flex justify-center items-center"}
         target={val.link.startsWith('http') ? "_blank" : "_self"}
-        onClick={() => val.log_name && websiteTabClick({
-          event: val.log_name,
-        })}
         >
       <span className="inline-block w-6 h-6 flex items-center justify-center">{val.img(props.fill || '', props.size || '24')}</span>
       <span className="sr-only ml-3 -mt-1 social-label">{val.label}</span>
