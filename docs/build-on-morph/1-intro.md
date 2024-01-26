@@ -5,11 +5,15 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
+
+
 Welcome to Morph’s Developer Docs!
 
 Are you eager to build applications on Morph but unsure where to start? 
 
 You're in the right place – we've got you covered!
+
+![devintro](../../assets/docs/dev/devintro.png)
 
 As the first optimistic zkEVM Ethereum Layer 2 solution, Morph is 100% EVM compatible.
 
