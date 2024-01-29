@@ -56,7 +56,7 @@ module.exports = {
             network: "tMorph",
             chainId: 2710,
             urls: {
-              apiURL: "",
+              apiURL: "https://explorer-api-testnet.morphl2.io/api",
               browserURL: "https://explorer-testnet.morphl2.io",
             },
           },

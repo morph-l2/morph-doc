@@ -26,21 +26,41 @@ Once you receive ETH on Sepolia, you should see it in your wallet on the Sepolia
 It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on the [Sepolia Block Explorer](https://sepolia.etherscan.io/).
 
 
-<!--
-### ERC20 Faucet
+### Morph ERC20 Faucet
 
-You can obtain morph's version of USDT on Sepolia throught our discord faucet, here's the step:
 
-1. Join our discord server
+:::tip
 
-2. Find the #faucet channel
+Currently, we set the limit that for each discord user, you can only request the tokens once every 24 hours.
 
-3. type /faucet + [Your Address]
+:::
 
-4. Wait for a few minutes
+You can obtain morph's version of USDT on Sepolia through our discord faucet, here's how it works:
 
-5. Add USDT information to your wallet
+1. Join our discord server through this [link](https://discord.gg/f3Wh6ZK6XC)
 
-6. Check you wallet for USDT balance and start to bridge!
+2. Find the *#| discord-faucet* channel
 
--->
+3. type */faucet* in the channel and add your Sepolia address behind it.
+
+![command](../../assets/docs/quick-start/faucet/command.png)
+
+4. Wait for a few seconds.
+
+![mining](../../assets/docs/quick-start/faucet/mining.png)
+
+5. Once succeeded, you will see this in the channel.
+
+![success](../../assets/docs/quick-start/faucet/success.png)
+
+6.  Add the Morph Sepolia USDT information to your wallet
+
+~~~
+
+Sepolia address: "0x5F4c7D793D898e64eddd1fC82D27EcfB5F6e4596"
+
+Morph Sepolia address: "0xB4A71512cf4F3A8f675D2aeC76198D6419D219C7"
+
+~~~
+
+7. Check you wallet for USDT balance and start to bridge!
