@@ -32,6 +32,21 @@ Currently, the Add to wallet links may not be compatible with all wallets yet. I
 #### Network Configuration
 
 
+:::tip
+
+You can use any of the following 3 rpc for connections:
+
+~~~
+https://rpc-testnet.morphl2.io
+
+https://rpc1-testnet.morphl2.io
+
+https://rpc2-testnet.morphl2.io
+~~~
+
+:::
+
+
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
 | Morph Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
