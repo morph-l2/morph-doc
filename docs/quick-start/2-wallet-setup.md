@@ -50,7 +50,7 @@ https://rpc2-testnet.morphl2.io
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
 | Morph Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
-| Ethereum Sepolia            | https://api.zan.top/node/v1/eth/sepolia/public       | 11155111    | https://sepolia.etherscan.io/      | ETH      |
+| Ethereum Sepolia            | https://eth-sepolia-public.unifra.io       | 11155111    | https://sepolia.etherscan.io      | ETH      |
 
 
 You can also visit [chainlist](https://chainlist.org/?chain=11155111&search=morph&testnets=true) to add Morph testnet and sepolia
