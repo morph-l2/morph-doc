@@ -381,11 +381,11 @@ ___
 
 ### wait
 
-• **wait**: (`confirmations?`: `number`) => `Promise`<`TransactionReceipt`\>
+• **wait**: (`confirmations?`: `number`) \=&gt; `Promise`&lt;`TransactionReceipt`&gt;
 
 #### Type declaration
 
-▸ (`confirmations?`): `Promise`<`TransactionReceipt`\>
+▸ (`confirmations?`): `Promise`&lt;`TransactionReceipt`&gt;
 
 ##### Parameters
 
@@ -395,7 +395,7 @@ ___
 
 ##### Returns
 
-`Promise`<`TransactionReceipt`\>
+`Promise`&lt;`TransactionReceipt`&gt;
 
 #### Inherited from
 

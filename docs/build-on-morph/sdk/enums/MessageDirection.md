@@ -15,7 +15,7 @@ Enum describing the direction of a message.
 
 ### L1\_TO\_L2
 
-• **L1\_TO\_L2** = ``0``
+• **L1\_TO\_L2** \= ``0``
 
 #### Defined in
 
@@ -25,7 +25,7 @@ ___
 
 ### L2\_TO\_L1
 
-• **L2\_TO\_L1** = ``1``
+• **L2\_TO\_L1** \= ``1``
 
 #### Defined in
 

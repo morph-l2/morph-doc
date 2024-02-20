@@ -17,7 +17,7 @@ L1 network chain IDs
 
 ### GOERLI
 
-• **GOERLI** = ``5``
+• **GOERLI** \= ``5``
 
 #### Defined in
 
@@ -27,7 +27,7 @@ ___
 
 ### HARDHAT\_LOCAL
 
-• **HARDHAT\_LOCAL** = ``31337``
+• **HARDHAT\_LOCAL** \= ``31337``
 
 #### Defined in
 
@@ -37,7 +37,7 @@ ___
 
 ### MAINNET
 
-• **MAINNET** = ``1``
+• **MAINNET** \= ``1``
 
 #### Defined in
 
@@ -47,7 +47,7 @@ ___
 
 ### MORPHISM\_LOCAL\_DEVNET
 
-• **MORPHISM\_LOCAL\_DEVNET** = ``900``
+• **MORPHISM\_LOCAL\_DEVNET** \= ``900``
 
 #### Defined in
 

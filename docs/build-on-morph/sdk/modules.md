@@ -107,7 +107,7 @@ ___
 
 ### DeepPartial
 
-Ƭ **DeepPartial**<`T`\>: { [P in keyof T]?: DeepPartial<T[P]\> }
+Ƭ **DeepPartial**&lt;`T`&gt;: \{ [P in keyof T]?: DeepPartial&lt;T[P]&gt; \}
 
 Utility type for deep partials.
 
@@ -125,7 +125,7 @@ ___
 
 ### L2Provider
 
-Ƭ **L2Provider**<`TProvider`\>: `TProvider` & { `_isL2Provider`: ``true`` ; `estimateL1Gas`: (`tx`: `TransactionRequest`) => `Promise`<`BigNumber`\> ; `estimateL1GasCost`: (`tx`: `TransactionRequest`) => `Promise`<`BigNumber`\> ; `estimateL2GasCost`: (`tx`: `TransactionRequest`) => `Promise`<`BigNumber`\> ; `estimateTotalGasCost`: (`tx`: `TransactionRequest`) => `Promise`<`BigNumber`\> ; `getL1GasPrice`: () => `Promise`<`BigNumber`\>  }
+Ƭ **L2Provider**&lt;`TProvider`&gt;: `TProvider` & \{ `_isL2Provider`: ``true`` ; `estimateL1Gas`: (`tx`: `TransactionRequest`) \=&gt; `Promise`&lt;`BigNumber`&gt; ; `estimateL1GasCost`: (`tx`: `TransactionRequest`) \=&gt; `Promise`&lt;`BigNumber`&gt; ; `estimateL2GasCost`: (`tx`: `TransactionRequest`) \=&gt; `Promise`&lt;`BigNumber`&gt; ; `estimateTotalGasCost`: (`tx`: `TransactionRequest`) \=&gt; `Promise`&lt;`BigNumber`&gt; ; `getL1GasPrice`: () \=&gt; `Promise`&lt;`BigNumber`&gt;  \}
 
 Represents an extended version of an normal ethers Provider that returns additional L2 info and
 has special functions for L2-specific interactions.
@@ -193,7 +193,7 @@ ___
 
 ### OEL1ContractsLike
 
-Ƭ **OEL1ContractsLike**: { [K in keyof OEL1Contracts]: AddressLike }
+Ƭ **OEL1ContractsLike**: \{ [K in keyof OEL1Contracts]: AddressLike \}
 
 Convenience type for something that looks like the L1 OE contract interface but could be
 addresses instead of actual contract objects.
@@ -206,7 +206,7 @@ ___
 
 ### OEL2ContractsLike
 
-Ƭ **OEL2ContractsLike**: { [K in keyof OEL2Contracts]: AddressLike }
+Ƭ **OEL2ContractsLike**: \{ [K in keyof OEL2Contracts]: AddressLike \}
 
 Convenience type for something that looks like the L2 OE contract interface but could be
 addresses instead of actual contract objects.
@@ -267,7 +267,7 @@ Stuff that can be coerced into a transaction.
 
 ### BRIDGE\_ADAPTER\_DATA
 
-• `Const` **BRIDGE\_ADAPTER\_DATA**: { [ChainID in L2ChainID]?: BridgeAdapterData }
+• `Const` **BRIDGE\_ADAPTER\_DATA**: \{ [ChainID in L2ChainID]?: BridgeAdapterData \}
 
 Mapping of L1 chain IDs to the list of custom bridge addresses for each chain.
 
@@ -279,7 +279,7 @@ ___
 
 ### CHAIN\_BLOCK\_TIMES
 
-• `Const` **CHAIN\_BLOCK\_TIMES**: { [ChainID in L1ChainID]: number }
+• `Const` **CHAIN\_BLOCK\_TIMES**: \{ [ChainID in L1ChainID]: number \}
 
 #### Defined in
 
@@ -289,7 +289,7 @@ ___
 
 ### CONTRACT\_ADDRESSES
 
-• `Const` **CONTRACT\_ADDRESSES**: { [ChainID in L2ChainID]: OEContractsLike }
+• `Const` **CONTRACT\_ADDRESSES**: \{ [ChainID in L2ChainID]: OEContractsLike \}
 
 Mapping of L1 chain IDs to the appropriate contract addresses for the OE deployments to the
 given network. Simplifies the process of getting the correct contract addresses for a given
@@ -316,7 +316,7 @@ ___
 
 ### DEPOSIT\_CONFIRMATION\_BLOCKS
 
-• `Const` **DEPOSIT\_CONFIRMATION\_BLOCKS**: { [ChainID in L2ChainID]: number }
+• `Const` **DEPOSIT\_CONFIRMATION\_BLOCKS**: \{ [ChainID in L2ChainID]: number \}
 
 #### Defined in
 
@@ -326,7 +326,7 @@ ___
 
 ### asL2Provider
 
-▸ **asL2Provider**<`TProvider`\>(`provider`): [`L2Provider`](modules#l2provider)<`TProvider`\>
+▸ **asL2Provider**&lt;`TProvider`&gt;(`provider`): [`L2Provider`](modules#l2provider)&lt;`TProvider`&gt;
 
 Returns an provider wrapped as an Morph L2 provider. Adds a few extra helper functions to
 simplify the process of estimating the gas usage for a transaction on Morph. Returns a COPY
@@ -346,7 +346,7 @@ of the original provider.
 
 #### Returns
 
-[`L2Provider`](modules#l2provider)<`TProvider`\>
+[`L2Provider`](modules#l2provider)&lt;`TProvider`&gt;
 
 Provider wrapped as an L2 provider.
 
@@ -358,7 +358,7 @@ ___
 
 ### estimateL1Gas
 
-▸ **estimateL1Gas**(`l2Provider`, `tx`): `Promise`<`BigNumber`\>
+▸ **estimateL1Gas**(`l2Provider`, `tx`): `Promise`&lt;`BigNumber`&gt;
 
 Estimates the amount of L1 gas required for a given L2 transaction.
 
@@ -371,7 +371,7 @@ Estimates the amount of L1 gas required for a given L2 transaction.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Estimated L1 gas.
 
@@ -383,7 +383,7 @@ ___
 
 ### estimateL1GasCost
 
-▸ **estimateL1GasCost**(`l2Provider`, `tx`): `Promise`<`BigNumber`\>
+▸ **estimateL1GasCost**(`l2Provider`, `tx`): `Promise`&lt;`BigNumber`&gt;
 
 Estimates the amount of L1 gas cost for a given L2 transaction in wei.
 
@@ -396,7 +396,7 @@ Estimates the amount of L1 gas cost for a given L2 transaction in wei.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Estimated L1 gas cost.
 
@@ -408,7 +408,7 @@ ___
 
 ### estimateL2GasCost
 
-▸ **estimateL2GasCost**(`l2Provider`, `tx`): `Promise`<`BigNumber`\>
+▸ **estimateL2GasCost**(`l2Provider`, `tx`): `Promise`&lt;`BigNumber`&gt;
 
 Estimates the L2 gas cost for a given L2 transaction in wei.
 
@@ -421,7 +421,7 @@ Estimates the L2 gas cost for a given L2 transaction in wei.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Estimated L2 gas cost.
 
@@ -433,7 +433,7 @@ ___
 
 ### estimateTotalGasCost
 
-▸ **estimateTotalGasCost**(`l2Provider`, `tx`): `Promise`<`BigNumber`\>
+▸ **estimateTotalGasCost**(`l2Provider`, `tx`): `Promise`&lt;`BigNumber`&gt;
 
 Estimates the total gas cost for a given L2 transaction in wei.
 
@@ -446,7 +446,7 @@ Estimates the total gas cost for a given L2 transaction in wei.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Estimated total gas cost.
 
@@ -473,7 +473,7 @@ function will throw an error.
 | `opts` | `Object` | Additional options for connecting to the contracts. |
 | `opts.l1SignerOrProvider?` | `Provider` \| `Signer` | - |
 | `opts.l2SignerOrProvider?` | `Provider` \| `Signer` | - |
-| `opts.overrides?` | [`DeepPartial`](modules#deeppartial)<[`OEContractsLike`](interfaces/OEContractsLike)\> | Custom contract address overrides for L1 or L2 contracts. |
+| `opts.overrides?` | [`DeepPartial`](modules#deeppartial)&lt;[`OEContractsLike`](interfaces/OEContractsLike)&gt; | Custom contract address overrides for L1 or L2 contracts. |
 
 #### Returns
 
@@ -501,7 +501,7 @@ Gets a series of bridge adapters for the given L2 chain ID.
 | `l2ChainId` | `number` | Chain ID for the L2 network. |
 | `messenger` | [`CrossChainMessenger`](classes/CrossChainMessenger) | Cross chain messenger to connect to the bridge adapters |
 | `opts?` | `Object` | Additional options for connecting to the custom bridges. |
-| `opts.contracts?` | [`DeepPartial`](modules#deeppartial)<[`OEContractsLike`](interfaces/OEContractsLike)\> | - |
+| `opts.contracts?` | [`DeepPartial`](modules#deeppartial)&lt;[`OEContractsLike`](interfaces/OEContractsLike)&gt; | - |
 | `opts.overrides?` | [`BridgeAdapterData`](interfaces/BridgeAdapterData) | Custom bridge adapters. |
 
 #### Returns
@@ -518,7 +518,7 @@ ___
 
 ### getL1GasPrice
 
-▸ **getL1GasPrice**(`l2Provider`): `Promise`<`BigNumber`\>
+▸ **getL1GasPrice**(`l2Provider`): `Promise`&lt;`BigNumber`&gt;
 
 Gets the current L1 gas price as seen on L2.
 
@@ -530,7 +530,7 @@ Gets the current L1 gas price as seen on L2.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Current L1 gas price as seen on L2.
 
@@ -623,7 +623,7 @@ ___
 
 ### isL2Provider
 
-▸ **isL2Provider**<`TProvider`\>(`provider`): provider is L2Provider<TProvider\>
+▸ **isL2Provider**&lt;`TProvider`&gt;(`provider`): provider is L2Provider&lt;TProvider&gt;
 
 Determines if a given Provider is an L2Provider.  Will coerce type
 if true
@@ -642,16 +642,16 @@ if true
 
 #### Returns
 
-provider is L2Provider<TProvider\>
+provider is L2Provider&lt;TProvider&gt;
 
 Boolean
 
 **`Example`**
 
 ```ts
-if (isL2Provider(provider)) {
+if (isL2Provider(provider)) \{
   // typescript now knows it is of type L2Provider
-  const gasPrice = await provider.estimateL2GasPrice(tx)
+  const gasPrice \= await provider.estimateL2GasPrice(tx)
 }
 ```
 
@@ -686,9 +686,9 @@ ___
 
 ### omit
 
-▸ **omit**<`T`, `K`\>(`obj`, `...keys`): `Omit`<`T`, `K`\>
+▸ **omit**&lt;`T`, `K`&gt;(`obj`, `...keys`): `Omit`&lt;`T`, `K`&gt;
 
-Returns a copy of the given object ({ ...obj }) with the given keys omitted.
+Returns a copy of the given object (\{ ...obj \}) with the given keys omitted.
 
 #### Type parameters
 
@@ -706,7 +706,7 @@ Returns a copy of the given object ({ ...obj }) with the given keys omitted.
 
 #### Returns
 
-`Omit`<`T`, `K`\>
+`Omit`&lt;`T`, `K`&gt;
 
 A copy of the given object with the given keys omitted.
 

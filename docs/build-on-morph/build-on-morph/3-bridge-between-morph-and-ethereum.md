@@ -13,7 +13,7 @@ App developers often have a need to move data and assets between Morph and Ether
 
 ### Sending tokens
 
-For the most common usecase, moving tokens around, we've created [the Standard Token Bridge](#using-the-standard-bridge). The Standard Token Bridge is a simple smart contract with all the functionality you need to move tokens between Morph and Ethereum. It also allows you to easily create L2 representations of existing tokens on Ethereum.
+For the most common usecase, moving tokens around, we've created the Standard Token Bridge. The Standard Token Bridge is a simple smart contract with all the functionality you need to move tokens between Morph and Ethereum. It also allows you to easily create L2 representations of existing tokens on Ethereum.
 
 ### Sending data
 

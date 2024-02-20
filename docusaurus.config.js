@@ -3,8 +3,12 @@
 // If you are using dotenv (https://www.npmjs.com/package/dotenv)
 require('dotenv').config();
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
+const remarkMath  = require('remark-math');
+const rehypeKatex = require('rehype-katex');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,6 +22,8 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+
+  // onBrokenLinks: 'ignore',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -48,6 +54,20 @@ const config = {
         },
       };
     },
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+        toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          // {
+          //   to: '/docs/newDoc',
+          //   from: '/docs/oldDoc',
+          // },
+        ],
+      },
+    ],
   ],
 
   presets: [
@@ -61,6 +81,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/morph-l2/morph-doc/tree/main',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: {
           showReadingTime: true,
@@ -68,6 +90,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/morph-l2/morph-doc/tree/main',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
@@ -79,6 +103,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      prism: {
+        additionalLanguages: ['bash', 'diff', 'json'],
+      },
       metadata: [{
         name: 'keywords',
         content: 'Morph,EVM-equivalent,Optimistic,zkEVM'

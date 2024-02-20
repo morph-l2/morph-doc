@@ -1,9 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-
-import { links } from "@site/src/components/config";
-import { LogoWithText } from "@site/src/components/logo";
 import SocialLinks from "@site/src/components/SocialLinks";
 import Link from "@site/src/components/Link";
 
