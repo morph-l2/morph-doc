@@ -140,7 +140,7 @@ As a result, you should display the sum of both of these fees to give users the 
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
-#### [Estimating the L1 data fee](./4-understand-transaction-cost-on-morph.md/#the-l1-data-fee)
+#### [Estimating the L1 data fee](./understand-transaction-cost-on-morph#the-l1-data-fee)
 
 
 

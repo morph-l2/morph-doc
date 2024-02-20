@@ -15,7 +15,7 @@ Enum describing the status of a CrossDomainMessage message receipt.
 
 ### RELAYED\_FAILED
 
-• **RELAYED\_FAILED** = ``0``
+• **RELAYED\_FAILED** \= ``0``
 
 #### Defined in
 
@@ -25,7 +25,7 @@ ___
 
 ### RELAYED\_SUCCEEDED
 
-• **RELAYED\_SUCCEEDED** = ``1``
+• **RELAYED\_SUCCEEDED** \= ``1``
 
 #### Defined in
 

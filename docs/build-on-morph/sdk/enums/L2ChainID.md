@@ -16,7 +16,7 @@ L2 network chain IDs
 
 ### MORPHISM
 
-• **MORPHISM** = ``10000``
+• **MORPHISM** \= ``10000``
 
 #### Defined in
 
@@ -26,7 +26,7 @@ ___
 
 ### MORPHISM\_HARDHAT\_DEVNET
 
-• **MORPHISM\_HARDHAT\_DEVNET** = ``17``
+• **MORPHISM\_HARDHAT\_DEVNET** \= ``17``
 
 #### Defined in
 
@@ -36,7 +36,7 @@ ___
 
 ### MORPHISM\_LOCAL\_DEVNET
 
-• **MORPHISM\_LOCAL\_DEVNET** = ``53077``
+• **MORPHISM\_LOCAL\_DEVNET** \= ``53077``
 
 #### Defined in
 

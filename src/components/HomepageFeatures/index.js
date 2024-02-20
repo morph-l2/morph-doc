@@ -66,8 +66,8 @@ export default function HomepageFeatures() {
   return (
     <section className="features">
       <div className="container flex flex-col items-center">
-        <h2 className="mt-4 md:mt-12 text-[15px] md:text-[32px]">Resource</h2>
-        <div className="gap-2 md:gap-8 flex items-center grid grid-flow-row grid-cols-2">
+        {/* <h2 className="mt-4 md:mt-12 text-[15px] md:text-[32px]">Resource</h2> */}
+        <div className="mt-4 md:mt-[80px] gap-2 md:gap-8 flex items-center grid grid-flow-row grid-cols-2">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

@@ -74,7 +74,7 @@ Creates a new CrossChainProvider instance.
 | `opts` | `Object` | Options for the provider. |
 | `opts.backendURL?` | `string` | backend for withdraw proof gen. |
 | `opts.bridges?` | [`BridgeAdapterData`](../interfaces/BridgeAdapterData) | Optional bridge address list. |
-| `opts.contracts?` | [`DeepPartial`](../modules#deeppartial)<[`OEContractsLike`](../interfaces/OEContractsLike)\> | Optional contract address overrides. |
+| `opts.contracts?` | [`DeepPartial`](../modules#deeppartial)&lt;[`OEContractsLike`](../interfaces/OEContractsLike)&gt; | Optional contract address overrides. |
 | `opts.depositConfirmationBlocks?` | [`NumberLike`](../modules#numberlike) | Optional number of blocks before a deposit is confirmed. |
 | `opts.l1BlockTimeSeconds?` | [`NumberLike`](../modules#numberlike) | Optional estimated block time in seconds for the L1 chain. |
 | `opts.l1ChainId` | [`NumberLike`](../modules#numberlike) | Chain ID for the L1 chain. |
@@ -147,15 +147,15 @@ Follows the pattern used by ethers.js.
 
 | Name | Type |
 | :------ | :------ |
-| `approveERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `CallOverrides`  }) => `Promise`<`BigNumber`\> |
-| `depositERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`BigNumber`\> |
-| `depositETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`BigNumber`\> |
-| `finalizeMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: { `overrides?`: `CallOverrides`  }) => `Promise`<`BigNumber`\> |
-| `proveMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: { `overrides?`: `CallOverrides`  }) => `Promise`<`BigNumber`\> |
-| `resendMessage` | (`message`: [`MessageLike`](../modules#messagelike), `messageGasLimit`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `CallOverrides`  }) => `Promise`<`BigNumber`\> |
-| `sendMessage` | (`message`: [`CrossChainMessageRequest`](../interfaces/CrossChainMessageRequest), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides`  }) => `Promise`<`BigNumber`\> |
-| `withdrawERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`BigNumber`\> |
-| `withdrawETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`BigNumber`\> |
+| `approveERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `depositERC20` | \(`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}\) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `depositETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `finalizeMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: \{ `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `proveMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: \{ `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `resendMessage` | (`message`: [`MessageLike`](../modules#messagelike), `messageGasLimit`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `sendMessage` | (`message`: [`CrossChainMessageRequest`](../interfaces/CrossChainMessageRequest), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `withdrawERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `withdrawETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
 
 #### Defined in
 
@@ -234,15 +234,15 @@ Follows the pattern used by ethers.js.
 
 | Name | Type |
 | :------ | :------ |
-| `approveERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `Overrides`  }) => `Promise`<`TransactionRequest`\> |
-| `depositERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`TransactionRequest`\> |
-| `depositETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `PayableOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`TransactionRequest`\> |
-| `finalizeMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: { `overrides?`: `PayableOverrides`  }) => `Promise`<`TransactionRequest`\> |
-| `proveMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: { `overrides?`: `PayableOverrides`  }) => `Promise`<`TransactionRequest`\> |
-| `resendMessage` | (`message`: [`MessageLike`](../modules#messagelike), `messageGasLimit`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `Overrides`  }) => `Promise`<`TransactionRequest`\> |
-| `sendMessage` | (`message`: [`CrossChainMessageRequest`](../interfaces/CrossChainMessageRequest), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides`  }) => `Promise`<`TransactionRequest`\> |
-| `withdrawERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`TransactionRequest`\> |
-| `withdrawETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`TransactionRequest`\> |
+| `approveERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides`  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `depositERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `depositETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `PayableOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `finalizeMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: \{ `overrides?`: `PayableOverrides`  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `proveMessage` | (`message`: [`MessageLike`](../modules#messagelike), `opts?`: \{ `overrides?`: `PayableOverrides`  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `resendMessage` | (`message`: [`MessageLike`](../modules#messagelike), `messageGasLimit`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides`  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `sendMessage` | (`message`: [`CrossChainMessageRequest`](../interfaces/CrossChainMessageRequest), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides`  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `withdrawERC20` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `withdrawETH` | (`amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
 
 #### Defined in
 
@@ -316,7 +316,7 @@ Signer connected to the L2 chain.
 
 ### approval
 
-▸ **approval**(`l1Token`, `l2Token`, `opts?`): `Promise`<`BigNumber`\>
+▸ **approval**(`l1Token`, `l2Token`, `opts?`): `Promise`&lt;`BigNumber`&gt;
 
 Queries the account's approval amount for a given L1 token.
 
@@ -331,7 +331,7 @@ Queries the account's approval amount for a given L1 token.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Amount of tokens approved for deposits from the account.
 
@@ -343,7 +343,7 @@ ___
 
 ### approveERC20
 
-▸ **approveERC20**(`l1Token`, `l2Token`, `amount`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **approveERC20**(`l1Token`, `l2Token`, `amount`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Approves a deposit into the L2 chain.
 
@@ -360,7 +360,7 @@ Approves a deposit into the L2 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the approval transaction.
 
@@ -372,7 +372,7 @@ ___
 
 ### depositERC20
 
-▸ **depositERC20**(`l1Token`, `l2Token`, `amount`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **depositERC20**(`l1Token`, `l2Token`, `amount`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Deposits some ERC20 tokens into the L2 chain.
 
@@ -391,7 +391,7 @@ Deposits some ERC20 tokens into the L2 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the deposit transaction.
 
@@ -403,7 +403,7 @@ ___
 
 ### depositETH
 
-▸ **depositETH**(`amount`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **depositETH**(`amount`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Deposits some ETH into the L2 chain.
 
@@ -420,7 +420,7 @@ Deposits some ETH into the L2 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the deposit transaction.
 
@@ -432,10 +432,10 @@ ___
 
 ### estimateL2MessageGasLimit
 
-▸ **estimateL2MessageGasLimit**(`message`, `opts?`): `Promise`<`BigNumber`\>
+▸ **estimateL2MessageGasLimit**(`message`, `opts?`): `Promise`&lt;`BigNumber`&gt;
 
 Estimates the amount of gas required to fully execute a given message on L2. Only applies to
-L1 => L2 messages. You would supply this gas limit when sending the message to L2.
+L1 \=&gt; L2 messages. You would supply this gas limit when sending the message to L2.
 
 #### Parameters
 
@@ -448,7 +448,7 @@ L1 => L2 messages. You would supply this gas limit when sending the message to L
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Estimates L2 gas limit.
 
@@ -460,7 +460,7 @@ ___
 
 ### estimateMessageWaitTimeSeconds
 
-▸ **estimateMessageWaitTimeSeconds**(`message`): `Promise`<`number`\>
+▸ **estimateMessageWaitTimeSeconds**(`message`): `Promise`&lt;`number`&gt;
 
 Returns the estimated amount of time before the message can be executed. When this is a
 message being sent to L1, this will return the estimated time until the message will complete
@@ -475,7 +475,7 @@ amount of time until the message will be picked up and executed on L2.
 
 #### Returns
 
-`Promise`<`number`\>
+`Promise`&lt;`number`&gt;
 
 Estimated amount of time remaining (in seconds) before the message can be executed.
 
@@ -487,7 +487,7 @@ ___
 
 ### finalizeMessage
 
-▸ **finalizeMessage**(`message`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **finalizeMessage**(`message`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Finalizes a cross chain message that was sent from L2 to L1. Only applicable for L2 to L1
 messages. Will throw an error if the message has not completed its challenge period yet.
@@ -503,7 +503,7 @@ messages. Will throw an error if the message has not completed its challenge per
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the finalization transaction.
 
@@ -515,11 +515,11 @@ ___
 
 ### getBackendTreeSyncIndex
 
-▸ **getBackendTreeSyncIndex**(): `Promise`<`number`\>
+▸ **getBackendTreeSyncIndex**(): `Promise`&lt;`number`&gt;
 
 #### Returns
 
-`Promise`<`number`\>
+`Promise`&lt;`number`&gt;
 
 #### Defined in
 
@@ -529,7 +529,7 @@ ___
 
 ### getBridgeForTokenPair
 
-▸ **getBridgeForTokenPair**(`l1Token`, `l2Token`): `Promise`<[`IBridgeAdapter`](../interfaces/IBridgeAdapter)\>
+▸ **getBridgeForTokenPair**(`l1Token`, `l2Token`): `Promise`&lt;[`IBridgeAdapter`](../interfaces/IBridgeAdapter)&gt;
 
 
 #### Parameters
@@ -541,7 +541,7 @@ ___
 
 #### Returns
 
-`Promise`<[`IBridgeAdapter`](../interfaces/IBridgeAdapter)\>
+`Promise`&lt;[`IBridgeAdapter`](../interfaces/IBridgeAdapter)&gt;
 
 The appropriate bridge adapter for the given token pair.
 
@@ -553,13 +553,13 @@ ___
 
 ### getChallengePeriodSeconds
 
-▸ **getChallengePeriodSeconds**(): `Promise`<`number`\>
+▸ **getChallengePeriodSeconds**(): `Promise`&lt;`number`&gt;
 
 Queries the current challenge period in seconds from the StateCommitmentChain.
 
 #### Returns
 
-`Promise`<`number`\>
+`Promise`&lt;`number`&gt;
 
 Current challenge period in seconds.
 
@@ -571,7 +571,7 @@ ___
 
 ### getDepositsByAddress
 
-▸ **getDepositsByAddress**(`address`, `opts?`): `Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+▸ **getDepositsByAddress**(`address`, `opts?`): `Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 Gets all deposits for a given address.
 
@@ -586,7 +586,7 @@ Gets all deposits for a given address.
 
 #### Returns
 
-`Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+`Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 All deposit token bridge messages sent by the given address.
 
@@ -598,7 +598,7 @@ ___
 
 ### getMessageReceipt
 
-▸ **getMessageReceipt**(`message`): `Promise`<[`MessageReceipt`](../interfaces/MessageReceipt)\>
+▸ **getMessageReceipt**(`message`): `Promise`&lt;[`MessageReceipt`](../interfaces/MessageReceipt)&gt;
 
 Finds the receipt of the transaction that executed a particular cross chain message.
 
@@ -610,7 +610,7 @@ Finds the receipt of the transaction that executed a particular cross chain mess
 
 #### Returns
 
-`Promise`<[`MessageReceipt`](../interfaces/MessageReceipt)\>
+`Promise`&lt;[`MessageReceipt`](../interfaces/MessageReceipt)&gt;
 
 CrossChainMessage receipt including receipt of the transaction that relayed the
 given message.
@@ -623,7 +623,7 @@ ___
 
 ### getMessageStatus
 
-▸ **getMessageStatus**(`message`): `Promise`<[`MessageStatus`](../enums/MessageStatus)\>
+▸ **getMessageStatus**(`message`): `Promise`&lt;[`MessageStatus`](../enums/MessageStatus)&gt;
 
 Retrieves the status of a particular message as an enum.
 
@@ -635,7 +635,7 @@ Retrieves the status of a particular message as an enum.
 
 #### Returns
 
-`Promise`<[`MessageStatus`](../enums/MessageStatus)\>
+`Promise`&lt;[`MessageStatus`](../enums/MessageStatus)&gt;
 
 Status of the message.
 
@@ -647,7 +647,7 @@ ___
 
 ### getMessagesByTransaction
 
-▸ **getMessagesByTransaction**(`transaction`, `opts?`): `Promise`<[`CrossChainMessage`](../interfaces/CrossChainMessage)[]
+▸ **getMessagesByTransaction**(`transaction`, `opts?`): `Promise`&lt;[`CrossChainMessage`](../interfaces/CrossChainMessage)[]
 
 Retrieves all cross chain messages sent within a given transaction.
 
@@ -661,7 +661,7 @@ Retrieves all cross chain messages sent within a given transaction.
 
 #### Returns
 
-`Promise`<[`CrossChainMessage`](../interfaces/CrossChainMessage)[]\>
+`Promise`&lt;[`CrossChainMessage`](../interfaces/CrossChainMessage)[]&gt;
 
 All cross chain messages sent within the transaction.
 
@@ -673,7 +673,7 @@ ___
 
 ### getProvenWithdrawal
 
-▸ **getProvenWithdrawal**(`withdrawalHash`): `Promise`<[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal)\>
+▸ **getProvenWithdrawal**(`withdrawalHash`): `Promise`&lt;[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal)&gt;
 
 Queries the MorphPortal contract's `provenWithdrawals` mapping
 for a ProvenWithdrawal that matches the passed withdrawalHash
@@ -686,7 +686,7 @@ for a ProvenWithdrawal that matches the passed withdrawalHash
 
 #### Returns
 
-`Promise`<[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal)\>
+`Promise`&lt;[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal)&gt;
 
 A ProvenWithdrawal object
 
@@ -702,7 +702,7 @@ ___
 
 ### getWithdrawMessageProof
 
-▸ **getWithdrawMessageProof**(`message`): `Promise`<[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof)\>
+▸ **getWithdrawMessageProof**(`message`): `Promise`&lt;[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof)&gt;
 
 Generates the bedrock proof required to finalize an L2 to L1 message.
 
@@ -714,7 +714,7 @@ Generates the bedrock proof required to finalize an L2 to L1 message.
 
 #### Returns
 
-`Promise`<[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof)\>
+`Promise`&lt;[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof)&gt;
 
 Proof that can be used to finalize the message.
 
@@ -726,7 +726,7 @@ ___
 
 ### getWithdrawalsByAddress
 
-▸ **getWithdrawalsByAddress**(`address`, `opts?`): `Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+▸ **getWithdrawalsByAddress**(`address`, `opts?`): `Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 Gets all withdrawals for a given address.
 
@@ -741,7 +741,7 @@ Gets all withdrawals for a given address.
 
 #### Returns
 
-`Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+`Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 All withdrawal token bridge messages sent by the given address.
 
@@ -753,7 +753,7 @@ ___
 
 ### proveMessage
 
-▸ **proveMessage**(`message`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **proveMessage**(`message`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Proves a cross chain message that was sent from L2 to L1. Only applicable for L2 to L1
 messages.
@@ -769,7 +769,7 @@ messages.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the finalization transaction.
 
@@ -781,7 +781,7 @@ ___
 
 ### resendMessage
 
-▸ **resendMessage**(`message`, `messageGasLimit`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **resendMessage**(`message`, `messageGasLimit`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Resends a given cross chain message with a different gas limit. Only applies to L1 to L2
 messages. If provided an L2 to L1 message, this function will throw an error.
@@ -798,7 +798,7 @@ messages. If provided an L2 to L1 message, this function will throw an error.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the message resending transaction.
 
@@ -810,7 +810,7 @@ ___
 
 ### sendMessage
 
-▸ **sendMessage**(`message`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **sendMessage**(`message`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Sends a given cross chain message. Where the message is sent depends on the direction attached
 to the message itself.
@@ -827,7 +827,7 @@ to the message itself.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the message sending transaction.
 
@@ -839,7 +839,7 @@ ___
 
 ### toBedrockCrossChainMessage
 
-▸ **toBedrockCrossChainMessage**(`message`): `Promise`<[`CrossChainMessage`](../interfaces/CrossChainMessage)\>
+▸ **toBedrockCrossChainMessage**(`message`): `Promise`&lt;[`CrossChainMessage`](../interfaces/CrossChainMessage)&gt;
 
 Transforms a legacy message into its corresponding Bedrock representation.
 
@@ -851,7 +851,7 @@ Transforms a legacy message into its corresponding Bedrock representation.
 
 #### Returns
 
-`Promise`<[`CrossChainMessage`](../interfaces/CrossChainMessage)\>
+`Promise`&lt;[`CrossChainMessage`](../interfaces/CrossChainMessage)&gt;
 
 Bedrock representation of the message.
 
@@ -863,7 +863,7 @@ ___
 
 ### toCrossChainMessage
 
-▸ **toCrossChainMessage**(`message`): `Promise`<[`CrossChainMessage`](../interfaces/CrossChainMessage)\>
+▸ **toCrossChainMessage**(`message`): `Promise`&lt;[`CrossChainMessage`](../interfaces/CrossChainMessage)&gt;
 
 Resolves a MessageLike into a CrossChainMessage object.
 Unlike other coercion functions, this function is stateful and requires making additional
@@ -879,7 +879,7 @@ create an entire CrossChainProvider object.
 
 #### Returns
 
-`Promise`<[`CrossChainMessage`](../interfaces/CrossChainMessage)\>
+`Promise`&lt;[`CrossChainMessage`](../interfaces/CrossChainMessage)&gt;
 
 Message coerced into a CrossChainMessage.
 
@@ -891,7 +891,7 @@ ___
 
 ### toLowLevelMessage
 
-▸ **toLowLevelMessage**(`message`): `Promise`<[`CoreCrossChainMessage`](../interfaces/CoreCrossChainMessage)\>
+▸ **toLowLevelMessage**(`message`): `Promise`&lt;[`CoreCrossChainMessage`](../interfaces/CoreCrossChainMessage)&gt;
 
 Transforms a CrossChainMessenger message into its low-level representation inside the
 L2ToL1MessagePasser contract on L2.
@@ -904,7 +904,7 @@ L2ToL1MessagePasser contract on L2.
 
 #### Returns
 
-`Promise`<[`CoreCrossChainMessage`](../interfaces/CoreCrossChainMessage)\>
+`Promise`&lt;[`CoreCrossChainMessage`](../interfaces/CoreCrossChainMessage)&gt;
 
 Transformed message.
 
@@ -916,7 +916,7 @@ ___
 
 ### waitForMessageReceipt
 
-▸ **waitForMessageReceipt**(`message`, `opts?`): `Promise`<[`MessageReceipt`](../interfaces/MessageReceipt)\>
+▸ **waitForMessageReceipt**(`message`, `opts?`): `Promise`&lt;[`MessageReceipt`](../interfaces/MessageReceipt)&gt;
 
 Waits for a message to be executed and returns the receipt of the transaction that executed
 the given message.
@@ -933,7 +933,7 @@ the given message.
 
 #### Returns
 
-`Promise`<[`MessageReceipt`](../interfaces/MessageReceipt)\>
+`Promise`&lt;[`MessageReceipt`](../interfaces/MessageReceipt)&gt;
 
 CrossChainMessage receipt including receipt of the transaction that relayed the
 given message.
@@ -946,7 +946,7 @@ ___
 
 ### waitForMessageStatus
 
-▸ **waitForMessageStatus**(`message`, `status`, `opts?`): `Promise`<`void`\>
+▸ **waitForMessageStatus**(`message`, `status`, `opts?`): `Promise`&lt;`void`&gt;
 
 Waits until the status of a given message changes to the expected status. Note that if the
 status of the given message changes to a status that implies the expected status, this will
@@ -965,7 +965,7 @@ status, this will throw an error.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`&lt;`void`&gt;
 
 #### Defined in
 
@@ -975,7 +975,7 @@ ___
 
 ### withdrawERC20
 
-▸ **withdrawERC20**(`l1Token`, `l2Token`, `amount`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **withdrawERC20**(`l1Token`, `l2Token`, `amount`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Withdraws some ERC20 tokens back to the L1 chain.
 
@@ -993,7 +993,7 @@ Withdraws some ERC20 tokens back to the L1 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the withdraw transaction.
 
@@ -1005,7 +1005,7 @@ ___
 
 ### withdrawETH
 
-▸ **withdrawETH**(`amount`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **withdrawETH**(`amount`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Withdraws some ETH back to the L1 chain.
 
@@ -1021,7 +1021,7 @@ Withdraws some ETH back to the L1 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the withdraw transaction.
 

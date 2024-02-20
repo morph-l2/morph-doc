@@ -73,9 +73,9 @@ Follows the pattern used by ethers.js.
 
 | Name | Type |
 | :------ | :------ |
-| `approve` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `CallOverrides`  }) => `Promise`<`BigNumber`\> |
-| `deposit` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`BigNumber`\> |
-| `withdraw` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`BigNumber`\> |
+| `approve` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `deposit` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+| `withdraw` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
 
 #### Inherited from
 
@@ -146,9 +146,9 @@ Follows the pattern used by ethers.js.
 
 | Name | Type |
 | :------ | :------ |
-| `approve` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `Overrides`  }) => `Promise`<`TransactionRequest`\> |
-| `deposit` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`TransactionRequest`\> |
-| `withdraw` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: { `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  }) => `Promise`<`TransactionRequest`\> |
+| `approve` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides`  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `deposit` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+| `withdraw` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
 
 #### Inherited from
 
@@ -162,7 +162,7 @@ Follows the pattern used by ethers.js.
 
 ### approval
 
-▸ **approval**(`l1Token`, `l2Token`, `signer`): `Promise`<`BigNumber`\>
+▸ **approval**(`l1Token`, `l2Token`, `signer`): `Promise`&lt;`BigNumber`&gt;
 
 Queries the account's approval amount for a given L1 token.
 
@@ -176,7 +176,7 @@ Queries the account's approval amount for a given L1 token.
 
 #### Returns
 
-`Promise`<`BigNumber`\>
+`Promise`&lt;`BigNumber`&gt;
 
 Amount of tokens approved for deposits from the account.
 
@@ -192,7 +192,7 @@ ___
 
 ### approve
 
-▸ **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Approves a deposit into the L2 chain.
 
@@ -209,7 +209,7 @@ Approves a deposit into the L2 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the approval transaction.
 
@@ -225,7 +225,7 @@ ___
 
 ### deposit
 
-▸ **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Deposits some tokens into the L2 chain.
 
@@ -244,7 +244,7 @@ Deposits some tokens into the L2 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the deposit transaction.
 
@@ -260,7 +260,7 @@ ___
 
 ### getDepositsByAddress
 
-▸ **getDepositsByAddress**(`address`, `opts?`): `Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+▸ **getDepositsByAddress**(`address`, `opts?`): `Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 Gets all deposits for a given address.
 
@@ -275,7 +275,7 @@ Gets all deposits for a given address.
 
 #### Returns
 
-`Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+`Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 All deposit token bridge messages sent by the given address.
 
@@ -291,7 +291,7 @@ ___
 
 ### getWithdrawalsByAddress
 
-▸ **getWithdrawalsByAddress**(`address`, `opts?`): `Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+▸ **getWithdrawalsByAddress**(`address`, `opts?`): `Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 Gets all withdrawals for a given address.
 
@@ -306,7 +306,7 @@ Gets all withdrawals for a given address.
 
 #### Returns
 
-`Promise`<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]\>
+`Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
 
 All withdrawal token bridge messages sent by the given address.
 
@@ -322,7 +322,7 @@ ___
 
 ### supportsTokenPair
 
-▸ **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`<`boolean`\>
+▸ **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`&lt;`boolean`&gt;
 
 Checks whether the given token pair is supported by the bridge.
 
@@ -335,7 +335,7 @@ Checks whether the given token pair is supported by the bridge.
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`&lt;`boolean`&gt;
 
 Whether the given token pair is supported by the bridge.
 
@@ -351,7 +351,7 @@ ___
 
 ### withdraw
 
-▸ **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`<`TransactionResponse`\>
+▸ **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
 
 Withdraws some tokens back to the L1 chain.
 
@@ -369,7 +369,7 @@ Withdraws some tokens back to the L1 chain.
 
 #### Returns
 
-`Promise`<`TransactionResponse`\>
+`Promise`&lt;`TransactionResponse`&gt;
 
 Transaction response for the withdraw transaction.
 

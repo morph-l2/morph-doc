@@ -30,6 +30,22 @@ Before you start, ensure you are connected to the following networks:
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer-testnet.morphl2.io/| https://sepolia.etherscan.io/ |
 
+
+:::tip
+
+You can use any of the following 3 rpc for connections:
+
+~~~
+https://rpc-testnet.morphl2.io
+
+https://rpc1-testnet.morphl2.io
+
+https://rpc2-testnet.morphl2.io
+~~~
+
+:::
+
+
 ## Step 2: Set up your developing framework
 
 ### Hardhat

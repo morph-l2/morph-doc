@@ -7,7 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 Although Morph is a Layer 2 solution built atop Ethereum, it remains as a separate and distinct blockchain. Thus, it’s essential to establish a communication channel between Morph and Ethereum to facilitate the smooth transfer of assets and messages. The communication can occur in two directions: from Ethereum to Morph and from Morph to Ethereum.
 
-## The Basic Idea of the Morph <=> Ethereum Bridge​
+## The Basic Idea of the Morph \<\=\> Ethereum Bridge​
 
 To transfer an asset between Ethereum and Morph, a user must lock the asset in the cross-layer bridge. When the lock is confirmed, Morph mints a Wrapped Token that reflects the value of the locked asset–a process referred to as a "deposit".
 

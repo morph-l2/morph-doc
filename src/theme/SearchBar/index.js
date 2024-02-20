@@ -1,8 +1,5 @@
-import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {DocSearchButton, useDocSearchKeyboardEvents} from '@docsearch/react';
-import Head from '@docusaurus/Head';
-import Link from '@docusaurus/Link';
-import {useHistory} from '@docusaurus/router';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {
   isRegexpStringMatch,
   useSearchLinkCreator,
@@ -11,10 +8,15 @@ import {
   useAlgoliaContextualFacetFilters,
   useSearchResultUrlProcessor,
 } from '@docusaurus/theme-search-algolia/client';
+
+import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {createPortal} from 'react-dom';
 import translations from '@theme/SearchTranslations';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {useHistory} from '@docusaurus/router';
+
 let DocSearchModal = null;
 function Hit({hit, children}) {
   return <Link to={hit.url}>{children}</Link>;
@@ -146,6 +148,10 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}) {
           href={`https://${props.appId}-dsn.algolia.net`}
           crossOrigin="anonymous"
         />
+        <link rel="icon" type="image/png" href="/share/share.png" />
+        <meta property="og:image" content="/share/share.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="/share/share.png" />
       </Head>
 
       <DocSearchButton
