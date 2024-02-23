@@ -26,7 +26,7 @@ For most Solidity developers, these technical details won't significantly impact
 | `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
 
 
-[^eip1559]: We have currently disabled EIP-1559 on Scroll.
+[^eip1559]: We have currently disabled EIP-1559.
 [^willadpot]: Will change to adopt Ethereum’s solution in the future.
 
 ## EVM Precompiles
