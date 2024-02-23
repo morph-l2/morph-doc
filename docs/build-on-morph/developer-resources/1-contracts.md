@@ -22,20 +22,20 @@ Contract address could be dynamic during the public testnet stage, so it is reco
 
 ### Main Contract
 
-- Rollup (main): [0xf2e8549638aa060905d06814edbf60c71d0532ec](https://sepolia.etherscan.io/address/0xf2e8549638aa060905d06814edbf60c71d0532ec)
+- Rollup (main): [0x9672010622c9511127b56028465afd1d8ecabc65](https://sepolia.etherscan.io/address/0x9672010622c9511127b56028465afd1d8ecabc65)
 - MorphPortal: [0xef2afa792412ae5edf7e54dc6830f5117e2bd22c](https://sepolia.etherscan.io/address/0xef2afa792412ae5edf7e54dc6830f5117e2bd22c)
-- Staking: [0xee530dcf71246fa2fc80b46b5d82df04b08852f8](https://sepolia.etherscan.io/address/0xee530dcf71246fa2fc80b46b5d82df04b08852f8)
+- Staking: [0xce61765bde94b30c529848e3f008ac06e48889fc](https://sepolia.etherscan.io/address/0xce61765bde94b30c529848e3f008ac06e48889fc)
 
 ### StandardBridge
 
 - L1StandardBridge: [0xcb95f07b1f60868618752ceabbe4e52a1f564336](https://sepolia.etherscan.io/address/0xcb95f07b1f60868618752ceabbe4e52a1f564336)
 - L2StandardBridge: [0x4200000000000000000000000000000000000010](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000010)
-- L1ERC721Bridge: [0x107241e85674240d8a0efe47d035e44a9076240c](https://sepolia.etherscan.io/address/x107241e85674240d8a0efe47d035e44a9076240c)
+- L1ERC721Bridge: [0x107241e85674240d8a0efe47d035e44a9076240c](https://sepolia.etherscan.io/address/0x107241e85674240d8a0efe47d035e44a9076240c)
 - L2ERC721Bridge: [0x4200000000000000000000000000000000000014](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000014)
 
 ### CrossDomainMessenger
 
-- L1CrossDomainMessenger: [0x8927f1010358858ef665281a32172c7366ef33c5](https://sepolia.etherscan.io/address/0x8927f1010358858ef665281a32172c7366ef33c5)
+- L1CrossDomainMessenger: [0xfe26613a717a793560df394928bcc22ed0d8542e](https://sepolia.etherscan.io/address/0xfe26613a717a793560df394928bcc22ed0d8542e)
 - L2CrossDomainMessenger: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000007)
 - L2ToL1MessagePasser: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x5300000000000000000000000000000000000001)
 
