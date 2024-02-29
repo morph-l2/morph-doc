@@ -32,7 +32,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
+   cd contract-deploy-demos/hardhat-demo
    yarn install
    ```
 
@@ -50,13 +50,12 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
+   cd contract-deploy-demos/foundry-demo
    ```
 
 2. Install Foundry:
 
    ```shell
-   curl -L https://foundry.paradigm.xyz | bash
    foundryup
    ```
 
