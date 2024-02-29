@@ -77,7 +77,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    For example:
 
-   ```bash
+   ```
    forge create --rpc-url https://rpc-testnet.morphl2.io/ \
      --value 0.0000001ether \
      --constructor-args 1714492800 \
