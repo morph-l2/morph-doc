@@ -13,39 +13,59 @@ App developers often have a need to move data and assets between Morph and Ether
 
 ### Sending tokens
 
-For the most common usecase, moving tokens around, we've created the Standard Token Bridge. The Standard Token Bridge is a simple smart contract with all the functionality you need to move tokens between Morph and Ethereum. It also allows you to easily create L2 representations of existing tokens on Ethereum.
+For the most common use case, moving tokens around, we've created the "Token Gateway". The token gate way is a simple smart contract with all the functionality you need to move tokens between Morph and Ethereum. 
+
+It also allows you to easily create L2 representations of existing tokens on Ethereum.
 
 ### Sending data
 
-If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
+If the token gateway doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
 
 We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
 
 
-## Utilize Standard Bridge Contract
+## Utilize Gateway Contract
 
-To facilitate common interactions like transferring ETH and ERC20 tokens between the two networks, we offer the "Standard Bridge". This bridge simplifies the transfer of assets between L1 and L2.
+To facilitate common interactions like transferring ETH and ERC20 tokens between the two networks, we offer the "Token Gateway". This bridge simplifies the transfer of assets between L1 and L2.
 
-- Standard Bridge Functionality: It allows for ETH or ERC20 token to be deposited on L1 and locked in exchange for an equivalent amount on L2, and vice versa. This is known as "bridging a token," e.g., depositing 100 USDC on L1 for 100 USDC on L2. .
+- Gateway Functionality: It allows for ETH or ERC20 token to be deposited on L1 and locked in exchange for an equivalent amount on L2, and vice versa. This is known as "bridging a token," e.g., depositing 100 USDC on L1 for 100 USDC on L2. .
 
-The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol) (for Layer 1) and the [`L2StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol) (for Layer 2).
+The Gateway is composed of several contracts on both Layer 1 and Layer 2, which listed as follow:
 
-Here we'll go over the basics of using this bridge to move tokens between Layer 1 and Layer 2.
+| L1 Gateway Contract         | Description                                                      |
+| ------------------------ | ---------------------------------------------------------------- |
+| `L1GatewayRouter`        | The gateway router supports the deposit of ETH and ERC20 tokens. |
+| `L1ETHGateway`           | The gateway to deposit ETH.                                      |
+| `L1StandardERC20Gateway` | The gateway for standard ERC20 token deposits.                   |
+| `L1CustomERC20Gateway`   | The gateway for custom ERC20 token deposits.                     |
+| `L1WETHGateway`          | The gateway for Wrapped ETH deposits.                            |
+
+
+| L2 Gateway Contract         | Description                                                      |
+| ------------------------ | ---------------------------------------------------------------- |
+| `L2GatewayRouter`        | The gateway router supports the withdraw of ETH and ERC20 tokens. |
+| `L2ETHGateway`           | The gateway to withdraw ETH.                                      |
+| `L2StandardERC20Gateway` | The gateway for standard ERC20 token withdraw.                   |
+| `L2CustomERC20Gateway`   | The gateway for custom ERC20 token withdraw.                     |
+| `L2WETHGateway`          | The gateway for Wrapped ETH withdraw.                            |
+
+
+
+<!--
+(https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol) 
+(https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol)
+-->
+
+Here we'll go over the basics of using these gateway to move tokens between Layer 1 and Layer 2.
 
 ## Deposits
-<!-- 
-::: warning NOTICE
-We're working hard to get more smart contract wallet software deployed and tested on Morph.
-However, as a safety measure, **we currently block smart contract wallets from calling the `depositETH` and `depositERC20` functions**.
-If you want to deposit using a smart contract wallet and you know what you're doing, you can use the `depositETHTo` and `depositERC20To` functions instead.
-:::
--->
+
 
 ### Depositing ERC20s
 
-ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol).
+ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20andCall` functions on the [`L1StandardERC20Gateway`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol).
 
-Ensure the Standard Token Bridge is **approved** to use the tokens you wish to deposit.
+Ensure the gateway is **approved** to use the tokens you wish to deposit.
 
 
 ### Depositing ETH
