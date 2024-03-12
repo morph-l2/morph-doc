@@ -133,15 +133,15 @@ function proveMessage(
 
 Once validated, the withdrawal request will be marked as proven and await finalization.
 
-### Challenge Period
+### Finalize Withdraw Transaction after Challenge Period
 
-Additionally, because of the Optimistic zkEVM design, every transaction (including withdrawals) on Layer 2 must be submitted to Layer 1 and face a challenge period before finalization.
+Additionally, because of the Optimistic zkEVM design, every transaction on Layer 2 must be submitted to Layer 1 and face a challenge period before finalization.
 
-This process is vital to validate the Layer 2 state, including withdrawal transactions. 
+This process is vital to validate the Layer 2 state, eventually validate the authenticity of the withdraw request. 
 
 The withdraw tree root, integral for withdrawal request verification, is also submitted by sequencers once the challenge period, batches, and states have been finalized.
 
-If the withdrawal is proven and finalized, bridgers may then call the ```relayMessage``` method within the ```L1CrossDomainMessenger``` contract to execute the withdraw message.
+If the withdrawal is proven and finalized, users may then call the ```relayMessage``` method within the ```L1CrossDomainMessenger``` contract to execute the withdraw message.
 
 ```solidity
 function relayMessage(
@@ -153,7 +153,7 @@ function relayMessage(
     )
 ```
 
-In most cases, it is the ETH trasfer from the bridge conrtact to users.
+In most cases, it is the ETH transfer from the bridge contract to users.
 
 ## Cross-layer (Bridge) Errors
 
@@ -165,11 +165,11 @@ Prior to this, there is a possibility of the cross-layer message failing during 
 
 - Cross-layer messages sent from the L1 to the L2 may fail in execution on the L2 due to limitations in gasLimit or code logic. Some data executions may cause overflow in the circuits of the L2 nodes, leading to the skipping of cross-layer messages.
 
-- When a cross-layer message is sent by the L1CrossdomainMessenger contract on the L1, the corresponding message hash is stored, but the gasLimit is not included in the calculation. The L2CrossdomainMessenger on the L2 performs the same calculation after executing the information, storing the contract call result in mapping(isL1MessageExecuted) to prevent multiple executions of the same message and to update gasLimit parameters for resending failed messages.
+- When a cross-layer message is sent by the L1CrossDomainMessenger contract on the L1, the corresponding message hash is stored, but the gasLimit is not included in the calculation. The L2CrossDomainMessenger on the L2 performs the same calculation after executing the information, storing the contract call result in mapping(isL1MessageExecuted) to prevent multiple executions of the same message and to update gasLimit parameters for resending failed messages.
 
  
 ### Handling Cross-layer (Bridge) Failures:
 
-- If gasLimit is insufficient, causing a failed execution on the L2, a new cross-layer message with a different gasLimit parameter can be sent by calling L1CrossdomainMessenger.replayMessage.
+- If gasLimit is insufficient, causing a failed execution on the L2, a new cross-layer message with a different gasLimit parameter can be sent by calling L1CrossDomainMessenger.replayMessage.
 - Messages dropped due to excessive gasLimit parameters or circuit overflow on the L2 can be skipped and not executed. Custom cross-layer calling contracts need to implement the onDropMessage method.
-- The gateway contract includes the onDropMessage method, which refunds the initiator of the cross-layer message. Calling L1CrossdomainMessenger.dropMessage discards the cross-layer message and triggers the onDropMessage method of the sending contract, with the transaction's value and message as msg.value and method parameters, respectively.
+- The gateway contract includes the onDropMessage method, which refunds the initiator of the cross-layer message. Calling L1CrossDomainMessenger.dropMessage discards the cross-layer message and triggers the onDropMessage method of the sending contract, with the transaction's value and message as msg.value and method parameters, respectively.
