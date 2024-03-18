@@ -50,6 +50,8 @@ const FeatureList = [
 
   },
 
+];
+
 
 function Feature({svg, title, url, description}) {
   return (
@@ -65,7 +67,7 @@ function Feature({svg, title, url, description}) {
       </a>
     </div>
   );
-}]
+}
 
 export default function HomepageFeatures() {
   return (
