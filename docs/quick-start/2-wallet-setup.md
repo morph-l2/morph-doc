@@ -49,7 +49,8 @@ https://rpc2-testnet.morphl2.io
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
-| Morph Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
+| Morph Sepolia Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
+| Morph Holesky Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
 | Ethereum Sepolia            | https://eth-sepolia-public.unifra.io       | 11155111    | https://sepolia.etherscan.io      | ETH      |
 
 
