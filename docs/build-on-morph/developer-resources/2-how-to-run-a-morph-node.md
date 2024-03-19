@@ -183,6 +183,20 @@ And you can also execute the command curl to check your node connection status.
 
 ### Check sync status
 
+:::tip
+
+If you want to limit the block range of getLogs api, update the geth launch parameter:
+
+--rpc.getlogs.maxrange
+
+Right now all of our nodes are archive nodes. If the disk storage becomes way too big for you, you can relieve the storage pressure by halting and pruning the state.
+
+We use the same way with geth. You can check how to do it here:
+
+https://geth.ethereum.org/docs/fundamentals/pruning
+
+:::
+
 ```
 curl http://localhost:26657/status to check the sync status of the node
 {
