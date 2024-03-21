@@ -1,21 +1,19 @@
 ---
 title: Deploy Contracts on Morph
 lang: en-US
-keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
+keywords: [morph, ethereum, rollup, layer2, validity proof, optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-
-
-The Morph Sepolia Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Sepolia using common tools for developing on Ethereum. 
+The Morph Sepolia Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Sepolia using common tools for developing on Ethereum.
 
 This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-deploy-demo) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
 :::tip
-  Before you start deploying the contract, you need to request test tokens from a Sepolia faucet and use the
-  [bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Sepolia_ to _Morph Sepolia_. 
-  
-  See our [Faucet](../../quick-start/3-faucet.md) for details.
+Before you start deploying the contract, you need to request test tokens from a Sepolia faucet and use the
+[bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Sepolia_ to _Morph Sepolia_.
+
+See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
 
 <!--
@@ -24,7 +22,6 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 -->
 
-
 ## Deploy contracts with Hardhat
 
 1. If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
@@ -32,6 +29,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
+   cd morph-examples
    cd contract-deploy-demo
    yarn install
    ```
@@ -50,6 +48,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
+   cd morph-examples
    cd contract-deploy-demo
    ```
 
@@ -93,9 +92,6 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
    Transaction hash: <The deploy transaction hash>
    ```
 
-
 ## Questions and Feedback
 
 Thank you for participating in and developing on the Morph Sepolia Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/5SmG4yhzVZ) and find us at #dev-help channel.
-
-
