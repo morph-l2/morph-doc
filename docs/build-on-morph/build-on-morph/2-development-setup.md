@@ -90,16 +90,22 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need some testnet ETH. Use a faucet to acquire Sepolia Ether,  then bridge the test Ethereum Ether to the Morph testnet.
+To start building on Morph, you may need some testnet ETH. 
+
+You can use the LearnWeb3 faucet to get testnet ETH on the Morph L2 directly:
+
+- **[https://learnweb3.io/faucets/morph_sepolia](https://learnweb3.io/faucets/morph_sepolia)**
+
+Alternatively, you can use a faucet to acquire Sepolia Ether, then bridge the test Ethereum Ether to the Morph testnet.
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
 Here are some Sepolia faucet apps:
 
-
 - **[https://sepoliafaucet.com](https://sepoliafaucet.com//)**
 - **[https://sepolia-faucet.pk910.de](https://sepolia-faucet.pk910.de/)**
 - **[https://faucet.quicknode.com/drip](https://faucet.quicknode.com/drip)**
 - **[https://faucet.chainstack.com](https://faucet.chainstack.com/)**
+- **[https://learnweb3.io/faucets/sepolia](https://learnweb3.io/faucets/sepolia)**
 
 Once you receive ETH on Sepolia, you should see it in your wallet on the *Sepolia Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Sepolia Block Explorer](https://sepolia.etherscan.io/)**.
