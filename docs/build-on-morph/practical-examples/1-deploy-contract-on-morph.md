@@ -14,6 +14,8 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 :::tip
   Before you start deploying the contract, you need to request test tokens from a Sepolia faucet and use the
   [bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Sepolia_ to _Morph Sepolia_. 
+
+  Or you can direct obatin Morph sepolia ETH for testing.
   
   See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
@@ -25,74 +27,147 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 -->
 
 
-## Deploy contracts with Hardhat
+## Hardhat Contract Deployment Examples
 
-1. If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
-2. Clone the repo and install dependencies:
+### Install Dependencies
 
-   ```shell
-   git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
-   yarn install
+If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
+
+```bash
+cd contract-deployment-demos/hardhat-demo
+yarn install
+```
+This will install everything you need include hardhat for you.
+
+
+### Compile
+
+Compile your contract
+
+```bash
+yarn compile
+```
+
+### Test
+
+This will run the test script in test/Lock.ts
+
+```bash
+yarn test
+```
+
+### Deploy
+
+ Create a `.env` file following the example `.env.example` in the root directory. Change `PRIVATE_KEY` to your own account private key in the `.env`.
+
+ And Change the network settings in the hardhat.config.ts file with the following information:
+
+   ```javascript
+    morphTestnet: {
+      url: process.env.MORPH_TESTNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    }
    ```
+Then run the following command to deploy the contract on the Morph Sepolia Testnet. This will run the deployment script that set the initialing parameters, you can edit the script in scripts/deploy.ts
 
-3. Create a `.env` file following the example `.env.example` in the root directory. Change `PRIVATE_KEY` to your own account private key in the `.env`.
+```bash
+yarn deploy:morphTestnet
+```
 
-4. Run `yarn compile` to compile the contract.
+### Verify your contracts on Morph Explorer
 
-5. Run `yarn deploy:morphTestnet` to deploy the contract on the Morph Sepolia Testnet.
+To verify your contract through hardhat, you need to add the following Etherscan and Sourcify configs to your hardhat.config.js file:
 
-6. Run `yarn test` for hardhat tests.
+```javascript
+module.exports = {
+  networks: {
+    morphSepolia: { ... }
+  },
+  etherscan: {
+    apiKey: {
+      morphTestnet: 'anything',
+    },
+    customChains: [
+      {
+        network: 'morphTestnet',
+        chainId: 2710,
+        urls: {
+          apiURL: 'https://explorer-api-testnet.morphl2.io/api ',
+          browserURL: 'https://explorer-testnet.morphl2.io/',
+        },
+      },
+    ],
+  },
+};
+```
+Then run the hardhat verfiy command to finish the verification
 
-## Deploy contracts with Foundry
+```bash
+npx hardhat verify --network morphTestnet DEPLOYED_CONTRACT_ADDRESS <ConstructorParameter>
+```
 
-1. Clone the repo:
+For example
 
-   ```shell
-   git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
-   ```
+```bash
+npx hardhat verify --network morphTestnet 0x8025985e35f1bAFfd661717f66fC5a434417448E '0.00001'
+```
 
-2. Install Foundry:
 
-   ```shell
-   curl -L https://foundry.paradigm.xyz | bash
-   foundryup
-   ```
+Once succeed, you can check your contract and the deployment transaction on [Morph Sepolia Explorer](https://explorer-testnet.morphl2.io)
 
-3. Run `forge build` to build the project.
 
-4. Deploy your contract with Foundry:
+## Foundry Contract Deployment Examples
 
-   ```bash
-   forge create --rpc-url https://rpc-testnet.morphl2.io/ \
-     --value <lock_amount> \
-     --constructor-args <unlock_time> \
-     --private-key <private_key> \
-     --legacy contracts/Lock.sol:Lock
-   ```
+### Install Foundry
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+```
 
-   - `<lock_amount>` is the amount of test `ETH` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`;
-   - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1714492800` (this Unix timestamp corresponds to May 1, 2024).
+Then go the right folder of our example:
 
-   For example:
+```bash
+cd contract-deployment-demos/foundry-demo
+```
 
-   ```
-   forge create --rpc-url https://rpc-testnet.morphl2.io/ \
-     --value 0.0000001ether \
-     --constructor-args 1714492800 \
-     --private-key a123q123q233q231q231q2q1223q23q11q33q113qq31q31231 \
-     --legacy contracts/Lock.sol:Lock
-   ```
+### Compile
 
-   Once successed, you will see the following message:
+```bash
+forge build
+```
+### Deploy
 
-   ```bash
-   Deployer: <Your address>
-   Deployed to: <Your contract address>
-   Transaction hash: <The deploy transaction hash>
-   ```
+A Deployment script and use of environment variables has already been set up for you. You can view the script at script/Counter.s.sol
 
+Rename your .env.example file to .env and fill in your private key. The RPC URL has already been filled in along with the verifier URL. 
+
+To use the variables in your .env file run the following command: 
+
+```shell
+source .env
+```
+
+You can now deploay to Morph with the following command: 
+
+```shell
+forge script script/Counter.s.sol --rpc-url $RPC_URL --broadcast --private-key $DEPLOYER_PRIVATE_KEY --legacy
+```
+
+Adjust as needed for your own script names. 
+
+### Verify 
+
+Verification requires some flags passed to the normal verification script. You can verify using the command below:
+
+```bash
+ forge verify-contract <YourConrtactAddress Counter\
+  --chain 2710 \
+  --verifier-url $VERIFIER_URL \
+  --verifier blockscout --watch
+```
+
+Once succeed, you can check your contract and the deployment transaction on [Morph Sepolia Explorer](https://explorer-testnet.morphl2.io)
 
 ## Questions and Feedback
 

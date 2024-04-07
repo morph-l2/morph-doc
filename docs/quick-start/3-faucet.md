@@ -8,7 +8,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Faucet
 
-### Sepolia ETH Faucet
+### Ethereum Sepolia ETH Faucet
 
 To use Morph's public testnet, obtain testnet ETH on Sepolia, then bridge it to the Morph testnet.
 
@@ -24,6 +24,14 @@ https://faucet.quicknode.com/ethereum/sepolia
 Once you receive ETH on Sepolia, you should see it in your wallet on the Sepolia Network. 
 
 It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on the [Sepolia Block Explorer](https://sepolia.etherscan.io/).
+
+### Morph Sepolia ETH Faucet
+
+#### External Faucet
+
+You can use the LearnWeb3 faucet to get testnet ETH on the Morph L2 directly:
+
+- **[https://learnweb3.io/faucets/morph_sepolia](https://learnweb3.io/faucets/morph_sepolia)**
 
 
 ### Morph ERC20 Faucet
