@@ -108,3 +108,5 @@ Here are some Sepolia faucet apps:
 - **[https://learnweb3.io/faucets/sepolia](https://learnweb3.io/faucets/sepolia)**
 
 Once you receive ETH on Sepolia, you should see it in your wallet on the *Sepolia Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Sepolia Block Explorer](https://sepolia.etherscan.io/)**.
+
+You can also ask for a small amount of Morph sepolia ETH directly in discord's #discord-faucet channel by typing /morph_eth 0x12344566.... This will tip you 0.05 Morph Sepolia ETH for development purposes.
