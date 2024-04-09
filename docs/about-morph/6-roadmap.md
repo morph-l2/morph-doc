@@ -13,29 +13,27 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ![1](../../assets/docs/about/roadmap/roadmap.png)
 
 
-## Phase 1: Testnet Beta (2024 Q1)
+## Phase 1: Testnet (2024 H1)
 
-- EVM Equivalence
+Testnet Sepolia (2024 Q1)
+
+- Optimistic zkEVM
 - Decentralized Sequencers
 
-## Phase 2: Mainnet Launch (2024 - 2025)
+Testnet Holesky (2024 Q2)
 
-### Mainnet Beta 2024 Q2-3
-- Optimistic zkEVM
-- AA support
-- Intent Centric Interface
+- EIP-4844 Integration
+- zkEVM Upgrade
+
+### Testnet Holesky
+
+## Phase 2: Mainnet Launch (2024 H2)
+
+### Mainnet Beta 2024 Q3
+- Morph Staking
+- AI Ecosystem Support
   
-### Mainnet 2024 Q4 - 2025
-
-- Full Decentralized Stack
+### Mainnet Update Q4
+- Account Abstraction
 - Layer 3 Support
-- zkDID & Verifiable Credentials
-- Agent Framework
-- Complete ZKRollup
-  
-## Phase 3: Future Stack (2026)
-
-- On-Chain Reality
-- Autonomous Governance
-- Decentralized - Intelligence Coordination
 

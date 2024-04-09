@@ -56,8 +56,8 @@ Modify your Hardhat config file hardhat.config.ts to point at the Morph public R
 const config: HardhatUserConfig = {
   ...
   networks: {
-    morphl2: {
-      url: "" || "",
+    morphTestnet: {
+      url: process.env.MORPH_TESTNET_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
@@ -75,7 +75,6 @@ forge create ... --rpc-url= --legacy
 ```
 
 
-
 ### ethers.js
 
 Setting up a Morph  provider in an ethers script:
@@ -90,16 +89,24 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need some testnet ETH. Use a faucet to acquire Sepolia Ether,  then bridge the test Ethereum Ether to the Morph testnet.
+To start building on Morph, you may need some testnet ETH. 
+
+You can use the LearnWeb3 faucet to get testnet ETH on the Morph L2 directly:
+
+- **[https://learnweb3.io/faucets/morph_sepolia](https://learnweb3.io/faucets/morph_sepolia)**
+
+Alternatively, you can use a faucet to acquire Sepolia Ether, then bridge the test Ethereum Ether to the Morph testnet.
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
 Here are some Sepolia faucet apps:
 
-
 - **[https://sepoliafaucet.com](https://sepoliafaucet.com//)**
 - **[https://sepolia-faucet.pk910.de](https://sepolia-faucet.pk910.de/)**
 - **[https://faucet.quicknode.com/drip](https://faucet.quicknode.com/drip)**
 - **[https://faucet.chainstack.com](https://faucet.chainstack.com/)**
+- **[https://learnweb3.io/faucets/sepolia](https://learnweb3.io/faucets/sepolia)**
 
 Once you receive ETH on Sepolia, you should see it in your wallet on the *Sepolia Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Sepolia Block Explorer](https://sepolia.etherscan.io/)**.
+
+You can also ask for a small amount of Morph sepolia ETH directly in discord's #discord-faucet channel by typing /morph_eth 0x12344566.... This will tip you 0.05 Morph Sepolia ETH for development purposes.
