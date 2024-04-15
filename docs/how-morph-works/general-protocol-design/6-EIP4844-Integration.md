@@ -4,8 +4,7 @@ author:
 bibliography:
 - ref.bib
 date: February 2024
-title: Morph's Compatible and Practical Proof Aggregation Scheme Under
-  EIP-4844
+title: Morph's Unique EIP-4844 Integration Scheme
 ---
 <!--
 <link rel="stylesheet" type="text/css" href="style.css"> 
@@ -13,7 +12,7 @@ title: Morph's Compatible and Practical Proof Aggregation Scheme Under
 import 'katex/dist/katex.min.css';
 
 -->
-
+# Morph's Compatible and Practical Proof Aggregation Scheme Under EIP-4844
 ## Introduction to EIP-4844
 
 In EIP-4844, there is a new transaction type called
