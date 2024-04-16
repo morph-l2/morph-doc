@@ -1,13 +1,13 @@
 ---
 title: Bridge between Morph and Ethereum
 lang: en-US
-keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
+keywords: [morph, ethereum, rollup, layer2, validity proof, optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
 ## Bridging basics
 
-Although Morph is an Ethereum Layer 2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system. 
+Although Morph is an Ethereum Layer 2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system.
 
 App developers often have a need to move data and assets between Morph and Ethereum, a process we call "bridging".
 
@@ -17,10 +17,9 @@ For the most common usecase, moving tokens around, we've created the Standard To
 
 ### Sending data
 
-If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
+If the Standard Token Bridge doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa.
 
-We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
-
+We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call.
 
 ## Utilize Standard Bridge Contract
 
@@ -33,7 +32,8 @@ The Standard Bridge is composed of two main contracts the [`L1StandardBridge`](h
 Here we'll go over the basics of using this bridge to move tokens between Layer 1 and Layer 2.
 
 ## Deposits
-<!-- 
+
+<!--
 ::: warning NOTICE
 We're working hard to get more smart contract wallet software deployed and tested on Morph.
 However, as a safety measure, **we currently block smart contract wallets from calling the `depositETH` and `depositERC20` functions**.
@@ -46,7 +46,6 @@ If you want to deposit using a smart contract wallet and you know what you're do
 ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20To` functions on the [`L1StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol).
 
 Ensure the Standard Token Bridge is **approved** to use the tokens you wish to deposit.
-
 
 ### Depositing ETH
 
@@ -65,7 +64,6 @@ ERC20 withdrawals can be triggered via the `withdraw` or `withdrawTo` functions 
 Unlike on L1, we do not have a separate function on L2 for withdrawing ETH.
 Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol#L121) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
 
-
 ## Send messages between Morph and Ethereum
 
 Apps on Morph can be made to interact with apps on Ethereum via a process called "bridging".
@@ -76,7 +74,7 @@ With just a little bit of elbow grease, you also can create contracts that bridg
 
 <summary><b>Understanding contract calls</b></summary>
 
-To understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
+To understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on _Ethereum_ communicate with one another.
 If you're a smart contract developer, you might be familiar with stuff like this:
 
 ```solidity
@@ -134,7 +132,7 @@ At a high level, this process is pretty similar to the same process for two cont
 
 Each layer has its own messenger contract which serves to abstract away some lower-level communication details, a lot like how HTTP libraries abstract away physical network connections.
 
-We won't get into *too* much detail about these contracts here — the only thing you really need to know about is the `sendMessage` function attached to each messenger:
+We won't get into _too_ much detail about these contracts here — the only thing you really need to know about is the `sendMessage` function attached to each messenger:
 
 ```solidity
 function sendMessage(
@@ -182,7 +180,7 @@ contract MyOtherContract {
 }
 ```
 
-:::tip 
+:::tip
 
 Using the messenger contracts
 Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
@@ -193,14 +191,14 @@ Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/morph
 
 Each message from L2 to L1 requires three transactions:
 
-1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Morph.
+1. An L2 transaction that _initiates_ the transaction, which is priced the same as any other transaction made on Morph.
 
-2. An L1 transaction that *proves* the transaction.
+2. An L1 transaction that _proves_ the transaction.
    This transaction can only be submitted after the state root is submitted to L1.
-   This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
+   This transaction is expensive because it includes verifying a [Merkle tree](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
 
-3. An L1 transaction that *finalizes* the transaction. 
-   This transaction can only be submitted after the transaction challenge period has passed. 
+3. An L1 transaction that _finalizes_ the transaction.
+   This transaction can only be submitted after the transaction challenge period has passed.
 
 The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the two L1 transactions.
 
@@ -212,7 +210,6 @@ ne of the most important things to understand about L1 ⇔ L2 interactions is th
 .
 This means that any messages you send from Layer 2 will only be received on Layer 1 after this period has elapsed.
 
-
 :::tip
 
 Read about Morph's unique challenge design based on [Responsive validity proof](../../how-morph-works/responsive-validity-proof/1-overview.md)
@@ -222,13 +219,14 @@ Read about Morph's unique challenge design based on [Responsive validity proof](
 We call this period of time the "challenge period" because it is the time during which a transaction can be challenged.This period is critical for ensuring the integrity of transactions between Layer 2 and Layer 1.
 
 Comparing Rollup Approaches:
+
 - In a basic Optimistic Rollup, identifying and correcting incorrect transactions or states (like a fraudulent withdrawal transaction aiming to redirect your ETH to a hacker's address) requires significant time and effort. This involves interactions with the sequencer to prove the transaction is incorrect.
 - Morph’s approach differs. With Responsive Validity Proof, the sequencer is required to prove their correctness by submitting a zk (zero-knowledge) validity proof. This system necessitates a specific period for challengers to detect issues and initiate a challenge.
 
 Implications for Smart Contracts:
+
 - It’s crucial not to make decisions about Layer 2 transaction results from within a smart contract on Layer 1 until the challenge period has elapsed. Doing so prematurely might lead to decisions based on invalid transaction results.
 - Consequently, messages sent from Layer 2 to Layer 1, using the standard messenger contracts, cannot be relayed until they have completed the full challenge period.
-
 
 <!--
 ::: tip On the length of the challenge period
