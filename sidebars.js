@@ -134,6 +134,10 @@ module.exports = {
           id:'build-on-morph/developer-resources/how-to-run-a-morph-node'
         },
         {
+          type: 'doc',
+          id:'build-on-morph/developer-resources/morph-json-rpc-api-methods'
+        },
+        {
           type: 'link',
           href: "https://explorer-testnet.morphl2.io/",
           label: 'Morph Sepolia Explorer'
