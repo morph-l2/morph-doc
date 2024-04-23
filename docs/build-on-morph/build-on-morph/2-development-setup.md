@@ -19,6 +19,9 @@ To deploy contracts onto a MorphL2 chain, simply set the RPC endpoint of your ta
 
 ...it all just works!
 
+
+# Holesky Testnet:
+
 ## Step 1: Network Configuration
 
 Before you start, ensure you are connected to the following networks:
@@ -96,6 +99,92 @@ Each faucet has its own rules and requirements, so you may need to try a few bef
 
 Here are some Sepolia faucet apps:
 
+- **[https://sepoliafaucet.com](https://sepoliafaucet.com//)**
+- **[https://sepolia-faucet.pk910.de](https://sepolia-faucet.pk910.de/)**
+- **[https://faucet.quicknode.com/drip](https://faucet.quicknode.com/drip)**
+- **[https://faucet.chainstack.com](https://faucet.chainstack.com/)**
+
+Once you receive ETH on Sepolia, you should see it in your wallet on the *Sepolia Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Sepolia Block Explorer](https://sepolia.etherscan.io/)**.
+
+
+# Legacy - Sepolia Testnet:
+
+## Step 1: Network Configuration
+
+Before you start, ensure you are connected to the following networks:
+
+| Network Name | Morph Testnet | Sepolia Testnet |
+| --- | --- | --- |
+| RPC URL | https://rpc-testnet.morphl2.io | https://eth-sepolia-public.unifra.io/ |
+| Chain ID | 2710 | 11155111 |
+| Currency Symbol | ETH | ETH |
+| Block Explorer URL | https://explorer-testnet.morphl2.io/| https://sepolia.etherscan.io/ |
+
+
+:::tip
+
+You can use any of the following 3 rpc for connections:
+
+~~~
+https://rpc-testnet.morphl2.io
+
+https://rpc1-testnet.morphl2.io
+
+https://rpc2-testnet.morphl2.io
+~~~
+
+:::
+
+
+## Step 2: Set up your developing framework
+
+### Hardhat
+
+Modify your Hardhat config file hardhat.config.ts to point at the Morph public RPC.
+
+```jsx
+const config: HardhatUserConfig = {
+  ...
+  networks: {
+    morphl2: {
+      url: "" || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+  },
+};
+
+```
+
+### Foundry
+
+To deploy using Morph Public RPC, run:
+
+```jsx
+forge create ... --rpc-url= --legacy
+```
+
+
+
+### ethers.js
+
+Setting up a Morph  provider in an ethers script:
+
+```jsx
+import { ethers } from 'ethers';
+
+const provider = new ethers.providers.JsonRpcProvider(
+  'https://
+);
+```
+
+## Step 3: Acquire Ether
+
+To start building on Morph, you may need some testnet ETH. Use a faucet to acquire Sepolia Ether,  then bridge the test Ethereum Ether to the Morph testnet.
+
+Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
+
+Here are some Sepolia faucet apps:
 
 - **[https://sepoliafaucet.com](https://sepoliafaucet.com//)**
 - **[https://sepolia-faucet.pk910.de](https://sepolia-faucet.pk910.de/)**

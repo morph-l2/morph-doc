@@ -153,12 +153,10 @@ module.exports = {
           type: 'doc',
           id:'build-on-morph/practical-examples/deploy-contract-on-morph'
         },
-        /*
         {
           type: 'doc',
-          id:'build-on-morph/practical-examples/use-the-official-bridge'
+          id:'build-on-morph/practical-examples/bridge-between-morph-and-ethereum'
         },
-        */
       ]
     },
     

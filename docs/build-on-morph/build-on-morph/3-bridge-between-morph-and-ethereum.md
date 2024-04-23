@@ -9,7 +9,11 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 Although Morph is an Ethereum Layer 2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system. 
 
-App developers often have a need to move data and assets between Morph and Ethereum, a process we call "bridging".
+App developers often have a need to move data and assets between Morph and Ethereum, a process we call "cross layer".
+
+For how it works under the hood, please check [here](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md):
+
+For this page we gonna go over how to interact with our cross layer infrastructure to fulfuil your desire purpose.
 
 ### Sending tokens
 
@@ -56,202 +60,110 @@ The Gateway is composed of several contracts on both Layer 1 and Layer 2, which 
 (https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol)
 -->
 
-Here we'll go over the basics of using these gateway to move tokens between Layer 1 and Layer 2.
-
-## Deposits
+Here we'll go over the basics of using these gateway to move tokens & messages between Layer 1 and Layer 2.
 
 
-### Depositing ERC20s
+## Deposit ETH and ERC20 tokens from L1
 
-ERC20 deposits into L2 can be triggered via the `depositERC20` and `depositERC20andCall` functions on the [`L1StandardERC20Gateway`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol).
+The Gateway Router allows ETH and ERC20 token bridging from L1 to L2 using the `depositETH` and `depositERC20` functions respectively. It is a permissionless bridge deployed on L1. Notice that ERC20 tokens will have a different address on L2, you can use the `getL2ERC20Address` function to query the new address.
 
-Ensure the gateway is **approved** to use the tokens you wish to deposit.
+:::tip
+  **`depositETH`** and **`depositERC20`** are payable functions, the amount of ETH sent to these functions will be used
+  to pay for L2 fees. If the amount is not enough, the transaction will not be sent. All excess ETH will be sent back to
+  the sender. `0.00001 ETH` should be more than enough to process a token deposit.
+:::
+
+When bridging ERC20 tokens, you don’t have to worry about selecting the right Gateway. This is because the `L1GatewayRouter` will choose the correct underlying entry point to send the message:
+
+- **`L1StandardERC20Gateway`:** This Gateway permits any ERC20 deposit and will be selected as the default by the L1GatewayRouter for an ERC20 token that doesn’t need custom logic on L2. On the very first token bridging, a new token will be created on L2 that implements the MorphStandardERC20. To bridge a token, call the `depositERC20` function on the `L1GatewayRouter`.
+
+<!---->
+<!--
+- **`L1CustomERC20Gateway`:** This Gateway will be selected by the `L1GatewayRouter` for tokens with custom logic. For an L1/L2 token pair to work on the Morph Custom ERC20 Bridge, the L2 token contract has to implement `IMorphStandardERC20`. Additionally, the token should grant `mint` or `burn` capability to the `L2CustomERC20Gateway`. Visit the [Bridge an ERC20 through the Custom Gateway](/developers/guides/bridge-erc20-through-the-custom-gateway) guide for a step-by-step example of how to bridge a custom token.
+-->
+
+All Gateway contracts will form the message and send it to the `L1CrossDomainMessenger` which can send arbitrary messages to L2. The `L1CrossDomainMessenger` passes the message to the `L1MessageQueue`. Any user can send messages directly to the Messenger to execute arbitrary data on L2. 
+
+This means they can execute any function on L2 from a transaction made on L1 via the bridge. Although an application could directly pass messages to existing token contracts, the Gateway abstracts the specifics and simplifies making transfers and calls.
+
+When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via the its L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainhMessenger` contract for execution on L2.
+
+## Withdraw ETH and ERC20 tokens from L2
+
+The L2 Gateway is very similar to the L1 Gateway. We can withdraw ETH and ERC20 tokens back to L1 using the `withdrawETH` and `withdrawERC20` functions. The contract address is deployed on L2. We use the `getL1ERC20Address` to retrieve the token address on L1.
+
+:::tip
+  **`withdrawETH`** and **`withdrawERC20`** are payable functions, and the amount of ETH sent to these functions will be
+  used to pay for L1 fees. If the amount is not enough, the transaction will not be sent. All excess ETH will be sent
+  back to the sender. Fees will depend on L1 activity but `0.005 ETH` should be enough to process a token withdrawal.
+:::
+
+:::tip
+  **Make sure the transactions won't revert on L1** while sending from L2. There is no way to recover bridged ETH,
+  tokens, or NFTs if your transaction reverts on L1. All assets are burnt on Morph when the transaction is sent, and
+  it's impossible to mint them again.
+:::
+
+### Finalize your Withdrawl
+
+Besides start a withdrawl request on Morph, there is one additional step to do. You need to finalize your withdrawl on Ethereum.
+
+This is because of Morph's optimistic zkEVM design, you can read the details [here](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md): 
+
+To do this, you need to use the `proveAndRelayMessage` function of the `L1CrossDomainMessenger` contract. This method requires:
+
+- The L2 messages
+- A merkel proof and the withdraw trie root of the batch that contains your withdraw transaction.
+
+This can be obtained by:
 
 
-### Depositing ETH
+<!--
 
-ETH deposits into L2 can be triggered via the `depositETH` and `depositETHTo` functions on the [`L1StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol#L119C20-L119C20).
-ETH deposits can alternatively be triggered by sending ETH directly to the `L1StandardBridge`.
-Once your deposit is detected and finalized, your account will be funded with the corresponding amount of ETH on L2.
+## Creating an ERC20 token with custom logic on L2
 
-## Withdrawals
+If a token needs custom logic on L2, it will need to be bridged through an `L1CustomERC20Gateway` and `L2CustomERC20Gateway` respectively. The custom token on L2 will need to give permission to the Gateway to mint new tokens when a deposit occurs and to burn when tokens are withdrawn
 
-### Withdrawing ERC20s
+The following interface is the `IMorphStandardERC20` needed for deploying tokens compatible with the `L2CustomERC20Gateway` on L2.
 
-ERC20 withdrawals can be triggered via the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol#L121).
+```solidity
+interface IMorphStandardERC20 {
+  /// @notice Return the address of Gateway the token belongs to.
+  function gateway() external view returns (address);
 
-### Withdrawing ETH
+  /// @notice Return the address of counterpart token.
+  function counterpart() external view returns (address);
 
-Unlike on L1, we do not have a separate function on L2 for withdrawing ETH.
-Instead, you can use the `withdraw` or `withdrawTo` functions on the [`L2StandardBridge`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol#L121) and use the address `0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000` as the L2 token address.
+  /// @dev ERC677 Standard, see https://github.com/ethereum/EIPs/issues/677
+  /// Defi can use this method to transfer L1/L2 token to L2/L1,
+  /// and deposit to L2/L1 contract in one transaction
+  function transferAndCall(address receiver, uint256 amount, bytes calldata data) external returns (bool success);
+
+  /// @notice Mint some token to recipient's account.
+  /// @dev Gateway Utilities, only gateway contract can call
+  /// @param _to The address of recipient.
+  /// @param _amount The amount of token to mint.
+  function mint(address _to, uint256 _amount) external;
+
+  /// @notice Burn some token from account.
+  /// @dev Gateway Utilities, only gateway contract can call
+  /// @param _from The address of account to burn token.
+  /// @param _amount The amount of token to mint.
+  function burn(address _from, uint256 _amount) external;
+}
+```
+
+### Adding a Custom L2 ERC20 token to the Morph Bridge
+
+Tokens can be bridged securely and permissionlessly through Gateway contracts deployed by any developer. However, Morph also manages an ERC20 Router and a Gateway where all tokens created by the community are welcome. Being part of the Morph-managed Gateway means you won't need to deploy the Gateway contracts, and your token will appear in the Morph frontend. To be part of the Morph Gateway, you must contact the Morph team to add the token to both L1 and L2 bridge contracts. To do so, follow the instructions on the [token lists](https://github.com/Morph-tech/token-list) repository to add your new token to the official Morph frontend.
+
+-->
 
 
 ## Send messages between Morph and Ethereum
 
-Apps on Morph can be made to interact with apps on Ethereum via a process called "bridging".
-In a nutshell, **contracts on Morph can trigger contract functions on Ethereum, and vice versa**.
-With just a little bit of elbow grease, you also can create contracts that bridge the gap between Layer 1 and Layer 2!
-
-<details>
-
-<summary><b>Understanding contract calls</b></summary>
-
-To understand the process of creating bridges between contracts on Layer 1 and Layer 2, you should first have a basic understanding of the way contracts on *Ethereum* communicate with one another.
-If you're a smart contract developer, you might be familiar with stuff like this:
-
-```solidity
-contract MyContract {
-    function doSomething(uint256 myFunctionParam) public {
-        // ... some sort of code goes here
-    }
-}
-
-contract MyOtherContract {
-    function doTheThing(address myContractAddress, uint256 myFunctionParam) public {
-        MyContract(myContractAddress).doSomething(myFunctionParam);
-    }
-}
-```
-
-Here, `MyOtherContract.doTheThing` triggers a "call" to `MyContract.doSomething`.
-A "call" is defined by a few key input parameters, mainly a `target address` and some `calldata`.
-In this specific example, the `target address` is going to be the address of our instance of `MyContract`.
-The `calldata`, on the other hand, depends on the function we're trying to call.
-Solidity uses an encoding scheme called [Contract ABI](https://docs.soliditylang.org/en/v0.8.4/abi-spec.html) to both [select which function to call](https://docs.soliditylang.org/en/v0.8.4/abi-spec.html#function-selector) and to [encode function input arguments](https://docs.soliditylang.org/en/v0.8.4/abi-spec.html#argument-encoding).
-
-Solidity gives us some useful tools to perform this same encoding manually.
-For the sake of learning, let's take a look at how we can duplicate the same code with a manual encoding:
-
-```solidity
-contract MyContract {
-    function doSomething(uint256 myFunctionParam) public {
-        // ... some sort of code goes here
-    }
-}
-
-contract MyOtherContract {
-    function doTheThing(address myContractAddress, uint256 myFunctionParam) public {
-        myContractAddress.call(
-            abi.encodeWithSignature(
-                "doSomething(uint256)",
-                myFunctionParam
-            )
-        );
-    }
-}
-```
-
-Here we're using the [low-level "call" function](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#members-of-address-types) and one of the [ABI encoding functions built into Solidity](https://docs.soliditylang.org/en/v0.8.4/units-and-global-variables.html#abi-encoding-and-decoding-functions).
-
-Although these two code snippets look a bit different, they're actually functionally identical.
-
-</details>
-
-### Communication basics between layers
-
-At a high level, this process is pretty similar to the same process for two contracts on Ethereum (with a few caveats).
-**Communication between L1 and L2 is enabled by two special smart contracts called the "messengers"**.
-
-Each layer has its own messenger contract which serves to abstract away some lower-level communication details, a lot like how HTTP libraries abstract away physical network connections.
-
-We won't get into *too* much detail about these contracts here — the only thing you really need to know about is the `sendMessage` function attached to each messenger:
-
-```solidity
-function sendMessage(
-    address _target,
-    bytes memory _message,
-    uint32 _gasLimit
-) public;
-```
-
-It's the same as that `call` function used for contract messaging within L1 Ethereums.
-We have an extra `_gasLimit` field here, but `call` has that too.
-This is basically equivalent to:
-
-```solidity
-address(_target).call{gas: _gasLimit}(_message);
-```
-
-Except, of course, that we're calling a contract on a completely different network.
-
-We're glossing over a lot of the technical details that make this whole thing work under the hood.
-Point is, it works.
-Want to call a contract on Morph from a contract on Ethereum?
-It's dead simple:
-
-```solidity
-// Pretend this is on L2
-contract MyContract {
-    function doSomething(uint256 myFunctionParam) public {
-        // ... some sort of code goes here
-    }
-}
-
-// And pretend this is on L1
-contract MyOtherContract {
-    function doTheThing(address myOptimisticContractAddress, uint256 myFunctionParam) public {
-        ovmL1CrossDomainMessenger.sendMessage(
-            myOptimisticContractAddress,
-            abi.encodeWithSignature(
-                "doSomething(uint256)",
-                myFunctionParam
-            ),
-            1000000 // use whatever gas limit you want
-        )
-    }
-}
-```
-
-:::tip 
-
-Using the messenger contracts
-Our messenger contracts, the [`L1CrossDomainMessenger`](https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1CrossDomainMessenger.sol) and [`L2CrossDomainMessenger`](https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2CrossDomainMessenger.sol), always come pre-deployed to each of our networks.
-
-:::
-
-### Fees for L2 ⇒ L1 transactions
-
-Each message from L2 to L1 requires three transactions:
-
-1. An L2 transaction that *initiates* the transaction, which is priced the same as any other transaction made on Morph.
-
-2. An L1 transaction that *proves* the transaction.
-   This transaction can only be submitted after the state root is submitted to L1.
-   This transaction is expensive because it includes verifying a [Merkle trie](https://eth.wiki/fundamentals/patricia-tree) inclusion proof.
-
-3. An L1 transaction that *finalizes* the transaction. 
-   This transaction can only be submitted after the transaction challenge period has passed. 
-
-The total cost of an L2 to L1 transaction is therefore the combined cost of the L2 initialization transaction and the two L1 transactions.
-
-The L1 proof and finalization transactions are typically significantly more expensive than the L2 initialization transaction.
-
-### Understanding the challenge period
-
-ne of the most important things to understand about L1 ⇔ L2 interactions is that **messages sent from Layer 2 to Layer 1 cannot be relayed during the challenge period**
-.
-This means that any messages you send from Layer 2 will only be received on Layer 1 after this period has elapsed.
 
 
-:::tip
-
-Read about Morph's unique challenge design based on [Responsive validity proof](../../how-morph-works/responsive-validity-proof/1-overview.md)
-
-:::
-
-We call this period of time the "challenge period" because it is the time during which a transaction can be challenged.This period is critical for ensuring the integrity of transactions between Layer 2 and Layer 1.
-
-Comparing Rollup Approaches:
-- In a basic Optimistic Rollup, identifying and correcting incorrect transactions or states (like a fraudulent withdrawal transaction aiming to redirect your ETH to a hacker's address) requires significant time and effort. This involves interactions with the sequencer to prove the transaction is incorrect.
-- Morph’s approach differs. With Responsive Validity Proof, the sequencer is required to prove their correctness by submitting a zk (zero-knowledge) validity proof. This system necessitates a specific period for challengers to detect issues and initiate a challenge.
-
-Implications for Smart Contracts:
-- It’s crucial not to make decisions about Layer 2 transaction results from within a smart contract on Layer 1 until the challenge period has elapsed. Doing so prematurely might lead to decisions based on invalid transaction results.
-- Consequently, messages sent from Layer 2 to Layer 1, using the standard messenger contracts, cannot be relayed until they have completed the full challenge period.
 
 
-<!--
-::: tip On the length of the challenge period
-The challenge period on Morph testnet is currently for test purposes.
-:::
--->
+
