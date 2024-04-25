@@ -16,6 +16,7 @@ To deploy contracts onto a MorphL2 chain, simply set the RPC endpoint of your ta
 - [Foundry](https://github.com/foundry-rs/foundry)
 - [Brownie](https://eth-brownie.readthedocs.io/en/stable/)
 - [Alchemy](https://docs.alchemy.com/reference/alchemy-sdk-quickstart)
+- [QuickNode SDK](https://www.quicknode.com/docs/quicknode-sdk/getting-started?utm_source=morph-docs)
 
 ...it all just works!
 
