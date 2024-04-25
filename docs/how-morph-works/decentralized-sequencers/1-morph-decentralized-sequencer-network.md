@@ -89,7 +89,7 @@ A complete Morph decentralized sequencer network consists of two parts:
 
 - **Sequencer Set** : This forms the core group that provides sequencing services
 - **Sequencer Staking Contract**: This contract facilitates the selection of the sequencer set via an election process. 
-- 
+
 Through the sequencer staking contract, members are elected into the sequencer set, where they collaboratively provide services for the Morph network. Periodically, the election results are synchronized to the Layer 1 Rollup contract. This synchronized data is utilized to obtain the BLS aggregate signatures of sequencer network participants for comparison and verification.
 
 ### Layer 2 Blocks Generation
