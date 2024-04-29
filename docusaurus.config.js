@@ -10,12 +10,95 @@ const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
+
+export const links = {
+  brand: '/',
+  website: 'https://morphl2.io',
+
+  reCaptchaSiteKey: process.env.MORPH_reCAPTCHA_SITE_KEY || '6LdADEQpAAAAAMq2IagWaiURjl4YFklWqLMp6C1t',
+
+  quickStart: 'https://docs.morphl2.io/',
+  // point
+  morphPointsRule: '/rules',
+  dailyCheckInRule: '/rules',
+  points: '/points',
+  myPoints: '/points/phase1/mypoints',
+  myVoting: '/points/phase1/myvoting',
+
+  howItWorks: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+  contractMoohism: 'https://forms.gle/9zJxWbcoDAuZKFSW8',
+  exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/responsive-validity-proof/overview/',
+  
+  contactUs: '/about',
+  terms: '/terms_of_service',
+  policy: '/privacy_policy',
+  about: '/about',
+  wallet: '/wallet',
+  build: '/build',
+  careers: '/careers',
+  sparkLoom: '/sparkloom',
+  sparkLoomPdf: typeof window === 'undefined' ? 'https://morphl2.io/pdf/1.pdf' : (window.location.origin +'/pdf/1.pdf'),
+  brandkit: 'https://morphl2.notion.site/Morph-brand-guideline-c8a6efee28be475f889446029e7d038b',
+  // sparkloom
+  registerNow: 'https://app.buidlbox.io/morphl2/sparkloom',
+  applyNow: 'https://forms.gle/6kDGru2dMzrqJgb69',
+
+  whatIsMorph: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+  docUrl: 'https://docs.morphl2.io',
+
+  whatIsTheVotingPower: ``,
+
+  learnmore: '/docs/how-morph-works/intro/',
+  doc: '/docs/how-morph-works/intro/',
+  walletSetup: '/docs/quick-start/wallet-setup/',
+
+  // start building
+  apiDocs: 'https://explorer-testnet.morphl2.io/api-docs',
+  explorer: 'https://explorer-testnet.morphl2.io',
+  explorerApi: 'https://explorer-api-testnet.morphl2.io', // /api/v2/stats
+  bridge: 'https://bridge-testnet.morphl2.io',
+  
+  holeskyWalletSetup: '/docs/quick-start/wallet-setup/',
+  holeskyApiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
+  holeskyExplorer: 'https://explorer-holesky.morphl2.io',
+  holeskyExplorerApi: 'https://explorer-api-holesky.morphl2.io',
+  holeskyBridge: 'https://bridge-holesky.morphl2.io',
+
+  // social
+  medium: 'https://blog.morphl2.io/',
+  twitter: 'https://twitter.com/Morphl2',
+  telegram: 'https://t.me/MorphL2official',
+  // 'https://t.me/+qslsWvH2_-1iMTdl',
+  discord: 'https://discord.gg/5SmG4yhzVZ',
+  linkedIn: 'http://www.linkedin.com/company/morphl2',
+
+  facebook: 'https://www.facebook.com/profile.php?id=61554448708419',
+  tiktok: 'https://www.tiktok.com/@morphl2',
+  youtube: 'https://www.youtube.com/channel/UCZW6iBpnbpCzYOrMY-RtDOw',
+
+  github: '', // https://github.com/morph-l2
+
+  blog: 'https://blog.morphl2.io/',
+  forum: 'https://forum.morphl2.io',
+
+  faucet: '',
+
+  holeskyUSDT: 'https://discord.com/channels/1156486804661338162/1199665829730582620',
+  holeskyETH: "https://holesky-faucet.pk910.de/",
+  sepoliafaucet: "https://sepoliafaucet.com/",
+  usdtfaucet: "https://discord.com/channels/1156486804661338162/1199665829730582620",
+
+  community: 'https://twitter.com/Morphl2',
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 
   title: 'Morph docs – The Optimistic zkEVM Scaling Solution docs',
   tagline: '',
   favicon: 'https://www.morphl2.io/favicon.ico',
+
+  staticDirectories: ['public', 'static'],
 
   // Set the production url of your site here
   url: 'https://docs.morphl2.io',
@@ -94,7 +177,7 @@ const config = {
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: [require.resolve('./src/css/fonts.scss'), require.resolve('./src/css/custom.scss')],
         },
       }),
     ],
@@ -165,8 +248,8 @@ const config = {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'img/index/logo_dark.svg',
-          srcDark: 'img/index/logo_dark.svg',
+          src: 'logo/LogoMorphWhite.svg',
+          srcDark: 'logo/LogoMorphWhite.svg',
         },
         items: [
           {
@@ -210,35 +293,73 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Learn More',
+            title: "Learn",
             items: [
               {
-                label: "Website",
-                href: 'https://www.morphl2.io/',
+                label: "Docs",
+                href: links.doc,
               },
               {
-                label: "About",
-                href: 'https://www.morphl2.io/about',
-              },
-              {
-                label: "Contact us",
-                href: 'https://t.me/MorphL2official',
+                label: "Blog",
+                href: links.blog,
               },
             ],
           },
           {
-            title: "Technology",
+            title: "Developers",
             items: [
               {
-                label: "Docs",
-                href: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+                label: "APIs",
+                href: links.apiDocs,
               },
               {
                 label: "Tools",
-                href: 'https://www.morphl2.io/build',
+                href: links.build,
               },
             ],
-          }
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Forum",
+                href: links.forum,
+              },
+              {
+                label: "Telegram",
+                href: links.telegram,
+              },
+              {
+                label: "Twitter",
+                href: links.twitter,
+              },
+              {
+                label: "Discord",
+                href: links.discord,
+              },
+            ],
+          },
+          {
+            title: "Company",
+            items: [
+              {
+                label: "About",
+                href: links.about,
+              },
+              {
+                label: "Contact us",
+                href: links.contactUs,
+              },
+              {
+                label: "Careers",
+                href: links.careers,
+              },
+              {
+                label: "Brand Kit",
+                href: links.brandkit,
+              }
+            ],
+          },
         ],
         copyright: `© ${new Date().getFullYear()} Morph. All rights reserved.`,
       },

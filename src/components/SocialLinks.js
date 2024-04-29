@@ -36,7 +36,7 @@ const socialLinks = [{
 export default function SocialLinks(props) {
   const links = socialLinks.filter(v => v.link).slice(0, props.slice || socialLinks.length);
 
-  return <div className={cls("text-b-white", props.className, {
+  return <div className={cls("hidden text-b-white", props.className, {
     [`grid-cols-${links.length}`]: true
   })}>{links?.map((val, key) => {
     return (<Link

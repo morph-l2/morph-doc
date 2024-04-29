@@ -12,6 +12,10 @@ module.exports = {
   ], // my markdown stuff is in ../docs, not /src
   darkMode: ['class', '[data-theme="dark"]'], // hooks into docusaurus' dark mode settigns
   theme: {
+    fontFamily: {
+      inter: ["Inter Variable", "ui-sans-serif"],
+      denim: ["Denim INK", "ui-sans-serif"],
+    },
     extend: {},
   },
   plugins: [
@@ -83,12 +87,12 @@ module.exports = {
             bg: "#FFF",
             card: "#F5F5F5",
             red: "#F53F5F",
-            green: "#00CB9A",
+            green: "#14A800",
             yellow: "#F7A01E",
             purple: "#846DFF", // brand
 
-            brand: "#00CB9A",
-            "brand-high": "#62FFA4",
+            brand: "#14A800",
+            "brand-high": "#108500",
 
             "red-aid": "#FDD9DF",
             "green-aid": "#D9F7F0",
@@ -112,7 +116,7 @@ module.exports = {
             tag: "#D9F7F0",
 
             primary: {
-              DEFAULT: "#00CB9A",
+              DEFAULT: "#14A800",
               foreground: "#fff",
             },
 
@@ -131,12 +135,12 @@ module.exports = {
             bg: "#000", // #0B0D0C
             card: "#1A1A1A",
             red: "#F4294D",
-            green: "#62FFA4",
+            green: "#108500",
             yellow: "#F7A01E",
             purple: "#846DFF",
 
-            brand: "#62FFA4",
-            "brand-high": "#00CB9A",
+            brand: "#108500",
+            "brand-high": "#14A800",
 
             "red-aid": "#3B0F17",
             "green-aid": "#0C3C1D",
@@ -160,7 +164,7 @@ module.exports = {
             tag: "#0F2518",
 
             primary: {
-              DEFAULT: "#62FFA4",
+              DEFAULT: "#108500",
               foreground: "#000000",
             },
 
