@@ -11,7 +11,7 @@ function HomepageHeader() {
       >
       <p className='text-[16px]'>Your Gateway to the Morph Ecosystem</p>
       <h2 className='text-[48px] leading-[70px] md:text-[85px] md:leading-[85px] xl:text-[140px] xl:leading-[100px] font-bold font-denim text-[#FFF]'>MORPH-DOCS</h2>
-      <p className='text-[18px] text-center'>Interact with the Morph network and explore our ecosystem using these compatible wallets. Enjoy your Web3 journey with Morph.</p>
+      <p className='hidden text-[18px] text-center'>Learn everything about Morph here.</p>
     </header>
   );
 }
