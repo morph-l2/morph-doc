@@ -22,6 +22,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
+      className="min-h-screen"
       description="Morph is a secure, decentralized, and EVM-compatiable rollup that is cost-efficient and high-performing.">
       <HomepageHeader />
       <main>

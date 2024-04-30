@@ -94,6 +94,11 @@
   --border-hover-shadow: rgba(155, 255, 197, 0.30);
 }
 
+.main-wrapper,
+.container {
+  min-height: 100%;
+}
+
 .menu__link {
   line-height: 1.75;
 }
