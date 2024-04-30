@@ -1,19 +1,19 @@
 import React from 'react';
 import classnames from 'classnames';
+// import BrowserOnly from '@docusaurus/BrowserOnly';
 
-import MORPH_green_loop from '@site/static/lottie/MORPH_green_loop.json';
-import MORPH_pink_loop from '@site/static/lottie/MORPH_pink_loop.json';
-import MORPH_purple_loop from '@site/static/lottie/MORPH_purple_loop.json';
-import MORPH_yellow_loop from '@site/static/lottie/MORPH_yellow_loop.json';
+// import MORPH_green_loop from '@site/static/lottie/MORPH_green_loop.svg';
+// import MORPH_pink_loop from '@site/static/lottie/MORPH_pink_loop.svg';
+// import MORPH_purple_loop from '@site/static/lottie/MORPH_purple_loop.svg';
+// import MORPH_yellow_loop from '@site/static/lottie/MORPH_yellow_loop.svg';
 
-const Lottie = React.lazy(() => import('lottie-react'));
-
+// const Lottie = React.lazy(() => import('lottie-react'));
 
 const FeatureList = [
   {
     title: 'About Morph',
     url: '/docs/about-morph/overview-of-morph',
-    svg: MORPH_green_loop,
+    svg: '/lottie/MORPH_green_loop.svg',
     style: 'green-bg',
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList = [
     title: 'Quick Start',
 
     url: '/docs/quick-start/welcome-to-morph',
-    svg: MORPH_yellow_loop,
+    svg: '/lottie/MORPH_yellow_loop.svg',
     style: 'yellow-bg',
     description: (
       <>
@@ -38,7 +38,7 @@ const FeatureList = [
   {
     title: 'How Morph works',
     url: '/docs/how-morph-works/intro',
-    svg: MORPH_pink_loop,
+    svg: '/lottie/MORPH_pink_loop.svg',
     style: 'pink-bg',
     description: (
       <>
@@ -50,7 +50,7 @@ const FeatureList = [
   {
     title: 'Build on Morph',
     url: '/docs/build-on-morph/intro',
-    svg: MORPH_purple_loop,
+    svg: '/lottie/MORPH_purple_loop.svg',
     style: 'purple-bg',
     description: (
       <>
@@ -64,18 +64,18 @@ const FeatureList = [
 
 function Feature({svg, title, url, style, description}) {
   return (
-    <div className={"mt-8"}>
-      <a href={url} className={classnames("feature-a p-2 pb-4 lg:p-[55px] lg:pb-[55px] md:p-8 md:pb-8 flex items-center justify-center flex-col md:flex-row")} alt="description">
-        <div className={"text-left flex items-center justify-center p-[5px] w-[60px] h-[60px] md:w-[140px] md:h-[140px] "+ style}>
-          {/* <img className={classnames('feature-svg w-[60px] md:w-[140px]')} src={svg} alt={description} role="img" /> */}
-          <Lottie animationData={svg} className="feature-svg w-[50px] h-[50px] md:w-[130px] md:h-[130px]"/>
-        </div>
-        <div className="mt-1 text-left md:pl-8 flex flex-col items-center md:items-start justify-center">
-          <h3 className={classnames('feature-h3 mb-0 !text-xs md:!text-3xl')}>{title}</h3>
-          <p className={classnames('feature-p mt-2 md:mt-[20px] !text-[10px] !leading-[12px] md:!text-xl')}>{description}</p>
-        </div>
-      </a>
-    </div>
+      <div className={"mt-8"}>
+        <a href={url} className={classnames("feature-a p-2 pb-4 lg:p-[55px] lg:pb-[55px] md:p-8 md:pb-8 flex items-center justify-center flex-col md:flex-row")} alt="description">
+          <div className={"text-left flex items-center justify-center p-[0px] w-[60px] h-[60px] md:w-[140px] md:h-[140px] "+ style}>
+            <img className={classnames('feature-svg w-[50px] h-[50px] md:w-[130px] md:h-[130px]')} src={svg} alt={description} role="img" />
+            {/* <Lottie animationData={animationData} className="feature-svg w-[50px] h-[50px] md:w-[130px] md:h-[130px]"/> */}
+          </div>
+          <div className="mt-1 text-left md:pl-8 flex flex-col items-center md:items-start justify-center">
+            <h3 className={classnames('feature-h3 mb-0 !text-xs md:!text-3xl')}>{title}</h3>
+            <p className={classnames('feature-p mt-2 md:mt-[20px] !text-[10px] !leading-[12px] md:!text-xl')}>{description}</p>
+          </div>
+        </a>
+      </div>
   );
 }
 
