@@ -22,6 +22,7 @@ const FeatureList = [
   
   {
     title: 'Quick Start',
+
     url: '/docs/quick-start/welcome-to-morph',
     svg: MORPH_yellow_loop,
     style: 'yellow-bg',
@@ -43,6 +44,7 @@ const FeatureList = [
       </>
     ),
   },
+
   {
     title: 'Build on Morph',
     url: '/docs/build-on-morph/intro',
@@ -53,7 +55,9 @@ const FeatureList = [
         Access comprehensive resources to bring your DApp from concept to launch on the Morph platform.
       </>
     ),
+
   },
+
 ];
 
 function Feature({svg, title, url, style, description}) {

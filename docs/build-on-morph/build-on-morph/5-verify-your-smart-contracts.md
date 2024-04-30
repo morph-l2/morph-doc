@@ -5,7 +5,7 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-After deploying your smart contracts, it's important to verify your code on our [block explorer](https://explorer-testnet.morphl2.io). This can be done in an automated way using your develop framework such as hardhat.
+After deploying your smart contracts, it's important to verify your code on our [block explorer](https://explorer-holesky.morphl2.io). This can be done in an automated way using your develop framework such as hardhat.
 
 
 
@@ -19,7 +19,7 @@ You can check [here](../practical-examples/1-deploy-contract-on-morph.md)
 
 ## Vefiry with Morph explorer
 
-- Visit：[Morph block explorer](https://explorer-testnet.morphl2.io)
+- Visit：[Morph block explorer](https://explorer-holesky.morphl2.io)
 
 We currently support 6 different ways to verify your contracts on our block explorer
 

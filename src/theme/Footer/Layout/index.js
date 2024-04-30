@@ -10,7 +10,7 @@ import logoHi from '@site/static/lottie/hi.json';
 export default function FooterLayout({style, links, logo, copyright}) {
   return (
     <footer
-      className={classnames('relative footer h-screen !bg-[#21231C]', {
+      className={classnames('relative h-screen !bg-[#21231C]', {
         'footer--dark': style === 'dark',
       })}>
         <div className='flex flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-0 py-6 md:py-10'>
