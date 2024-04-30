@@ -1,11 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
-import Lottie from 'lottie-react';
 
 import SocialLinks from "@site/src/components/SocialLinks";
 import Link from "@site/src/components/Link";
 
 import logoHi from '@site/static/lottie/hi.json';
+
+const Lottie = React.lazy(() => import('lottie-react'));
 
 export default function FooterLayout({style, links, logo, copyright}) {
   return (

@@ -1,11 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
-import Lottie from 'lottie-react';
 
 import MORPH_green_loop from '@site/static/lottie/MORPH_green_loop.json';
 import MORPH_pink_loop from '@site/static/lottie/MORPH_pink_loop.json';
 import MORPH_purple_loop from '@site/static/lottie/MORPH_purple_loop.json';
 import MORPH_yellow_loop from '@site/static/lottie/MORPH_yellow_loop.json';
+
+const Lottie = React.lazy(() => import('lottie-react'));
+
 
 const FeatureList = [
   {
@@ -63,7 +65,7 @@ const FeatureList = [
 function Feature({svg, title, url, style, description}) {
   return (
     <div className={"mt-8"}>
-      <a href={url} className={classnames("feature-a p-2 pb-4 lg:p-[55px] lg:pb-[55px] md:p-8 md:pb-8 flex-col md:flex-row")} alt="description">
+      <a href={url} className={classnames("feature-a p-2 pb-4 lg:p-[55px] lg:pb-[55px] md:p-8 md:pb-8 flex items-center justify-center flex-col md:flex-row")} alt="description">
         <div className={"text-left flex items-center justify-center p-[5px] w-[60px] h-[60px] md:w-[140px] md:h-[140px] "+ style}>
           {/* <img className={classnames('feature-svg w-[60px] md:w-[140px]')} src={svg} alt={description} role="img" /> */}
           <Lottie animationData={svg} className="feature-svg w-[50px] h-[50px] md:w-[130px] md:h-[130px]"/>
@@ -79,8 +81,8 @@ function Feature({svg, title, url, style, description}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className="features xl:h-screen">
-      <div className="container flex flex-col items-center">
+    <section className="features xl:min-h-[700px] xl:h-screen">
+      <div className="container flex flex-col items-center mb-4">
         {/* <h2 className="mt-4 md:mt-12 text-[15px] md:text-[32px]">Resource</h2> */}
         <div className="mt-4 md:mt-8 gap-0 md:gap-0 flex items-center grid grid-flow-row grid-cols-2">
           {FeatureList.map((props, idx) => (
