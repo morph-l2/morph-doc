@@ -13,10 +13,13 @@ export default function FooterLayout({style, links, logo, copyright}) {
 
   return (
       <footer
-        className={classnames('relative h-screen !bg-[#21231C]', {
+        className={classnames('footer-bg relative h-screen !bg-[#21231C]', {
           'footer--dark': style === 'dark',
         })}>
-          <div className='flex flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-0 py-6 md:py-10 md:pt-[100px]'>
+          {/* <img src="/lottie/bg-logo.svg" className="-z-0 absolute h-[90%] top-[5%] w-full" /> */}
+          <img src="/lottie/logo-cover.svg" className="-z-0 absolute bottom-8 xl:bottom-14 right-[5%] w-[97px] h-[97px] text-[#FFFFFF0a]" />
+
+          <div className='flex z-30 flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-0 py-6 md:py-10 md:pt-[100px]'>
             <div className="order-3 md:order-1 mt-0 md:w-[284px]">
               {/* <img
                 src={`/img/index/logo_${style}.svg`}
@@ -39,8 +42,6 @@ export default function FooterLayout({style, links, logo, copyright}) {
             <p className="animate-up">time!</p>
           </p>
         </div>
-        <img src="/lottie/bg-logo.svg" className="hidden xl:flex absolute h-[90%] top-[5%] w-full" />
-        <img src="/lottie/logo-cover.svg" className="absolute bottom-8 xl:bottom-14 right-[5%] w-[97px] h-[97px] text-[#FFFFFF0a]" />
         {/* <Lottie animationData={animationData} className="absolute w-[100px] xl:w-[280px] bottom-0 right-[30%]" /> */}
       </footer>
   );
