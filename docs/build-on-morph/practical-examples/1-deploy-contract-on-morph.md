@@ -7,13 +7,13 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 
 
-The Morph Sepolia Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Sepolia using common tools for developing on Ethereum. 
+The Morph Holesky Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Holesky using common tools for developing on Ethereum. 
 
 This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-deploy-demo) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
 :::tip
-  Before you start deploying the contract, you need to request test tokens from a Sepolia faucet and use the
-  [bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Sepolia_ to _Morph Sepolia_. 
+  Before you start deploying the contract, you need to request test tokens from a Holesky faucet and use the
+  [bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Holesky_ to _Morph Holesky_. 
   
   See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
@@ -40,7 +40,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 4. Run `yarn compile` to compile the contract.
 
-5. Run `yarn deploy:morphTestnet` to deploy the contract on the Morph Sepolia Testnet.
+5. Run `yarn deploy:morphTestnet` to deploy the contract on the Morph Holesky Testnet.
 
 6. Run `yarn test` for hardhat tests.
 
@@ -96,6 +96,6 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 ## Questions and Feedback
 
-Thank you for participating in and developing on the Morph Sepolia Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/5SmG4yhzVZ) and find us at #dev-help channel.
+Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/5SmG4yhzVZ) and find us at #dev-help channel.
 
 

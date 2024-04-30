@@ -8,7 +8,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ## Bridge an ERC20 through custom gateway
 
 
-## Step 1: Launch a token on Sepolia
+## Step 1: Launch a token on Holesky
 
 First, we need a token to bridge. There is no need for a particular ERC20 implementation in order for a token to be compatible with L2. If you already have a token, feel free to skip this step. If you want to deploy a new token, use the following contract of a simple ERC20 token that mints 1 million tokens to the deployer when launched.
 
@@ -25,16 +25,16 @@ contract L1Token is ERC20 {
 }
 ```
 
-## Step 2: Launch the counterpart token on Morph Sepolia testnet
+## Step 2: Launch the counterpart token on Morph Holesky testnet
 
-Next, you'll launch a counterpart to this token on Morph, which will represent the original token on Sepolia. This token can implement custom logic to match that of the L1 token or even add additional features beyond those of the L1 token.
+Next, you'll launch a counterpart to this token on Morph, which will represent the original token on Holesky. This token can implement custom logic to match that of the L1 token or even add additional features beyond those of the L1 token.
 
 For this to work:
 
 - The token must implement the `IMorphStandardERC20` interface in order to be compatible with the bridge.
 - The contract should provide the gateway address and the counterpart token addresses (the L1 token we just launched) under the `gateway()` and `counterpart()` functions. It should also allow the L2 gateway to call the token `mint()` and `burn()` functions, which are called when a token is deposited and withdrawn.
 
-The following is a complete example of a token compatible with the bridge. To the constructor, you will pass the official Morph Custom Gateway address (`0x058dec71E53079F9ED053F3a0bBca877F6f3eAcf`) and the address of the token launched on Sepolia.
+The following is a complete example of a token compatible with the bridge. To the constructor, you will pass the official Morph Custom Gateway address (`0x058dec71E53079F9ED053F3a0bBca877F6f3eAcf`) and the address of the token launched on Holesky.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -92,7 +92,7 @@ You need to contact the Morph team to add the token to `L2CustomERC20Gateway` co
 
 ## Step 4: Deposit tokens
 
-Once your token has been approved by the Morph team, you should be able to deposit tokens from L1. To do so, you must first approve the `L1CustomGateway` contract address on Sepolia (`0x31C994F2017E71b82fd4D8118F140c81215bbb37`). Then, deposit tokens by calling the `depositERC20` function from the `L1CustomGateway` contract. This can be done using [our bridge UI](https://Morph.io/bridge), [Etherscan Sepolia](https://sepolia.etherscan.io/address/0x31C994F2017E71b82fd4D8118F140c81215bbb37#writeProxyContract), or a smart contract.
+Once your token has been approved by the Morph team, you should be able to deposit tokens from L1. To do so, you must first approve the `L1CustomGateway` contract address on Holesky (`0x31C994F2017E71b82fd4D8118F140c81215bbb37`). Then, deposit tokens by calling the `depositERC20` function from the `L1CustomGateway` contract. This can be done using [our bridge UI](https://Morph.io/bridge), [Etherscan Holesky](https://Holesky.etherscan.io/address/0x31C994F2017E71b82fd4D8118F140c81215bbb37#writeProxyContract), or a smart contract.
 
 ## Step 5: Withdraw tokens
 
@@ -106,7 +106,7 @@ You will follow similar steps to send tokens back from L2 to L1. First, approve 
 ### Target Smart Contract
 
 Let’s start by deploying the target smart contract. We will use the Greeter contract for this
-example, but you can use any other contract. Deploy it to either Sepolia or Morph. On Morph, L1
+example, but you can use any other contract. Deploy it to either Holesky or Morph. On Morph, L1
 and L2 use the same API, so it’s up to you.
 
 ```solidity
@@ -166,7 +166,7 @@ contract GreeterOperator {
 We pass the message by executing `executeFunctionCrosschain` and passing the following parameters:
 
 - `MorphMessengerAddress`: This will depend on where you deployed the `GreeterOperator` contract.
-  - If you deployed it on Sepolia use `0x50c7d3e7f7c656493D1D76aaa1a836CedfCBB16A`. If you deployed on Morph Sepolia use `0xBa50f5340FB9F3Bd074bD638c9BE13eCB36E603d`.
+  - If you deployed it on Holesky use `0x50c7d3e7f7c656493D1D76aaa1a836CedfCBB16A`. If you deployed on Morph Holesky use `0xBa50f5340FB9F3Bd074bD638c9BE13eCB36E603d`.
 - `targetAddress`: The address of the `Greeter` contract on the opposite chain.
 - `value`: In this case, it is `0` because the `setGreeting`is not payable.
 - `greeting`: This is the parameter that will be sent through the message. Try passing `“This message was cross-chain!”`
@@ -179,7 +179,7 @@ We pass the message by executing `executeFunctionCrosschain` and passing the fol
 When a transaction is passed from L2 to L1, an additional "execute withdrawal transaction" must be sent on L1. To do this, you must call `relayMessageWithProof` on the L1 Morph Messenger
 contract from an EOA wallet.
 
-You can do this directly on [Etherscan Sepolia](https://sepolia.etherscan.io/address/0x50c7d3e7f7c656493d1d76aaa1a836cedfcbb16a#writeProxyContract#F3).
+You can do this directly on [Etherscan Holesky](https://Holesky.etherscan.io/address/0x50c7d3e7f7c656493d1d76aaa1a836cedfcbb16a#writeProxyContract#F3).
 To do so, you will need to pass a Merkle inclusion proof for the bridged transaction and other parameters. You'll query these using the Morph Bridge API.
 
 {/* TODO: finish looking into API issues */}
@@ -187,7 +187,7 @@ To do so, you will need to pass a Merkle inclusion proof for the bridged transac
 We're finalizing the API specifics, but for now, fetch or curl the following endpoint:
 
 ```bash
-curl "https://sepolia-api-bridge.Morph.io/api/claimable?page_size=10&page=1&address=GREETER_OPERATOR_ADDRESS_ON_L2"
+curl "https://Holesky-api-bridge.Morph.io/api/claimable?page_size=10&page=1&address=GREETER_OPERATOR_ADDRESS_ON_L2"
 ```
 
 <!--

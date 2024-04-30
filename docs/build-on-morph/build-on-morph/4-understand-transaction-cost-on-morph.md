@@ -108,8 +108,9 @@ Where `tx_data_gas` is:
 tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
 
+
 :::tip
-You can read the parameter values from the [gas oracle contract](https://github.com/morph-l2/contracts/tree/main/contracts/L2/GasPriceOracle.sol). Morph has pre-deployed `GasPriceOracle`, accessible on Morph Sepolia at [`0x5300000000000000000000000000000000000002`](https://explorer-testnet.morphl2.io/address/0x5300000000000000000000000000000000000002).
+You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph Holesky at [GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000F)
 :::
 
 
