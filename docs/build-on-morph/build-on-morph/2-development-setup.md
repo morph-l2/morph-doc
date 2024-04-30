@@ -33,6 +33,12 @@ Before you start, ensure you are connected to the following networks:
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer-holesky.morphl2.io/| https://holesky.etherscan.io/ |
 
+:::tip Websocket Connection
+
+wss://rpc-holesky.morphl2.io:8443/
+
+:::
+
 
 ## Step 2: Set up your developing framework
 
