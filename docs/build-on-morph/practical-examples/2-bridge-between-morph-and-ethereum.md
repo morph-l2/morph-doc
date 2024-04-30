@@ -190,8 +190,10 @@ We're finalizing the API specifics, but for now, fetch or curl the following end
 curl "https://sepolia-api-bridge.Morph.io/api/claimable?page_size=10&page=1&address=GREETER_OPERATOR_ADDRESS_ON_L2"
 ```
 
+<!--
 Replace `GREETER_OPERATOR_ADDRESS_ON_L2` with your GreeterOperator contract address as launched on L2. Read more about Execute Withdraw transactions
 in the [Morph Messenger](/developers/l1-and-l2-bridging/the-Morph-messenger) article.
+-->
 
 :::tip
   This API was made for our Bridge UI. It is not yet finalized and may change in the future. We will update this guide

@@ -12,86 +12,75 @@ Contract address could be dynamic during the public testnet stage, so it is reco
 
 ## Morph Holesky Network Info
 
-| Network Name | Morph Alpha Testnet | Sepolia Testnet |
+| Network Name | Morph Holesky Testnet | Ethereum Holesky Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-testnet.morphl2.io | https://eth-sepolia-public.unifra.io/ |
-| Chain ID | 2710 | 11155111 |
+| RPC URL | https://rpc-holesky.morphl2.io | https://ethereum-holesky-rpc.publicnode.com/ |
+| Chain ID | 2810 | 17000 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer-testnet.morphl2.io/ | https://sepolia.etherscan.io/ |
+| Block Explorer URL | https://explorer-holesky.morphl2.io/| https://holesky.etherscan.io/ |
 
 ## Morph Holesky Contracts
 
 ### Main Contract
 
-- Rollup (main): [0x9672010622c9511127b56028465afd1d8ecabc65](https://sepolia.etherscan.io/address/0x9672010622c9511127b56028465afd1d8ecabc65)
-- MorphPortal: [0xef2afa792412ae5edf7e54dc6830f5117e2bd22c](https://sepolia.etherscan.io/address/0xef2afa792412ae5edf7e54dc6830f5117e2bd22c)
-- Staking: [0xce61765bde94b30c529848e3f008ac06e48889fc](https://sepolia.etherscan.io/address/0xce61765bde94b30c529848e3f008ac06e48889fc)
+#### L1 Contract
 
-### StandardBridge
+[Staking](https://holesky.etherscan.io/address/0x868dd5d1c268277e331b726bb438edde8221d389):0x868dd5d1c268277e331b726bb438edde8221d389
 
-- L1StandardBridge: [0xcb95f07b1f60868618752ceabbe4e52a1f564336](https://sepolia.etherscan.io/address/0xcb95f07b1f60868618752ceabbe4e52a1f564336)
-- L2StandardBridge: [0x4200000000000000000000000000000000000010](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000010)
-- L1ERC721Bridge: [0x107241e85674240d8a0efe47d035e44a9076240c](https://sepolia.etherscan.io/address/0x107241e85674240d8a0efe47d035e44a9076240c)
-- L2ERC721Bridge: [0x4200000000000000000000000000000000000014](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000014)
+[Rollup](https://holesky.etherscan.io/address/0xd8c5c541d56f59d65cf775de928ccf4a47d4985c):0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
 
-### CrossDomainMessenger
+[L1MessageQueueWithGasPriceOracle](https://holesky.etherscan.io/address/0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b):0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
 
-- L1CrossDomainMessenger: [0xfe26613a717a793560df394928bcc22ed0d8542e](https://sepolia.etherscan.io/address/0xfe26613a717a793560df394928bcc22ed0d8542e)
-- L2CrossDomainMessenger: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000007)
-- L2ToL1MessagePasser: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x5300000000000000000000000000000000000001)
+[L1CrossDomainMessenger](https://holesky.etherscan.io/address/0xecc966ab425f3f5bd58085ce4ebdbf81d829126f):0xecc966ab425f3f5bd58085ce4ebdbf81d829126f
 
-### Other Predeploys
+#### L2 Contract
 
-**Layer 2**
+[L2ToL1MessagePasser](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000001):0x5300000000000000000000000000000000000001
 
-- GasPriceOracle: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x530000000000000000000000000000000000000F)
-- L1Block: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000015)
-- L1BlockNumber: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000013)
-- L1FeeVault: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x420000000000000000000000000000000000001a)
-- SequencerFeeVault: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000011)
-- BaseFeeVault:[0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000019)
-- WETH: [0x4200000000000000000000000000000000000006](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000006)
+[L2Sequencer](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000003):0x5300000000000000000000000000000000000003
 
+[L2Gov](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000004):0x5300000000000000000000000000000000000004
 
+[L2Submitter](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000005):0x5300000000000000000000000000000000000005
 
-## Morph Sepolia Network Info
+[L2CrossDomainMessenger](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000007):0x5300000000000000000000000000000000000007
 
-| Network Name | Morph Alpha Testnet | Sepolia Testnet |
-| --- | --- | --- |
-| RPC URL | https://rpc-testnet.morphl2.io | https://eth-sepolia-public.unifra.io/ |
-| Chain ID | 2710 | 11155111 |
-| Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer-testnet.morphl2.io/ | https://sepolia.etherscan.io/ |
+### Gateway
 
-## Morph Sepolia Contracts
+#### L1 Gateway
 
-### Main Contract
+[L1GatewayRouter](https://holesky.etherscan.io/address/0xea593b730d745fb5fe01b6d20e6603915252c6bf):0xea593b730d745fb5fe01b6d20e6603915252c6bf
 
-- Rollup (main): [0x9672010622c9511127b56028465afd1d8ecabc65](https://sepolia.etherscan.io/address/0x9672010622c9511127b56028465afd1d8ecabc65)
-- MorphPortal: [0xef2afa792412ae5edf7e54dc6830f5117e2bd22c](https://sepolia.etherscan.io/address/0xef2afa792412ae5edf7e54dc6830f5117e2bd22c)
-- Staking: [0xce61765bde94b30c529848e3f008ac06e48889fc](https://sepolia.etherscan.io/address/0xce61765bde94b30c529848e3f008ac06e48889fc)
+[L1ETHGateway](https://holesky.etherscan.io/address/0xcc3d455481967dc97346ef1771a112d7a14c8f12):0xcc3d455481967dc97346ef1771a112d7a14c8f12
 
-### StandardBridge
+[L1WETHGateway](https://holesky.etherscan.io/address/0xbbdb317b50313d96823eba0fc2c1d9e469dc1906):0xbbdb317b50313d96823eba0fc2c1d9e469dc1906
 
-- L1StandardBridge: [0xcb95f07b1f60868618752ceabbe4e52a1f564336](https://sepolia.etherscan.io/address/0xcb95f07b1f60868618752ceabbe4e52a1f564336)
-- L2StandardBridge: [0x4200000000000000000000000000000000000010](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000010)
-- L1ERC721Bridge: [0x107241e85674240d8a0efe47d035e44a9076240c](https://sepolia.etherscan.io/address/0x107241e85674240d8a0efe47d035e44a9076240c)
-- L2ERC721Bridge: [0x4200000000000000000000000000000000000014](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000014)
+[L1StandardERC20Gateway](https://holesky.etherscan.io/address/0xb26dafdb434ae93e3b8efde4f0193934955d86cd):0xb26dafdb434ae93e3b8efde4f0193934955d86cd
 
-### CrossDomainMessenger
+#### L2 Gateway
 
-- L1CrossDomainMessenger: [0xfe26613a717a793560df394928bcc22ed0d8542e](https://sepolia.etherscan.io/address/0xfe26613a717a793560df394928bcc22ed0d8542e)
-- L2CrossDomainMessenger: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000007)
-- L2ToL1MessagePasser: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x5300000000000000000000000000000000000001)
+[L2GatewayRouter](https://explorer-holesky.morphl2.io/address/https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000002):0x5300000000000000000000000000000000000002
 
-### Other Predeploys
+[L2StandardERC20Gateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000008):0x5300000000000000000000000000000000000008
 
-**Layer 2**
+[L2ERC721Gateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000009):0x5300000000000000000000000000000000000009
 
-- GasPriceOracle: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x530000000000000000000000000000000000000F)
-- L1Block: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000015)
-- L1BlockNumber: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000013)
-- L1FeeVault: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x420000000000000000000000000000000000001a)
-- SequencerFeeVault: [0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000011)
-- BaseFeeVault:[0x530000000000000000000000000000000000000F](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000019)
-- WETH: [0x4200000000000000000000000000000000000006](https://explorer-testnet.morphl2.io/address/0x4200000000000000000000000000000000000006)
+[L2ERC1155Gateway](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000C):0x530000000000000000000000000000000000000C
+
+[L2WETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000010):0x5300000000000000000000000000000000000010
+
+[L2ETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000006):0x5300000000000000000000000000000000000006
+
+### Other Layer 2 Predeploys
+
+[L2TxFeeVault](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000A):0x530000000000000000000000000000000000000A
+
+[ProxyAdmin](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000B):0x530000000000000000000000000000000000000B
+
+[MorphStandardERC20](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000D):0x530000000000000000000000000000000000000D
+
+[MorphStandardERC20Factory](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000E):0x530000000000000000000000000000000000000E
+
+[GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000F):0x530000000000000000000000000000000000000F
+
+[L2WETH](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000011):0x5300000000000000000000000000000000000011

@@ -92,19 +92,19 @@ module.exports = {
     },
     {
       type: 'link',
-      href: "https://bridge-testnet.morphl2.io/",
-      label: 'Morph Sepolia Official Bridge'
+      href: "https://bridge-holesky.morphl2.io/",
+      label: 'Morph Holesky Official Bridge'
     },
     {
       type: 'link',
-      href: "https://explorer-testnet.morphl2.io/",
-      label: 'Morph Sepolia Explorer'
+      href: "https://explorer-holesky.morphl2.io/",
+      label: 'Morph Holesky Explorer'
     },
     {
       type: 'link',
-      href: "https://sepolia.etherscan.io/",
-      label: 'Ethereum Sepolia Explorer'
-    }
+      href: "https://holesky.etherscan.io/",
+      label: 'Ethereum Holesky Explorer'
+    },
   ],
   DevSidebar: [
     {
@@ -135,13 +135,13 @@ module.exports = {
         },
         {
           type: 'link',
-          href: "https://explorer-testnet.morphl2.io/",
-          label: 'Morph Sepolia Explorer'
+          href: "https://explorer-holesky.morphl2.io/",
+          label: 'Morph Holesky Explorer'
         },
         {
           type: 'link',
-          href: "https://sepolia.etherscan.io/",
-          label: 'Ethereum Sepolia Explorer'
+          href: "https://holesky.etherscan.io/",
+          label: 'Ethereum Holesky Explorer'
         },
       ],
     },
@@ -153,13 +153,15 @@ module.exports = {
           type: 'doc',
           id:'build-on-morph/practical-examples/deploy-contract-on-morph'
         },
+        /*
         {
           type: 'doc',
           id:'build-on-morph/practical-examples/bridge-between-morph-and-ethereum'
         },
+        */
       ]
     },
-    
+    /*
     {
       type: 'category',
       label: 'SDK',
@@ -170,7 +172,7 @@ module.exports = {
         },
       ],
     },
-    
+    */
   ],
   HowSidebar: [
     {
