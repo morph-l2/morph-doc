@@ -12,33 +12,33 @@ const darkCodeTheme = themes.dracula;
 
 
 export const links = {
-  brand: '/',
+  brand: 'https://morphl2.io/',
   website: 'https://morphl2.io',
 
   reCaptchaSiteKey: process.env.MORPH_reCAPTCHA_SITE_KEY || '6LdADEQpAAAAAMq2IagWaiURjl4YFklWqLMp6C1t',
 
   quickStart: 'https://docs.morphl2.io/',
   // point
-  morphPointsRule: '/rules',
-  dailyCheckInRule: '/rules',
-  points: '/points',
-  myPoints: '/points/phase1/mypoints',
-  myVoting: '/points/phase1/myvoting',
+  morphPointsRule: 'https://morphl2.io/rules',
+  dailyCheckInRule: 'https://morphl2.io/rules',
+  points: 'https://morphl2.io/points',
+  myPoints: 'https://morphl2.io/points/phase1/mypoints',
+  myVoting: 'https://morphl2.io/points/phase1/myvoting',
 
   howItWorks: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
   contractMoohism: 'https://forms.gle/9zJxWbcoDAuZKFSW8',
   exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/responsive-validity-proof/overview/',
   
-  contactUs: '/about',
-  terms: '/terms_of_service',
-  policy: '/privacy_policy',
-  about: '/about',
-  wallet: '/wallet',
-  build: '/build',
-  careers: '/careers',
-  sparkLoom: '/sparkloom',
-  sparkLoomPdf: typeof window === 'undefined' ? 'https://morphl2.io/pdf/1.pdf' : (window.location.origin +'/pdf/1.pdf'),
-  brandkit: 'https://morphl2.notion.site/Morph-brand-guideline-c8a6efee28be475f889446029e7d038b',
+  contactUs: 'https://morphl2.io/about',
+  terms: 'https://morphl2.io/terms_of_service',
+  policy: 'https://morphl2.io/privacy_policy',
+  about: 'https://morphl2.io/about',
+  wallet: 'https://morphl2.io/wallet',
+  build: 'https://morphl2.io/build',
+  careers: 'https://morphl2.io/careers',
+  sparkLoom: 'https://morphl2.io/sparkloom',
+  sparkLoomPdf: typeof window === 'undefined' ? 'https://morphl2.io/pdf/1.pdf' : (window.location.origin +'https://morphl2.io/pdf/1.pdf'),
+  brandkit: 'https://morphl2brand.notion.site/Morph-brand-guideline-56eca01ef6d14212be0e9562ad1e2fc1',
   // sparkloom
   registerNow: 'https://app.buidlbox.io/morphl2/sparkloom',
   applyNow: 'https://forms.gle/6kDGru2dMzrqJgb69',
@@ -48,9 +48,9 @@ export const links = {
 
   whatIsTheVotingPower: ``,
 
-  learnmore: '/docs/how-morph-works/intro/',
-  doc: '/docs/how-morph-works/intro/',
-  walletSetup: '/docs/quick-start/wallet-setup/',
+  learnmore: 'https://morphl2.io/docs/how-morph-works/intro/',
+  doc: 'https://morphl2.io/docs/how-morph-works/intro/',
+  walletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
 
   // start building
   apiDocs: 'https://explorer-testnet.morphl2.io/api-docs',
@@ -58,7 +58,7 @@ export const links = {
   explorerApi: 'https://explorer-api-testnet.morphl2.io', // /api/v2/stats
   bridge: 'https://bridge-testnet.morphl2.io',
   
-  holeskyWalletSetup: '/docs/quick-start/wallet-setup/',
+  holeskyWalletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
   holeskyApiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
   holeskyExplorer: 'https://explorer-holesky.morphl2.io',
   holeskyExplorerApi: 'https://explorer-api-holesky.morphl2.io',
