@@ -13,7 +13,7 @@ export default function FooterLayout({style, links, logo, copyright}) {
 
   return (
       <footer
-        className={classnames('footer-bg relative h-screen !bg-[#21231C]', {
+        className={classnames('footer-bg relative min-h-screen !bg-[#21231C]', {
           'footer--dark': style === 'dark',
         })}>
           {/* <img src="/lottie/bg-logo.svg" className="-z-0 absolute h-[90%] top-[5%] w-full" /> */}

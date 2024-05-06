@@ -10,7 +10,7 @@ function HomepageHeader() {
       className={classnames('relative flex flex-col items-center justify-center text-[#FFF] heroBanner h-[320px] md:h-[780px] bg-[#7D68FF] px-4')}
       >
       <img  src="/lottie/bg-logo.svg" className="flex absolute top-[6px] h-[95%]" />
-      <p className='text-[16px]'>Your Gateway to the Morph Ecosystem</p>
+      <p className='text-[16px]'>Your gateway to the morph ecosystem</p>
       <h2 className='text-[48px] leading-[70px] md:text-[85px] md:leading-[85px] xl:text-[140px] xl:leading-[100px] font-bold font-denim text-[#FFF]'>MORPH-DOCS</h2>
       <p className='hidden text-[18px] text-center'>Learn everything about Morph here.</p>
     </header>
