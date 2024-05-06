@@ -1,8 +1,8 @@
 ---
 title: Difference between Morph and Ethereum
 lang: en-US
-keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
+keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 
@@ -17,6 +17,7 @@ For most Solidity developers, these technical details won't significantly impact
 
 ## EVM Opcodes
 
+
 | Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
 | --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
@@ -25,27 +26,34 @@ For most Solidity developers, these technical details won't significantly impact
 | `BASEFEE`                   | `block.basefee`     | Disabled. If the opcode is encountered, the transaction will be reverted.                        |
 | `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
 
-
-[^eip1559]: We have currently disabled EIP-1559.
-[^willadpot]: Will change to adopt Ethereum’s solution in the future.
-
 ## EVM Precompiles
 
-The `SHA2-256` (address `0x2`), `RIPEMD-160` (address `0x3`), and `blake2f` (address `0x9`) precompiles are currently not supported. Calls to these contracts will be reverted. We plan to enable these three precompiles in a future hard fork.
+The `RIPEMD-160` (address `0x3`) `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently not supported. Calls to unsupported precompiled contracts will revert. We plan to enable these precompiles in future hard forks.
 
+The `modexp` precompile is supported but only supports inputs of size less than or equal to 32 bytes (i.e. `u256`).
 
-The `modexp` precompile is supported, but only for inputs up to 32 bytes (i.e. `u256`).
+The `ecPairing` precompile is supported, but the number of points(sets, pairs) is limited to 4, instead of 6.
 
-The `ecPairing` precompile is supported but limits the number of points(sets, pairs) to 4, instead of 6.
+The other EVM precompiles are all supported: `ecRecover`, `identity`, `ecAdd`, `ecMul`.
 
-Other EVM precompiles like `ecRecover`, `identity`, `ecAdd`, and `ecMul` are fully supported.
+### Precompile Limits
 
+Because of a bounded size of the zkEVM circuits, there is an upper limit on the number of calls that can be made for some precompiles. These transactions will not revert, but simply be skipped by the sequencer if they cannot fit into the space of the circuit. 
+
+| Precompile / Opcode | Limit | 
+| ------------------- | ----- |
+| `keccak256`         | 3157  |
+| `ecRecover`         | 119   |
+| `modexp`            | 23    |
+| `ecAdd`             | 50    |
+| `ecMul`             | 50    |
+| `ecPairing`         | 2     |
 
 ## State Account
 
 ### **Additional Fields**
 
-We have introduced two additional fields in the `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
+We added two fields in the current `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
 
 ```go
 type StateAccount struct {
@@ -61,20 +69,16 @@ type StateAccount struct {
 
 ### **CodeHash**
 
+Related to this, we maintain two types of codehash for each contract bytecode: Keccak hash and Poseidon hash.
 
-- There are two types of codehash for each contract bytecode: `KeccakCodeHash`and `PoseidonCodeHash`.
-
-- `KeccakCodeHash` is kept to maintain compatibility for EXTCODEHASH. 
-
-- `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
+`KeccakCodeHash` is kept to maintain compatibility for `EXTCODEHASH`. `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
 
 ### CodeSize
 
-When verifying `EXTCODESIZE`, loading the entire contract data into the zkEVM is costly. Instead, we store the contract size in storage at contract creation. This approach avoids the need to load the code, as storage proof is sufficient to verify this opcode.
-
-
+When verifying `EXTCODESIZE`, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation. This way, we do not need to load the code — a storage proof is sufficient to verify this opcode.
 
 ## Block Time
+
 :::tip Block Time Subject to Change
 
 Blocks are produced every second, with an empty block generated if there are no transactions for 5 seconds. However, this frequency may change in the future.

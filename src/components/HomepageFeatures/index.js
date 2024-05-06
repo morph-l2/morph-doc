@@ -15,8 +15,10 @@ const FeatureList = [
   
   {
     title: 'Quick Start',
+
     url: '/docs/quick-start/welcome-to-morph',
     svg: '/img/banner2.svg',
+
     description: (
       <>
         This guide will lead you through a seamless start with the vibrant Morph ecosystem.
@@ -34,17 +36,22 @@ const FeatureList = [
       </>
     ),
   },
+
   {
     title: 'Build on Morph',
     url: '/docs/build-on-morph/intro',
     svg: '/img/banner4.svg',
+
     description: (
       <>
         Access comprehensive resources to bring your DApp from concept to launch on the Morph platform.
       </>
     ),
+
   },
+
 ];
+
 
 function Feature({svg, title, url, description}) {
   return (

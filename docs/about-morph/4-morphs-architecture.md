@@ -1,8 +1,8 @@
 ---
 title: Morph's Architecture
 lang: en-US
-keywords: [morph,layer2,validity proof,optimstic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
+keywords: [morph,layer2,validity proof,optimistic zk-rollup]
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 :::tip
@@ -52,5 +52,5 @@ This modular architecture enhances flexibility, adaptability, and composability 
 
 Morph’s architecture is further defined by five pivotal roles: Sequencers, Validators, Nodes, Provers, and Layer 1 (Ethereum). Each role carries specific responsibilities and utilizes distinct components to fulfill its function, contributing to the seamless operation of the network.
 
-To delve deeper into the roles and mechanisms powering Morph, explore our detailed "How Morph Works" documentation.
+To delve deeper into the roles and mechanisms powering Morph, explore our detailed ["How Morph Works"](../how-morph-works/1-intro.md) documentation.
 
