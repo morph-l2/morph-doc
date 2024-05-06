@@ -5,7 +5,7 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
 ---
 
-After deploying your smart contracts, it's important to verify your code on our [block explorer](https://explorer-testnet.morphl2.io). This can be done in an automated way using your develop framework such as hardhat.
+After deploying your smart contracts, it's important to verify your code on our [block explorer](https://explorer-holesky.morphl2.io). This can be done in an automated way using your develop framework such as hardhat.
 
 
 
@@ -13,78 +13,13 @@ After deploying your smart contracts, it's important to verify your code on our 
 
 Most smart contract tooling has plugins for verifying your contracts easily on Etherscan. Blockscout supports Etherscan's contract verification APIs, and it's straight forward to use these tools with the Morph Testnet.
 
-### Hardhat
+We provided a comprehensive example of how to depoly contracts on Morph using hardhat & foundry which includes the verification process.
 
-:::info
-
-Use [harthat-verify plugin](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)
-
-:::
-
-First run this under hardhat contract project directory:
-
-~~~
-yarn add --dev @nomiclabs/hardhat-etherscan
-~~~
-
-Then edit your 'hardhat.config.js' file to point to the Morph testnet RPC & explorer
-> hardhat.config.js
-
-
-~~~
-
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-etherscan");
-require('hardhat-deploy');
-
-module.exports = {
-    ...
-    networks: {
-    tMorph: {
-      url: 'https://rpc-testnet.morphl2.io ' || '',
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-     },
-    },
-    ...
-    etherscan: {
-        apiKey: {
-          tMorph: "abc",
-        },
-        customChains: [
-          {
-            network: "tMorph",
-            chainId: 2710,
-            urls: {
-              apiURL: "https://explorer-api-testnet.morphl2.io/api",
-              browserURL: "https://explorer-testnet.morphl2.io",
-            },
-          },
-        ],
-      }
-}
-
-~~~
-
-When contract is deployed, adding a script: 
-> scripts/lock.js
-
-~~~
-await hre.run("verify:verify", {
-    address: contract.address, 
-    constructorArguments: [xxx], 
-});
-~~~
-
-Final step, execute
-
-> NODE_ENV=devnet npx hardhat run scripts/lock.js --network devnet
-
-To verify the contract code
+You can check [here](../practical-examples/1-deploy-contract-on-morph.md)
 
 ## Vefiry with Morph explorer
 
-- Visit：[Morph block explorer](https://explorer-testnet.morphl2.io)
+- Visit：[Morph block explorer](https://explorer-holesky.morphl2.io)
 
 We currently support 6 different ways to verify your contracts on our block explorer
 

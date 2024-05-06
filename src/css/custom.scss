@@ -10,7 +10,7 @@
  
  /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #00CB9A;
+  --ifm-color-primary: #14A800;
   --ifm-color-primary-dark: #00b78b;
   --ifm-color-primary-darker: #00ad83;
   --ifm-color-primary-darkest: #008e6c;
@@ -25,7 +25,7 @@
 
   --ifm-color-emphasis-600: #fff;
 
-  /* #00CB9A */
+  /* #14A800 */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -50,12 +50,12 @@
 }
 
 [data-theme='light'] .navbar-sidebar__brand {
-  background-color: #6A51FF;
+  background-color: #7D68FF;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #62ffa4;
+  --ifm-color-primary: #108500;
   --ifm-color-primary-dark: #3fff90;
   --ifm-color-primary-darker: #2dff85;
   --ifm-color-primary-darkest: #00f768;
@@ -63,7 +63,7 @@
   --ifm-color-primary-lighter: #97ffc3;
   --ifm-color-primary-lightest: #ccffe1;
 
-  /* --ifm-navbar-background-color: #6A51FF; */
+  /* --ifm-navbar-background-color: #7D68FF; */
 
   --ifm-heading-color: #CCC;
 
@@ -92,6 +92,11 @@
   --ifm-footer-color: #999;
 
   --border-hover-shadow: rgba(155, 255, 197, 0.30);
+}
+
+.main-wrapper,
+.container {
+  min-height: 100%;
 }
 
 .menu__link {
@@ -126,8 +131,9 @@
 }
 [data-theme='light'] .navbar {
   /* background: rgba(255, 255, 255, 0.90) !important; */
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05) !important;
-  background: #6A51FF;
+  // box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05) !important;
+  background: #7D68FF;
+  box-shadow: none;
   /* backdrop-filter: blur(5px); */
 }
 [data-theme='light'] .footer {
@@ -174,7 +180,9 @@
 }
 [data-theme='dark'] .navbar {
   background-color: rgba(10, 8, 15, 0.90) !important;
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.85) !important;
+  // background: #7D68FF;
+  box-shadow: none;
+  // box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.85) !important;
 }
 [data-theme='dark'] .footer {
   background-color: #0A080F;
@@ -235,12 +243,14 @@ height: 28px;
 }
 [data-theme='light']  .morph-logo {
   background-size: 160px 25px;
-  background-image: url(/img/index/logo_light.svg);
+  background-image: url(/logo/LogoMorphWhite.svg);
+  margin-left: -24px;
 }
 
 [data-theme='dark']  .morph-logo {
   background-size: 160px 25px;
-  background-image: url(/img/index/logo_dark.svg);
+  background-image: url(/logo/LogoMorphWhite.svg);
+  margin-left: -24px;
 }
  
 
@@ -324,15 +334,19 @@ height: 28px;
   color: var(--ifm-heading-color) !important;
   text-decoration: none !important;
   display: flex;
-  border-radius: 16px;
-  border: 1px solid var(---, #999);
+  border-radius: 0px;
+  border: 1px solid #21231E1a;
 
   &:hover {
-    border-radius: 16px;
+    border-radius: 0px;
     border: 1px solid var(--ifm-color-primary);
     background: var(--ifm-footer-background-color);
     box-shadow: 0px 0px 40px 0px var(--border-hover-shadow);
   }
+}
+
+[data-theme='dark'] .feature-a {
+  border: 1px solid #373933;
 }
 
 .feature-h3 {
@@ -354,4 +368,31 @@ height: 28px;
 .homepage-resource {
   text-align: center;
   color: --ifm-heading-color;
+}
+
+
+.green-bg {
+  background: linear-gradient(180deg, #A3FE76 -24.11%, #F2F7F2 100%);
+  // linear-gradient(180deg, color(display-p3 0.722 0.988 0.529) -24.11%, color(display-p3 0.953 0.969 0.949) 100%);
+}
+.yellow-bg {
+  background: linear-gradient(180deg, #FFEB69 -24.11%, #F2F7F2 100%);
+  // linear-gradient(180deg, color(display-p3 0.988 0.925 0.490) -24.11%, color(display-p3 0.953 0.969 0.949) 100%);
+}
+.pink-bg {
+  background: linear-gradient(180deg, #FFD6EF -24.11%, #F2F7F2 100%);
+  // linear-gradient(180deg, color(display-p3 0.976 0.847 0.933) -24.11%, color(display-p3 0.953 0.969 0.949) 100%);
+}
+.purple-bg {
+  background: linear-gradient(180deg, #CDC5FF -24.11%, #F3F7F2 100%);
+  // linear-gradient(180deg, color(display-p3 0.976 0.847 0.933) -24.11%, color(display-p3 0.953 0.969 0.949) 100%);
+}
+.footer__link-item {
+  color: #fff;
+}
+.footer-bg {
+  background-image: url('/lottie/bg-logo.svg');
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  background-position: 5% center;
 }

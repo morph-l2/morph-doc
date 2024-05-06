@@ -25,5 +25,5 @@ Beta Testnet Stage: Morph is currently in the beta testnet phase, offering a bra
 
 ### Looking for help
 
-Having issues while developing or exploring? Join our discord channel and talk to us in the developer feedback section. We would love to hear your thoughts or feedback on how we can improve your experience, too.
+Having issues while developing or exploring? Join our [discord channel](https://discord.com/invite/5SmG4yhzVZ) and talk to us in the right channel. We would love to hear your thoughts or feedback on how we can improve your experience, too.
 
