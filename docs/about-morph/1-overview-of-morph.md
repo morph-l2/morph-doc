@@ -1,8 +1,8 @@
 ---
 title: Overview
 lang: en-US
-keywords: [morph,layer2,validity proof,optimstic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
+keywords: [morph,layer2,validity proof,optimistic zk-rollup]
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 Welcome to Morph, the innovative force reshaping the consumer blockchain landscape for practical, everyday use. At the core of Morph is a revolutionary approach to Ethereum Layer 2 scalability, harnessing the power of advanced rollup technology. Our platform is uniquely designed to enhance the blockchain experience, making it more accessible, efficient, and user-friendly for both developers and consumers alike.
