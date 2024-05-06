@@ -7,15 +7,15 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 
 
-The Morph Sepolia Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Sepolia using common tools for developing on Ethereum. 
+The Morph Holesky Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Holesky using common tools for developing on Ethereum. 
 
 This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-deploy-demo) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
 :::tip
-  Before you start deploying the contract, you need to request test tokens from a Sepolia faucet and use the
-  [bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Sepolia_ to _Morph Sepolia_. 
+  Before you start deploying the contract, you need to request test tokens from a Holesky faucet and use the
+  [bridge](https://bridge-holesky.morphl2.io) to transfer some test ETH from _Holesky_ to _Morph Sepolia_. 
 
-  Or you can direct obatin Morph sepolia ETH for testing.
+  Or you can direct obtain Morph Holesky ETH for testing.
   
   See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
@@ -28,6 +28,16 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 
 ## Hardhat Contract Deployment Examples
+
+# Morph Contract Deployment Demo
+
+This project demonstrates how to use hardhat to deploy a contract on the Morph Holesky Testnet. This project contains a simple contract that will lock a certain amount of Ether in the deployed contract for a specified amount of time.
+
+## Prerequisites
+
+- Network setup: https://docs.morphl2.io/docs/build-on-morph/build-on-morph/development-setup
+
+## Deploy with Hardhat
 
 ### Install Dependencies
 
@@ -67,10 +77,9 @@ yarn test
       url: process.env.MORPH_TESTNET_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gasPrice: 2000000000
     }
    ```
-Then run the following command to deploy the contract on the Morph Sepolia Testnet. This will run the deployment script that set the initialing parameters, you can edit the script in scripts/deploy.ts
+Then run the following command to deploy the contract on the Morph Holesky Testnet. This will run the deployment script that set the initialing parameters, you can edit the script in scripts/deploy.ts
 
 ```bash
 yarn deploy:morphTestnet
@@ -83,7 +92,7 @@ To verify your contract through hardhat, you need to add the following Etherscan
 ```javascript
 module.exports = {
   networks: {
-    morphSepolia: { ... }
+    morphTestnet: { ... }
   },
   etherscan: {
     apiKey: {
@@ -92,17 +101,17 @@ module.exports = {
     customChains: [
       {
         network: 'morphTestnet',
-        chainId: 2710,
+        chainId: 2810,
         urls: {
-          apiURL: 'https://explorer-api-testnet.morphl2.io/api ',
-          browserURL: 'https://explorer-testnet.morphl2.io/',
+          apiURL: 'https://explorer-api-holesky.morphl2.io/api? ',
+          browserURL: 'https://explorer-holesky.morphl2.io/',
         },
       },
     ],
   },
 };
 ```
-Then run the hardhat verfiy command to finish the verification
+Then run the hardhat verify command to finish the verification
 
 ```bash
 npx hardhat verify --network morphTestnet DEPLOYED_CONTRACT_ADDRESS <ConstructorParameter>
@@ -115,10 +124,26 @@ npx hardhat verify --network morphTestnet 0x8025985e35f1bAFfd661717f66fC5a434417
 ```
 
 
-Once succeed, you can check your contract and the deployment transaction on [Morph Sepolia Explorer](https://explorer-testnet.morphl2.io)
+Once succeed, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io)
+   
+
+## Support
+
+Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/5SmG4yhzVZ) and find us at #dev-help channel.
 
 
-## Foundry Contract Deployment Examples
+## Foundry
+
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+
+Foundry consists of:
+
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+
+## Example Walkthrough
 
 ### Install Foundry
 ```bash
@@ -162,16 +187,62 @@ Adjust as needed for your own script names.
 Verification requires some flags passed to the normal verification script. You can verify using the command below:
 
 ```bash
- forge verify-contract <YourConrtactAddress Counter\
-  --chain 2710 \
+ forge verify-contract <YourContractAddress Counter\
+  --chain 2810 \
   --verifier-url $VERIFIER_URL \
   --verifier blockscout --watch
 ```
 
-Once succeed, you can check your contract and the deployment transaction on [Morph Sepolia Explorer](https://explorer-testnet.morphl2.io)
+Once succeed, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io)
 
-## Questions and Feedback
+### Cast
 
-Thank you for participating in and developing on the Morph Sepolia Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/5SmG4yhzVZ) and find us at #dev-help channel.
+```shell
+cast <subcommand>
+```
+
+### Help
+
+```shell
+forge --help
+anvil --help
+cast --help
+```
+
+## Documentation
+
+https://book.getfoundry.sh/
+
+## Usage
+
+### Build
+
+```shell
+forge build
+```
+
+### Test
+
+```shell
+forge test
+```
+
+### Format
+
+```shell
+forge fmt
+```
+
+### Gas Snapshots
+
+```shell
+forge snapshot
+```
+
+### Anvil
+
+```shell
+anvil
+```
 
 
