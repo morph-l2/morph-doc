@@ -1,8 +1,8 @@
 ---
 title: Welcome to Morph!
 lang: en-US
-keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
+keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 Thank you for choosing Morph! We're excited to have you onboard with the first optimistic ZK-EVM scaling solution for Ethereum. Morph is designed to meet a variety of needs, and you can easily navigate to the most relevant information for your interests.
