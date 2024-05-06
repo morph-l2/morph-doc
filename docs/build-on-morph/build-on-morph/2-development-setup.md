@@ -50,8 +50,8 @@ Modify your Hardhat config file hardhat.config.ts to point at the Morph public R
 const config: HardhatUserConfig = {
   ...
   networks: {
-    morphTestnet: {
-      url: process.env.MORPH_TESTNET_URL || "",
+    morphl2: {
+      url: "" || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
@@ -67,6 +67,7 @@ To deploy using Morph Public RPC, run:
 ```jsx
 forge create ... --rpc-url= --legacy
 ```
+
 
 
 ### ethers.js

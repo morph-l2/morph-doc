@@ -1,5 +1,5 @@
 ---
-title: Morph JSON-RPC Api Methods
+title: Morph JSON-RPC API Methods
 lang: en-US
 ---
 

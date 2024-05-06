@@ -48,8 +48,6 @@ Decentralized sequencers introduce a competitive dynamic among multiple entities
 
 Morph stands apart from other Rollup projects due to the emphasis on establishing a decentralized sequencer network right from inception. This design was guided by the following core principles:
 
-Morph stands apart from other Rollup projects due to the emphasis on establishing a decentralized sequencer network right from inception. This design was guided by the following core principles:
-
 #### Efficiency: 
 
 Morph is first and foremost an Ethereum scaling solution, focused on improved efficiency and cost reduction. Our solution must guarantee fast execution and transaction confirmation at Layer 2 while maintaining the highest possible level of decentralization.
@@ -91,7 +89,7 @@ A complete Morph decentralized sequencer network consists of two parts:
 
 - **Sequencer Set** : This forms the core group that provides sequencing services
 - **Sequencer Staking Contract**: This contract facilitates the selection of the sequencer set via an election process. 
-- 
+
 Through the sequencer staking contract, members are elected into the sequencer set, where they collaboratively provide services for the Morph network. Periodically, the election results are synchronized to the Layer 1 Rollup contract. This synchronized data is utilized to obtain the BLS aggregate signatures of sequencer network participants for comparison and verification.
 
 ### Layer 2 Blocks Generation
