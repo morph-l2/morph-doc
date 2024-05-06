@@ -27,10 +27,10 @@ export const links = {
   doc: docUrl + '/docs/how-morph-works/intro/',
 
   // start building
-  apiDocs: 'https://explorer-testnet.morphl2.io/api-docs',
-  explorer: 'https://explorer-testnet.morphl2.io',
+  apiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
+  explorer: 'https://explorer-holesky.morphl2.io',
   explorerApi: 'http://10.11.57.224:4003', // /api/v2/stats
-  bridge: 'https://bridge-testnet.morphl2.io',
+  bridge: 'https://bridge-holesky.morphl2.io',
 
 
   // social

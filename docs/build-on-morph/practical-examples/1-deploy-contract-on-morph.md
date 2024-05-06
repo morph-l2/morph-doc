@@ -13,7 +13,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 :::tip
   Before you start deploying the contract, you need to request test tokens from a Holesky faucet and use the
-  [bridge](https://bridge-testnet.morphl2.io) to transfer some test ETH from _Holesky_ to _Morph Holesky_. 
+  [bridge](https://bridge-holesky.morphl2.io) to transfer some test ETH from _Holesky_ to _Morph Holesky_. 
   
   See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
