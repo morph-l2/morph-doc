@@ -16,9 +16,9 @@ function ColumnLinkItem({item}) {
 }
 function Column({column}) {
   return (
-    <div className="col footer__col">
-      <div className="footer__title text-title-1">{column.title}</div>
-      <ul className="footer__items clean-list text-title-1">
+    <div className="flex-1">
+      <div className="footer__title text-[#FFFFFF66]">{column.title}</div>
+      <ul className="flex flex-col footer__items clean-list text-[#fff]">
         {column.items.map((item, i) => (
           <ColumnLinkItem key={i} item={item} />
         ))}
@@ -28,7 +28,7 @@ function Column({column}) {
 }
 export default function FooterLinksMultiColumn({columns}) {
   return (
-    <div className="row footer__links">
+    <div className="grid grid-cols-2 md:grid-cols-4 xl:flex xl:flex-row">
       {columns.map((column, i) => (
         <Column key={i} column={column} />
       ))}
