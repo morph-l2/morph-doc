@@ -17,7 +17,7 @@ const FeatureList = [
     style: 'green-bg',
     description: (
       <>
-        Learn more on what Morph is and our mission to revolutionize the industry.
+        Learn more on what Morph is and our mission to revolutionize the industry.<br />
       </>
     ),
   },
@@ -72,7 +72,7 @@ function Feature({svg, title, url, style, description}) {
           </div>
           <div className="mt-1 text-left md:pl-8 flex flex-col items-center md:items-start justify-center">
             <h3 className={classnames('feature-h3 mb-0 !text-xs md:!text-3xl')}>{title}</h3>
-            <p className={classnames('feature-p mt-2 md:mt-[20px] !text-[10px] !leading-[12px] md:!text-xl')}>{description}</p>
+            <p className={classnames('feature-p mt-2 md:mt-[20px] !text-[10px] !leading-[12px] md:!text-xl md:h-[84px]')}>{description}</p>
           </div>
         </a>
       </div>
