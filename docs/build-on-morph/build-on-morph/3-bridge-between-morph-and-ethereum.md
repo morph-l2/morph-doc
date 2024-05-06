@@ -1,8 +1,8 @@
 ---
 title: Bridge between Morph and Ethereum
 lang: en-US
-keywords: [morph,ethereum,rollup,layer2,validity proof,optimstic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimstic zk-rollup solution. Try it now!
+keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 ## Bridging basics
@@ -13,7 +13,7 @@ App developers often have a need to move data and assets between Morph and Ether
 
 For how it works under the hood, please check [here](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md):
 
-For this page we gonna go over how to interact with our cross layer infrastructure to fulfuil your desire purpose.
+For this page we gonna go over how to interact with our cross layer infrastructure to meet your desire purpose.
 
 ### Sending tokens
 
@@ -23,7 +23,7 @@ It also allows you to easily create L2 representations of existing tokens on Eth
 
 ### Sending data
 
-If the token gateway doesn't fully cover your usecase, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
+If the token gateway doesn't fully cover your usecases, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
 
 We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
 
@@ -54,14 +54,9 @@ The Gateway is composed of several contracts on both Layer 1 and Layer 2, which 
 | `L2WETHGateway`          | The gateway for Wrapped ETH withdraw.                            |
 
 
-
-<!--
-(https://github.com/morph-l2/contracts/tree/main/contracts/L1/L1StandardBridge.sol) 
-(https://github.com/morph-l2/contracts/tree/main/contracts/L2/L2StandardBridge.sol)
--->
-
 Here we'll go over the basics of using these gateway to move tokens & messages between Layer 1 and Layer 2.
 
+You can find all the contracts details [here](../../build-on-morph/developer-resources/1-contracts.md)
 
 ## Deposit ETH and ERC20 tokens from L1
 
@@ -79,44 +74,70 @@ When bridging ERC20 tokens, you don’t have to worry about selecting the right 
 
 <!---->
 <!--
-- **`L1CustomERC20Gateway`:** This Gateway will be selected by the `L1GatewayRouter` for tokens with custom logic. For an L1/L2 token pair to work on the Morph Custom ERC20 Bridge, the L2 token contract has to implement `IMorphStandardERC20`. Additionally, the token should grant `mint` or `burn` capability to the `L2CustomERC20Gateway`. Visit the [Bridge an ERC20 through the Custom Gateway](/developers/guides/bridge-erc20-through-the-custom-gateway) guide for a step-by-step example of how to bridge a custom token.
+- **`L1CustomERC20Gateway`:** This Gateway will be selected by the `L1GatewayRouter` for tokens with custom logic. For an L1/L2 token pair to work on the Morph Custom ERC20 Bridge, the L2 token contract has to implement `IMorphStandardERC20`. Additionally, the token should grant `mint` or `burn` capability to the `L2CustomERC20Gateway`. 
 -->
 
-All Gateway contracts will form the message and send it to the `L1CrossDomainMessenger` which can send arbitrary messages to L2. The `L1CrossDomainMessenger` passes the message to the `L1MessageQueue`. Any user can send messages directly to the Messenger to execute arbitrary data on L2. 
+All Gateway contracts will form the message and send it to the `L1CrossDomainMessenger` which can send arbitrary messages to L2. The `L1CrossDomainMessenger` passes the message to the `L1MessageQueueWithGasPriceOracle`. Any user can send messages directly to the Messenger to execute arbitrary data on L2. 
 
 This means they can execute any function on L2 from a transaction made on L1 via the bridge. Although an application could directly pass messages to existing token contracts, the Gateway abstracts the specifics and simplifies making transfers and calls.
 
-When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via the its L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainhMessenger` contract for execution on L2.
+When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via the its L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainMessenger` contract for execution on L2.
 
 ## Withdraw ETH and ERC20 tokens from L2
 
 The L2 Gateway is very similar to the L1 Gateway. We can withdraw ETH and ERC20 tokens back to L1 using the `withdrawETH` and `withdrawERC20` functions. The contract address is deployed on L2. We use the `getL1ERC20Address` to retrieve the token address on L1.
 
 :::tip
-  **`withdrawETH`** and **`withdrawERC20`** are payable functions, and the amount of ETH sent to these functions will be
-  used to pay for L1 fees. If the amount is not enough, the transaction will not be sent. All excess ETH will be sent
-  back to the sender. Fees will depend on L1 activity but `0.005 ETH` should be enough to process a token withdrawal.
+  **`withdrawETH`** and **`withdrawERC20`** are payable functions, and the amount of ETH sent to these functions will be used to pay for L1 fees. If the amount is not enough, the transaction will not be sent. All excess ETH will be sent back to the sender. Fees will depend on L1 activity but `0.005 ETH` should be enough to process a token withdrawal.
 :::
 
 :::tip
-  **Make sure the transactions won't revert on L1** while sending from L2. There is no way to recover bridged ETH,
-  tokens, or NFTs if your transaction reverts on L1. All assets are burnt on Morph when the transaction is sent, and
-  it's impossible to mint them again.
+  **Make sure the transactions won't revert on L1** while sending from L2. There is no way to recover bridged ETH, tokens, or NFTs if your transaction reverts on L1. All assets are burnt on Morph when the transaction is sent, and it's impossible to mint them again.
 :::
 
-### Finalize your Withdrawl
+### Finalize your Withdraw
 
-Besides start a withdrawl request on Morph, there is one additional step to do. You need to finalize your withdrawl on Ethereum.
+Besides start a withdraw request on Morph, there is one additional step to do. You need to finalize your withdraw on Ethereum.
 
 This is because of Morph's optimistic zkEVM design, you can read the details [here](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md): 
 
-To do this, you need to use the `proveAndRelayMessage` function of the `L1CrossDomainMessenger` contract. This method requires:
 
-- The L2 messages
-- A merkel proof and the withdraw trie root of the batch that contains your withdraw transaction.
 
-This can be obtained by:
+To do this, First you need to make sure:
 
+- The batch contains the withdraw transactions has gone through the challenge period and is marked as finalized (which means that in `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**)
+
+Once confirmed, you can call our backend services interface:
+
+`/getProof?nonce=withdraw.index`
+
+to obtain all the information you need to finalize your withdraw, which include:
+
+- Index: The position of the withdrawal transaction in the withdraw tree, or rank of your transaction among all the L2->L1 transactions.
+- Leaf: The hash value of your withdraw transaction that stored in the tree
+- Proof: The merkel proof of your withdraw transaction
+- Root: The withdraw tree root
+
+
+, you need to use the `proveAndRelayMessage` function of the `L1CrossDomainMessenger` contract.
+
+After obtaining the above information, the finalization of the withdraw operation can be carried out by calling `L1CrossDomainMessenger.proveAndRelayMessage()`.
+
+The required parameters are 
+
+```solidity
+  address _from, 
+  address _to, 
+  uint256 _value, 
+  uint256 _nonce, 
+  bytes memory _message, 
+  bytes32[32] calldata _withdrawalProof, 
+  bytes32 _withdrawalRoot
+```
+
+`_from`,`_to`, `_value`, `_nonce`, and `_message` are the original content of the withdraw transaction, which can be obtained from the Event `SentMessage` included in the transaction initiated by the L2 layer withdraw. 
+
+`_withdrawalProof` and `_withdrawalRoot` can be obtained from the aforementioned backend API interface.
 
 <!--
 
