@@ -84,7 +84,7 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need some testnet ETH. Use a faucet to acquire holesky Ether,  then bridge the test Ethereum Ether to the Morph testnet.
+To start building on Morph, you may need some testnet ETH. Use a faucet to acquire holesky Ether,  then [bridge](bridge-holesky.morphl2.io) the test Ethereum Ether to the Morph testnet.
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
