@@ -40,8 +40,8 @@ Morph Sepolia testnet is going to be sunset soon. We strongly suggest that you m
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
-| Morph Holesky Testnet             | https://rpc-holesky.morphl2.io        | 2810    | https://explorer-holesky.morphl2.io      | ETH      |
-| Ethereum Holesky            | https://ethereum-holesky-rpc.publicnode.com/o       | 17000    | https://holesky.etherscan.io      | ETH      |
+| Morph Holesky Testnet             | https://rpc-quicknode-holesky.morphl2.io       | 2810    | https://explorer-holesky.morphl2.io      | ETH      |
+| Ethereum Holesky            | https://ethereum-holesky-rpc.publicnode.com/       | 17000    | https://holesky.etherscan.io      | ETH      |
 | Morph Sepolia Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
 | Ethereum Sepolia            | https://eth-sepolia-public.unifra.io       | 11155111    | https://sepolia.etherscan.io      | ETH      |
 
