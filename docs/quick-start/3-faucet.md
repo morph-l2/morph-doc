@@ -42,11 +42,9 @@ You can obtain morph's version of USDT on Holesky through our discord faucet, he
 
 3. type */faucet* in the channel and add your Holesky address behind it.
 
-![command](../../assets/docs/quick-start/faucet/command.png)
+![command](../../assets/docs/quick-start/faucet/faucet_c.png)
 
 4. Wait for a few seconds.
-
-![mining](../../assets/docs/quick-start/faucet/mining.png)
 
 5. Once succeeded, you will see this in the channel.
 
@@ -56,9 +54,9 @@ You can obtain morph's version of USDT on Holesky through our discord faucet, he
 
 ~~~
 
-Holesky address: "0x5F4c7D793D898e64eddd1fC82D27EcfB5F6e4596"
+Ethereum Holesky USDT address: "0xD6e9Cd5ef382b0830653d1b2007D5Ca6987FaA26"
 
-Morph Holesky address: "0xB4A71512cf4F3A8f675D2aeC76198D6419D219C7"
+Morph Holesky USDT address: "0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98"
 
 ~~~
 
@@ -69,3 +67,8 @@ Morph Holesky address: "0xB4A71512cf4F3A8f675D2aeC76198D6419D219C7"
 You can obtain the Morph Holesky ETH in our discord too for development purposes.
 
 Using the */morph_eth* command and type your address will grant you 0.01 Morph Holesky ETH.
+
+Once succeed, you will see the following message:
+
+![success](../../assets/docs/quick-start/faucet/faucet_eth.png)
+
