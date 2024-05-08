@@ -84,7 +84,7 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need some testnet ETH. Use a faucet to acquire holesky Ether,  then [bridge](bridge-holesky.morphl2.io) the test Ethereum Ether to the Morph testnet.
+To start building on Morph, you may need some testnet ETH. Use a faucet to acquire holesky Ether, then [bridge](bridge-holesky.morphl2.io) the test Ethereum Ether to the Morph testnet.
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
@@ -96,6 +96,8 @@ https://faucet.quicknode.com/ethereum/holesky
 
 https://holesky-faucet.pk910.de/
 
+
+You can also use our own [discord faucet](../../quick-start/3-faucet.md#morph-holesky-eth) to obtain Morph Holesky USDT & Morph Holesky ETH.
 
 Once you receive ETH on holesky, you should see it in your wallet on the *holesky Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Holesky Block Explorer](https://holesky.etherscan.io/)**.
 
