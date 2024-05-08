@@ -28,14 +28,14 @@ Before you start, ensure you are connected to the following networks:
 
 | Network Name | Morph Holesky Testnet | Holesky Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-holesky.morphl2.io | https://ethereum-holesky-rpc.publicnode.com/ |
+| RPC URL | https://rpc-quicknode-holesky.morphl2.io| https://ethereum-holesky-rpc.publicnode.com/ |
 | Chain ID | 2810 | 17000 |
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer-holesky.morphl2.io/| https://holesky.etherscan.io/ |
 
 :::tip Websocket Connection
 
-wss://rpc-holesky.morphl2.io:8443/
+wss://rpc-quicknode-holesky.morphl2.io
 
 :::
 

@@ -14,7 +14,7 @@ Contract address could be dynamic during the public testnet stage, so it is reco
 
 | Network Name | Morph Holesky Testnet | Ethereum Holesky Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-holesky.morphl2.io | https://ethereum-holesky-rpc.publicnode.com/ |
+| RPC URL | https://rpc-quicknode-holesky.morphl2.io| https://ethereum-holesky-rpc.publicnode.com/ |
 | Chain ID | 2810 | 17000 |
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer-holesky.morphl2.io/| https://holesky.etherscan.io/ |
