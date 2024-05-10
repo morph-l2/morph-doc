@@ -6,14 +6,14 @@
 
 # Interface: IBridgeAdapter
 
-Represents an adapter for an L1<>L2 token bridge. Each custom bridge currently needs its own
+Represents an adapter for an L1L2 token bridge. Each custom bridge currently needs its own
 adapter because the bridge interface is not standardized. This may change in the future.
 
 ## Properties
 
 ### estimateGas
 
-> **estimateGas**: `object`
+ **estimateGas**: `object`
 
 Object that holds the functions that estimates the gas required for a given transaction.
 Follows the pattern used by ethers.js.
@@ -46,7 +46,7 @@ Optional transaction overrides.
 
 ##### Returns
 
-`Promise`\<`BigNumber`\>
+`Promise`\`BigNumber`\
 
 Gas estimate for the transaction.
 
@@ -86,7 +86,7 @@ Optional address to receive the funds on L2. Defaults to sender.
 
 ##### Returns
 
-`Promise`\<`BigNumber`\>
+`Promise`\`BigNumber`\
 
 Gas estimate for the transaction.
 
@@ -122,7 +122,7 @@ Optional address to receive the funds on L1. Defaults to sender.
 
 ##### Returns
 
-`Promise`\<`BigNumber`\>
+`Promise`\`BigNumber`\
 
 Gas estimate for the transaction.
 
@@ -134,7 +134,7 @@ src/interfaces/bridge-adapter.ts:255
 
 ### l1Bridge
 
-> **l1Bridge**: `Contract`
+ **l1Bridge**: `Contract`
 
 L1 bridge contract.
 
@@ -146,7 +146,7 @@ src/interfaces/bridge-adapter.ts:37
 
 ### l2Bridge
 
-> **l2Bridge**: `Contract`
+ **l2Bridge**: `Contract`
 
 L2 bridge contract.
 
@@ -158,7 +158,7 @@ src/interfaces/bridge-adapter.ts:42
 
 ### messenger
 
-> **messenger**: [`CrossChainMessenger`](../classes/CrossChainMessenger.md)
+ **messenger**: [`CrossChainMessenger`](../classes/CrossChainMessenger.md)
 
 Provider used to make queries related to cross-chain interactions.
 
@@ -170,7 +170,7 @@ src/interfaces/bridge-adapter.ts:32
 
 ### populateTransaction
 
-> **populateTransaction**: `object`
+ **populateTransaction**: `object`
 
 Object that holds the functions that generate transactions to be signed by the user.
 Follows the pattern used by ethers.js.
@@ -203,7 +203,7 @@ Optional transaction overrides.
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\>
+`Promise`\`TransactionRequest`\
 
 Transaction that can be signed and executed to deposit the tokens.
 
@@ -245,7 +245,7 @@ Optional address to receive the funds on L2. Defaults to sender.
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\>
+`Promise`\`TransactionRequest`\
 
 Transaction that can be signed and executed to deposit the tokens.
 
@@ -281,7 +281,7 @@ Optional address to receive the funds on L1. Defaults to sender.
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\>
+`Promise`\`TransactionRequest`\
 
 Transaction that can be signed and executed to withdraw the tokens.
 
@@ -293,7 +293,7 @@ src/interfaces/bridge-adapter.ts:185
 
 ### approval()
 
-> **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\<`BigNumber`\>
+ **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\`BigNumber`\
 
 Queries the account's approval amount for a given L1 token.
 
@@ -317,7 +317,7 @@ The L2 token address.
 
 #### Returns
 
-`Promise`\<`BigNumber`\>
+`Promise`\`BigNumber`\
 
 Amount of tokens approved for deposits from the account.
 
@@ -329,7 +329,7 @@ src/interfaces/bridge-adapter.ts:102
 
 ### approve()
 
-> **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
+ **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\`TransactionResponse`\
 
 Approves a deposit into the L2 chain.
 
@@ -361,7 +361,7 @@ Optional transaction overrides.
 
 #### Returns
 
-`Promise`\<`TransactionResponse`\>
+`Promise`\`TransactionResponse`\
 
 Transaction response for the approval transaction.
 
@@ -373,7 +373,7 @@ src/interfaces/bridge-adapter.ts:123
 
 ### deposit()
 
-> **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
+ **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\`TransactionResponse`\
 
 Deposits some tokens into the L2 chain.
 
@@ -413,7 +413,7 @@ Optional address to receive the funds on L2. Defaults to sender.
 
 #### Returns
 
-`Promise`\<`TransactionResponse`\>
+`Promise`\`TransactionResponse`\
 
 Transaction response for the deposit transaction.
 
@@ -425,7 +425,7 @@ src/interfaces/bridge-adapter.ts:146
 
 ### getDepositsByAddress()
 
-> **getDepositsByAddress**(`address`, `opts`?): `Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
+ **getDepositsByAddress**(`address`, `opts`?): `Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
 
 Gets all deposits for a given address.
 
@@ -451,7 +451,7 @@ latest known block ("latest").
 
 #### Returns
 
-`Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
+`Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
 
 All deposit token bridge messages sent by the given address.
 
@@ -463,7 +463,7 @@ src/interfaces/bridge-adapter.ts:55
 
 ### getWithdrawalsByAddress()
 
-> **getWithdrawalsByAddress**(`address`, `opts`?): `Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
+ **getWithdrawalsByAddress**(`address`, `opts`?): `Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
 
 Gets all withdrawals for a given address.
 
@@ -489,7 +489,7 @@ latest known block ("latest").
 
 #### Returns
 
-`Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
+`Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
 
 All withdrawal token bridge messages sent by the given address.
 
@@ -501,7 +501,7 @@ src/interfaces/bridge-adapter.ts:74
 
 ### supportsTokenPair()
 
-> **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`\<`boolean`\>
+ **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`\`boolean`\
 
 Checks whether the given token pair is supported by the bridge.
 
@@ -517,7 +517,7 @@ The L2 token address.
 
 #### Returns
 
-`Promise`\<`boolean`\>
+`Promise`\`boolean`\
 
 Whether the given token pair is supported by the bridge.
 
@@ -529,7 +529,7 @@ src/interfaces/bridge-adapter.ts:89
 
 ### withdraw()
 
-> **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
+ **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\`TransactionResponse`\
 
 Withdraws some tokens back to the L1 chain.
 
@@ -565,7 +565,7 @@ Optional address to receive the funds on L1. Defaults to sender.
 
 #### Returns
 
-`Promise`\<`TransactionResponse`\>
+`Promise`\`TransactionResponse`\
 
 Transaction response for the withdraw transaction.
 

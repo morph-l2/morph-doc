@@ -17,7 +17,7 @@ sent from and where it's being sent to.
 
 ### blockNumber
 
-> **blockNumber**: `number`
+ **blockNumber**: `number`
 
 #### Source
 
@@ -27,7 +27,7 @@ src/interfaces/types.ts:250
 
 ### direction
 
-> **direction**: [`MessageDirection`](../enumerations/MessageDirection.md)
+ **direction**: [`MessageDirection`](../enumerations/MessageDirection.md)
 
 #### Source
 
@@ -37,7 +37,7 @@ src/interfaces/types.ts:248
 
 ### logIndex
 
-> **logIndex**: `number`
+ **logIndex**: `number`
 
 #### Source
 
@@ -47,7 +47,7 @@ src/interfaces/types.ts:249
 
 ### message
 
-> **message**: `string`
+ **message**: `string`
 
 #### Inherited from
 
@@ -61,7 +61,7 @@ src/interfaces/types.ts:237
 
 ### messageNonce
 
-> **messageNonce**: `BigNumber`
+ **messageNonce**: `BigNumber`
 
 #### Inherited from
 
@@ -75,7 +75,7 @@ src/interfaces/types.ts:238
 
 ### minGasLimit
 
-> **minGasLimit**: `BigNumber`
+ **minGasLimit**: `BigNumber`
 
 #### Inherited from
 
@@ -89,7 +89,7 @@ src/interfaces/types.ts:240
 
 ### sender
 
-> **sender**: `string`
+ **sender**: `string`
 
 #### Inherited from
 
@@ -103,7 +103,7 @@ src/interfaces/types.ts:235
 
 ### target
 
-> **target**: `string`
+ **target**: `string`
 
 #### Inherited from
 
@@ -117,7 +117,7 @@ src/interfaces/types.ts:236
 
 ### transactionHash
 
-> **transactionHash**: `string`
+ **transactionHash**: `string`
 
 #### Source
 
@@ -127,7 +127,7 @@ src/interfaces/types.ts:251
 
 ### value
 
-> **value**: `BigNumber`
+ **value**: `BigNumber`
 
 #### Inherited from
 

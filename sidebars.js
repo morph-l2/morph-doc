@@ -177,7 +177,6 @@ module.exports = {
         */
       ]
     },
-    /*
     {
       type: 'category',
       label: 'SDK',
@@ -188,7 +187,6 @@ module.exports = {
         },
       ],
     },
-    */
   ],
   HowSidebar: [
     {
