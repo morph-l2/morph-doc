@@ -1,223 +1,206 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / L2BlockWithTransactions
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / L2BlockWithTransactions
 
 # Interface: L2BlockWithTransactions
 
 JSON block representation when returned by L2Geth nodes. Just a normal block but with
 L2Transaction objects instead of the standard transaction response object.
 
-## Hierarchy
+## Extends
 
 - `BlockWithTransactions`
-
-  ↳ **`L2BlockWithTransactions`**
-
-## Table of contents
-
-### Properties
-
-- [\_difficulty](L2BlockWithTransactions#_difficulty)
-- [baseFeePerGas](L2BlockWithTransactions#basefeepergas)
-- [difficulty](L2BlockWithTransactions#difficulty)
-- [extraData](L2BlockWithTransactions#extradata)
-- [gasLimit](L2BlockWithTransactions#gaslimit)
-- [gasUsed](L2BlockWithTransactions#gasused)
-- [hash](L2BlockWithTransactions#hash)
-- [miner](L2BlockWithTransactions#miner)
-- [nonce](L2BlockWithTransactions#nonce)
-- [number](L2BlockWithTransactions#number)
-- [parentHash](L2BlockWithTransactions#parenthash)
-- [stateRoot](L2BlockWithTransactions#stateroot)
-- [timestamp](L2BlockWithTransactions#timestamp)
-- [transactions](L2BlockWithTransactions#transactions)
 
 ## Properties
 
 ### \_difficulty
 
-• **\_difficulty**: `BigNumber`
+> **\_difficulty**: `BigNumber`
 
 #### Inherited from
 
-BlockWithTransactions.\_difficulty
+`BlockWithTransactions._difficulty`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:41
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:41
 
-___
+***
 
-### baseFeePerGas
+### baseFeePerGas?
 
-• `Optional` **baseFeePerGas**: `BigNumber`
+> `optional` **baseFeePerGas**: `BigNumber`
 
 #### Inherited from
 
-BlockWithTransactions.baseFeePerGas
+`BlockWithTransactions.baseFeePerGas`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:46
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:46
 
-___
+***
 
 ### difficulty
 
-• **difficulty**: `number`
+> **difficulty**: `number`
 
 #### Inherited from
 
-BlockWithTransactions.difficulty
+`BlockWithTransactions.difficulty`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:40
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:40
 
-___
+***
 
 ### extraData
 
-• **extraData**: `string`
+> **extraData**: `string`
 
 #### Inherited from
 
-BlockWithTransactions.extraData
+`BlockWithTransactions.extraData`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:45
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:45
 
-___
+***
 
 ### gasLimit
 
-• **gasLimit**: `BigNumber`
+> **gasLimit**: `BigNumber`
 
 #### Inherited from
 
-BlockWithTransactions.gasLimit
+`BlockWithTransactions.gasLimit`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:42
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:42
 
-___
+***
 
 ### gasUsed
 
-• **gasUsed**: `BigNumber`
+> **gasUsed**: `BigNumber`
 
 #### Inherited from
 
-BlockWithTransactions.gasUsed
+`BlockWithTransactions.gasUsed`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:43
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:43
 
-___
+***
 
 ### hash
 
-• **hash**: `string`
+> **hash**: `string`
 
 #### Inherited from
 
-BlockWithTransactions.hash
+`BlockWithTransactions.hash`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:35
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:35
 
-___
+***
 
 ### miner
 
-• **miner**: `string`
+> **miner**: `string`
 
 #### Inherited from
 
-BlockWithTransactions.miner
+`BlockWithTransactions.miner`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:44
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:44
 
-___
+***
 
 ### nonce
 
-• **nonce**: `string`
+> **nonce**: `string`
 
 #### Inherited from
 
-BlockWithTransactions.nonce
+`BlockWithTransactions.nonce`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:39
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:39
 
-___
+***
 
 ### number
 
-• **number**: `number`
+> **number**: `number`
 
 #### Inherited from
 
-BlockWithTransactions.number
+`BlockWithTransactions.number`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:37
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:37
 
-___
+***
 
 ### parentHash
 
-• **parentHash**: `string`
+> **parentHash**: `string`
 
 #### Inherited from
 
-BlockWithTransactions.parentHash
+`BlockWithTransactions.parentHash`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:36
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:36
 
-___
+***
 
 ### stateRoot
 
-• **stateRoot**: `string`
+> **stateRoot**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/l2-provider.ts:35](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/l2-provider.ts#L35)
+src/interfaces/l2-provider.ts:35
 
-___
+***
 
 ### timestamp
 
-• **timestamp**: `number`
+> **timestamp**: `number`
 
 #### Inherited from
 
-BlockWithTransactions.timestamp
+`BlockWithTransactions.timestamp`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:38
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:38
 
-___
+***
 
 ### transactions
 
-• **transactions**: [[`L2Transaction`](L2Transaction)]
+> **transactions**: [[`L2Transaction`](L2Transaction.md)]
 
 #### Overrides
 
-BlockWithTransactions.transactions
+`BlockWithTransactions.transactions`
 
-#### Defined in
+#### Source
 
-[src/interfaces/l2-provider.ts:36](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/l2-provider.ts#L36)
+src/interfaces/l2-provider.ts:36

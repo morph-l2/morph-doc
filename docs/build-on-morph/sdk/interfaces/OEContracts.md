@@ -1,33 +1,30 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / OEContracts
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / OEContracts
 
 # Interface: OEContracts
 
 Represents Morph contracts, assumed to be connected to their appropriate
 providers and addresses.
 
-## Table of contents
-
-### Properties
-
-- [l1](OEContracts#l1)
-- [l2](OEContracts#l2)
-
 ## Properties
 
 ### l1
 
-• **l1**: [`OEL1Contracts`](OEL1Contracts)
+> **l1**: [`OEL1Contracts`](OEL1Contracts.md)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:64](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L64)
+src/interfaces/types.ts:116
 
-___
+***
 
 ### l2
 
-• **l2**: [`OEL2Contracts`](OEL2Contracts)
+> **l2**: [`OEL2Contracts`](OEL2Contracts.md)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:65](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L65)
+src/interfaces/types.ts:117

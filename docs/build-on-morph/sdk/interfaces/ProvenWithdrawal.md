@@ -1,43 +1,39 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / ProvenWithdrawal
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / ProvenWithdrawal
 
 # Interface: ProvenWithdrawal
 
-ProvenWithdrawal in MorphPortal
-
-## Table of contents
-
-### Properties
-
-- [l2BlockNumber](ProvenWithdrawal#l2blocknumber)
-- [outputRoot](ProvenWithdrawal#outputroot)
-- [timestamp](ProvenWithdrawal#timestamp)
+ProvenWithdrawal in L1CrossDomainMessenger
 
 ## Properties
 
-### l2BlockNumber
-
-• **l2BlockNumber**: `BigNumber`
-
-#### Defined in
-
-[src/interfaces/types.ts:255](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L255)
-
-___
-
-### outputRoot
-
-• **outputRoot**: `string`
-
-#### Defined in
-
-[src/interfaces/types.ts:253](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L253)
-
-___
-
 ### timestamp
 
-• **timestamp**: `BigNumber`
+> **timestamp**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:254](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L254)
+src/interfaces/types.ts:311
+
+***
+
+### withdrawalIndex
+
+> **withdrawalIndex**: `BigNumber`
+
+#### Source
+
+src/interfaces/types.ts:314
+
+***
+
+### withdrawalRoot
+
+> **withdrawalRoot**: `string`
+
+#### Source
+
+src/interfaces/types.ts:313

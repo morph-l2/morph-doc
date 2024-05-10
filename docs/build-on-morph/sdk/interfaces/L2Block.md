@@ -1,223 +1,206 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / L2Block
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / L2Block
 
 # Interface: L2Block
 
 JSON block representation when returned by L2Geth nodes. Just a normal block but with
 an added stateRoot field.
 
-## Hierarchy
+## Extends
 
 - `Block`
-
-  ↳ **`L2Block`**
-
-## Table of contents
-
-### Properties
-
-- [\_difficulty](L2Block#_difficulty)
-- [baseFeePerGas](L2Block#basefeepergas)
-- [difficulty](L2Block#difficulty)
-- [extraData](L2Block#extradata)
-- [gasLimit](L2Block#gaslimit)
-- [gasUsed](L2Block#gasused)
-- [hash](L2Block#hash)
-- [miner](L2Block#miner)
-- [nonce](L2Block#nonce)
-- [number](L2Block#number)
-- [parentHash](L2Block#parenthash)
-- [stateRoot](L2Block#stateroot)
-- [timestamp](L2Block#timestamp)
-- [transactions](L2Block#transactions)
 
 ## Properties
 
 ### \_difficulty
 
-• **\_difficulty**: `BigNumber`
+> **\_difficulty**: `BigNumber`
 
 #### Inherited from
 
-Block.\_difficulty
+`Block._difficulty`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:41
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:41
 
-___
+***
 
-### baseFeePerGas
+### baseFeePerGas?
 
-• `Optional` **baseFeePerGas**: `BigNumber`
+> `optional` **baseFeePerGas**: `BigNumber`
 
 #### Inherited from
 
-Block.baseFeePerGas
+`Block.baseFeePerGas`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:46
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:46
 
-___
+***
 
 ### difficulty
 
-• **difficulty**: `number`
+> **difficulty**: `number`
 
 #### Inherited from
 
-Block.difficulty
+`Block.difficulty`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:40
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:40
 
-___
+***
 
 ### extraData
 
-• **extraData**: `string`
+> **extraData**: `string`
 
 #### Inherited from
 
-Block.extraData
+`Block.extraData`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:45
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:45
 
-___
+***
 
 ### gasLimit
 
-• **gasLimit**: `BigNumber`
+> **gasLimit**: `BigNumber`
 
 #### Inherited from
 
-Block.gasLimit
+`Block.gasLimit`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:42
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:42
 
-___
+***
 
 ### gasUsed
 
-• **gasUsed**: `BigNumber`
+> **gasUsed**: `BigNumber`
 
 #### Inherited from
 
-Block.gasUsed
+`Block.gasUsed`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:43
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:43
 
-___
+***
 
 ### hash
 
-• **hash**: `string`
+> **hash**: `string`
 
 #### Inherited from
 
-Block.hash
+`Block.hash`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:35
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:35
 
-___
+***
 
 ### miner
 
-• **miner**: `string`
+> **miner**: `string`
 
 #### Inherited from
 
-Block.miner
+`Block.miner`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:44
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:44
 
-___
+***
 
 ### nonce
 
-• **nonce**: `string`
+> **nonce**: `string`
 
 #### Inherited from
 
-Block.nonce
+`Block.nonce`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:39
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:39
 
-___
+***
 
 ### number
 
-• **number**: `number`
+> **number**: `number`
 
 #### Inherited from
 
-Block.number
+`Block.number`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:37
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:37
 
-___
+***
 
 ### parentHash
 
-• **parentHash**: `string`
+> **parentHash**: `string`
 
 #### Inherited from
 
-Block.parentHash
+`Block.parentHash`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:36
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:36
 
-___
+***
 
 ### stateRoot
 
-• **stateRoot**: `string`
+> **stateRoot**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/l2-provider.ts:27](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/l2-provider.ts#L27)
+src/interfaces/l2-provider.ts:27
 
-___
+***
 
 ### timestamp
 
-• **timestamp**: `number`
+> **timestamp**: `number`
 
 #### Inherited from
 
-Block.timestamp
+`Block.timestamp`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:38
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:38
 
-___
+***
 
 ### transactions
 
-• **transactions**: `string`[]
+> **transactions**: `string`[]
 
 #### Inherited from
 
-Block.transactions
+`Block.transactions`
 
-#### Defined in
+#### Source
 
-node_modules/@ethersproject/abstract-provider/lib/index.d.ts:49
+node\_modules/@ethersproject/abstract-provider/lib/index.d.ts:49

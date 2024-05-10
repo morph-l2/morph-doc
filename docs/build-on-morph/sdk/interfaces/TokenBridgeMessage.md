@@ -1,121 +1,110 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / TokenBridgeMessage
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / TokenBridgeMessage
 
 # Interface: TokenBridgeMessage
 
 Describes a token withdrawal or deposit, along with the underlying raw cross chain message
 behind the deposit or withdrawal.
 
-## Table of contents
-
-### Properties
-
-- [amount](TokenBridgeMessage#amount)
-- [blockNumber](TokenBridgeMessage#blocknumber)
-- [data](TokenBridgeMessage#data)
-- [direction](TokenBridgeMessage#direction)
-- [from](TokenBridgeMessage#from)
-- [l1Token](TokenBridgeMessage#l1token)
-- [l2Token](TokenBridgeMessage#l2token)
-- [logIndex](TokenBridgeMessage#logindex)
-- [to](TokenBridgeMessage#to)
-- [transactionHash](TokenBridgeMessage#transactionhash)
-
 ## Properties
 
 ### amount
 
-• **amount**: `BigNumber`
+> **amount**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:218](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L218)
+src/interfaces/types.ts:275
 
-___
+***
 
 ### blockNumber
 
-• **blockNumber**: `number`
+> **blockNumber**: `number`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:221](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L221)
+src/interfaces/types.ts:278
 
-___
+***
 
 ### data
 
-• **data**: `string`
+> **data**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:219](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L219)
+src/interfaces/types.ts:276
 
-___
+***
 
 ### direction
 
-• **direction**: [`MessageDirection`](../enums/MessageDirection)
+> **direction**: [`MessageDirection`](../enumerations/MessageDirection.md)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:213](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L213)
+src/interfaces/types.ts:270
 
-___
+***
 
 ### from
 
-• **from**: `string`
+> **from**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:214](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L214)
+src/interfaces/types.ts:271
 
-___
+***
 
 ### l1Token
 
-• **l1Token**: `string`
+> **l1Token**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:216](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L216)
+src/interfaces/types.ts:273
 
-___
+***
 
 ### l2Token
 
-• **l2Token**: `string`
+> **l2Token**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:217](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L217)
+src/interfaces/types.ts:274
 
-___
+***
 
 ### logIndex
 
-• **logIndex**: `number`
+> **logIndex**: `number`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:220](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L220)
+src/interfaces/types.ts:277
 
-___
+***
 
 ### to
 
-• **to**: `string`
+> **to**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:215](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L215)
+src/interfaces/types.ts:272
 
-___
+***
 
 ### transactionHash
 
-• **transactionHash**: `string`
+> **transactionHash**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:222](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L222)
+src/interfaces/types.ts:279

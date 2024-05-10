@@ -1,151 +1,138 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / CrossChainMessage
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / CrossChainMessage
 
 # Interface: CrossChainMessage
 
 Describes a message that is sent between L1 and L2. Direction determines where the message was
 sent from and where it's being sent to.
 
-## Hierarchy
+## Extends
 
-- [`CoreCrossChainMessage`](CoreCrossChainMessage)
-
-  ↳ **`CrossChainMessage`**
-
-## Table of contents
-
-### Properties
-
-- [blockNumber](CrossChainMessage#blocknumber)
-- [direction](CrossChainMessage#direction)
-- [logIndex](CrossChainMessage#logindex)
-- [message](CrossChainMessage#message)
-- [messageNonce](CrossChainMessage#messagenonce)
-- [minGasLimit](CrossChainMessage#mingaslimit)
-- [sender](CrossChainMessage#sender)
-- [target](CrossChainMessage#target)
-- [transactionHash](CrossChainMessage#transactionhash)
-- [value](CrossChainMessage#value)
+- [`CoreCrossChainMessage`](CoreCrossChainMessage.md)
 
 ## Properties
 
 ### blockNumber
 
-• **blockNumber**: `number`
+> **blockNumber**: `number`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:198](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L198)
+src/interfaces/types.ts:250
 
-___
+***
 
 ### direction
 
-• **direction**: [`MessageDirection`](../enums/MessageDirection)
+> **direction**: [`MessageDirection`](../enumerations/MessageDirection.md)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:196](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L196)
+src/interfaces/types.ts:248
 
-___
+***
 
 ### logIndex
 
-• **logIndex**: `number`
+> **logIndex**: `number`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:197](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L197)
+src/interfaces/types.ts:249
 
-___
+***
 
 ### message
 
-• **message**: `string`
+> **message**: `string`
 
 #### Inherited from
 
-[CoreCrossChainMessage](CoreCrossChainMessage).[message](CoreCrossChainMessage#message)
+[`CoreCrossChainMessage`](CoreCrossChainMessage.md).[`message`](CoreCrossChainMessage.md#message)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:185](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L185)
+src/interfaces/types.ts:237
 
-___
+***
 
 ### messageNonce
 
-• **messageNonce**: `BigNumber`
+> **messageNonce**: `BigNumber`
 
 #### Inherited from
 
-[CoreCrossChainMessage](CoreCrossChainMessage).[messageNonce](CoreCrossChainMessage#messagenonce)
+[`CoreCrossChainMessage`](CoreCrossChainMessage.md).[`messageNonce`](CoreCrossChainMessage.md#messagenonce)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:186](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L186)
+src/interfaces/types.ts:238
 
-___
+***
 
 ### minGasLimit
 
-• **minGasLimit**: `BigNumber`
+> **minGasLimit**: `BigNumber`
 
 #### Inherited from
 
-[CoreCrossChainMessage](CoreCrossChainMessage).[minGasLimit](CoreCrossChainMessage#mingaslimit)
+[`CoreCrossChainMessage`](CoreCrossChainMessage.md).[`minGasLimit`](CoreCrossChainMessage.md#mingaslimit)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:188](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L188)
+src/interfaces/types.ts:240
 
-___
+***
 
 ### sender
 
-• **sender**: `string`
+> **sender**: `string`
 
 #### Inherited from
 
-[CoreCrossChainMessage](CoreCrossChainMessage).[sender](CoreCrossChainMessage#sender)
+[`CoreCrossChainMessage`](CoreCrossChainMessage.md).[`sender`](CoreCrossChainMessage.md#sender)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:183](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L183)
+src/interfaces/types.ts:235
 
-___
+***
 
 ### target
 
-• **target**: `string`
+> **target**: `string`
 
 #### Inherited from
 
-[CoreCrossChainMessage](CoreCrossChainMessage).[target](CoreCrossChainMessage#target)
+[`CoreCrossChainMessage`](CoreCrossChainMessage.md).[`target`](CoreCrossChainMessage.md#target)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:184](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L184)
+src/interfaces/types.ts:236
 
-___
+***
 
 ### transactionHash
 
-• **transactionHash**: `string`
+> **transactionHash**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:199](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L199)
+src/interfaces/types.ts:251
 
-___
+***
 
 ### value
 
-• **value**: `BigNumber`
+> **value**: `BigNumber`
 
 #### Inherited from
 
-[CoreCrossChainMessage](CoreCrossChainMessage).[value](CoreCrossChainMessage#value)
+[`CoreCrossChainMessage`](CoreCrossChainMessage.md).[`value`](CoreCrossChainMessage.md#value)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:187](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L187)
+src/interfaces/types.ts:239
