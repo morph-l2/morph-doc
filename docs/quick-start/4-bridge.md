@@ -99,7 +99,7 @@ To withdraw funds from Morph Testnet, follow these steps:
 
 ![image16](../../assets/docs/quick-start/bridge/16.png)
 
-5. Approve the withdrawal again in your wallet.
+5. Waiting for the batch submission to be completed.
 
 ![image17](../../assets/docs/quick-start/bridge/17.png)
 
