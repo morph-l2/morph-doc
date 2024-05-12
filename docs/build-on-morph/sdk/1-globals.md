@@ -17,10 +17,6 @@ The `@morph-l2/sdk` package provides a set of tools for interacting with Morph.
 npm install @morph-l2/sdk
 ```
 
-## Docs
-
-You can find auto-generated API documentation over at [docs.morphl2.io](https://docs.morphl2.io/docs/SDK/intro).
-
 ## Using the SDK
 
 ### CrossChainMessenger
@@ -32,14 +28,13 @@ The `CrossChainMessenger` automatically connects to all relevant contracts so co
 
 ### L2Provider and related utilities
 
-The Morph SDK includes [various utilities](https://github.com/morph-l2/sdk/blob/main/src/l2-provider.ts) for handling Morph's [transaction fee model](https://docs.morphl2.io/Build-on-Morph/4-txfee.md).
-For instance, [`estimateTotalGasCost`](https://docs.morphl2.io/SDK/modules#estimateTotalGasCost) will estimate the total cost (in wei) to send at transaction on Morph including both the L2 execution cost and the L1 data cost.
-You can also use the [`asL2Provider`](https://docs.morphl2.io/SDK/modules#asL2Provider) function to wrap an ethers Provider object into an `L2Provider` which will have all of these helper functions attached.
+The Morph SDK includes [various utilities](https://github.com/morph-l2/sdk/blob/main/src/l2-provider.ts) for handling Morph's [transaction fee model](../build-on-morph/4-understand-transaction-cost-on-morph.md).
+For instance, [`estimateTotalGasCost`](../sdk/functions/estimateTotalGasCost.md) will estimate the total cost (in wei) to send at transaction on Morph including both the L2 execution cost and the L1 data cost.
+You can also use the [`asL2Provider`](../sdk/functions/asL2Provider.md) function to wrap an ethers Provider object into an `L2Provider` which will have all of these helper functions attached.
 
 ### Other utilities
 
 The SDK contains other useful helper functions and constants.
-For a complete list, refer to the auto-generated [SDK documentation](https://docs.morphl2.io/docs/build-on-morph/sdk/modules/)
 
 ## Enumerations
 
