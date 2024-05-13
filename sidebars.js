@@ -90,7 +90,6 @@ module.exports = {
       type: 'doc',
       id:'quick-start/bridge'
     },
-    /*
     {
       type: 'category',
       label: 'Morph Zoo',
@@ -101,7 +100,6 @@ module.exports = {
         },
       ],
     },
-    */
     {
       type: 'link',
       href: "https://bridge-holesky.morphl2.io/",
