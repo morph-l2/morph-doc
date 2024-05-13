@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**](../README.md) • **Docs**
+[**@morph-l2/sdk**] • **Docs**
 
 ***
 
-[@morph-l2/sdk](../globals.md) / L1ChainID
+[@morph-l2/sdk](../1-globals.md) / L1ChainID
 
 # Enumeration: L1ChainID
 

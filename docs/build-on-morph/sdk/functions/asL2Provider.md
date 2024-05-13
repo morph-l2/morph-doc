@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**](../README.md) • **Docs**
+[**@morph-l2/sdk**] • **Docs**
 
 ***
 
-[@morph-l2/sdk](../globals.md) / asL2Provider
+[@morph-l2/sdk](../1-globals.md) / asL2Provider
 
 # Function: asL2Provider()
 

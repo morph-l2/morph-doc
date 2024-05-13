@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**](../README.md) • **Docs**
+[**@morph-l2/sdk**] • **Docs**
 
 ***
 
-[@morph-l2/sdk](../globals.md) / BRIDGE\_ADAPTER\_DATA
+[@morph-l2/sdk](../1-globals.md) / BRIDGE\_ADAPTER\_DATA
 
 # Variable: BRIDGE\_ADAPTER\_DATA
 
