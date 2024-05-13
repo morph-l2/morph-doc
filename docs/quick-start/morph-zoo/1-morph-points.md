@@ -5,7 +5,7 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-To bring our community even closer to the action, we're excited to announce the [Morph Zoo](https:/morphl2.io/points/)
+To bring our community even closer to the action, we're excited to announce the [Morph Zoo](https://www.morphl2.io/points/)
 
  - a multiphase program designed to engage, reward, and celebrate the vibrant ecosystem within our testnet and, eventually, our mainnet. Our aim is to immerse you in our world, one where consumer needs are prioritized and where your input directly impacts our growth trajectory.
 
