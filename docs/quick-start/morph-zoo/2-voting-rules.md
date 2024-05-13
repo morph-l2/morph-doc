@@ -20,9 +20,13 @@ You can utilize your Voting Power on the voting page to support projects that yo
 ### Voting rules：
 
 1）Acquire Voting Power in two ways: daily check-ins and bonus Mystery Boxes.
-2) To record your Voting Power and voting activities, you must sign in with your Web3 wallet. This verifies your Voting Power, without granting access to your assets.    
+
+2) To record your Voting Power and voting activities, you must sign in with your Web3 wallet. This verifies your Voting Power, without granting access to your assets. 
+
 3) You can allocate up to 100 Voting Power to each individual project per day. If you wish to vote more, you must wait until the next day.
+
 4) Voting Power spent on a project is immediately consumed; it cannot be reused for multiple projects. 
+
 5) Only the act of voting will earn you Morph Points; simply accumulating Voting Power without using it will not earn you Morph Points for this activity.  
 
 

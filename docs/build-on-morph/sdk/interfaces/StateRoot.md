@@ -1,43 +1,39 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / StateRoot
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / StateRoot
 
 # Interface: StateRoot
 
 Information about a state root, including header, block number, and root iself.
 
-## Table of contents
-
-### Properties
-
-- [batch](StateRoot#batch)
-- [stateRoot](StateRoot#stateroot)
-- [stateRootIndexInBatch](StateRoot#staterootindexinbatch)
-
 ## Properties
 
 ### batch
 
-• **batch**: [`StateRootBatch`](StateRootBatch)
+> **batch**: [`StateRootBatch`](StateRootBatch.md)
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:275](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L275)
+src/interfaces/types.ts:334
 
-___
+***
 
 ### stateRoot
 
-• **stateRoot**: `string`
+> **stateRoot**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:273](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L273)
+src/interfaces/types.ts:332
 
-___
+***
 
 ### stateRootIndexInBatch
 
-• **stateRootIndexInBatch**: `number`
+> **stateRootIndexInBatch**: `number`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:274](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L274)
+src/interfaces/types.ts:333

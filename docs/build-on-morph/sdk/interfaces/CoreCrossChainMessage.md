@@ -1,82 +1,73 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / CoreCrossChainMessage
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / CoreCrossChainMessage
 
 # Interface: CoreCrossChainMessage
 
 Core components of a cross chain message.
 
-## Hierarchy
+## Extended by
 
-- **`CoreCrossChainMessage`**
-
-  ↳ [`CrossChainMessage`](CrossChainMessage)
-
-## Table of contents
-
-### Properties
-
-- [message](CoreCrossChainMessage#message)
-- [messageNonce](CoreCrossChainMessage#messagenonce)
-- [minGasLimit](CoreCrossChainMessage#mingaslimit)
-- [sender](CoreCrossChainMessage#sender)
-- [target](CoreCrossChainMessage#target)
-- [value](CoreCrossChainMessage#value)
+- [`CrossChainMessage`](CrossChainMessage.md)
 
 ## Properties
 
 ### message
 
-• **message**: `string`
+> **message**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:185](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L185)
+src/interfaces/types.ts:237
 
-___
+***
 
 ### messageNonce
 
-• **messageNonce**: `BigNumber`
+> **messageNonce**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:186](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L186)
+src/interfaces/types.ts:238
 
-___
+***
 
 ### minGasLimit
 
-• **minGasLimit**: `BigNumber`
+> **minGasLimit**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:188](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L188)
+src/interfaces/types.ts:240
 
-___
+***
 
 ### sender
 
-• **sender**: `string`
+> **sender**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:183](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L183)
+src/interfaces/types.ts:235
 
-___
+***
 
 ### target
 
-• **target**: `string`
+> **target**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:184](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L184)
+src/interfaces/types.ts:236
 
-___
+***
 
 ### value
 
-• **value**: `BigNumber`
+> **value**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:187](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L187)
+src/interfaces/types.ts:239

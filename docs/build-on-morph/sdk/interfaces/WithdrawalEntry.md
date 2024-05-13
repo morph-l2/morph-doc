@@ -1,22 +1,20 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / WithdrawalEntry
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / WithdrawalEntry
 
 # Interface: WithdrawalEntry
 
 Represents a withdrawal entry within the logs of a L2 to L1
 CrossChainMessage
 
-## Table of contents
-
-### Properties
-
-- [MessagePassed](WithdrawalEntry#messagepassed)
-
 ## Properties
 
 ### MessagePassed
 
-• **MessagePassed**: `any`
+> **MessagePassed**: `any`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:230](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L230)
+src/interfaces/types.ts:287

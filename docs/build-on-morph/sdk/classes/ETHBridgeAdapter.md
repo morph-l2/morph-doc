@@ -1,381 +1,555 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / ETHBridgeAdapter
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / ETHBridgeAdapter
 
 # Class: ETHBridgeAdapter
 
 Bridge adapter for the ETH bridge.
 
-## Hierarchy
+## Extends
 
-- [`StandardBridgeAdapter`](StandardBridgeAdapter)
-
-  ↳ **`ETHBridgeAdapter`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](ETHBridgeAdapter#constructor)
-
-### Properties
-
-- [estimateGas](ETHBridgeAdapter#estimategas)
-- [l1Bridge](ETHBridgeAdapter#l1bridge)
-- [l2Bridge](ETHBridgeAdapter#l2bridge)
-- [messenger](ETHBridgeAdapter#messenger)
-- [populateTransaction](ETHBridgeAdapter#populatetransaction)
-
-### Methods
-
-- [approval](ETHBridgeAdapter#approval)
-- [approve](ETHBridgeAdapter#approve)
-- [deposit](ETHBridgeAdapter#deposit)
-- [getDepositsByAddress](ETHBridgeAdapter#getdepositsbyaddress)
-- [getWithdrawalsByAddress](ETHBridgeAdapter#getwithdrawalsbyaddress)
-- [supportsTokenPair](ETHBridgeAdapter#supportstokenpair)
-- [withdraw](ETHBridgeAdapter#withdraw)
+- [`StandardBridgeAdapter`](StandardBridgeAdapter.md)
 
 ## Constructors
 
-### constructor
+### new ETHBridgeAdapter()
 
-• **new ETHBridgeAdapter**(`opts`)
+> **new ETHBridgeAdapter**(`opts`): [`ETHBridgeAdapter`](ETHBridgeAdapter.md)
 
 Creates a StandardBridgeAdapter instance.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `opts` | `Object` | Options for the adapter. |
-| `opts.l1Bridge` | [`AddressLike`](../modules#addresslike) | L1 bridge contract. |
-| `opts.l2Bridge` | [`AddressLike`](../modules#addresslike) | L2 bridge contract. |
-| `opts.messenger` | [`CrossChainMessenger`](CrossChainMessenger) | Provider used to make queries related to cross-chain interactions. |
+• **opts**
+
+Options for the adapter.
+
+• **opts.l1Bridge**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+L1 bridge contract.
+
+• **opts.l2Bridge**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+L2 bridge contract.
+
+• **opts.messenger**: [`CrossChainMessenger`](CrossChainMessenger.md)
+
+Provider used to make queries related to cross-chain interactions.
+
+#### Returns
+
+[`ETHBridgeAdapter`](ETHBridgeAdapter.md)
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[constructor](StandardBridgeAdapter#constructor)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`constructor`](StandardBridgeAdapter.md#constructors)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:44](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L44)
+src/adapters/standard-bridge.ts:51
 
 ## Properties
 
 ### estimateGas
 
-• **estimateGas**: `Object`
+> **estimateGas**: `object`
 
 Object that holds the functions that estimates the gas required for a given transaction.
 Follows the pattern used by ethers.js.
 
-#### Type declaration
+#### approve()
 
-| Name | Type |
-| :------ | :------ |
-| `approve` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides`  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
-| `deposit` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
-| `withdraw` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `CallOverrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`BigNumber`&gt; |
+> **approve**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`BigNumber`\>
+
+##### Parameters
+
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts?**
+
+• **opts.overrides?**: `CallOverrides`
+
+##### Returns
+
+`Promise`\<`BigNumber`\>
+
+#### deposit()
+
+> **deposit**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`BigNumber`\>
+
+##### Parameters
+
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts?**
+
+• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts.overrides?**: `CallOverrides`
+
+• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+##### Returns
+
+`Promise`\<`BigNumber`\>
+
+#### withdraw()
+
+> **withdraw**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`BigNumber`\>
+
+##### Parameters
+
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts?**
+
+• **opts.overrides?**: `CallOverrides`
+
+• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+##### Returns
+
+`Promise`\<`BigNumber`\>
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[estimateGas](StandardBridgeAdapter#estimategas)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`estimateGas`](StandardBridgeAdapter.md#estimategas)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:357](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L357)
+src/adapters/standard-bridge.ts:447
 
-___
+***
 
 ### l1Bridge
 
-• **l1Bridge**: `Contract`
+> **l1Bridge**: `Contract`
 
 L1 bridge contract.
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[l1Bridge](StandardBridgeAdapter#l1bridge)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`l1Bridge`](StandardBridgeAdapter.md#l1bridge)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:33](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L33)
+src/adapters/standard-bridge.ts:40
 
-___
+***
 
 ### l2Bridge
 
-• **l2Bridge**: `Contract`
+> **l2Bridge**: `Contract`
 
 L2 bridge contract.
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[l2Bridge](StandardBridgeAdapter#l2bridge)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`l2Bridge`](StandardBridgeAdapter.md#l2bridge)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:34](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L34)
+src/adapters/standard-bridge.ts:41
 
-___
+***
 
 ### messenger
 
-• **messenger**: [`CrossChainMessenger`](CrossChainMessenger)
+> **messenger**: [`CrossChainMessenger`](CrossChainMessenger.md)
 
 Provider used to make queries related to cross-chain interactions.
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[messenger](StandardBridgeAdapter#messenger)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`messenger`](StandardBridgeAdapter.md#messenger)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:32](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L32)
+src/adapters/standard-bridge.ts:39
 
-___
+***
 
 ### populateTransaction
 
-• **populateTransaction**: `Object`
+> **populateTransaction**: `object`
 
 Object that holds the functions that generate transactions to be signed by the user.
 Follows the pattern used by ethers.js.
 
-#### Type declaration
+#### approve()
 
-| Name | Type |
-| :------ | :------ |
-| `approve` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides`  \}) \=&gt; `Promise`&lt;`never`&gt; |
-| `deposit` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `l2GasLimit?`: [`NumberLike`](../modules#numberlike) ; `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
-| `withdraw` | (`l1Token`: [`AddressLike`](../modules#addresslike), `l2Token`: [`AddressLike`](../modules#addresslike), `amount`: [`NumberLike`](../modules#numberlike), `opts?`: \{ `overrides?`: `Overrides` ; `recipient?`: [`AddressLike`](../modules#addresslike)  \}) \=&gt; `Promise`&lt;`TransactionRequest`&gt; |
+> **approve**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`never`\>
+
+##### Parameters
+
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts?**
+
+• **opts.overrides?**: `Overrides`
+
+##### Returns
+
+`Promise`\<`never`\>
+
+#### deposit()
+
+> **deposit**: (`l1Token`, `l2Token`, `amount`, `opts`) => `Promise`\<`TransactionRequest`\>
+
+##### Parameters
+
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts**
+
+• **opts.l2GasLimit**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts.overrides?**: `Overrides`
+
+• **opts.recipient**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+##### Returns
+
+`Promise`\<`TransactionRequest`\>
+
+#### withdraw()
+
+> **withdraw**: (`l1Token`, `l2Token`, `amount`, `opts`) => `Promise`\<`TransactionRequest`\>
+
+##### Parameters
+
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts**
+
+• **opts.overrides?**: `Overrides`
+
+• **opts.recipient**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+##### Returns
+
+`Promise`\<`TransactionRequest`\>
 
 #### Overrides
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[populateTransaction](StandardBridgeAdapter#populatetransaction)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`populateTransaction`](StandardBridgeAdapter.md#populatetransaction)
 
-#### Defined in
+#### Source
 
-[src/adapters/eth-bridge.ts:114](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/eth-bridge.ts#L114)
+src/adapters/eth-bridge.ts:120
 
 ## Methods
 
-### approval
+### approval()
 
-▸ **approval**(`l1Token`, `l2Token`, `signer`): `Promise`&lt;`BigNumber`&gt;
+> **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\<`BigNumber`\>
 
 Queries the account's approval amount for a given L1 token.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `l1Token` | [`AddressLike`](../modules#addresslike) | The L1 token address. |
-| `l2Token` | [`AddressLike`](../modules#addresslike) | The L2 token address. |
-| `signer` | `Signer` | Signer to query the approval for. |
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L1 token address.
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L2 token address.
+
+• **opts?**
+
+• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
+
+• **opts.overrides?**: `Overrides`
+
+• **opts.signer?**: `Signer`
 
 #### Returns
 
-`Promise`&lt;`BigNumber`&gt;
+`Promise`\<`BigNumber`\>
 
 Amount of tokens approved for deposits from the account.
 
 #### Overrides
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[approval](StandardBridgeAdapter#approval)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`approval`](StandardBridgeAdapter.md#approval)
 
-#### Defined in
+#### Source
 
-[src/adapters/eth-bridge.ts:20](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/eth-bridge.ts#L20)
+src/adapters/eth-bridge.ts:22
 
-___
+***
 
-### approve
+### approve()
 
-▸ **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
+> **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Approves a deposit into the L2 chain.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `l1Token` | [`AddressLike`](../modules#addresslike) | The L1 token address. |
-| `l2Token` | [`AddressLike`](../modules#addresslike) | The L2 token address. |
-| `amount` | [`NumberLike`](../modules#numberlike) | Amount of the token to approve. |
-| `signer` | `Signer` | Signer used to sign and send the transaction. |
-| `opts?` | `Object` | Additional options. |
-| `opts.overrides?` | `Overrides` | - |
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L1 token address.
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L2 token address.
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+Amount of the token to approve.
+
+• **signer**: `Signer`
+
+Signer used to sign and send the transaction.
+
+• **opts?**
+
+Additional options.
+
+• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
+
+• **opts.overrides?**: `Overrides`
 
 #### Returns
 
-`Promise`&lt;`TransactionResponse`&gt;
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the approval transaction.
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[approve](StandardBridgeAdapter#approve)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`approve`](StandardBridgeAdapter.md#approve-2)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:216](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L216)
+src/adapters/standard-bridge.ts:275
 
-___
+***
 
-### deposit
+### deposit()
 
-▸ **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
+> **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Deposits some tokens into the L2 chain.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `l1Token` | [`AddressLike`](../modules#addresslike) | The L1 token address. |
-| `l2Token` | [`AddressLike`](../modules#addresslike) | The L2 token address. |
-| `amount` | [`NumberLike`](../modules#numberlike) | Amount of the token to deposit. |
-| `signer` | `Signer` | Signer used to sign and send the transaction. |
-| `opts?` | `Object` | Additional options. |
-| `opts.l2GasLimit?` | [`NumberLike`](../modules#numberlike) | - |
-| `opts.overrides?` | `Overrides` | - |
-| `opts.recipient?` | [`AddressLike`](../modules#addresslike) | - |
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L1 token address.
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L2 token address.
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+Amount of the token to deposit.
+
+• **signer**: `Signer`
+
+Signer used to sign and send the transaction.
+
+• **opts?**
+
+Additional options.
+
+• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+• **opts.overrides?**: `Overrides`
+
+• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
 
 #### Returns
 
-`Promise`&lt;`TransactionResponse`&gt;
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the deposit transaction.
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[deposit](StandardBridgeAdapter#deposit)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`deposit`](StandardBridgeAdapter.md#deposit-2)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:230](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L230)
+src/adapters/standard-bridge.ts:290
 
-___
+***
 
-### getDepositsByAddress
+### getDepositsByAddress()
 
-▸ **getDepositsByAddress**(`address`, `opts?`): `Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
+> **getDepositsByAddress**(`address`, `opts`?): `Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 Gets all deposits for a given address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `address` | [`AddressLike`](../modules#addresslike) | Address to search for messages from. |
-| `opts?` | `Object` | Options object. |
-| `opts.fromBlock?` | `BlockTag` | - |
-| `opts.toBlock?` | `BlockTag` | - |
+• **address**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+Address to search for messages from.
+
+• **opts?**
+
+Options object.
+
+• **opts.fromBlock?**: `BlockTag`
+
+• **opts.toBlock?**: `BlockTag`
 
 #### Returns
 
-`Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
+`Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 All deposit token bridge messages sent by the given address.
 
 #### Overrides
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[getDepositsByAddress](StandardBridgeAdapter#getdepositsbyaddress)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`getDepositsByAddress`](StandardBridgeAdapter.md#getdepositsbyaddress)
 
-#### Defined in
+#### Source
 
-[src/adapters/eth-bridge.ts:28](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/eth-bridge.ts#L28)
+src/adapters/eth-bridge.ts:34
 
-___
+***
 
-### getWithdrawalsByAddress
+### getWithdrawalsByAddress()
 
-▸ **getWithdrawalsByAddress**(`address`, `opts?`): `Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
+> **getWithdrawalsByAddress**(`address`, `opts`?): `Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 Gets all withdrawals for a given address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `address` | [`AddressLike`](../modules#addresslike) | Address to search for messages from. |
-| `opts?` | `Object` | Options object. |
-| `opts.fromBlock?` | `BlockTag` | - |
-| `opts.toBlock?` | `BlockTag` | - |
+• **address**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+Address to search for messages from.
+
+• **opts?**
+
+Options object.
+
+• **opts.fromBlock?**: `BlockTag`
+
+• **opts.toBlock?**: `BlockTag`
 
 #### Returns
 
-`Promise`&lt;[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage)[]&gt;
+`Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 All withdrawal token bridge messages sent by the given address.
 
 #### Overrides
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[getWithdrawalsByAddress](StandardBridgeAdapter#getwithdrawalsbyaddress)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`getWithdrawalsByAddress`](StandardBridgeAdapter.md#getwithdrawalsbyaddress)
 
-#### Defined in
+#### Source
 
-[src/adapters/eth-bridge.ts:62](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/eth-bridge.ts#L62)
+src/adapters/eth-bridge.ts:68
 
-___
+***
 
-### supportsTokenPair
+### supportsTokenPair()
 
-▸ **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`&lt;`boolean`&gt;
+> **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`\<`boolean`\>
 
 Checks whether the given token pair is supported by the bridge.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `l1Token` | [`AddressLike`](../modules#addresslike) | The L1 token address. |
-| `l2Token` | [`AddressLike`](../modules#addresslike) | The L2 token address. |
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L1 token address.
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L2 token address.
 
 #### Returns
 
-`Promise`&lt;`boolean`&gt;
+`Promise`\<`boolean`\>
 
 Whether the given token pair is supported by the bridge.
 
 #### Overrides
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[supportsTokenPair](StandardBridgeAdapter#supportstokenpair)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`supportsTokenPair`](StandardBridgeAdapter.md#supportstokenpair)
 
-#### Defined in
+#### Source
 
-[src/adapters/eth-bridge.ts:103](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/eth-bridge.ts#L103)
+src/adapters/eth-bridge.ts:109
 
-___
+***
 
-### withdraw
+### withdraw()
 
-▸ **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts?`): `Promise`&lt;`TransactionResponse`&gt;
+> **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Withdraws some tokens back to the L1 chain.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `l1Token` | [`AddressLike`](../modules#addresslike) | The L1 token address. |
-| `l2Token` | [`AddressLike`](../modules#addresslike) | The L2 token address. |
-| `amount` | [`NumberLike`](../modules#numberlike) | Amount of the token to withdraw. |
-| `signer` | `Signer` | Signer used to sign and send the transaction. |
-| `opts?` | `Object` | Additional options. |
-| `opts.overrides?` | `Overrides` | - |
-| `opts.recipient?` | [`AddressLike`](../modules#addresslike) | - |
+• **l1Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L1 token address.
+
+• **l2Token**: [`AddressLike`](../type-aliases/AddressLike.md)
+
+The L2 token address.
+
+• **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
+
+Amount of the token to withdraw.
+
+• **signer**: `Signer`
+
+Signer used to sign and send the transaction.
+
+• **opts?**
+
+Additional options.
+
+• **opts.overrides?**: `Overrides`
+
+• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
 
 #### Returns
 
-`Promise`&lt;`TransactionResponse`&gt;
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the withdraw transaction.
 
 #### Inherited from
 
-[StandardBridgeAdapter](StandardBridgeAdapter).[withdraw](StandardBridgeAdapter#withdraw)
+[`StandardBridgeAdapter`](StandardBridgeAdapter.md).[`withdraw`](StandardBridgeAdapter.md#withdraw-2)
 
-#### Defined in
+#### Source
 
-[src/adapters/standard-bridge.ts:246](https://github.com/morph-l2/sdk/tree/97c4394/src/adapters/standard-bridge.ts#L246)
+src/adapters/standard-bridge.ts:306

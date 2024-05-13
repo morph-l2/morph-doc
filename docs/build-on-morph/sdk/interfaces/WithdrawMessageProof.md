@@ -1,41 +1,47 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / WithdrawMessageProof
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / WithdrawMessageProof
 
 # Interface: WithdrawMessageProof
-
-## Table of contents
-
-### Properties
-
-- [withdrawalIndex](WithdrawMessageProof#withdrawalindex)
-- [withdrawalProof](WithdrawMessageProof#withdrawalproof)
-- [withdrawalRoot](WithdrawMessageProof#withdrawalroot)
 
 ## Properties
 
 ### withdrawalIndex
 
-• **withdrawalIndex**: `BigNumber`
+> **withdrawalIndex**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/cross-chain-messenger.ts:64](https://github.com/morph-l2/sdk/tree/97c4394/src/cross-chain-messenger.ts#L64)
+src/cross-chain-messenger.ts:65
 
-___
+***
+
+### withdrawalLeaf
+
+> **withdrawalLeaf**: `any`
+
+#### Source
+
+src/cross-chain-messenger.ts:68
+
+***
 
 ### withdrawalProof
 
-• **withdrawalProof**: `string`[]
+> **withdrawalProof**: `string`[]
 
-#### Defined in
+#### Source
 
-[src/cross-chain-messenger.ts:65](https://github.com/morph-l2/sdk/tree/97c4394/src/cross-chain-messenger.ts#L65)
+src/cross-chain-messenger.ts:66
 
-___
+***
 
 ### withdrawalRoot
 
-• **withdrawalRoot**: `string`
+> **withdrawalRoot**: `string`
 
-#### Defined in
+#### Source
 
-[src/cross-chain-messenger.ts:66](https://github.com/morph-l2/sdk/tree/97c4394/src/cross-chain-messenger.ts#L66)
+src/cross-chain-messenger.ts:67

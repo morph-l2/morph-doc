@@ -1,65 +1,59 @@
-[@morph-l2/sdk](../intro.md) / [Exports](../modules) / StateRootBatchHeader
+[**@morph-l2/sdk**](../README.md) • **Docs**
+
+***
+
+[@morph-l2/sdk](../globals.md) / StateRootBatchHeader
 
 # Interface: StateRootBatchHeader
 
 Header for a state root batch.
 
-## Table of contents
-
-### Properties
-
-- [batchIndex](StateRootBatchHeader#batchindex)
-- [batchRoot](StateRootBatchHeader#batchroot)
-- [batchSize](StateRootBatchHeader#batchsize)
-- [extraData](StateRootBatchHeader#extradata)
-- [prevTotalElements](StateRootBatchHeader#prevtotalelements)
-
 ## Properties
 
 ### batchIndex
 
-• **batchIndex**: `BigNumber`
+> **batchIndex**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:262](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L262)
+src/interfaces/types.ts:321
 
-___
+***
 
 ### batchRoot
 
-• **batchRoot**: `string`
+> **batchRoot**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:263](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L263)
+src/interfaces/types.ts:322
 
-___
+***
 
 ### batchSize
 
-• **batchSize**: `BigNumber`
+> **batchSize**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:264](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L264)
+src/interfaces/types.ts:323
 
-___
+***
 
 ### extraData
 
-• **extraData**: `string`
+> **extraData**: `string`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:266](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L266)
+src/interfaces/types.ts:325
 
-___
+***
 
 ### prevTotalElements
 
-• **prevTotalElements**: `BigNumber`
+> **prevTotalElements**: `BigNumber`
 
-#### Defined in
+#### Source
 
-[src/interfaces/types.ts:265](https://github.com/morph-l2/sdk/tree/97c4394/src/interfaces/types.ts#L265)
+src/interfaces/types.ts:324
