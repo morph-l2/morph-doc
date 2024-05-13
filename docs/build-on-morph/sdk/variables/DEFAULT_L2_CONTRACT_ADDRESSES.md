@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**](../README.md) • **Docs**
+[**@morph-l2/sdk**] • **Docs**
 
 ***
 
-[@morph-l2/sdk](../globals.md) / DEFAULT\_L2\_CONTRACT\_ADDRESSES
+[@morph-l2/sdk](../1-globals.md) / DEFAULT\_L2\_CONTRACT\_ADDRESSES
 
 # Variable: DEFAULT\_L2\_CONTRACT\_ADDRESSES
 

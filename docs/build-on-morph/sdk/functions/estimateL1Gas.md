@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**](../README.md) • **Docs**
+[**@morph-l2/sdk**] • **Docs**
 
 ***
 
-[@morph-l2/sdk](../globals.md) / estimateL1Gas
+[@morph-l2/sdk](../1-globals.md) / estimateL1Gas
 
 # Function: estimateL1Gas()
 

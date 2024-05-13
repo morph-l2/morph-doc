@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**](../README.md) • **Docs**
+[**@morph-l2/sdk**] • **Docs**
 
 ***
 
-[@morph-l2/sdk](../globals.md) / toNumber
+[@morph-l2/sdk](../1-globals.md) / toNumber
 
 # Function: toNumber()
 
