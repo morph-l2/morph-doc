@@ -32,6 +32,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
+   cd morph-examples
    cd contract-deploy-demo
    yarn install
    ```
@@ -50,6 +51,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
+   cd morph-examples
    cd contract-deploy-demo
    ```
 
