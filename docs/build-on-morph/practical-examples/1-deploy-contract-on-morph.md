@@ -32,7 +32,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
+   cd contract-deployment-demos/hardhat-demo
    yarn install
    ```
 
@@ -50,7 +50,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
    ```shell
    git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
+   cd contract-deployment-demos/foundry-demo
    ```
 
 2. Install Foundry:
@@ -62,37 +62,63 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 3. Run `forge build` to build the project.
 
-4. Deploy your contract with Foundry:
+4. Set up deployer with foundry's keystore:
+
+   ```shell
+   cast wallet import deployer --interactive
+   ```
+   
+   This makes it safer to handle your private keys when deploying contracts and also prevents accidental commits of `.env`
+
+6. Deploy your contract with Foundry:
 
    ```bash
-   forge create --rpc-url https://rpc-testnet.morphl2.io/ \
-     --value <lock_amount> \
-     --constructor-args <unlock_time> \
-     --private-key <private_key> \
-     --legacy contracts/Lock.sol:Lock
+   forge create --rpc-url https://rpc-quicknode-holesky.morphl2.io/ \
+     --account deployer \
+     --legacy src/Counter.sol:Counter
    ```
 
-   - `<lock_amount>` is the amount of test `ETH` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`;
-   - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1714492800` (this Unix timestamp corresponds to May 1, 2024).
-
-   For example:
-
-   ```
-   forge create --rpc-url https://rpc-testnet.morphl2.io/ \
-     --value 0.0000001ether \
-     --constructor-args 1714492800 \
-     --private-key a123q123q233q231q231q2q1223q23q11q33q113qq31q31231 \
-     --legacy contracts/Lock.sol:Lock
-   ```
-
-   Once successed, you will see the following message:
+   Once successfull, you will see the following message:
 
    ```bash
    Deployer: <Your address>
    Deployed to: <Your contract address>
    Transaction hash: <The deploy transaction hash>
    ```
+   
+7. Verify your contract with Foundry:
 
+   Update your `foundry.toml` with the following
+
+   ```yml
+   [etherscan]
+   morph-holesky = { key = "anythingcanwork", chain = 2810, url = "https://explorer-api-holesky.morphl2.io/api" }
+   ```
+
+   if you already didn't use the `--verify` flag during deployment, you can alternatively use `forge verify-contract`.
+
+   ```shell
+   forge verify-contract --chain 2810 <deployed contract address>  src/Counter.sol:Counter  --watch
+   ```
+
+   If done correctly, you will see the following output:
+
+   ```bash
+   Start verifying contract `<deployed contract addresss>` deployed on 2810
+
+   Submitting verification for [src/Counter.sol:Counter] `<deployed contract addresss>`.
+   Submitted contract for verification:
+            Response: `OK`
+            GUID: `<tracking id>`
+            URL: https://explorer-api-holesky.morphl2.io/address/`<deployed contract addresss>`
+   Contract verification status:
+   Response: `OK`
+   Details: `Pending in queue`
+   Contract verification status:
+   Response: `OK`
+   Details: `Pass - Verified`
+   Contract successfully verified
+   ```
 
 ## Questions and Feedback
 
