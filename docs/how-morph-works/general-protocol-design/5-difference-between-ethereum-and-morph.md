@@ -48,6 +48,12 @@ Because of a bounded size of the zkEVM circuits, there is an upper limit on the 
 | `ecMul`             | 50    |
 | `ecPairing`         | 2     |
 
+:::tip Dencun upgrade opcode not available
+
+Opcodes from the Dencun upgrade are not yet available on Morph, including `MCOPY`, `TSTORE`, `TLOAD`, `BLOBHASH` and `BLOBBASEFEE`. Additionally, [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported. We recommend using `shanghai` as your EVM target and avoiding using a Solidity version higher than `0.8.23`.
+
+:::
+
 ## State Account
 
 ### **Additional Fields**

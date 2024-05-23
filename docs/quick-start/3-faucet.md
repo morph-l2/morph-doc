@@ -62,6 +62,8 @@ Morph Holesky USDT address: "0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98"
 
 7. Check you wallet for USDT balance and start to bridge!
 
+<!--
+
 ### Morph Holesky ETH
 
 You can obtain the Morph Holesky ETH in our discord too for development purposes.
@@ -72,3 +74,4 @@ Once succeed, you will see the following message:
 
 ![success](../../assets/docs/quick-start/faucet/faucet_eth.png)
 
+-->

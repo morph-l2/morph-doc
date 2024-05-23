@@ -9,6 +9,12 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Instructions:
 
+:::tip Use the bridge here
+
+ https://bridge-holesky.morphl2.io
+ 
+:::
+
 1. Open your MetaMask wallet and switch to the **Holesky** network. 
 
 ![image1](../../assets/docs/quick-start/bridge/01.png)
