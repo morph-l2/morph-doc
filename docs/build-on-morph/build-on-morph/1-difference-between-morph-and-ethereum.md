@@ -5,7 +5,6 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-
 There are several technical differences between Ethereum’s EVM and Morph's optimistic zkEVM.
 
 We’ve compiled a list to help you understand these distinctions better.
@@ -21,7 +20,7 @@ For most Solidity developers, these technical details won't significantly impact
 | Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
 | --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
-| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../developer-resources/1-contracts.md). |
+| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
 | `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
 | `BASEFEE`                   | `block.basefee`     | Disabled. If the opcode is encountered, the transaction will be reverted.                        |
 | `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
@@ -48,6 +47,12 @@ Because of a bounded size of the zkEVM circuits, there is an upper limit on the 
 | `ecAdd`             | 50    |
 | `ecMul`             | 50    |
 | `ecPairing`         | 2     |
+
+:::tip Dencun upgrade opcode not available
+
+Opcodes from the Dencun upgrade are not yet available on Morph, including `MCOPY`, `TSTORE`, `TLOAD`, `BLOBHASH` and `BLOBBASEFEE`. Additionally, [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported. We recommend using `shanghai` as your EVM target and avoiding using a Solidity version higher than `0.8.23`.
+
+:::
 
 ## State Account
 
@@ -126,4 +131,4 @@ To avoid unexpected behaviors in your contracts, we recommend using ‘london’
 You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
 -->
 
-## [Transaction Fees](../build-on-morph/4-understand-transaction-cost-on-morph.md)
+## [Transaction Fees](../../build-on-morph/build-on-morph/4-understand-transaction-cost-on-morph.md)
