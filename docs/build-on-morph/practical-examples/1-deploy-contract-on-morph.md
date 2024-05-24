@@ -25,73 +25,147 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 -->
 
 
-## Deploy contracts with Hardhat
+## Deploy with Hardhat
 
-1. If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
-2. Clone the repo and install dependencies:
+### Install Dependencies
 
-   ```shell
-   git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
-   yarn install
+If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
+
+```bash
+cd contract-deployment-demos/hardhat-demo
+yarn install
+```
+This will install everything you need include hardhat for you.
+
+
+### Compile
+
+Compile your contract
+
+```bash
+yarn compile
+```
+
+### Test
+
+This will run the test script in test/Lock.ts
+
+```bash
+yarn test
+```
+
+### Deploy
+
+ Create a `.env` file following the example `.env.example` in the root directory. Change `PRIVATE_KEY` to your own account private key in the `.env`.
+
+ And Change the network settings in the hardhat.config.ts file with the following information:
+
+   ```javascript
+    morphTestnet: {
+      url: process.env.MORPH_TESTNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    }
    ```
+Then run the following command to deploy the contract on the Morph Holesky Testnet. This will run the deployment script that set the initialing parameters, you can edit the script in scripts/deploy.ts
 
-3. Create a `.env` file following the example `.env.example` in the root directory. Change `PRIVATE_KEY` to your own account private key in the `.env`.
+```bash
+yarn deploy:morphTestnet
+```
 
-4. Run `yarn compile` to compile the contract.
+### Verify your contracts on Morph Explorer
 
-5. Run `yarn deploy:morphTestnet` to deploy the contract on the Morph Holesky Testnet.
+To verify your contract through hardhat, you need to add the following Etherscan and Sourcify configs to your hardhat.config.js file:
 
-6. Run `yarn test` for hardhat tests.
+```javascript
+module.exports = {
+  networks: {
+    morphTestnet: { ... }
+  },
+  etherscan: {
+    apiKey: {
+      morphTestnet: 'anything',
+    },
+    customChains: [
+      {
+        network: 'morphTestnet',
+        chainId: 2810,
+        urls: {
+          apiURL: 'https://explorer-api-holesky.morphl2.io/api? ',
+          browserURL: 'https://explorer-holesky.morphl2.io/',
+        },
+      },
+    ],
+  },
+};
+```
+Then run the hardhat verify command to finish the verification
+
+```bash
+npx hardhat verify --network morphTestnet DEPLOYED_CONTRACT_ADDRESS <ConstructorParameter>
+```
+
+For example
+
+```bash
+npx hardhat verify --network morphTestnet 0x8025985e35f1bAFfd661717f66fC5a434417448E '0.00001'
+```
+
+
+Once succeed, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io)
+   
 
 ## Deploy contracts with Foundry
 
-1. Clone the repo:
+### Install Foundry
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+```
 
-   ```shell
-   git clone https://github.com/morph-l2/morph-examples.git
-   cd contract-deploy-demo
-   ```
+Then go the right folder of our example:
 
-2. Install Foundry:
+```bash
+cd contract-deployment-demos/foundry-demo
+```
 
-   ```shell
-   curl -L https://foundry.paradigm.xyz | bash
-   foundryup
-   ```
+### Compile
 
-3. Run `forge build` to build the project.
+```bash
+forge build
+```
+### Deploy
 
-4. Deploy your contract with Foundry:
+A Deployment script and use of environment variables has already been set up for you. You can view the script at script/Counter.s.sol
 
-   ```bash
-   forge create --rpc-url https://rpc-testnet.morphl2.io/ \
-     --value <lock_amount> \
-     --constructor-args <unlock_time> \
-     --private-key <private_key> \
-     --legacy contracts/Lock.sol:Lock
-   ```
+Rename your .env.example file to .env and fill in your private key. The RPC URL has already been filled in along with the verifier URL. 
 
-   - `<lock_amount>` is the amount of test `ETH` to be locked in the contract. Try setting this to some small amount, like `0.0000001ether`;
-   - `<unlock_time>` is the Unix timestamp after which the funds locked in the contract will become available for withdrawal. Try setting this to some Unix timestamp in the future, like `1714492800` (this Unix timestamp corresponds to May 1, 2024).
+To use the variables in your .env file run the following command: 
 
-   For example:
+```shell
+source .env
+```
 
-   ```
-   forge create --rpc-url https://rpc-testnet.morphl2.io/ \
-     --value 0.0000001ether \
-     --constructor-args 1714492800 \
-     --private-key a123q123q233q231q231q2q1223q23q11q33q113qq31q31231 \
-     --legacy contracts/Lock.sol:Lock
-   ```
+You can now deploy to Morph with the following command: 
 
-   Once successed, you will see the following message:
+```shell
+forge script script/Counter.s.sol --rpc-url $RPC_URL --broadcast --private-key $DEPLOYER_PRIVATE_KEY --legacy
+```
 
-   ```bash
-   Deployer: <Your address>
-   Deployed to: <Your contract address>
-   Transaction hash: <The deploy transaction hash>
-   ```
+Adjust as needed for your own script names. 
+
+### Verify 
+
+Verification requires some flags passed to the normal verification script. You can verify using the command below:
+
+```bash
+ forge verify-contract YourContractAddress Counter\
+  --chain 2810 \
+  --verifier-url $VERIFIER_URL \
+  --verifier blockscout --watch
+```
+
+Once succeed, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io)
 
 
 ## Questions and Feedback
