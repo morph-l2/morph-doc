@@ -39,10 +39,9 @@ git checkout v0.1.0-beta
 
 #### Build Geth
 
-Install the gcc compiler and build
+Notice: You need C compiler to build geth
 
 ```
-sudo apt install build-essential
 make nccc_geth
 ```
 
