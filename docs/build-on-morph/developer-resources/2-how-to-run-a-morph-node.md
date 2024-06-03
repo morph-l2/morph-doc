@@ -39,7 +39,10 @@ git checkout v0.1.0-beta
 
 #### Build Geth
 
+Install the gcc compiler and build
+
 ```
+sudo apt install build-essential
 make nccc_geth
 ```
 
