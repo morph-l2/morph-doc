@@ -38,25 +38,20 @@ The Gateway is composed of several contracts on both Layer 1 and Layer 2, which 
 
 | L1 Gateway Contract         | Description                                                      |
 | ------------------------ | ---------------------------------------------------------------- |
-| `L1GatewayRouter`        | The gateway router supports the deposit of ETH and ERC20 tokens. |
-| `L1ETHGateway`           | The gateway to deposit ETH.                                      |
-| `L1StandardERC20Gateway` | The gateway for standard ERC20 token deposits.                   |
-| `L1CustomERC20Gateway`   | The gateway for custom ERC20 token deposits.                     |
-| `L1WETHGateway`          | The gateway for Wrapped ETH deposits.                            |
+| [L1GatewayRouter](https://holesky.etherscan.io/address/0xea593b730d745fb5fe01b6d20e6603915252c6bf)        | The gateway router supports the deposit of ETH and ERC20 tokens. |
+| [L1ETHGateway](https://holesky.etherscan.io/address/0xcc3d455481967dc97346ef1771a112d7a14c8f12)           | The gateway to deposit ETH.                                      |
+| [L1StandardERC20Gateway](https://holesky.etherscan.io/address/0xb26dafdb434ae93e3b8efde4f0193934955d86cd) | The gateway for standard ERC20 token deposits.                   |
+| [L1WETHGateway](https://holesky.etherscan.io/address/0xbbdb317b50313d96823eba0fc2c1d9e469dc1906)          | The gateway for Wrapped ETH deposits.                            |
 
 
 | L2 Gateway Contract         | Description                                                      |
 | ------------------------ | ---------------------------------------------------------------- |
-| `L2GatewayRouter`        | The gateway router supports the withdraw of ETH and ERC20 tokens. |
-| `L2ETHGateway`           | The gateway to withdraw ETH.                                      |
-| `L2StandardERC20Gateway` | The gateway for standard ERC20 token withdraw.                   |
-| `L2CustomERC20Gateway`   | The gateway for custom ERC20 token withdraw.                     |
-| `L2WETHGateway`          | The gateway for Wrapped ETH withdraw.                            |
-
+| [L2GatewayRouter](https://explorer-holesky.morphl2.io/address/https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000002)        | The gateway router supports the withdraw of ETH and ERC20 tokens. |
+| [L2ETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000006)           | The gateway to withdraw ETH.                                      |
+| [L2StandardERC20Gateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000008) | The gateway for standard ERC20 token withdraw.                   |
+| [L2WETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000010)          | The gateway for Wrapped ETH withdraw.                            |
 
 Here we'll go over the basics of using these gateway to move tokens & messages between Layer 1 and Layer 2.
-
-You can find all the contracts details [here](../../build-on-morph/developer-resources/1-contracts.md)
 
 ## Deposit ETH and ERC20 tokens from L1
 

@@ -161,16 +161,16 @@ module.exports = {
     },
     {
       type:'category',
-      label:'Practical Examples',
+      label:'Code Examples',
       items: [
         {
           type: 'doc',
-          id:'build-on-morph/practical-examples/deploy-contract-on-morph'
+          id:'build-on-morph/code-examples/deploy-contract-on-morph'
         },
         /*
         {
           type: 'doc',
-          id:'build-on-morph/practical-examples/bridge-between-morph-and-ethereum'
+          id:'build-on-morph/code-examples/bridge-between-morph-and-ethereum'
         },
         */
       ]

@@ -24,7 +24,7 @@ According to limitations of the current geth implementation, we only support arc
 
 #### Clone morph
 
-```
+```javascript
 mkdir -p ~/.morph 
 cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
@@ -32,20 +32,20 @@ git clone https://github.com/morph-l2/morph.git
 
 Currently, we use tag v0.1.0-beta as our beta version.
 
-```
+```javascript
 cd morph
 git checkout v0.1.0-beta
 ```
 
 #### Build Geth
 
-```
+```javascript
 make nccc_geth
 ```
 
 #### Build Node
 
-```
+```javascript
 cd ~/.morph/morph/node 
 make build
 ```
@@ -56,7 +56,7 @@ make build
 
 Download the config files and make data dir
 
-```
+```javascript
 cd ~/.morph
 wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
 unzip data.zip
@@ -64,7 +64,7 @@ unzip data.zip
 
 Create a shared secret with node
 
-```
+```javascript
 cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
@@ -73,7 +73,7 @@ openssl rand -hex 32 > jwt-secret.txt
 
 *Geth*
 
-```
+```javascript
 ./morph/go-ethereum/build/bin/geth --morph-holesky \
     --datadir "./geth-data" \
     --http --http.api=web3,debug,eth,txpool,net,engine \
@@ -85,9 +85,9 @@ openssl rand -hex 32 > jwt-secret.txt
     --log.filename=./geth.log
 ```
 
-*tail -f geth.log* to check if the Geth is running properly, or you can also exeucte the below curl command to check if you are connected to the peer.
+*tail -f geth.log* to check if the Geth is running properly, or you can also execute the below curl command to check if you are connected to the peer.
 
-```
+```javascript
 curl -X POST -H 'Content-Type: application/json' --data 
 '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' 
 localhost:8545
@@ -98,7 +98,7 @@ localhost:8545
 
 *Node*
 
-```
+```javascript
 ./morph/node/build/bin/morphnode --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
      --l2.eth http://localhost:8545 \
@@ -108,7 +108,7 @@ localhost:8545
 
 tail -f node.log to check if the node is running properly, and you can also execute the command curl to check your node connection status.
 
-```
+```javascript
 curl http://localhost:26657/net_info
 
 {
@@ -147,7 +147,7 @@ curl http://localhost:26657/net_info
 
 curl http://localhost:26657/status to check the sync status of the node
 
-```
+```javascript
 {
   "jsonrpc": "2.0",
   "id": -1,

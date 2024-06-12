@@ -9,7 +9,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 The Morph Holesky Testnet allows anyone to deploy a smart contract on Morph. In this tutorial, you will learn how to deploy a contract on Morph Holesky using common tools for developing on Ethereum. 
 
-This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-deploy-demo) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
+This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-deployment-demos) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
 :::tip
   Before you start deploying the contract, you need to request test tokens from a Holesky faucet and use the
@@ -26,6 +26,12 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 
 ## Deploy with Hardhat
+
+### Clone the repo
+
+```bash
+git clone https://github.com/morph-l2/morph-examples.git
+```
 
 ### Install Dependencies
 
@@ -116,6 +122,12 @@ Once succeed, you can check your contract and the deployment transaction on [Mor
    
 
 ## Deploy contracts with Foundry
+
+### Clone the repo
+
+```bash
+git clone https://github.com/morph-l2/morph-examples.git
+```
 
 ### Install Foundry
 ```bash
