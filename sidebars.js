@@ -145,7 +145,15 @@ module.exports = {
         },
         {
           type: 'doc',
+          id:'build-on-morph/developer-resources/how-to-run-a-validator-node'
+        },
+        {
+          type: 'doc',
           id:'build-on-morph/developer-resources/morph-json-rpc-api-methods'
+        },
+        {
+          type: 'doc',
+          id:'build-on-morph/developer-resources/create-a-safe-multi-signature-wallet'
         },
         {
           type: 'link',

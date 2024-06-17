@@ -3,7 +3,7 @@ title: How to Run a Morph Node
 lang: en-US
 ---
 
-## Run a Morph Node 
+## Run a Morph Full Node 
 
 This guide describes the approach to starting up a morph node. We create the folder `~/.morph` as our home directory for the following example. 
 
