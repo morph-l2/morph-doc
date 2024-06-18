@@ -4,7 +4,9 @@ lang: en-US
 ---
 ## Run a Morph Node 
 
-This guide describes the approach to starting up a morph node. We create the folder `~/.morph` as our home directory for the following example. 
+This guide describes the approach to starting up a morph validator node. If you haven't familiar with the validator duty, please refer to our [optimistic zkEVM design](../../how-morph-works/responsive-validity-proof/1-overview.md).
+
+We create the folder `~/.morph` as our home directory for the following example. 
 
 ## Build executable binary
 
@@ -177,3 +179,5 @@ Make sure you check the validator status constantly, if you find response
 ```bash
 [2024-06-14|16:43:50.904] root hash or withdrawal hash is not equal    originStateRootHash=0x13f91d1c272e48e2d864ce7bfb421506d5b2a04def64d45c75391cdcdd69cd78 deriveStateRootHash=0x27e10420c0e34676a7d75c4189d7ccd1c3407cc8fd0b3eafb01c15e250a1215f batchWithdrawalRoot=0xa3e4a7cf45c7591a6bd9868f1fa7485ae345f10067acaade5f5b07d418b2e172 deriveWithdrawalRoot=0xa3e4a7cf45c7591a6bd9868f1fa7485ae345f10067acaade5f5b07d418b2e172
 ```
+
+This means your validators find inconsistent between sequencer submission and your own observation.
