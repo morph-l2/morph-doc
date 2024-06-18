@@ -52,9 +52,10 @@ const config: HardhatUserConfig = {
   ...
   networks: {
     morphl2: {
-      url: "" || "",
+      url: 'https://rpc-quicknode-holesky.morphl2.io',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      gasprice = 2000000000
     },
   },
 };
@@ -79,7 +80,7 @@ Setting up a Morph  provider in an ethers script:
 import { ethers } from 'ethers';
 
 const provider = new ethers.providers.JsonRpcProvider(
-  'https://
+  'https://rpc-quicknode-holesky.morphl2.io'
 );
 ```
 

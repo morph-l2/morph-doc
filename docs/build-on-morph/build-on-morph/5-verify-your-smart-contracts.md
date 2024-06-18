@@ -15,7 +15,7 @@ Most smart contract tooling has plugins for verifying your contracts easily on E
 
 We provided a comprehensive example of how to depoly contracts on Morph using hardhat & foundry which includes the verification process.
 
-You can check [here](../practical-examples/1-deploy-contract-on-morph.md)
+You can check [here](../code-examples/1-deploy-contract-on-morph.md)
 
 ## Vefiry with Morph explorer
 
