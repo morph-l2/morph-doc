@@ -3,48 +3,24 @@ import classnames from 'classnames';
 
 const FeatureList = [
   {
-    title: 'About Morph',
-    url: '/docs/about-morph/overview-of-morph',
+    title: 'For Users',
+    url: '/docs/user-navigation-page',
     svg: '/img/banner1.svg',
     description: (
       <>
-        Learn more on what Morph is and our mission to revolutionize the industry.
-      </>
-    ),
-  },
-  
-  {
-    title: 'Quick Start',
-
-    url: '/docs/quick-start/welcome-to-morph',
-    svg: '/img/banner2.svg',
-
-    description: (
-      <>
-        This guide will lead you through a seamless start with the vibrant Morph ecosystem.
+        Learn more on what Morph is and get guid on how to explore Moprh's ecosystem.
       </>
     ),
   },
 
   {
-    title: 'How Morph works',
-    url: '/docs/how-morph-works/intro',
-    svg: '/img/banner3.svg',
-    description: (
-      <>
-        Gain insights into our unique approach and what distinguishes us from the rest.
-      </>
-    ),
-  },
-
-  {
-    title: 'Build on Morph',
-    url: '/docs/build-on-morph/intro',
+    title: 'For Developers',
+    url: '/docs/build-on-morph/developer-navigation-page',
     svg: '/img/banner4.svg',
 
     description: (
       <>
-        Access comprehensive resources to bring your DApp from concept to launch on the Morph platform.
+        Access comprehensive resources to bring your DApp from concept to launch on Morph.
       </>
     ),
 
