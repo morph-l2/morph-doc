@@ -175,29 +175,14 @@ const config = {
           {
             type: 'doc',
             position: 'right',
-            docId: 'about-morph/overview-of-morph',
-            label: 'About Morph',
+            docId: 'about-morph/user-navigation-page',
+            label: 'For Users',
           },
-        
           {
             type: 'doc',
             position: 'right',
-            docId: 'quick-start/welcome-to-morph',
-            label: 'Quick Start',
-          },
-        
-          {
-            type: 'doc',
-            position: 'right',
-            docId: 'how-morph-works/intro',
-            label: 'How Morph works',
-          },
-          
-          {
-            type: 'doc',
-            position: 'right',
-            docId: 'build-on-morph/intro',
-            label: 'Build on Morph',
+            docId: 'build-on-morph/developer-navigation-page',
+            label: 'For Developers',
           },
           
           // {label: 'Website', position: 'left', href: 'https://www.morphl2.io',},
