@@ -21,11 +21,11 @@ To help you get started, here’s a recommended navigation through our documenta
 
 **Fundamental Concepts**: Start here to learn the core components of Morph, including Morph’s Modular Design, the Decentralized Sequencer Network, and the Responsive Validity Proof system.
 
-*Advanced Concepts*: Dive deeper into topics such as understanding transaction costs on Morph and differences between Morph and Ethereum.
+**Advanced Concepts**: Dive deeper into topics such as understanding transaction costs on Morph and differences between Morph and Ethereum.
 
-*Developer Guides*: Access comprehensive guides on verifying smart contracts, running a Morph node, deploying contracts, and more.
+**Developer Guides**: Access comprehensive guides on verifying smart contracts, running a Morph node, deploying contracts, and more.
 
-*Developer Resources Docs*: Find detailed API methods, contract addresses and other useful developer resources.
+**Developer Resources**: Find detailed API methods, contract addresses and other useful developer resources.
 
 ### Engage in Our Developer Community​
 
