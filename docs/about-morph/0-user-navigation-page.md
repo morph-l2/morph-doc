@@ -7,6 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 We’re thrilled to have you here, exploring the world of Morph. If you’re a developer looking for technical documentation, head over to our [For Developers section](../build-on-morph/0-developer-navigation-page.md). But if you’re here to understand what Morph is all about, you’re in the right place!
 
+![userpage](../../assets/docs/about/userpage.png)
 
 :::tip
 Beta Testnet Stage: Morph is currently in the beta testnet phase, offering you a preview of many upcoming features for you to try. We encourage you to explore and test as much as you can.
