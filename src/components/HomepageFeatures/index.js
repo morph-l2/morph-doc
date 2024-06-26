@@ -55,7 +55,7 @@ function Feature({svg, title, url, style, description, index}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className="features xl:min-h-[700px] xl:min-h-screen">
+    <section className="features">
       <div className="container flex flex-col items-center mb-4">
         {/* <h2 className="mt-4 md:mt-12 text-[15px] md:text-[32px]">Resource</h2> */}
         <div className="mt-4 md:mt-8 gap-0 md:gap-0 flex items-center grid grid-flow-row grid-cols-2">
