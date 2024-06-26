@@ -11,53 +11,24 @@ import classnames from 'classnames';
 
 const FeatureList = [
   {
-    title: 'About Morph',
-    url: '/docs/about-morph/overview-of-morph',
+    title: 'For Users',
+    url: '/docs/user-navigation-page',
     svg: '/lottie/MORPH_green_loop.svg',
-    style: '',
     description: (
       <>
-        Learn more on what Morph is and our mission to revolutionize the industry.<br />
+        Learn more on what Morph is and get guid on how to explore Moprh's ecosystem.
       </>
     ),
   },
-  
   {
-    title: 'Quick Start',
-
-    url: '/docs/quick-start/welcome-to-morph',
-    svg: '/lottie/MORPH_yellow_loop.svg',
-    style: '',
+    title: 'For Developers',
+    url: '/docs/build-on-morph/developer-navigation-page',
+    svg: '/lottie/MORPH_green_loop.svg',
     description: (
       <>
-        This guide will lead you through a seamless start with the vibrant Morph ecosystem.
+        Access comprehensive resources to bring your DApp from concept to launch on Morph.
       </>
     ),
-  },
-
-  {
-    title: 'How Morph works',
-    url: '/docs/how-morph-works/intro',
-    svg: '/lottie/MORPH_pink_loop.svg',
-    style: '',
-    description: (
-      <>
-        Gain insights into our unique approach and what distinguishes us from the rest.
-      </>
-    ),
-  },
-
-  {
-    title: 'Build on Morph',
-    url: '/docs/build-on-morph/intro',
-    svg: '/lottie/MORPH_purple_loop.svg',
-    style: '',
-    description: (
-      <>
-        Access comprehensive resources to bring your DApp from concept to launch on the Morph platform.
-      </>
-    ),
-
   },
 
 ];
