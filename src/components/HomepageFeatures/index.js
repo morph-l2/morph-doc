@@ -12,7 +12,7 @@ import classnames from 'classnames';
 const FeatureList = [
   {
     title: 'For Users',
-    url: '/docs/user-navigation-page',
+    url: '/docs/about-morph/user-navigation-page',
     svg: '/lottie/MORPH_green_loop.svg',
     description: (
       <>
@@ -23,7 +23,7 @@ const FeatureList = [
   {
     title: 'For Developers',
     url: '/docs/build-on-morph/developer-navigation-page',
-    svg: '/lottie/MORPH_green_loop.svg',
+    svg: '/lottie/MORPH_yellow_loop.svg',
     description: (
       <>
         Access comprehensive resources to bring your DApp from concept to launch on Morph.
