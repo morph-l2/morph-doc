@@ -53,7 +53,7 @@ make build
 
 ```bash
 cd ~/.morph
-wget https://raw.githubusercontent.com/morph-l2/config-template/main/sepolia-beta/data.zip
+wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
 unzip data.zip
 ```
 geth-data and node-data will be produced under the ~/.morph like the below
@@ -94,7 +94,7 @@ This is the script for alpha testnet.  Execute the shell script to start the get
 #! /usr/bin/bash
 cd ~/.morph
 
-NETWORK_ID=2710
+NETWORK_ID=2810
 
 nohup ./go-ethereum/build/bin/geth \
 --datadir=./geth-data \
