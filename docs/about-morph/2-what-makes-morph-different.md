@@ -1,5 +1,5 @@
 ---
-title: What Makes Morph Different
+title: The Technology Behind Morph
 lang: en-US
 keywords: [morph,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!

@@ -16,7 +16,7 @@ const FeatureList = [
     svg: '/lottie/MORPH_green_loop.svg',
     description: (
       <>
-        Learn more on what Morph is and get guid on how to explore Moprh's ecosystem.
+        Learn more about Morph, introductory concepts, and find step-by-step guides to start your exploration
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     svg: '/lottie/MORPH_yellow_loop.svg',
     description: (
       <>
-        Access comprehensive resources to bring your DApp from concept to launch on Morph.
+        Learn fundamental and advanced technical concepts, access detailed guides, and find reference documentation.
       </>
     ),
   },
