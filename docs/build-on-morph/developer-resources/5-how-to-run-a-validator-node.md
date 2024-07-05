@@ -19,11 +19,11 @@ mkdir -p ~/.morph
 cd ~/.morph
 git clone https://github.com/morph-l2/go-ethereum.git
 ```
-Currently, we use tag   v0.2.1-beta as our beta version geth. 
+Currently, we use tag v0.3.0-beta as our beta version geth. 
 
 ```bash
 cd go-ethereum
-git checkout v0.2.1-beta
+git checkout v0.3.0-beta
 ```
 2. Build geth
 
@@ -43,7 +43,7 @@ git clone https://github.com/morph-l2/node.git
 
 ```bash
 cd node
-git checkout v0.2.1-beta
+git checkout v0.1.0-beta
 make build
 ```
 
