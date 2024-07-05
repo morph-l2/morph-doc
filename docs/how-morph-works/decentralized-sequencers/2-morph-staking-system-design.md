@@ -143,7 +143,7 @@ The submitter rotation and submission timeout is part of decentralized rollup de
 For the reward and slash functionalities, we have 2 contracts:
 
 - L2 Record Contract: The off-chain data affecting rewards and penalties will be collected and recorded in the L2 Record contract through an Oracle, primarily consisting of rollup data and Block data.
-- L2 Distribute Contract: Sequencers and Delegators will manually claim rewards based on the Record.
+- L2 Distribute Contract: Sequencers and Delegator will manually claim rewards based on the Record.
 
 ## Governance:
 
@@ -151,9 +151,9 @@ We have a governance contract right now that decides some of the network paramet
 
 In the next phase of the roadmap, we are planning to build a complete governance system that allows all Morph token holders to decide every aspect of the network.
 
-## Major Process Illustration
+## Major Process
 
-### Staking & Sequencer Selection**
+### Staking & Sequencer Selection
 
 Morph token staking will be divided into 2 stages based on the network status:
 

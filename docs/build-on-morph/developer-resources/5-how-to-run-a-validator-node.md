@@ -10,22 +10,22 @@ We create the folder `~/.morph` as our home directory for the following example.
 
 ## Build executable binary
 
-### Build Geth
-
-1. Clone go-ethereum 
+### Clone Morph
 
 ```bash
 mkdir -p ~/.morph 
 cd ~/.morph
-git clone https://github.com/morph-l2/go-ethereum.git
+git clone https://github.com/morph-l2/morph.git
 ```
-Currently, we use tag v0.3.0-beta as our beta version geth. 
+Currently, we use tag v0.1.0-beta as our beta version geth.
 
 ```bash
-cd go-ethereum
-git checkout v0.3.0-beta
+cd morph
+git checkout v0.1.0-beta
 ```
-2. Build geth
+### Build Geth
+
+Notice: You need C compiler to build geth
 
 ```bash
 make nccc_geth
@@ -33,21 +33,13 @@ make nccc_geth
 
 ### Build Node
 
-1. Clone node
-
 ```bash
-cd ~/.morph
-git clone https://github.com/morph-l2/node.git
-```
-2. Build node
-
-```bash
-cd node
-git checkout v0.1.0-beta
+cd ~/.morph/morph/node 
 make build
 ```
 
-## Config Preparation
+## Sync from the genesis block
+### Config Preparation
 
   1. Download the config files and make data dir
 
@@ -55,18 +47,6 @@ make build
 cd ~/.morph
 wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
 unzip data.zip
-```
-geth-data and node-data will be produced under the ~/.morph like the below
-
-```bash
-├── geth-data
-│   ├── genesis.json
-│   └── static-nodes.json
-└── node-data
-    ├── config
-    │   ├── config.toml
-    │   └── genesis.json
-    └── data
 ```
 
 2. Create a shared secret with node
@@ -76,27 +56,16 @@ cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
-3. Write geth genesis state locally
-
-```bash
-cd ~/.morph
-./go-ethereum/build/bin/geth --verbosity=3 init --datadir=~/.morph/geth-data ~/.morph/geth-data/genesis.json
-```
-
 
 ## Script to start the process
 
 ### Geth
 
-This is the script for alpha testnet.  Execute the shell script to start the geth process
-
-```javascript
-#! /usr/bin/bash
-cd ~/.morph
+```bash
 
 NETWORK_ID=2810
 
-nohup ./go-ethereum/build/bin/geth \
+nohup ./morph/go-ethereum/build/bin/geth \
 --datadir=./geth-data \
 --verbosity=3 \
 --http \
@@ -119,33 +88,45 @@ nohup ./go-ethereum/build/bin/geth \
 --metrics \
 --metrics.addr=0.0.0.0 \
 --metrics.port=6060 \
---miner.gasprice="100000000" 
+--miner.gasprice="100000000"
+```
+
+tail -f geth.log to check if the Geth is running properly, or you can also execute the below curl command to check if you are connected to the peer.
+
+```bash
+curl --location --request POST 'localhost:8545/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "jsonrpc":"2.0",
+   "method":"eth_blockNumber",
+   "id":1
+}'
+
+{"jsonrpc":"2.0","id":1,"result":"0x148e39"}
 ```
 
 ### Node
 
-This is the script to start the node process
-
-```javascript
-#! /usr/bin/bash
+```bash
 cd ~/.morph
-
-NODE_DATA_DIR="./node-data"
-export MORPH_NODE_L2_ENGINE_AUTH="./jwt-secret.txt"
-export MORPH_NODE_L2_ETH_RPC="http://127.0.0.1:8545"
-export MORPH_NODE_L2_ENGINE_RPC="http://127.0.0.1:8551"
-export MORPH_NODE_L1_ETH_RPC=$(Ethereum Holesky RPC)
-export MORPH_NODE_VALIDATOR_PRIVATE_KEY=$(Your Validator Key)
-export MORPH_NODE_ROLLUP_ADDRESS=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
-export MORPH_NODE_DERIVATION_START_HEIGHT=1434640
-export MORPH_NODE_SYNC_START_HEIGHT=1434640
-export MORPH_NODE_DERIVATION_FETCH_BLOCK_RANGE=1000
-export MORPH_NODE_VALIDATOR=true
-export MORPH_NODE_MOCK_SEQUENCER=false
-
-nohup ./node/build/bin/morphnode --validator --home $NODE_DATA_DIR > node.log 2>&1 &
+export L1MessageQueueWithGasPriceOracle=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
+export START_HEIGHT=1434640
+export Rollup=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+./morph/node/build/bin/morphnode --validator --home ./node-data \
+     --l2.jwt-secret ./jwt-secret.txt \
+     --l2.eth http://localhost:8545 \
+     --l2.engine http://localhost:8551 \
+     --l1.rpc $(Ethereum Holesky RPC)  \
+     --l1.beaconrpc $(Ethereum Holesky beacon chain RPC)  \
+     --l1.chain-id  17000   \
+     --validator.privateKey $(Your Validator Key)  \
+     --sync.depositContractAddr $(L1MessageQueueWithGasPriceOracle) \
+     --sync.startHeight  $(START_HEIGHT) \
+     --derivation.rollupAddress $(Rollup) \
+     --derivation.startHeight  $(START_HEIGHT) \
+     --derivation.fetchBlockRange 200 \
+     --log.filename ./node.log
 ```
-
 ## Check Status
 
 If your node is successfully started, you will see the following response:

@@ -232,6 +232,12 @@ module.exports = {
           type: 'doc',
           id:'build-on-morph/developer-resources/create-a-safe-multi-signature-wallet'
         },
+        /*
+        {
+          type: 'doc',
+          id:'build-on-morph/developer-resources/ecosystem-infrastructure'
+        },
+        */
       ]
     },
     {
@@ -256,6 +262,7 @@ module.exports = {
           href: "https://holesky.etherscan.io/",
           label: 'Ethereum Holesky Explorer'
         },
+        
       
       ]
     },
