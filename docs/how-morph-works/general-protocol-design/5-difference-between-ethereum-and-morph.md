@@ -4,10 +4,7 @@ lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
-
-There are several technical differences between Ethereum’s EVM and Morph's optimistic zkEVM.
-
-We’ve compiled a list to help you understand these distinctions better.
+There are several technical differences between Ethereum’s EVM and Morph's optimistic zkEVM. We’ve compiled a list to help you understand these distinctions better.
 
 
 :::tip
@@ -131,4 +128,3 @@ To avoid unexpected behaviors in your contracts, we recommend using ‘london’
 You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
 -->
 
-## [Transaction Fees](../../build-on-morph/build-on-morph/4-understand-transaction-cost-on-morph.md)

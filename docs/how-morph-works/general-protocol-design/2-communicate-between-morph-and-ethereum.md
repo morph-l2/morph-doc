@@ -5,7 +5,7 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-Although Morph is a Layer 2 solution built atop Ethereum, it remains as a separate and distinct blockchain. Thus, it’s essential to establish a communication channel between Morph and Ethereum to facilitate the smooth transfer of assets and messages. The communication can occur in two directions: from Ethereum to Morph and from Morph to Ethereum.
+Although Morph is a Layer 2 solution built atop Ethereum, it remains a separate and distinct blockchain. Thus, it’s essential to establish a communication channel between Morph and Ethereum to facilitate the smooth transfer of assets and messages. The communication can occur in two directions: from Ethereum to Morph and from Morph to Ethereum.
 
 ## The Basics of Morph - Ethereum Bridge​
 
@@ -26,9 +26,10 @@ Furthermore, the bridge’s utility extends beyond asset transfers. It employs t
 
 The Gateway serves as the primary entry point for users to interact with the entire bridge system. While the core process of transferring assets across layers still relies on message transmission, we recommend using the Gateway approach for efficient cross-layer transactions.
 
-Catering to diverse cross-layer asset transfer needs, we have designed distinct Gateways such as the ETH Gateway, standard ERC20 Gateway, and others. 
+Catering to diverse cross-layer asset transfer needs, we have designed distinct Gateways such as the ETH Gateway, standard ERC20 Gateway, and others.
 
-Furthermore, we have implemented the Gateway Router to call on different Gateways based on the type of assets you have., This facilitates seamless interaction with the Gateway Router contract.
+Furthermore, we have implemented the Gateway Router to call on different Gateways based on the type of assets you have. This facilitates seamless interaction with the Gateway Router contract.
+
 
 
 
@@ -78,7 +79,7 @@ The cross-domain message is delivered to the ```L1MessageQueueWithGasPriceOracle
 The Sequencer will monitor this event and include a Layer 2 transaction in its next block.
 
 
-:::tip How to make sure Sequencer doesn't fake a deposit transaction?
+### How to make sure Sequencer doesn't fake a deposit transaction?
 
 Sequencers may have the motivation to forge a non-existent deposit transaction, such as minting a large amount of Layer 2 tokens and transferring these to an address they own.
 
@@ -87,8 +88,6 @@ Morph prevents these risks with two measures:
 Due to Morph’s decentralized Sequencer architecture, forging transactions would require control of at least two-thirds of the Sequencers, a challenging feat.
 
 Morph's optimistic zkEVM framework allows challengers to detect such malicious behavior and initiate challenges to correct the misconduct.
-:::
-
 
 
 A Layer 2 executor, holding the cross-layer message, interacts with the L2 messenger to execute the message, which may include transferring L2 ETH or ERC20 tokens to the recipient.

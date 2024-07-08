@@ -3,13 +3,14 @@ title: Morph JSON-RPC API Methods
 lang: en-US
 ---
 
-Most methods are similar to Ethereum's, for those methods, we recommend you visit [here](https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods). 
+Most methods are similar to Ethereum's, for those methods, we recommend you visit [Ethereum JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods). 
 
-This page listed some unique methods exclusive to morph.
+This page lists some unique methods exclusive to Morph.
+
 
 ## morph_getBlockByNumber
 
-Returns information about a block by block number. In addition, it returns more fields than what the eth_getBlockByNumber returns, such as **withdrawTrieRoot**,**batchHash**,**nextL1MsgIndex**,**rowConsumption**
+Returns information about a block by block number. In addition, it returns more fields than the standard eth_getBlockByNumber returns, such as **withdrawTrieRoot**,**batchHash**,**nextL1MsgIndex**,**rowConsumption**
 
 ### Parameters
 

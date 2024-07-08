@@ -46,7 +46,7 @@ module.exports = {
     },
     {
       type: 'doc',
-      id:'about-morph/what-makes-morph-different'
+      id:'about-morph/the-technology-behind-morph'
     },
     {
       type: 'doc',

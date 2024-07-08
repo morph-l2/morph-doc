@@ -7,16 +7,22 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## What Kind of Rollup is Morph?
 
-Morph transcends traditional rollup classifications. It utilizes "Optimistic zkEVM & RVP" – a hybrid state verification model that merges the strengths of zkRollups and Optimistic Rollups. This unique approach optimizes for efficiency, cost, and speed, placing Morph at the forefront of rollup technology innovation.
+Morph uses a hybrid rollup model called "Optimistic zkEVM & RVP." This combines the strengths of both zkRollups and Optimistic Rollups, optimizing for efficiency, cost, and speed. This unique approach places Morph at the cutting edge of rollup technology.
 
 ## What Sets Morph Apart from Other Rollups?
 
-Morph stands out due to several distinctive features:
-Innovative State Verification: The Optimistic zkEVM & RVP approach combines the best of zkRollups and Optimistic Rollups for enhanced efficiency.
-Focus on Efficiency and Cost Reduction: Committed to swift transaction execution and cost-effectiveness while upholding decentralization.
-Decentralized Sequencer Network: A pioneering network setup from inception to address security concerns and ensure robustness at a Layer 1 level.
-Modular Architecture: Offers adaptability and composability, fostering an interactive and flexible ecosystem.
+Morph stands out with its innovative features:
+
+
+**State Verification**: The Optimistic zkEVM & RVP method enhances efficiency by combining zkRollups and Optimistic Rollups.
+
+**Efficiency and Cost Reduction**: Morph ensures fast transaction execution and cost-effectiveness while maintaining decentralization.
+
+**Decentralized Sequencer Network**: This pioneering network setup addresses security concerns and ensures robustness at a Layer 1 level.
+
+**Modular Architecture**: Morph’s adaptable and composable architecture fosters a flexible and interactive ecosystem.
 
 ## As a Solidity Developer, Will I Notice Differences Deploying on Morph Compared to Ethereum?
 
-Deploying on Morph is similar to Ethereum, thanks to EVM compatibility. Applications developed for Ethereum can be migrated to Morph with minimal adjustments. For detailed guidance, explore the "Build on Morph" section, which offers insights into the nuances of deploying on Morph.
+Deploying on Morph is very similar to deploying on Ethereum, thanks to its EVM compatibility. Ethereum applications can be migrated to Morph with minimal adjustments. For more detailed guidance, check out the [Development Guides](../build-on-morph/build-on-morph/2-development-setup.md) section.
+

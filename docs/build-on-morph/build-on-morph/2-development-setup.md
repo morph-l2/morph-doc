@@ -7,9 +7,9 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 # Start Developing on Morph
 
-Developing on Morph is as easy as developing on Ethereum — literally!
+Developing on Morph is as straightforward as developing on Ethereum. 
 
-To deploy contracts onto a MorphL2 chain, simply set the RPC endpoint of your target MorphL2 chain and deploy using your preferred Ethereum development framework :
+To deploy contracts onto a MorphL2 chain, simply set the RPC endpoint of your target MorphL2 chain and deploy using your preferred Ethereum development framework:
 
 
 - [Hardhat](https://hardhat.org/)
@@ -90,7 +90,7 @@ To start building on Morph, you may need some testnet ETH. Use a faucet to acqui
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
-Here are some Holesky ETH faucet websites:
+Holesky ETH faucet websites:
 
 https://stakely.io/en/faucet/ethereum-holesky-testnet-eth
 
@@ -99,7 +99,7 @@ https://faucet.quicknode.com/ethereum/holesky
 https://holesky-faucet.pk910.de/
 
 
-You can also use our own [discord faucet](../../quick-start/3-faucet.md#morph-holesky-eth) to obtain Morph Holesky USDT & Morph Holesky ETH.
+Morph also offers a [discord faucet](../../quick-start/3-faucet.md#morph-holesky-eth) to obtain Morph Holesky USDT & Morph Holesky ETH.
 
 Once you receive ETH on holesky, you should see it in your wallet on the *holesky Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Holesky Block Explorer](https://holesky.etherscan.io/)**.
 

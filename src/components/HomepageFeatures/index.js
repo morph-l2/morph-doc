@@ -4,7 +4,7 @@ import classnames from 'classnames';
 const FeatureList = [
   {
     title: 'For Users',
-    url: '/docs/user-navigation-page',
+    url: '/docs/about-morph/user-navigation-page',
     svg: '/img/banner1.svg',
     description: (
       <>

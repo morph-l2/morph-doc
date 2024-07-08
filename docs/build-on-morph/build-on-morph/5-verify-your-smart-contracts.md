@@ -5,17 +5,19 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-After deploying your smart contracts, it's important to verify your code on our [block explorer](https://explorer-holesky.morphl2.io). This can be done in an automated way using your develop framework such as hardhat.
+After deploying your smart contracts, it's crucial to verify your code on our [block explorer](https://explorer-holesky.morphl2.io). his can be automated using your development framework, such as Hardhat.
+
 
 
 
 ## Verify with develop framework
 
-Most smart contract tooling has plugins for verifying your contracts easily on Etherscan. Blockscout supports Etherscan's contract verification APIs, and it's straight forward to use these tools with the Morph Testnet.
+Most smart contract tools have plugins for verifying contracts on Etherscan. Blockscout supports Etherscan's contract verification APIs, making it straightforward to use these tools with the Morph Testnet.
 
-We provided a comprehensive example of how to depoly contracts on Morph using hardhat & foundry which includes the verification process.
+We provide a comprehensive example of deploying contracts on Morph using Hardhat and Foundry, which includes the verification process.
 
-You can check [here](../code-examples/1-deploy-contract-on-morph.md)
+
+Check [Deploy Conrtacts on Morph](../code-examples/1-deploy-contract-on-morph.md) for examples.
 
 ## Vefiry with Morph explorer
 
