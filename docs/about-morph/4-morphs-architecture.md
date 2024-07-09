@@ -36,7 +36,7 @@ In the context of Layer 2, Morph reinterprets these layers with unique functiona
 
 ![Archi](../../assets/docs/about/overview/opzk.png)
 
-- **Data Availability through 'Rollup' Process**D: This entails transferring essential Layer 2 data to Ethereum. In Morph, this is achieved through the 'Rollup' process, where a batch submitter compiles blocks into batches and submits them as Layer 1 transactions on Ethereum.
+- **Data Availability through 'Rollup' Process**: This entails transferring essential Layer 2 data to Ethereum. In Morph, this is achieved through the 'Rollup' process, where a batch submitter compiles blocks into batches and submits them as Layer 1 transactions on Ethereum.
 
 
 ![Archi](../../assets/docs/about/architecture/rollup.png)
