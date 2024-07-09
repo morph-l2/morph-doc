@@ -29,11 +29,11 @@ When batch point is reached, each sequencer will need to construct the batch wit
    
 5. Batch Sequencing
    
-The selected sequencer ([learn how it works](../general-protocol-design/1-rollup.md)) will commit the batches to the Layer 1 Rollup contract for both verification and to ensure data availability.
+The [selected sequencer](../general-protocol-design/1-rollup.md) will commit the batches to the Layer 1 Rollup contract for both verification and to ensure data availability.
    
 6. Batch Verification 
    
-A batch (so do the transactions within the batch)will first go through the BLS signature verification by the rollup contract to confirm the L2 consensus results, and then a batch will go through a [challenge period](../responsive-validity-proof/2-why-rvp.md) to be marked as finalized, solidifying their status within the L1 and L2 state.
+A batch (so do the transactions within the batch)will first go through the BLS signature verification by the rollup contract to confirm the L2 consensus results, and then a batch will go through a [challenge period](../3-optimistic-zkevm.md) to be marked as finalized, solidifying their status within the L1 and L2 state.
 
 ## Morph Transaction Status
 
@@ -47,7 +47,7 @@ Post-execution by the Sequencer, the transaction’s updated state is local to L
 
 ### Safe
 
-The batch that contains the transaction is submiited to Layer 1 but not finalized yet.
+The batch that contains the transaction is submitted to Layer 1 but not finalized yet.
 
 ### Finalized​
 

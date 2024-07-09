@@ -5,57 +5,12 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-## Bridging basics
-
-Although Morph is an Ethereum Layer 2 (and therefore fundamentally connected to Ethereum), it's also a separate blockchain system. 
-
-App developers often have a need to move data and assets between Morph and Ethereum, a process we call "cross layer".
-
-For how it works under the hood, please check [here](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md):
-
-For this page we gonna go over how to interact with our cross layer infrastructure to meet your desire purpose.
-
-### Sending tokens
-
-For the most common use case, moving tokens around, we've created the "Token Gateway". The token gate way is a simple smart contract with all the functionality you need to move tokens between Morph and Ethereum. 
-
-It also allows you to easily create L2 representations of existing tokens on Ethereum.
-
-### Sending data
-
-If the token gateway doesn't fully cover your usecases, you can also [send arbitrary data between L1 and L2](#send-messages-between-morph-and-ethereum). You can use this functionality to have a contract on Ethereum trigger a contract function on Morph, and vice versa. 
-
-We've made this process as easy as possible by giving developers a simple API for triggering a cross-chain function call. 
+Please first review our documentation on [Communication Between Morph and Ethereum](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md) for some required fundamental knowledge. 
 
 
-## Utilize Gateway Contract
+## Deposit ETH and ERC20 Tokens from L1​
 
-To facilitate common interactions like transferring ETH and ERC20 tokens between the two networks, we offer the "Token Gateway". This bridge simplifies the transfer of assets between L1 and L2.
-
-- Gateway Functionality: It allows for ETH or ERC20 token to be deposited on L1 and locked in exchange for an equivalent amount on L2, and vice versa. This is known as "bridging a token," e.g., depositing 100 USDC on L1 for 100 USDC on L2. .
-
-The Gateway is composed of several contracts on both Layer 1 and Layer 2, which listed as follow:
-
-| L1 Gateway Contract         | Description                                                      |
-| ------------------------ | ---------------------------------------------------------------- |
-| [L1GatewayRouter](https://holesky.etherscan.io/address/0xea593b730d745fb5fe01b6d20e6603915252c6bf)        | The gateway router supports the deposit of ETH and ERC20 tokens. |
-| [L1ETHGateway](https://holesky.etherscan.io/address/0xcc3d455481967dc97346ef1771a112d7a14c8f12)           | The gateway to deposit ETH.                                      |
-| [L1StandardERC20Gateway](https://holesky.etherscan.io/address/0xb26dafdb434ae93e3b8efde4f0193934955d86cd) | The gateway for standard ERC20 token deposits.                   |
-| [L1WETHGateway](https://holesky.etherscan.io/address/0xbbdb317b50313d96823eba0fc2c1d9e469dc1906)          | The gateway for Wrapped ETH deposits.                            |
-
-
-| L2 Gateway Contract         | Description                                                      |
-| ------------------------ | ---------------------------------------------------------------- |
-| [L2GatewayRouter](https://explorer-holesky.morphl2.io/address/https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000002)        | The gateway router supports the withdraw of ETH and ERC20 tokens. |
-| [L2ETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000006)           | The gateway to withdraw ETH.                                      |
-| [L2StandardERC20Gateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000008) | The gateway for standard ERC20 token withdraw.                   |
-| [L2WETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000010)          | The gateway for Wrapped ETH withdraw.                            |
-
-Here we'll go over the basics of using these gateway to move tokens & messages between Layer 1 and Layer 2.
-
-## Deposit ETH and ERC20 tokens from L1
-
-The Gateway Router allows ETH and ERC20 token bridging from L1 to L2 using the `depositETH` and `depositERC20` functions respectively. It is a permissionless bridge deployed on L1. Notice that ERC20 tokens will have a different address on L2, you can use the `getL2ERC20Address` function to query the new address.
+The Gateway Router allows ETH and ERC20 token bridging from L1 to L2 using the depositETH and depositERC20 functions respectively. It is a permissionless bridge deployed on L1. Notice that ERC20 tokens will have a different address on L2, you can use the getL2ERC20Address function to query the new address.
 
 :::tip
   **`depositETH`** and **`depositERC20`** are payable functions, the amount of ETH sent to these functions will be used
@@ -87,10 +42,10 @@ The L2 Gateway is very similar to the L1 Gateway. We can withdraw ETH and ERC20 
 :::
 
 :::tip
-  **Make sure the transactions won't revert on L1** while sending from L2. There is no way to recover bridged ETH, tokens, or NFTs if your transaction reverts on L1. All assets are burnt on Morph when the transaction is sent, and it's impossible to mint them again.
+  **Ensure transactions won’t revert on L1 while sending from L2**  There is no way to recover bridged ETH, tokens, or NFTs if your transaction reverts on L1. All assets are burned on Morph when the transaction is sent, and it's impossible to mint them again
 :::
 
-### Finalize your Withdraw
+### Finalize your Withdrawal
 
 Besides start a withdraw request on Morph, there is one additional step to do. You need to finalize your withdraw on Ethereum.
 
@@ -100,7 +55,7 @@ This is because of Morph's optimistic zkEVM design, you can read the details [he
 
 To do this, First you need to make sure:
 
-- The batch contains the withdraw transactions has gone through the challenge period and is marked as finalized (which means that in `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**)
+- TThe batch containing the withdraw transactions has passed the challenge period and is marked as finalized (meaning in the `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**)
 
 Once confirmed, you can call our backend services interface:
 

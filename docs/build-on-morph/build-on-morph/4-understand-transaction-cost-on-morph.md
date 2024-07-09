@@ -5,12 +5,9 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-Transaction fees on Morph work a lot like fees on Ethereum. 
-
-However, Layer 2 introduces some unique aspects. Morph's optimistic zkEVM makes these differences easy to understand and even easier to handle within your app.
+Transaction fees on Morph work similarly to fees on Ethereum. However, Layer 2 introduces some unique aspects. Morph's optimistic zkEVM makes these differences easy to understand and even easier to handle. 
 
 This page includes the formula for calculating the gas cost of transactions on Morph.
-
 There are two kinds of costs for transactions on Morph: the L2 execution fee and the L1 data/security fee.
 
 
@@ -78,15 +75,9 @@ The amount of L2 gas used depends on the specific transaction. Due to EVM compat
 
 ## The L1 data fee
 
-Morph transactions are also published to Ethereum, crucial to Morph’s security as it ensures all data needed to verify Morph's state is always publicly available on Ethereum.
-It's what makes Morph an L2.
+Morph transactions are also published to Ethereum, crucial to Morph’s security as it ensures all data needed to verify Morph's state is always publicly available on Ethereum. 
 
-Users must pay for the cost of submitting their transactions to Ethereum, known as the **L1 data fee**. This is the primary difference between Morph (and other L2s) and other Layer 1s.
-
-Because gas costs are quite more expensive on Ethereum, the L1 data fee typically represents most of the total cost of a transaction on Morph.
-
- 
-
+Users must pay for the cost of submitting their transactions to Ethereum, known as the L1 data fee. This fee typically represents most of the total cost of a transaction on Morph.
 
 
 This fee is based on four factors:
@@ -96,7 +87,7 @@ This fee is based on four factors:
 3. A fixed overhead cost denominated in gas. This is currently set to 2500.
 4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.15.
 
-Here's the math:
+Formula:
 
 ```
 l1_data_fee = l1_base_fee * (tx_data_gas + fixed_overhead) * dynamic_overhead

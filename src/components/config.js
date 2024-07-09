@@ -14,7 +14,7 @@ export const links = {
 
   howItWorks: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
   contractMoohism: 'https://forms.gle/9zJxWbcoDAuZKFSW8',
-  exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/responsive-validity-proof/overview/',
+  exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/optimistic-zkevm',
   
   contactUs: 'https://morphl2.io/about',
   terms: 'https://morphl2.io/terms_of_service',

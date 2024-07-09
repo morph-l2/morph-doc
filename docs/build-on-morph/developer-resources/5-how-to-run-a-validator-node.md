@@ -4,9 +4,9 @@ lang: en-US
 ---
 ## Run a Morph Node 
 
-This guide describes the approach to starting up a morph validator node. If you haven't familiar with the validator duty, please refer to our [optimistic zkEVM design](../../how-morph-works/responsive-validity-proof/1-overview.md).
+This guide describes the approach to running a Morph validator node. If you are unfamiliar with the validator duties, please refer to our [optimistic zkEVM](../../how-morph-works/3-optimistic-zkevm.md) design.
 
-We create the folder `~/.morph` as our home directory for the following example. 
+Create the folder `~/.morph` as our home directory for this example.
 
 ## Build executable binary
 

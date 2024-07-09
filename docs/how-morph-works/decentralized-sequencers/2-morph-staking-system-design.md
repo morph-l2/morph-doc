@@ -128,7 +128,7 @@ However, if the sequencer failed to perform their duties, the block production w
 
 Based on the optimistic zkEVM design, there will be validators constantly verifying the batch submitted by sequencers, and if they think sequencers committed fraud, validators will start a challenge through the L1 rollup contract.
 
-[Read more about the challenge here:](../responsive-validity-proof/1-overview.md)
+[Read more about the challenge here:](../3-optimistic-zkevm.md)
 
 To prevent fraudulent behavior by Sequencers from affecting network security, the following rules need are established:
 

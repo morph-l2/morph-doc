@@ -5,19 +5,19 @@ lang: en-US
 
 ## Run a Morph Full Node 
 
-This guide describes the approach to starting up a morph node. We create the folder `~/.morph` as our home directory for the following example. 
+This guide outlines the steps to start a Morph node. The example assumes the home directory is `~/.morph` 
 
 ### Hardware requirements
 
-Running the morph node requires 2 processes to be started, which are `geth` and `node`.  
+Running the morph node requires 2 processes:L`geth` and `node`.  
 
-`Geth` is the Morph execution layer which needs to meet the [go-ethereum hardware requirements](https://github.com/ethereum/go-ethereum#hardware-requirements), but with less storage, 500GB is enough so far. 
+- `Geth`:the Morph execution layer which needs to meet the [go-ethereum hardware requirements](https://github.com/ethereum/go-ethereum#hardware-requirements), but with less storage, 500GB is enough so far. 
 
-`Node` is the Morph consensus layer embedded tendermint which needs to meet the [tendermint hardware requirements](https://docs.tendermint.com/v0.34/tendermint-core/running-in-production.html#processor-and-memory). 
+- `Node`:the Morph consensus layer embedded tendermint which needs to meet the [tendermint hardware requirements](https://docs.tendermint.com/v0.34/tendermint-core/running-in-production.html#processor-and-memory). 
 
 
 :::tip
-According to limitations of the current geth implementation, we only support archive mode for launching a Geth.  So the storage size of Geth will constantly increase along with blocks produced. 
+Due to limitations in the current geth implementation, only archive mode is supported, meaning the storage size will continually increase with produced blocks.
 :::
 
 ### Build executable binary

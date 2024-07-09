@@ -8,42 +8,42 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ## Optimistic Rollups
 
 
-Optimistic Rollups are pivotal in Layer 2 scaling, designed to augment Ethereum's throughput. These protocols offload transaction processing from the main chain, delivering significant boosts in speed. Their distinct advantage lies in inheriting security directly from Ethereum Mainnet by posting transaction outcomes on-chain. In contrast to other solutions like sidechains, optimistic rollups ensure integrity and security through on-chain verification and fraud proofs. This approach, focusing on off-chain computation, can lead to scalability improvements by 10-100 times, while also reducing gas costs through efficient calldata usage.
+Optimistic rollups are a Layer 2 scaling solution for blockchains that enhance transaction throughput and reduce costs by assuming transactions are valid and only verifying them if a challenge is raised. This method relies on a challenge period during which validators can dispute transactions they believe to be incorrect. If no disputes are raised, the transactions are considered final. Optimistic rollups significantly improve scalability while maintaining security, making them an efficient solution for handling a higher volume of transactions on blockchain networks.
 
 [Learn more about Optimistic Rollups](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups/)
 
 ## ZK Rollups
 
-Zero-Knowledge Rollups (ZK-rollups) are another Layer 2 solution enhancing Ethereum's capacity. They process transactions in batches off-chain, submitting only essential summary data to Mainnet. This data encapsulates state changes and cryptographic proofs, ensuring accuracy and integrity. ZK-rollups excel in processing efficiency, allowing thousands of transactions to be handled swiftly and securely. Though the tradeoff here is that the proofs submitted by ZKRs can become quite large which eventually increase the cost.
+ZK rollups, or zero-knowledge rollups, are a Layer 2 scaling solution that uses cryptographic proofs to verify the validity of transactions off-chain before bundling them and submitting a proof to the main blockchain. Each batch of transactions is accompanied by a zero-knowledge proof, which ensures that all transactions within the batch are valid without revealing the underlying data. This method provides immediate finality and high security, as the main chain only needs to verify the proof rather than each individual transaction, significantly reducing the computational load and enhancing scalability.
 
-[Explore in-depth information on ZK Rollups here.](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)
+[Learn more about ZK Rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/)
 
 ## Sequencers
 
-Sequencers are the linchpins in Layer 2 solutions, orchestrating transaction order and aggregation. In optimistic rollups, they collect, validate, and batch off-chain transactions for submission to Ethereum Mainnet. Sequencers adhere to specific rules and consensus mechanisms, upholding fairness, consistency, and verifiable security. They are integral to efficiently managing high transaction volumes within Layer 2 networks.
+Sequencers are specialized nodes responsible for ordering and bundling transactions in Layer 2 scaling solutions like rollups. They play a crucial role in determining the sequence of transactions, creating blocks, and periodically committing these blocks to the main blockchain. In decentralized systems, multiple sequencers work together to enhance security and prevent single points of failure. By ensuring transactions are processed efficiently and securely, sequencers help maintain the integrity and performance of Layer 2 networks.
 
 ## Fraud Proof
 
-Fraud Proof is a security mechanism critical to certain Layer 2 solutions. Transactions are batched and assumed valid upon submission to Ethereum, but they remain open to challenges. If fraud is suspected, a fraud proof process is initiated to verify the transaction's integrity. This method balances transaction speed with robust security.
+Fraud proof is a mechanism used in blockchain scaling solutions like optimistic rollups to ensure transaction validity. When a sequencer submits a batch of transactions, they are assumed to be valid unless contested. During a designated challenge period, any validator or network participant can submit a fraud proof if they detect an incorrect transaction. This proof involves verifying the transaction data and demonstrating the error to the main blockchain. If the fraud proof is validated, the incorrect transaction is rejected, ensuring the integrity and security of the network while minimizing computational costs.
 
 ## Validity Proof
 
-Validity Proof is a security model where Layer 2 transactions are batched and submitted to Ethereum with accompanying proofs of their validity. Computation is performed off-chain, and the results are supplied to the main chain with assurance of their correctness. This approach enhances transaction capacity while maintaining a secure environment.
+Validity proof is a cryptographic method used to ensure that transactions within a rollup are correct before they are finalized on the main blockchain. In systems like ZK rollups, each batch of transactions is accompanied by a validity proof that verifies the correctness of all transactions within the batch. This approach enhances security and efficiency by eliminating the need for individual transaction verification on the main chain, providing immediate finality and reducing computational overhead.
 
 ## zkEVM
 
-zkEVM, or Zero-Knowledge Ethereum Virtual Machine, extends the traditional EVM to support zero-knowledge proofs in Layer 2 scaling solutions. It allows developers to craft smart contracts with enhanced privacy, preserving compatibility with existing Ethereum applications. zkEVM introduces privacy-focused features into Layer 2 solutions, balancing scalability with data confidentiality.
+zkEVM, or Zero-Knowledge Ethereum Virtual Machine, is an advanced implementation of the Ethereum Virtual Machine that integrates zero-knowledge proofs to enhance scalability and security. By using zk proofs, zkEVM allows for the validation of transactions off-chain, ensuring that only valid state transitions are submitted to the main chain. This method provides high throughput and lower transaction costs while maintaining the security and trustlessness of Ethereum.
 
 ## BLS Signatures
 
-BLS (Boneh-Lynn-Shacham) signatures are cryptographic tools essential for efficient and secure operations in Layer 2 protocols. They enable compact signature aggregation, optimizing storage and bandwidth usage. In Layer 2 environments like rollups, BLS signatures are instrumental in verifying and validating transaction logs, ensuring integrity and authenticity in a scalable manner
+BLS (Boneh-Lynn-Shacham) signatures are a cryptographic technique used to aggregate multiple signatures into a single compact signature. This is particularly useful in blockchain networks for reducing the data size and improving the efficiency of transaction verification. BLS signatures enable multiple validators to sign a message collectively, resulting in a single signature that can be verified quickly and cost-effectively, enhancing the overall scalability of the network.
 
 ## Data availability
 
-Data availability is crucial in Layer 2 scaling solutions, ensuring that all necessary transaction data is accessible to participants. This transparency is vital for security and trust, enabling participants to verify and process transactions independently. Effective data availability mechanisms are key to preventing data manipulation and maintaining the integrity of Layer 2 infrastructures.
+Data availability refers to the assurance that all necessary data for verifying blockchain transactions is accessible and retrievable. In the context of rollups, ensuring data availability is crucial for maintaining the integrity and security of off-chain transactions. It guarantees that anyone can download and verify the data used in rollup proofs, preventing scenarios where transactions are finalized without the possibility of verification.
 
 ## EIP - 4844
 
-EIP-4844 proposes a new transaction type for Ethereum, allowing "blobs" of data to be stored temporarily in beacon nodes. This proposal aligns with Ethereum's scaling roadmap, balancing data size with disk usage management.
+EIP-4844, also known as Proto-Danksharding, is an Ethereum Improvement Proposal aimed at introducing a new type of transaction that reduces data costs and improves scalability. It involves adding a new transaction format that can efficiently handle large amounts of data, laying the groundwork for future sharding implementations. This proposal enhances the network's ability to manage data more effectively, contributing to overall improvements in throughput and cost-efficiency.
 
 [Discover how EIP-4844 impacts Morph and other rollups.](https://www.eip4844.com/)

@@ -1,5 +1,5 @@
 ---
-title: Contract Address
+title: Contract Addresses
 lang: en-US
 ---
 

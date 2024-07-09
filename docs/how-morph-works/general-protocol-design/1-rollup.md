@@ -50,9 +50,9 @@ Blockinfo (BlockWitness) is needed since Morph employs zk technology to prove th
 ## Putting Multiple Batches into a Single Rollup Transaction​
 
 
- While it's standard for roll-up projects to include only one batch per L1 roll-up transaction, Morph optimizes by inserting as many batches as feasible into a single L1 transaction.
-
+While it's standard for roll-up projects to include only one batch per L1 roll-up transaction, Morph optimizes by inserting as many batches as feasible into a single L1 transaction.
 This efficiency-driven approach significantly reduces overall costs, as the L1 fee is a predominant component of the transaction costs associated with the L2. By optimizing the utilization of available space, Morph achieves cost-effectiveness without compromising transaction integrity.
+
 
 
 
@@ -73,7 +73,7 @@ Once the transaction is submitted and confirmed on Ethereum, validator nodes can
 
 ## Finalize the batches
 
-If batches are valid according to Morph's [responsive validity proof](../responsive-validity-proof/1-overview.md) standards, all transactions within the batches will be finalized, including withdrawal transactions. 
+If batches are valid according to Morph's [responsive validity proof](../3-optimistic-zkevm.md) standards, all transactions within the batches will be finalized, including withdrawal transactions. 
 
 Consequently, withdrawal requests will be fulfilled, and the corresponding locked assets on Layer 1 will be released.
 
@@ -92,6 +92,7 @@ A Batch Submitter plays a crucial role in the "rollup" process, acting as the br
 
 
 ![rollup](../../../assets/docs/protocol/general/rollup/rollup.png)
+
 ## What is the relationship between Sequencers & Batch Submitters？
 
 The Batch submitter function is often integrated within the broader 'sequencer' role. In a decentralized sequencer network architecture, each sequencer is equipped with or has access to a batch submitter component. This integration is key to achieving and maintaining the highest levels of decentralization.
@@ -132,6 +133,5 @@ Below include the contracts that responsible for each module and their responsib
   - Record Rollup history
   - Record Submitter Workload
   - Record Submitter Timeouts
-- **IncentiveContract**:
-  - Conduct Incentive and Penalty 
+- **IncentiveContract**: Conducts Incentive and Penalty actions
 
