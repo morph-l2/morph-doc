@@ -56,7 +56,7 @@ export const links = {
   twitter: 'https://twitter.com/Morphl2',
   telegram: 'https://t.me/MorphL2official',
   // 'https://t.me/+qslsWvH2_-1iMTdl',
-  discord: 'https://discord.gg/5SmG4yhzVZ',
+  discord: 'https://discord.gg/L2Morph',
   linkedIn: 'http://www.linkedin.com/company/morphl2',
 
   facebook: 'https://www.facebook.com/profile.php?id=61554448708419',
