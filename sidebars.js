@@ -229,6 +229,10 @@ module.exports = {
         },
         {
           type: 'doc',
+          id:'build-on-morph/developer-resources/dapp-examples-on-morph'
+        },
+        {
+          type: 'doc',
           id:'build-on-morph/developer-resources/morph-json-rpc-api-methods'
         },
         {
