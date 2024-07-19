@@ -31,7 +31,7 @@ All Gateway contracts will form the message and send it to the `L1CrossDomainMes
 
 This means they can execute any function on L2 from a transaction made on L1 via the bridge. Although an application could directly pass messages to existing token contracts, the Gateway abstracts the specifics and simplifies making transfers and calls.
 
-When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via the its L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainMessenger` contract for execution on L2.
+When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via its L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainMessenger` contract for execution on L2.
 
 ## Withdraw ETH and ERC20 tokens from L2
 
