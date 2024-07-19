@@ -17,7 +17,7 @@ Most smart contract tools have plugins for verifying contracts on Etherscan. Blo
 We provide a comprehensive example of deploying contracts on Morph using Hardhat and Foundry, which includes the verification process.
 
 
-Check [Deploy Conrtacts on Morph](../code-examples/1-deploy-contract-on-morph.md) for examples.
+Check [Deploy Contracts on Morph](../code-examples/1-deploy-contract-on-morph.md) for examples.
 
 ## Vefiry with Morph explorer
 

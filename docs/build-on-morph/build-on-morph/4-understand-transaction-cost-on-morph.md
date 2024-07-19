@@ -31,7 +31,7 @@ The formula is straightforward:
 
 
 <!--
-We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fee.
+We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fees.
 
 In EIP-1559, the cost of a unit of gas is composed of two components:
 
