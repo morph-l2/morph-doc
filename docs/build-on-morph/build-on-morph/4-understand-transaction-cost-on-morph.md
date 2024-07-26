@@ -20,55 +20,20 @@ The block producer receives no direct reward, and the `COINBASE` opcode returns 
 
 :::
 -->
+
 ## The L2 execution fee
 
 Like Ethereum, transactions on Morph incur gas costs for computation and storage usage.
 
 Every L2 transaction will pay some **execution** fee, equal to the amount of gas used multiplied by the gas price of the transaction.
 
+Morph supports EIP-1559 transaction type. The EIP-1559 pricing model, which comprises a base fee and a priority fee, contributes to a more predictable and stable transaction fee.
+
 The formula is straightforward:
-
-
-
-<!--
-We support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) as a way to process L2 transaction fee.
-
-In EIP-1559, the cost of a unit of gas is composed of two components:
-
-- **Base fee**: This fee is the same for all transactions in a block. It varies between blocks based on the difference between the actual size of the blocks (which depends on the demand for block space) and the target block size. When the block uses more gas than the target block size，the base fee goes up to discourage demand. When the block uses less gas than the target block size，the base fee goes down to encourage demand.
-- **Priority fee**: This fee is specified in the transaction itself and varies between transactions. Block proposers are expected to select the transactions that offer them the highest priority fees first.
-
-There are some differences between Ethereum and Morph in this regard:
-
-- ETH is not burned. Burning ETH on L2 would only lock it in the bridge forever.
-- Some EIP 1559 parameters are different:
-
-  | Parameter | Morph value | Ethereum value (for reference) |
-  | - | -: | -: |
-  | Block gas limit | 30,000,000 gas | 30,000,000 gas
-  | Block gas target | 5,000,000 gas | 15,000,000 gas
-  | EIP-1559 elasticity multiplier | 6 | 2
-  | EIP-1559 denominator | 50 | 8
-  | Maximum base fee increase (per block) | 10% | 12.5%
-  | Maximum base fee decrease (per block) | 2% | 12.5%
-  | Block time in seconds | 2 | 12
-
-
-From an application development perspective, EIP-1559 introduces the following changes:
-
-- The `BASEFEE` opcode is now supported. The `BASEFEE` opcodes return the base fee of the current block.
-- The `eth_maxPriorityFeePerGas` and `eth_feeHistory` RPC methods are now supported. `eth_maxPriorityFeePerGas` returns a fee per gas that is an estimate of how much you can pay as a priority fee, or 'tip', to get a transaction included in the current block. `eth_feeHistory` returns a collection of historical gas information from which you can decide what to submit as your `maxFeePerGas` and/or `maxPriorityFeePerGas`.
-
--->
-
-
-
 ```
 l2_execution_fee = l2_gas_price * l2_gas_used
+l2_gas_price = l2_base_fee + l2_priority_fee
 ```
-<!--
-transaction_gas_price = l2_base_fee + l2_priority_fee
--->
 
 The amount of L2 gas used depends on the specific transaction. Due to EVM compatibility, gas usage on Morph is typically similar to Ethereum.
 
@@ -79,25 +44,24 @@ Morph transactions are also published to Ethereum, crucial to Morph’s security
 
 Users must pay for the cost of submitting their transactions to Ethereum, known as the L1 data fee. This fee typically represents most of the total cost of a transaction on Morph.
 
-
-This fee is based on four factors:
-
-1. The current gas price on Ethereum - l1_base_fee
-2. The gas cost to publish the transaction to Ethereum scales roughly with the size of the transaction (in bytes) - tx_data_gas
-3. A fixed overhead cost denominated in gas. This is currently set to 2500.
-4. A dynamic overhead cost which scales the L1 fee paid by a fixed number. This is currently set to 1.15.
-
 Formula:
 
 ```
-l1_data_fee = l1_base_fee * (tx_data_gas + fixed_overhead) * dynamic_overhead
+l1DataFee = (l1BaseFee * commitScalar + l1BlobBaseFee * tx_data_gas * blobScalar) / rcfg.Precision
 ```
 
-Where `tx_data_gas` is:
+where tx_data_gas is
 
 ```
 tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
+
+And other parameters:
+
+1. l1BaseFee：Layer1 base fee
+2. commitScalar: a factor used to measure the gas cost for data commitment
+3. l1BlobBaseFee: the blobBaseFee on L1
+4. blobScalar: a factor used to measure the gas cost for one transaction to be stored in EIP-4844 blob
 
 
 :::tip
