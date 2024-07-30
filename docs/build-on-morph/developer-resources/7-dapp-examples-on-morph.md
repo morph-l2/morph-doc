@@ -39,3 +39,15 @@ Our project today, Okido Finance, takes this idea and builds a decentralized app
 In this tutorial, I’ll walk you through building the Okido Finance DApp step by step. We’ll start with setting up the development environment, move on to deploying smart contracts, and finish with designing a user-friendly UI.
 
 By the end, you’ll have a solid grasp of how to build a decentralized real estate fractionalization platform. Whether you’re looking to create something similar or just want to learn more about these technologies, you’ll be well-equipped to dive deeper into fractionalization. Let’s get started!
+
+
+## Query and Index Smart Contracts on Morph using Goldsky
+
+![Okido Finance](../../../assets/docs/dev/resources/example-dapp/subg.png)
+
+[Check the tutorial](https://morph.ghost.io/query-and-index-smart-contracts-on-morph-using-goldsky/)
+
+Picture this: you're a developer with a brand-new smart contract deployed on the Morph. Your next challenge is to efficiently query and retrieve on-chain data for your decentralized application (dApp). That's where subgraphs come in. Subgraphs offer a powerful and flexible way to index and query blockchain data, making it easy to build responsive and data-rich dApps.
+
+In this tutorial, we'll walk through deploying a smart contract on the Morph chain and setting up a subgraph to query this contract. We’ll also introduce Goldsky, a tool that makes creating and managing subgraphs a breeze. Let’s get started and see what we can build together!
+
