@@ -50,8 +50,13 @@ For more information, please refer to [their documentation](https://docs.goldsky
 
 Documentation: https://docs.pyth.network/price-feeds
 
-Right now Pyth is deployed on Morph Sepolia and integrating on Morph Holesky soon.
+Right now Pyth is deployed on Morph Holesky, check the [contract](https://explorer-holesky.morphl2.io/address/0x2880aB155794e7179c9eE2e38200202908C17B43).
 
+#### eOracle
+
+Deployed [contract](https://explorer-holesky.morphl2.io/address/0xbd53b35Bf458Cd22dBDeB5Da71181daA3cFb6A10)
+
+Full price feeds and docs can be found here : https://eoracle.gitbook.io/eoracle/price-feeds/feed-addresses
 
 ### MultiSig
 
