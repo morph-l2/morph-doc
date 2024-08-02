@@ -131,9 +131,44 @@ Tokens can be bridged securely and permissionlessly through Gateway contracts de
 -->
 
 
-## Send messages between Morph and Ethereum
+## Add your Token to the Official Bridge
+
+Currently, our official bridge only support certain pre-defined tokens to be bridged, if you want to bridge your own tokens, you need to manually add the token, and here is how to do it.
+
+### Add Tokens to the gateway through Morph Bridge Frontend
+
+The easiest way to support your token is to manually add it on our [official bridge frontend](https://bridge-holesky.morphl2.io/), you can simply do it with the following steps:
+
+1. Click the token selection button on Morph Holesky Bridge
+
+![tokenlist1](../../../assets/docs/protocol/general/bridge/tokenlist/tokenlist1.png)
 
 
+2. Input & Confirm your desire Ethereum token contract address under the custom token section
+
+![tokenlist2](../../../assets/docs/protocol/general/bridge/tokenlist/tokenlist2.png)
+
+3. Get the Layer 2 token contract address and confirm it.
+
+![tokenlist3](../../../assets/docs/protocol/general/bridge/tokenlist/tokenlist3.png)
+
+4. Now it is supported and you and other users can start to bridge it! 
+
+![tokenlist4](../../../assets/docs/protocol/general/bridge/tokenlist/tokenlist4.png)
+
+### Add token support to the bridge frontend
+
+By add token to the gateway, you and other users can bridge the token by input the token address. Step further, if you want your token shows on the bridge frontend token list. You need to raise a PR to our bridge repo.
+
+You can find how to do it in the [morph list repo](https://github.com/morph-l2/morph-list).
+
+
+Keep in mind that:
+- You need to add both your L1 & L2 token to the list
+- The L2 token contract address is obtained by adding your tokens through Morph bridge frontend
+
+Here is an [example PR commit](https://github.com/morph-l2/morph-list/pull/27/commits/228481db6b8d69b8f40e7369dae62722aa570eb7
+) for your reference.
 
 
 
