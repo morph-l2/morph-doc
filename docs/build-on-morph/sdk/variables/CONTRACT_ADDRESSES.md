@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / CONTRACT\_ADDRESSES
+[@morph-l2/sdk](../globals.md) / CONTRACT\_ADDRESSES
 
 # Variable: CONTRACT\_ADDRESSES
 
@@ -14,4 +14,4 @@ contract name.
 
 ## Source
 
-src/utils/chain-constants.ts:111
+src/utils/chain-constants.ts:100

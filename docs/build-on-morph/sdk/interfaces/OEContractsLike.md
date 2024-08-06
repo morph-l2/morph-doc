@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / OEContractsLike
+[@morph-l2/sdk](../globals.md) / OEContractsLike
 
 # Interface: OEContractsLike
 
@@ -17,7 +17,7 @@ addresses instead of actual contract objects.
 
 #### Source
 
-src/interfaces/types.ts:141
+src/interfaces/types.ts:146
 
 ***
 
@@ -27,4 +27,4 @@ src/interfaces/types.ts:141
 
 #### Source
 
-src/interfaces/types.ts:142
+src/interfaces/types.ts:147

@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / OEContracts
+[@morph-l2/sdk](../globals.md) / OEContracts
 
 # Interface: OEContracts
 
@@ -17,7 +17,7 @@ providers and addresses.
 
 #### Source
 
-src/interfaces/types.ts:116
+src/interfaces/types.ts:121
 
 ***
 
@@ -27,4 +27,4 @@ src/interfaces/types.ts:116
 
 #### Source
 
-src/interfaces/types.ts:117
+src/interfaces/types.ts:122

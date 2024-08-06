@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / l1BridgeName
+[@morph-l2/sdk](../globals.md) / l1BridgeName
 
 # Variable: l1BridgeName
 
@@ -10,4 +10,4 @@
 
 ## Source
 
-src/cross-chain-messenger.ts:73
+src/cross-chain-messenger.ts:69

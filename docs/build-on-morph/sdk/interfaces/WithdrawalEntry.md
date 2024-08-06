@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / WithdrawalEntry
+[@morph-l2/sdk](../globals.md) / WithdrawalEntry
 
 # Interface: WithdrawalEntry
 
@@ -17,4 +17,4 @@ CrossChainMessage
 
 #### Source
 
-src/interfaces/types.ts:287
+src/interfaces/types.ts:292

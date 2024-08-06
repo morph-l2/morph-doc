@@ -1,6 +1,8 @@
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
+***
 
-[@morph-l2/sdk](../1-globals.md) / CrossChainMessenger
+[@morph-l2/sdk](../globals.md) / CrossChainMessenger
 
 # Class: CrossChainMessenger
 
@@ -8,7 +10,7 @@
 
 ### new CrossChainMessenger()
 
- **new CrossChainMessenger**(`opts`): CrossChainMessenger
+> **new CrossChainMessenger**(`opts`): [`CrossChainMessenger`](CrossChainMessenger.md)
 
 Creates a new CrossChainProvider instance.
 
@@ -26,17 +28,9 @@ backend for withdraw proof gen.
 
 Optional bridge address list.
 
-• **opts.contracts?**: [`DeepPartial`](../type-aliases/DeepPartial.md)\<[`OEContractsLike`](../interfaces/OEContractsLike.md)\
+• **opts.contracts?**: [`DeepPartial`](../type-aliases/DeepPartial.md)\<[`OEContractsLike`](../interfaces/OEContractsLike.md)\>
 
 Optional contract address overrides.
-
-• **opts.depositConfirmationBlocks?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional number of blocks before a deposit is confirmed.
-
-• **opts.l1BlockTimeSeconds?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional estimated block time in seconds for the L1 chain.
 
 • **opts.l1ChainId**: [`NumberLike`](../type-aliases/NumberLike.md)
 
@@ -56,72 +50,60 @@ Signer or Provider for the L2 chain, or a JSON-RPC url.
 
 #### Returns
 
-CrossChainMessenger
+[`CrossChainMessenger`](CrossChainMessenger.md)
 
 #### Source
 
-src/cross-chain-messenger.ts:146
+src/cross-chain-messenger.ts:130
 
 ## Properties
 
 ### backendURL
 
- **backendURL**: `string`
+> **backendURL**: `string`
 
 Backend url for withdrawal prove server
 
 #### Source
 
-src/cross-chain-messenger.ts:80
+src/cross-chain-messenger.ts:76
 
 ***
 
 ### bridges
 
- **bridges**: [`BridgeAdapters`](../interfaces/BridgeAdapters.md)
+> **bridges**: [`BridgeAdapters`](../interfaces/BridgeAdapters.md)
 
 List of custom bridges for the given network.
 
 #### Source
 
-src/cross-chain-messenger.ts:120
+src/cross-chain-messenger.ts:116
 
 ***
 
 ### contracts
 
- **contracts**: [`OEContracts`](../interfaces/OEContracts.md)
+> **contracts**: [`OEContracts`](../interfaces/OEContracts.md)
 
 Contract objects attached to their respective providers and addresses.
 
 #### Source
 
-src/cross-chain-messenger.ts:115
-
-***
-
-### depositConfirmationBlocks
-
- **depositConfirmationBlocks**: `number`
-
-Number of blocks before a deposit is considered confirmed.
-
-#### Source
-
-src/cross-chain-messenger.ts:125
+src/cross-chain-messenger.ts:111
 
 ***
 
 ### estimateGas
 
- **estimateGas**: `object`
+> **estimateGas**: `object`
 
 Object that holds the functions that estimates the gas required for a given transaction.
 Follows the pattern used by ethers.js.
 
 #### approveERC20()
 
- **approveERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) = `Promise`\<`BigNumber`\
+> **approveERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to approve some tokens to deposit into the L2 chain.
 
@@ -139,27 +121,17 @@ The L2 token address.
 
 Amount of the token to approve.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-• **opts.signer?**: `Signer`
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### depositERC20()
 
- **depositERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) = `Promise`\<`BigNumber`\
+> **depositERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to deposit some ERC20 tokens into the L2 chain.
 
@@ -177,31 +149,17 @@ Address of the L2 token.
 
 Amount to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### depositETH()
 
- **depositETH**: (`amount`, `opts`?) = `Promise`\<`BigNumber`\
+> **depositETH**: (`amount`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to deposit some ETH into the L2 chain.
 
@@ -211,31 +169,17 @@ Estimates gas required to deposit some ETH into the L2 chain.
 
 Amount of ETH to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### proveAndRelayMessage()
 
- **proveAndRelayMessage**: (`message`, `opts`?) = `Promise`\<`BigNumber`\
+> **proveAndRelayMessage**: (`message`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to proveAndRelay a cross chain message. Only applies to L2 to L1 messages.
 
@@ -245,23 +189,17 @@ Estimates gas required to proveAndRelay a cross chain message. Only applies to L
 
 Message to generate the proving transaction for.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### sendMessage()
 
- **sendMessage**: (`message`, `opts`?) = `Promise`\<`BigNumber`\
+> **sendMessage**: (`message`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to send a cross chain message.
 
@@ -271,25 +209,17 @@ Estimates gas required to send a cross chain message.
 
 Cross chain message to send.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### withdrawERC20()
 
- **withdrawERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) = `Promise`\<`BigNumber`\
+> **withdrawERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to withdraw some ERC20 tokens back to the L1 chain.
 
@@ -307,27 +237,17 @@ Address of the L2 token.
 
 Amount to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### withdrawETH()
 
- **withdrawETH**: (`amount`, `opts`?) = `Promise`\<`BigNumber`\
+> **withdrawETH**: (`amount`, `opts`?) => `Promise`\<`BigNumber`\>
 
 Estimates gas required to withdraw some ETH back to the L1 chain.
 
@@ -337,122 +257,102 @@ Estimates gas required to withdraw some ETH back to the L1 chain.
 
 Amount of ETH to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
 ##### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:1837
-
-***
-
-### l1BlockTimeSeconds
-
- **l1BlockTimeSeconds**: `number`
-
-Estimated average L1 block time in seconds.
-
-#### Source
-
-src/cross-chain-messenger.ts:130
+src/cross-chain-messenger.ts:1600
 
 ***
 
 ### l1ChainId
 
- **l1ChainId**: `number`
+> **l1ChainId**: `number`
 
 Chain ID for the L1 network.
 
 #### Source
 
-src/cross-chain-messenger.ts:105
+src/cross-chain-messenger.ts:101
 
 ***
 
 ### l1CrossDomainMessenger
 
- **l1CrossDomainMessenger**: `Contract`
+> **l1CrossDomainMessenger**: `Contract`
 
 CrossDomainMessenger connected to the L1 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:95
+src/cross-chain-messenger.ts:91
 
 ***
 
 ### l1SignerOrProvider
 
- **l1SignerOrProvider**: `Provider` \| `Signer`
+> **l1SignerOrProvider**: `Provider` \| `Signer`
 
 Provider connected to the L1 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:85
+src/cross-chain-messenger.ts:81
 
 ***
 
 ### l2ChainId
 
- **l2ChainId**: `number`
+> **l2ChainId**: `number`
 
 Chain ID for the L2 network.
 
 #### Source
 
-src/cross-chain-messenger.ts:110
+src/cross-chain-messenger.ts:106
 
 ***
 
 ### l2CrossDomainMessenger
 
- **l2CrossDomainMessenger**: `Contract`
+> **l2CrossDomainMessenger**: `Contract`
 
 CrossDomainMessenger connected to the L2 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:100
+src/cross-chain-messenger.ts:96
 
 ***
 
 ### l2SignerOrProvider
 
- **l2SignerOrProvider**: `Provider` \| `Signer`
+> **l2SignerOrProvider**: `Provider` \| `Signer`
 
 Provider connected to the L2 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:90
+src/cross-chain-messenger.ts:86
 
 ***
 
 ### populateTransaction
 
- **populateTransaction**: `object`
+> **populateTransaction**: `object`
 
 Object that holds the functions that generate transactions to be signed by the user.
 Follows the pattern used by ethers.js.
 
 #### approveERC20()
 
- **approveERC20**: (`l1Token`, `l2Token`, `amount`, `opts`) = `Promise`\<`TransactionRequest`\
+> **approveERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?) => `Promise`\<`TransactionRequest`\>
 
 Generates a transaction for approving some tokens to deposit into the L2 chain.
 
@@ -470,27 +370,17 @@ The L2 token address.
 
 Amount of the token to approve.
 
-• **opts**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-• **opts.signer**: `Signer`
-
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### depositERC20()
 
- **depositERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?, `isEstimatingGas`) = `Promise`\<`TransactionRequest`\
+> **depositERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?, `isEstimatingGas`) => `Promise`\<`TransactionRequest`\>
 
 Generates a transaction for depositing some ERC20 tokens into the L2 chain.
 
@@ -508,33 +398,19 @@ Address of the L2 token.
 
 Amount to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
 
 • **isEstimatingGas?**: `boolean`= `false`
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### depositETH()
 
- **depositETH**: (`amount`, `opts`?, `isEstimatingGas`) = `Promise`\<`TransactionRequest`\
+> **depositETH**: (`amount`, `opts`?, `isEstimatingGas`) => `Promise`\<`TransactionRequest`\>
 
 Generates a transaction for depositing some ETH into the L2 chain.
 
@@ -544,33 +420,19 @@ Generates a transaction for depositing some ETH into the L2 chain.
 
 Amount of ETH to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `PayableOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
 
 • **isEstimatingGas?**: `boolean`= `false`
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### proveAndRelayMessage()
 
- **proveAndRelayMessage**: (`message`, `opts`?) = `Promise`\<`TransactionRequest`\
+> **proveAndRelayMessage**: (`message`, `opts`?) => `Promise`\<`TransactionRequest`\>
 
 Generates a message proving and relaying transaction that can be signed and executed. Only
 applicable for L2 to L1 messages.
@@ -581,23 +443,17 @@ applicable for L2 to L1 messages.
 
 Message to generate the proving transaction for.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `PayableOverrides`
-
-Optional transaction overrides.
-
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### sendMessage()
 
- **sendMessage**: (`message`, `opts`?) = `Promise`\<`TransactionRequest`\
+> **sendMessage**: (`message`, `opts`?) => `Promise`\<`TransactionRequest`\>
 
 Generates a transaction that sends a given cross chain message. This transaction can be signed
 and executed by a signer.
@@ -608,25 +464,17 @@ and executed by a signer.
 
 Cross chain message to send.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### withdrawERC20()
 
- **withdrawERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?, `isEstimatingGas`?) = `Promise`\<`TransactionRequest`\
+> **withdrawERC20**: (`l1Token`, `l2Token`, `amount`, `opts`?, `isEstimatingGas`?) => `Promise`\<`TransactionRequest`\>
 
 Generates a transaction for withdrawing some ERC20 tokens back to the L1 chain.
 
@@ -644,29 +492,19 @@ Address of the L2 token.
 
 Amount to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
 
 • **isEstimatingGas?**: `boolean`
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### withdrawETH()
 
- **withdrawETH**: (`amount`, `opts`?, `isEstimatingGas`?) = `Promise`\<`TransactionRequest`\
+> **withdrawETH**: (`amount`, `opts`?, `isEstimatingGas`?) => `Promise`\<`TransactionRequest`\>
 
 Generates a transaction for withdrawing some ETH back to the L1 chain.
 
@@ -676,35 +514,25 @@ Generates a transaction for withdrawing some ETH back to the L1 chain.
 
 Amount of ETH to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
 
 • **isEstimatingGas?**: `boolean`
 
 ##### Returns
 
-`Promise`\<`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:1498
+src/cross-chain-messenger.ts:1304
 
 ## Accessors
 
 ### l1Provider
 
- `get` **l1Provider**(): `Provider`
+> `get` **l1Provider**(): `Provider`
 
 Provider connected to the L1 chain.
 
@@ -714,13 +542,13 @@ Provider connected to the L1 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:221
+src/cross-chain-messenger.ts:193
 
 ***
 
 ### l1Signer
 
- `get` **l1Signer**(): `Signer`
+> `get` **l1Signer**(): `Signer`
 
 Signer connected to the L1 chain.
 
@@ -730,13 +558,13 @@ Signer connected to the L1 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:243
+src/cross-chain-messenger.ts:215
 
 ***
 
 ### l2Provider
 
- `get` **l2Provider**(): `Provider`
+> `get` **l2Provider**(): `Provider`
 
 Provider connected to the L2 chain.
 
@@ -746,13 +574,13 @@ Provider connected to the L2 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:232
+src/cross-chain-messenger.ts:204
 
 ***
 
 ### l2Signer
 
- `get` **l2Signer**(): `Signer`
+> `get` **l2Signer**(): `Signer`
 
 Signer connected to the L2 chain.
 
@@ -762,13 +590,13 @@ Signer connected to the L2 chain.
 
 #### Source
 
-src/cross-chain-messenger.ts:254
+src/cross-chain-messenger.ts:226
 
 ## Methods
 
 ### approval()
 
- **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\<`BigNumber`\
+> **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\<`BigNumber`\>
 
 Queries the account's approval amount for a given L1 token.
 
@@ -782,35 +610,25 @@ The L1 token address.
 
 The L2 token address.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-• **opts.signer?**: `Signer`
-
-Optional signer to get the approval for.
-
 #### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 Amount of tokens approved for deposits from the account.
 
 #### Source
 
-src/cross-chain-messenger.ts:1381
+src/cross-chain-messenger.ts:1214
 
 ***
 
 ### approveERC20()
 
- **approveERC20**(`l1Token`, `l2Token`, `amount`, `opts`?): `Promise`\<`TransactionResponse`\
+> **approveERC20**(`l1Token`, `l2Token`, `amount`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Approves a deposit into the L2 chain.
 
@@ -828,37 +646,25 @@ The L2 token address.
 
 Amount of the token to approve.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the approval transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1406
+src/cross-chain-messenger.ts:1233
 
 ***
 
 ### depositERC20()
 
- **depositERC20**(`l1Token`, `l2Token`, `amount`, `opts`?): `Promise`\<`TransactionResponse`\
+> **depositERC20**(`l1Token`, `l2Token`, `amount`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Deposits some ERC20 tokens into the L2 chain.
 
@@ -876,41 +682,25 @@ Address of the L2 token.
 
 Amount to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the deposit transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1438
+src/cross-chain-messenger.ts:1256
 
 ***
 
 ### depositETH()
 
- **depositETH**(`amount`, `opts`?): `Promise`\<`TransactionResponse`\
+> **depositETH**(`amount`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Deposits some ETH into the L2 chain.
 
@@ -920,57 +710,51 @@ Deposits some ETH into the L2 chain.
 
 Amount of ETH to deposit (in wei).
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the deposit transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1336
+src/cross-chain-messenger.ts:1183
 
 ***
 
 ### encodeFunctionMessage()
 
- **encodeFunctionMessage**(`__namedParameters`): `string`
+> **encodeFunctionMessage**(`options`): `string`
 
 L2CrossDomainMessenger contract encode message, such as hashCrossDomainMessagev1
 
 #### Parameters
 
-• **\_\_namedParameters**
+• **options**
 
-• **\_\_namedParameters.message**: `string`
+• **options.message**: `string`
 
-• **\_\_namedParameters.messageNonce**: `BigNumber`
+The message passed along with the cross domain message
 
-• **\_\_namedParameters.sender**: `string`
+• **options.messageNonce**: `BigNumber`
 
-• **\_\_namedParameters.target**: `string`
+The cross domain message nonce
 
-• **\_\_namedParameters.value**: `BigNumber`
+• **options.sender**: `string`
+
+The sender of the cross domain message
+
+• **options.target**: `string`
+
+The target of the cross domain message
+
+• **options.value**: `BigNumber`
+
+The value being sent with the cross domain message
 
 #### Returns
 
@@ -978,16 +762,16 @@ L2CrossDomainMessenger contract encode message, such as hashCrossDomainMessagev1
 
 #### Source
 
-src/cross-chain-messenger.ts:1114
+src/cross-chain-messenger.ts:972
 
 ***
 
 ### estimateL2MessageGasLimit()
 
- **estimateL2MessageGasLimit**(`message`, `opts`?): `Promise`\<`BigNumber`\
+> **estimateL2MessageGasLimit**(`message`, `opts`?): `Promise`\<`BigNumber`\>
 
 Estimates the amount of gas required to fully execute a given message on L2. Only applies to
-L1 = L2 messages. You would supply this gas limit when sending the message to L2.
+L1 => L2 messages. You would supply this gas limit when sending the message to L2.
 
 #### Parameters
 
@@ -1009,62 +793,35 @@ Address to use as the sender.
 
 #### Returns
 
-`Promise`\<`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 Estimates L2 gas limit.
 
 #### Source
 
-src/cross-chain-messenger.ts:982
-
-***
-
-### estimateMessageWaitTimeSeconds()
-
- **estimateMessageWaitTimeSeconds**(`message`): `Promise`\<`number`\
-
-Returns the estimated amount of time before the message can be executed. When this is a
-message being sent to L1, this will return the estimated time until the message will complete
-its challenge period. When this is a message being sent to L2, this will return the estimated
-amount of time until the message will be picked up and executed on L2.
-
-#### Parameters
-
-• **message**: [`MessageLike`](../type-aliases/MessageLike.md)
-
-Message to estimate the time remaining for.
-
-#### Returns
-
-`Promise`\<`number`\
-
-Estimated amount of time remaining (in seconds) before the message can be executed.
-
-#### Source
-
-src/cross-chain-messenger.ts:1024
+src/cross-chain-messenger.ts:918
 
 ***
 
 ### getBackendTreeSyncIndex()
 
- **getBackendTreeSyncIndex**(): `Promise`\<`number`\
+> **getBackendTreeSyncIndex**(): `Promise`\<`number`\>
 
 #### Returns
 
-`Promise`\<`number`\
+`Promise`\<`number`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:1257
+src/cross-chain-messenger.ts:1122
 
 ***
 
 ### getBridgeForTokenPair()
 
- **getBridgeForTokenPair**(`l1Token`, `l2Token`): `Promise`\[`IBridgeAdapter`](../interfaces/IBridgeAdapter.md)\
+> **getBridgeForTokenPair**(`l1Token`, `l2Token`): `Promise`\<[`IBridgeAdapter`](../interfaces/IBridgeAdapter.md)\>
 
-Finds the appropriate bridge adapter for a given L1 L2 token pair. Will throw if no bridges
+Finds the appropriate bridge adapter for a given L1 - L2 token pair. Will throw if no bridges
 support the token pair or if more than one bridge supports the token pair.
 
 #### Parameters
@@ -1079,51 +836,33 @@ L2 token address.
 
 #### Returns
 
-`Promise`\<[`IBridgeAdapter`](../interfaces/IBridgeAdapter.md)\
+`Promise`\<[`IBridgeAdapter`](../interfaces/IBridgeAdapter.md)\>
 
 The appropriate bridge adapter for the given token pair.
 
 #### Source
 
-src/cross-chain-messenger.ts:407
-
-***
-
-### getChallengePeriodSeconds()
-
- **getChallengePeriodSeconds**(): `Promise`\<`number`\
-
-Queries the current challenge period in seconds from the StateCommitmentChain.
-
-#### Returns
-
-`Promise`\<`number`\
-
-Current challenge period in seconds.
-
-#### Source
-
-src/cross-chain-messenger.ts:1087
+src/cross-chain-messenger.ts:378
 
 ***
 
 ### getCommittedL2BlockNumber()
 
- **getCommittedL2BlockNumber**(): `Promise`\<`any`\
+> **getCommittedL2BlockNumber**(): `Promise`\<`any`\>
 
 #### Returns
 
-`Promise`\<`any`\
+`Promise`\<`any`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:1136
+src/cross-chain-messenger.ts:995
 
 ***
 
 ### getDepositsByAddress()
 
- **getDepositsByAddress**(`address`, `opts`): `Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\
+> **getDepositsByAddress**(`address`, `opts`): `Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 Gets all deposits for a given address.
 
@@ -1149,33 +888,33 @@ latest known block ("latest").
 
 #### Returns
 
-`Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\
+`Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 All deposit token bridge messages sent by the given address.
 
 #### Source
 
-src/cross-chain-messenger.ts:453
+src/cross-chain-messenger.ts:424
 
 ***
 
 ### getFinalizedL2BlockNumber()
 
- **getFinalizedL2BlockNumber**(): `Promise`\<`any`\
+> **getFinalizedL2BlockNumber**(): `Promise`\<`any`\>
 
 #### Returns
 
-`Promise`\<`any`\
+`Promise`\<`any`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:1154
+src/cross-chain-messenger.ts:1017
 
 ***
 
 ### getMessageReceipt()
 
- **getMessageReceipt**(`message`, `opts`): `Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\
+> **getMessageReceipt**(`message`, `opts`): `Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\>
 
 Finds the receipt of the transaction that executed a particular cross chain message.
 
@@ -1191,20 +930,20 @@ Message to find the receipt of.
 
 #### Returns
 
-`Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\
+`Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\>
 
 CrossChainMessage receipt including receipt of the transaction that relayed the
 given message.
 
 #### Source
 
-src/cross-chain-messenger.ts:778
+src/cross-chain-messenger.ts:757
 
 ***
 
 ### getMessageStatus()
 
- **getMessageStatus**(`message`, `opts`): `Promise`\<[`MessageStatus`](../enumerations/MessageStatus.md)\
+> **getMessageStatus**(`message`, `opts`): `Promise`\<[`MessageStatus`](../enumerations/MessageStatus.md)\>
 
 Retrieves the status of a particular message as an enum.
 
@@ -1220,19 +959,19 @@ Cross chain message to check the status of.
 
 #### Returns
 
-`Promise`\<[`MessageStatus`](../enumerations/MessageStatus.md)\
+`Promise`\<[`MessageStatus`](../enumerations/MessageStatus.md)\>
 
 Status of the message.
 
 #### Source
 
-src/cross-chain-messenger.ts:663
+src/cross-chain-messenger.ts:634
 
 ***
 
 ### getMessagesByTransaction()
 
- **getMessagesByTransaction**(`transaction`, `opts`): `Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)[]\
+> **getMessagesByTransaction**(`transaction`, `opts`): `Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)[]\>
 
 Retrieves all cross chain messages sent within a given transaction.
 
@@ -1254,19 +993,19 @@ exist on one chain. If the hash exists on both chains, will throw an error.
 
 #### Returns
 
-`Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)[]\
+`Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)[]\>
 
 All cross chain messages sent within the transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:272
+src/cross-chain-messenger.ts:244
 
 ***
 
 ### getProvenWithdrawal()
 
- **getProvenWithdrawal**(`withdrawalHash`): `Promise`\<[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal.md)\
+> **getProvenWithdrawal**(`withdrawalHash`): `Promise`\<[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal.md)\>
 
 Queries the L1CrossDomainMessenger contract's `provenWithdrawals` mapping
 for a ProvenWithdrawal that matches the passed withdrawalHash
@@ -1277,19 +1016,19 @@ for a ProvenWithdrawal that matches the passed withdrawalHash
 
 #### Returns
 
-`Promise`\<[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal.md)\
+`Promise`\<[`ProvenWithdrawal`](../interfaces/ProvenWithdrawal.md)\>
 
 A ProvenWithdrawal object
 
 #### Source
 
-src/cross-chain-messenger.ts:1099
+src/cross-chain-messenger.ts:957
 
 ***
 
 ### getWithdrawMessageProof()
 
- **getWithdrawMessageProof**(`message`): `Promise`\<[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof.md)\
+> **getWithdrawMessageProof**(`message`): `Promise`\<[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof.md)\>
 
 Generates the proof required to finalize an L2 to L1 message.
 
@@ -1301,19 +1040,19 @@ Message to generate a proof for.
 
 #### Returns
 
-`Promise`\<[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof.md)\
+`Promise`\<[`WithdrawMessageProof`](../interfaces/WithdrawMessageProof.md)\>
 
 Proof that can be used to finalize the message.
 
 #### Source
 
-src/cross-chain-messenger.ts:1177
+src/cross-chain-messenger.ts:1042
 
 ***
 
 ### getWithdrawalsByAddress()
 
- **getWithdrawalsByAddress**(`address`, `opts`): `Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\
+> **getWithdrawalsByAddress**(`address`, `opts`): `Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 Gets all withdrawals for a given address.
 
@@ -1339,19 +1078,19 @@ latest known block ("latest").
 
 #### Returns
 
-`Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\
+`Promise`\<[`TokenBridgeMessage`](../interfaces/TokenBridgeMessage.md)[]\>
 
 All withdrawal token bridge messages sent by the given address.
 
 #### Source
 
-src/cross-chain-messenger.ts:487
+src/cross-chain-messenger.ts:458
 
 ***
 
 ### proveAndRelayMessage()
 
- **proveAndRelayMessage**(`message`, `opts`?): `Promise`\<`TransactionResponse`\
+> **proveAndRelayMessage**(`message`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Prove and relay a cross chain message that was sent from L2 to L1. Only applicable for L2 to L1
 messages.
@@ -1362,35 +1101,25 @@ messages.
 
 Message to finalize.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the finalization transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1307
+src/cross-chain-messenger.ts:1163
 
 ***
 
 ### sendMessage()
 
- **sendMessage**(`message`, `opts`?): `Promise`\<`TransactionResponse`\
+> **sendMessage**(`message`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Sends a given cross chain message. Where the message is sent depends on the direction attached
 to the message itself.
@@ -1401,37 +1130,25 @@ to the message itself.
 
 Cross chain message to send.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the message sending transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1281
+src/cross-chain-messenger.ts:1143
 
 ***
 
 ### toCrossChainMessage()
 
- **toCrossChainMessage**(`message`, `opts`?): `Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)\
+> **toCrossChainMessage**(`message`, `opts`?): `Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)\>
 
 Resolves a MessageLike into a CrossChainMessage object.
 Unlike other coercion functions, this function is stateful and requires making additional
@@ -1451,19 +1168,19 @@ MessageLike to resolve into a CrossChainMessage.
 
 #### Returns
 
-`Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)\
+`Promise`\<[`CrossChainMessage`](../interfaces/CrossChainMessage.md)\>
 
 Message coerced into a CrossChainMessage.
 
 #### Source
 
-src/cross-chain-messenger.ts:520
+src/cross-chain-messenger.ts:491
 
 ***
 
 ### toLowLevelMessage()
 
- **toLowLevelMessage**(`message`, `opts`?): `Promise`\<[`LowLevelMessage`](../type-aliases/LowLevelMessage.md)\
+> **toLowLevelMessage**(`message`, `opts`?): `Promise`\<[`LowLevelMessage`](../type-aliases/LowLevelMessage.md)\>
 
 Transforms a CrossChainMessenger message into its low-level representation inside the
 L2ToL1MessagePasser contract on L2.
@@ -1478,23 +1195,21 @@ Message to transform.
 
 • **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
 
-• **opts.overrides?**: `PayableOverrides`
-
 #### Returns
 
-`Promise`\<[`LowLevelMessage`](../type-aliases/LowLevelMessage.md)\
+`Promise`\<[`LowLevelMessage`](../type-aliases/LowLevelMessage.md)\>
 
 Transformed message.
 
 #### Source
 
-src/cross-chain-messenger.ts:354
+src/cross-chain-messenger.ts:326
 
 ***
 
 ### waitBatchFinalize()
 
- **waitBatchFinalize**(`transactionHash`): `Promise`\<`void`\
+> **waitBatchFinalize**(`transactionHash`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -1502,17 +1217,17 @@ src/cross-chain-messenger.ts:354
 
 #### Returns
 
-`Promise`\<`void`\
+`Promise`\<`void`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:629
+src/cross-chain-messenger.ts:600
 
 ***
 
 ### waitForMessageReceipt()
 
- **waitForMessageReceipt**(`message`, `opts`): `Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\
+> **waitForMessageReceipt**(`message`, `opts`): `Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\>
 
 Waits for a message to be executed and returns the receipt of the transaction that executed
 the given message.
@@ -1541,20 +1256,20 @@ Milliseconds to wait before timing out.
 
 #### Returns
 
-`Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\
+`Promise`\<[`MessageReceipt`](../interfaces/MessageReceipt.md)\>
 
 CrossChainMessage receipt including receipt of the transaction that relayed the
 given message.
 
 #### Source
 
-src/cross-chain-messenger.ts:866
+src/cross-chain-messenger.ts:802
 
 ***
 
 ### waitForMessageStatus()
 
- **waitForMessageStatus**(`message`, `status`, `opts`): `Promise`\<`void`\
+> **waitForMessageStatus**(`message`, `status`, `opts`): `Promise`\<`void`\>
 
 Waits until the status of a given message changes to the expected status. Note that if the
 status of the given message changes to a status that implies the expected status, this will
@@ -1587,17 +1302,17 @@ Milliseconds to wait before timing out.
 
 #### Returns
 
-`Promise`\<`void`\
+`Promise`\<`void`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:904
+src/cross-chain-messenger.ts:840
 
 ***
 
 ### waitRollupSuccess()
 
- **waitRollupSuccess**(`transactionHash`): `Promise`\<`void`\
+> **waitRollupSuccess**(`transactionHash`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -1605,17 +1320,17 @@ src/cross-chain-messenger.ts:904
 
 #### Returns
 
-`Promise`\<`void`\
+`Promise`\<`void`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:581
+src/cross-chain-messenger.ts:552
 
 ***
 
 ### waitSyncSuccess()
 
- **waitSyncSuccess**(`transactionHash`): `Promise`\<`void`\
+> **waitSyncSuccess**(`transactionHash`): `Promise`\<`void`\>
 
 #### Parameters
 
@@ -1623,17 +1338,17 @@ src/cross-chain-messenger.ts:581
 
 #### Returns
 
-`Promise`\<`void`\
+`Promise`\<`void`\>
 
 #### Source
 
-src/cross-chain-messenger.ts:605
+src/cross-chain-messenger.ts:576
 
 ***
 
 ### withdrawERC20()
 
- **withdrawERC20**(`l1Token`, `l2Token`, `amount`, `opts`?): `Promise`\<`TransactionResponse`\
+> **withdrawERC20**(`l1Token`, `l2Token`, `amount`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Withdraws some ERC20 tokens back to the L1 chain.
 
@@ -1651,37 +1366,25 @@ Address of the L2 token.
 
 Amount to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the withdraw transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1472
+src/cross-chain-messenger.ts:1282
 
 ***
 
 ### withdrawETH()
 
- **withdrawETH**(`amount`, `opts`?): `Promise`\<`TransactionResponse`\
+> **withdrawETH**(`amount`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Withdraws some ETH back to the L1 chain.
 
@@ -1691,28 +1394,16 @@ Withdraws some ETH back to the L1 chain.
 
 Amount of ETH to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
-• **opts.signer?**: `Signer`
-
-Optional signer to use to send the transaction.
-
 #### Returns
 
-`Promise`\<`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the withdraw transaction.
 
 #### Source
 
-src/cross-chain-messenger.ts:1360
+src/cross-chain-messenger.ts:1198

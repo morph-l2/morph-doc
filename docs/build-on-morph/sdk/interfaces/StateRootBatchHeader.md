@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / StateRootBatchHeader
+[@morph-l2/sdk](../globals.md) / StateRootBatchHeader
 
 # Interface: StateRootBatchHeader
 
@@ -16,7 +16,7 @@ Header for a state root batch.
 
 #### Source
 
-src/interfaces/types.ts:321
+src/interfaces/types.ts:326
 
 ***
 
@@ -26,7 +26,7 @@ src/interfaces/types.ts:321
 
 #### Source
 
-src/interfaces/types.ts:322
+src/interfaces/types.ts:327
 
 ***
 
@@ -36,7 +36,7 @@ src/interfaces/types.ts:322
 
 #### Source
 
-src/interfaces/types.ts:323
+src/interfaces/types.ts:328
 
 ***
 
@@ -46,7 +46,7 @@ src/interfaces/types.ts:323
 
 #### Source
 
-src/interfaces/types.ts:325
+src/interfaces/types.ts:330
 
 ***
 
@@ -56,4 +56,4 @@ src/interfaces/types.ts:325
 
 #### Source
 
-src/interfaces/types.ts:324
+src/interfaces/types.ts:329

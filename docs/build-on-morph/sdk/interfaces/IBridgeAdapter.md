@@ -1,19 +1,19 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / IBridgeAdapter
+[@morph-l2/sdk](../globals.md) / IBridgeAdapter
 
 # Interface: IBridgeAdapter
 
-Represents an adapter for an L1L2 token bridge. Each custom bridge currently needs its own
+Represents an adapter for an L1 - L2 token bridge. Each custom bridge currently needs its own
 adapter because the bridge interface is not standardized. This may change in the future.
 
 ## Properties
 
 ### estimateGas
 
- **estimateGas**: `object`
+> **estimateGas**: `object`
 
 Object that holds the functions that estimates the gas required for a given transaction.
 Follows the pattern used by ethers.js.
@@ -36,17 +36,13 @@ The L2 token address.
 
 Amount of the token to approve.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
 ##### Returns
 
-`Promise`\`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 Gas estimate for the transaction.
 
@@ -68,25 +64,13 @@ The L2 token address.
 
 Amount of the token to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
 ##### Returns
 
-`Promise`\`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 Gas estimate for the transaction.
 
@@ -108,69 +92,61 @@ The L2 token address.
 
 Amount of the token to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
 ##### Returns
 
-`Promise`\`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 Gas estimate for the transaction.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:255
+src/interfaces/bridge-adapter.ts:221
 
 ***
 
 ### l1Bridge
 
- **l1Bridge**: `Contract`
+> **l1Bridge**: `Contract`
 
 L1 bridge contract.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:37
+src/interfaces/bridge-adapter.ts:38
 
 ***
 
 ### l2Bridge
 
- **l2Bridge**: `Contract`
+> **l2Bridge**: `Contract`
 
 L2 bridge contract.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:42
+src/interfaces/bridge-adapter.ts:43
 
 ***
 
 ### messenger
 
- **messenger**: [`CrossChainMessenger`](../classes/CrossChainMessenger.md)
+> **messenger**: [`CrossChainMessenger`](../classes/CrossChainMessenger.md)
 
 Provider used to make queries related to cross-chain interactions.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:32
+src/interfaces/bridge-adapter.ts:33
 
 ***
 
 ### populateTransaction
 
- **populateTransaction**: `object`
+> **populateTransaction**: `object`
 
 Object that holds the functions that generate transactions to be signed by the user.
 Follows the pattern used by ethers.js.
@@ -193,17 +169,13 @@ The L2 token address.
 
 Amount of the token to approve.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `CallOverrides`
-
-Optional transaction overrides.
-
 ##### Returns
 
-`Promise`\`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 Transaction that can be signed and executed to deposit the tokens.
 
@@ -225,27 +197,13 @@ The L2 token address.
 
 Amount of the token to deposit.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `PayableOverrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
 ##### Returns
 
-`Promise`\`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 Transaction that can be signed and executed to deposit the tokens.
 
@@ -267,33 +225,25 @@ The L2 token address.
 
 Amount of the token to withdraw.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
 ##### Returns
 
-`Promise`\`TransactionRequest`\
+`Promise`\<`TransactionRequest`\>
 
 Transaction that can be signed and executed to withdraw the tokens.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:185
+src/interfaces/bridge-adapter.ts:167
 
 ## Methods
 
 ### approval()
 
- **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\`BigNumber`\
+> **approval**(`l1Token`, `l2Token`, `opts`?): `Promise`\<`BigNumber`\>
 
 Queries the account's approval amount for a given L1 token.
 
@@ -307,29 +257,25 @@ The L1 token address.
 
 The L2 token address.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.signer?**: `Signer`
+Additional options.
 
 #### Returns
 
-`Promise`\`BigNumber`\
+`Promise`\<`BigNumber`\>
 
 Amount of tokens approved for deposits from the account.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:102
+src/interfaces/bridge-adapter.ts:103
 
 ***
 
 ### approve()
 
- **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\`TransactionResponse`\
+> **approve**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Approves a deposit into the L2 chain.
 
@@ -351,29 +297,25 @@ Amount of the token to approve.
 
 Signer used to sign and send the transaction.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
 #### Returns
 
-`Promise`\`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the approval transaction.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:123
+src/interfaces/bridge-adapter.ts:119
 
 ***
 
 ### deposit()
 
- **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\`TransactionResponse`\
+> **deposit**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Deposits some tokens into the L2 chain.
 
@@ -395,37 +337,25 @@ Amount of the token to deposit.
 
 Signer used to sign and send the transaction.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-Optional gas limit to use for the transaction on L2.
-
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L2. Defaults to sender.
-
 #### Returns
 
-`Promise`\`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the deposit transaction.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:146
+src/interfaces/bridge-adapter.ts:137
 
 ***
 
 ### getDepositsByAddress()
 
- **getDepositsByAddress**(`address`, `opts`?): `Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
+> **getDepositsByAddress**(`address`, `opts`?): `Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
 
 Gets all deposits for a given address.
 
@@ -451,19 +381,19 @@ latest known block ("latest").
 
 #### Returns
 
-`Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
+`Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
 
 All deposit token bridge messages sent by the given address.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:55
+src/interfaces/bridge-adapter.ts:56
 
 ***
 
 ### getWithdrawalsByAddress()
 
- **getWithdrawalsByAddress**(`address`, `opts`?): `Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
+> **getWithdrawalsByAddress**(`address`, `opts`?): `Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
 
 Gets all withdrawals for a given address.
 
@@ -489,19 +419,19 @@ latest known block ("latest").
 
 #### Returns
 
-`Promise`\[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\
+`Promise`\<[`TokenBridgeMessage`](TokenBridgeMessage.md)[]\>
 
 All withdrawal token bridge messages sent by the given address.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:74
+src/interfaces/bridge-adapter.ts:75
 
 ***
 
 ### supportsTokenPair()
 
- **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`\`boolean`\
+> **supportsTokenPair**(`l1Token`, `l2Token`): `Promise`\<`boolean`\>
 
 Checks whether the given token pair is supported by the bridge.
 
@@ -517,19 +447,19 @@ The L2 token address.
 
 #### Returns
 
-`Promise`\`boolean`\
+`Promise`\<`boolean`\>
 
 Whether the given token pair is supported by the bridge.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:89
+src/interfaces/bridge-adapter.ts:90
 
 ***
 
 ### withdraw()
 
- **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\`TransactionResponse`\
+> **withdraw**(`l1Token`, `l2Token`, `amount`, `signer`, `opts`?): `Promise`\<`TransactionResponse`\>
 
 Withdraws some tokens back to the L1 chain.
 
@@ -551,24 +481,16 @@ Amount of the token to withdraw.
 
 Signer used to sign and send the transaction.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](IActionOptions.md)
 
 Additional options.
 
-• **opts.overrides?**: `Overrides`
-
-Optional transaction overrides.
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
-
-Optional address to receive the funds on L1. Defaults to sender.
-
 #### Returns
 
-`Promise`\`TransactionResponse`\
+`Promise`\<`TransactionResponse`\>
 
 Transaction response for the withdraw transaction.
 
 #### Source
 
-src/interfaces/bridge-adapter.ts:170
+src/interfaces/bridge-adapter.ts:155

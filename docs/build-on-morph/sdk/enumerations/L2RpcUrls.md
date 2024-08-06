@@ -1,20 +1,20 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / L2RpcUrls
+[@morph-l2/sdk](../globals.md) / L2RpcUrls
 
 # Enumeration: L2RpcUrls
 
 ## Enumeration Members
 
-### HOLESKY
+### MORPH\_HOLESKY
 
-> **HOLESKY**: `"https://rpc-holesky.morphl2.io"`
+> **MORPH\_HOLESKY**: `"https://rpc-holesky.morphl2.io"`
 
 #### Source
 
-src/interfaces/types.ts:49
+src/interfaces/types.ts:47
 
 ***
 
@@ -24,14 +24,14 @@ src/interfaces/types.ts:49
 
 #### Source
 
-src/interfaces/types.ts:46
+src/interfaces/types.ts:45
 
 ***
 
-### SEPOLIA
+### MORPH\_TESTNET
 
-> **SEPOLIA**: `"https://rpc-testnet.morphl2.io"`
+> **MORPH\_TESTNET**: `"https://rpc-testnet.morphl2.io"`
 
 #### Source
 
-src/interfaces/types.ts:48
+src/interfaces/types.ts:46

@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / CrossChainMessageRequest
+[@morph-l2/sdk](../globals.md) / CrossChainMessageRequest
 
 # Interface: CrossChainMessageRequest
 
@@ -16,7 +16,7 @@ Partial message that needs to be signed and executed by a specific signer.
 
 #### Source
 
-src/interfaces/types.ts:226
+src/interfaces/types.ts:231
 
 ***
 
@@ -26,7 +26,7 @@ src/interfaces/types.ts:226
 
 #### Source
 
-src/interfaces/types.ts:228
+src/interfaces/types.ts:233
 
 ***
 
@@ -36,4 +36,4 @@ src/interfaces/types.ts:228
 
 #### Source
 
-src/interfaces/types.ts:227
+src/interfaces/types.ts:232

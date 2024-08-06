@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / NumberLike
+[@morph-l2/sdk](../globals.md) / NumberLike
 
 # Type alias: NumberLike
 
@@ -12,4 +12,4 @@ Stuff that can be coerced into a number.
 
 ## Source
 
-src/interfaces/types.ts:391
+src/interfaces/types.ts:396

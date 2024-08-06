@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / DEPOSIT\_CONFIRMATION\_BLOCKS
+[@morph-l2/sdk](../globals.md) / DEPOSIT\_CONFIRMATION\_BLOCKS
 
 # Variable: DEPOSIT\_CONFIRMATION\_BLOCKS
 

@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / asL2Provider
+[@morph-l2/sdk](../globals.md) / asL2Provider
 
 # Function: asL2Provider()
 
@@ -30,4 +30,4 @@ Provider wrapped as an L2 provider.
 
 ## Source
 
-src/l2-provider.ts:169
+src/l2-provider.ts:171

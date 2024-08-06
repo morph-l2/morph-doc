@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / MessageReceipt
+[@morph-l2/sdk](../globals.md) / MessageReceipt
 
 # Interface: MessageReceipt
 
@@ -16,7 +16,7 @@ CrossDomainMessage receipt.
 
 #### Source
 
-src/interfaces/types.ts:302
+src/interfaces/types.ts:307
 
 ***
 
@@ -26,4 +26,4 @@ src/interfaces/types.ts:302
 
 #### Source
 
-src/interfaces/types.ts:303
+src/interfaces/types.ts:308

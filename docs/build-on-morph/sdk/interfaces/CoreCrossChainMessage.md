@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / CoreCrossChainMessage
+[@morph-l2/sdk](../globals.md) / CoreCrossChainMessage
 
 # Interface: CoreCrossChainMessage
 
@@ -20,7 +20,7 @@ Core components of a cross chain message.
 
 #### Source
 
-src/interfaces/types.ts:237
+src/interfaces/types.ts:242
 
 ***
 
@@ -30,7 +30,7 @@ src/interfaces/types.ts:237
 
 #### Source
 
-src/interfaces/types.ts:238
+src/interfaces/types.ts:243
 
 ***
 
@@ -40,7 +40,7 @@ src/interfaces/types.ts:238
 
 #### Source
 
-src/interfaces/types.ts:240
+src/interfaces/types.ts:245
 
 ***
 
@@ -50,7 +50,7 @@ src/interfaces/types.ts:240
 
 #### Source
 
-src/interfaces/types.ts:235
+src/interfaces/types.ts:240
 
 ***
 
@@ -60,7 +60,7 @@ src/interfaces/types.ts:235
 
 #### Source
 
-src/interfaces/types.ts:236
+src/interfaces/types.ts:241
 
 ***
 
@@ -70,4 +70,4 @@ src/interfaces/types.ts:236
 
 #### Source
 
-src/interfaces/types.ts:239
+src/interfaces/types.ts:244

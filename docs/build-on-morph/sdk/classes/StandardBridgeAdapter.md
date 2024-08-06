@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / StandardBridgeAdapter
+[@morph-l2/sdk](../globals.md) / StandardBridgeAdapter
 
 # Class: StandardBridgeAdapter
 
@@ -48,7 +48,7 @@ Provider used to make queries related to cross-chain interactions.
 
 #### Source
 
-src/adapters/standard-bridge.ts:51
+src/adapters/standard-bridge.ts:52
 
 ## Properties
 
@@ -71,9 +71,7 @@ Follows the pattern used by ethers.js.
 
 • **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
 
-• **opts?**
-
-• **opts.overrides?**: `CallOverrides`
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 ##### Returns
 
@@ -91,13 +89,7 @@ Follows the pattern used by ethers.js.
 
 • **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
 
-• **opts?**
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-• **opts.overrides?**: `CallOverrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 ##### Returns
 
@@ -115,11 +107,7 @@ Follows the pattern used by ethers.js.
 
 • **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
 
-• **opts?**
-
-• **opts.overrides?**: `CallOverrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 ##### Returns
 
@@ -131,7 +119,7 @@ Follows the pattern used by ethers.js.
 
 #### Source
 
-src/adapters/standard-bridge.ts:447
+src/adapters/standard-bridge.ts:405
 
 ***
 
@@ -147,7 +135,7 @@ L1 bridge contract.
 
 #### Source
 
-src/adapters/standard-bridge.ts:40
+src/adapters/standard-bridge.ts:41
 
 ***
 
@@ -163,7 +151,7 @@ L2 bridge contract.
 
 #### Source
 
-src/adapters/standard-bridge.ts:41
+src/adapters/standard-bridge.ts:42
 
 ***
 
@@ -179,7 +167,7 @@ Provider used to make queries related to cross-chain interactions.
 
 #### Source
 
-src/adapters/standard-bridge.ts:39
+src/adapters/standard-bridge.ts:40
 
 ***
 
@@ -202,11 +190,7 @@ Follows the pattern used by ethers.js.
 
 • **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
 
-• **opts?**
-
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 ##### Returns
 
@@ -224,13 +208,7 @@ Follows the pattern used by ethers.js.
 
 • **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
 
-• **opts?**
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 ##### Returns
 
@@ -248,11 +226,7 @@ Follows the pattern used by ethers.js.
 
 • **amount**: [`NumberLike`](../type-aliases/NumberLike.md)
 
-• **opts?**
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 ##### Returns
 
@@ -264,7 +238,7 @@ Follows the pattern used by ethers.js.
 
 #### Source
 
-src/adapters/standard-bridge.ts:321
+src/adapters/standard-bridge.ts:286
 
 ## Methods
 
@@ -284,13 +258,9 @@ The L1 token address.
 
 The L2 token address.
 
-• **opts**
+• **opts**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.signer**: `Signer`
+Additional options.
 
 #### Returns
 
@@ -304,7 +274,7 @@ Amount of tokens approved for deposits from the account.
 
 #### Source
 
-src/adapters/standard-bridge.ts:231
+src/adapters/standard-bridge.ts:209
 
 ***
 
@@ -332,13 +302,9 @@ Amount of the token to approve.
 
 Signer used to sign and send the transaction.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.direction?**: [`MessageDirection`](../enumerations/MessageDirection.md)
-
-• **opts.overrides?**: `Overrides`
 
 #### Returns
 
@@ -352,7 +318,7 @@ Transaction response for the approval transaction.
 
 #### Source
 
-src/adapters/standard-bridge.ts:275
+src/adapters/standard-bridge.ts:250
 
 ***
 
@@ -380,15 +346,9 @@ Amount of the token to deposit.
 
 Signer used to sign and send the transaction.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.l2GasLimit?**: [`NumberLike`](../type-aliases/NumberLike.md)
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
 
 #### Returns
 
@@ -402,7 +362,7 @@ Transaction response for the deposit transaction.
 
 #### Source
 
-src/adapters/standard-bridge.ts:290
+src/adapters/standard-bridge.ts:262
 
 ***
 
@@ -438,7 +398,7 @@ All deposit token bridge messages sent by the given address.
 
 #### Source
 
-src/adapters/standard-bridge.ts:73
+src/adapters/standard-bridge.ts:75
 
 ***
 
@@ -474,7 +434,7 @@ All withdrawal token bridge messages sent by the given address.
 
 #### Source
 
-src/adapters/standard-bridge.ts:120
+src/adapters/standard-bridge.ts:122
 
 ***
 
@@ -506,7 +466,7 @@ Whether the given token pair is supported by the bridge.
 
 #### Source
 
-src/adapters/standard-bridge.ts:163
+src/adapters/standard-bridge.ts:165
 
 ***
 
@@ -534,13 +494,9 @@ Amount of the token to withdraw.
 
 Signer used to sign and send the transaction.
 
-• **opts?**
+• **opts?**: [`IActionOptions`](../interfaces/IActionOptions.md)
 
 Additional options.
-
-• **opts.overrides?**: `Overrides`
-
-• **opts.recipient?**: [`AddressLike`](../type-aliases/AddressLike.md)
 
 #### Returns
 
@@ -554,4 +510,4 @@ Transaction response for the withdraw transaction.
 
 #### Source
 
-src/adapters/standard-bridge.ts:306
+src/adapters/standard-bridge.ts:274

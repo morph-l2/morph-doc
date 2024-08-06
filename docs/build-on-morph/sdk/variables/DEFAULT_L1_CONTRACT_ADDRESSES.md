@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / DEFAULT\_L1\_CONTRACT\_ADDRESSES
+[@morph-l2/sdk](../globals.md) / DEFAULT\_L1\_CONTRACT\_ADDRESSES
 
 # Variable: DEFAULT\_L1\_CONTRACT\_ADDRESSES
 
@@ -12,4 +12,4 @@ Full list of default L1 contract addresses.
 
 ## Source
 
-src/utils/chain-constants.ts:69
+src/utils/chain-constants.ts:61

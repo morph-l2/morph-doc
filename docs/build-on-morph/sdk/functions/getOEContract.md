@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / getOEContract
+[@morph-l2/sdk](../globals.md) / getOEContract
 
 # Function: getOEContract()
 
@@ -15,7 +15,7 @@ function will throw an error.
 
 ## Parameters
 
-• **contractName**: keyof OEL2Contracts \| keyof OEL1Contracts
+• **contractName**: `"L1MessageQueueWithGasPriceOracle"` \| `"L1GatewayRouter"` \| `"L2GatewayRouter"` \| `"MorphStandardERC20"` \| `"L2WETH"` \| `"L1WETHGateway"` \| `"L2WETHGateway"` \| `"L2ToL1MessagePasser"` \| `"Sequencer"` \| `"Gov"` \| `"L2ETHGateway"` \| `"L2CrossDomainMessenger"` \| `"L2StandardERC20Gateway"` \| `"L2ERC721Gateway"` \| `"L2TxFeeVault"` \| `"L2ERC1155Gateway"` \| `"MorphStandardERC20Factory"` \| `"GasPriceOracle"` \| `"WrappedEther"` \| `"MorphToken"` \| `"L1CrossDomainMessenger"` \| `"Staking"` \| `"Rollup"` \| `"L1ETHGateway"` \| `"L1StandardERC20Gateway"` \| `"L1ERC721Gateway"` \| `"L1ERC1155Gateway"` \| `"EnforcedTxGateway"` \| `"WETH"`
 
 Name of the contract to connect to.
 
@@ -43,4 +43,4 @@ An ethers.Contract object connected to the appropriate address and interface.
 
 ## Source
 
-src/utils/contracts.ts:43
+src/utils/contracts.ts:42

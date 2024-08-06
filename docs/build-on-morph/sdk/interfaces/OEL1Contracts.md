@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / OEL1Contracts
+[@morph-l2/sdk](../globals.md) / OEL1Contracts
 
 # Interface: OEL1Contracts
 
@@ -16,7 +16,7 @@ L1 contract references.
 
 #### Source
 
-src/interfaces/types.ts:66
+src/interfaces/types.ts:64
 
 ***
 
@@ -26,7 +26,7 @@ src/interfaces/types.ts:66
 
 #### Source
 
-src/interfaces/types.ts:56
+src/interfaces/types.ts:54
 
 ***
 
@@ -36,7 +36,7 @@ src/interfaces/types.ts:56
 
 #### Source
 
-src/interfaces/types.ts:65
+src/interfaces/types.ts:63
 
 ***
 
@@ -46,7 +46,7 @@ src/interfaces/types.ts:65
 
 #### Source
 
-src/interfaces/types.ts:64
+src/interfaces/types.ts:62
 
 ***
 
@@ -56,7 +56,7 @@ src/interfaces/types.ts:64
 
 #### Source
 
-src/interfaces/types.ts:62
+src/interfaces/types.ts:60
 
 ***
 
@@ -66,7 +66,7 @@ src/interfaces/types.ts:62
 
 #### Source
 
-src/interfaces/types.ts:61
+src/interfaces/types.ts:59
 
 ***
 
@@ -76,17 +76,7 @@ src/interfaces/types.ts:61
 
 #### Source
 
-src/interfaces/types.ts:57
-
-***
-
-### L1Sequencer
-
-> **L1Sequencer**: `Contract`
-
-#### Source
-
-src/interfaces/types.ts:59
+src/interfaces/types.ts:55
 
 ***
 
@@ -96,13 +86,23 @@ src/interfaces/types.ts:59
 
 #### Source
 
-src/interfaces/types.ts:63
+src/interfaces/types.ts:61
 
 ***
 
 ### L1WETHGateway
 
 > **L1WETHGateway**: `Contract`
+
+#### Source
+
+src/interfaces/types.ts:66
+
+***
+
+### MorphToken?
+
+> `optional` **MorphToken**: `Contract`
 
 #### Source
 
@@ -116,7 +116,7 @@ src/interfaces/types.ts:68
 
 #### Source
 
-src/interfaces/types.ts:60
+src/interfaces/types.ts:58
 
 ***
 
@@ -126,7 +126,7 @@ src/interfaces/types.ts:60
 
 #### Source
 
-src/interfaces/types.ts:58
+src/interfaces/types.ts:56
 
 ***
 
@@ -136,4 +136,4 @@ src/interfaces/types.ts:58
 
 #### Source
 
-src/interfaces/types.ts:67
+src/interfaces/types.ts:65
