@@ -132,7 +132,7 @@ Tokens can be bridged securely and permissionlessly through Gateway contracts de
 
 :::tip Use the SDK
 
-You can also try our SDK to interact with the bridge system by referring to our [SDK Doc](../sdk/1-globals.md)
+You can also try our SDK to interact with the bridge system by referring to our [SDK Doc](../sdk/globals.md)
 
 :::
 ## Add your Token to the Official Bridge
