@@ -39,7 +39,7 @@ Want to skip most of the reading and get started with exploring more right away?
 
 ### Explore and Connect
 
-We believe in building a vibrant community around Morph. Join us on [Discord](https://discord.com/invite/5SmG4yhzVZ) to engage with other users and follow us on [Twitter](https://twitter.com/Morphl2) to stay updated with our latest news and developments.
+We believe in building a vibrant community around Morph. Join us on [Discord](https://discord.com/invite/L2Morph) to engage with other users and follow us on [Twitter](https://twitter.com/Morphl2) to stay updated with our latest news and developments.
 
 
 

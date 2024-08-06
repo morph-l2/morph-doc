@@ -1,8 +1,7 @@
 ---
-title: Intro to SDK
+title: Use the SDK to interact with Morph
 lang: en-US
 keywords: [morph,ethereum,rollup]
-description: Explain how rollup process works in Morph
 ---
 
 ***

@@ -35,4 +35,4 @@ Building on morph is just like building on Ethereum. If you’re experienced in 
 We're actively enhancing our network with more integrations and support infrastructure, progressing towards our Mainnet release.
 
 
-Join our growing developer community. You can find us on [Discord](https://discord.com/invite/5SmG4yhzVZ), join our discussion forum, or follow our progress on [Twitter](https://twitter.com/Morphl2).
+Join our growing developer community. You can find us on [Discord](https://discord.com/invite/L2Morph), join our discussion forum, or follow our progress on [Twitter](https://twitter.com/Morphl2).
