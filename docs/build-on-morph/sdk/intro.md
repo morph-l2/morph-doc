@@ -1,4 +1,4 @@
-[**@morph-l2/sdk**](README.md) • **Docs**
+[**@morph-l2/sdk**](globals.md) • **Docs**
 
 ***
 
