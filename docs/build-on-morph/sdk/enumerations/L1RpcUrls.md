@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / L1RpcUrls
+[@morph-l2/sdk](../globals.md) / L1RpcUrls
 
 # Enumeration: L1RpcUrls
 
@@ -14,7 +14,7 @@
 
 #### Source
 
-src/interfaces/types.ts:42
+src/interfaces/types.ts:41
 
 ***
 
@@ -34,4 +34,4 @@ src/interfaces/types.ts:39
 
 #### Source
 
-src/interfaces/types.ts:41
+src/interfaces/types.ts:40

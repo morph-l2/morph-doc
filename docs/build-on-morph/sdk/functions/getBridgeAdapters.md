@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / getBridgeAdapters
+[@morph-l2/sdk](../globals.md) / getBridgeAdapters
 
 # Function: getBridgeAdapters()
 
@@ -38,4 +38,4 @@ An object containing all bridge adapters
 
 ## Source
 
-src/utils/contracts.ts:143
+src/utils/contracts.ts:142

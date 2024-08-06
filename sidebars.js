@@ -196,6 +196,10 @@ module.exports = {
         },
         {
           type: 'doc',
+          id:'build-on-morph/sdk/globals'
+        },
+        {
+          type: 'doc',
           id:'build-on-morph/developer-resources/create-a-safe-multi-signature-wallet'
         },
         {

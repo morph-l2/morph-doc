@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / TransactionLike
+[@morph-l2/sdk](../globals.md) / TransactionLike
 
 # Type alias: TransactionLike
 
@@ -12,4 +12,4 @@ Stuff that can be coerced into a transaction.
 
 ## Source
 
-src/interfaces/types.ts:349
+src/interfaces/types.ts:354

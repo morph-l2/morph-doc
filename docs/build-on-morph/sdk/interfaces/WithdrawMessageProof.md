@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / WithdrawMessageProof
+[@morph-l2/sdk](../globals.md) / WithdrawMessageProof
 
 # Interface: WithdrawMessageProof
 
@@ -14,7 +14,7 @@
 
 #### Source
 
-src/cross-chain-messenger.ts:65
+src/cross-chain-messenger.ts:61
 
 ***
 
@@ -24,7 +24,7 @@ src/cross-chain-messenger.ts:65
 
 #### Source
 
-src/cross-chain-messenger.ts:68
+src/cross-chain-messenger.ts:64
 
 ***
 
@@ -34,7 +34,7 @@ src/cross-chain-messenger.ts:68
 
 #### Source
 
-src/cross-chain-messenger.ts:66
+src/cross-chain-messenger.ts:62
 
 ***
 
@@ -44,4 +44,4 @@ src/cross-chain-messenger.ts:66
 
 #### Source
 
-src/cross-chain-messenger.ts:67
+src/cross-chain-messenger.ts:63

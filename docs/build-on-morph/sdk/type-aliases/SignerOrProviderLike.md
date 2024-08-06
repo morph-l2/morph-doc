@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / SignerOrProviderLike
+[@morph-l2/sdk](../globals.md) / SignerOrProviderLike
 
 # Type alias: SignerOrProviderLike
 
@@ -12,4 +12,4 @@ Stuff that can be coerced into a signer or provider.
 
 ## Source
 
-src/interfaces/types.ts:381
+src/interfaces/types.ts:386

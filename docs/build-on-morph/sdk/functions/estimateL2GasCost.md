@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / estimateL2GasCost
+[@morph-l2/sdk](../globals.md) / estimateL2GasCost
 
 # Function: estimateL2GasCost()
 
@@ -28,4 +28,4 @@ Estimated L2 gas cost.
 
 ## Source
 
-src/l2-provider.ts:117
+src/l2-provider.ts:119

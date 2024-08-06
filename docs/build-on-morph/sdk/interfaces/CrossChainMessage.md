@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / CrossChainMessage
+[@morph-l2/sdk](../globals.md) / CrossChainMessage
 
 # Interface: CrossChainMessage
 
@@ -17,37 +17,37 @@ sent from and where it's being sent to.
 
 ### blockNumber
 
- **blockNumber**: `number`
+> **blockNumber**: `number`
 
 #### Source
 
-src/interfaces/types.ts:250
+src/interfaces/types.ts:255
 
 ***
 
 ### direction
 
- **direction**: [`MessageDirection`](../enumerations/MessageDirection.md)
+> **direction**: [`MessageDirection`](../enumerations/MessageDirection.md)
 
 #### Source
 
-src/interfaces/types.ts:248
+src/interfaces/types.ts:253
 
 ***
 
 ### logIndex
 
- **logIndex**: `number`
+> **logIndex**: `number`
 
 #### Source
 
-src/interfaces/types.ts:249
+src/interfaces/types.ts:254
 
 ***
 
 ### message
 
- **message**: `string`
+> **message**: `string`
 
 #### Inherited from
 
@@ -55,13 +55,13 @@ src/interfaces/types.ts:249
 
 #### Source
 
-src/interfaces/types.ts:237
+src/interfaces/types.ts:242
 
 ***
 
 ### messageNonce
 
- **messageNonce**: `BigNumber`
+> **messageNonce**: `BigNumber`
 
 #### Inherited from
 
@@ -69,13 +69,13 @@ src/interfaces/types.ts:237
 
 #### Source
 
-src/interfaces/types.ts:238
+src/interfaces/types.ts:243
 
 ***
 
 ### minGasLimit
 
- **minGasLimit**: `BigNumber`
+> **minGasLimit**: `BigNumber`
 
 #### Inherited from
 
@@ -83,13 +83,13 @@ src/interfaces/types.ts:238
 
 #### Source
 
-src/interfaces/types.ts:240
+src/interfaces/types.ts:245
 
 ***
 
 ### sender
 
- **sender**: `string`
+> **sender**: `string`
 
 #### Inherited from
 
@@ -97,13 +97,13 @@ src/interfaces/types.ts:240
 
 #### Source
 
-src/interfaces/types.ts:235
+src/interfaces/types.ts:240
 
 ***
 
 ### target
 
- **target**: `string`
+> **target**: `string`
 
 #### Inherited from
 
@@ -111,23 +111,23 @@ src/interfaces/types.ts:235
 
 #### Source
 
-src/interfaces/types.ts:236
+src/interfaces/types.ts:241
 
 ***
 
 ### transactionHash
 
- **transactionHash**: `string`
+> **transactionHash**: `string`
 
 #### Source
 
-src/interfaces/types.ts:251
+src/interfaces/types.ts:256
 
 ***
 
 ### value
 
- **value**: `BigNumber`
+> **value**: `BigNumber`
 
 #### Inherited from
 
@@ -135,4 +135,4 @@ src/interfaces/types.ts:251
 
 #### Source
 
-src/interfaces/types.ts:239
+src/interfaces/types.ts:244

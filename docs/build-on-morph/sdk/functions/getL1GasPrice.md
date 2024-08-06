@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / getL1GasPrice
+[@morph-l2/sdk](../globals.md) / getL1GasPrice
 
 # Function: getL1GasPrice()
 
@@ -24,4 +24,4 @@ Current L1 gas price as seen on L2.
 
 ## Source
 
-src/l2-provider.ts:55
+src/l2-provider.ts:57

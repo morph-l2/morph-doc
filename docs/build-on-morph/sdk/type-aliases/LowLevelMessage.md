@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / LowLevelMessage
+[@morph-l2/sdk](../globals.md) / LowLevelMessage
 
 # Type alias: LowLevelMessage
 
@@ -31,4 +31,4 @@ as the CoreCrossChainMessage so we'll reuse the type for now.
 
 ## Source
 
-src/interfaces/types.ts:258
+src/interfaces/types.ts:263

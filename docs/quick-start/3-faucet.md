@@ -36,7 +36,7 @@ Currently, we set the limit that for each discord user, you can only request the
 
 You can obtain morph's version of USDT on Holesky through our discord faucet, here's how it works:
 
-1. Join our discord server through this [link](https://discord.gg/f3Wh6ZK6XC)
+1. Join our discord server through this [link](https://discord.com/invite/L2Morph)
 
 2. Find the *#| discord-faucet* channel
 

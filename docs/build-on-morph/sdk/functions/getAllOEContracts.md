@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / getAllOEContracts
+[@morph-l2/sdk](../globals.md) / getAllOEContracts
 
 # Function: getAllOEContracts()
 
@@ -40,4 +40,4 @@ both L1 and L2.
 
 ## Source
 
-src/utils/contracts.ts:89
+src/utils/contracts.ts:88

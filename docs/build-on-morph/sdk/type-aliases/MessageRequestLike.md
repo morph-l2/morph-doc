@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / MessageRequestLike
+[@morph-l2/sdk](../globals.md) / MessageRequestLike
 
 # Type alias: MessageRequestLike
 
@@ -12,4 +12,4 @@ Stuff that can be coerced into a CrossChainMessageRequest.
 
 ## Source
 
-src/interfaces/types.ts:362
+src/interfaces/types.ts:367

@@ -55,7 +55,7 @@ This is because of Morph's optimistic zkEVM design, you can read the details [he
 
 To do this, First you need to make sure:
 
-- TThe batch containing the withdraw transactions has passed the challenge period and is marked as finalized (meaning in the `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**)
+- The batch containing the withdraw transactions has passed the challenge period and is marked as finalized (meaning in the `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**)
 
 Once confirmed, you can call our backend services interface:
 
@@ -130,7 +130,11 @@ Tokens can be bridged securely and permissionlessly through Gateway contracts de
 
 -->
 
+:::tip Use the SDK
 
+You can also try our SDK to interact with the bridge system by referring to our [SDK Doc](../sdk/1-globals.md)
+
+:::
 ## Add your Token to the Official Bridge
 
 Currently, our official bridge only support certain pre-defined tokens to be bridged, if you want to bridge your own tokens, you need to manually add the token, and here is how to do it.

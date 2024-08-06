@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / TokenBridgeMessage
+[@morph-l2/sdk](../globals.md) / TokenBridgeMessage
 
 # Interface: TokenBridgeMessage
 
@@ -17,7 +17,7 @@ behind the deposit or withdrawal.
 
 #### Source
 
-src/interfaces/types.ts:275
+src/interfaces/types.ts:280
 
 ***
 
@@ -27,7 +27,7 @@ src/interfaces/types.ts:275
 
 #### Source
 
-src/interfaces/types.ts:278
+src/interfaces/types.ts:283
 
 ***
 
@@ -37,7 +37,7 @@ src/interfaces/types.ts:278
 
 #### Source
 
-src/interfaces/types.ts:276
+src/interfaces/types.ts:281
 
 ***
 
@@ -47,7 +47,7 @@ src/interfaces/types.ts:276
 
 #### Source
 
-src/interfaces/types.ts:270
+src/interfaces/types.ts:275
 
 ***
 
@@ -57,7 +57,7 @@ src/interfaces/types.ts:270
 
 #### Source
 
-src/interfaces/types.ts:271
+src/interfaces/types.ts:276
 
 ***
 
@@ -67,7 +67,7 @@ src/interfaces/types.ts:271
 
 #### Source
 
-src/interfaces/types.ts:273
+src/interfaces/types.ts:278
 
 ***
 
@@ -77,7 +77,7 @@ src/interfaces/types.ts:273
 
 #### Source
 
-src/interfaces/types.ts:274
+src/interfaces/types.ts:279
 
 ***
 
@@ -87,7 +87,7 @@ src/interfaces/types.ts:274
 
 #### Source
 
-src/interfaces/types.ts:277
+src/interfaces/types.ts:282
 
 ***
 
@@ -97,7 +97,7 @@ src/interfaces/types.ts:277
 
 #### Source
 
-src/interfaces/types.ts:272
+src/interfaces/types.ts:277
 
 ***
 
@@ -107,4 +107,4 @@ src/interfaces/types.ts:272
 
 #### Source
 
-src/interfaces/types.ts:279
+src/interfaces/types.ts:284

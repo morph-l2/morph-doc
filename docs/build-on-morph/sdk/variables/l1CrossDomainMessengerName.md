@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / l1CrossDomainMessengerName
+[@morph-l2/sdk](../globals.md) / l1CrossDomainMessengerName
 
 # Variable: l1CrossDomainMessengerName
 
@@ -10,4 +10,4 @@
 
 ## Source
 
-src/cross-chain-messenger.ts:71
+src/cross-chain-messenger.ts:67

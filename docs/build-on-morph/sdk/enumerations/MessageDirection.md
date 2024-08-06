@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / MessageDirection
+[@morph-l2/sdk](../globals.md) / MessageDirection
 
 # Enumeration: MessageDirection
 
@@ -16,7 +16,7 @@ Enum describing the direction of a message.
 
 #### Source
 
-src/interfaces/types.ts:218
+src/interfaces/types.ts:223
 
 ***
 
@@ -26,4 +26,4 @@ src/interfaces/types.ts:218
 
 #### Source
 
-src/interfaces/types.ts:219
+src/interfaces/types.ts:224

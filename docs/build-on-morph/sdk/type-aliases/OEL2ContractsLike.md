@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / OEL2ContractsLike
+[@morph-l2/sdk](../globals.md) / OEL2ContractsLike
 
 # Type alias: OEL2ContractsLike
 
@@ -13,4 +13,4 @@ addresses instead of actual contract objects.
 
 ## Source
 
-src/interfaces/types.ts:132
+src/interfaces/types.ts:137

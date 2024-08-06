@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / StateRoot
+[@morph-l2/sdk](../globals.md) / StateRoot
 
 # Interface: StateRoot
 
@@ -16,7 +16,7 @@ Information about a state root, including header, block number, and root iself.
 
 #### Source
 
-src/interfaces/types.ts:334
+src/interfaces/types.ts:339
 
 ***
 
@@ -26,7 +26,7 @@ src/interfaces/types.ts:334
 
 #### Source
 
-src/interfaces/types.ts:332
+src/interfaces/types.ts:337
 
 ***
 
@@ -36,4 +36,4 @@ src/interfaces/types.ts:332
 
 #### Source
 
-src/interfaces/types.ts:333
+src/interfaces/types.ts:338

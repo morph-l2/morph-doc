@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / ProviderLike
+[@morph-l2/sdk](../globals.md) / ProviderLike
 
 # Type alias: ProviderLike
 
@@ -12,4 +12,4 @@ Stuff that can be coerced into a provider.
 
 ## Source
 
-src/interfaces/types.ts:371
+src/interfaces/types.ts:376

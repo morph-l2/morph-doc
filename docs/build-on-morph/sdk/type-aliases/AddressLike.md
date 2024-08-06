@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / AddressLike
+[@morph-l2/sdk](../globals.md) / AddressLike
 
 # Type alias: AddressLike
 
@@ -12,4 +12,4 @@ Stuff that can be coerced into an address.
 
 ## Source
 
-src/interfaces/types.ts:386
+src/interfaces/types.ts:391

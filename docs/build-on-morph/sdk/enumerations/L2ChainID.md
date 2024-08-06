@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / L2ChainID
+[@morph-l2/sdk](../globals.md) / L2ChainID
 
 # Enumeration: L2ChainID
 
@@ -27,6 +27,26 @@ src/interfaces/types.ts:35
 #### Source
 
 src/interfaces/types.ts:32
+
+***
+
+### MORPH\_MAINNET
+
+> **MORPH\_MAINNET**: `0`
+
+#### Source
+
+src/interfaces/types.ts:30
+
+***
+
+### MORPH\_QANET
+
+> **MORPH\_QANET**: `53077`
+
+#### Source
+
+src/interfaces/types.ts:33
 
 ***
 

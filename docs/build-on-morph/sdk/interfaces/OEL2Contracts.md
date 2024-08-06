@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / OEL2Contracts
+[@morph-l2/sdk](../globals.md) / OEL2Contracts
 
 # Interface: OEL2Contracts
 
@@ -16,7 +16,7 @@ L2 contract references.
 
 #### Source
 
-src/interfaces/types.ts:94
+src/interfaces/types.ts:97
 
 ***
 
@@ -26,7 +26,7 @@ src/interfaces/types.ts:94
 
 #### Source
 
-src/interfaces/types.ts:83
+src/interfaces/types.ts:86
 
 ***
 
@@ -36,7 +36,7 @@ src/interfaces/types.ts:83
 
 #### Source
 
-src/interfaces/types.ts:86
+src/interfaces/types.ts:89
 
 ***
 
@@ -46,7 +46,7 @@ src/interfaces/types.ts:86
 
 #### Source
 
-src/interfaces/types.ts:91
+src/interfaces/types.ts:94
 
 ***
 
@@ -56,7 +56,7 @@ src/interfaces/types.ts:91
 
 #### Source
 
-src/interfaces/types.ts:88
+src/interfaces/types.ts:91
 
 ***
 
@@ -66,7 +66,7 @@ src/interfaces/types.ts:88
 
 #### Source
 
-src/interfaces/types.ts:85
+src/interfaces/types.ts:88
 
 ***
 
@@ -76,17 +76,7 @@ src/interfaces/types.ts:85
 
 #### Source
 
-src/interfaces/types.ts:81
-
-***
-
-### L2Sequencer
-
-> **L2Sequencer**: `Contract`
-
-#### Source
-
-src/interfaces/types.ts:82
+src/interfaces/types.ts:84
 
 ***
 
@@ -96,7 +86,7 @@ src/interfaces/types.ts:82
 
 #### Source
 
-src/interfaces/types.ts:87
+src/interfaces/types.ts:90
 
 ***
 
@@ -106,7 +96,7 @@ src/interfaces/types.ts:87
 
 #### Source
 
-src/interfaces/types.ts:80
+src/interfaces/types.ts:83
 
 ***
 
@@ -116,7 +106,7 @@ src/interfaces/types.ts:80
 
 #### Source
 
-src/interfaces/types.ts:89
+src/interfaces/types.ts:92
 
 ***
 
@@ -126,7 +116,7 @@ src/interfaces/types.ts:89
 
 #### Source
 
-src/interfaces/types.ts:95
+src/interfaces/types.ts:98
 
 ***
 
@@ -136,7 +126,7 @@ src/interfaces/types.ts:95
 
 #### Source
 
-src/interfaces/types.ts:96
+src/interfaces/types.ts:99
 
 ***
 
@@ -146,7 +136,7 @@ src/interfaces/types.ts:96
 
 #### Source
 
-src/interfaces/types.ts:92
+src/interfaces/types.ts:95
 
 ***
 
@@ -156,17 +146,27 @@ src/interfaces/types.ts:92
 
 #### Source
 
-src/interfaces/types.ts:93
+src/interfaces/types.ts:96
 
 ***
 
-### Submitter
+### MorphToken?
 
-> **Submitter**: `Contract`
+> `optional` **MorphToken**: `Contract`
 
 #### Source
 
-src/interfaces/types.ts:84
+src/interfaces/types.ts:102
+
+***
+
+### Sequencer
+
+> **Sequencer**: `Contract`
+
+#### Source
+
+src/interfaces/types.ts:85
 
 ***
 
@@ -176,4 +176,4 @@ src/interfaces/types.ts:84
 
 #### Source
 
-src/interfaces/types.ts:97
+src/interfaces/types.ts:100

@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / ProvenWithdrawal
+[@morph-l2/sdk](../globals.md) / ProvenWithdrawal
 
 # Interface: ProvenWithdrawal
 
@@ -16,7 +16,7 @@ ProvenWithdrawal in L1CrossDomainMessenger
 
 #### Source
 
-src/interfaces/types.ts:311
+src/interfaces/types.ts:316
 
 ***
 
@@ -26,7 +26,7 @@ src/interfaces/types.ts:311
 
 #### Source
 
-src/interfaces/types.ts:314
+src/interfaces/types.ts:319
 
 ***
 
@@ -36,4 +36,4 @@ src/interfaces/types.ts:314
 
 #### Source
 
-src/interfaces/types.ts:313
+src/interfaces/types.ts:318

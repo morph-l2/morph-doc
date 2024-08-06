@@ -1,8 +1,8 @@
-[**@morph-l2/sdk**] • **Docs**
+[**@morph-l2/sdk**](../README.md) • **Docs**
 
 ***
 
-[@morph-l2/sdk](../1-globals.md) / isL2Provider
+[@morph-l2/sdk](../globals.md) / isL2Provider
 
 # Function: isL2Provider()
 
@@ -38,4 +38,4 @@ if (isL2Provider(provider)) {
 
 ## Source
 
-src/l2-provider.ts:155
+src/l2-provider.ts:157
