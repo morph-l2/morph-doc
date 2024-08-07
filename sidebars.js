@@ -217,6 +217,10 @@ module.exports = {
             },
             {
               type: 'doc',
+              id:'build-on-morph/developer-resources/how-to-run-a-morph-node-docker'
+            },
+            {
+              type: 'doc',
               id:'build-on-morph/developer-resources/how-to-run-a-validator-node'
             },
           ]
