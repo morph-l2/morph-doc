@@ -19,6 +19,8 @@ https://faucet.quicknode.com/ethereum/holesky
 
 https://holesky-faucet.pk910.de/
 
+https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account)
+
 Once you receive ETH on Holesky, you should see it in your wallet on the Holesky Network. 
 
 It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on the [Holesky Block Explorer](https://holesky.etherscan.io/).
@@ -36,11 +38,11 @@ Currently, we set the limit that for each discord user, you can only request the
 
 You can obtain morph's version of USDT on Holesky through our discord faucet, here's how it works:
 
-1. Join our discord server through this [link](https://discord.com/invite/L2Morph)
+1. Join our discord server through this [link](https://discord.com/invite/L2Morph).
 
-2. Find the *#| discord-faucet* channel
+2. Find the *#| discord-faucet* channel.
 
-3. type */faucet* in the channel and add your Holesky address behind it.
+3. Type */faucet* in the channel and add your Holesky address behind it.
 
 ![command](../../assets/docs/quick-start/faucet/faucet_c.png)
 
@@ -50,7 +52,7 @@ You can obtain morph's version of USDT on Holesky through our discord faucet, he
 
 ![success](../../assets/docs/quick-start/faucet/success.png)
 
-6.  Add the Morph Holesky USDT information to your wallet
+6.  Add the Morph Holesky USDT information to your wallet.
 
 ~~~
 

@@ -25,7 +25,7 @@ In this model, Layer 2 (L2) optimistically assumes that the state changes submit
 - Longer challenge periods (sufficient time must be reserved for complex interactions)
 - Increased standards, impacting challengers' motivation
 
-Currently, only several OP Rollups has implemented a complete interactive fraud proof mechanism on its mainnet among optimistic rollup projects. In contrast, several ZK-rollup projects have already launched on the mainnet.
+Currently, only several OP Rollups have implemented a complete interactive fraud proof mechanism on its mainnet among optimistic rollup projects. In contrast, several ZK-rollup projects have already launched on the mainnet.
 
 These complexities highlight the need for improvement in existing optimistic rollup models. Hence, Morph introduces the Responsive Validity Proof (RVP).
 
@@ -53,7 +53,7 @@ RVP enhances the optimistic rollup model by incorporating ZK-proofs, offering a 
 #### The Need for a Challenge Period
 Optimistic rollups incorporate a challenge period (or withdrawal period) to ensure that any malicious submissions by the sequencer can be identified and contested. This period provides sufficient time for challengers to verify transactions, conduct fraud proofs, and complete the challenge process, thereby ensuring that only valid state changes are confirmed on Layer 1 (L1).
 Two main factors influence the length of the challenge period:
-1.Completion Time: The time required for both parties to complete the challenge process.
+1. Completion Time: The time required for both parties to complete the challenge process.
 2. Mitigating Malicious Behavior: Ensuring that there is enough time to address any attempts by sequencers to maliciously block the challenger’s transactions on L1.
 
 #### Solutions to Shorten the Challenge Period

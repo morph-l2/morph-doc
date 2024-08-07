@@ -55,9 +55,9 @@ The sequencer network’s design prioritizes ease of maintenance, expansion, and
 
 ### Solutions Formulated on These Principles​
 With these principles, Morph’s sequencer network design includes:
-Modularity: The structure emphasizes modular components that are loosely connected, allowing for swift upgrades or replacements.
-Byzantine Fault Tolerant (BFT) Consensus: Sequencers employ a BFT consensus for L2 block generation.
-BLS Signature for Batch Signing: Sequencers sign a collective of L2 blocks using the BLS signature method. The L1 contract then verifies this L2 consensus through the BLS signature.
+ - Modularity: The structure emphasizes modular components that are loosely connected, allowing for swift upgrades or replacements.
+ - Byzantine Fault Tolerant (BFT) Consensus: Sequencers employ a BFT consensus for L2 block generation.
+ - BLS Signature for Batch Signing: Sequencers sign a collective of L2 blocks using the BLS signature method. The L1 contract then verifies this L2 consensus through the BLS signature.
 
 
 :::tip

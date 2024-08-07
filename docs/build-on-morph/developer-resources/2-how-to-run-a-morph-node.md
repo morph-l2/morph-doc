@@ -9,7 +9,7 @@ This guide outlines the steps to start a Morph node. The example assumes the hom
 
 ### Hardware requirements
 
-Running the morph node requires 2 processes:L`geth` and `node`.  
+Running the morph node requires 2 processes:`geth` and `node`.  
 
 - `Geth`:the Morph execution layer which needs to meet the [go-ethereum hardware requirements](https://github.com/ethereum/go-ethereum#hardware-requirements), but with less storage, 500GB is enough so far. 
 

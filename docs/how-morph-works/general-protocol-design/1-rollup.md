@@ -29,11 +29,11 @@ The batch submitter then reconstructs L2 blocks, compiling:
 - Blockinfo : Essential information from each block.
 
 
-The batch submitter continues fetching and reconstructing blocks until it processes a block with a BLS signature, indicating the batch point has been reached. The reconstructed block da is used to construct a batch, which contains:
+The batch submitter continues fetching and reconstructing blocks until it processes a block with a BLS signature, indicating the batch point has been reached. The reconstructed block data is used to construct a batch, which contains:
 
-- lastBlocknumber : The number of the final block in the batch
+- lastBlocknumber : The number of the final block in the batch.
 - Transactions : Encoded transactions within the batch.
-- BlockWitness : Encoded blockinfos, utilized for zkProof
+- BlockWitness : Encoded blockinfos, utilized for zkProof.
 - PreStateRoot : The stateRoot before the batch is applied.
 - PostStateRoot : The stateRoot after the batch is applied.
 - WithdrawalRoot : L2 withdrawal Merkle tree root.
@@ -107,7 +107,7 @@ To uphold the aforementioned principles, it is essential to ensure that multiple
 
 - **Epoch Cycle Role Switching**: Sequencers alternate roles as batch submitters within an established Epoch cycle.
 - **Cross-Epoch Execution Capability**: Any Sequencer can perform a Rollup for another Sequencer's Epoch.
-- **Timeout Logging**: The system records instances when not a single rollup happens during an epoch, the epoch will be marked as “timeout” as well as the responsible sequencer
+- **Timeout Logging**: The system records instances when not a single rollup happens during an epoch, the epoch will be marked as “timeout” as well as the responsible sequencer.
 
 ### Timeout
 
@@ -116,11 +116,11 @@ To uphold the aforementioned principles, it is essential to ensure that multiple
 - **Epoch Rotation**: The duration of an epoch and the rotation schedule are governed by the sequencer network governance. Sequencers are assigned indexes which determine their responsibility for an epoch. With changes in the sequencer set, indexes are reassigned, and epochs rotate accordingly based on these new assignments.
 
 ### Penalties for Timeout
-- **Accumulated Penalties**: Sequencers that frequently exhibit timeout behaviors may face penalties that related to their Layer 1 ETH staking, if the timeout records reaches to a certain level, sequencer may will be slashed from the sequencer network.
+- **Accumulated Penalties**: Sequencers that frequently exhibit timeout behaviors may face penalties that related to their Layer 1 ETH staking, if the timeout records reaches to a certain level, sequencer may/will be slashed from the sequencer network.
 
 ## Module Design
 
-Below include the contracts that responsible for each module and their responsibilities:
+Below you can find the contracts that are responsible for each module and their responsibilities:
 
 ### Layer1
 - **RollupContract**: records the rollup executor and sync with L2
