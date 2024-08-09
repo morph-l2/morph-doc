@@ -14,7 +14,7 @@ Currently, users need to build the Docker image themselves using the Docker file
 1. Clone the dockerfile repository
 
 ```bash
-git clone --branch v0.2.0-beta https://github.com/morph-l2/morph.git
+git clone --branch v0.2.x-beta https://github.com/morph-l2/morph.git
 ```
 2. Run the following command
 
@@ -38,7 +38,7 @@ If the command fails during execution, you will also need to delete the previous
 
 ### Advanced Usage
 
-With the *Quick Start* guide above, you can quickly start a node using the default configuration files. However, we also support customizing the node's home directory and parameter settings.
+With the [Quick Start](#quick-start) guide above, you can quickly start a node using the default configuration files. However, we also support customizing the node's home directory and parameter settings.
 
 #### Customizing Data Directory
 The host directory paths that are mounted by the Docker container are specified in the ```ops/publicnode/.env``` file.
@@ -86,3 +86,6 @@ The *make download-and-decompress-snapshot* command in the ```ops/publicnode``` 
 
 Then, you need to manually place the decompressed data files in the appropriate node data directories.
 For example, if the snapshot folder is named ```snapshot-20240805-1```, move the contents from ```snapshot-20240805-1/geth``` to the ```${GETH_DATA_DIR}/geth``` directory and the contents from ```snapshot-20240805-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
+
+
+## Run a Morph node with docker 
