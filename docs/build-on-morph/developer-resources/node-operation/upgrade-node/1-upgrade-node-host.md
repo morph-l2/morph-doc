@@ -3,36 +3,53 @@ title: Upgrade node running on the host
 lang: en-US
 ---
 
-If you are running the Docker container for the node using a custom setup, you will need to update the docker image yourself and then restart the container. 
+Upgrading the node is straightforward. Simply install the new version of the node executable file and replace the previous version. Then, stop the currently running node and restart it with the updated version. Node will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
 
-The source code is available at https://github.com/morph-l2/morph.git. You need to switch to the latest version of the code and then update your docker image.
+Running the node requires two binary files: morphnode and geth. Choose to upgrade the binary files according to your specific needs.
 
-If you are using  Run a Morph node with docker to start the docker container, you can follow the subsequent steps to upgrade the node.
+### Step1: Compile the new version of the code
 
-### Step1:  Fetch latest code version 
 ```bash
 git clone https://github.com/morph-l2/morph.git
 ## checkout the latest version of the source code you need
 git checkout ${latestVersion}
-```
-### Step2: Stop the nodes and delete previous images
-
-```bash
-## stop docker container
-cd ops/publicnode
-make stop-holesky-node
-make rm-holesky-node
-## delete the pervious docker image for node
-docker rmi morph/node:latest
-## delete the pervious docker image for geth
-docker rmi morph/geth-nccc:latest
+## install geth
+make nccc_geth
+## install morphnode
+cd ./morph/node && make build
 ```
 
-### Step3: Build the latest image and restart the container
-
-Please note that we need to ensure that the Docker container startup parameters are consistent with those used previously. If you used a custom configuration before, make sure that the configuration and directory paths used in this run are the same as before. For details, please refer to Advanced Usage
+### Step2: Stop nodes
 
 ```bash
-## start the docker container, it will automatically build the new docker images
-make run-holesky-node
+## stop morphnode process
+pid=`ps -ef | grep morphnode | grep -v grep | awk '{print $2}'`
+kill  $pid
+
+## stop geth process
+pid=`ps -ef | grep geth | grep -v grep | awk '{print $2}'`
+kill  $pid
+```
+
+### Step3: Restart
+
+Make sure to use the same start-up command you used before the upgrade
+
+```bash
+## start geth
+./morph/go-ethereum/build/bin/geth --morph-holesky \
+    --datadir "./geth-data" \
+    --http --http.api=web3,debug,eth,txpool,net,engine \
+    --authrpc.addr localhost \
+    --authrpc.vhosts="localhost" \
+    --authrpc.port 8551 \
+    --authrpc.jwtsecret=./jwt-secret.txt \
+    --log.filename=./geth.log
+
+## start geth    
+./morph/node/build/bin/morphnode --home ./node-data \
+     --l2.jwt-secret ./jwt-secret.txt \
+     --l2.eth http://localhost:8545 \
+     --l2.engine http://localhost:8551 \
+     --log.filename ./node.log 
 ```
