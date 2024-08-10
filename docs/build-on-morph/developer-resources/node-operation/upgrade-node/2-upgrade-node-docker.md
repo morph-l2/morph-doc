@@ -3,53 +3,37 @@ title: Upgrade node running from docker
 lang: en-US
 ---
 
-Upgrading the node is straightforward. Simply install the new version of the node executable file and replace the previous version. Then, stop the currently running node and restart it with the updated version. Node will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
+If you are running the Docker container for the node using a custom setup, you will need to update the docker image yourself and then restart the container. 
 
-Running the node requires two binary files: morphnode and geth. Choose to upgrade the binary files according to your specific needs.
+The source code is available at https://github.com/morph-l2/morph.git. You need to switch to the latest version of the code and then update your docker image.
 
-### Step1: Compile the new version of the code
+If you are using  [Run a Morph node with docker](../2-how-to-run-a-morph-node-docker.md) to start the docker container, you can follow the subsequent steps to upgrade the node.
 
+### Step1:  Fetch latest code version 
 ```bash
 git clone https://github.com/morph-l2/morph.git
 ## checkout the latest version of the source code you need
 git checkout ${latestVersion}
-## install geth
-make nccc_geth
-## install morphnode
-cd ./morph/node && make build
 ```
-
-### Step2: Stop nodes
+### Step2: Stop the nodes and delete previous images
 
 ```bash
-## stop morphnode process
-pid=`ps -ef | grep morphnode | grep -v grep | awk '{print $2}'`
-kill  $pid
-
-## stop geth process
-pid=`ps -ef | grep geth | grep -v grep | awk '{print $2}'`
-kill  $pid
+## stop docker container
+cd ops/publicnode
+make stop-holesky-node
+make rm-holesky-node
+## delete the pervious docker image for node
+docker rmi morph/node:latest
+## delete the pervious docker image for geth
+docker rmi morph/geth-nccc:latest
 ```
 
-### Step3: Restart
+### Step3: Build the latest image and restart the container
 
-Make sure to use the same start-up command you used before the upgrade
+Please note that we need to ensure that the Docker container startup parameters are consistent with those used previously. If you used a custom configuration before, make sure that the configuration and directory paths used in this run are the same as before. For details, please refer to [Advanced Usage](../2-how-to-run-a-morph-node-docker.md#advanced-usage)
 
 ```bash
-## start geth
-./morph/go-ethereum/build/bin/geth --morph-holesky \
-    --datadir "./geth-data" \
-    --http --http.api=web3,debug,eth,txpool,net,engine \
-    --authrpc.addr localhost \
-    --authrpc.vhosts="localhost" \
-    --authrpc.port 8551 \
-    --authrpc.jwtsecret=./jwt-secret.txt \
-    --log.filename=./geth.log
-
-## start geth    
-./morph/node/build/bin/morphnode --home ./node-data \
-     --l2.jwt-secret ./jwt-secret.txt \
-     --l2.eth http://localhost:8545 \
-     --l2.engine http://localhost:8551 \
-     --log.filename ./node.log 
+## start the docker container, it will automatically build the new docker images
+make run-holesky-node
 ```
+

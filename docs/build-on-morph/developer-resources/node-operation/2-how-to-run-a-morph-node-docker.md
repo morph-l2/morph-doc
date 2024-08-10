@@ -14,7 +14,7 @@ Currently, users need to build the Docker image themselves using the Docker file
 1. Clone the dockerfile repository
 
 ```bash
-git clone --branch v0.2.x-beta https://github.com/morph-l2/morph.git
+git clone --branch release/v0.2.x https://github.com/morph-l2/morph.git
 ```
 2. Run the following command
 
