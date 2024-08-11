@@ -4,7 +4,7 @@ lang: en-US
 ---
 ## Run a Morph Node 
 
-This guide describes the approach to running a Morph validator node. If you are unfamiliar with the validator duties, please refer to our [optimistic zkEVM](../../how-morph-works/3-optimistic-zkevm.md) design.
+This guide describes the approach to running a Morph validator node. If you are unfamiliar with the validator duties, please refer to our [optimistic zkEVM](../../../how-morph-works/3-optimistic-zkevm.md) design.
 
 Create the folder `~/.morph` as our home directory for this example.
 
@@ -17,11 +17,11 @@ mkdir -p ~/.morph
 cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
-Currently, we use tag v0.1.0-beta as our beta version geth.
+Currently, we use tag v0.2.0-beta as our beta version geth.
 
 ```bash
 cd morph
-git checkout v0.1.0-beta
+git checkout v0.2.0-beta
 ```
 ### Build Geth
 

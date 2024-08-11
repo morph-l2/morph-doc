@@ -1,15 +1,17 @@
 ---
-title: How to Run a Morph Node
+title: How to Run a Morph Full Node from Source
 lang: en-US
 ---
 
-## Run a Morph Full Node 
+
+
+## Run a Morph Full Node from source
 
 This guide outlines the steps to start a Morph node. The example assumes the home directory is `~/.morph` 
 
 ### Hardware requirements
 
-Running the morph node requires 2 processes:`geth` and `node`.  
+Running the morph node requires 2 processes:L`geth` and `node`.  
 
 - `Geth`:the Morph execution layer which needs to meet the [go-ethereum hardware requirements](https://github.com/ethereum/go-ethereum#hardware-requirements), but with less storage, 500GB is enough so far. 
 
@@ -17,7 +19,7 @@ Running the morph node requires 2 processes:`geth` and `node`.
 
 
 :::tip
-Due to limitations in the current geth implementation, only archive mode is supported, meaning the storage size will continually increase with produced blocks.
+According to limitations of the current geth implementation, we only support archive mode for launching a Geth.  So the storage size of Geth will constantly increase along with blocks produced. 
 :::
 
 ### Build executable binary
@@ -52,11 +54,9 @@ cd ~/.morph/morph/node
 make build
 ```
 
-### Sync from genesis block
+### Config Preparation
 
-#### Config Preparation
-
-Download the config files and make data dir
+1. Download the config files and make data dir
 
 ```
 cd ~/.morph
@@ -64,18 +64,36 @@ wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/dat
 unzip data.zip
 ```
 
-Create a shared secret with node
+2. Create a shared secret with node
 
 ```
 cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
-#### Script to start the process
+### Sync from snapshot(Recommended)
 
-*Geth*
+You should build the binary and prepare the config files in the above steps first, then download the snapshot. 
 
+#### Download snapshot
+
+```bash
+## download package
+wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20240805-1.tar.gz
+## uncompress package
+tar -xzvf snapshot-20240805-1.tar.gz
 ```
+
+Extracting snapshot data to the data directory your node points to 
+
+```bash
+mv snapshot-20240805-1/geth geth-data
+mv snapshot-20240805-1/data node-data
+```
+
+#### Start execution client
+
+```bash
 ./morph/go-ethereum/build/bin/geth --morph-holesky \
     --datadir "./geth-data" \
     --http --http.api=web3,debug,eth,txpool,net,engine \
@@ -83,34 +101,29 @@ openssl rand -hex 32 > jwt-secret.txt
     --authrpc.vhosts="localhost" \
     --authrpc.port 8551 \
     --authrpc.jwtsecret=./jwt-secret.txt \
-    --miner.gasprice="100000000" \
     --log.filename=./geth.log
 ```
 
-*tail -f geth.log* to check if the Geth is running properly, or you can also exeucte the below curl command to check if you are connected to the peer.
+tail -f geth.log to check if the Geth is running properly, or you can also execute the curl command below to check if you are connected to the peer. 
 
-```
-curl -X POST -H 'Content-Type: application/json' --data 
-'{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' 
-localhost:8545
+```Shell
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' localhost:8545
 
 {"jsonrpc":"2.0","id":74,"result":"0x3"}
 ```
 
-
-*Node*
-
-```
-./morph/node/build/bin/morphnode --home ./node-data \
+#### Start consensus client
+```Bash
+ ./morph/node/build/bin/morphnode --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
      --l2.eth http://localhost:8545 \
      --l2.engine http://localhost:8551 \
-     --log.filename ./node.log
+     --log.filename ./node.log 
 ```
 
 tail -f node.log to check if the node is running properly, and you can also execute the command curl to check your node connection status.
 
-```
+```Bash
 curl http://localhost:26657/net_info
 
 {
@@ -142,14 +155,14 @@ curl http://localhost:26657/net_info
           }
         },
         "is_outbound": true,
-```
+ ....... 
+ ```
 
-### Check sync status
-
+#### Check sync status
 
 curl http://localhost:26657/status to check the sync status of the node
 
-```
+```Bash
 {
   "jsonrpc": "2.0",
   "id": -1,
@@ -194,7 +207,7 @@ curl http://localhost:26657/status to check the sync status of the node
 }
 ```
 
-The returned "catching_up" indicates whether the node is in sync or not. True means it is in sync. Meanwhile, the returned latest_block_height indicates the latest block height this node synced.
+The returned "catching_up" indicates  whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
 
-
-
+### Sync from genesis block(Not Recommended)
+Start the execution client and consensus client directly without downloading snapshot

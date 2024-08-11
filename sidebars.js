@@ -213,11 +213,29 @@ module.exports = {
           items:[
             {
               type: 'doc',
-              id:'build-on-morph/developer-resources/how-to-run-a-morph-node'
+              id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker'
             },
             {
               type: 'doc',
-              id:'build-on-morph/developer-resources/how-to-run-a-validator-node'
+              id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/node-operation/how-to-run-a-validator-node'
+            },
+            {
+              type: 'category',
+              label:'Upgrade Node',
+              items:[
+                {
+                type: 'doc',
+                id:'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-docker'
+                },
+                {
+                  type: 'doc',
+                  id:'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-host'
+                }
+              ]
             },
           ]
         }
