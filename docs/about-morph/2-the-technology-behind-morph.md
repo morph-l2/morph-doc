@@ -33,7 +33,7 @@ Morph’s hybrid rollup combines the best of these two approaches. Initially, th
 
 ![Sequqencer Network](../../assets/docs/about/overview/opzk.png)
 
-Visit [Responsive Validity Proof](../how-morph-works/optimistic-zkevm) for a more comprehensive article.
+Visit [Responsive Validity Proof](https://github.com/morph-l2/morph-doc/blob/d5fee7f527bfc3b1344103647590b3e544d44fd5/build/docs/how-morph-works/responsive-validity-proof/why-rvp.htm/index.html#L5) for a more comprehensive article.
 
 ## Modular Design
 
