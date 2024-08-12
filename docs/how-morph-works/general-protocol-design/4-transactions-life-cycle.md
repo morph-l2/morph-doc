@@ -5,11 +5,11 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-## How does a L2 transaction processed on Morph
+## How is a L2 transaction processed on Morph
 
 1. Submit Transaction
    
-Users-initiated transactions are first sent to the l2 node's mempool, where they await selection and processing by a sequencer.
+User-initiated transactions are first sent to the L2 node's mempool, where they await selection and processing by a sequencer.
 
 
 2. Transaction Consensus
@@ -21,11 +21,11 @@ Other sequencers then validate this block by executing this block, effectively v
 
 3. Transaction Execution
    
-Once all the votes on the block is finalized, each sequencer & node will apply this block to update its local state.
+Once all the votes on the block are finalized, each sequencer & node will apply this block to update its local state.
    
 4. Transaction Batching
    
-When batch point is reached, each sequencer will need to construct the batch with all the blocks consensued for the last epoch, the batch will go through consensus by requiring each sequencer to sign, all of the signature will be aggregated with BLS signature.
+When batch point is reached, each sequencer will need to construct the batch with all the blocks consensussed for the last epoch, the batch will go through consensus by requiring each sequencer to sign, all of the signature will be aggregated with BLS signature.
    
 5. Batch Sequencing
    
@@ -33,7 +33,7 @@ The [selected sequencer](../general-protocol-design/1-rollup.md) will commit the
    
 6. Batch Verification 
    
-A batch (so do the transactions within the batch)will first go through the BLS signature verification by the rollup contract to confirm the L2 consensus results, and then a batch will go through a [challenge period](../3-optimistic-zkevm.md) to be marked as finalized, solidifying their status within the L1 and L2 state.
+A batch (so do the transactions within the batch) will first go through the BLS signature verification by the rollup contract to confirm the L2 consensus results, and then a batch will go through a [challenge period](../3-optimistic-zkevm.md) to be marked as finalized, solidifying their status within the L1 and L2 state.
 
 ## Morph Transaction Status
 

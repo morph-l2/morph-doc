@@ -15,7 +15,7 @@ A modular design typically divides a Layer 1 blockchain into four core functions
 
 1. Consensus
 2. Execution
-3. Data Avaibility
+3. Data Availability
 4. Settlements
 
 Morph applies this modular approach to its Layer 2 solution by dividing it into three primary modules, each responsible for specific functionalities.
@@ -29,13 +29,13 @@ Morph applies this modular approach to its Layer 2 solution by dividing it into 
 ![Sequencer Network](../../assets/docs/protocol/dese/seq1.png)
 
 
-Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network)
+Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network).
 
 #### Optimistic zkEVM - Settlement
 
 ![Optimistic zkEVM](../../assets/docs/protocol/resvapro/opzk.png)
 
-State verification ensures that state changes on Layer 2 are valid on Layer 1. Morph introduces Optimistic zkEVM, a hybrid solution combining zk-rollups and optimistic rollups for state verification. The process involves a Moprh innovation known as Responsive Validity Proof (RVP) This innovative approach finalizes and settles Layer 2 transactions and states efficiently. For more details, refer to the documentation on [Responsive Validity Proof](../how-morph-works/optimistic-zkevm).
+State verification ensures that state changes on Layer 2 are valid on Layer 1. Morph introduces Optimistic zkEVM, a hybrid solution combining zk-rollups and optimistic rollups for state verification. The process involves a Morph innovation known as Responsive Validity Proof (RVP). This innovative approach finalizes and settles Layer 2 transactions and states efficiently. For more details, refer to the documentation on [Responsive Validity Proof](../how-morph-works/optimistic-zkevm).
 
 #### Rollup - Data Availability
 

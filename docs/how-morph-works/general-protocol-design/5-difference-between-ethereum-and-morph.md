@@ -17,7 +17,7 @@ For most Solidity developers, these technical details won't significantly impact
 | Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
 | --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
-| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
+| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contractsmd). |
 | `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
 | `BASEFEE`                   | `block.basefee`     | Disabled. If the opcode is encountered, the transaction will be reverted.                        |
 | `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
@@ -113,13 +113,13 @@ We also introduce the concept of system transactions that are created by the `op
 
 
 :::Warning Known Issue
-Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
+Some Ethereum client libraries, such as Web3js, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
 :::
 -->
 
 ## Future EIPs
 
-Morph closely monitors emerging Ethereum Improvement Proposals (EIPs) and adopts them when suitable. For more specifics, join our community forum or Discord for discussions.
+Morph closely monitors emerging Ethereum Improvement Proposals (EIPs) and adopts them when suitable. For more specifics, join our community forum or [Discord](https://discord.gg/L2Morph) for discussions.
 
 <!-- ## EVM Target version 
 
