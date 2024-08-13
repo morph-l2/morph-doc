@@ -19,7 +19,7 @@ https://faucet.quicknode.com/ethereum/holesky
 
 https://holesky-faucet.pk910.de/
 
-https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account)
+https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account) 
 
 Once you receive ETH on Holesky, you should see it in your wallet on the Holesky Network. 
 
