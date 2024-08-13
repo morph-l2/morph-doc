@@ -5,7 +5,7 @@ lang: en-US
 
 Upgrading the node is straightforward. Simply install the new version of the node executable file and replace the previous version. Then, stop the currently running node and restart it with the updated version. Node will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
 
-Running the node requires two binary files: morphnode and geth. Choose to upgrade the binary files according to your specific needs.
+Running the node requires two binary files: `morphnode` and `geth`. Choose to upgrade the binary files according to your specific needs.
 
 ### Step1: Compile the new version of the code
 

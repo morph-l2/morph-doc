@@ -30,7 +30,9 @@ docker rmi morph/geth-nccc:latest
 
 ### Step3: Build the latest image and restart the container
 
-Please note that we need to ensure that the Docker container startup parameters are consistent with those used previously. If you used a custom configuration before, make sure that the configuration and directory paths used in this run are the same as before. For details, please refer to [Advanced Usage](../2-how-to-run-a-morph-node-docker.md#advanced-usage)
+:::note 
+Please note that we need to ensure that the Docker container startup parameters are consistent with those used previously. If you used a custom configuration before, make sure that the configuration and directory paths used in this run are the same as before. For details, please refer to [**Advanced Usage**](../2-how-to-run-a-morph-node-docker.md#advanced-usage) 
+:::
 
 ```bash
 ## start the docker container, it will automatically build the new docker images
