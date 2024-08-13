@@ -5,30 +5,63 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-After deploying your smart contracts, it's crucial to verify your code on our [block explorer](https://explorer-holesky.morphl2.io). his can be automated using your development framework, such as Hardhat.
+After deploying your smart contracts, it's crucial to verify your code on our [block explorer](https://explorer-holesky.morphl2.io). This can be automated using your development framework, such as Hardhat.
 
 
 
 
-## Verify with develop framework
+## Verify with development framework
 
 Most smart contract tools have plugins for verifying contracts on Etherscan. Blockscout supports Etherscan's contract verification APIs, making it straightforward to use these tools with the Morph Testnet.
 
-We provide a comprehensive example of deploying contracts on Morph using Hardhat and Foundry, which includes the verification process.
+### Verify with Hardhat
 
+To verify your contract through hardhat, you need to add the following Etherscan and Sourcify configs to your hardhat.config.js file:
 
-Check [Deploy Conrtacts on Morph](../code-examples/1-deploy-contract-on-morph.md) for examples.
+```javascript
+module.exports = {
+  networks: {
+    morphTestnet: { ... }
+  },
+  etherscan: {
+    apiKey: {
+      morphTestnet: 'anything',
+    },
+    customChains: [
+      {
+        network: 'morphTestnet',
+        chainId: 2810,
+        urls: {
+          apiURL: 'https://explorer-api-holesky.morphl2.io/api? ',
+          browserURL: 'https://explorer-holesky.morphl2.io/',
+        },
+      },
+    ],
+  },
+};
+```
 
-## Vefiry with Morph explorer
+### Verify with Foundry
+
+Verification with foundry requires some flags passed to the normal verification script. You can verify using the command below:
+
+```bash
+ forge verify-contract YourContractAddress Counter\
+  --chain 2810 \
+  --verifier-url https://explorer-api-holesky.morphl2.io/api? \
+  --verifier blockscout --watch
+```
+
+## Verify with Morph explorer frontend
 
 - Visit：[Morph block explorer](https://explorer-holesky.morphl2.io)
 
-We currently support 6 different ways to verify your contracts on our block explorer
+We currently support 6 different ways to verify your contracts on our block explorer.
 
 There are 2 general parameters:
 
-- Compiler: Has to be consistent with what you select when deployment
-- Optimization: Can be ignored if no contract optimizatin, if has, has to be consistent with deployment
+- Compiler: Has to be consistent with what you select when deployment.
+- Optimization: Can be ignored if you don't have contract optimization. If you do, it has to be consistent with deployment.
 
 ### Method: Solidity (Flattened Sources Code)
 
@@ -83,3 +116,5 @@ forge flatten --output FlattenedL2StandardBridge.sol ./contracts/L2/L2StandardBr
 ### After Verification
 
 ![avp](../../../assets/docs/dev/contract-verify/avp.png)
+
+

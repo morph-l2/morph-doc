@@ -133,11 +133,11 @@ Based on the optimistic zkEVM design, there will be validators constantly verify
 To prevent fraudulent behavior by Sequencers from affecting network security, the following rules need are established:
 
 - Validators will challenge a fixed batch, and all sequencers who signed that batch will collectively be challenged.
-- When a sequencer takes on the role of batch submitter, repeated instances of timeouts accumulating to a certain extent will result in a deduction of rewards or removal from the sequencer set. (Not fully implemented yet)
-- Sequencers with long periods that have not produced blocks will be removed from the sequencer set. (Not fully implemented yet)
+- When a sequencer takes on the role of batch submitter, repeated instances of timeouts accumulating to a certain extent will result in a deduction of rewards or removal from the sequencer set (not fully implemented yet).
+- Sequencers with long periods that have not produced blocks will be removed from the sequencer set (not fully implemented yet).
 
 :::tip
-The submitter rotation and submission timeout is part of decentralized rollup design, you can read the details [here](../general-protocol-design/1-rollup.md)
+The submitter rotation and submission timeout is part of decentralized rollup design, you can read the details [here](../general-protocol-design/1-rollup.md).
 :::
 
 For the reward and slash functionalities, we have 2 contracts:
@@ -166,10 +166,10 @@ The sequencer election will officially start and based on the delegation amount 
 How is the sequencer set generated?
 
 1. `L1` Staking Contract: Add potential sequencers to the whitelist.
-2. `L1` Staking Contract: Potential sequencer will be able to register and stake eth on Ethereum to become eligible for sequencer election (become staker)
+2. `L1` Staking Contract: Potential sequencer will be able to register and stake eth on Ethereum to become eligible for sequencer election (become staker).
 3. An `add staker` message will be sent as a cross-layer message from L1 staking contract to L2 staking contract.
 4. `L2` Staking Contract: Will update stakers with the message synced.
-5. `L2` Staking Contract: Users will be able to delegate/undelegate stake MorphToken to a staker
+5. `L2` Staking Contract: Users will be able to delegate/undelegate stake MorphToken to a staker.
 6. `L2` Sequencer Contract: L2 staking contract will update the sequencer set by calling L2 sequencer contact based on the ranking of the Morph token delegation amount, the top staker will be elected as sequencer.
 
 ### Sequencer network consensus & Verification on Layer 1
@@ -187,31 +187,31 @@ Until this functionality is available, the rollup contracts only allow batch sub
 
 #### What happens if validators successfully challenge sequencers?
 
-- Sequencer will be slashed all stake ETH and removed from sequencer set if challenger succeeds.
-- Even if get proven fraud by multiple challenges, each sequencer will only be slash once
-- The challenger reward for a successful challenge is a fixed proportion of the staking amount
+- Sequencer will be slashed all staked ETH and removed from sequencer set if challenger succeeds.
+- Even if get proven fraud by multiple challenges, each sequencer will only be slashed once.
+- The challenger reward for a successful challenge is a fixed proportion of the staking amount.
 - If the slash makes all the sequencers go down, then the L2 will stop running. We can restart by upgrading the L1 staking contract, reset stakers and sequencer sets. This does not affect the Layer 2 state as no transactions will be processed because of this.
 
 Process:
 
-1. `L1` Staking Contract: Slash staked ETH of sequencers who signed the fraud batch and remove them from sequencer set
-2. `L1` Staking Contract: Distribute validator rewards
+1. `L1` Staking Contract: Slash staked ETH of sequencers who signed the fraud batch and remove them from sequencer set.
+2. `L1` Staking Contract: Distribute validator rewards.
 3. A `remove staker` message will be sent as a cross-layer message from L1 staking contract to L2 staking contract.
-4. `L2`Staking Contract: Update sequencer set
+4. `L2`Staking Contract: Update sequencer set.
 
 ### Delegation Stake
 
 1. `L2` Staking Contract: Staker set delegation commission rate by their own will.
-2. `L2` Oracle: Upload sequencers work records (block production records, submitter work records, expect work records) on the epoch basis (an epoch is a day)
+2. `L2` Oracle: Upload sequencers work records (block production records, submitter work records, expect work records) on the epoch basis (an epoch is a day).
 3. `L2` MorphToken Contract: Mint MorphToken (inflation) as delegation reward and sent to L2 distributor contract.
-4. `L2` Staking Contract: Users claim delegation reward, sequencers claim commission
+4. `L2` Staking Contract: Users claim delegation reward, sequencers claim commission.
 
 ### Staker/Sequencer exit
 
 The exit lock period should be long enough to ensure that stakers and sequencers in L2 have been updated and greater than the challenge period of sequencer’s last produced block (if staker is also sequencer).
 
 
-1. `L1` Staking Contract: Stakers apply to exit, the stake ETH is locked to enter the lock period
+1. `L1` Staking Contract: Stakers apply to exit, the stake ETH is locked to enter the lock period.
 2. A `remove staker` message will be sent as a cross-layer message from L1 staking contract to L2 staking contract.
-3. `L2` Staking Contract: Received the message, remove staker, and sequencers (if the staker is also sequencer)
-4. `L1` Staking Contract: Withdraw allowed until reach unlock block height，remove staker info after claiming
+3. `L2` Staking Contract: Received the message, remove staker, and sequencers (if the staker is also sequencer).
+4. `L1` Staking Contract: Withdraw allowed until reach unlock block height，remove staker info after claiming.

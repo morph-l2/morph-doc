@@ -31,7 +31,7 @@ All Gateway contracts will form the message and send it to the `L1CrossDomainMes
 
 This means they can execute any function on L2 from a transaction made on L1 via the bridge. Although an application could directly pass messages to existing token contracts, the Gateway abstracts the specifics and simplifies making transfers and calls.
 
-When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via the its L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainMessenger` contract for execution on L2.
+When a new block gets created on L1, the Sequencer will detect the message on the `L1MessageQueue`, and submit the transaction to the L2 via the L2 node. Finally, the L2 node will pass the transaction to the `L2CrossDomainMessenger` contract for execution on L2.
 
 ## Withdraw ETH and ERC20 tokens from L2
 
@@ -42,20 +42,20 @@ The L2 Gateway is very similar to the L1 Gateway. We can withdraw ETH and ERC20 
 :::
 
 :::tip
-  **Ensure transactions won’t revert on L1 while sending from L2**  There is no way to recover bridged ETH, tokens, or NFTs if your transaction reverts on L1. All assets are burned on Morph when the transaction is sent, and it's impossible to mint them again
+  **Ensure transactions won’t revert on L1 while sending from L2**  There is no way to recover bridged ETH, tokens, or NFTs if your transaction reverts on L1. All assets are burned on Morph when the transaction is sent, and it's impossible to mint them again.
 :::
 
 ### Finalize your Withdrawal
 
-Besides start a withdraw request on Morph, there is one additional step to do. You need to finalize your withdraw on Ethereum.
+Besides starting a withdrawal request on Morph, there is one additional step to do. You need to finalize your withdrawal on Ethereum.
 
 This is because of Morph's optimistic zkEVM design, you can read the details [here](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md): 
 
 
 
-To do this, First you need to make sure:
+To do this, first you need to make sure:
 
-- The batch containing the withdraw transactions has passed the challenge period and is marked as finalized (meaning in the `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**)
+- The batch containing the withdraw transactions has passed the challenge period and is marked as finalized (meaning in the `Rollup`contract, **withdrawalRoots[batchDataStore[_batchIndex].withdrawalRoot] = true**).
 
 Once confirmed, you can call our backend services interface:
 
@@ -64,12 +64,12 @@ Once confirmed, you can call our backend services interface:
 to obtain all the information you need to finalize your withdraw, which include:
 
 - Index: The position of the withdrawal transaction in the withdraw tree, or rank of your transaction among all the L2->L1 transactions.
-- Leaf: The hash value of your withdraw transaction that stored in the tree
-- Proof: The merkel proof of your withdraw transaction
-- Root: The withdraw tree root
+- Leaf: The hash value of your withdraw transaction that stored in the tree.
+- Proof: The merkel proof of your withdraw transaction.
+- Root: The withdraw tree root.
 
 
-, you need to use the `proveAndRelayMessage` function of the `L1CrossDomainMessenger` contract.
+you need to use the `proveAndRelayMessage` function of the `L1CrossDomainMessenger` contract.
 
 After obtaining the above information, the finalization of the withdraw operation can be carried out by calling `L1CrossDomainMessenger.proveAndRelayMessage()`.
 
@@ -85,7 +85,7 @@ The required parameters are
   bytes32 _withdrawalRoot
 ```
 
-`_from`,`_to`, `_value`, `_nonce`, and `_message` are the original content of the withdraw transaction, which can be obtained from the Event `SentMessage` included in the transaction initiated by the L2 layer withdraw. 
+`_from`, `_to`, `_value`, `_nonce`, and `_message` are the original content of the withdraw transaction, which can be obtained from the Event `SentMessage` included in the transaction initiated by the L2 layer withdraw. 
 
 `_withdrawalProof` and `_withdrawalRoot` can be obtained from the aforementioned backend API interface.
 
@@ -132,12 +132,12 @@ Tokens can be bridged securely and permissionlessly through Gateway contracts de
 
 :::tip Use the SDK
 
-You can also try our SDK to interact with the bridge system by referring to our [SDK Doc](../sdk/globals.md)
+You can also try our SDK to interact with the bridge system by referring to our [SDK Doc](../sdk/globals.md).
 
 :::
 ## Add your Token to the Official Bridge
 
-Currently, our official bridge only support certain pre-defined tokens to be bridged, if you want to bridge your own tokens, you need to manually add the token, and here is how to do it.
+Currently, our official bridge only supports certain pre-defined tokens to be bridged. If you want to bridge your own tokens, you need to manually add the token, and here is how to do it.
 
 ### Add Tokens to the gateway through Morph Bridge Frontend
 
@@ -162,14 +162,14 @@ The easiest way to support your token is to manually add it on our [official bri
 
 ### Add token support to the bridge frontend
 
-By add token to the gateway, you and other users can bridge the token by input the token address. Step further, if you want your token shows on the bridge frontend token list. You need to raise a PR to our bridge repo.
+By adding your token to the gateway, you and other users can bridge the token by inputting the token address.You need to raise a PR to our bridge repo if you want your token shown on the bridge frontend token list.
 
 You can find how to do it in the [morph list repo](https://github.com/morph-l2/morph-list).
 
 
 Keep in mind that:
-- You need to add both your L1 & L2 token to the list
-- The L2 token contract address is obtained by adding your tokens through Morph bridge frontend
+- You need to add both your L1 & L2 token to the list.
+- The L2 token contract address is obtained by adding your tokens through Morph bridge frontend.
 
 Here is an [example PR commit](https://github.com/morph-l2/morph-list/pull/27/commits/228481db6b8d69b8f40e7369dae62722aa570eb7
 ) for your reference.

@@ -29,7 +29,7 @@ You can find auto-generated API documentation over at [docs.morphl2.io](https://
 ### CrossChainMessenger
 
 The [`CrossChainMessenger`](https://docs.morphl2.io/docs/build-on-morph/sdk/classes/CrossChainMessenger) class simplifies the process of moving assets and data between Ethereum and Morph.
-You can use this class to, for example, initiate a withdrawal of ERC20 tokens from morph back to Ethereum, accurately track when the withdrawal is ready to be finalized on Ethereum, and execute the finalization transaction after the challenge period has elapsed.
+You can use this class to, for example, initiate a withdrawal of ERC20 tokens from Morph back to Ethereum, accurately track when the withdrawal is ready to be finalized on Ethereum, and execute the finalization transaction after the challenge period has elapsed.
 The `CrossChainMessenger` can handle deposits and withdrawals of ETH and any ERC20-compatible token.
 The `CrossChainMessenger` automatically connects to all relevant contracts so complex configuration is not necessary.
 

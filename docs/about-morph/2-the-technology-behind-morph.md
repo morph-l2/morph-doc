@@ -25,9 +25,9 @@ Optimistic and Zero-Knowledge (ZK) rollups are two distinct approaches to scalin
 ZK rollups, on the other hand, use cryptographic proofs to verify the validity of transactions before these are submitted for settlement. All batches have their own ZK proof, allowing quick verification on the main chain without needing to review all the data associated with each transaction (hence “zero-knowledge”). This offers immediate finality with higher security, but generating these proofs is computationally intensive and costly.  
 
 
-Morph’s hybrid rollup combines the best of these two approaches. Initially, the system operates optimistically, assuming transactions are valid to allow for quick processing and low costs. When a transaction is contested within Morph’s challenge window, it’s the sequencer that is required to produce a ZK proof to validate the transaction. We call this approach Responsive Validity Proof (RVP). TIt comes with the following improvements: 
+Morph’s hybrid rollup combines the best of these two approaches. Initially, the system operates optimistically, assuming transactions are valid to allow for quick processing and low costs. When a transaction is contested within Morph’s challenge window, it’s the sequencer that is required to produce a ZK proof to validate the transaction. We call this approach Responsive Validity Proof (RVP). It comes with the following improvements: 
 
-- Efficiency and Speed: A typical 7-day challenge window can be shortened to 1-3 days (a challenger no longer needs the extra time to identify malicious submissions, create a proof, and engage in multiple rounds of challenge procedures)
+- Efficiency and Speed: A typical 7-day challenge window can be shortened to 1-3 days (a challenger no longer needs the extra time to identify malicious submissions, create a proof, and engage in multiple rounds of challenge procedures).
 - Reduced Costs: Employing ZK-proofs means that only minimal transaction information is retained, thereby significantly reducing the cost of L2 submissions. When no challenges arise, the cost of ZK-proof submission and verification can be ignored. RVP is therefore more cost-effective than both optimistic and ZK rollups.        
 
 

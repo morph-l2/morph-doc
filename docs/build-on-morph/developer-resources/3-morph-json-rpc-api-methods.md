@@ -3,14 +3,14 @@ title: Morph JSON-RPC API Methods
 lang: en-US
 ---
 
-Most methods are similar to Ethereum's, for those methods, we recommend you visit [Ethereum JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods). 
+Most methods are similar to Ethereum's. For those methods, we recommend you visit [Ethereum JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods). 
 
 This page lists some unique methods exclusive to Morph.
 
 
 ## morph_getBlockByNumber
 
-Returns information about a block by block number. In addition, it returns more fields than the standard eth_getBlockByNumber returns, such as **withdrawTrieRoot**,**batchHash**,**nextL1MsgIndex**,**rowConsumption**
+Returns information about a block by block number. In addition, it returns more fields than the standard eth_getBlockByNumber, such as **withdrawTrieRoot**, **batchHash**, **nextL1MsgIndex** and **rowConsumption**.
 
 ### Parameters
 
@@ -21,10 +21,10 @@ Returns information about a block by block number. In addition, it returns more 
 
 See [JSON-RPC API | ethereum.org](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbyhash), and more fields showing as the blew
 
-- withdrawTrieRoot: DATA, 32 Bytes - the root of the withdraw trie, used to prove the users’  withdrawals 
+- withdrawTrieRoot: DATA, 32 Bytes - the root of the withdraw trie, used to prove the users’ withdrawals.
 - batchHash: DATA, 32 Bytes - the hash of the latest batch. It indicates the block is a batch point if it is not empty.
-- nextL1MsgIndex: quantity - the next expected L1 message nonce after this block
-- rowConsumption: the rows consumption of this block, which the rows are used to generate the ZK Proof based on halo2 schema. 
+- nextL1MsgIndex: quantity - the next expected L1 message nonce after this block.
+- rowConsumption: the rows consumption of this block, which rows are used to generate the ZK Proof based on halo2 schema. 
 
 ### Example
 
@@ -139,7 +139,7 @@ See [morph_getBlockByNumber returns](#morph_getblockbynumber)
 
 ## morph_estimateL1DataFee
 
-Generates and returns an estimate of how much L1DataFee does the transaction cost.
+Generates and returns an estimate of how much L1DataFee the transaction will cost.
 
 ### Parameters
 
@@ -147,8 +147,8 @@ Generates and returns an estimate of how much L1DataFee does the transaction cos
 	- from: DATA, 20 Bytes - (optional) The address the transaction is sent from.
 - to: DATA, 20 Bytes - The address the transaction is directed to.
 - gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
-- gasPrice: QUANTITY - (optional) Integer of the gasPrice used for each paid gas
-- value: QUANTITY - (optional) Integer of the value sent with this transaction
+- gasPrice: QUANTITY - (optional) Integer of the gasPrice used for each paid gas.
+- value: QUANTITY - (optional) Integer of the value sent with this transaction.
 - input: DATA - (optional) Hash of the method signature and encoded parameters.
 
 2. QUANTITY|TAG - integer block number, or the string "latest", "earliest", "pending", "safe" or "finalized".
@@ -237,11 +237,11 @@ DATA, 32 Bytes - Hash of a transaction.
 ### Returns
 
 Object - a transaction object(see JSON-RPC API | ethereum.org), an some extended fields:
-- sender: DATA, 20 Bytes - address of the sender
-- queueIndex: QUANTITY -  integer of the L1Message index
-- skipReason: string - the skip reason of this transaction
-- skipBlockNumber: quantity - integer of the block number where the transaction is skipped
-- skipBlockHash: DATA, 32 Bytes - hash of the block where the transaction is skipped
+- sender: DATA, 20 Bytes - address of the sender.
+- queueIndex: QUANTITY -  integer of the L1Message index.
+- skipReason: string - the skip reason of this transaction.
+- skipBlockNumber: quantity - integer of the block number where the transaction is skipped.
+- skipBlockHash: DATA, 32 Bytes - hash of the block where the transaction is skipped.
 
 
 ### Example
@@ -279,7 +279,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"morph_getSkippedTransaction","pa
 ## morph_getSkippedTransactionHashes
 
 
-get the batches by index
+Get the batches by index
 
 ### Parameters
 
@@ -288,8 +288,8 @@ Quantity - integer of the index of batch
 ### Returns
 
 Object - RollupBatch
-1. Version: quantity - the version of the batch
-2. Hash: DATA: 32 bytes - the batch of this batch
+1. version: quantity - the version of the batch
+2. hash: DATA: 32 bytes - the batch of this batch
 3. parentBatchHeader: bytes - the parent batch header
 4. Chunks: arrays of chunk - Chunk: bytes : the chunk bytes of this batch
 5. skippedL1MessageBitmap: bytes - the bitmap of the skipped L1Message
@@ -368,7 +368,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"morph_getRollupBatchByIndex","pa
 
 ## morph_GetBlockTraceByNumberOrHash
 
-It replays the block and returns the structured blockTrace for rollers
+It replays the block and returns the structured blockTrace for rollers.
 
 ## Parameters
 

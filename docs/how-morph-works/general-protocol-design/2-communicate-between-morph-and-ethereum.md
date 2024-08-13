@@ -62,12 +62,12 @@ A bridge request, whether it is for ETH, ERC20, or ERC721, is essentially a cros
 
 Generally, the message structure remains consistent, especially for ETH & ERC20 Gateways.
 
-Employing a token gateway compiles a standard token gateway message and relays it to the ```CrossDomainMessenger```
+Employing a token gateway compiles a standard token gateway message and relays it to the ```CrossDomainMessenger```.
 
 ### Passing the Message Through the CrossDomainMessenger
 
 
-The ```CrossDomainMessenger`` serves as the core unit of cross-layer communication,
+The ```CrossDomainMessenger``` serves as the core unit of cross-layer communication,
 with corresponding messenger contracts on both Layer 1 and Layer 2.
 
 For a deposit, the L1 messenger sends a message to the L2 messenger, akin to a contract call on Layer 1, which means custom messages (contract interactions) can be constructed to perform various types of cross-layer interactions.
@@ -115,7 +115,7 @@ Typically, this follows a simple workflow:
 
 ### Finalizing a Withdrawal
 
-Unlike Deposits, a withdrawal request must undergo 2 process for execution:
+Unlike Deposits, a withdrawal request must undergo 2 processes for execution:
 
 1. Prove that a withdraw request actually happened on Layer 2 by verifying a Merkle tree proof against the withdrawal tree root committed by sequencers.
 
@@ -139,7 +139,7 @@ function proveAndRelayMessage(
 This function serves two primary purposes:
 
 1. It checks if the withdraw tree root associated with this message has been finalized through the rollup contract.
-2. It verifies whether the withdraw request actually occurred by validating the provided Merkel proof.
+2. It verifies whether the withdraw request actually occurred by validating the provided Merkle proof.
 
 Upon successful completion of both processes, this method will execute the corresponding action, such as releasing the user's ETH on Layer 1 for a standard ETH withdrawal request.
 
@@ -148,12 +148,12 @@ Upon successful completion of both processes, this method will execute the corre
 
 Withdrawal actions involve interacting with L1 assets/contracts as a result of a Layer 2 transaction. Consequently, it’s imperative to verify the existence of a Layer 2 transaction that triggers a withdrawal request, in a manner that is verifiable on Layer 1.
 
-To achieve this, we introduce a structure known as a Withdraw Tree, which records every L2 withdrawal transaction within a Merkel tree. Thus, a Merkel tree's properties can be leveraged to confirm a withdrawal request’s occurrence.
+To achieve this, we introduce a structure known as a Withdraw Tree, which records every L2 withdrawal transaction within a Merkle tree. Thus, a Merkle tree's properties can be leveraged to confirm a withdrawal request’s occurrence.
 
 The term Withdraw Tree refers to an append-only Sparse Merkle Tree (SMT) with leaf nodes that capture information on assets being transferred out of the network.
-each leaf in the Withdraw Tree, known as a Withdraw leaf, falls into two categories: type 0 for recording asset(s) information and type 1 for recording messaging information.
+Each leaf in the Withdraw Tree, known as a Withdraw leaf, falls into two categories: type 0 for recording asset(s) information and type 1 for recording messaging information.
 
-A withdraw leaf, in particular, is a Keccak256 hash of the ABI encoded packed structure with cross domain message:
+A withdraw leaf, in particular, is a Keccak256 hash of the ABI encoded packed structure with cross domain message.
 
 The Withdraw Tree is instrumental in cataloging withdrawal transactions and ascertaining the legitimacy of withdrawal requests.
 
@@ -161,9 +161,9 @@ Morph has pre-deployed a Simple Merkle Tree contract dedicated to constructing t
 
 This tree incorporates three methods:
 
-1. ```getTreeroot``` - Retrieves the current tree's root hash
-2. ```appendMessageHash``` - Appends a new leaf node to the tree
-3. ```verifyMerkleProof``` - Verifies if a leaf node exists in the tree, indicating the validity of the bridge request it represents
+1. ```getTreeroot``` - Retrieves the current tree's root hash.
+2. ```appendMessageHash``` - Appends a new leaf node to the tree.
+3. ```verifyMerkleProof``` - Verifies if a leaf node exists in the tree, indicating the validity of the bridge request it represents.
 
 ### Understanding the Challenge Period & Batch Finalization
 
@@ -193,7 +193,7 @@ For Gas Failures:
 
 - When the ```L1CrossDomainMessenger``` contract on L1 dispatches a cross-layer message, it records the corresponding message hash but does not incorporate the gasLimit in this record. Post-execution on L2, the ```L2CrossDomainMessenger``` performs an equivalent calculation, storing the contract call result in ```mapping(isL1MessageExecuted)```. This measure prevents multiple executions of the same message and facilitates the adjustment of gasLimit parameters for replaying failed messages.
 
-- Replay Message: If gasLimit is insufficient, causing a failed execution on the L2, a new cross-layer message with a revised gasLimit parameter can be sent by calling ```L1CrossDomainMessenger.replayMessage``` 
+- Replay Message: If gasLimit is insufficient, causing a failed execution on the L2, a new cross-layer message with a revised gasLimit parameter can be sent by calling ```L1CrossDomainMessenger.replayMessage```.
 
 For Skipped Messages:
 

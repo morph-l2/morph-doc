@@ -7,7 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## What Kind of Rollup is Morph?
 
-Morph uses a hybrid rollup model called "Optimistic zkEVM & RVP." This combines the strengths of both zkRollups and Optimistic Rollups, optimizing for efficiency, cost, and speed. This unique approach places Morph at the cutting edge of rollup technology.
+Morph uses a hybrid rollup model called "Optimistic zkEVM & RVP". This combines the strengths of both zkRollups and Optimistic Rollups, optimizing for efficiency, cost, and speed. This unique approach places Morph at the cutting edge of rollup technology.
 
 ## What Sets Morph Apart from Other Rollups?
 

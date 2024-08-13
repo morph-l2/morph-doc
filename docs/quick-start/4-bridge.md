@@ -99,7 +99,7 @@ To withdraw funds from Morph Testnet, follow these steps:
 
 ![image14](../../assets/docs/quick-start/bridge/14.png)
 
-4. Click Initiate withdrawal, Wait for a few minutes to confirm. After it is finished, you need to switch the network in your wallet and then prove the withdrawal on **Holesky**.
+4. Click Initiate withdrawal, wait for a few minutes to confirm. After it is finished, you need to switch the network in your wallet and then prove the withdrawal on **Holesky**.
 
 ![image15](../../assets/docs/quick-start/bridge/15.png)
 
@@ -115,7 +115,7 @@ To withdraw funds from Morph Testnet, follow these steps:
 
 1. Click your address in the top right corner. 
 
-2. Click Transactions and then Withdrawals. This will display a list of your recent withdrawals and their status. Or you can find a notice in the top area, by clicking the button View Account ( see the pic below)
+2. Click Transactions and then Withdrawals. This will display a list of your recent withdrawals and their status. Or you can find a notice in the top area, by clicking the button View Account (see the pic below).
 
 ![image19](../../assets/docs/quick-start/bridge/19.png)
 

@@ -65,7 +65,7 @@ And other parameters:
 
 
 :::tip
-You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph Holesky at [GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000F)
+You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph Holesky at [GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000F).
 :::
 
 

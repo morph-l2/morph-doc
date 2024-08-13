@@ -177,11 +177,11 @@ Verification requires some flags passed to the normal verification script. You c
   --verifier blockscout --watch
 ```
 
-Once succeed, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io)
+Once succeeded, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io).
 
 
 ## Questions and Feedback
 
-Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/L2Morph) and find us at #dev-help channel.
+Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/L2Morph) and find us at #dev-support channel.
 
 
