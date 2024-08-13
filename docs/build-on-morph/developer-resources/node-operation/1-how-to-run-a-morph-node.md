@@ -1,17 +1,13 @@
 ---
-title: How to Run a Morph Full Node from Source
+title: Run a Morph Full Node from Source
 lang: en-US
 ---
 
-
-
-## Run a Morph Full Node from source
-
 This guide outlines the steps to start a Morph node. The example assumes the home directory is `~/.morph` 
 
-### Hardware requirements
+## Hardware requirements
 
-Running the morph node requires 2 processes:L`geth` and `node`.  
+Running the morph node requires 2 processes: `geth` and `node`.  
 
 - `Geth`:the Morph execution layer which needs to meet the [go-ethereum hardware requirements](https://github.com/ethereum/go-ethereum#hardware-requirements), but with less storage, 500GB is enough so far. 
 
@@ -22,9 +18,9 @@ Running the morph node requires 2 processes:L`geth` and `node`.
 According to limitations of the current geth implementation, we only support archive mode for launching a Geth.  So the storage size of Geth will constantly increase along with blocks produced. 
 :::
 
-### Build executable binary
+## Build executable binary
 
-#### Clone morph
+### Clone morph
 
 ```
 mkdir -p ~/.morph 
@@ -39,7 +35,7 @@ cd morph
 git checkout v0.2.0-beta
 ```
 
-#### Build Geth
+### Build Geth
 
 Notice: You need C compiler to build geth
 
@@ -47,14 +43,14 @@ Notice: You need C compiler to build geth
 make nccc_geth
 ```
 
-#### Build Node
+### Build Node
 
 ```
 cd ~/.morph/morph/node 
 make build
 ```
 
-### Config Preparation
+## Config Preparation
 
 1. Download the config files and make data dir
 
@@ -71,11 +67,11 @@ cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
-### Sync from snapshot(Recommended)
+## Sync from snapshot(Recommended)
 
 You should build the binary and prepare the config files in the above steps first, then download the snapshot. 
 
-#### Download snapshot
+### Download snapshot
 
 ```bash
 ## download package
@@ -91,7 +87,7 @@ mv snapshot-20240805-1/geth geth-data
 mv snapshot-20240805-1/data node-data
 ```
 
-#### Start execution client
+### Start execution client
 
 ```bash
 ./morph/go-ethereum/build/bin/geth --morph-holesky \
@@ -112,7 +108,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 {"jsonrpc":"2.0","id":74,"result":"0x3"}
 ```
 
-#### Start consensus client
+### Start consensus client
 ```Bash
  ./morph/node/build/bin/morphnode --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
@@ -158,7 +154,7 @@ curl http://localhost:26657/net_info
  ....... 
  ```
 
-#### Check sync status
+### Check sync status
 
 curl http://localhost:26657/status to check the sync status of the node
 
@@ -209,5 +205,5 @@ curl http://localhost:26657/status to check the sync status of the node
 
 The returned "catching_up" indicates  whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
 
-### Sync from genesis block(Not Recommended)
+## Sync from genesis block(Not Recommended)
 Start the execution client and consensus client directly without downloading snapshot
