@@ -10,16 +10,49 @@ After deploying your smart contracts, it's crucial to verify your code on our [b
 
 
 
-## Verify with develop framework
+## Verify with development framework
 
 Most smart contract tools have plugins for verifying contracts on Etherscan. Blockscout supports Etherscan's contract verification APIs, making it straightforward to use these tools with the Morph Testnet.
 
-We provide a comprehensive example of deploying contracts on Morph using Hardhat and Foundry, which includes the verification process.
+### Verify with Hardhat
 
+To verify your contract through hardhat, you need to add the following Etherscan and Sourcify configs to your hardhat.config.js file:
 
-Check [Deploy Contracts on Morph](../code-examples/1-deploy-contract-on-morph.md) for examples.
+```javascript
+module.exports = {
+  networks: {
+    morphTestnet: { ... }
+  },
+  etherscan: {
+    apiKey: {
+      morphTestnet: 'anything',
+    },
+    customChains: [
+      {
+        network: 'morphTestnet',
+        chainId: 2810,
+        urls: {
+          apiURL: 'https://explorer-api-holesky.morphl2.io/api? ',
+          browserURL: 'https://explorer-holesky.morphl2.io/',
+        },
+      },
+    ],
+  },
+};
+```
 
-## Vefiry with Morph explorer
+### Verify with Foundry
+
+Verification with foundry requires some flags passed to the normal verification script. You can verify using the command below:
+
+```bash
+ forge verify-contract YourContractAddress Counter\
+  --chain 2810 \
+  --verifier-url https://explorer-api-holesky.morphl2.io/api? \
+  --verifier blockscout --watch
+```
+
+## Verify with Morph explorer frontend
 
 - Visit：[Morph block explorer](https://explorer-holesky.morphl2.io)
 
@@ -83,3 +116,5 @@ forge flatten --output FlattenedL2StandardBridge.sol ./contracts/L2/L2StandardBr
 ### After Verification
 
 ![avp](../../../assets/docs/dev/contract-verify/avp.png)
+
+
