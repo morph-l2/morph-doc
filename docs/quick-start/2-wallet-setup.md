@@ -31,20 +31,11 @@ Currently, the Add to wallet links may not be compatible with all wallets yet. I
 
 #### Network Configuration
 
-:::tip Morph Sepolia Sunset
-
-Morph Sepolia testnet is going to be sunset soon. We strongly suggest that you migrate to Morph Holesky testnet
-
-:::
-
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
 | Morph Holesky Testnet             | https://rpc-quicknode-holesky.morphl2.io       | 2810    | https://explorer-holesky.morphl2.io      | ETH      |
 | Ethereum Holesky            | https://ethereum-holesky-rpc.publicnode.com/       | 17000    | https://holesky.etherscan.io      | ETH      |
-| Morph Sepolia Testnet             | https://rpc-testnet.morphl2.io        | 2710    | https://explorer-testnet.morphl2.io      | ETH      |
-| Ethereum Sepolia            | https://eth-sepolia-public.unifra.io       | 11155111    | https://sepolia.etherscan.io      | ETH      |
-
 
 
 You can also visit [chainlist](https://chainlist.org/?chain=11155111&search=morph&testnets=true) to add Morph testnet and Ethereum testnet.
