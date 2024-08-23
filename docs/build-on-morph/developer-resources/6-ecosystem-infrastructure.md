@@ -3,12 +3,7 @@ title: Use Ecosystem Infrastructures
 lang: en-US
 ---
 
-Besides the official tools and resources, we have also partnered with other infrastructure projects to help builders on Morph. Here is the list of the projects that are live on Morph Holesky testnet. 
-
-:::tip More partners coming soon
-
-As Morph is still in beta testnet stage, we are working closely to complete the infrastructure cooperations, to ensure clear instructions, patners that is still working on Holesky testnet integration is not listed, we will keep updating this page.
-:::
+Besides the official tools and resources, we have also partnered with other infrastructure projects to help builders on Morph. Here is the list of the projects that are live on Morph Mainnet & Holesky testnet. 
 
 
 <!--
@@ -82,7 +77,7 @@ Please refer to the docs about [How to create a safe multisig on Morph](../devel
 
 ### Explorer
 
-Besides the official [Morph explorer](https://explorer-testnet.morphl2.io/), we have also partnered with 3rd party providers for different Morph blockchain data presentations forms.
+Besides the official [Morph explorer](https://explorer.morphl2.io/), we have also partnered with 3rd party providers for different Morph blockchain data presentations forms.
 
 #### Socialscan
 

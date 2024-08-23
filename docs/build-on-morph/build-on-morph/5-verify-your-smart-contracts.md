@@ -12,7 +12,7 @@ After deploying your smart contracts, it's crucial to verify your code on our [b
 
 ## Verify with development framework
 
-Most smart contract tools have plugins for verifying contracts on Etherscan. Blockscout supports Etherscan's contract verification APIs, making it straightforward to use these tools with the Morph Testnet.
+Most smart contract tools have plugins for verifying contracts on Etherscan. Blockscout supports Etherscan's contract verification APIs, making it straightforward to use these tools with the Morph Mainnet & Testnet.
 
 ### Verify with Hardhat
 
@@ -21,19 +21,19 @@ To verify your contract through hardhat, you need to add the following Etherscan
 ```javascript
 module.exports = {
   networks: {
-    morphTestnet: { ... }
+    morph: { ... }
   },
   etherscan: {
     apiKey: {
-      morphTestnet: 'anything',
+      morph: 'anything',
     },
     customChains: [
       {
-        network: 'morphTestnet',
-        chainId: 2810,
+        network: 'morph',
+        chainId: 2818,
         urls: {
-          apiURL: 'https://explorer-api-holesky.morphl2.io/api? ',
-          browserURL: 'https://explorer-holesky.morphl2.io/',
+          apiURL: 'https://explorer-api.morphl2.io/api? ',
+          browserURL: 'https://explorer.morphl2.io/',
         },
       },
     ],
@@ -47,14 +47,14 @@ Verification with foundry requires some flags passed to the normal verification 
 
 ```bash
  forge verify-contract YourContractAddress Counter\
-  --chain 2810 \
-  --verifier-url https://explorer-api-holesky.morphl2.io/api? \
+  --chain 2818 \
+  --verifier-url https://explorer-api.morphl2.io/api? \
   --verifier blockscout --watch
 ```
 
 ## Verify with Morph explorer frontend
 
-- Visit：[Morph block explorer](https://explorer-holesky.morphl2.io)
+- Visit：[Morph block explorer](https://explorer.morphl2.io)
 
 We currently support 6 different ways to verify your contracts on our block explorer.
 

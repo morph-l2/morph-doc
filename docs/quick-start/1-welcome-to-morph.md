@@ -10,8 +10,7 @@ Thank you for choosing Morph! We're excited to have you onboard with the first o
 
 :::tip
 
-Beta Testnet Stage: Morph is currently in the beta testnet phase, offering a brand-new platform for exploration. We encourage you to delve into its features and capabilities.
-
+Mainnet Beta Stage: Morph is currently in the mainnet beta phase, offering a brand-new platform for exploration. We encourage you to delve into its features and capabilities.
 
 :::
 

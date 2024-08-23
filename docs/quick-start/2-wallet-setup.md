@@ -19,14 +19,14 @@ TBD
 
 
 - Installation: MetaMask can be installed from their [official website](https://metamask.io/download/).
-- Importing Configurations: To set up MetaMask for Morph Testnet, click the "add to wallet" button on the [https://explorer-holesky.morphl2.io/](Morph Holesky block explorer page). This will automatically import the chain ID and RPC URLs for the Morph Testnet.
+- Importing Configurations: To set up MetaMask for Morph, click the "add to wallet" button on the [Morph Holesky block explorer page](https://explorer.morphl2.io/). This will automatically import the chain ID and RPC URLs for the Morph Mainnet & Testnet.
 - Using Ethereum Holesky Testnet: Morph Testnet utilizes the Ethereum Holesky testnet as its underlying L1, which is already configured in MetaMask by default. To access it, enable "Show/hide test networks" in the MetaMask network selection dropdown.
 
 
 
 ### Manual network configuration
 
-Currently, the Add to wallet links may not be compatible with all wallets yet. If you are having issues using them, you may need to manually add the Holesky Testnet and Morph by inserting the configuration details from the table below:
+Currently, the Add to wallet links may not be compatible with all wallets yet. If you are having issues using them, you may need to manually add the Morph Mainnet & Testnet by inserting the configuration details from the table below:
 
 
 #### Network Configuration
@@ -34,8 +34,10 @@ Currently, the Add to wallet links may not be compatible with all wallets yet. I
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
+| Morph Mainnet            | https://rpc-quicknode.morphl2.io       | 2818   | https://explorer.morphl2.io      | ETH      |
+| Ethereum Mainnet            | https://ethereum-rpc.publicnode.com/       | 1   | https://etherscan.io      | ETH      |
 | Morph Holesky Testnet             | https://rpc-quicknode-holesky.morphl2.io       | 2810    | https://explorer-holesky.morphl2.io      | ETH      |
 | Ethereum Holesky            | https://ethereum-holesky-rpc.publicnode.com/       | 17000    | https://holesky.etherscan.io      | ETH      |
 
 
-You can also visit [chainlist](https://chainlist.org/?chain=11155111&search=morph&testnets=true) to add Morph testnet and Ethereum testnet.
+You can also visit [chainlist](https://chainlist.org/?chain=11155111&search=morph&testnets=true) to add Morph.
