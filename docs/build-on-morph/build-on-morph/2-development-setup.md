@@ -106,6 +106,8 @@ https://holesky-faucet.pk910.de/
 
 https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account)
 
+We have our own [website faucet](https://morph-faucet-tau.vercel.app/) that can claim ETH & USDT for you initial usage.
+
 
 Morph also offers a [Discord faucet](../../quick-start/3-faucet.md#morph-holesky-eth) to obtain Morph Holesky USDT & Morph Holesky ETH.
 
