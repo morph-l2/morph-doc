@@ -7,7 +7,15 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Faucet
 
-### Ethereum Holesky ETH Faucet
+### Morph Holesky Website Faucet
+
+![website faucet](../../assets/docs/quick-start/faucet/web_faucet.jpg)
+
+Our [website faucet](https://morph-faucet-tau.vercel.app/) is live! 
+
+Users can claim 0.01 ETH & 10 USDT per day to fund their initial activities.
+
+### 3rd Party Ethereum Holesky ETH Faucet
 
 To use Morph's public testnet, obtain testnet ETH on Holesky, then bridge it to the Morph testnet.
 
@@ -26,7 +34,17 @@ Once you receive ETH on Holesky, you should see it in your wallet on the Holesky
 It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on the [Holesky Block Explorer](https://holesky.etherscan.io/).
 
 
-### Morph Holesky Faucet
+### Discord Morph Holesky Faucet
+
+### Morph Holesky ETH
+
+You can obtain the Morph Holesky ETH in our discord too for development purposes.
+
+Using the */morph_eth* command and type your address will grant you 0.01 Morph Holesky ETH.
+
+Once succeed, you will see the following message:
+
+![success](../../assets/docs/quick-start/faucet/faucet_eth.png)
 
 ### ERC20 USDT
 
@@ -64,16 +82,6 @@ Morph Holesky USDT address: "0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98"
 
 7. Check you wallet for USDT balance and start to bridge!
 
-<!--
 
-### Morph Holesky ETH
 
-You can obtain the Morph Holesky ETH in our discord too for development purposes.
 
-Using the */morph_eth* command and type your address will grant you 0.01 Morph Holesky ETH.
-
-Once succeed, you will see the following message:
-
-![success](../../assets/docs/quick-start/faucet/faucet_eth.png)
-
--->
