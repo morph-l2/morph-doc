@@ -61,13 +61,15 @@ For more information, please refer to [their documentation](https://docs.goldsky
 
 ![envio](../../../assets/docs/dev/resources/envio.png)
 
-Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized for querying real-time and historical data on Morph Holesky and Morph Mainnet. Designed with a core focus on delivering superior performance and seamless developer experience, Envio empowers the next generation fo consumer apps. 
+Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized for querying real-time and historical data on Morph Holesky and Morph Mainnet. 
+
+Designed with a core focus on delivering superior performance and seamless developer experience, Envio empowers the next generation fo consumer apps. 
 
 The [Quickstart](https://docs.envio.dev/docs/HyperIndex/contract-import) allows you to instantly autogenerate a basic indexer and query your smart contract data on Morph. This is the quickest way to get going and likely the starting point for most developers.
 
 For more information, please refer to [their documentation](https://docs.envio.dev). 
 
-Click [here](https://envio.dev/explorer) for live indexer examples. 
+Click [here](https://envio.dev/explorer) for live indexer examples to be inspired.  
 
 
 ### Oracles
