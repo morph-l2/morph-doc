@@ -237,6 +237,10 @@ module.exports = {
                 }
               ]
             },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/node-operation/prune-state'
+            },
           ]
         }
       ]
