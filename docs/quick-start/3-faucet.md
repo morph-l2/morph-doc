@@ -11,9 +11,11 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ![website faucet](../../assets/docs/quick-start/faucet/web_faucet.jpg)
 
-Our [website faucet](https://morph-faucet-tau.vercel.app/) is live! 
+Our [website faucet](https://morphfaucet.com/) is live! 
 
-Users can claim 0.01 ETH & 10 USDT per day to fund their initial activities.
+Users can claim Morph ETH & USDT to fund their initial activities.
+
+
 
 ### 3rd Party Ethereum Holesky ETH Faucet
 
