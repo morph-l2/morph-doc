@@ -2,7 +2,7 @@ import React from 'react';
 
 export const LogoWithText =  (props) => {
   return <><img
-    src={`/logo/LogoMorphWhite.svg`}
+    src={`/logo/LogoMorphWhite-summary.svg`}
     alt="morph logo"
     className={"w-[128px] md:w-[128px]" + props.className}
     {...props}
