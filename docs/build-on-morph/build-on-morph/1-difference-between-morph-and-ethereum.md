@@ -22,8 +22,9 @@ For most Solidity developers, these technical details won't significantly impact
 | `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
 | `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
 | `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
-| `BASEFEE`                   | `block.basefee`     | Disabled. If the opcode is encountered, the transaction will be reverted.                        |
 | `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
+| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
+| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
 
 ## EVM Precompiles
 
@@ -48,9 +49,9 @@ Because of a bounded size of the zkEVM circuits, there is an upper limit on the 
 | `ecMul`             | 50    |
 | `ecPairing`         | 2     |
 
-:::tip Dencun upgrade opcode not available
+:::tip Several opcode not available
 
-Opcodes from the Dencun upgrade are not yet available on Morph, including `MCOPY`, `TSTORE`, `TLOAD`, `BLOBHASH` and `BLOBBASEFEE`. Additionally, [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported. We recommend using `shanghai` as your EVM target and avoiding using a Solidity version higher than `0.8.23`.
+`BLOBHASH` and `BLOBBASEFEE` are not supported on Morph yet. Additionally, [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported. 
 
 :::
 
