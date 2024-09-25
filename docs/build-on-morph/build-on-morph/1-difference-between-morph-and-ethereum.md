@@ -23,8 +23,8 @@ For most Solidity developers, these technical details won't significantly impact
 | `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
 | `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
 | `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
-| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
-| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
+| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
+| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
 
 ## EVM Precompiles
 
