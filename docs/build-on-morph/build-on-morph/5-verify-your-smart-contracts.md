@@ -63,7 +63,7 @@ There are 2 general parameters:
 - Compiler: Has to be consistent with what you select when deployment.
 - Optimization: Can be ignored if you don't have contract optimization. If you do, it has to be consistent with deployment.
 
-### Method: Solidity (Flattened Sources Code)
+### Method: Solidity (Flattened Source Code)
 
 #### Frontend:
 
