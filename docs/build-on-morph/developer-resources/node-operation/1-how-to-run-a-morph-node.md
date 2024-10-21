@@ -9,7 +9,12 @@ This guide outlines the steps to start a Morph node. The example assumes the hom
 
 Running the morph node requires 2 processes: `geth` and `node`.  
 
-- `Geth`:the Morph execution layer which needs to meet the [go-ethereum hardware requirements](https://github.com/ethereum/go-ethereum#hardware-requirements), but with less storage, 500GB is enough so far. 
+- `Geth`:the Morph execution layer which needs to meet the requirements as below
+  - Fast CPU with 4+ cores
+  - 32GB+ RAM
+  - High-performance SSD with at least 1TB of free space
+  - 25+ MBit/sec download Internet service
+
 
 - `Node`:the Morph consensus layer embedded tendermint which needs to meet the [tendermint hardware requirements](https://docs.tendermint.com/v0.34/tendermint-core/running-in-production.html#processor-and-memory). 
 
@@ -28,11 +33,11 @@ cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
 
-Currently, we use tag v0.2.0-beta as our beta version.
+Currently, we use tag morph-v2.0.0 as our version.
 
 ```
 cd morph
-git checkout v0.2.0-beta
+git checkout morph-v2.0.0
 ```
 
 ### Build Geth
@@ -40,7 +45,7 @@ git checkout v0.2.0-beta
 Notice: You need C compiler to build geth
 
 ```
-make nccc_geth
+make geth
 ```
 
 ### Build Node
@@ -56,7 +61,13 @@ make build
 
 ```
 cd ~/.morph
+
+## mainnet
+wget https://raw.githubusercontent.com/morph-l2/config-template/main/mainnet/data.zip
+
+## testnet
 wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
+
 unzip data.zip
 ```
 
@@ -67,25 +78,8 @@ cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
-## Sync from snapshot(Recommended)
-
-You should build the binary and prepare the config files in the above steps first, then download the snapshot. 
-
-### Download snapshot
-
-```bash
-## download package
-wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20240805-1.tar.gz
-## uncompress package
-tar -xzvf snapshot-20240805-1.tar.gz
-```
-
-Extracting snapshot data to the data directory your node points to 
-
-```bash
-mv snapshot-20240805-1/geth geth-data
-mv snapshot-20240805-1/data node-data
-```
+## Sync from genesis block(For mainnet)
+Start the execution client and consensus client directly without downloading snapshot.
 
 ### Start execution client
 
@@ -205,5 +199,25 @@ curl http://localhost:26657/status to check the sync status of the node
 
 The returned "catching_up" indicates  whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
 
-## Sync from genesis block(Not Recommended)
-Start the execution client and consensus client directly without downloading snapshot
+## Sync from snapshot(Recommended for testnet)
+
+You should build the binary and prepare the config files in the above steps first, then download the snapshot. 
+
+### Download snapshot
+
+```bash
+
+## testnet
+wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20240805-1.tar.gz
+tar -xzvf snapshot-20240805-1.tar.gz
+```
+
+Extracting snapshot data to the data directory your node points to 
+
+```bash
+mv snapshot-20240805-1/geth geth-data
+mv snapshot-20240805-1/data node-data
+```
+
+Start the execution client and consensus client.
+
