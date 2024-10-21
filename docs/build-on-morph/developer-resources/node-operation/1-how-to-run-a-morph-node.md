@@ -33,11 +33,11 @@ cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
 
-Currently, we use tag morph-v2.0.0 as our version.
+Currently, we use tag v0.4.0 as our version.
 
 ```
 cd morph
-git checkout morph-v2.0.0
+git checkout v0.4.0
 ```
 
 ### Build Geth
@@ -83,8 +83,8 @@ Start the execution client and consensus client directly without downloading sna
 
 ### Start execution client
 
-```bash
-./morph/go-ethereum/build/bin/geth --morph-holesky \
+```bash title="Script for starting mainnet geth"
+./morph/go-ethereum/build/bin/geth --morph \
     --datadir "./geth-data" \
     --http --http.api=web3,debug,eth,txpool,net,engine \
     --authrpc.addr localhost \
@@ -92,14 +92,19 @@ Start the execution client and consensus client directly without downloading sna
     --authrpc.port 8551 \
     --authrpc.jwtsecret=./jwt-secret.txt \
     --log.filename=./geth.log
+
 ```
+
+:::note
+For testnet, using ```--morph-holesky``` instead
+:::
 
 tail -f geth.log to check if the Geth is running properly, or you can also execute the curl command below to check if you are connected to the peer. 
 
 ```Shell
 curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' localhost:8545
 
-{"jsonrpc":"2.0","id":74,"result":"0x3"}
+{"jsonrpc":"2.0","id":74,"result":"0x6"}
 ```
 
 ### Start consensus client
@@ -124,7 +129,7 @@ curl http://localhost:26657/net_info
     "listeners": [
       "Listener(@)"
     ],
-    "n_peers": "3",
+    "n_peers": "7",
     "peers": [
       {
         "node_info": {
@@ -133,12 +138,12 @@ curl http://localhost:26657/net_info
             "block": "11",
             "app": "0"
           },
-          "id": "0fb5ce425197a462a66de015ee5fbbf103835b8a",
-          "listen_addr": "tcp://0.0.0.0:26656",
-          "network": "chain-morph-holesky",
+          "id": "b4ac59de479b0251d441ca0385429bc21713a208",
+          "listen_addr": "tcp://0.0.0.0:26610",
+          "network": "chain-morph-mainnet",
           "version": "0.37.0-alpha.1",
-          "channels": "4020212223386061",
-          "moniker": "morph-dataseed-node-1",
+          "channels": "402021222338606100",
+          "moniker": "morph-dataseed-node-0",
           "other": {
             "tx_index": "on",
             "rpc_address": "tcp://0.0.0.0:26657"
@@ -163,11 +168,11 @@ curl http://localhost:26657/status to check the sync status of the node
         "block": "11",
         "app": "0"
       },
-      "id": "b3f34dc2ce9c4fee5449426992941aee1e09670f",
+      "id": "cde0d7cecfe9c82244c1dfa72c951759d02f1024",
       "listen_addr": "tcp://0.0.0.0:26656",
-      "network": "chain-morph-holesky",
+      "network": "chain-morph-mainnet",
       "version": "0.37.0-alpha.1",
-      "channels": "4020212223386061",
+      "channels": "402021222338606100",
       "moniker": "my-morph-node",
       "other": {
         "tx_index": "on",
@@ -175,21 +180,21 @@ curl http://localhost:26657/status to check the sync status of the node
       }
     },
     "sync_info": {
-      "latest_block_hash": "71024385DDBEB7B554DB11FD2AE097ECBD99B2AF826C11B2A74F7172F2DEE5D2",
+      "latest_block_hash": "B4C0E514CD984B101FA89D7DB48C1FE18384F64C25E5565F618A5FE2851C42A9",
       "latest_app_hash": "",
-      "latest_block_height": "2992",
-      "latest_block_time": "2024-04-25T13:48:27.647889852Z",
-      "earliest_block_hash": "C7A73D3907C6CA34B9DFA043FC6D4529A8EAEC8F059E100055653E46E63F6F8E",
+      "latest_block_height": "2410",
+      "latest_block_time": "2024-10-21T08:49:09.952573291Z",
+      "earliest_block_hash": "0D66D908033DA7A3F5A95179B8D64261EDD887B944E59502A1C9EFBC1C9C4EF5",
       "earliest_app_hash": "",
       "earliest_block_height": "1",
-      "earliest_block_time": "2024-04-25T09:06:30Z",
+      "earliest_block_time": "2024-10-21T06:00:00Z",
       "catching_up": false
     },
     "validator_info": {
-      "address": "5FB3D3734640792F14B70E7A53FBBD39DB9787A8",
+      "address": "B7395023EFF719D0EE15AD96FFC7F69B6B9E52EF",
       "pub_key": {
         "type": "tendermint/PubKeyEd25519",
-        "value": "rzN67ZJWsaLSGGpNj7HOWs8nrL5kr1n+w0OckWUCetw="
+        "value": "tZI+wTExwoKeyUFgdSSYmf4sAYp4BhJu13UgPy1wDOc="
       },
       "voting_power": "0"
     }
@@ -197,7 +202,7 @@ curl http://localhost:26657/status to check the sync status of the node
 }
 ```
 
-The returned "catching_up" indicates  whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
+The returned "catching_up" indicates whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
 
 ## Sync from snapshot(Recommended for testnet)
 

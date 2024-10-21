@@ -5,6 +5,10 @@ lang: en-US
 
 This guide will help you start a full node running in the docker container. 
 
+:::note
+We only support running a testnet node with docker
+:::
+
 ## Quick Start
 
 Currently, users need to build the Docker image themselves using the Docker file and Docker Compose file we provide. However, there's no need to worry, as you only need one command to quickly start a full node. This command will handle everything for you, including downloading snapshots, structure data and config files, building the image, and starting the container.
@@ -12,6 +16,7 @@ Currently, users need to build the Docker image themselves using the Docker file
 1. Clone the dockerfile repository
 
 ```bash
+## testnet
 git clone --branch release/v0.4.x https://github.com/morph-l2/morph.git
 ```
 2. Run the following command
