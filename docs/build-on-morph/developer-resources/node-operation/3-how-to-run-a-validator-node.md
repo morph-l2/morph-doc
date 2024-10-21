@@ -17,18 +17,18 @@ mkdir -p ~/.morph
 cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
-Currently, we use tag v0.2.0-beta as our beta version geth.
+Currently, we use tag v0.4.0 as our beta version geth.
 
 ```bash
 cd morph
-git checkout v0.2.0-beta
+git checkout v0.4.0
 ```
 ### Build Geth
 
 Notice: You need C compiler to build geth
 
 ```bash
-make nccc_geth
+make geth
 ```
 
 ### Build Node

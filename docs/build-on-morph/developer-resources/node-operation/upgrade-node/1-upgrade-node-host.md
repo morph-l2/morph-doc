@@ -14,7 +14,7 @@ git clone https://github.com/morph-l2/morph.git
 ## checkout the latest version of the source code you need
 git checkout ${latestVersion}
 ## install geth
-make nccc_geth
+make geth
 ## install morphnode
 cd ./morph/node && make build
 ```
@@ -37,7 +37,7 @@ Make sure to use the same start-up command you used before the upgrade
 
 ```bash
 ## start geth
-./morph/go-ethereum/build/bin/geth --morph-holesky \
+./morph/go-ethereum/build/bin/geth --morph \
     --datadir "./geth-data" \
     --http --http.api=web3,debug,eth,txpool,net,engine \
     --authrpc.addr localhost \
@@ -53,3 +53,7 @@ Make sure to use the same start-up command you used before the upgrade
      --l2.engine http://localhost:8551 \
      --log.filename ./node.log 
 ```
+
+:::note
+For testnet, use ```--morph-holesky``` instead
+:::
