@@ -137,6 +137,14 @@ module.exports = {
     {
       type:'category',
       label:'Fundamental Concepts',
+      link: {
+        type: 'generated-index',
+        title: 'Docusaurus Guides',
+        description: 'Learn about the most important Docusaurus concepts!',
+        slug: '/category/docusaurus-guides',
+        keywords: ['guides'],
+        image: '/img/docusaurus.png',
+      },
       items:[
         {
           type: 'doc',
@@ -199,14 +207,35 @@ module.exports = {
           id:'build-on-morph/sdk/globals'
         },
         {
-          type: 'doc',
-          id:'build-on-morph/developer-resources/create-a-safe-multi-signature-wallet'
+          type: 'category',
+          label: 'Use Ecosystem Developer Tools',
+          items:[
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/safe-multi-signature-wallet'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/rpc-services'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/account-abstraction'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/blockchain-indexing-services'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/blockchain-oracles'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/block-explorer'
+            }
+          ]
         },
-        {
-          type: 'doc',
-          id:'build-on-morph/developer-resources/ecosystem-infrastructure'
-        },
-        
         {
           type:'category',
           label:'Node Operation',
