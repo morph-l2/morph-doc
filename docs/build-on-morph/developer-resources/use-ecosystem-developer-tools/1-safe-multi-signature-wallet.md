@@ -1,11 +1,11 @@
 ---
-title: Create a Safe Multi-Signature Wallet
+title: Safe Multi-Signature Wallet
 lang: en-US
 ---
 
 ## What is Morph Safe?
 
-![safemultisig](../../../assets/docs/dev/safemultisig.png)
+![safemultisig](../../../../assets/docs/dev/safemultisig.png)
 
 Morph Safe is a fork managed by the Morph team in collaboration with [Protofire](https://www.protofire.io/), an official partner of the Safe team. It is a multi-signature smart contract wallet, which means it requires a minimum number of signatures to approve a transaction before it can occur.
 
