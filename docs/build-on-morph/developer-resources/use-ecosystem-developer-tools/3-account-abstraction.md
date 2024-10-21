@@ -8,5 +8,3 @@ lang: en-US
 ![biconomy](../../../../assets/docs/dev/resources/biconomy.png)
 
 Documentation: https://docs.biconomy.io
-
-Integration for Morph Holesky is still in process, more details coming soon.
