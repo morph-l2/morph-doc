@@ -45,7 +45,13 @@ make build
 
 ```bash
 cd ~/.morph
+
+## mainnet
+wget https://raw.githubusercontent.com/morph-l2/config-template/main/mainnet/data.zip
+
+## testnet
 wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
+
 unzip data.zip
 ```
 
@@ -61,34 +67,16 @@ openssl rand -hex 32 > jwt-secret.txt
 
 ### Geth
 
-```bash
+```bash title="Script for starting mainnet geth"
+./morph/go-ethereum/build/bin/geth --morph \
+    --datadir "./geth-data" \
+    --http --http.api=web3,debug,eth,txpool,net,engine \
+    --authrpc.addr localhost \
+    --authrpc.vhosts="localhost" \
+    --authrpc.port 8551 \
+    --authrpc.jwtsecret=./jwt-secret.txt \
+    --log.filename=./geth.log
 
-NETWORK_ID=2810
-
-nohup ./morph/go-ethereum/build/bin/geth \
---datadir=./geth-data \
---verbosity=3 \
---http \
---http.corsdomain="*" \
---http.vhosts="*" \
---http.addr=0.0.0.0 \
---http.port=8545 \
---http.api=web3,eth,txpool,net,engine \
---ws \
---ws.addr=0.0.0.0 \
---ws.port=8546 \
---ws.origins="*" \
---ws.api=web3,eth,txpool,net,engine \
---networkid=$NETWORK_ID \
---authrpc.addr="0.0.0.0" \
---authrpc.port="8551" \
---authrpc.vhosts="*" \
---authrpc.jwtsecret=$JWT_SECRET_PATH \
---gcmode=archive \
---metrics \
---metrics.addr=0.0.0.0 \
---metrics.port=6060 \
---miner.gasprice="100000000"
 ```
 
 tail -f geth.log to check if the Geth is running properly, or you can also execute the below curl command to check if you are connected to the peer.
@@ -109,24 +97,43 @@ curl --location --request POST 'localhost:8545/' \
 
 ```bash
 cd ~/.morph
-export L1MessageQueueWithGasPriceOracle=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
-export START_HEIGHT=1434640
-export Rollup=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+
+## mainnet
+export CHAIN_ID=1
+export L1MESSAGEQUEUE_CONTRACT=0x3931ade842f5bb8763164bdd81e5361dce6cc1ef
+export START_HEIGHT=20996776
+export ROLLUP=0x759894ced0e6af42c26668076ffa84d02e3cef60
+
+## start node
 ./morph/node/build/bin/morphnode --validator --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
      --l2.eth http://localhost:8545 \
      --l2.engine http://localhost:8551 \
-     --l1.rpc $(Ethereum Holesky RPC)  \
-     --l1.beaconrpc $(Ethereum Holesky beacon chain RPC)  \
-     --l1.chain-id  17000   \
-     --validator.privateKey $(Your Validator Key)  \
-     --sync.depositContractAddr $(L1MessageQueueWithGasPriceOracle) \
-     --sync.startHeight  $(START_HEIGHT) \
-     --derivation.rollupAddress $(Rollup) \
-     --derivation.startHeight  $(START_HEIGHT) \
+     --l1.rpc $(Ethereum RPC)  \
+     --l1.beaconrpc $(Ethereum beacon chain RPC)  \
+     --l1.chain-id ${CHAIN_ID}   \
+     --validator.privateKey 0x0000000000000000000000000000000000000000000000000000000000000001  \
+     --sync.depositContractAddr ${L1MESSAGEQUEUE_CONTRACT} \
+     --sync.startHeight  ${START_HEIGHT} \
+     --derivation.rollupAddress ${ROLLUP} \
+     --derivation.startHeight  ${START_HEIGHT} \
      --derivation.fetchBlockRange 200 \
      --log.filename ./node.log
 ```
+
+For holesky network, using
+```bash
+export CHAIN_ID=17000 
+export L1MESSAGEQUEUECONTRACT=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
+export START_HEIGHT=1434640
+export ROLLUP=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+```
+
+
+:::note
+Note the **validator.privateKey** is of no use to you. It is used to send challenges when the state root is found to be incorrect. However, we do not currently accept challenges from third party addresses. But it is also a required parameter for the morphnode command, so we give a ***0x00... 1***.
+:::
+
 ## Check Status
 
 If your node is successfully started, you will see the following response:
