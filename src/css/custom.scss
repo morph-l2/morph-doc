@@ -33,6 +33,7 @@
 
   --ifm-color-emphasis-200: '#000000',
 
+  --ifm-menu-color: '#21231C',
   /* --ifm-menu-color: rgba(0, 0, 0, 1);
   --ifm-menu-color-active: rgba(0, 0, 0, 0.9); */
 
@@ -47,15 +48,19 @@
   --ifm-footer-color: #999;
 
   --border-hover-shadow: rgba(0, 22, 9, 0.10);
+  // --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  // --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg width="12px" height="12px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="#90918D" stroke-width="1.8"></path></svg>');
 }
-
+// .menu__link--sublist-caret:after {
+//   opacity: 0.5;
+// }
 [data-theme='light'] .navbar-sidebar__brand {
   background-color: #FFF;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #62ffa4;
+  --ifm-color-primary: #14A800;
   --ifm-color-primary-dark: #3fff90;
   --ifm-color-primary-darker: #2dff85;
   --ifm-color-primary-darkest: #00f768;
@@ -78,6 +83,7 @@
 
   --ifm-color-emphasis-200: '#fff',
 
+  --ifm-menu-color: '#FFF',
   /* --ifm-menu-color: rgba(120, 124, 128, 1);
   --ifm-menu-color-active: #fff !important; */
 
@@ -96,6 +102,94 @@
 .navbar.navbar--fixed-top {
   border-bottom: 1px solid #DEDEDD;
 }
+[data-theme='dark'] .navbar.navbar--fixed-top {
+  border-bottom: 1px solid #21231C;
+}
+.menu__link.menu__link--sublist.menu__link--sublist-caret {
+  // display: block;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.theme-doc-sidebar-item-link-level-4.menu__list-item .menu__link {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.theme-doc-sidebar-item-link-level-3.menu__list-item .menu__link {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.theme-doc-sidebar-item-link-level-2.menu__list-item .menu__link {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.theme-doc-sidebar-item-link-level-1.menu__list-item .menu__link {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.theme-doc-sidebar-item-link-level-1.menu__list-item .menu__link {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+[data-theme='light'] .theme-doc-sidebar-item-link-level-2.menu__list-item {
+  color: #000;
+}
+[data-theme='dark'] .theme-doc-sidebar-item-link-level-2.menu__list-item {
+  color: #fff;
+}
+[data-theme='light'] .theme-doc-sidebar-item-link-level-2.menu__list-item {
+  color: #646560;
+}
+[data-theme='dark'] .theme-doc-sidebar-item-link-level-2.menu__list-item {
+  color: #BCBDBB;
+}
+[data-theme='light'] .theme-doc-sidebar-item-link-level-3.menu__list-item {
+  color: #646560;
+}
+[data-theme='dark'] .theme-doc-sidebar-item-link-level-3.menu__list-item {
+  color: #BCBDBB;
+}
+[data-theme='light'] .theme-doc-sidebar-item-link-level-4.menu__list-item {
+  color: #646560;
+}
+[data-theme='dark'] .theme-doc-sidebar-item-link-level-4.menu__list-item {
+  color: #BCBDBB;
+}
+[data-theme='light'] .menu__list-item--collapsed .menu__link {
+  color: #646560;
+}
+[data-theme='dark'] .menu__list-item--collapsed .menu__link {
+  color: #BCBDBB;
+}
+
 .main-wrapper,
 .container {
   min-height: 100%;
@@ -204,17 +298,10 @@
   }
 }
 
-.theme-doc-sidebar-item-link,
-.menu__list-item-collapsible {
-  font-size: 18px;
-  font-weight: 700;
-  color: hsl(var(--morui-title-1));
-}
-
 .theme-doc-sidebar-item-link-level-2 {
   font-size: 16px;
   font-weight: 600;
-  color: hsl(var(--morui-title-1));
+  // color: hsl(var(--morui-title-1));
 }
 // .navbar-sidebar button.clean-btn svg, .navbar__items button.clean-btn svg {
 //   color: #fff;
