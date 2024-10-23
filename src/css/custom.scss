@@ -50,7 +50,7 @@
 }
 
 [data-theme='light'] .navbar-sidebar__brand {
-  background-color: #6A51FF;
+  background-color: #FFF;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -93,6 +93,13 @@
 
   --border-hover-shadow: rgba(155, 255, 197, 0.30);
 }
+.navbar.navbar--fixed-top {
+  border-bottom: 1px solid #DEDEDD;
+}
+.main-wrapper,
+.container {
+  min-height: 100%;
+}
 
 .menu__link {
   line-height: 1.75;
@@ -126,8 +133,9 @@
 }
 [data-theme='light'] .navbar {
   /* background: rgba(255, 255, 255, 0.90) !important; */
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05) !important;
-  background: #6A51FF;
+  // box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05) !important;
+  background: #FFF;
+  box-shadow: none;
   /* backdrop-filter: blur(5px); */
 }
 [data-theme='light'] .footer {
@@ -153,13 +161,13 @@
   cursor: pointer !important;
 }
 [data-theme='light'] .darkToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module svg {
-  color: #F7F7F7 !important;
+  color: #000 !important;
 }
 [data-theme='light'] .clean-btn.navbar-sidebar__close svg {
-  color: #F7F7F7 !important;
+  color: #000 !important;
 }
 [data-theme='light'] .clean-btn.navbar-sidebar__close svg {
-  color: #F7F7F7 !important;
+  color: #000 !important;
 }
 [data-theme='dark'] .lightToggleIcon_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
   display: block !important;
@@ -208,9 +216,9 @@
   font-weight: 600;
   color: hsl(var(--morui-title-1));
 }
-.navbar-sidebar button.clean-btn svg, .navbar__items button.clean-btn svg {
-  color: #fff;
-}
+// .navbar-sidebar button.clean-btn svg, .navbar__items button.clean-btn svg {
+//   color: #fff;
+// }
 .menu__link--sublist-caret:after {
   min-width: 16px;
 }
@@ -229,6 +237,10 @@
 }
 [data-theme='light'] button.clean-btn[aria-live="polite"] svg:nth-child(2) {
   display: block !important;
+}
+.menu__link menu__link--sublist.menu__link--sublist-caret {
+  font-size: 16px;
+  font-weight: 600;
 }
 .navbar__logo img {
 height: 28px;

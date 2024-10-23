@@ -61,10 +61,10 @@ const config = {
         toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
-          // {
-          //   to: '/docs/newDoc',
-          //   from: '/docs/oldDoc',
-          // },
+          {
+            to: '/docs/about-morph/user-navigation-page',
+            from: ['/', '/docs'],
+          },
         ],
       },
     ],
@@ -168,8 +168,8 @@ const config = {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'img/index/logo_dark.svg',
-          srcDark: 'img/index/logo_dark.svg',
+          src: 'logo/LogoMorphBlack.svg',
+          srcDark: 'logo/LogoMorphWhite-summary.svg',
         },
         items: [
           {
