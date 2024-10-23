@@ -296,10 +296,9 @@ const developerSidebar = [
       
     
     ]
-  },
-
-
+  }
 ]
+
 //module.exports = sidebars;
 /*
 {
