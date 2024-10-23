@@ -10,12 +10,16 @@ const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
+import { links } from './src/components/config'
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 
   title: 'Morph docs – The Optimistic zkEVM Scaling Solution docs',
   tagline: '',
   favicon: 'https://www.morphl2.io/favicon.ico',
+
+  staticDirectories: ['public', 'static'],
 
   // Set the production url of your site here
   url: 'https://docs.morphl2.io',
@@ -94,7 +98,7 @@ const config = {
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: [require.resolve('./src/css/fonts.scss'), require.resolve('./src/css/custom.scss')],
         },
       }),
     ],
@@ -157,7 +161,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
@@ -198,35 +202,73 @@ const config = {
       footer: {
         links: [
           {
-            title: 'Learn More',
+            title: "Learn",
             items: [
               {
-                label: "Website",
-                href: 'https://www.morphl2.io/',
+                label: "Docs",
+                href: links.doc,
               },
               {
-                label: "About",
-                href: 'https://www.morphl2.io/about',
-              },
-              {
-                label: "Contact us",
-                href: 'https://t.me/MorphL2official',
+                label: "Blog",
+                href: links.blog,
               },
             ],
           },
           {
-            title: "Technology",
+            title: "Developers",
             items: [
               {
-                label: "Docs",
-                href: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+                label: "APIs",
+                href: links.apiDocs,
               },
               {
                 label: "Tools",
-                href: 'https://www.morphl2.io/build',
+                href: links.build,
               },
             ],
-          }
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Forum",
+                href: links.forum,
+              },
+              {
+                label: "Telegram",
+                href: links.telegram,
+              },
+              {
+                label: "Twitter",
+                href: links.twitter,
+              },
+              {
+                label: "Discord",
+                href: links.discord,
+              },
+            ],
+          },
+          {
+            title: "Company",
+            items: [
+              {
+                label: "About",
+                href: links.about,
+              },
+              {
+                label: "Contact us",
+                href: links.contactUs,
+              },
+              {
+                label: "Careers",
+                href: links.careers,
+              },
+              {
+                label: "Brand Kit",
+                href: links.brandkit,
+              }
+            ],
+          },
         ],
         copyright: `© ${new Date().getFullYear()} Morph. All rights reserved.`,
       },

@@ -12,6 +12,10 @@ module.exports = {
   ], // my markdown stuff is in ../docs, not /src
   darkMode: ['class', '[data-theme="dark"]'], // hooks into docusaurus' dark mode settigns
   theme: {
+    fontFamily: {
+      inter: ["Inter Variable", "ui-sans-serif"],
+      denim: ["Denim INK", "ui-sans-serif"],
+    },
     extend: {},
   },
   plugins: [
@@ -83,7 +87,7 @@ module.exports = {
             bg: "#FFF",
             card: "#F5F5F5",
             red: "#F53F5F",
-            green: "#00CB9A",
+            green: "#14A800",
             yellow: "#F7A01E",
             purple: "#846DFF", // brand
 
@@ -112,7 +116,7 @@ module.exports = {
             tag: "#D9F7F0",
 
             primary: {
-              DEFAULT: "#00CB9A",
+              DEFAULT: "#14A800",
               foreground: "#fff",
             },
 
