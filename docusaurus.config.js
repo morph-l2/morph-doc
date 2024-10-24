@@ -172,8 +172,8 @@ const config = {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'logo/LogoMorphBlack.svg',
-          srcDark: 'logo/LogoMorphWhite-summary.svg',
+          src: 'logo/LogoMorphGreen-summary.svg',
+          srcDark: 'logo/LogoMorphGreen-summary.svg',
         },
         items: [
           {

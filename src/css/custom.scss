@@ -7,21 +7,26 @@
  @tailwind base;
  @tailwind components;
  @tailwind utilities;
+
+ html body {
+  font-family: 'InterDisplay,Inter Variable';
+ }
  
  /* You can override the default Infima variables here. */
-:root {
+[data-theme='light'] {
   --ifm-color-primary: #14A800;
-  --ifm-color-primary-dark: #00b78b;
-  --ifm-color-primary-darker: #00ad83;
-  --ifm-color-primary-darkest: #008e6c;
-  --ifm-color-primary-light: #00dfa9;
-  --ifm-color-primary-lighter: #00e9b1;
-  --ifm-color-primary-lightest: #09ffc4;
+  --ifm-color-primary-dark: #3fff90;
+  --ifm-color-primary-darker: #2dff85;
+  --ifm-color-primary-darkest: #00f768;
+  --ifm-color-primary-light: #85ffb8;
+  --ifm-color-primary-lighter: #97ffc3;
+  --ifm-color-primary-lightest: #ccffe1;
 
-  --ifm-heading-color: #595959;
+  --ifm-heading-color: #21231C;
+  --ifm-color-gray-700: #21231C;
 
-  --ifm-menu-color-background-active: #D9F7F0;
-  --ifm-menu-color-background-hover: #D9F7F0;
+  --ifm-menu-color-background-active: #14A800;
+  --ifm-menu-color-background-hover: #14A800;
 
   --ifm-color-emphasis-600: #fff;
 
@@ -70,10 +75,11 @@
 
   /* --ifm-navbar-background-color: #7D68FF; */
 
-  --ifm-heading-color: #CCC;
+  --ifm-heading-color: #ffffff;
+  --ifm-color-gray-300: #ffffff;
 
-  --ifm-menu-color-background-active: #0F2518;
-  --ifm-menu-color-background-hover: #0F2518;
+  --ifm-menu-color-background-active: #14A800;
+  --ifm-menu-color-background-hover: #14A800;
 
   --ifm-color-emphasis-600: #000;
 
@@ -98,6 +104,18 @@
   --ifm-footer-color: #999;
 
   --border-hover-shadow: rgba(155, 255, 197, 0.30);
+}
+.menu__link--active:not(.menu__link--sublist) {
+  color: #fff;
+}
+.menu__link:hover {
+  color: #fff;
+}
+[data-theme=light] .menu__list-item--collapsed .menu__link:hover {
+  color: #fff;
+}
+[data-theme=dark] .menu__list-item--collapsed .menu__link:hover {
+  color: #fff;
 }
 .navbar.navbar--fixed-top {
   border-bottom: 1px solid #DEDEDD;
@@ -159,6 +177,11 @@
   margin-top: 4px;
   margin-bottom: 4px;
 }
+.menu__link {
+  line-height: 1.75;
+  color: var(--ifm-menu-color);
+  flex: 1;
+}
 [data-theme='light'] .theme-doc-sidebar-item-link-level-2.menu__list-item {
   color: #000;
 }
@@ -189,20 +212,28 @@
 [data-theme='dark'] .menu__list-item--collapsed .menu__link {
   color: #BCBDBB;
 }
-
-.main-wrapper,
-.container {
-  min-height: 100%;
+[data-theme='light'] .menu__link.menu__link--sublist.menu__link--sublist-caret {
+  color: #646560;
+}
+[data-theme='dark'] .menu__link.menu__link--sublist.menu__link--sublist-caret {
+  color: #BCBDBB;
+}
+[data-theme='light'] .theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-2.menu__list-item .menu__link {
+  color: #646560;
+}
+[data-theme='dark'] .theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-2.menu__list-item .menu__link {
+  color: #BCBDBB;
 }
 
 .main-wrapper,
 .container {
   min-height: 100%;
 }
-
-.menu__link {
-  line-height: 1.75;
+.main-wrapper,
+.container {
+  min-height: 100%;
 }
+
 .footer__links {
   display: flex;
 }
@@ -314,11 +345,11 @@
 //   color: #fff;
 // }
 .menu__link--sublist-caret:after {
-  min-width: 16px;
+  min-width: 13px;
 }
 .menu__caret:before, .menu__link--sublist-caret:after {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
 }
 [data-theme='dark'] button.clean-btn svg:nth-child(1) {
   display: block !important;
@@ -337,7 +368,7 @@
   font-weight: 600;
 }
 .navbar__logo img {
-height: 28px;
+height: 32px;
 }
 [data-theme='light']  .morph-logo {
   background-size: 160px 25px;
