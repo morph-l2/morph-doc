@@ -137,14 +137,6 @@ module.exports = {
     {
       type:'category',
       label:'Fundamental Concepts',
-      link: {
-        type: 'generated-index',
-        title: 'Docusaurus Guides',
-        description: 'Learn about the most important Docusaurus concepts!',
-        slug: '/category/docusaurus-guides',
-        keywords: ['guides'],
-        image: '/img/docusaurus.png',
-      },
       items:[
         {
           type: 'doc',
