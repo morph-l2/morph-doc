@@ -98,7 +98,7 @@ You can estimate the L2 execution fee by multiplying the gas price by the gas li
 
 #### Estimating the L1 data fee
 
-You can utilize the pre-deployed `L1GasPriceOracle` at `0x5300000000000000000000000000000000000002`. It offers a `getL1Fee` method to estimate the L1 data fee for the raw data of a given transaction.
+You can utilize the pre-deployed `L1GasPriceOracle` at `0x530000000000000000000000000000000000000F`. It offers a `getL1Fee` method to estimate the L1 data fee for the raw data of a given transaction.
 
 ```javascript
 function getL1Fee(bytes memory _data) external view override returns (uint256);
