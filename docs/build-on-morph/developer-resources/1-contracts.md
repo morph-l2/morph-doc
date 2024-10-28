@@ -6,12 +6,16 @@ lang: en-US
 
 ## Morph Network Info
 
+### Morph Mainnet
+
 | Network Name | Morph Mainnet | Ethereum Mainnet |
 | --- | --- | --- |
 | RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com/ |
 | Chain ID | 2818 | 1 |
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer.morphl2.io/| https://etherscan.io/ |
+
+### Morph Holesky Testnet
 
 | Network Name | Morph Holesky Testnet | Ethereum Holesky Testnet |
 | --- | --- | --- |
@@ -26,23 +30,21 @@ lang: en-US
 
 #### L1 Contract
 
-[Staking](https://etherscan.io/address/0x868dd5d1c268277e331b726bb438edde8221d389): 0x868dd5d1c268277e331b726bb438edde8221d389
+[Staking](https://etherscan.io/address/0x0dc417f8af88388737c5053ff73f345f080543f7): 0x0dc417f8af88388737c5053ff73f345f080543f7
 
-[Rollup](https://etherscan.io/address/0xd8c5c541d56f59d65cf775de928ccf4a47d4985c): 0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+[Rollup](https://etherscan.io/address/0x759894ced0e6af42c26668076ffa84d02e3cef60): 0x759894ced0e6af42c26668076ffa84d02e3cef60
 
-[L1MessageQueueWithGasPriceOracle](https://etherscan.io/address/0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b): 0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
+[L1MessageQueueWithGasPriceOracle](https://etherscan.io/address/0x3931ade842f5bb8763164bdd81e5361dce6cc1ef): 0x3931ade842f5bb8763164bdd81e5361dce6cc1ef
 
-[L1CrossDomainMessenger](https://etherscan.io/address/0xecc966ab425f3f5bd58085ce4ebdbf81d829126f): 0xecc966ab425f3f5bd58085ce4ebdbf81d829126f
+[L1CrossDomainMessenger](https://etherscan.io/address/0xdc71366effa760804dcfc3edf87fa2a6f1623304): 0xdc71366effa760804dcfc3edf87fa2a6f1623304
 
 #### L2 Contract
 
 [L2ToL1MessagePasser](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000001): 0x5300000000000000000000000000000000000001
 
-[L2Sequencer](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000003): 0x5300000000000000000000000000000000000003
+[L2Sequencer](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000017): 0x5300000000000000000000000000000000000017
 
 [L2Gov](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000004): 0x5300000000000000000000000000000000000004
-
-[L2Submitter](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000005): 0x5300000000000000000000000000000000000005
 
 [L2CrossDomainMessenger](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000007): 0x5300000000000000000000000000000000000007
 
@@ -50,13 +52,23 @@ lang: en-US
 
 #### L1 Gateway
 
-[L1GatewayRouter](https://etherscan.io/address/0xea593b730d745fb5fe01b6d20e6603915252c6bf): 0xea593b730d745fb5fe01b6d20e6603915252c6bf
+[L1GatewayRouter](https://etherscan.io/address/0x7497756ada7e656ae9f00781af49fc0fd08f8a8a): 0x7497756ada7e656ae9f00781af49fc0fd08f8a8a
 
-[L1ETHGateway](https://etherscan.io/address/0xcc3d455481967dc97346ef1771a112d7a14c8f12): 0xcc3d455481967dc97346ef1771a112d7a14c8f12
+[L1ETHGateway](https://etherscan.io/address/0x1c1ffb5828c3a48b54e8910f1c75256a498ade68): 0x1c1ffb5828c3a48b54e8910f1c75256a498ade68
 
-[L1WETHGateway](https://etherscan.io/address/0xbbdb317b50313d96823eba0fc2c1d9e469dc1906): 0xbbdb317b50313d96823eba0fc2c1d9e469dc1906
+[L1WETHGateway](https://etherscan.io/address/0x788890ba6f105cca373c4ff01055cd34de01877f): 0x788890ba6f105cca373c4ff01055cd34de01877f
 
-[L1StandardERC20Gateway](https://etherscan.io/address/0xb26dafdb434ae93e3b8efde4f0193934955d86cd): 0xb26dafdb434ae93e3b8efde4f0193934955d86cd
+[L1StandardERC20Gateway](https://etherscan.io/address/0x44c28f61a5c2dd24fc71d7df8e85e18af4ab2bd8): 0x44c28f61a5c2dd24fc71d7df8e85e18af4ab2bd8
+
+[L1CustomERC20Gateway](https://etherscan.io/address/0xa534badd09b4c62b7b1c32c41df310aa17b52ef1): 0xa534badd09b4c62b7b1c32c41df310aa17b52ef1
+
+[L1ERC721Gateway](https://etherscan.io/address/0x5ae782c23a303c0d70ae697a0aee9eae9a5d77c4): 0x5ae782c23a303c0d70ae697a0aee9eae9a5d77c4
+
+[L1ERC1155Gateway](https://etherscan.io/address/0x7c9a3d9531692d057d496d04938bdb7d367e9765): 0x7c9a3d9531692d057d496d04938bdb7d367e9765
+
+[L1USDCGateway](https://etherscan.io/address/0xc9045350712a1dcc3a74eca18bc985424bbe7535): 0xc9045350712a1dcc3a74eca18bc985424bbe7535
+
+[EnforcedTxGateway](https://etherscan.io/address/0xc5fa3b8968c7fabeea2b530a20b88d0c2ed8abb7): 0xc5fa3b8968c7fabeea2b530a20b88d0c2ed8abb7
 
 #### L2 Gateway
 
@@ -74,6 +86,8 @@ lang: en-US
 
 ### Other Layer 2 Predeploys
 
+[L2Staking](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000015): 0x5300000000000000000000000000000000000015
+
 [L2TxFeeVault](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000A): 0x530000000000000000000000000000000000000A
 
 [ProxyAdmin](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000B): 0x530000000000000000000000000000000000000B
@@ -85,6 +99,31 @@ lang: en-US
 [GasPriceOracle](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000F): 0x530000000000000000000000000000000000000F
 
 [L2WETH](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000011): 0x5300000000000000000000000000000000000011
+
+### Tokens
+
+#### L1 Tokens
+
+[WETH](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2): 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+
+[USDT](https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7): 0xdAC17F958D2ee523a2206206994597C13D831ec7
+
+[USDC](https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48): 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+
+[DAI](https://etherscan.io/address/0x6B175474E89094C44Da98b954EedeAC495271d0F): 0x6B175474E89094C44Da98b954EedeAC495271d0F
+
+[WBTC](https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599): 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
+
+[wstETH](https://etherscan.io/address/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0): 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0
+
+
+#### L2 Tokens
+
+[L2WETH](https://explorer.morphl2.io/address/0x5300000000000000000000000000000000000011): 0x5300000000000000000000000000000000000011
+
+[USDT](https://explorer.morphl2.io/address/0xc7D67A9cBB121b3b0b9c053DD9f469523243379A): 0xc7D67A9cBB121b3b0b9c053DD9f469523243379A
+
+[WBTC](https://explorer.morphl2.io/address/0x803DcE4D3f4Ae2e17AF6C51343040dEe320C149D): 0x803DcE4D3f4Ae2e17AF6C51343040dEe320C149D
 
 ## Morph Holesky Contracts
 
