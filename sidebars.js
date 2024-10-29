@@ -113,6 +113,16 @@ module.exports = {
       items:[
         {
           type: 'link',
+          href: "https://bridge.morphl2.io/",
+          label: 'Morph Official Bridge'
+        },
+        {
+          type: 'link',
+          href: "https://explorer.morphl2.io/",
+          label: 'Morph Mainnet Explorer'
+        },
+        {
+          type: 'link',
           href: "https://bridge-holesky.morphl2.io/",
           label: 'Morph Holesky Official Bridge'
         },
