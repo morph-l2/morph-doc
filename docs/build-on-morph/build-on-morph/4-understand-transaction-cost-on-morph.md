@@ -47,13 +47,11 @@ Users must pay for the cost of submitting their transactions to Ethereum, known 
 Formula:
 
 ```
-l1DataFee = (l1BaseFee * commitScalar + l1BlobBaseFee * tx_data_gas * blobScalar) / rcfg.Precision
+l1DataFee = (l1BaseFee * commitScalar + l1BlobBaseFee * len(tx_data) * blobScalar) / rcfg.Precision
 ```
 
-where tx_data_gas is
-
 ```
-tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
+len(tx_data) = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
 
 And other parameters:
@@ -65,7 +63,7 @@ And other parameters:
 
 
 :::tip
-You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph Holesky at [GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000F).
+You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph mainnet at [GasPriceOracle](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000F).
 :::
 
 
