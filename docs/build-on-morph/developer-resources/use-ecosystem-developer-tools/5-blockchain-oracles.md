@@ -9,7 +9,7 @@ lang: en-US
 
 Documentation: https://docs.pyth.network/price-feeds
 
-Right now Pyth is deployed on Morph Holesky, check the [contract](https://explorer-holesky.morphl2.io/address/0x2880aB155794e7179c9eE2e38200202908C17B43).
+Right now Pyth is deployed on Morph Mainnet, check the [contract](https://explorer.morphl2.io/address/0x2880aB155794e7179c9eE2e38200202908C17B43).
 
 ### eOracle
 
