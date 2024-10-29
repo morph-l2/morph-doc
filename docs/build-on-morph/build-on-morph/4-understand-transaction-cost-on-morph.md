@@ -96,8 +96,21 @@ As a result, you should display the sum of both of these fees to give users the 
 
 You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
 
-#### [Estimating the L1 data fee](./understand-transaction-cost-on-morph#the-l1-data-fee)
+#### Estimating the L1 data fee
 
+You can utilize the pre-deployed `L1GasPriceOracle` at `0x530000000000000000000000000000000000000F`. It offers a `getL1Fee` method to estimate the L1 data fee for the raw data of a given transaction.
+
+```javascript
+function getL1Fee(bytes memory _data) external view override returns (uint256);
+```
+
+:::tip
+
+Once the sequencer has processed a transaction, a user's L1 fee is secured, and any fluctuations will not impact what a user pays.
+
+Due to Morph's ~1s block time, any changes in L1 gas between a transaction's submission and its inclusion in a block should be minimal. The sequencer will account for any variations in L1 gas costs between a transaction's inclusion in a block and when the sequencer commits the data to L1.
+
+:::
 
 
 #### Estimating the total fee

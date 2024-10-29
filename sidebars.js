@@ -105,6 +105,16 @@ const userSidebar = [
     items:[
       {
         type: 'link',
+        href: "https://bridge.morphl2.io/",
+        label: 'Morph Official Bridge'
+      },
+      {
+        type: 'link',
+        href: "https://explorer.morphl2.io/",
+        label: 'Morph Mainnet Explorer'
+      },
+      {
+        type: 'link',
         href: "https://bridge-holesky.morphl2.io/",
         label: 'Morph Holesky Official Bridge'
       },
@@ -130,14 +140,6 @@ const developerSidebar = [
   {
     type:'category',
     label:'Fundamental Concepts',
-    link: {
-      type: 'generated-index',
-      title: 'Docusaurus Guides',
-      description: 'Learn about the most important Docusaurus concepts!',
-      slug: '/category/docusaurus-guides',
-      keywords: ['guides'],
-      image: '/img/docusaurus.png',
-    },
     items:[
       {
         type: 'doc',
@@ -296,7 +298,9 @@ const developerSidebar = [
       
     
     ]
-  }
+  },
+
+
 ]
 
 //module.exports = sidebars;
