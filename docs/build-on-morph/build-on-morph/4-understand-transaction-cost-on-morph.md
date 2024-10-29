@@ -94,7 +94,15 @@ As a result, you should display the sum of both of these fees to give users the 
 
 #### Estimating the L2 execution fee
 
-You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
+You can estimate the L2 execution fee by multiplying the gas price by the gas used, just like on Ethereum.
+
+The formula is straightforward:
+```
+l2_execution_fee = l2_gas_price * l2_gas_used
+l2_gas_price = l2_base_fee + l2_priority_fee
+```
+
+The amount of L2 gas used depends on the specific transaction. Due to EVM compatibility, gas usage on Morph is typically similar to Ethereum.
 
 #### Estimating the L1 data fee
 
