@@ -40,10 +40,10 @@ export const links = {
   walletSetup: 'https://docs.morphl2.io/docs/quick-start/wallet-setup/',
 
   // start building
-  apiDocs: 'https://explorer-testnet.morphl2.io/api-docs',
-  explorer: 'https://explorer-testnet.morphl2.io',
-  explorerApi: 'https://explorer-api-testnet.morphl2.io', // /api/v2/stats
-  bridge: 'https://bridge-testnet.morphl2.io',
+  apiDocs: 'https://explorer.morphl2.io/api-docs',
+  explorer: 'https://explorer.morphl2.io',
+  explorerApi: 'https://explorer-api.morphl2.io', // /api/v2/stats
+  bridge: 'https://bridge.morphl2.io',
   
   holeskyWalletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
   holeskyApiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
