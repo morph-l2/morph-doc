@@ -20,6 +20,76 @@ To deploy contracts onto a MorphL2 chain, simply set the RPC endpoint of your ta
 
 ...it all just works!
 
+# Mainnet:
+
+## Step 1: Network Configuration
+
+Before you start, ensure you are connected to the following networks:
+
+| Network Name | Morph Mainnet | Ethereum Mainnet |
+| --- | --- | --- |
+| RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com/ |
+| Chain ID | 2818 | 1 |
+| Currency Symbol | ETH | ETH |
+| Block Explorer URL | https://explorer.morphl2.io/| https://etherscan.io/ |
+
+:::tip Websocket Connection
+
+wss://rpc-quicknode.morphl2.io
+
+:::
+
+### Tendermint Consensus Information
+
+Tendermint RPC: https://rpc-consensus.morphl2.io
+
+Tendermint RPC Documentation: https://docs.tendermint.com/v0.34/rpc/#/
+
+
+## Step 2: Set up your developing framework
+
+### Hardhat
+
+Modify your Hardhat config file hardhat.config.ts to point at the Morph public RPC.
+
+```jsx
+const config: HardhatUserConfig = {
+  ...
+  networks: {
+    morphl2: {
+      url: 'https://rpc-quicknode.morphl2.io',
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      gasprice = 1000000000
+    },
+  },
+};
+
+```
+
+### Foundry
+
+To deploy using Morph Public RPC, run:
+
+```jsx
+forge create ... --rpc-url= --legacy
+```
+
+
+
+### ethers.js
+
+Setting up a Morph  provider in an ethers script:
+
+```jsx
+import { ethers } from 'ethers';
+
+const provider = new ethers.providers.JsonRpcProvider(
+  'https://rpc-quicknode.morphl2.io'
+);
+```
+
+
 
 # Holesky Testnet:
 
