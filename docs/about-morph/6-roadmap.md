@@ -31,9 +31,9 @@ Testnet Holesky (2024 Q2)
 
 ### Mainnet Beta 2024 Q3
 - Morph Staking
-- AI Ecosystem Support
+- Morph Zoo Season 1
   
 ### Mainnet Update Q4
-- Account Abstraction
-- Layer 3 Support
+- Consumer Layer Launch
+- zkVM Upgrade
 

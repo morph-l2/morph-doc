@@ -47,13 +47,11 @@ Users must pay for the cost of submitting their transactions to Ethereum, known 
 Formula:
 
 ```
-l1DataFee = (l1BaseFee * commitScalar + l1BlobBaseFee * tx_data_gas * blobScalar) / rcfg.Precision
+l1DataFee = (l1BaseFee * commitScalar + l1BlobBaseFee * len(tx_data) * blobScalar) / rcfg.Precision
 ```
 
-where tx_data_gas is
-
 ```
-tx_data_gas = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
+len(tx_data) = count_zero_bytes(tx_data) * 4 + count_non_zero_bytes(tx_data) * 16
 ```
 
 And other parameters:
@@ -65,7 +63,7 @@ And other parameters:
 
 
 :::tip
-You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph Holesky at [GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000F).
+You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph mainnet at [GasPriceOracle](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000F).
 :::
 
 
@@ -94,7 +92,15 @@ As a result, you should display the sum of both of these fees to give users the 
 
 #### Estimating the L2 execution fee
 
-You can estimate the L2 execution fee by multiplying the gas price by the gas limit, just like on Ethereum.
+You can estimate the L2 execution fee by multiplying the gas price by the gas used, just like on Ethereum.
+
+The formula is straightforward:
+```
+l2_execution_fee = l2_gas_price * l2_gas_used
+l2_gas_price = l2_base_fee + l2_priority_fee
+```
+
+The amount of L2 gas used depends on the specific transaction. Due to EVM compatibility, gas usage on Morph is typically similar to Ethereum.
 
 #### Estimating the L1 data fee
 
