@@ -13,11 +13,4 @@ For example, if your business has three main stakeholders, you can configure the
 
 In addition to robust security, Morph Safe offers complete self-custody over funds. The smart contract deployed for the wallet has full control over the wallet's contents and does not rely on any trusted external party for execution.
 
-:::tip
-
-Morph Mainnet Safe integration in progress
-
-:::
-
-
-To create your Morph Safe wallet click [here](https://safe.morphl2.io).
+To create your Morph Mainnet Safe wallet click [here](https://safe.morphl2.io/welcome/accounts?chain=morph).
