@@ -15,7 +15,11 @@ To interact with dApps on Morph, you need a compatible wallet. Below are some ex
 ![Bitget Wallet](../../assets/docs/about/bitgetwallet.png)
 
 - Installation: Bitget Wallet can be installed from their [official website](https://web3.bitget.com/en/wallet-download).
-- Importing Configurations: To add Morph mainnet within Bitget Wallet, go to ‘Wallet’ tab, click on the mainnet dropdown, and select ‘Add Mainnet’. Search for Morph in the list and select it (to add testnet, select ‘Morph Holesky’).
+- Importing Configurations: 
+
+1. To add Morph mainnet within Bitget Wallet, go to *Wallet* tab
+2. Click on the mainnet dropdown, and select *Add Mainnet*. 
+3. Search for Morph in the list and select it (to add testnet, select *Morph Holesky*).
 
 
 ### MetaMask
