@@ -133,7 +133,7 @@ curl -L https://foundry.paradigm.xyz | bash
 foundryup
 ```
 
-Then go the right folder of our example:
+Then go to the right folder of our example:
 
 ```bash
 cd contract-deployment-demos/foundry-demo
