@@ -291,11 +291,11 @@ Object - RollupBatch
 1. version: quantity - the version of the batch
 2. hash: DATA: 32 bytes - the batch of this batch
 3. parentBatchHeader: bytes - the parent batch header
-4. Chunks: arrays of chunk - Chunk: bytes : the chunk bytes of this batch
+4. Chunks: arrays of chunk - Chunk: bytes: the chunk bytes of this batch
 5. skippedL1MessageBitmap: bytes - the bitmap of the skipped L1Message
 6. prevStateRoot: DATA: 32 bytes - the state root at the beginning of this batch
 7. postStateRoot: DATA: 32 bytes - the state root at the end of this batch
-8. withdrawRoot: DATA : 32 bytes - the withdraw root at the end of this batch
+8. withdrawRoot: DATA: 32 bytes - the withdraw root at the end of this batch
 9. sidecar - the side car for the rollup transaction of the blob type
 10. signatures - array of object of signature:
 
