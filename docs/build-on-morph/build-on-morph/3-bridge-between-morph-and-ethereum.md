@@ -162,7 +162,7 @@ The easiest way to support your token is to manually add it on our [official bri
 
 ### Add token support to the bridge frontend
 
-By adding your token to the gateway, you and other users can bridge the token by inputting the token address.You need to raise a PR to our bridge repo if you want your token shown on the bridge frontend token list.
+By adding your token to the gateway, you and other users can bridge the token by inputting the token address. You need to raise a PR to our bridge repo if you want your token shown on the bridge frontend token list.
 
 You can find how to do it in the [morph list repo](https://github.com/morph-l2/morph-list).
 
