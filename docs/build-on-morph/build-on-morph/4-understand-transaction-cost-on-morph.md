@@ -63,7 +63,7 @@ And other parameters:
 
 
 :::tip
-You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph mainnet at [GasPriceOracle](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000F).
+You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph mainnet at [GasPriceOracle](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000f).
 :::
 
 
@@ -104,7 +104,7 @@ The amount of L2 gas used depends on the specific transaction. Due to EVM compat
 
 #### Estimating the L1 data fee
 
-You can utilize the pre-deployed `L1GasPriceOracle` at `0x530000000000000000000000000000000000000F`. It offers a `getL1Fee` method to estimate the L1 data fee for the raw data of a given transaction.
+You can utilize the pre-deployed `L1GasPriceOracle` at `0x530000000000000000000000000000000000000f`. It offers a `getL1Fee` method to estimate the L1 data fee for the raw data of a given transaction.
 
 ```javascript
 function getL1Fee(bytes memory _data) external view override returns (uint256);
