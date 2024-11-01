@@ -9,14 +9,14 @@ This guide outlines the steps to start a Morph node. The example assumes the hom
 
 Running the morph node requires 2 processes: `geth` and `node`.  
 
-- `Geth`:the Morph execution layer which needs to meet the requirements as below
+- `Geth`: the Morph execution layer which needs to meet the requirements as below
   - Fast CPU with 4+ cores
   - 32GB+ RAM
   - High-performance SSD with at least 1TB of free space
   - 25+ MBit/sec download Internet service
 
 
-- `Node`:the Morph consensus layer embedded tendermint which needs to meet the [tendermint hardware requirements](https://docs.tendermint.com/v0.34/tendermint-core/running-in-production.html#processor-and-memory). 
+- `Node`: the Morph consensus layer embedded tendermint which needs to meet the [tendermint hardware requirements](https://docs.tendermint.com/v0.34/tendermint-core/running-in-production.html#processor-and-memory). 
 
 
 :::tip
