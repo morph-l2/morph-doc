@@ -82,7 +82,7 @@ Morph Holesky USDT address: "0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98"
 
 ~~~
 
-7. Check you wallet for USDT balance and start to bridge!
+7. Check your wallet for USDT balance and start to bridge!
 
 
 
