@@ -85,7 +85,7 @@ forge flatten --output FlattenedL2StandardBridge.sol ./contracts/L2/L2StandardBr
 #### Obtain JSON File
 
 - Can be obtained through solc
-- Can be obatined through remix compiler
+- Can be obtained through remix compiler
 
 ![sjis2](../../../assets/docs/dev/contract-verify/sjisol3.png)
 
@@ -94,7 +94,7 @@ forge flatten --output FlattenedL2StandardBridge.sol ./contracts/L2/L2StandardBr
 
 #### Frontend:
 
-- You can submit multiple contract file by your own needs
+- You can submit multiple contract files by your own needs
 ![mpfs1](../../../assets/docs/dev/contract-verify/mpfsol.png)
 
 #### SOL File Process
