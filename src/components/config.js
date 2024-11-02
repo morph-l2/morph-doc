@@ -17,7 +17,7 @@ export const links = {
   exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/optimistic-zkevm',
   
   contactUs: 'https://morphl2.io/about',
-  terms: 'https://morphl2.io/terms_of_service',
+  terms: 'https://morphl2.io/terms',
   policy: 'https://morphl2.io/privacy_policy',
   about: 'https://morphl2.io/about',
   wallet: 'https://morphl2.io/wallet',
