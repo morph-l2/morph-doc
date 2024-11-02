@@ -91,6 +91,10 @@ module.exports = {
             yellow: "#F7A01E",
             purple: "#846DFF", // brand
 
+            "card-background": "#F3F7F2",
+            "card-text": "#21231C",
+            "card-border": "#1085001A",
+
             brand: "#14A800",
             "brand-high": "#14A800",
 
@@ -138,6 +142,10 @@ module.exports = {
             green: "#14A800",
             yellow: "#F7A01E",
             purple: "#846DFF",
+
+            "card-background": "#21231C",
+            "card-text": "#fff",
+            "card-border": "#FFFFFF1A",
 
             brand: "#14A800",
             "brand-high": "#14A800",
