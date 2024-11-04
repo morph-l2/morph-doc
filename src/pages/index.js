@@ -2,7 +2,6 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Layout from '@theme/Layout';
 import React from 'react';
 import classnames from 'classnames';
-import { log } from '@site/src/components/log';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function HomepageHeader() {
@@ -20,12 +19,6 @@ function HomepageHeader() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
-
-  React.useEffect(() => {
-    log({
-      page: 'docs_page',
-    });
-  }, [])
 
   return (
     <Layout
