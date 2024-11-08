@@ -9,23 +9,10 @@ There are several technical differences between Ethereum’s EVM and Morph's opt
 
 We’ve compiled a list to help you understand these distinctions better.
 
-:::tip
 For most Solidity developers, these technical details won't significantly impact your development experience.
-:::
-
-## EVM Opcodes
 
 
-| Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
-| --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
-| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
-| `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
-| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is triggered, the transaction will be reverted.                     |
-| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
-| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
-
-## EVM Precompiles
+## EVM Precompiles Difference
 
 The `RIPEMD-160` (address `0x3`), `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently unsupported. Calls to these unsupported precompiled contracts will result in a transaction revert.
 
@@ -51,6 +38,20 @@ While these transactions won't be reverted, the sequencer will skip them if they
 | `ecMul`             | 50    |
 | `ecPairing`         | 2     |
 
+## EVM Opcodes Difference
+
+
+| Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
+| --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
+| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
+| `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
+| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is triggered, the transaction will be reverted.                     |
+| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
+| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
+
+
+
 :::tip Several opcode not available
 
 `BLOBHASH` and `BLOBBASEFEE` are not supported on Morph yet.
@@ -59,11 +60,11 @@ While these transactions won't be reverted, the sequencer will skip them if they
 
 :::
 
-## State Account
+## State Account Structure Difference
 
 ### **Additional Fields**
 
-We have introduced two new fields to the existing `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
+There are two additional fields in the existing `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
 
 ```go
 type StateAccount struct {
@@ -76,13 +77,14 @@ type StateAccount struct {
 	CodeSize uint64
 }
 ```
+
 ### **CodeHash**
 
 In this context, we keep two varieties of code hashes for each contract's bytecode: the `Keccak hash` and the `Poseidon hash`.
 
 The `KeccakCodeHash` is preserved to ensure compatibility with `EXTCODEHASH`, while the `PoseidonCodeHash` is utilized for verifying the accuracy of bytecodes loaded in the zkEVM, as Poseidon hashing offers significantly greater efficiency.
 
-## Block Time
+## Block Time Difference
 
 :::tip Block Time Subject to Change
 
