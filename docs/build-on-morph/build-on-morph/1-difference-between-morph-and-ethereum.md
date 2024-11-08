@@ -9,7 +9,6 @@ There are several technical differences between Ethereum’s EVM and Morph's opt
 
 We’ve compiled a list to help you understand these distinctions better.
 
-
 :::tip
 For most Solidity developers, these technical details won't significantly impact your development experience.
 :::
@@ -72,16 +71,11 @@ type StateAccount struct {
 	CodeSize uint64
 }
 ```
-
 ### **CodeHash**
 
-Related to this, we maintain two types of codehash for each contract bytecode: Keccak hash and Poseidon hash.
+In this context, we keep two varieties of code hashes for each contract's bytecode: the `Keccak hash` and the `Poseidon hash`.
 
-`KeccakCodeHash` is kept to maintain compatibility for `EXTCODEHASH`. `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
-
-### CodeSize
-
-When verifying `EXTCODESIZE`, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation. This way, we do not need to load the code — a storage proof is sufficient to verify this opcode.
+The `KeccakCodeHash` is preserved to ensure compatibility with `EXTCODEHASH`, while the `PoseidonCodeHash` is utilized for verifying the accuracy of bytecodes loaded in the zkEVM, as Poseidon hashing offers significantly greater efficiency.
 
 ## Block Time
 
@@ -93,6 +87,7 @@ Blocks are produced every second, with an empty block generated if there are no 
 To compare, Ethereum has a block time of ~12 seconds.
 
 Reasons for Faster Block Time in Morph
+
 User Experience: 
 
 - A faster, consistent block time provides quicker feedback, enhancing the user experience.
@@ -104,32 +99,5 @@ Notice:
 - `TIMESTAMP` will return the timestamp of the block. It will update every second.
 - `BLOCKNUMBER` will return an actual block number. It will update every second. The one-to-one mapping between blocks and transactions will no longer apply.
 
-
-
-
-<!--
-We also introduce the concept of system transactions that are created by the `op-node`, and are used to execute deposits and update the L2's view of L1. They have the following attributes:
-
-- Every block will contain at least one system transaction called the L1 attributes deposited transaction. It will always be the first transaction in the block.
-- Some blocks will contain one or more user-deposited transactions.
-- All system transactions have an [EIP-2718](https://eips.ethereum.org/EIPS/eip-2718)-compatible transaction type of `0x7E`.
-- All system transactions are unsigned, and set their `v`, `r`, and `s` fields to `null`.
-
-
-:::Warning Known Issue
-Some Ethereum client libraries, such as Web3j, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
-:::
--->
-
-## Future EIPs
-
-Morph closely monitors emerging Ethereum Improvement Proposals (EIPs) and adopts them when suitable. For more specifics, join our community forum or Discord for discussions.
-
-<!-- ## EVM Target version 
-
-To avoid unexpected behaviors in your contracts, we recommend using ‘london’ as the target version when compiling your smart contracts.
-
-You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
--->
 
 ## [Transaction Fees](../../build-on-morph/build-on-morph/4-understand-transaction-cost-on-morph.md)
