@@ -155,4 +155,5 @@ See the section on [Responding to gas price updates](#responding-to-gas-price-up
 
 This is a custom RPC error that Morph returns when a transaction is rejected because the gas price is too high.
 We include this as a safety measure to prevent users from accidentally sending a transaction with an extremely high L2 gas price.
+
 See the section on [Responding to gas price updates](#responding-to-gas-price-updates) for more information.

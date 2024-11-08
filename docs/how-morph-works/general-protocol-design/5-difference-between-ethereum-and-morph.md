@@ -35,9 +35,11 @@ The `ecPairing` precompile is also supported; however, the maximum number of poi
 
 All other EVM precompiles are fully supported: `ecRecover`, `identity`, `ecAdd`, and `ecMul`.
 
-### Precompile Limits
+### Certain Precompile Limits
 
-Due to the bounded size of zkEVM circuits, there is a maximum limit on the number of calls that can be made to certain precompiles. While these transactions won't be reverted, the sequencer will skip them if they exceed the circuit's capacity.
+There is a maximum limit on the number of calls that can be made to certain precompiles due to the bounded size of zkEVM circuits. 
+
+While these transactions won't be reverted, the sequencer will skip them if they exceed the circuit's capacity.
 
 
 | Precompile / Opcode | Limit | 
@@ -51,7 +53,9 @@ Due to the bounded size of zkEVM circuits, there is a maximum limit on the numbe
 
 :::tip Several opcode not available
 
-`BLOBHASH` and `BLOBBASEFEE` are not supported on Morph yet. Additionally, [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported. 
+`BLOBHASH` and `BLOBBASEFEE` are not supported on Morph yet.
+
+[EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported too. 
 
 :::
 

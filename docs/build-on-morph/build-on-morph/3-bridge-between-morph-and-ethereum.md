@@ -22,10 +22,6 @@ When bridging ERC20 tokens, you don’t have to worry about selecting the right 
 
 - **`L1StandardERC20Gateway`:** This Gateway permits any ERC20 deposit and will be selected as the default by the L1GatewayRouter for an ERC20 token that doesn’t need custom logic on L2. On the very first token bridging, a new token will be created on L2 that implements the MorphStandardERC20. To bridge a token, call the `depositERC20` function on the `L1GatewayRouter`.
 
-<!---->
-<!--
-- **`L1CustomERC20Gateway`:** This Gateway will be selected by the `L1GatewayRouter` for tokens with custom logic. For an L1/L2 token pair to work on the Morph Custom ERC20 Bridge, the L2 token contract has to implement `IMorphStandardERC20`. Additionally, the token should grant `mint` or `burn` capability to the `L2CustomERC20Gateway`. 
--->
 
 All Gateway contracts will form the message and send it to the `L1CrossDomainMessenger` which can send arbitrary messages to L2. The `L1CrossDomainMessenger` passes the message to the `L1MessageQueueWithGasPriceOracle`. Any user can send messages directly to the Messenger to execute arbitrary data on L2. 
 
@@ -89,46 +85,6 @@ The required parameters are
 
 `_withdrawalProof` and `_withdrawalRoot` can be obtained from the aforementioned backend API interface.
 
-<!--
-
-## Creating an ERC20 token with custom logic on L2
-
-If a token needs custom logic on L2, it will need to be bridged through an `L1CustomERC20Gateway` and `L2CustomERC20Gateway` respectively. The custom token on L2 will need to give permission to the Gateway to mint new tokens when a deposit occurs and to burn when tokens are withdrawn
-
-The following interface is the `IMorphStandardERC20` needed for deploying tokens compatible with the `L2CustomERC20Gateway` on L2.
-
-```solidity
-interface IMorphStandardERC20 {
-  /// @notice Return the address of Gateway the token belongs to.
-  function gateway() external view returns (address);
-
-  /// @notice Return the address of counterpart token.
-  function counterpart() external view returns (address);
-
-  /// @dev ERC677 Standard, see https://github.com/ethereum/EIPs/issues/677
-  /// Defi can use this method to transfer L1/L2 token to L2/L1,
-  /// and deposit to L2/L1 contract in one transaction
-  function transferAndCall(address receiver, uint256 amount, bytes calldata data) external returns (bool success);
-
-  /// @notice Mint some token to recipient's account.
-  /// @dev Gateway Utilities, only gateway contract can call
-  /// @param _to The address of recipient.
-  /// @param _amount The amount of token to mint.
-  function mint(address _to, uint256 _amount) external;
-
-  /// @notice Burn some token from account.
-  /// @dev Gateway Utilities, only gateway contract can call
-  /// @param _from The address of account to burn token.
-  /// @param _amount The amount of token to mint.
-  function burn(address _from, uint256 _amount) external;
-}
-```
-
-### Adding a Custom L2 ERC20 token to the Morph Bridge
-
-Tokens can be bridged securely and permissionlessly through Gateway contracts deployed by any developer. However, Morph also manages an ERC20 Router and a Gateway where all tokens created by the community are welcome. Being part of the Morph-managed Gateway means you won't need to deploy the Gateway contracts, and your token will appear in the Morph frontend. To be part of the Morph Gateway, you must contact the Morph team to add the token to both L1 and L2 bridge contracts. To do so, follow the instructions on the [token lists](https://github.com/Morph-tech/token-list) repository to add your new token to the official Morph frontend.
-
--->
 
 :::tip Use the SDK
 
