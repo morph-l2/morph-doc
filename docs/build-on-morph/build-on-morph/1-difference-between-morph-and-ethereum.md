@@ -21,23 +21,24 @@ For most Solidity developers, these technical details won't significantly impact
 | `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
 | `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
 | `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
-| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
+| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is triggered, the transaction will be reverted.                     |
 | `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
 | `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
 
 ## EVM Precompiles
 
-The `RIPEMD-160` (address `0x3`) `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently not supported. Calls to unsupported precompiled contracts will revert. We plan to enable these precompiles in future hard forks.
+The `RIPEMD-160` (address `0x3`), `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently unsupported. Calls to these unsupported precompiled contracts will result in a transaction revert. We plan to implement these precompiles in future hard forks.
 
-The `modexp` precompile is supported but only supports inputs of size less than or equal to 32 bytes (i.e. `u256`).
+The `modexp` precompile is supported, but it only accepts inputs that are 32 bytes or smaller (i.e., `u256`).
 
-The `ecPairing` precompile is supported, but the number of points(sets, pairs) is limited to 4, instead of 6.
+The `ecPairing` precompile is also supported; however, the maximum number of points (sets or pairs) is limited to 4, rather than 6.
 
-The other EVM precompiles are all supported: `ecRecover`, `identity`, `ecAdd`, `ecMul`.
+All other EVM precompiles are fully supported: `ecRecover`, `identity`, `ecAdd`, and `ecMul`.
 
 ### Precompile Limits
 
-Because of a bounded size of the zkEVM circuits, there is an upper limit on the number of calls that can be made for some precompiles. These transactions will not revert, but simply be skipped by the sequencer if they cannot fit into the space of the circuit. 
+Due to the bounded size of zkEVM circuits, there is a maximum limit on the number of calls that can be made to certain precompiles. While these transactions won't be reverted, the sequencer will skip them if they exceed the circuit's capacity.
+
 
 | Precompile / Opcode | Limit | 
 | ------------------- | ----- |
@@ -58,7 +59,7 @@ Because of a bounded size of the zkEVM circuits, there is an upper limit on the 
 
 ### **Additional Fields**
 
-We added two fields in the current `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
+We have introduced two new fields to the existing `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
 
 ```go
 type StateAccount struct {
