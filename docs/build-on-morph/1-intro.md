@@ -22,7 +22,7 @@ Building on morph is just like building on Ethereum. If you’re experienced in 
 
 **Depending on what do you need**
 
-- For foundational knowledge: Check out our [development basics](../build-on-morph/build-on-morph/1-difference-between-morph-and-ethereum.md)
+- For foundational knowledge: Check out our [development basics](../build-on-morph/build-on-morph/2-development-setup.md)
 - For handy step by step [contract deployment tutorial](../build-on-morph/code-examples/1-deploy-contract-on-morph.md)
 
 - If you're well-versed and need specific [developer resources](../build-on-morph/developer-resources/1-contracts.md) like contract addresses, they are readily available.
