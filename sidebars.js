@@ -166,7 +166,7 @@ module.exports = {
             },
           ],
         },
-
+         /*
         {
           type: 'category',
           label: 'General Protocol Design',
@@ -181,7 +181,7 @@ module.exports = {
             },
           ],
         },
-      
+        */
       ]
     },
     {
