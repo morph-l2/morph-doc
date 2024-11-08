@@ -27,7 +27,7 @@ For most Solidity developers, these technical details won't significantly impact
 
 ## EVM Precompiles
 
-The `RIPEMD-160` (address `0x3`), `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently unsupported. Calls to these unsupported precompiled contracts will result in a transaction revert. We plan to implement these precompiles in future hard forks.
+The `RIPEMD-160` (address `0x3`), `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently unsupported. Calls to these unsupported precompiled contracts will result in a transaction revert.
 
 The `modexp` precompile is supported, but it only accepts inputs that are 32 bytes or smaller (i.e., `u256`).
 
