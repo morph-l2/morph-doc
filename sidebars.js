@@ -205,6 +205,10 @@ const developerSidebar = [
         items:[
           {
             type: 'doc',
+            id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/cross-chain-interoperability'
+          },
+          {
+            type: 'doc',
             id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/safe-multi-signature-wallet'
           },
           {
@@ -226,7 +230,11 @@ const developerSidebar = [
           {
             type: 'doc',
             id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/block-explorer'
-          }
+          },
+          {
+            type: 'doc',
+            id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/artificial-intelligence'
+          },
         ]
       },
       {
@@ -293,12 +301,8 @@ const developerSidebar = [
         href: "https://holesky.etherscan.io/",
         label: 'Ethereum Holesky Explorer'
       },
-      
-    
     ]
   },
-
-
 ]
 
 //module.exports = sidebars;
