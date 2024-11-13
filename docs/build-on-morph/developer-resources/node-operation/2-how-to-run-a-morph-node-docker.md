@@ -31,7 +31,7 @@ make run-holesky-node
 Running this command will create a `.morph-holesky` directory in your user directory by default, serving as the node's home directory. Before starting the node, this command will perform several preparations:
 
 - Create the node's home directory and copy the default configuration files into it.
-- Prepare the `secret-jwt.txt` file for for authentication during RPC calls between geth and the node.
+- Prepare the `secret-jwt.txt` file for authentication during RPC calls between geth and the node.
 - Download the latest snapshot data to speed up node synchronization.
 - Place the extracted snapshot data into the corresponding folder within the home directory.
 
@@ -55,7 +55,7 @@ The host directory paths that are mounted by the Docker container are specified 
 NODE_HOME=${HOME}/.morph-holesky 
 // the data directory for your execution client: geth
 GETH_DATA_DIR=${NODE_HOME}/geth-data
-// the data directory for you consensus client: tendermint
+// the data directory for your consensus client: tendermint
 NODE_DATA_DIR=${NODE_HOME}/node-data
 // the entrypoint shell script for start execution client
 GETH_ENTRYPOINT_FILE=${NODE_HOME}/entrypoint-geth.sh

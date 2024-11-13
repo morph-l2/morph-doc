@@ -26,18 +26,18 @@ The batch submitter then reconstructs L2 blocks, compiling:
 
 
 - Transactions: All transactions contained within the blocks.
-- Blockinfo : Essential information from each block.
+- Blockinfo: Essential information from each block.
 
 
 The batch submitter continues fetching and reconstructing blocks until it processes a block with a BLS signature, indicating the batch point has been reached. The reconstructed block data is used to construct a batch, which contains:
 
-- lastBlocknumber : The number of the final block in the batch.
-- Transactions : Encoded transactions within the batch.
-- BlockWitness : Encoded blockinfos, utilized for zkProof.
-- PreStateRoot : The stateRoot before the batch is applied.
-- PostStateRoot : The stateRoot after the batch is applied.
-- WithdrawalRoot : L2 withdrawal Merkle tree root.
-- Signature : The batch’s BLS signature.
+- lastBlocknumber: The number of the final block in the batch.
+- Transactions: Encoded transactions within the batch.
+- BlockWitness: Encoded blockinfos, utilized for zkProof.
+- PreStateRoot: The stateRoot before the batch is applied.
+- PostStateRoot: The stateRoot after the batch is applied.
+- WithdrawalRoot: L2 withdrawal Merkle tree root.
+- Signature: The batch’s BLS signature.
 
 
 :::info

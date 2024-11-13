@@ -22,9 +22,9 @@ git checkout ${latestVersion}
 cd ops/publicnode
 make stop-holesky-node
 make rm-holesky-node
-## delete the pervious docker image for node
+## delete the previous docker image for node
 docker rmi morph/node:latest
-## delete the pervious docker image for geth
+## delete the previous docker image for geth
 docker rmi morph/geth-nccc:latest
 ```
 

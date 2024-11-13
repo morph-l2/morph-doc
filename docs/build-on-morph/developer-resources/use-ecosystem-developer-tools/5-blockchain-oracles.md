@@ -19,4 +19,4 @@ eOracle is currently in the progress of integrating Morph mainnet.
 
 Deployed Morph Holesky testnet [contract](https://explorer-holesky.morphl2.io/address/0xbd53b35Bf458Cd22dBDeB5Da71181daA3cFb6A10)
 
-Full price feeds and docs can be found here : https://eoracle.gitbook.io/eoracle/price-feeds/feed-addresses.
+Full price feeds and docs can be found here: https://eoracle.gitbook.io/eoracle/price-feeds/feed-addresses.
