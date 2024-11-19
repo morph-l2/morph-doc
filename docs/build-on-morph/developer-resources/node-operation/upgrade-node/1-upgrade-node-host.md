@@ -9,24 +9,41 @@ Running the node requires two binary files: `morphnode` and `geth`. Choose to up
 
 ### Step1: Compile the new version of the code
 
-```bash
+You can have the released code version from [here](https://github.com/morph-l2/morph/releases)
+
+```js
 git clone https://github.com/morph-l2/morph.git
-## checkout the latest version of the source code you need
+
+// checkout the latest version of the source code you need
 git checkout ${latestVersion}
-## install geth
+
+// install geth
 make geth
-## install morphnode
+
+// install morphnode
 cd ./morph/node && make build
+```
+
+#### If you only update the Geth version
+Check the `Geth` version from [go-ethereum](https://github.com/morph-l2/go-ethereum/tags)
+
+```js
+git clone https://github.com/morph-l2/go-ethereum.git
+
+git checkout ${latestVersion}
+
+// install geth
+make geth
 ```
 
 ### Step2: Stop nodes
 
 ```bash
-## stop morphnode process
+# stop morphnode process
 pid=`ps -ef | grep morphnode | grep -v grep | awk '{print $2}'`
 kill  $pid
 
-## stop geth process
+# stop geth process
 pid=`ps -ef | grep geth | grep -v grep | awk '{print $2}'`
 kill  $pid
 ```
@@ -46,7 +63,7 @@ Make sure to use the same start-up command you used before the upgrade
     --authrpc.jwtsecret=./jwt-secret.txt \
     --log.filename=./geth.log
 
-## start geth    
+## start node    
 ./morph/node/build/bin/morphnode --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
      --l2.eth http://localhost:8545 \
@@ -55,5 +72,5 @@ Make sure to use the same start-up command you used before the upgrade
 ```
 
 :::note
-For testnet, use ```--morph-holesky``` instead
+For holesky network, use ```--morph-holesky``` instead
 :::

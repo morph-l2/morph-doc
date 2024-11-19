@@ -1,10 +1,10 @@
 ---
-title: How to Run a Morph Validator Node
+title: Run a validator from source
 lang: en-US
 ---
-## Run a Morph Node 
+## Run a Morph Validator 
 
-This guide describes the approach to running a Morph validator node. If you are unfamiliar with the validator duties, please refer to our [optimistic zkEVM](../../../how-morph-works/3-optimistic-zkevm.md) design.
+This guide describes the approach to running a Morph validator node. If you are unfamiliar with the validator duties, please refer to our [optimistic zkEVM](../../../../how-morph-works/3-optimistic-zkevm.md) design.
 
 Create the folder `~/.morph` as our home directory for this example.
 
@@ -47,10 +47,10 @@ make build
 cd ~/.morph
 
 ## mainnet
-wget https://raw.githubusercontent.com/morph-l2/config-template/main/mainnet/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/mainnet/data.zip
 
 ## testnet
-wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/holesky/data.zip
 
 unzip data.zip
 ```
