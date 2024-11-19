@@ -5,7 +5,6 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-
 Season 2: The Great Token Migration is live. Earn Morph Points by bridging assets and spending gas through this season’s Bridging Program. 
 
 The bridging program is an initiative designed to incentivize users and communities to help build early liquidity and increase network activity on Morph. Participants can earn Morph Points through two main activities: bridging assets to the Morph Mainnet and using gas on the network. Additionally, users who invite others to join Season 2 and join the bonus event with other platforms will also receive extra rewards. This program aims to boost Morph's ecosystem while offering valuable incentives to active community members.
@@ -26,13 +25,13 @@ The scoring formula will only *calculate for the tokens listed above.*
 
 Score Formula:
 
-Score_Bridge = ∑(Asset_eth*Time)
+Score_Bridge = $\sum\left(\text {Asset}_{\text {eth}} * \text {Time}\right)$
 
 For Bitget Wallet users:
 
 Users with a Bitget Wallet address will have their scores multiplied by a coefficient of 1.2.
 
-Score_Bridge= ∑(Asset_eth*Time) *1.2
+Score_Bridge = $\sum\left(\text {Asset}_{\text {eth}} * \text {Time}\right)$ * 1.2
 
 
 - 1 Score = 1 ETH * 1 day. 1 score is equal to 1 ETH per day. 
@@ -45,7 +44,7 @@ The minimum holding time is one day. If you hold assets on the Morph Mainnet for
 
 For example, if a user bridges 3 ETH and 4800 USDT with holding times of 2 days and 2.5 days respectively, while the price of ETH is around $2400, the score would be calculated as such:
 
-Score = (3 * 2) + (2 * 2) = 10
+Score = $(3*2) + (2*2) = 10$
 
 
 #### Tips:
@@ -62,11 +61,11 @@ Score = (3 * 2) + (2 * 2) = 10
 
 Score formula:
 
-Score = 10000*Gas
+Score = $10000*Gas$
 
 For example, if a user spent 0.0001 ETH in gas on Morph Mainnet, the score would be:
 
-Score = 10000*0.0001 = 1
+Score = $10000*0.0001 = 1$
 
 ### Invitation Rules:
 
@@ -80,7 +79,7 @@ Score = 10000*0.0001 = 1
 
 Score formula:
 
-*Score = 10% * (Score_A1 + Score_A2) + 5% (Score_B1 + Score_B2)*
+*Score = $10 \%^{*}\left(\text {Score}_{A 1}+\text {Score}_{A 2}\right)+5 \%\left(\text {Score}_{B 1}+\text {Score}_{B 2}\right)$*
 
 - Score *A1* is the bridging score of the first-level invitee, and Score A2 represents the gas usage score of the first-level invitee.
 
@@ -98,11 +97,11 @@ Score formula:
 
 3. Your final Morph Points are calculated as follows:
 
-*Your Morph Points = (Your score * x)* 
+*Your Morph Points = $({Your\ score} * x)$* 
 
 - X is a coefficient determined at the end of Season 2 based on overall user participation.
 
-*Your score = (a*Score_Bridge) + (b*Score_Gas) + Score_Ref + Bonus_event*
+*Your score = $(a*{Score}\_{Bridge}) + (b*{Score}\_{Gas}) + {Score}\_{Ref} + {Bonus}\_{event}$*
 
 - *a* and *b* are coefficients optimized throughout the campaign to promote sustainable ecosystem growth.
 - *Score_Bridge* is your score from bridging assets to the Morph Mainnet.
