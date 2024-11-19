@@ -249,17 +249,49 @@ module.exports = {
           label:'Node Operation',
           items:[
             {
-              type: 'doc',
-              id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker'
+              type: 'category',
+              label:'Full Node',
+              items:[
+                {
+                type: 'doc',
+                id:'build-on-morph/developer-resources/node-operation/full-node/run-in-docker'
+                },
+                {
+                  type: 'doc',
+                  id:'build-on-morph/developer-resources/node-operation/full-node/run-on-host'
+                }
+              ]
             },
             {
-              type: 'doc',
-              id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node'
+              type: 'category',
+              label:'Validator',
+              items:[
+                {
+                  type: 'doc',
+                  id:'build-on-morph/developer-resources/node-operation/validator-node/run-in-docker'
+                },
+                {
+                type: 'doc',
+                id:'build-on-morph/developer-resources/node-operation/validator-node/run-on-host'
+                }
+              ]
             },
-            {
-              type: 'doc',
-              id:'build-on-morph/developer-resources/node-operation/how-to-run-a-validator-node'
-            },
+            // {
+            //   type: 'doc',
+            //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker'
+            // },
+            // {
+            //   type: 'doc',
+            //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker-new'
+            // },
+            // {
+            //   type: 'doc',
+            //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node'
+            // },
+            // {
+            //   type: 'doc',
+            //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-validator-node'
+            // },
             {
               type: 'category',
               label:'Upgrade Node',

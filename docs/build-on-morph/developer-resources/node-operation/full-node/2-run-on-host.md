@@ -1,5 +1,5 @@
 ---
-title: Run a Morph Full Node from Source
+title: Run a full node from source
 lang: en-US
 ---
 
@@ -63,10 +63,10 @@ make build
 cd ~/.morph
 
 ## mainnet
-wget https://raw.githubusercontent.com/morph-l2/config-template/main/mainnet/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/mainnet/data.zip
 
 ## testnet
-wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/holesky/data.zip
 
 unzip data.zip
 ```
@@ -78,10 +78,13 @@ cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
-## Sync from genesis block(For mainnet)
+## Start Node
+Mainnet nodes currently support synchronization only from the genesis block, with snapshot-based synchronization planned for future updates. Testnet nodes support synchronization exclusively from snapshots.
+
+### Sync from genesis block(For mainnet)
 Start the execution client and consensus client directly without downloading snapshot.
 
-### Start execution client
+#### Start execution client
 
 ```bash title="Script for starting mainnet geth"
 ./morph/go-ethereum/build/bin/geth --morph \
@@ -107,7 +110,7 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 {"jsonrpc":"2.0","id":74,"result":"0x6"}
 ```
 
-### Start consensus client
+#### Start consensus client
 ```Bash
  ./morph/node/build/bin/morphnode --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
@@ -153,7 +156,7 @@ curl http://localhost:26657/net_info
  ....... 
  ```
 
-### Check sync status
+#### Check sync status
 
 curl http://localhost:26657/status to check the sync status of the node
 
@@ -204,25 +207,23 @@ curl http://localhost:26657/status to check the sync status of the node
 
 The returned "catching_up" indicates whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
 
-## Sync from snapshot(Recommended for testnet)
+### Sync from snapshot(Recommended for testnet)
 
 You should build the binary and prepare the config files in the above steps first, then download the snapshot. 
 
-### Download snapshot
+#### Download snapshot
 
 ```bash
-
-## testnet
-wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20240805-1.tar.gz
-tar -xzvf snapshot-20240805-1.tar.gz
+## holesky
+wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20241029-1.tar.gz
+tar -xzvf snapshot-20241029-1.tar.gz
 ```
 
 Extracting snapshot data to the data directory your node points to 
 
 ```bash
-mv snapshot-20240805-1/geth geth-data
-mv snapshot-20240805-1/data node-data
+mv snapshot-20241029-1/geth geth-data
+mv snapshot-20241029-1/data node-data
 ```
 
 Start the execution client and consensus client.
-
