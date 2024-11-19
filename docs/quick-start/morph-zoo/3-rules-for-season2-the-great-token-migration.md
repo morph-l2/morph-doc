@@ -45,7 +45,7 @@ The minimum holding time is one day. If you hold assets on the Morph Mainnet for
 
 For example, if a user bridges 3 ETH and 4800 USDT with holding times of 2 days and 2.5 days respectively, while the price of ETH is around $2400, the score would be calculated as such:
 
-Score = (3*2) + (2*2) = 10
+Score = (3 * 2) + (2 * 2) = 10
 
 
 #### Tips:
@@ -58,13 +58,13 @@ Score = (3*2) + (2*2) = 10
 
 1. Every transaction on Morph Mainnet has gas fees. This gas usage serves as your contribution towards developing and sustaining the Morph ecosystem. Spending gas allows you to earn rewards (score).
 
-2. Users can earn scores through the sas consumed on Morph mainnet. The greater the amount of gas used by an address, the higher its score it earns.
+2. Users can earn scores through the gas consumed on Morph mainnet. The greater the amount of gas used by an address, the higher its score it earns.
 
 Score formula:
 
 Score = 10000*Gas
 
-For example, if a user spent 0.0001 ETH in gas on Morph Mainet, the score would be:
+For example, if a user spent 0.0001 ETH in gas on Morph Mainnet, the score would be:
 
 Score = 10000*0.0001 = 1
 

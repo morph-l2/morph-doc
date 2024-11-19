@@ -130,7 +130,7 @@ lang: en-US
 
 [WBTC](https://explorer.morphl2.io/address/0x803DcE4D3f4Ae2e17AF6C51343040dEe320C149D): 0x803DcE4D3f4Ae2e17AF6C51343040dEe320C149D
 
-[UDSC](https://explorer.morphl2.io/address/0xe34c91815d7fc18A9e2148bcD4241d0a5848b693): 0xe34c91815d7fc18A9e2148bcD4241d0a5848b693
+[USDC](https://explorer.morphl2.io/address/0xe34c91815d7fc18A9e2148bcD4241d0a5848b693): 0xe34c91815d7fc18A9e2148bcD4241d0a5848b693
 
 [DAI](https://explorer.morphl2.io/address/0xef8A24599229D002B28bA2F5C0eBdD3c0EFFbed4): 0xef8A24599229D002B28bA2F5C0eBdD3c0EFFbed4
 
