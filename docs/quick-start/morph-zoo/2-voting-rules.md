@@ -35,7 +35,7 @@ You can utilize your Voting Power on the voting page to support projects that yo
 Earn Voting Power by checking in daily. On the first day that you check-in, you will receive 2 Voting Power. On day two, you will receive 2 more Voting Power plus the same amount of Voting Power you received the previous day. After checking in for 7 days in a row, your Voting Power reward for that 7th day will be doubled to 28. So if you consistently check in for a week, you will receive 70 Voting Power total: 
 
 
-**2(Day 1) + 4(Day 2) + 6(Day 3) + 8(Day 4) + 10(Day 5) + 12(Day 6) + 28(Day 7 you get a 2x multiplier bonus [14*2])  = 70**
+**2(Day 1) + 4(Day 2) + 6(Day 3) + 8(Day 4) + 10(Day 5) + 12(Day 6) + 28(Day 7 you get a 2x multiplier bonus [14*2])  = 60**
 
 Please remember that on the 8th consecutive check-in day, your Voting Power reward will be reset back to 2, as this marks the beginning of a new 7-day cycle. However, to reward your commitment, on the 14th consecutive day, your bonus multiplier will be increased to 3x for that day. This means that on the fourteenth day, you actually receive 56 Voting Power. In fact, every consecutive day that you check in that lands on a multiple of 7, your bonus multiplier will increase by an additional factor compared to the previous week.
 
