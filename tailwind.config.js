@@ -12,6 +12,10 @@ module.exports = {
   ], // my markdown stuff is in ../docs, not /src
   darkMode: ['class', '[data-theme="dark"]'], // hooks into docusaurus' dark mode settigns
   theme: {
+    fontFamily: {
+      inter: ["Inter Variable", "ui-sans-serif"],
+      denim: ["Denim INK", "ui-sans-serif"],
+    },
     extend: {},
   },
   plugins: [
@@ -78,17 +82,21 @@ module.exports = {
         light: {
           layout: {}, // light theme layout tokens
           colors: {
-            "title-1": "#1A1A1A",
+            "title-1": "#646560",
             title: "#FFF", // #0B0D0C
             bg: "#FFF",
             card: "#F5F5F5",
             red: "#F53F5F",
-            green: "#00CB9A",
+            green: "#14A800",
             yellow: "#F7A01E",
             purple: "#846DFF", // brand
 
-            brand: "#00CB9A",
-            "brand-high": "#62FFA4",
+            "card-background": "#F3F7F2",
+            "card-text": "#21231C",
+            "card-border": "#1085001A",
+
+            brand: "#14A800",
+            "brand-high": "#14A800",
 
             "red-aid": "#FDD9DF",
             "green-aid": "#D9F7F0",
@@ -112,7 +120,7 @@ module.exports = {
             tag: "#D9F7F0",
 
             primary: {
-              DEFAULT: "#00CB9A",
+              DEFAULT: "#14A800",
               foreground: "#fff",
             },
 
@@ -126,17 +134,21 @@ module.exports = {
         dark: {
           layout: {}, // dark theme layout tokens
           colors: {
-            "title-1": "#F7F7F7",
+            "title-1": "#BCBDBB",
             title: "#000", // #0B0D0C
             bg: "#000", // #0B0D0C
             card: "#1A1A1A",
             red: "#F4294D",
-            green: "#62FFA4",
+            green: "#14A800",
             yellow: "#F7A01E",
             purple: "#846DFF",
 
-            brand: "#62FFA4",
-            "brand-high": "#00CB9A",
+            "card-background": "#21231C",
+            "card-text": "#fff",
+            "card-border": "#FFFFFF1A",
+
+            brand: "#14A800",
+            "brand-high": "#14A800",
 
             "red-aid": "#3B0F17",
             "green-aid": "#0C3C1D",
@@ -160,7 +172,7 @@ module.exports = {
             tag: "#0F2518",
 
             primary: {
-              DEFAULT: "#62FFA4",
+              DEFAULT: "#14A800",
               foreground: "#000000",
             },
 

@@ -5,9 +5,31 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
+import { CardGroup, Card } from '@site/src/components/Card'
+
 We’re thrilled to have you here, exploring the world of Morph. If you’re a developer looking for technical documentation, head over to our [For Developers section](../build-on-morph/0-developer-navigation-page.md). But if you’re here to understand what Morph is all about, you’re in the right place!
 
 ![userpage](../../assets/docs/about/userpage.png)
+
+
+<CardGroup className="grid-cols-3">
+  <Card
+    href="​https://morphl2.io"
+    icon="/img/cards/logo.svg"
+    darkIcon="/img/cards/logo-dark.svg"
+    text="LOGO 1" />
+  <Card 
+    href="​https://morphl2.io"
+    icon="/img/cards/logo.svg"
+    text="LOGO 2" />
+  <Card
+    icon="/img/cards/logo.svg"
+    text="LOGO 3" />
+  <Card icon="/img/cards/logo.svg" text="LOGO 4" />
+  <Card icon="/img/cards/logo.svg" text="LOGO 5" />
+  <Card icon="/img/cards/logo.svg" text="LOGO 6" />
+  <Card icon="/img/cards/logo.svg" text="LOGO 7" />
+</CardGroup>
 
 ### What is Morph?
 

@@ -7,38 +7,56 @@ export const brandMetadata = {
 const docUrl = 'https://docs.morphl2.io';
 
 export const links = {
-  brand: '/',
-
+  brand: 'https://morphl2.io/',
+  website: 'https://morphl2.io',
+  
   quickStart: 'https://docs.morphl2.io/',
 
   howItWorks: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
-  contractMoohism: 'https://forms.gle/dw5PKY8r4N8R1YbGA',
-  joinJourney: 'https://forms.gle/dw5PKY8r4N8R1YbGA',
+  contractMoohism: 'https://forms.gle/9zJxWbcoDAuZKFSW8',
   exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/optimistic-zkevm',
+  
+  contactUs: 'https://morphl2.io/about',
+  terms: 'https://morphl2.io/terms',
+  policy: 'https://morphl2.io/privacy_policy',
+  about: 'https://morphl2.io/about',
+  wallet: 'https://morphl2.io/wallet',
+  build: 'https://morphl2.io/build',
+  careers: 'https://morphl2.io/careers',
+  sparkLoom: 'https://morphl2.io/sparkloom',
+  sparkLoomPdf: typeof window === 'undefined' ? 'https://morphl2.io/pdf/1.pdf' : (window.location.origin +'https://morphl2.io/pdf/1.pdf'),
+  brandkit: 'https://morphl2brand.notion.site/Morph-brand-guideline-56eca01ef6d14212be0e9562ad1e2fc1',
+  // sparkloom
+  registerNow: 'https://app.buidlbox.io/morphl2/sparkloom',
+  applyNow: 'https://forms.gle/6kDGru2dMzrqJgb69',
 
-  contactUs: '/about',
-  terms: '/terms_of_service',
-  policy: '/privacy_policy',
-  about: '/about',
-  wallet: '/wallet',
-  build: '/build',
+  whatIsMorph: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+  docUrl: 'https://docs.morphl2.io',
 
-  learnmore: docUrl + '/docs/how-morph-works/intro/',
-  doc: docUrl + '/docs/how-morph-works/intro/',
+  whatIsTheVotingPower: ``,
+
+  learnmore: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+  doc: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+  walletSetup: 'https://docs.morphl2.io/docs/quick-start/wallet-setup/',
 
   // start building
-  apiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
-  explorer: 'https://explorer-holesky.morphl2.io',
-  explorerApi: 'http://10.11.57.224:4003', // /api/v2/stats
-  bridge: 'https://bridge-holesky.morphl2.io',
-
+  apiDocs: 'https://explorer.morphl2.io/api-docs',
+  explorer: 'https://explorer.morphl2.io',
+  explorerApi: 'https://explorer-api.morphl2.io', // /api/v2/stats
+  bridge: 'https://bridge.morphl2.io',
+  
+  holeskyWalletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
+  holeskyApiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
+  holeskyExplorer: 'https://explorer-holesky.morphl2.io',
+  holeskyExplorerApi: 'https://explorer-api-holesky.morphl2.io',
+  holeskyBridge: 'https://bridge-holesky.morphl2.io',
 
   // social
-  medium: 'https://medium.com/@morphlayer2',
+  medium: 'https://blog.morphl2.io/',
   twitter: 'https://twitter.com/Morphl2',
   telegram: 'https://t.me/MorphL2official',
   // 'https://t.me/+qslsWvH2_-1iMTdl',
-  discord: 'https://discord.com/invite/L2Morph',
+  discord: 'https://discord.gg/L2Morph',
   linkedIn: 'http://www.linkedin.com/company/morphl2',
 
   facebook: 'https://www.facebook.com/profile.php?id=61554448708419',
@@ -47,10 +65,15 @@ export const links = {
 
   github: '', // https://github.com/morph-l2
 
-  blog: 'https://medium.com/@morphlayer2',
+  blog: 'https://blog.morphl2.io/',
   forum: 'https://forum.morphl2.io',
 
   faucet: '',
+
+  holeskyUSDT: 'https://discord.com/channels/1156486804661338162/1199665829730582620',
+  holeskyETH: "https://holesky-faucet.pk910.de/",
+  sepoliafaucet: "https://sepoliafaucet.com/",
+  usdtfaucet: "https://discord.com/channels/1156486804661338162/1199665829730582620",
 
   community: 'https://twitter.com/Morphl2',
 }

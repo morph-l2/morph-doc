@@ -152,10 +152,10 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}) {
           href={`https://${props.appId}-dsn.algolia.net`}
           crossOrigin="anonymous"
         />
-        <link rel="icon" type="image/png" href="/share/share.png" />
-        <meta property="og:image" content="/share/share.png" />
+        <link rel="icon" type="image/png" href="/share/share2.png" />
+        <meta property="og:image" content="/share/share2.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="/share/share.png" />
+        <meta property="twitter:image" content="/share/share2.png" />
       </Head>
 
       <DocSearchButton
@@ -195,5 +195,5 @@ function DocSearch({contextualSearch, externalUrlRegex, ...props}) {
 }
 export default function SearchBar() {
   const {siteConfig} = useDocusaurusContext();
-  return <DocSearch {...siteConfig.themeConfig.algolia} />;
+  return <DocSearch theme="light" {...siteConfig.themeConfig.algolia} />;
 }
