@@ -159,7 +159,6 @@ const developerSidebar = [
           },
         ],
       },
-
       {
         type: 'category',
         label: 'General Protocol Design',
@@ -173,8 +172,7 @@ const developerSidebar = [
             id:'build-on-morph/build-on-morph/understand-transaction-cost-on-morph'
           },
         ],
-      },
-    
+      },       
     ]
   },
   {
@@ -207,6 +205,10 @@ const developerSidebar = [
         items:[
           {
             type: 'doc',
+            id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/cross-chain-interoperability'
+          },
+          {
+            type: 'doc',
             id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/safe-multi-signature-wallet'
           },
           {
@@ -228,7 +230,11 @@ const developerSidebar = [
           {
             type: 'doc',
             id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/block-explorer'
-          }
+          },
+          {
+            type: 'doc',
+            id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/artificial-intelligence'
+          },
         ]
       },
       {
@@ -236,17 +242,49 @@ const developerSidebar = [
         label:'Node Operation',
         items:[
           {
-            type: 'doc',
-            id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker'
+            type: 'category',
+            label:'Full Node',
+            items:[
+              {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/node-operation/full-node/run-in-docker'
+              },
+              {
+                type: 'doc',
+                id:'build-on-morph/developer-resources/node-operation/full-node/run-on-host'
+              }
+            ]
           },
           {
-            type: 'doc',
-            id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node'
+            type: 'category',
+            label:'Validator',
+            items:[
+              {
+                type: 'doc',
+                id:'build-on-morph/developer-resources/node-operation/validator-node/run-in-docker'
+              },
+              {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/node-operation/validator-node/run-on-host'
+              }
+            ]
           },
-          {
-            type: 'doc',
-            id:'build-on-morph/developer-resources/node-operation/how-to-run-a-validator-node'
-          },
+          // {
+          //   type: 'doc',
+          //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker'
+          // },
+          // {
+          //   type: 'doc',
+          //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node-docker-new'
+          // },
+          // {
+          //   type: 'doc',
+          //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-morph-node'
+          // },
+          // {
+          //   type: 'doc',
+          //   id:'build-on-morph/developer-resources/node-operation/how-to-run-a-validator-node'
+          // },
           {
             type: 'category',
             label:'Upgrade Node',
@@ -299,8 +337,6 @@ const developerSidebar = [
     
     ]
   },
-
-
 ]
 
 //module.exports = sidebars;

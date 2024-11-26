@@ -3,39 +3,66 @@ title: Upgrade node running from docker
 lang: en-US
 ---
 
-If you are running the Docker container for the node using a custom setup, you will need to update the docker image yourself and then restart the container. 
+## Docker Images
 
-The source code is available at https://github.com/morph-l2/morph.git. You need to switch to the latest version of the code and then update your docker image.
+- `go-ethereum:` [ghcr.io/morph-l2/go-ethereum](https://github.com/morph-l2/go-ethereum/pkgs/container/go-ethereum)
 
-If you are using  [Run a Morph node with docker](../2-how-to-run-a-morph-node-docker.md) to start the docker container, you can follow the subsequent steps to upgrade the node.
+- `node:` [ghcr.io/morph-l2/node](https://github.com/morph-l2/morph/pkgs/container/node)
 
-### Step1:  Fetch latest code version 
-```bash
-git clone https://github.com/morph-l2/morph.git
-## checkout the latest version of the source code you need
-git checkout ${latestVersion}
+### If You Are Using a Custom Setup
+If you are running the Docker container for the node using a custom setup, you will need to manually update the Docker image version and restart the container.
+
+### If You Are Using the Recommended Configuration
+For those using the [Run a full node with docker](../full-node/1-run-in-docker.md) o start the container, follow these steps to upgrade your node.
+
+#### Step1:  Update docker images version 
+
+- Check the latest docker image version from [Docker Images](#docker-images)
+- Update the docker image version on [morph-node/docker-compose.yml](https://github.com/morph-l2/run-morph-node/blob/run_node_script/morph-node/docker-compose.yml)
+    
+    ```yaml title="morph-node/docker-compose.yml"
+    services:  
+    geth: 
+        container_name: morph-geth
+        image: ghcr.io/morph-l2/go-ethereum:2.0.1 ## Specify the Geth image version
+        restart: unless-stopped
+    
+    # ...
+
+    node:
+        container_name: morph-node
+        depends_on:
+        geth:
+            condition: service_started
+        image: ghcr.io/morph-l2/node:0.4.0 ## Specify the Node image version
+    
+    # ...
+
+    ```
+
+    :::tip
+    Optionally update the image version for go-ethereum, node, or both, depending on your requirements.
+    :::
+
+#### Step2: Restart the container
+
+Use the following commands to stop and restart the container. The updated Docker images will be pulled automatically.
+
+```js
+// stop the docker containers
+make stop-node
+
+// start the docker container, it will automatically pull the updated docker images
+make run-node
 ```
-### Step2: Stop the nodes and delete previous images
 
+If you are running a **validator**, use these commands instead: 
 ```bash
-## stop docker container
-cd ops/publicnode
-make stop-holesky-node
-make rm-holesky-node
-## delete the pervious docker image for node
-docker rmi morph/node:latest
-## delete the pervious docker image for geth
-docker rmi morph/geth-nccc:latest
+make stop-validator
+make run-validator
 ```
-
-### Step3: Build the latest image and restart the container
 
 :::note 
-Please note that we need to ensure that the Docker container startup parameters are consistent with those used previously. If you used a custom configuration before, make sure that the configuration and directory paths used in this run are the same as before. For details, please refer to [**Advanced Usage**](../2-how-to-run-a-morph-node-docker.md#advanced-usage) 
+Ensure that the startup parameters for the Docker container remain consistent with your previous configuration. If you previously used a custom setup, verify that the configuration and directory paths match your earlier setup. For details, please refer to [**Advanced Usage**](../full-node/1-run-in-docker.md#advanced-usage) 
 :::
-
-```bash
-## start the docker container, it will automatically build the new docker images
-make run-holesky-node
-```
 

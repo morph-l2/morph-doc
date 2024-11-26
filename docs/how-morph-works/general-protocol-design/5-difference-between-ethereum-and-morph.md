@@ -4,38 +4,30 @@ lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
-There are several technical differences between Ethereum’s EVM and Morph's optimistic zkEVM. We’ve compiled a list to help you understand these distinctions better.
 
+There are several technical differences between Ethereum’s EVM and Morph's optimistic zkEVM.
 
-:::tip
+We’ve compiled a list to help you understand these distinctions better.
+
 For most Solidity developers, these technical details won't significantly impact your development experience.
-:::
-
-## EVM Opcodes
 
 
-| Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
-| --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
-| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
-| `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
-| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is encountered, the transaction will be reverted.                     |
-| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
-| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
+## EVM Precompiles Difference
 
-## EVM Precompiles
+The `RIPEMD-160` (address `0x3`), `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently unsupported. Calls to these unsupported precompiled contracts will result in a transaction revert.
 
-The `RIPEMD-160` (address `0x3`) `blake2f` (address `0x9`), and `point evaluation` (address `0x0a`) precompiles are currently not supported. Calls to unsupported precompiled contracts will revert. We plan to enable these precompiles in future hard forks.
+The `modexp` precompile is supported, but it only accepts inputs that are 32 bytes or smaller (i.e., `u256`).
 
-The `modexp` precompile is supported but only supports inputs of size less than or equal to 32 bytes (i.e. `u256`).
+The `ecPairing` precompile is also supported; however, the maximum number of points (sets or pairs) is limited to 4, rather than 6.
 
-The `ecPairing` precompile is supported, but the number of points(sets, pairs) is limited to 4, instead of 6.
+All other EVM precompiles are fully supported: `ecRecover`, `identity`, `ecAdd`, and `ecMul`.
 
-The other EVM precompiles are all supported: `ecRecover`, `identity`, `ecAdd`, `ecMul`.
+### Certain Precompile Limits
 
-### Precompile Limits
+There is a maximum limit on the number of calls that can be made to certain precompiles due to the bounded size of zkEVM circuits. 
 
-Because of a bounded size of the zkEVM circuits, there is an upper limit on the number of calls that can be made for some precompiles. These transactions will not revert, but simply be skipped by the sequencer if they cannot fit into the space of the circuit. 
+While these transactions won't be reverted, the sequencer will skip them if they exceed the circuit's capacity.
+
 
 | Precompile / Opcode | Limit | 
 | ------------------- | ----- |
@@ -46,17 +38,33 @@ Because of a bounded size of the zkEVM circuits, there is an upper limit on the 
 | `ecMul`             | 50    |
 | `ecPairing`         | 2     |
 
+## EVM Opcodes Difference
+
+
+| Opcode                      | Solidity equivalent | Morph Behavior                                                                                            |
+| --------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `BLOCKHASH`                 | `block.blockhash`   | Returns `keccak(chain_id \|\| block_number)` for the last 256 blocks.                                      |
+| `COINBASE`                  | `block.coinbase`    | Returns the pre-deployed fee vault contract address. See [Contracts](../../build-on-morph/developer-resources/1-contracts.md) |
+| `DIFFICULTY` / `PREVRANDAO` | `block.difficulty`  | Returns 0.                                                                                                 |
+| `SELFDESTRUCT`              | `selfdestruct`      | Disabled. If the opcode is triggered, the transaction will be reverted.                     |
+| `BLOBHASH`              | `tx.blob_versioned_hashes[index]`      | Not supported                     |
+| `BLOBBASEFEE`              | `blob_base_fee = BLOBBASEFEE()`      | Not supported                    |
+
+
+
 :::tip Several opcode not available
 
-`BLOBHASH` and `BLOBBASEFEE` are not supported on Morph yet. Additionally, [EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported. 
+`BLOBHASH` and `BLOBBASEFEE` are not supported on Morph yet.
+
+[EIP-4788](https://eips.ethereum.org/EIPS/eip-4788) for accessing the Beacon Chain block root is not supported too. 
 
 :::
 
-## State Account
+## State Account Structure Difference
 
 ### **Additional Fields**
 
-We added two fields in the current `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
+There are two additional fields in the existing `StateAccount` object: `PoseidonCodehash` and `CodeSize`.
 
 ```go
 type StateAccount struct {
@@ -72,15 +80,11 @@ type StateAccount struct {
 
 ### **CodeHash**
 
-Related to this, we maintain two types of codehash for each contract bytecode: Keccak hash and Poseidon hash.
+In this context, we keep two varieties of code hashes for each contract's bytecode: the `Keccak hash` and the `Poseidon hash`.
 
-`KeccakCodeHash` is kept to maintain compatibility for `EXTCODEHASH`. `PoseidonCodeHash` is used for verifying the correctness of bytecodes loaded in the zkEVM, where Poseidon hashing is far more efficient.
+The `KeccakCodeHash` is preserved to ensure compatibility with `EXTCODEHASH`, while the `PoseidonCodeHash` is utilized for verifying the accuracy of bytecodes loaded in the zkEVM, as Poseidon hashing offers significantly greater efficiency.
 
-### CodeSize
-
-When verifying `EXTCODESIZE`, it is expensive to load the whole contract data into the zkEVM. Instead, we store the contract size in storage during contract creation. This way, we do not need to load the code — a storage proof is sufficient to verify this opcode.
-
-## Block Time
+## Block Time Difference
 
 :::tip Block Time Subject to Change
 
@@ -90,6 +94,7 @@ Blocks are produced every second, with an empty block generated if there are no 
 To compare, Ethereum has a block time of ~12 seconds.
 
 Reasons for Faster Block Time in Morph
+
 User Experience: 
 
 - A faster, consistent block time provides quicker feedback, enhancing the user experience.
@@ -100,32 +105,4 @@ User Experience:
 Notice:
 - `TIMESTAMP` will return the timestamp of the block. It will update every second.
 - `BLOCKNUMBER` will return an actual block number. It will update every second. The one-to-one mapping between blocks and transactions will no longer apply.
-
-
-
-
-<!--
-We also introduce the concept of system transactions that are created by the `op-node`, and are used to execute deposits and update the L2's view of L1. They have the following attributes:
-
-- Every block will contain at least one system transaction called the L1 attributes deposited transaction. It will always be the first transaction in the block.
-- Some blocks will contain one or more user-deposited transactions.
-- All system transactions have an [EIP-2718](https://eips.ethereum.org/EIPS/eip-2718)-compatible transaction type of `0x7E`.
-- All system transactions are unsigned, and set their `v`, `r`, and `s` fields to `null`.
-
-
-:::Warning Known Issue
-Some Ethereum client libraries, such as Web3js, cannot parse the `null` signature fields described above. To work around this issue, you will need to manually filter out the system transactions before passing them to the library. 
-:::
--->
-
-## Future EIPs
-
-Morph closely monitors emerging Ethereum Improvement Proposals (EIPs) and adopts them when suitable. For more specifics, join our community forum or [Discord](https://discord.gg/L2Morph) for discussions.
-
-<!-- ## EVM Target version 
-
-To avoid unexpected behaviors in your contracts, we recommend using ‘london’ as the target version when compiling your smart contracts.
-
-You can read in more details on Shanghai hard fork differences from London on the [Ethereum Execution spec](https://github.com/ethereum/execution-specs/tree/master/network-upgrades/mainnet-upgrades/shanghai.md) and how the new PUSH0 instruction [impacts the Solidity compiler](https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/).
--->
 

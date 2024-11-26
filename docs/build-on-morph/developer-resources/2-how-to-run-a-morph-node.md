@@ -60,7 +60,7 @@ Download the config files and make data dir
 
 ```
 cd ~/.morph
-wget https://raw.githubusercontent.com/morph-l2/config-template/main/holesky/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/holesky/data.zip
 unzip data.zip
 ```
 

@@ -7,6 +7,6 @@ Besides the official [Morph explorer](https://explorer-testnet.morphl2.io/), we 
 
 ### Socialscan
 
-Track Morph Testnet transactions and wallets on the [SocialScan Explorer](https://morphl2-testnet.socialscan.io/).
+Track Morph transactions and wallets on the [SocialScan Explorer](https://morphl2.socialscan.io/).
 
 ![socialscan](../../../../assets/docs/dev/resources/socialscan.png)
