@@ -12,6 +12,8 @@ module.exports = {
     'grid-cols-5',
     'grid-cols-6',
     'grid-cols-7',
+    'grid-cols-8',
+    'grid-cols-9',
   ],
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
