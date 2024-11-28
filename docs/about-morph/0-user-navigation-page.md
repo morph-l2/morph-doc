@@ -11,10 +11,11 @@ We’re thrilled to have you here, exploring the world of Morph. If you’re a d
 
 ![userpage](../../assets/docs/about/userpage.png)
 
+<!--
 
 <CardGroup className="grid-cols-3">
   <Card
-    href="​https://morphl2.io"
+    href=""
     icon="/img/cards/logo.svg"
     darkIcon="/img/cards/logo-dark.svg"
     text="LOGO 1" />
@@ -30,6 +31,8 @@ We’re thrilled to have you here, exploring the world of Morph. If you’re a d
   <Card icon="/img/cards/logo.svg" text="LOGO 6" />
   <Card icon="/img/cards/logo.svg" text="LOGO 7" />
 </CardGroup>
+
+-->
 
 ### What is Morph?
 

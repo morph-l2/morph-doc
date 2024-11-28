@@ -5,7 +5,11 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-# Deposit from Holesky to Morph Testnet
+## Deposit from Ethereum to Morph Mainnet
+
+Please refer to the [Morph Season 2 - Bridge Guide.](../quick-start/morph-zoo/morph-zoo-season-2/3-how-to-brigde-eth.md)
+
+# Deposit from Ethereum Holesky to Morph Testnet
 
 ## Instructions:
 

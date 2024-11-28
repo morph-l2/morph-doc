@@ -38,8 +38,9 @@
   dirName: 'how-morph-works', // Generate sidebar slice from docs/How Morph Works
 }
 */
-module.exports = {
-  UserSidebar:[
+
+const userSidebar =
+[
     {
       type:'doc',
       id:'about-morph/user-navigation-page'
@@ -153,8 +154,9 @@ module.exports = {
         },
       ]
     }
-  ],
-  DeveloperSidebar:[
+  ]
+
+const developerSidebar =[
     {
       type:'doc',
       id:'build-on-morph/developer-navigation-page'
@@ -256,6 +258,10 @@ module.exports = {
             {
               type: 'doc',
               id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/artificial-intelligence'
+            },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/decentralized-naming-services'
             },
           ]
         },
@@ -362,4 +368,10 @@ module.exports = {
 
 
   ]
+
+
+module.exports = {
+  UserSidebar: [...userSidebar, ...developerSidebar],
+  DeveloperSidebar: [...userSidebar, ...developerSidebar]
 };
+
