@@ -121,3 +121,22 @@ Theoretically, ZK-rollups should have no withdrawal period because the entire L2
 #### Seamless Transition with RVP-Based Rollups
 
 L2 scaling solutions incorporating RVP technology can be designed using the ZK-rollup framework, allowing for an easy transition from RVP-based L2 to standard ZK-rollup L2 as ZK technology matures. The primary adjustment needed is changing the sequencer's ZK-proof submission methods from responsive to active. Thus, RVP-based systems can seamlessly adopt full ZK-rollup benefits in the future.
+
+
+### SP1 on Morph Mainnet
+
+Morph’s Responsive Validity Proof (RVP) system morphed into the optimal design with our mainnet launch, enhanced by SP1.
+
+Succinct, uniquely enables Morph’s RVP with their blazing fast zkVM and excellent developer experience. It represents a generational shift in how zkEVMs are built, custom circuits are a relic of that past. This upgrade refines RVP's capabilities, pushing the boundaries of scalability and security in blockchain applications.
+
+Our RVP system with SP1 is:
+
+- Uses a generic, more developer-friendly Rust-based implementation
+- Generates proofs orders of magnitudes faster with SP1’s Prover Network 
+- Handles unlimited transactions per block (previously capped at 100)
+
+For users, this means:
+
+- Improved security and smoother user experience (thoroughly audited codes with faster challenge resolution and 2-day settlement)
+- Lower costs (more efficient proof generation for off-chain computation)
+- More scalable (no more transaction caps)
