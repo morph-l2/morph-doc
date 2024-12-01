@@ -4,6 +4,7 @@ lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
+import { CardGroup, Card } from '@site/src/components/Card'
 
 If you’re ready to build applications on Morph, you're in the right place. 
 
@@ -21,11 +22,68 @@ To help you get started, here’s a recommended navigation through our documenta
 
 **Fundamental Concepts**: Start here to learn the core components of Morph, including Morph’s Modular Design, the Decentralized Sequencer Network, and the Responsive Validity Proof system.
 
-**Advanced Concepts**: Dive deeper into topics such as understanding transaction costs on Morph and differences between Morph and Ethereum.
+<CardGroup className="grid-cols-3">
+  <Card
+    href="../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network"
+    icon="/img/cards/logo.svg"
+    darkIcon="/img/cards/logo-dark.svg"
+    text="Decentralized Sequencers" />
+  <Card 
+    href="../how-morph-works/optimistic-zkevm"
+    icon="/img/cards/logo.svg"
+    text="Optimistic zkEVM" />
+  <Card
+    href="../how-morph-works/general-protocol-design/rollup"
+    icon="/img/cards/logo.svg"
+    text="General Protocol Design" />
+</CardGroup>
 
 **Developer Guides**: Access comprehensive guides on verifying smart contracts, running a Morph node, deploying contracts, and more.
 
+<CardGroup className="grid-cols-3">
+  <Card
+    href="../build-on-morph/build-on-morph/development-setup"
+    icon="/img/cards/logo.svg"
+    darkIcon="/img/cards/logo-dark.svg"
+    text="Development Setup" />
+  <Card 
+    href="../build-on-morph/build-on-morph/verify-your-smart-contracts"
+    icon="/img/cards/logo.svg"
+    text="Verify Your Contracts" />
+  <Card
+    href="../build-on-morph/build-on-morph/bridge-between-morph-and-ethereum"
+    icon="/img/cards/logo.svg"
+    text="Ethereum <=> Morph Bridge" />
+<Card
+    href="../build-on-morph/sdk/globals"
+    icon="/img/cards/logo.svg"
+    darkIcon="/img/cards/logo-dark.svg"
+    text="Using SDK" />
+  <Card 
+    href="../build-on-morph/developer-resources/node-operation/full-node/run-in-docker"
+    icon="/img/cards/logo.svg"
+    text="Node Operations" />
+  <Card
+    href="../build-on-morph/developer-resources/use-ecosystem-developer-tools/safe-multi-signature-wallet"
+    icon="/img/cards/logo.svg"
+    text="Leverage Ecosystem Infra" />
+</CardGroup>
+
 **Developer Resources**: Find detailed API methods, contract addresses and other useful developer resources.
+<CardGroup className="grid-cols-3">
+  <Card 
+    href="../build-on-morph/developer-resources/contracts"
+    icon="/img/cards/logo.svg"
+    text="Contract Addresses" />
+  <Card 
+    href="../build-on-morph/developer-resources/dapp-examples-on-morph"
+    icon="/img/cards/logo.svg"
+    text="Dapp Examples" />
+  <Card
+    href="../build-on-morph/developer-resources/morph-json-rpc-api-methods"
+    icon="/img/cards/logo.svg"
+    text="Morph JSON-RPC API" />
+</CardGroup>
 
 ### Engage in Our Developer Community​
 
