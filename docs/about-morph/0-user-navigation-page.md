@@ -25,16 +25,15 @@ To help you navigate through our resources, here’s a quick guide:
 <CardGroup className="grid-cols-3">
   <Card
     href="./morphs-vision-and-mission"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    icon="/img/cards/users.svg"
     text="Morph's Vision and Mission" />
   <Card 
     href="./morphs-architecture"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/research.svg"
     text="Morph's Architecture" />
   <Card
     href="./roadmap"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/guide.svg"
     text="Roadmap" />
 </CardGroup>
 
@@ -43,16 +42,15 @@ To help you navigate through our resources, here’s a quick guide:
 <CardGroup className="grid-cols-3">
   <Card
     href="../quick-start/wallet-setup"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    icon="/img/cards/wallet.svg"
     text="Wallet Setup" />
   <Card 
     href="../quick-start/faucet"
-    icon="/img/cards/logo.svg"
+    icon="./img/cards/faucet.svg"
     text="Faucet" />
   <Card
     href="../quick-start/bridge"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/bridge.svg"
     text="Bridge" />
 </CardGroup>
 
@@ -61,16 +59,15 @@ To help you navigate through our resources, here’s a quick guide:
 <CardGroup className="grid-cols-3">
   <Card
     href=".https://bridge.morphl2.io/"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    icon="./img/cards/bridge.svg"
     text="Morph Bridge" />
   <Card 
     href="https://explorer.morphl2.io/"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/guide.svg"
     text="Morph Explorer" />
   <Card
     href="https://morphfaucet.com"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/faucet.svg"
     text="Morph Faucet" />
 </CardGroup>
 
@@ -79,12 +76,11 @@ To help you navigate through our resources, here’s a quick guide:
 <CardGroup className="grid-cols-3">
   <Card
     href="../quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    icon="/img/cards/contract.svg"
     text="Morph Season 2 Rules" />
   <Card 
     href="../quick-start/morph-zoo/morph-zoo-season-2/how-to-connect-your-wallet-and-verify-your-account"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/guide.svg"
     text="Morph Season 2 Tutorial" />
 </CardGroup>
 
