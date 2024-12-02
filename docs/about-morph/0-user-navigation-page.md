@@ -22,7 +22,7 @@ To help you navigate through our resources, here’s a quick guide:
 
 **Introductory Concepts**: Get a general understanding of Morph, including what makes it unique, our vision and mission, key concepts, and a look at our roadmap. This section will help you grasp the basics and understand the foundation of Morph.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="/docs/about-morph/morphs-vision-and-mission"
     icon="/img/cards/users.svg"
@@ -39,7 +39,7 @@ To help you navigate through our resources, here’s a quick guide:
 
 **Step-by-Step Guides**: Follow these practical tutorials for setting up your wallet, using the faucet, bridging assets, and exploring the Morph ecosystem. These guides are perfect for hands-on learning and getting started with Morph.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="/docs/quick-start/wallet-setup"
     icon="/img/cards/wallet.svg"
@@ -56,7 +56,7 @@ To help you navigate through our resources, here’s a quick guide:
 
 **Links and Tools**: Access useful tools such as the Morph Holesky Explorer and the official bridge. This section provides all the necessary links and resources to interact with and explore the Morph network effectively.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="https://bridge.morphl2.io/"
     icon="./img/cards/bridge.svg"
@@ -73,7 +73,7 @@ To help you navigate through our resources, here’s a quick guide:
 
 **Morph Zoo**: Explore all aspects of the  Morph ecosystem campaign - Morph Zoo, read about tutorials, rules, and operational details.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="/docs/quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
     icon="/img/cards/contract.svg"
