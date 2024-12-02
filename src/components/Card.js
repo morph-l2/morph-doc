@@ -7,7 +7,7 @@ import ThemedImage from '@theme/ThemedImage';
 
 import { CardGroup, Card } from '@site/src/components/Card'
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="https://morphl2.io"
     icon="/img/cards/logo.svg"
