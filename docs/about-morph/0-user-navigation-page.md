@@ -22,69 +22,65 @@ To help you navigate through our resources, here’s a quick guide:
 
 **Introductory Concepts**: Get a general understanding of Morph, including what makes it unique, our vision and mission, key concepts, and a look at our roadmap. This section will help you grasp the basics and understand the foundation of Morph.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
-    href="./morphs-vision-and-mission"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    href="/docs/about-morph/morphs-vision-and-mission"
+    icon="/img/cards/users.svg"
     text="Morph's Vision and Mission" />
   <Card 
-    href="./morphs-architecture"
-    icon="/img/cards/logo.svg"
+    href="/docs/about-morph/morphs-architecture"
+    icon="/img/cards/research.svg"
     text="Morph's Architecture" />
   <Card
-    href="./roadmap"
-    icon="/img/cards/logo.svg"
+    href="/docs/about-morph/roadmap"
+    icon="/img/cards/guide.svg"
     text="Roadmap" />
 </CardGroup>
 
 **Step-by-Step Guides**: Follow these practical tutorials for setting up your wallet, using the faucet, bridging assets, and exploring the Morph ecosystem. These guides are perfect for hands-on learning and getting started with Morph.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
-    href="../quick-start/wallet-setup"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    href="/docs/quick-start/wallet-setup"
+    icon="/img/cards/wallet.svg"
     text="Wallet Setup" />
   <Card 
-    href="../quick-start/faucet"
-    icon="/img/cards/logo.svg"
+    href="/docs/quick-start/wallet-setup"
+    icon="./img/cards/faucet.svg"
     text="Faucet" />
   <Card
-    href="../quick-start/bridge"
-    icon="/img/cards/logo.svg"
+    href="/docs/quick-start/wallet-setup"
+    icon="/img/cards/bridge.svg"
     text="Bridge" />
 </CardGroup>
 
 **Links and Tools**: Access useful tools such as the Morph Holesky Explorer and the official bridge. This section provides all the necessary links and resources to interact with and explore the Morph network effectively.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
-    href=".https://bridge.morphl2.io/"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    href="https://bridge.morphl2.io/"
+    icon="./img/cards/bridge.svg"
     text="Morph Bridge" />
   <Card 
     href="https://explorer.morphl2.io/"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/guide.svg"
     text="Morph Explorer" />
   <Card
     href="https://morphfaucet.com"
-    icon="/img/cards/logo.svg"
+    icon="/img/cards/faucet.svg"
     text="Morph Faucet" />
 </CardGroup>
 
 **Morph Zoo**: Explore all aspects of the  Morph ecosystem campaign - Morph Zoo, read about tutorials, rules, and operational details.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
-    href="../quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
-    icon="/img/cards/logo.svg"
-    darkIcon="/img/cards/logo-dark.svg"
+    href="/docs/quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
+    icon="/img/cards/contract.svg"
     text="Morph Season 2 Rules" />
   <Card 
-    href="../quick-start/morph-zoo/morph-zoo-season-2/how-to-connect-your-wallet-and-verify-your-account"
-    icon="/img/cards/logo.svg"
+    href="/docs/quick-start/morph-zoo/morph-zoo-season-2/how-to-connect-your-wallet-and-verify-your-account"
+    icon="/img/cards/guide.svg"
     text="Morph Season 2 Tutorial" />
 </CardGroup>
 
