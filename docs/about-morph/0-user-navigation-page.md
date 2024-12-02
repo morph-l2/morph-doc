@@ -24,15 +24,15 @@ To help you navigate through our resources, here’s a quick guide:
 
 <CardGroup className="grid-cols-3">
   <Card
-    href="./morphs-vision-and-mission"
+    href="/docs/about-morph/morphs-vision-and-mission"
     icon="/img/cards/users.svg"
     text="Morph's Vision and Mission" />
   <Card 
-    href="./morphs-architecture"
+    href="/docs/about-morph/morphs-architecture"
     icon="/img/cards/research.svg"
     text="Morph's Architecture" />
   <Card
-    href="./roadmap"
+    href="/docs/about-morph/roadmap"
     icon="/img/cards/guide.svg"
     text="Roadmap" />
 </CardGroup>
@@ -41,15 +41,15 @@ To help you navigate through our resources, here’s a quick guide:
 
 <CardGroup className="grid-cols-3">
   <Card
-    href="../quick-start/wallet-setup"
+    href="/docs/quick-start/wallet-setup"
     icon="/img/cards/wallet.svg"
     text="Wallet Setup" />
   <Card 
-    href="../quick-start/faucet"
+    href="/docs/quick-start/wallet-setup"
     icon="./img/cards/faucet.svg"
     text="Faucet" />
   <Card
-    href="../quick-start/bridge"
+    href="/docs/quick-start/wallet-setup"
     icon="/img/cards/bridge.svg"
     text="Bridge" />
 </CardGroup>
@@ -75,11 +75,11 @@ To help you navigate through our resources, here’s a quick guide:
 
 <CardGroup className="grid-cols-3">
   <Card
-    href="../quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
+    href="/docs/quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
     icon="/img/cards/contract.svg"
     text="Morph Season 2 Rules" />
   <Card 
-    href="../quick-start/morph-zoo/morph-zoo-season-2/how-to-connect-your-wallet-and-verify-your-account"
+    href="/docs/quick-start/morph-zoo/morph-zoo-season-2/how-to-connect-your-wallet-and-verify-your-account"
     icon="/img/cards/guide.svg"
     text="Morph Season 2 Tutorial" />
 </CardGroup>
