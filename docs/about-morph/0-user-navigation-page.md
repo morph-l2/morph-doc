@@ -58,7 +58,7 @@ To help you navigate through our resources, here’s a quick guide:
 
 <CardGroup className="grid-cols-3">
   <Card
-    href=".https://bridge.morphl2.io/"
+    href="https://bridge.morphl2.io/"
     icon="./img/cards/bridge.svg"
     text="Morph Bridge" />
   <Card 
