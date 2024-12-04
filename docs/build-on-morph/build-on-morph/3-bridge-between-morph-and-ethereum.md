@@ -93,11 +93,11 @@ You can also try our SDK to interact with the bridge system by referring to our 
 :::
 ## Add your Token to the Official Bridge
 
-Currently, our official bridge only supports certain pre-defined tokens to be bridged. If you want to bridge your own tokens, you need to manually add the token, and here is how to do it.
+Currently, our canonical bridge only supports certain pre-defined tokens to be bridged. If you want to bridge your own tokens, you need to manually add the token, and here is how to do it.
 
 ### Add Tokens to the gateway through Morph Bridge Frontend
 
-The easiest way to support your token is to manually add it on our [official bridge frontend](https://bridge-holesky.morphl2.io/), you can simply do it with the following steps:
+The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-holesky.morphl2.io/), you can simply do it with the following steps:
 
 1. Click the token selection button on Morph Holesky Bridge
 

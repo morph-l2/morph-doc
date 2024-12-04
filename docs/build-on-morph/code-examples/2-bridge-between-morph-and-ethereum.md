@@ -88,7 +88,7 @@ contract L2Token is ERC20, IMorphERC20Extension {
 
 ## Step 3: Add the token to the Morph Bridge
 
-You need to contact the Morph team to add the token to `L2CustomERC20Gateway` contract in Morph and `L1CustomERC20Gateway` contract in L1. In addition, follow the instructions on the [token lists](https://github.com/Morph-tech/token-list) repository to add your token to the Morph official bridge frontend.
+You need to contact the Morph team to add the token to `L2CustomERC20Gateway` contract in Morph and `L1CustomERC20Gateway` contract in L1. In addition, follow the instructions on the [token lists](https://github.com/Morph-tech/token-list) repository to add your token to the Morph canonical bridge frontend.
 
 ## Step 4: Deposit tokens
 

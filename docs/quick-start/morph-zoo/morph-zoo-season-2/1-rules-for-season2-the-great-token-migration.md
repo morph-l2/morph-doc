@@ -13,13 +13,13 @@ Here are the rules of Season 2 you need to know:
 
 ### Bridging Rules:
 
-1. For Season 2, participants earn points when using the **official bridge** or **Orbiter Finance**. No other bridging methods or platforms are eligible for scoring at this time.
+1. For Season 2, participants earn points when using the **canonical bridge** or **Orbiter Finance**. No other bridging methods or platforms are eligible for scoring at this time.
 
-- The **official bridge** can be accessed on the main page's right side.
+- The **canonical bridge** can be accessed on the main page's right side.
 - **Orbiter Finance** can be accessed by clicking the banner on the left.
 
 2.  The assets you can bridge in Season 2 include:
-- ETH, wETH, USDC, and USDT on the official bridge.
+- ETH, wETH, USDC, and USDT on the canonical bridge.
 - ETH on Orbiter Finance.
 - ETH directly withdraws from the crypto exchange to Morph.
 
