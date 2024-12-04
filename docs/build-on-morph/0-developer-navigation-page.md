@@ -22,7 +22,7 @@ To help you get started, here’s a recommended navigation through our documenta
 
 **Fundamental Concepts**: Start here to learn the core components of Morph, including Morph’s Modular Design, the Decentralized Sequencer Network, and the Responsive Validity Proof system.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="/docs/how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network"
     icon="/img/cards/research.svg"
@@ -39,7 +39,7 @@ To help you get started, here’s a recommended navigation through our documenta
 
 **Developer Guides**: Access comprehensive guides on verifying smart contracts, running a Morph node, deploying contracts, and more.
 
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
     href="/docs/build-on-morph/build-on-morph/development-setup"
     icon="/img/cards/dev.svg"
@@ -67,7 +67,7 @@ To help you get started, here’s a recommended navigation through our documenta
 </CardGroup>
 
 **Developer Resources**: Find detailed API methods, contract addresses and other useful developer resources.
-<CardGroup className="grid-cols-3">
+<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card 
     href="/docs/build-on-morph/developer-resources/contracts"
    icon="/img/cards/contract.svg"
