@@ -229,6 +229,10 @@ const developerSidebar =[
           items:[
             {
               type: 'doc',
+              id: 'build-on-morph/developer-resources/use-ecosystem-developer-tools/user-onboarding'
+            },
+            {
+              type: 'doc',
               id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/cross-chain-interoperability'
             },
             {
