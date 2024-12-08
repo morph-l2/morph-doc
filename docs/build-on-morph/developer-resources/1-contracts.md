@@ -166,6 +166,16 @@ Please not the following is the contract address of the Morph Holesky Testnet.
 
 [L2CrossDomainMessenger](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000007): 0x5300000000000000000000000000000000000007
 
+#### L2 Tokens
+
+[L2USDT](https://explorer-holesky.morphl2.io/address/0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98):0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98
+
+[L2USDC](https://explorer-holesky.morphl2.io/address/0xeA2610c28B4c5857689EAFa8b2116a617206d283):0xeA2610c28B4c5857689EAFa8b2116a617206d283
+
+[L2DAI](https://explorer-holesky.morphl2.io/address/0xAa19d46626947C6E1E5F281aE835971579827DDC):0xAa19d46626947C6E1E5F281aE835971579827DDC
+
+
+
 ### Gateway
 
 #### L1 Gateway
