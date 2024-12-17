@@ -39,11 +39,13 @@ wss://rpc-quicknode.morphl2.io
 
 :::
 
+<!--
 ### Tendermint Consensus Information
 
-Tendermint RPC: https://rpc-consensus.morphl2.io
+Tendermint RPC: https://rpc-consensus-holesky.morphl2.io
 
 Tendermint RPC Documentation: https://docs.tendermint.com/v0.34/rpc/#/
+-->
 
 
 ## Step 2: Set up your developing framework
@@ -110,13 +112,13 @@ wss://rpc-quicknode-holesky.morphl2.io
 
 :::
 
+<!--
 ### Tendermint Consensus Information
 
 Tendermint RPC: https://rpc-consensus-holesky.morphl2.io
 
 Tendermint RPC Documentation: https://docs.tendermint.com/v0.34/rpc/#/
-
-
+-->
 ## Step 2: Set up your developing framework
 
 ### Hardhat
