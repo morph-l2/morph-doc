@@ -72,7 +72,7 @@ Point = 10000*Gas
 
 For example, if a user spent 0.0001 ETH in gas on Morph Mainnet, the point would be:
 
-Point = $10000*0.0001 = 1
+Point = 10000*0.0001 = 1
 
 ### Invitation Rules:
 
