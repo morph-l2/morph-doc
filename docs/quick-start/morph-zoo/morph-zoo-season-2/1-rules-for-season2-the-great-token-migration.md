@@ -8,6 +8,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 Season 2: The Great Token Migration is live. Earn Morph Points by bridging assets and spending gas through this season’s Bridging Program.
 
 The bridging program is an initiative designed to incentivize users and communities to help build early liquidity and increase network activity on Morph. Participants can earn Morph Points through two main activities: bridging assets to the Morph Mainnet and using gas on the network. Additionally, users who invite others to join Season 2 and join the bonus event with other platforms will also receive extra rewards. This program aims to boost Morph's ecosystem while offering valuable incentives to active community members.
+
 Here are the rules of Season 2 you need to know:
 
 
@@ -82,6 +83,7 @@ Point = $10000*0.0001 = 1
 3. An invitee must connect their wallet on the Season 2 page and log in for the first time to confirm the referral. Without logging in, the invitation will not be deemed valid.
 
 
+
 point formula:
 
 *Point = $10 \%^{*}\left(\text {Point}_{A 1}+\text {Point}_{A 2}\right)+5 \%\left(\text {Point}_{B 1}+\text {Point}_{B 2}\right)$*
@@ -98,7 +100,7 @@ point formula:
 - Inviting new users to Season 2 through your referral link, 
 - Participating in special events like the “Bitget Wallet Event”.
 
-2. You'll accumulate points throughout the season from bridging assets, spending gas, and inviting others. Once Season 2 ends, these points will be converted into Morph Points, which you can claim on the Morph Zoo page.
+2. You'll accumulate points throughout the season from bridging assets, spending gas, and inviting others. Once Season 2 ends, you can claim on the Morph Zoo page.
 
 *Your points = $(a*{point}\_{Bridge}) + (b*{point}\_{Gas}) + {point}\_{Ref} + {Bonus}\_{event}$*
 
