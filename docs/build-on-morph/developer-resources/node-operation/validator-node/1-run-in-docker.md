@@ -23,7 +23,7 @@ MORPH_HOME=../mainnet
 MORPH_FLAG=morph
 JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
 GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
-HOLESKY_SNAPSHOT_NAME=snapshot-20241029-1
+HOLESKY_SNAPSHOT_NAME=snapshot-20241218-1
 
 // Environment variables for validator node
 L1_CHAIN_ID=1
@@ -74,7 +74,7 @@ MORPH_HOME=../holesky
 MORPH_FLAG=morph-holesky
 JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
 GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
-HOLESKY_SNAPSHOT_NAME=snapshot-20241029-1
+HOLESKY_SNAPSHOT_NAME=snapshot-20241218-1
 
 // Environment variables for validator node
 L1_CHAIN_ID=17000

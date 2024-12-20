@@ -44,7 +44,7 @@ JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
 // The entrypoint shell script for start execution client  
 GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
 // The snapshot name for Morph node 
-SNAPSHOT_NAME=snapshot-20241029-1
+SNAPSHOT_NAME=snapshot-20241218-1
 
 ......
 ```
@@ -89,11 +89,11 @@ The **make download-and-decompress-snapshot** command will assist you in downloa
 
 ### Set up the snapshot data
 Then, you need to manually place the decompressed data files in the appropriate node data directories.
-For example, if the snapshot folder is named ```snapshot-20241029-1```, move the directory ```snapshot-20241029-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory and the contents from ```snapshot-20241029-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
+For example, if the snapshot folder is named ```snapshot-20241218-1```, move the directory ```snapshot-20241218-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory and the contents from ```snapshot-20241218-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
 
 ```
-mv ./morph-node/snapshot-20241029-1/geth ${MORPH_HOME}/geth-data
-mv ./morph-node/snapshot-20241029-1/data/* ${MORPH_HOME}/node-data/data
+mv ./morph-node/snapshot-20241218-1/geth ${MORPH_HOME}/geth-data
+mv ./morph-node/snapshot-20241218-1/data/* ${MORPH_HOME}/node-data/data
 ```
 
 The folder structure will be like 

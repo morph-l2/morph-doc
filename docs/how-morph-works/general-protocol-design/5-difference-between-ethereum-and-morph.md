@@ -22,21 +22,6 @@ The `ecPairing` precompile is also supported; however, the maximum number of poi
 
 All other EVM precompiles are fully supported: `ecRecover`, `identity`, `ecAdd`, and `ecMul`.
 
-### Certain Precompile Limits
-
-There is a maximum limit on the number of calls that can be made to certain precompiles due to the bounded size of zkEVM circuits. 
-
-While these transactions won't be reverted, the sequencer will skip them if they exceed the circuit's capacity.
-
-
-| Precompile / Opcode | Limit | 
-| ------------------- | ----- |
-| `keccak256`         | 3157  |
-| `ecRecover`         | 119   |
-| `modexp`            | 23    |
-| `ecAdd`             | 50    |
-| `ecMul`             | 50    |
-| `ecPairing`         | 2     |
 
 ## EVM Opcodes Difference
 

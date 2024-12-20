@@ -215,15 +215,15 @@ You should build the binary and prepare the config files in the above steps firs
 
 ```bash
 ## holesky
-wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20241029-1.tar.gz
-tar -xzvf snapshot-20241029-1.tar.gz
+wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20241218-1.tar.gz
+tar -xzvf snapshot-20241218-1.tar.gz
 ```
 
 Extracting snapshot data to the data directory your node points to 
 
 ```bash
-mv snapshot-20241029-1/geth geth-data
-mv snapshot-20241029-1/data node-data
+mv snapshot-20241218-1/geth geth-data
+mv snapshot-20241218-1/data node-data
 ```
 
 Start the execution client and consensus client.
