@@ -140,3 +140,43 @@ For users, this means:
 - Improved security and smoother user experience (thoroughly audited codes with faster challenge resolution and 2-day settlement)
 - Lower costs (more efficient proof generation for off-chain computation)
 - More scalable (no more transaction caps)
+
+
+### Morph Challengers Address List
+
+As our promise to the decentralization of the challenging process, here is the list of all the challenger address.
+
+These addresses are responsible for monitor the L2 state change and respond to any malicious activities from the sequencers.
+
+#### Challenger Address List
+
+- [0x77b29534738e3f0f297d36635d7884965c7c8ce1](https://etherscan.io/address/0x77b29534738e3f0f297d36635d7884965c7c8ce1)
+- [0x95417708f67f4a5df1a447efe40c6c74e38ab832](https://etherscan.io/address/0x95417708f67f4a5df1a447efe40c6c74e38ab832)
+- [0xd11f9c4f5d9b1fec2d14581d3674066442b68772](https://etherscan.io/address/0xd11f9c4f5d9b1fec2d14581d3674066442b68772)
+- [0x323a78c1c910b282de98a557d735628a02e00983](https://etherscan.io/address/0x323a78c1c910b282de98a557d735628a02e00983)
+- [0x74204e3801e9394848abdbad6f378d0b11e9a091](https://etherscan.io/address/0x74204e3801e9394848abdbad6f378d0b11e9a091)
+- [0xbd9f4fdc48a9a8c7ea1075cfdf4f3bd365d50bab](https://etherscan.io/address/0xbd9f4fdc48a9a8c7ea1075cfdf4f3bd365d50bab)
+- [0x9ac29d4f41a139d9b7be32c2906df9f86fa51b2b](https://etherscan.io/address/0x9ac29d4f41a139d9b7be32c2906df9f86fa51b2b)
+- [0xbfd62b7915da8c19c701fd13237b555ad38c4b4c](https://etherscan.io/address/0xbfd62b7915da8c19c701fd13237b555ad38c4b4c)
+- [0xca00091a35d0b546a15d000f8bceda56255ee4d0](https://etherscan.io/address/0xca00091a35d0b546a15d000f8bceda56255ee4d0)
+- [0x6d7cc6c62cd6ccdac482e82aa7a3763926e93854](https://etherscan.io/address/0x6d7cc6c62cd6ccdac482e82aa7a3763926e93854)
+- [0x8c0cffcbab44c7ab6e96eb607c49188de99a17cd](https://etherscan.io/address/0x8c0cffcbab44c7ab6e96eb607c49188de99a17cd)
+- [0xc4db900f76293042349448d1ba30f71518325bb3](https://etherscan.io/address/0xc4db900f76293042349448d1ba30f71518325bb3)
+- [0xf2ff0509520faf35b511074466a509e00d73c307](https://etherscan.io/address/0xf2ff0509520faf35b511074466a509e00d73c307)
+- [0xf6ee30269db1854987ca6812e1ff66c3a5f660fd](https://etherscan.io/address/0xf6ee30269db1854987ca6812e1ff66c3a5f660fd)
+- [0xf50a81c771ad3237aea2fd18e4ee8055cc4cd2b9](https://etherscan.io/address/0xf50a81c771ad3237aea2fd18e4ee8055cc4cd2b9)
+- [0x71c10870dc38e54d987c22e96ab32b46cc08564f](https://etherscan.io/address/0x71c10870dc38e54d987c22e96ab32b46cc08564f)
+- [0xb4a20d473e8c378ae742a8017dd67756a358eab6](https://etherscan.io/address/0xb4a20d473e8c378ae742a8017dd67756a358eab6)
+- [0xe48ea86dcde15e28624e5de9d6d3738fc52b6bfe](https://etherscan.io/address/0xe48ea86dcde15e28624e5de9d6d3738fc52b6bfe)
+- [0x03fd36aed3b2597aa79bb5f543f3a0eaf9deb0fa](https://etherscan.io/address/0x03fd36aed3b2597aa79bb5f543f3a0eaf9deb0fa)
+- [0x4ee3690901157be86a33371bec1e5021a10ba47c](https://etherscan.io/address/0x4ee3690901157be86a33371bec1e5021a10ba47c)
+- [0xc8f7daef4b49c1593cc3996ab2afa8b56e00fcf8](https://etherscan.io/address/0xc8f7daef4b49c1593cc3996ab2afa8b56e00fcf8)
+- [0x0092bc49078f130d27e70dbeee441e227280b97d](https://etherscan.io/address/0x0092bc49078f130d27e70dbeee441e227280b97d)
+- [0xc412b4e6399f694cff21d038d225373fd6596811](https://etherscan.io/address/0xc412b4e6399f694cff21d038d225373fd6596811)
+- [0x1721d3ae2d68e3dd32525400ed2a29060f1300c6](https://etherscan.io/address/0x1721d3ae2d68e3dd32525400ed2a29060f1300c6)
+- [0xdf063faeb46de1b4336bc70da7175f16ab4a7272](https://etherscan.io/address/0xdf063faeb46de1b4336bc70da7175f16ab4a7272)
+- [0x611e4b24e89bc524fc06f73b6fd02be3ec73d6db](https://etherscan.io/address/0x611e4b24e89bc524fc06f73b6fd02be3ec73d6db)
+- [0x92c4d5d9cadd1af74080de7aa078434007f710bb](https://etherscan.io/address/0x92c4d5d9cadd1af74080de7aa078434007f710bb)
+- [0x234acb24b1deea7f6c7530b8c29a6378ba21e1d0](https://etherscan.io/address/0x234acb24b1deea7f6c7530b8c29a6378ba21e1d0)
+- [0x5c6e1011cd3b5d7d2937c098b8f61d6b3d1aee7e](https://etherscan.io/address/0x5c6e1011cd3b5d7d2937c098b8f61d6b3d1aee7e)
+- [0x95c373754c66fef1eb2dbb6934af821c551d9738](https://etherscan.io/address/0x95c373754c66fef1eb2dbb6934af821c551d9738)
