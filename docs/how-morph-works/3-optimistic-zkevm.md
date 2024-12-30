@@ -144,9 +144,9 @@ For users, this means:
 
 ### Morph Challengers Address List
 
-As our promise to the decentralization of the challenging process, here is the list of all the challenger address.
+As per our commitment to the decentralization of the challenging process, here is the list of all challenger addresses.
 
-These addresses are responsible for monitor the L2 state change and respond to any malicious activities from the sequencers.
+These addresses are responsible for monitoring the L2 state changes and responding to any malicious activities from the sequencers.
 
 #### Challenger Address List
 
