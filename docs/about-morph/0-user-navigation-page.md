@@ -71,18 +71,6 @@ To help you navigate through our resources, here’s a quick guide:
     text="Morph Faucet" />
 </CardGroup>
 
-**Morph Zoo**: Explore all aspects of the  Morph ecosystem campaign - Morph Zoo, read about tutorials, rules, and operational details.
-
-<CardGroup className="md:grid-cols-2 xl:grid-cols-3">
-  <Card
-    href="/docs/quick-start/morph-zoo/morph-zoo-season-2/rules-for-season2-the-great-token-migration"
-    icon="/img/cards/contract.svg"
-    text="Morph Season 2 Rules" />
-  <Card 
-    href="/docs/quick-start/morph-zoo/morph-zoo-season-2/how-to-connect-your-wallet-and-verify-your-account"
-    icon="/img/cards/guide.svg"
-    text="Morph Season 2 Tutorial" />
-</CardGroup>
 
 ### Engage in Our Ecosystem
 

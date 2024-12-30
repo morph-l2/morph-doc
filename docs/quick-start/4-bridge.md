@@ -7,7 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Deposit from Ethereum to Morph Mainnet
 
-Please refer to the [Morph Season 2 - Bridge Guide.](../quick-start/morph-zoo/morph-zoo-season-2/3-how-to-brigde-eth.md)
+Please refer to the [Morph Season 2 - Bridge Guide.](https://morph.ghost.io/how-to-bridge-eth-to-morph-official-bridge/)
 
 # Deposit from Ethereum Holesky to Morph Testnet
 
