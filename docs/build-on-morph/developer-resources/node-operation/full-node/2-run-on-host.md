@@ -79,10 +79,32 @@ openssl rand -hex 32 > jwt-secret.txt
 ```
 
 ## Start Node
-Mainnet nodes currently support synchronization only from the genesis block, with snapshot-based synchronization planned for future updates. Testnet nodes support synchronization exclusively from snapshots.
+Mainnet nodes currently support synchronization from the genesis block and a snapshot block. Testnet nodes support synchronization exclusively from snapshots.
 
-### Sync from genesis block(For mainnet)
-Start the execution client and consensus client directly without downloading snapshot.
+### Sync from snapshot(Recommended)
+You should build the binary and prepare the config files in the above steps first, then download the snapshot.
+
+#### Download snapshot
+Download the latest snapshot corresponding to either the mainnet or testnet network. 
+
+A complete record of historical snapshots is available [here](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information). Below is an example of how to download a snapshot
+
+```bash
+## mainnet
+wget -q --show-progress https://snapshot.morphl2.io/mainnet/${SNAPSHOT_NAME}.tar.gz
+tar -xzvf ${SNAPSHOT_NAME}.tar.gz
+
+## holesky
+wget -q --show-progress https://snapshot.morphl2.io/holesky/${SNAPSHOT_NAME}.tar.gz
+tar -xzvf ${SNAPSHOT_NAME}.tar.gz
+```
+
+Extracting snapshot data to the data directory your node points to 
+
+```bash
+mv ${SNAPSHOT_NAME}/geth geth-data
+mv ${SNAPSHOT_NAME}/data node-data
+```
 
 #### Start execution client
 
@@ -207,23 +229,7 @@ curl http://localhost:26657/status to check the sync status of the node
 
 The returned "catching_up" indicates whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
 
-### Sync from snapshot(Recommended for testnet)
 
-You should build the binary and prepare the config files in the above steps first, then download the snapshot. 
 
-#### Download snapshot
-
-```bash
-## holesky
-wget -q --show-progress https://snapshot.morphl2.io/holesky/snapshot-20241218-1.tar.gz
-tar -xzvf snapshot-20241218-1.tar.gz
-```
-
-Extracting snapshot data to the data directory your node points to 
-
-```bash
-mv snapshot-20241218-1/geth geth-data
-mv snapshot-20241218-1/data node-data
-```
-
-Start the execution client and consensus client.
+### Sync from genesis block
+Start the execution client and consensus client directly without downloading snapshot.

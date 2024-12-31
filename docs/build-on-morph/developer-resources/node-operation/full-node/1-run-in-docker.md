@@ -24,7 +24,7 @@ The command `make run-node` takes the `../mainnet` as your node's **Home** direc
 This command will also generate the `secret-jwt.txt` file under **Home** directory for the authentication during RPC calls between the execution client and consensus client.
 
 :::note
-The instructions outlined above detail the procedure for running a full node on the mainnet. To set up and operate a Holesky node, please refer to [Run a Holesky Node](#run-a-holesky-node).
+The instructions outlined above detail the procedure for running a full node on the mainnet. To set up and operate a Holesky node, you have to [sync node from snapshot](#sync-node-from-snapshot).
 :::
 
 ## Advanced Usage
@@ -44,7 +44,7 @@ JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
 // The entrypoint shell script for start execution client  
 GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
 // The snapshot name for Morph node 
-SNAPSHOT_NAME=snapshot-20241218-1
+MAINNET_SNAPSHOT_NAME=snapshot-20241218-1
 
 ......
 ```
@@ -53,9 +53,13 @@ You have the flexibility to customize the directory paths as per your requiremen
 
 Please note that if you have customized the **HOME** directory of your node, you need to copy the necessary configuration files to this directory. Specifically, you should copy the `node-data` and `geth-data` from `./mainnet` to your **HOME** directory.
 
+:::note
+For running a testnet node, the ```morph-node/.env_holesky``` file should be used instead of the ```morph-node/.env``` file.
+:::
+
 ### Customizing parameters
 
-The default configuration required for mainnet node startup is located in the `./mainnet` directory, while the files under `./holesky` directory is used for holesky node startup. 
+The default configuration required for mainnet node startup is located in the `./mainnet` directory, while the files under `./holesky` directory is used for testnet node startup. 
 
 ```javascript
 └── mainnet
@@ -74,20 +78,47 @@ If you wish to modify the Geth startup command, you can do so by editing the ```
 
 We suggest starting your node sync from a snapshot to speed up the process of syncing your node to the latest state. 
 
-:::note
-At the moment, we only provide a snapshot for the Holesky network. A snapshot for the mainnet will be available soon.
-:::
-
 ### Way to acquire the latest snapshot
 
-```
-cd ./morph-node
-make download-and-decompress-holesky-snapshot
-```
+The default `morph-node/.env` file is configured with the latest snapshot. For testnet, the corresponding file is `morph-node/.env_holesky`.
 
-The **make download-and-decompress-snapshot** command will assist you in downloading and decompressing the snapshot archive.
+- **Fetch historical snapshot(Optional)**:
+    
+    If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the testnet, the corresponding file is `morph-node/.env_holesky`.)
+    THe historical snapshots are recorded in [snapshot-information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information)
+
+    ```js
+    // ...
+
+    MAINNET_SNAPSHOT_NAME={your expected snapshot name} 
+
+    // ...
+    ```
+
+- **Execute download and decompress the snapshot for your network**:
+    
+    Run the following command to download and decompress the snapshot for your network:
+
+    **For mainnet**:
+
+    ```
+    cd ./morph-node
+    make download-and-decompress-mainnet-snapshot
+    ```
+
+    **For testnet**:
+
+    ```
+    cd ./morph-node
+    make download-and-decompress-holesky-snapshot
+    ```
+
+    The command will assist you in downloading and decompressing the snapshot archive.
 
 ### Set up the snapshot data
+
+After downloading, locate the snapshot by placing the extracted data files in the correct directory specified by the **MORPH_HOME** path in your `.env` file. Ensure the data files align with the node's expected structure to allow seamless synchronization.
+
 Then, you need to manually place the decompressed data files in the appropriate node data directories.
 For example, if the snapshot folder is named ```snapshot-20241218-1```, move the directory ```snapshot-20241218-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory and the contents from ```snapshot-20241218-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
 
@@ -110,39 +141,15 @@ The folder structure will be like
         └── data // data directory from snapshot/node
 ```
 
-## Run a Holesky Node
-
-The Holesky node only allows you to sync the blocks from a snapshot. To set up and run a Holesky node using a snapshot, you need to follow these steps:
-
-### 1. Download the Snapshot
-To sync the node, you must first download the snapshot data. Locate the snapshot download instructions in [here](#sync-node-from-snapshot)
-
-### 2. Modify Environment Variables
-Before running the node, update the environment variables in the ```morph-node/.env``` file:
-
-```js title="morph-node/.env"
-// HOME folder for morph node
-MORPH_HOME=../holesky
-// Flag indicates the network for execution client.
-MORPH_FLAG=morph-holesky
-
-// ...
-```
-
-- ```MORPH_HOME```: Specifies the directory where the node’s data will be stored.
-
-- ```MORPH_FLAG```: Determines the network flag, in this case, morph-holesky.
-
-### 3. Use a Custom Directory (Optional)
-If you prefer to use a custom directory:
-
-1. Copy the configuration files from ```../holesky``` to your new directory.
-2. Copy the snapshot data into the specified directory to ensure your node has the necessary data to sync. For detailed instructions, please refer to [Set up the snapshot data](#set-up-the-snapshot-data)
-
-
 ### 4. Run the Node
 With the snapshot and configuration files ready, navigate to the `morph-node` folder under your cloned repository, and start the node using the provided command
 
 ```
 make run-node
+```
+
+For testnet, run
+
+```
+make run-holesky-node
 ```
