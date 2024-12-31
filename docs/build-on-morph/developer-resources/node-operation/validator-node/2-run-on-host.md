@@ -38,10 +38,11 @@ cd ~/.morph/morph/node
 make build
 ```
 
-## Sync from the genesis block
+## Sync from the snapshot
+
 ### Config Preparation
 
-  1. Download the config files and make data dir
+1. Download the config files and make data dir
 
 ```bash
 cd ~/.morph
@@ -62,6 +63,27 @@ cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
+### Download snapshot
+Download the latest snapshot corresponding to either the mainnet or testnet network. 
+
+A complete record of historical snapshots is available [here](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information). Below is an example of how to download a snapshot
+
+```bash
+## mainnet
+wget -q --show-progress https://snapshot.morphl2.io/mainnet/${SNAPSHOT_NAME}.tar.gz
+tar -xzvf ${SNAPSHOT_NAME}.tar.gz
+
+## holesky
+wget -q --show-progress https://snapshot.morphl2.io/holesky/${SNAPSHOT_NAME}.tar.gz
+tar -xzvf ${SNAPSHOT_NAME}.tar.gz
+```
+
+Extracting snapshot data to the data directory your node points to 
+
+```bash
+mv ${SNAPSHOT_NAME}/geth geth-data
+mv ${SNAPSHOT_NAME}/data node-data
+```
 
 ## Script to start the process
 
@@ -95,14 +117,17 @@ curl --location --request POST 'localhost:8545/' \
 
 ### Node
 
+You need to set the `DERIVATION_START_HEIGHT` and `L1_MSG_START_HEIGHT` variables correctly to match the snapshot version you downloaded. From the [snapshot information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information), you can find the corresponding height values.
+
 ```bash
 cd ~/.morph
 
 ## mainnet
 export CHAIN_ID=1
 export L1MESSAGEQUEUE_CONTRACT=0x3931ade842f5bb8763164bdd81e5361dce6cc1ef
-export START_HEIGHT=20996776
 export ROLLUP=0x759894ced0e6af42c26668076ffa84d02e3cef60
+export DERIVATION_START_HEIGHT=${The height matches your snapshot}
+export L1_MSG_START_HEIGHT=${The height matches your snapshot}
 
 ## start node
 ./morph/node/build/bin/morphnode --validator --home ./node-data \
@@ -114,9 +139,9 @@ export ROLLUP=0x759894ced0e6af42c26668076ffa84d02e3cef60
      --l1.chain-id ${CHAIN_ID}   \
      --validator.privateKey 0x0000000000000000000000000000000000000000000000000000000000000001  \
      --sync.depositContractAddr ${L1MESSAGEQUEUE_CONTRACT} \
-     --sync.startHeight  ${START_HEIGHT} \
+     --sync.startHeight  ${L1_MSG_START_HEIGHT} \
      --derivation.rollupAddress ${ROLLUP} \
-     --derivation.startHeight  ${START_HEIGHT} \
+     --derivation.startHeight  ${DERIVATION_START_HEIGHT} \
      --derivation.fetchBlockRange 200 \
      --log.filename ./node.log
 ```
@@ -125,10 +150,10 @@ For holesky network, using
 ```bash
 export CHAIN_ID=17000 
 export L1MESSAGEQUEUECONTRACT=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
-export START_HEIGHT=1434640
 export ROLLUP=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+export DERIVATION_START_HEIGHT=${The height matches your snapshot}
+export L1_MSG_START_HEIGHT=${The height matches your snapshot}
 ```
-
 
 :::note
 Note the **validator.privateKey** is of no use to you. It is used to send challenges when the state root is found to be incorrect. However, we do not currently accept challenges from third party addresses. But it is also a required parameter for the morphnode command, so we give a ***0x00... 1***.

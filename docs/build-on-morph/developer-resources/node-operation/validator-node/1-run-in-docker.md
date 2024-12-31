@@ -7,13 +7,21 @@ This guide will help you start a validator node running in the docker container 
 
 ### Quick Start
 
+:::info
+The following quick start steps are only applicable for running a validator node on the mainnet. To set up and operate a Holesky validator node, please refer to [**Sync from Snapshot**](#sync-from-snapshot).
+:::
+
+:::note
+Starting with the `Quick Start` initiates synchronization from height 0, which can be extremely time-consuming to reach the latest state. We highly recommend using the [**Sync from Snapshot**](#sync-from-snapshot) approach outlined below for a faster and more efficient startup.
+:::
+
 **1. Clone the dockerfile repository**
 
 ```bash
 git clone https://github.com/morph-l2/run-morph-node.git
 ```
 
-**2. Update `morph-node/.env`**
+**2. Configure `morph-node/.env`**
 
 The `morph-node/.env` file defines the environment variables required for deploying a validator node. Below is an example configuration:
 
@@ -23,7 +31,6 @@ MORPH_HOME=../mainnet
 MORPH_FLAG=morph
 JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
 GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
-HOLESKY_SNAPSHOT_NAME=snapshot-20241218-1
 
 // Environment variables for validator node
 L1_CHAIN_ID=1
@@ -40,10 +47,6 @@ For running a validator on the mainnet, the `MORPH_HOME` directory defaults to `
 ***`Layer1 RPC URLs:`***
 Ensure you provide the correct RPC URLs for the Layer 1 execution client (L1_ETH_RPC) and the beacon chain client (L1_BEACON_CHAIN_RPC). These URLs are essential for the validator to fetch rollup batches and maintain synchronization.
 
-:::info
-The .env file above is only used for running a validator node on the mainnet. To set up and operate a Holesky validator node, please refer to [Run a Holesky Validator Node](#run-a-holesky-validator-node).
-:::
-
 **3. Run the following command**
 
 ```bash
@@ -53,43 +56,82 @@ make run-validator
 
 ### Sync from snapshot
 
-We recommend synchronizing blocks using snapshot data to reduce the time required for block synchronization. For detailed instructions on downloading and setting up snapshot data, please refer to [**Sync node from snapshot**](../full-node/1-run-in-docker.md#sync-node-from-snapshot).
+We recommend synchronizing blocks using snapshot data to reduce the time required for block synchronization. This approach allows you to start the node from a specific block height, significantly reducing the time needed to reach the latest state.
 
-:::note
-At the moment, we only provide a snapshot for the Holesky network. A snapshot for the mainnet will be available soon.
-:::
+#### 1. Clone the dockerfile repository
 
-### Run a Holesky Validator Node
-The Holesky node only allows you to sync the blocks from a snapshot. To set up and run a Holesky node using a snapshot, you need to follow these steps:
-
-#### 1. Download the Snapshot
-To sync the node, you must first download the snapshot data. Locate the snapshot download instructions in [**Sync node from snapshot**](../full-node/1-run-in-docker.md#sync-node-from-snapshot).
-
-#### 2. Modify Environment Variables
-Before running the node, update the environment variables in the ```morph-node/.env``` file:
-
-```js title="morph-node/.env"
-// General settings
-MORPH_HOME=../holesky
-MORPH_FLAG=morph-holesky
-JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
-GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
-HOLESKY_SNAPSHOT_NAME=snapshot-20241218-1
-
-// Environment variables for validator node
-L1_CHAIN_ID=17000
-L1_ETH_RPC=${your_layer1_execution_client_rpc_url}
-L1_BEACON_CHAIN_RPC=${your_layer1_beacon_client_rpc_url}
-L1MESSAGEQUEUE_CONTRACT=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
-ROLLUP_CONTRACY=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
-START_HEIGHT=1434640
+```bash
+git clone https://github.com/morph-l2/run-morph-node.git
 ```
 
-#### 3. Run the Validator
+#### 2. Download the Snapshot
+
+The default `.env` file is configured with the latest snapshot. If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `.env` file. (Note: For the testnet, the corresponding file is `.env_holesky`.)
+
+```js
+// ...
+
+MAINNET_SNAPSHOT_NAME={your expected snapshot name} 
+
+// ...
+```
+
+Run the following command to download and decompress the snapshot for your network:
+
+For the mainnet:
+
+```bash
+make download-and-decompress-mainnet-snapshot
+```
+
+For the testnet:
+```bash
+make download-and-decompress-holesky-snapshot
+```
+
+#### 3. Set up the snapshot
+
+After downloading, locate the snapshot by placing the extracted data files in the correct directory specified by the **MORPH_HOME** path in your `.env` file. Ensure the data files align with the node's expected structure to allow seamless synchronization.
+
+For example, if the snapshot folder is named ```snapshot-20241218-1```, move the directory ```snapshot-20241218-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory and the contents from ```snapshot-20241218-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
+
+```
+mv ./morph-node/snapshot-20241218-1/geth ${MORPH_HOME}/geth-data
+mv ./morph-node/snapshot-20241218-1/data/* ${MORPH_HOME}/node-data/data
+```
+
+The folder structure will be like 
+
+```javascript
+└── ${MORPH_HOME}
+    ├── geth-data // data directory for geth
+    │   └── static-nodes.json
+    │   └── geth // directory from snapshot/geth   
+    └── node-data // data directory for node
+        ├── config
+        │   ├── config.toml
+        │   └── genesis.json
+        └── data // data directory from snapshot/node
+```
+
+#### 4. Update the Environment Variables
+Before running the node, update the `DERIVATION_START_HEIGHT` and `L1_MSG_START_HEIGHT` variables in the ```morph-node/.env``` file (or `.env_holesky` for the testnet).
+
+Refer to [snapshot-information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information) for the specific values of the configuration heights. Ensure that the corresponding height values match the snapshot version you are configuring.
+
+```js
+// ...
+MAINNET_SNAPSHOT_NAME={your expected snapshot name} 
+
+// ...
+DERIVATION_START_HEIGHT={the expected start height match the snapshot}
+L1_MSG_START_HEIGHT={the expected start height match the snapshot}
+
+```
+
+#### 5. Run the Validator
 With the snapshot and configuration files ready, navigate to the morph-node folder under your cloned repository, and start the node using the provided command
 
 ```
 make run-validator
 ```
-
-
