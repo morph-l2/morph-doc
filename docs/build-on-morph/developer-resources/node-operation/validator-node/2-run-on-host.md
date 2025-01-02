@@ -17,12 +17,14 @@ mkdir -p ~/.morph
 cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
-Currently, we use tag v0.4.0 as our beta version geth.
 
-```bash
-cd morph
-git checkout v0.4.0
+Next, you need to check out a release version. You can find the available release versions on the [Morph Releases](https://github.com/morph-l2/morph/releases) page. It is recommended to use the latest release version.
+
 ```
+cd morph
+git checkout ${RELEASE_VERSION}
+```
+
 ### Build Geth
 
 Notice: You need C compiler to build geth
@@ -101,7 +103,11 @@ mv ${SNAPSHOT_NAME}/data node-data
 
 ```
 
-tail -f geth.log to check if the Geth is running properly, or you can also execute the below curl command to check if you are connected to the peer.
+:::note
+For testnet, using ```--morph-holesky``` instead
+:::
+
+tail -f `geth.log` to check if the Geth is running properly, or you can also execute the below curl command to check if you are connected to the peer.
 
 ```bash
 curl --location --request POST 'localhost:8545/' \

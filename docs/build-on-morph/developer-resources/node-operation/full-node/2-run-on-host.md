@@ -33,11 +33,11 @@ cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
 
-Currently, we use tag v0.4.0 as our version.
+Next, you need to check out a release version. You can find the available release versions on the [Morph Releases](https://github.com/morph-l2/morph/releases) page. It is recommended to use the latest release version.
 
 ```
 cd morph
-git checkout v0.4.0
+git checkout ${RELEASE_VERSION}
 ```
 
 ### Build Geth
@@ -79,7 +79,7 @@ openssl rand -hex 32 > jwt-secret.txt
 ```
 
 ## Start Node
-Mainnet nodes currently support synchronization from the genesis block and a snapshot block. Testnet nodes support synchronization exclusively from snapshots.
+Mainnet nodes support synchronization from either the genesis block or a snapshot block, while testnet nodes only support synchronization from snapshots.
 
 ### Sync from snapshot(Recommended)
 You should build the binary and prepare the config files in the above steps first, then download the snapshot.
@@ -124,7 +124,7 @@ mv ${SNAPSHOT_NAME}/data node-data
 For testnet, using ```--morph-holesky``` instead
 :::
 
-tail -f geth.log to check if the Geth is running properly, or you can also execute the curl command below to check if you are connected to the peer. 
+tail -f  `geth.log` to check if the Geth is running properly, or you can also execute the curl command below to check if you are connected to the peer. 
 
 ```Shell
 curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' localhost:8545
@@ -227,7 +227,9 @@ curl http://localhost:26657/status to check the sync status of the node
 }
 ```
 
-The returned "catching_up" indicates whether the node is in sync or not. *True* means it is in sync. Meanwhile, the returned  latest_block_height indicates the latest block height this node synced.
+The returned `"catching_up"` indicates whether the node is in sync or not. *True* means it is in sync. 
+
+The returned  `"latest_block_height"` indicates the latest block height this node synced.
 
 
 

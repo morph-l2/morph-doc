@@ -13,7 +13,7 @@ lang: en-US
 If you are running the Docker container for the node using a custom setup, you will need to manually update the Docker image version and restart the container.
 
 ### If You Are Using the Recommended Configuration
-For those using the [Run a full node with docker](../full-node/1-run-in-docker.md) o start the container, follow these steps to upgrade your node.
+For those using the [Run a full node with docker](../full-node/1-run-in-docker.md) to start the container, follow these steps to upgrade your node.
 
 #### Step1:  Update docker images version 
 
@@ -24,7 +24,7 @@ For those using the [Run a full node with docker](../full-node/1-run-in-docker.m
     services:  
     geth: 
         container_name: morph-geth
-        image: ghcr.io/morph-l2/go-ethereum:2.0.1 ## Specify the Geth image version
+        image: ghcr.io/morph-l2/go-ethereum:{update_version} ## Specify the Geth image version
         restart: unless-stopped
     
     # ...
@@ -34,7 +34,7 @@ For those using the [Run a full node with docker](../full-node/1-run-in-docker.m
         depends_on:
         geth:
             condition: service_started
-        image: ghcr.io/morph-l2/node:0.4.0 ## Specify the Node image version
+        image: ghcr.io/morph-l2/node:{update_version} ## Specify the Node image version
     
     # ...
 
