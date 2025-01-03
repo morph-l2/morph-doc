@@ -9,7 +9,7 @@ Running the node requires two binary files: `morphnode` and `geth`. Choose to up
 
 ### Step1: Compile the new version of the code
 
-You can have the released code version from [here](https://github.com/morph-l2/morph/releases)
+You can have the released code version from [Morph release](https://github.com/morph-l2/morph/releases) page.
 
 ```js
 git clone https://github.com/morph-l2/morph.git
@@ -25,7 +25,7 @@ cd ./morph/node && make build
 ```
 
 #### If you only update the Geth version
-Check the `Geth` version from [go-ethereum](https://github.com/morph-l2/go-ethereum/tags)
+Check the `Geth` version from [go-ethereum](https://github.com/morph-l2/go-ethereum/releases)
 
 ```js
 git clone https://github.com/morph-l2/go-ethereum.git

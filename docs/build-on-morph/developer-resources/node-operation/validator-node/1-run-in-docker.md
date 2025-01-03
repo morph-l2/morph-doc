@@ -66,7 +66,11 @@ git clone https://github.com/morph-l2/run-morph-node.git
 
 #### 2. Download the Snapshot
 
-The default `.env` file is configured with the latest snapshot. If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `.env` file. (Note: For the testnet, the corresponding file is `.env_holesky`.)
+The `morph-node/.env` configuration file in the repository you just cloned is designed for setting up the Morph node on the mainnet. By default, it is pre-configured to use the latest snapshot.
+
+If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the **testnet**, the corresponding file is `morph-node/.env_holesky`.)
+
+You can find the historical snapshot names from [**Snapshot Information**](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information).
 
 ```js
 // ...
@@ -91,9 +95,12 @@ make download-and-decompress-holesky-snapshot
 
 #### 3. Set up the snapshot
 
-After downloading, locate the snapshot by placing the extracted data files in the correct directory specified by the **MORPH_HOME** path in your `.env` file. Ensure the data files align with the node's expected structure to allow seamless synchronization.
+After downloading, locate the snapshot by placing the extracted data files in the correct directory specified by the **MORPH_HOME** path in your `morph-node/.env` file. Ensure the data files align with the node's expected structure to allow seamless synchronization.
 
-For example, if the snapshot folder is named ```snapshot-20241218-1```, move the directory ```snapshot-20241218-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory and the contents from ```snapshot-20241218-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
+For example, if the snapshot folder is named ```snapshot-20241218-1```,
+
+- move the directory ```snapshot-20241218-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory.
+- move the contents from ```snapshot-20241218-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
 
 ```
 mv ./morph-node/snapshot-20241218-1/geth ${MORPH_HOME}/geth-data
@@ -133,5 +140,10 @@ L1_MSG_START_HEIGHT={the expected start height match the snapshot}
 With the snapshot and configuration files ready, navigate to the morph-node folder under your cloned repository, and start the node using the provided command
 
 ```
+cd morph-node
 make run-validator
+
+// or for testnet
+cd morph-node
+make run-holesky-validator
 ```
