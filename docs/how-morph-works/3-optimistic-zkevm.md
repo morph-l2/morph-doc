@@ -150,14 +150,14 @@ These addresses are responsible for monitoring the L2 state changes and respondi
 
 #### Challenger Address List
 
-- [0x77b29534738e3f0f297d36635d7884965c7c8ce1](https://etherscan.io/address/0x77b29534738e3f0f297d36635d7884965c7c8ce1) - [Morph](https//morphl2.io)
-- [0x95417708f67f4a5df1a447efe40c6c74e38ab832](https://etherscan.io/address/0x95417708f67f4a5df1a447efe40c6c74e38ab832) - [Morph](https//morphl2.io)
-- [0xd11f9c4f5d9b1fec2d14581d3674066442b68772](https://etherscan.io/address/0xd11f9c4f5d9b1fec2d14581d3674066442b68772) - [Morph](https//morphl2.io)
-- [0x323a78c1c910b282de98a557d735628a02e00983](https://etherscan.io/address/0x323a78c1c910b282de98a557d735628a02e00983) - [Morph](https//morphl2.io)
-- [0x74204e3801e9394848abdbad6f378d0b11e9a091](https://etherscan.io/address/0x74204e3801e9394848abdbad6f378d0b11e9a091) - [Morph](https//morphl2.io)
-- [0xbd9f4fdc48a9a8c7ea1075cfdf4f3bd365d50bab](https://etherscan.io/address/0xbd9f4fdc48a9a8c7ea1075cfdf4f3bd365d50bab) - [Morph](https//morphl2.io)
-- [0x9ac29d4f41a139d9b7be32c2906df9f86fa51b2b](https://etherscan.io/address/0x9ac29d4f41a139d9b7be32c2906df9f86fa51b2b) - [Morph](https//morphl2.io)
-- [0xbfd62b7915da8c19c701fd13237b555ad38c4b4c](https://etherscan.io/address/0xbfd62b7915da8c19c701fd13237b555ad38c4b4c) - [Morph](https//morphl2.io)
+- [0x77b29534738e3f0f297d36635d7884965c7c8ce1](https://etherscan.io/address/0x77b29534738e3f0f297d36635d7884965c7c8ce1) - [Morph](https://morphl2.io)
+- [0x95417708f67f4a5df1a447efe40c6c74e38ab832](https://etherscan.io/address/0x95417708f67f4a5df1a447efe40c6c74e38ab832) - [Morph](https://morphl2.io)
+- [0xd11f9c4f5d9b1fec2d14581d3674066442b68772](https://etherscan.io/address/0xd11f9c4f5d9b1fec2d14581d3674066442b68772) - [Morph](https://morphl2.io)
+- [0x323a78c1c910b282de98a557d735628a02e00983](https://etherscan.io/address/0x323a78c1c910b282de98a557d735628a02e00983) - [Morph](https://morphl2.io)
+- [0x74204e3801e9394848abdbad6f378d0b11e9a091](https://etherscan.io/address/0x74204e3801e9394848abdbad6f378d0b11e9a091) - [Morph](https://morphl2.io)
+- [0xbd9f4fdc48a9a8c7ea1075cfdf4f3bd365d50bab](https://etherscan.io/address/0xbd9f4fdc48a9a8c7ea1075cfdf4f3bd365d50bab) - [Morph](https://morphl2.io)
+- [0x9ac29d4f41a139d9b7be32c2906df9f86fa51b2b](https://etherscan.io/address/0x9ac29d4f41a139d9b7be32c2906df9f86fa51b2b) - [Morph](https://morphl2.io)
+- [0xbfd62b7915da8c19c701fd13237b555ad38c4b4c](https://etherscan.io/address/0xbfd62b7915da8c19c701fd13237b555ad38c4b4c) - [Morph](https://morphl2.io)
 - [0xca00091a35d0b546a15d000f8bceda56255ee4d0](https://etherscan.io/address/0xca00091a35d0b546a15d000f8bceda56255ee4d0) - [Bitget](https://bitget.com)
 - [0x6d7cc6c62cd6ccdac482e82aa7a3763926e93854](https://etherscan.io/address/0x6d7cc6c62cd6ccdac482e82aa7a3763926e93854) - [Bitget](https://bitget.com)
 - [0x8c0cffcbab44c7ab6e96eb607c49188de99a17cd](https://etherscan.io/address/0x8c0cffcbab44c7ab6e96eb607c49188de99a17cd) - [Bitget](https://bitget.com)
