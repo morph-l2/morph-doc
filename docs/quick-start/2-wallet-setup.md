@@ -23,8 +23,6 @@ To interact with dApps on Morph, you need a compatible wallet. Below are some ex
 
 ### OKX Walllet
 
-![OKX Wallet](../../assets/docs/about/okxwallet.png)
-
 - Installation: You can download [OKX wallet extension](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge) for desktop usage and use OKX wallet on mobile by downloading OKX app.
 
 
