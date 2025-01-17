@@ -21,6 +21,12 @@ To interact with dApps on Morph, you need a compatible wallet. Below are some ex
 2. Click on the mainnet dropdown, and select *Add Mainnet*. 
 3. Search for Morph in the list and select it (to add testnet, select *Morph Holesky*).
 
+### OKX Walllet
+
+![OKX Wallet](../../assets/docs/about/okxwallet.png)
+
+- Installation: You can download [OKX wallet extension](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge) for desktop usage and use OKX wallet on mobile by downloading OKX app.
+
 
 ### MetaMask
 
