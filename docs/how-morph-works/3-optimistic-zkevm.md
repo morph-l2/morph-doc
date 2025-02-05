@@ -16,7 +16,7 @@ Layer 2 state verification traditionally falls into two categories: fraud proofs
 
 In this model, Layer 2 (L2) optimistically assumes that the state changes submitted by the sequencer are valid without actively verifying their authenticity. Instead, a challenge period is introduced before the state changes are confirmed on Layer 1 (L1). During this period, external challengers verify the sequencer's submissions based on their own synchronized network status. If they find discrepancies, challengers can trigger a challenge process on L1 to prevent incorrect states from being confirmed.
 
-**Challenge Mechanism**: Although all optimistic rollups claim to implement fraud proofs, only Arbitrum has successfully deployed them on the mainnet. Furthermore, the challengers are often limited to several whitelisted addresses. Fraud proofs in current optimistic rollup projects can be categorized into two types:
+**Challenge Mechanism**: Although all optimistic rollups claim to implement fraud proofs, only very a few had successfully deployed them on the mainnet. Furthermore, the challengers are often limited to several whitelisted addresses. Fraud proofs in current optimistic rollup projects can be categorized into two types:
 
 **Non-Interactive Fraud Proofs**: When a new state submitted by the sequencer is challenged, L1 re-executes all corresponding L2 transactions to generate a valid state for comparison with the state submitted by the sequencer. This process incurs significant gas costs and may lead to discrepancies between L2 and L1, as some transactions might produce different outcomes on L2 compared to L1, or L1 might not be able to execute certain L2 transactions. Optimism (OP) once used this approach but abandoned it due to these issues.
 
@@ -42,7 +42,7 @@ When challengers detect that the sequencer has submitted incorrect data, they in
 
 ### Advantages of RVP Compared to Interactive Fraud Proofs
 
-1. **Shorter Challenge Period**: RVP can reduce the challenge period from the typical 7 days to just 1-3 days, improving overall efficiency and user experience.
+1. **Shorter Challenge Period**: RVP can reduce the challenge period from the typical 7 days to just 1-3 days, improving overall efficiency and user experience. Right now the Morph mainnet has 48 hrs (2 days) challenge window.
 2. **Reduced L2 Submission Costs**: By using validity proofs, Layer 2 (L2) does not need to include most transaction bytes, significantly lowering submission costs.
 3. **Improved Challenger Experience**: With RVP, challengers only need to initiate the challenge. The sequencer must prove their correctness by generating and verifying the corresponding ZK-proof, simplifying the challenger's responsibilities.
 4. **Seamless Transition to ZK-Rollup**: The architectural design of RVP allows for an easy transition to a complete ZK-rollup. The primary change required is adjusting the sequencer's ZK-proof submission methods from responsive to active.
