@@ -37,3 +37,7 @@ Currently, Morph's L2 Base Fee is **0.001 gwei**, and as long as the number of t
 Here is a transaction example that only pays the L2 Base Fee and got confirmed:
 
 https://explorer.morphl2.io/tx/0x5968aa54ca3072f56ee3d26602f4e8104d1239a7b1cef6847e0306f81881bf50
+
+## How long should I wait for my funds to withdraw from Morph?
+
+Currently, the Morph mainnet has a 48-hour (2 days) challenge window. This means that if you are using our canonical bridge, you need to wait 48 hours (2 days) to receive your funds. There are several third-party bridges that offer a faster withdrawal experience by using a liquidity pool mechanism.
