@@ -23,7 +23,7 @@ cd morph-node
 make run-node
 ```
 
-The command `make run-node` takes the `../mainnet` as your node's **Home** directory by default. There will be two folders in the **Home** directory named `geth-data` and `node-data`, serving as data directories for the execution client and consensus client of the morph ndoe, respectively.
+The command `make run-node` takes the `../mainnet` as your node's **Home** directory by default. There will be two folders in the **Home** directory named `geth-data` and `node-data`, serving as data directories for the execution client and consensus client of the morph node, respectively.
 
 This command will also generate the `secret-jwt.txt` file under **Home** directory for the authentication during RPC calls between the execution client and consensus client.
 
