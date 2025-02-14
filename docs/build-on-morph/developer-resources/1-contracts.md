@@ -134,6 +134,11 @@ lang: en-US
 
 [DAI](https://explorer.morphl2.io/address/0xef8A24599229D002B28bA2F5C0eBdD3c0EFFbed4): 0xef8A24599229D002B28bA2F5C0eBdD3c0EFFbed4
 
+[weETH](https://explorer.morphl2.io/address/0x7DCC39B4d1C53CB31e1aBc0e358b43987FEF80f7): 0x7DCC39B4d1C53CB31e1aBc0e358b43987FEF80f7
+
+[BGB](https://explorer.morphl2.io/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
+
+
 ## Morph Holesky Contracts
 
 :::tip
