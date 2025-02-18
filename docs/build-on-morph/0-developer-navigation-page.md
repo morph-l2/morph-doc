@@ -1,5 +1,5 @@
 ---
-title: Developer Docs
+title: Build on Morph 
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
@@ -11,11 +11,25 @@ If you’re ready to build applications on Morph, you're in the right place.
 
 For those who are regular users or visiting for the first time, we recommend starting with our [For Users section](../about-morph/0-user-navigation-page.md) to explore introductory content such as definitions, our vision, key concepts, and more.
 
-![devintro](../../assets/docs/dev/devintro.png)
+
 
 ### What is Morph?
 
 Morph is the first optimistic zkEVM Ethereum Layer 2 solution that is 100% EVM compatible. Building on Morph is just like building on Ethereum. If you’re experienced in Ethereum development, you'll find your existing code, tooling, and dependencies are fully compatible with Morph.
+
+We provide a one-page for Morph integration resources if you want to get started quickly.
+
+<CardGroup className="md:grid-cols-2 xl:grid-cols-2">
+ <Card
+    href="/docs/build-on-morph/build-on-morph/integration-one-page"
+    icon="/img/cards/research.svg"
+    text="Morph Integration One-Page (English)" />
+ <Card
+    href="/docs/build-on-morph/build-on-morph/integration-one-page-cn"
+    icon="/img/cards/research.svg"
+    text="Morph Integration One-Page (Mandarin)" />
+</CardGroup>
+
 ### Getting Started
 
 To help you get started, here’s a recommended navigation through our documentation:
@@ -85,3 +99,5 @@ To help you get started, here’s a recommended navigation through our documenta
 ### Engage in Our Developer Community​
 
 We're actively enhancing our network with more integrations and support infrastructure, progressing towards our Mainnet release. Join our growing developer community. You can find us on [Discord](https://discord.com/invite/L2Morph) or follow our progress on [Twitter](https://twitter.com/Morphl2).
+
+![devintro](../../assets/docs/dev/devintro.png)
