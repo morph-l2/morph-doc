@@ -180,6 +180,10 @@ const developerSidebar =[
       items:[
         {
           type: 'doc',
+          id:'build-on-morph/build-on-morph/integration-one-page'
+        },
+        {
+          type: 'doc',
           id:'build-on-morph/build-on-morph/development-setup'
         },
         {
