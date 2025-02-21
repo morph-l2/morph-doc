@@ -47,3 +47,11 @@ Currently, the Morph mainnet has a 48-hour (2 days) challenge window. This means
 Same like Ethereum mainnet and any other EIP 1559 chains. If your transaction is pending and not confirmed, you can replace it with a new one that has a higher gas price. This involves sending the same transaction again but with an incrementally higher gas price, using the same nonce as the original.
 
 A lot of the wallet have built in features to help you do this.
+
+## My Transaction is Pending, What Should I Do?
+
+For the testnet, if the priority fee you paid is too low, less than 0.01 gwei, your transaction will not be processed. This is to prevent spam transactions from impacting the whole network. If you encounter this situation, please accelerate your transaction by providing a higher priority fee that meets the requirements.
+
+For the mainnet, this is usually because each block is currently full, so you need to provide a more competitive priority fee to ensure your transaction is confirmed.
+
+Additionally, if your previous transaction has not yet been confirmed, your newly submitted transaction will wait for the previous transaction to be fully confirmed.
