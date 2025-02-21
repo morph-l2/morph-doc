@@ -70,6 +70,10 @@ For Ethereum Layer2, there are 2 part of fees: L1 fee and L2 fee.
 
 For L2 fee, Morph currently using the [EIP-1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md) mechanism for transaction fees same as Ethereum mainnet. Each transaction will have a base fee and a priority fee. The base fee is set to 0.001 Gwei. If the block transaction limit (100 per block) is not reached, only pay base fee is enough.
 
+:::tip
+Please note we have a lowest L2 priority fee setting (0.01 gwei) for testnet, this is in order to prevent spams. For mainnet, we are able process transaction without priority fee.
+:::
+
 Morph currently produce 1 block per second for non-empty block, if there is no new transaction, we will produce 1 empty block every 5 seconds.
 
 Each block can have 100 transactions maximum and we will keep raising the limit.

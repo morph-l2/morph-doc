@@ -41,3 +41,9 @@ https://explorer.morphl2.io/tx/0x5968aa54ca3072f56ee3d26602f4e8104d1239a7b1cef68
 ## How long should I wait for my funds to withdraw from Morph?
 
 Currently, the Morph mainnet has a 48-hour (2 days) challenge window. This means that if you are using our canonical bridge, you need to wait 48 hours (2 days) to receive your funds. There are several third-party bridges that offer a faster withdrawal experience by using a liquidity pool mechanism.
+
+## How do i speed the transaction on Morph?
+
+Same like Ethereum mainnet and any other EIP 1559 chains. If your transaction is pending and not confirmed, you can replace it with a new one that has a higher gas price. This involves sending the same transaction again but with an incrementally higher gas price, using the same nonce as the original.
+
+A lot of the wallet have built in features to help you do this.
