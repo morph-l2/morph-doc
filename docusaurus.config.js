@@ -140,9 +140,9 @@ const config = {
         appId: process.env.ALGOLIA_APP_ID || 'SHJ1679REC',
   
         // Public API key: it is safe to commit it
-        apiKey: process.env.ALGOLIA_API_KEY || '17fc8144022438340e574a37f58a25b8',
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY || '17fc8144022438340e574a37f58a25b8',
   
-        indexName: process.env.ALGOLIA_INDEX_NAME,
+        indexName: process.env.ALGOLIA_INDEX_NAME || 'morph_doc',
   
         // Optional: see doc section below
         contextualSearch: true,
