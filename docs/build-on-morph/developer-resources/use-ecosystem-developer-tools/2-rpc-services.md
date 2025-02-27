@@ -18,8 +18,8 @@ Read more about what you can get here:
 ### Tenderly
 
 
-Tenderly is a full-stack Web3 infrastructure – node RPC, dev environments & exploration tools. 
+Tenderly is a full-stack Web3 infrastructure provider: Node RPC, development, testing, and staging environments, as well as monitoring and simulation tools and APIs.
 
-Build & scale with ease. Get started [here](https://blog.tenderly.co/building-dapps-on-morph-with-tenderly/)
+Get started [here](https://blog.tenderly.co/building-dapps-on-morph-with-tenderly/?mtm_campaign=ext-docs&mtm_kwd=morph) or explore [developer docs](https://docs.tenderly.co/?mtm_campaign=ext-docs&mtm_kwd=morph).
 
 ![tenderly](../../../../assets/docs/dev/resources/tenderly.png)
