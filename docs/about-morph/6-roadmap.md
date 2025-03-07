@@ -12,28 +12,21 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ![1](../../assets/docs/about/roadmap/roadmap.png)
 
-
-## Phase 1: Testnet (2024 H1)
-
-Testnet Sepolia (2024 Q1)
+## 2024 Q1 
 
 - Optimistic zkEVM
 - Decentralized Sequencers
 
-Testnet Holesky (2024 Q2)
+## 2024 Q2
 
 - EIP-4844 Integration
 - zkEVM Upgrade
 
-### Testnet Holesky
+## 2024 Q4
 
-## Phase 2: Mainnet Launch (2024 H2)
+- 1st Rollup with SP1 zkVM      
+- 1st Rollup with Decentralized Sequencers
 
-### Mainnet Beta 2024 Q3
-- Morph Staking
-- Morph Zoo Season 1
-  
-### Mainnet Update Q4
-- Consumer Layer Launch
-- zkVM Upgrade
-
+## 2025 Q1
+- Morph Pay
+- Gasless Transaction
