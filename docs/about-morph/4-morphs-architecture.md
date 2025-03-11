@@ -57,3 +57,29 @@ Morph’s architecture is further defined by five pivotal roles: Sequencers, Val
 
 For a deeper understanding of Morph’s architecture, please visit our comprehensive [Developer Docs](../build-on-morph/0-developer-navigation-page.md).
 
+## Safety and Security
+
+We place the highest priority on security and are committed to providing users with a safe and trustworthy environment. To achieve this, we’ve implemented multiple measures, including making our codebase open-source, engaging leading third-party firms for audits, and continuously improving our systems to uphold the highest standards of transparency and security. Below are some specific efforts we’ve undertaken:
+
+### Open-Source Codebase:
+
+We’re proud to make our codebase publicly available, inviting scrutiny and contributions from the community. You can review it at the following links:
+
+[Morph Contracts](https://github.com/morph-l2/morph/tree/main/contracts)  
+
+### Sherlock Open-Source Audit Report:
+
+We commissioned a comprehensive security audit from Sherlock, and the results are publicly available. You can view the detailed report here:  
+
+[Sherlock Open-Source Audit Report](https://audits.sherlock.xyz/dashboard/9b78b63a3eb0597e7ba60eec251b6888/confirm_issues)
+
+### Trail of Bits Audit Report:
+
+Additionally, we enlisted the renowned Trail of Bits team to conduct an in-depth audit of our codebase, including a review of implemented fixes. The [full report](https://github.com/morph-l2/audits/blob/main/tob/Morph%20-%20Comprehensive%20Report%20with%20Fix%20Review.pdf) is accessible.
+
+
+### Audit Scope:
+
+The above audit reports cover the entirety of our codebase, including the bridge contract, ensuring that all critical components have undergone rigorous security assessments.  
+
+We firmly believe that transparency and security are the cornerstones of trust. We will continue to collaborate with the community and professional organizations to elevate our security standards and provide users with peace of mind. If you have any questions or suggestions, feel free to reach out to us at any time!
