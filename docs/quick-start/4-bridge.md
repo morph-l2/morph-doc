@@ -24,7 +24,7 @@ Please refer to the [Morph Season 2 - Bridge Guide.](https://morph.ghost.io/how-
 ![image1](../../assets/docs/quick-start/bridge/01.png)
 ![image1](../../assets/docs/quick-start/bridge/02.png)
 
-2. Within Morph’s Bridge app, click **Connect wallet**, select MetaMask, and approve the connection if prompted.
+2. Within Morph’s Bridge app (https://bridge-testnet.morphl2.io/), click **Connect wallet**, select MetaMask, and approve the connection if prompted.
 
 ![image2](../../assets/docs/quick-start/bridge/03.png)
 
