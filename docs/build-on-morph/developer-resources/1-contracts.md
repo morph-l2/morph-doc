@@ -66,7 +66,8 @@ lang: en-US
 
 [L1ERC1155Gateway](https://etherscan.io/address/0x7c9a3d9531692d057d496d04938bdb7d367e9765): 0x7c9a3d9531692d057d496d04938bdb7d367e9765
 
-[L1USDCGateway](https://etherscan.io/address/0x2C8314f5AADa5D7a9D32eeFebFc43aCCAbe1b289): 0x2C8314f5AADa5D7a9D32eeFebFc43aCCAbe1b289
+[L1USDCGateway](https://etherscan.io/address/0xc9045350712a1dcc3a74eca18bc985424bbe7535
+): 0xc9045350712a1dcc3a74eca18bc985424bbe7535
 
 [EnforcedTxGateway](https://etherscan.io/address/0xc5fa3b8968c7fabeea2b530a20b88d0c2ed8abb7): 0xc5fa3b8968c7fabeea2b530a20b88d0c2ed8abb7
 
@@ -151,9 +152,11 @@ Please not the following is the contract address of the Morph Holesky Testnet.
 
 #### L1 Contract
 
-[Staking](https://holesky.etherscan.io/address/0x868dd5d1c268277e331b726bb438edde8221d389): 0x868dd5d1c268277e331b726bb438edde8221d389
+[Staking](https://holesky.etherscan.io/address/0xcb4496399ffd2a94c4c0132c5561b420b8c73ad8
+): 0xcb4496399ffd2a94c4c0132c5561b420b8c73ad8
 
-[Rollup](https://holesky.etherscan.io/address/0xd8c5c541d56f59d65cf775de928ccf4a47d4985c): 0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+[Rollup](https://holesky.etherscan.io/address/0x165b77247e71fbf53460ede5aecca4e49fbdf205
+): 0x165b77247e71fbf53460ede5aecca4e49fbdf205
 
 [L1MessageQueueWithGasPriceOracle](https://holesky.etherscan.io/address/0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b): 0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
 
