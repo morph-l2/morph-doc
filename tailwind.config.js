@@ -39,7 +39,7 @@ module.exports = {
     "../docs/**/*.mdx",
     "./node_modules/@morui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ], // my markdown stuff is in ../docs, not /src
-  darkMode: ['class', '[data-theme="dark"]'], // hooks into docusaurus' dark mode settigns
+  darkMode: ['class', '[data-theme="dark"]'], // hooks into docusaurus' dark mode settings
   theme: {
     fontFamily: {
       inter: ["Inter Variable", "ui-sans-serif"],
