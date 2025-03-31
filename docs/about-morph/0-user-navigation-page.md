@@ -14,7 +14,7 @@ We’re thrilled to have you here, exploring the world of Morph. If you’re a d
 
 ### What is Morph?
 
-Morph is a cutting-edge Layer 2 solution built on Ethereum, combining the best of optimistic rollups and zk technology. This makes us scalable, secure, and perfect for everyday applications. Our mission is to build the first blockchain for consumers, where user-friendly applications integrate seamlessly into everyday life, becoming indispensable utilities. We prioritize enabling blockchain applications that enhance daily experiences over chasing trivial technical milestones. Our focus is on creating meaningful, practical solutions that transform blockchain technology into core aspects of daily life
+Morph is a cutting-edge Layer 2 solution built on Ethereum, combining the best of optimistic rollups and zk technology. This makes us scalable, secure, and perfect for everyday applications. Our mission is to build the first blockchain for consumers, where user-friendly applications integrate seamlessly into everyday life, becoming indispensable utilities. We prioritize enabling blockchain applications that enhance daily experiences over chasing trivial technical milestones. Our focus is on creating meaningful, practical solutions that transform blockchain technology into core aspects of daily life.
 
 ### Getting Started
 
