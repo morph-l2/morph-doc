@@ -85,7 +85,28 @@ Want to skip most of the reading and get started with exploring more right away?
 ### Explore and Connect
 
 We believe in building a vibrant community around Morph. Join us on [Discord](https://discord.com/invite/L2Morph) to engage with other users and follow us on [Twitter](https://twitter.com/Morphl2) to stay updated with our latest news and developments.
+## 🛠 Suggested Improvements
 
+### ✅ Add Glossary
+Include a section to define key technical terms like:
+- **ZK rollup**
+- **OP-stack**
+- **Sequencer**
+This would help beginners better understand Morph’s architecture.
+
+### ✅ Getting Started Guide
+A clear, hands-on guide would be helpful. Suggest steps like:
+1. Set up a wallet (e.g., MetaMask)
+2. Get testnet ETH
+3. Deploy a smart contract
+4. Interact with Morph through a dApp
+
+### ✅ Visual Diagram
+<!-- Suggestion: Add an architecture diagram here showing how Morph connects Ethereum L1 with ZK rollup on L2 -->
+
+### ✅ Fix Broken Link
+Replace the current Ethereum scalability roadmap link with:  
+[https://ethereum.org/en/roadmap/](https://ethereum.org/en/roadmap/)
 
 
 
