@@ -12,32 +12,37 @@ To interact with dApps on Morph, you need a compatible wallet. Below are some ex
 
 ### Bitget Wallet
 
-![Bitget Wallet](../../assets/docs/about/bitgetwallet.png)
+- **Installation**: Download Bitget Wallet from the [official website](https://web3.bitget.com/en/wallet-download).
+- **Importing Configurations**: 
 
-- Installation: Bitget Wallet can be installed from their [official website](https://web3.bitget.com/en/wallet-download).
-- Importing Configurations: 
-
-1. To add Morph mainnet within Bitget Wallet, go to *Wallet* tab
-2. Click on the mainnet dropdown, and select *Add Mainnet*. 
-3. Search for Morph in the list and select it (to add testnet, select *Morph Holesky*).
+1. In Bitget Wallet, go to the ***Wallet*** tab
+2. Click on the ***mainnet*** dropdown, and select ***Add Mainnet***. 
+3. Search for ***Morph*** in the list and select it.
+4. To add the testnet, select Morph Holesky instead.
 
 ### OKX Walllet
 
-- Installation: You can download [OKX wallet extension](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge) for desktop usage and use OKX wallet on mobile by downloading OKX app.
+- **Installation**: Download the [OKX wallet extension](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge)  for desktop from the official site or install the OKX mobile app.
+
 
 
 ### MetaMask
 
 
-- Installation: MetaMask can be installed from their [official website](https://metamask.io/download/).
-- Importing Configurations: To set up MetaMask for Morph, click the "add to wallet" button on the [Morph Holesky block explorer page](https://explorer.morphl2.io/). This will automatically import the chain ID and RPC URLs for the Morph Mainnet & Testnet.
-- Using Ethereum Holesky Testnet: Morph Testnet utilizes the Ethereum Holesky testnet as its underlying L1, which is already configured in MetaMask by default. To access it, enable "Show/hide test networks" in the MetaMask network selection dropdown.
+- **Installation**: Download MetaMask from the [official website](https://metamask.io/download/).
+
+- **Importing Configurations**: 
+- To set up MetaMask for Morph, click the "add to wallet" button on the [Morph Holesky block explorer page](https://explorer.morphl2.io/). This will automatically import the chain ID and RPC URLs for both Morph Mainnet and Testnet.  
+
+- **Using Ethereum Holesky Testnet**: 
+- Morph Testnet runs on the Ethereum Holesky testnet as its L1. This network is already pre-configured in MetaMask. To enable it, go to the network selection dropdown, click Show/Hide test networks, and toggle it on.
 
 
 
 ### Manual network configuration
 
-Currently, the Add to wallet links may not be compatible with all wallets yet. If you are having issues using them, you may need to manually add the Morph Mainnet & Testnet by inserting the configuration details from the table below:
+In some cases, the **Add to Wallet** feature may not work with all wallets. If that happens, you can manually add Morph Mainnet and Testnet by entering the details from the table below:
+
 
 
 #### Network Configuration
@@ -51,4 +56,4 @@ Currently, the Add to wallet links may not be compatible with all wallets yet. I
 | Ethereum Holesky            | https://ethereum-holesky-rpc.publicnode.com/       | 17000    | https://holesky.etherscan.io      | ETH      |
 
 
-You can also visit [chainlist](https://chainlist.org/?chain=11155111&search=morph&testnets=true) to add Morph.
+You can also visit [chainlist](https://chainlist.org/?chain=11155111&search=morph&testnets=true) to add Morph to your wallet.

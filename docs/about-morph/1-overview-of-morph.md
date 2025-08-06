@@ -1,35 +1,40 @@
 ---
-title: Overview
+title: Introductory Concepts - Overview
 lang: en-US
 keywords: [morph,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-Welcome to Morph, a blockchain for consumers. At the core of Morph is a revolutionary approach to Ethereum Layer 2 scalability, harnessing the power of rollup technology. 
+Morph is a blockchain designed for onchain consumer finance. It powers payments, savings, identity, and rewards through a fast, secure, and scalable infrastructure.
+Morph supports how people live and transact online. The platform makes it easy for users to manage money, earn rewards, and spend globally. For developers, Morph provides the tools to build programmable financial applications without complexity or custodial risk.
 
 
-Our platform is uniquely designed to enhance the blockchain experience, making it more accessible, efficient, and user-friendly for both developers and consumers. We achieve these innovations through a unique combination of cutting-edge technologies.
+### Onchain Consumer Finance
+
+Morph is built for practical use. Every component of the system is designed to support real-world financial activity. Whether you're sending money, earning income, or building apps, Morph offers the performance and flexibility needed for daily use.  
+
+### Core Infrastructure
+
+#### Decentralized Sequencer Network 
+
+A distributed sequencer model improves fairness, removes single points of failure, and protects against transaction censorship and MEV extraction.
 
 
-## What Makes Morph Special
+#### Optimistic zkEVM with RVP
 
-Given that our platform is built on the philosophy of consumer-centric innovation, we believe blockchain technology has the transformative power to enhance users’ daily lives. To accomplish this vision, our infrastructure has three core technological components that function as the foundation of a consumer blockchain.   
-
-
-### Decentralized Sequencer Network 
-
-Morph’s distribution of the sequencing role eliminates single points of failure, reduces transaction censorship, and prevents monopolies over Miner Extractable Value (MEV). Building on Morph means guaranteed high availability, resilience, and fairness in transaction processing.
+Morph uses an Optimistic rollup integrated with zero-knowledge proofs through Responsive Validity Proof. This reduces withdrawal delays, lowers costs, and improves security.
 
 
-### Optimistic zkEVM Integration 
+### Modular Rollup Design
 
-Morph’s Optimistic zkEVM Integration combines the efficiency of optimistic rollups with the security of zero-knowledge proofs, using a novel method called Responsive Validity Proof (RVP). RVP reduces costs and shortens withdrawal periods while maintaining high security, enabling robust applications that don’t compromise on performance or security.
-
-
-### Modular Design
-
-Morph's architecture is divided into three modules: Sequencer Network for consensus and execution, Optimistic zkEVM for state verification, and Rollup for data availability. Developers can build and maintain applications more efficiently, ensuring each component can be upgraded independently without disrupting the entire system.
+Consensus, execution, and data availability are separated. This allows developers to build and scale without disrupting the network.
 
 
-Before you dive into a deeper exploration of our technology, understanding our [Vision and Mission](./5-morphs-vision-and-mission.md) will offer a better idea of why Morph stands out in the industry. 
+## Built for Users and Builders
+
+**Morph Pay** gives users a unified experience. It supports identity verification, multi-currency balances, digital cards, real-time FX, and reward earning.  
+**Morph Rails** provides developers with a permissionless infrastructure stack. It includes smart modules for payments, payroll, foreign exchange, compliance, and wallet integrations. Builders can compose financial logic into any application without licenses or custodians.  
+
+Morph connects consumers and developers through a single, efficient platform. It is built to support the next generation of digital finance.
+
 

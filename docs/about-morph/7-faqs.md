@@ -7,51 +7,76 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## What Kind of Rollup is Morph?
 
-Morph uses a hybrid rollup model called "Optimistic zkEVM & RVP". This combines the strengths of both zkRollups and Optimistic Rollups, optimizing for efficiency, cost, and speed. This unique approach places Morph at the cutting edge of rollup technology.
+Morph uses a hybrid rollup architecture called Optimistic zkEVM with **Responsive Validity Proof (RVP)**. This combines the scalability of optimistic rollups with the security and fast finality of zero-knowledge proofs. Transactions are processed optimistically for speed and cost efficiency, and when challenged, the sequencer produces a zk proof to validate the transaction. This approach shortens withdrawal times and reduces costs while maintaining strong security.
 
-## What Sets Morph Apart from Other Rollups?
+## What Sets Morph Apart from Others?
 
-Morph stands out with its innovative features:
+Morph is purpose-built for **onchain consumer finance** and offers both a user-facing experience and a developer infrastructure layer:
+
+- **Morph Pay** – A super-app wallet that supports identity verification, multi-currency balances, digital cards, real-time FX, yield products, and built-in rewards
 
 
-**State Verification**: The Optimistic zkEVM & RVP method enhances efficiency by combining zkRollups and Optimistic Rollups.
+- **Morph Rails** – A permissionless, composable infrastructure layer for developers and merchants to build payments, FX, payroll, compliance, and rewards directly into their applications
 
-**Efficiency and Cost Reduction**: Morph ensures fast transaction execution and cost-effectiveness while maintaining decentralization.
 
-**Decentralized Sequencer Network**: This pioneering network setup addresses security concerns and ensures robustness at a Layer 1 level.
+- **Decentralized Sequencer Network** – Improves fairness, uptime, and security by removing single points of failure and preventing MEV monopolization
 
-**Modular Architecture**: Morph’s adaptable and composable architecture fosters a flexible and interactive ecosystem.
 
-## As a Solidity Developer, Will I Notice Differences Deploying on Morph Compared to Ethereum?
+- **Hybrid zkEVM with RVP** – Reduces withdrawal delays to as little as 1–3 days and lowers operational costs without sacrificing trustlessness
 
-Deploying on Morph is very similar to deploying on Ethereum, thanks to its EVM compatibility. Ethereum applications can be migrated to Morph with minimal adjustments. For more detailed guidance, check out the [Development Guides](../build-on-morph/build-on-morph/2-development-setup.md) section.
 
-## The L2 gas price is too high to execute transactions or deploy contracts, what should i do?
+- **Modular Architecture** – Separates execution, consensus, and data availability for greater flexibility, scalability, and composability
 
-The L2 Gas Price you obtained from external resources (eg. RPC) is typically derived from the average or median of confirmed transactions over a certain period. This figure reflects the recommended settings to ensure your transaction gets confirmed, rather than representing the most cost-effective value.
 
-In some cases, certain users may intentionally raise the priority fee (hence the total gas fee) to earn more campaign points, resulting in abnormally high Gas Prices. We recommend that you can reduce your transaction costs by manually setting the L2 Gas Price.
+## I’m a Solidity developer. Will I notice differences deploying on Morph compared to Ethereum?
 
-Currently, Morph's L2 Base Fee is **0.001 gwei**, and as long as the number of transactions per block does not reach the limit, you only need to pay the Base Fee to ensure your transaction confirmation, without needing to pay an excess Priority Fee.
+Morph is fully EVM-compatible, so deploying is almost identical to deploying on Ethereum. Most applications can be migrated with minimal changes. Developers also have access to Morph’s SDK for advanced features like gasless transactions, recurring billing, and compliance integrations.  
+See the [Development Guides](../build-on-morph/build-on-morph/2-development-setup.md) for more details.
 
-Here is a transaction example that only pays the L2 Base Fee and got confirmed:
+## How does Morph handle gas fees?
 
-https://explorer.morphl2.io/tx/0x5968aa54ca3072f56ee3d26602f4e8104d1239a7b1cef6847e0306f81881bf50
+Morph’s L2 Base Fee is currently 0.001 gwei. You only need to pay the base fee to have your transaction confirmed, as long as block capacity is not full. Priority fees are optional unless you need faster confirmation during high activity periods. Some users may raise the priority fee for campaign participation or competitive bidding, which can cause temporary spikes in the reported “average” gas price. In these cases, manually setting the gas price close to the base fee can help reduce costs.  
 
-## How long should I wait for my funds to withdraw from Morph?
+[View an example transaction paying only the L2 Base Fee](https://explorer.morphl2.io/tx/0x5968aa54ca3072f56ee3d26602f4e8104d1239a7b1cef6847e0306f81881bf50)
 
-Currently, the Morph mainnet has a 48-hour (2 days) challenge window. This means that if you are using our canonical bridge, you need to wait 48 hours (2 days) to receive your funds. There are several third-party bridges that offer a faster withdrawal experience by using a liquidity pool mechanism.
+## How can I speed up a transaction on Morph?
 
-## How do i speed the transaction on Morph?
+Morph follows the same rules as Ethereum mainnet and other EIP-1559 networks. If your transaction is pending, you can resend it with the same nonce and a higher gas price to replace the original. Many wallets have built-in “Speed Up” or “Accelerate” features to make this easy.
 
-Same like Ethereum mainnet and any other EIP 1559 chains. If your transaction is pending and not confirmed, you can replace it with a new one that has a higher gas price. This involves sending the same transaction again but with an incrementally higher gas price, using the same nonce as the original.
 
-A lot of the wallet have built in features to help you do this.
+## My transaction is still pending. What should I do?
 
-## My Transaction is Pending, What Should I Do?
+On testnet, transactions with a priority fee below 0.01 gwei will not be processed to prevent spam. Resubmit with a higher priority fee.  
+ On mainnet, pending transactions are usually due to full blocks. Increase your priority fee to improve confirmation chances. Also ensure that any earlier transaction with the same account is confirmed, as new transactions will queue behind it.  
 
-For the testnet, if the priority fee you paid is too low, less than 0.01 gwei, your transaction will not be processed. This is to prevent spam transactions from impacting the whole network. If you encounter this situation, please accelerate your transaction by providing a higher priority fee that meets the requirements.
+## How long does it take to withdraw funds from Morph?
 
-For the mainnet, this is usually because each block is currently full, so you need to provide a more competitive priority fee to ensure your transaction is confirmed.
+Morph’s canonical bridge currently has a 48-hour challenge window on mainnet. This is part of the security model for optimistic rollups. For faster withdrawals, you can use supported third-party bridges that use liquidity pools to provide near-instant exits.
 
-Additionally, if your previous transaction has not yet been confirmed, your newly submitted transaction will wait for the previous transaction to be fully confirmed.
+
+## Does Morph support gasless transactions?
+
+Yes. Morph supports sponsored transactions through Morph Pay and developer-integrated flows. This allows dApps to cover user gas costs for smoother onboarding. Sponsored transactions will expand further with Morph Rails integrations.
+
+## What is Morph Pay?
+
+Morph Pay is the primary wallet interface for the Morph ecosystem. It allows users to:  
+- Complete identity verification
+- Hold and manage multi-currency balances
+- Activate a digital payment card
+- Swap between currencies with the Onchain FX Module
+- Earn rewards and yield on idle balances
+- Access ecosystem campaigns and token-gated features
+
+## What is Morph Rails?
+
+Morph Rails is the programmable infrastructure layer that powers the next generation of onchain financial applications. Developers and merchants can use it to:  
+- Process payments and payouts
+- Handle onchain FX and payroll
+- Integrate compliance and identity verification
+- Enable token-gated services and rewards
+- Build composable financial products without custodial risk
+
+## Is Morph audited?
+
+Yes. Morph’s codebase is open source and has undergone audits from multiple top-tier firms including **Sherlock** and **Trail of Bits**. Audit reports are public, and all identified issues have been addressed. Additional audits are conducted for major product updates.

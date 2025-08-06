@@ -7,20 +7,25 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 import { CardGroup, Card } from '@site/src/components/Card'
 
-We’re thrilled to have you here, exploring the world of Morph. If you’re a developer looking for technical documentation, head over to our [For Developers section](../build-on-morph/0-developer-navigation-page.md). But if you’re here to understand what Morph is all about, you’re in the right place!
+![userpage](../../assets/docs/about/userpage1.jpeg)
 
-![userpage](../../assets/docs/about/userpage.png)
+We’re glad you’re here.  
+If you’re a developer looking for technical documentation, head to the [For Developers section](../build-on-morph/0-developer-navigation-page.md).  
+If you’re here to understand what Morph is and how to get started, you’re in the right place.  
 
 
 ### What is Morph?
 
-Morph is a cutting-edge Layer 2 solution built on Ethereum, combining the best of optimistic rollups and zk technology. This makes us scalable, secure, and perfect for everyday applications. Our mission is to build the first blockchain for consumers, where user-friendly applications integrate seamlessly into everyday life, becoming indispensable utilities. We prioritize enabling blockchain applications that enhance daily experiences over chasing trivial technical milestones. Our focus is on creating meaningful, practical solutions that transform blockchain technology into core aspects of daily life
+Morph is a high-performance blockchain built on Ethereum, designed to power the next generation of onchain consumer finance.  
+It is the consumer finance layer for the digital economy, enabling fast, low-cost, and secure transactions for people who live, earn, and transact online.  
+Our focus is simple: build products that serve real people and make blockchain useful in everyday life.  
+
 
 ### Getting Started
 
 To help you navigate through our resources, here’s a quick guide:
 
-**Introductory Concepts**: Get a general understanding of Morph, including what makes it unique, our vision and mission, key concepts, and a look at our roadmap. This section will help you grasp the basics and understand the foundation of Morph.
+**Introductory Concepts**: 
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
@@ -37,7 +42,7 @@ To help you navigate through our resources, here’s a quick guide:
     text="Roadmap" />
 </CardGroup>
 
-**Step-by-Step Guides**: Follow these practical tutorials for setting up your wallet, using the faucet, bridging assets, and exploring the Morph ecosystem. These guides are perfect for hands-on learning and getting started with Morph.
+**Step-by-Step Guides**: 
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
@@ -54,7 +59,7 @@ To help you navigate through our resources, here’s a quick guide:
     text="Bridge" />
 </CardGroup>
 
-**Links and Tools**: Access useful tools such as the Morph Holesky Explorer and the official bridge. This section provides all the necessary links and resources to interact with and explore the Morph network effectively.
+**Links and Tools**: 
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
@@ -72,20 +77,35 @@ To help you navigate through our resources, here’s a quick guide:
 </CardGroup>
 
 
-### Engage in Our Ecosystem
+### Core Products
 
-Want to skip most of the reading and get started with exploring more right away? These are the guides that will get you right into the action:
+#### Morph Pay
 
-- **Wallet Setup**: Learn how to set up your wallet to interact with Morph.
-- **Using the Faucet**: Get test tokens to start experimenting on our testnet.
-- **Bridging Assets**: Understand how to bridge assets between Morph and Ethereum.
-- **Exploring Morph Zoo**: Dive into the diverse range of dApps and projects in the Morph ecosystem.
-- **Morph Holesky Explorer**: Use our explorer to track transactions and explore the blockchain.
+The wallet experience for everyday use. Users can verify identity, hold multi-currency balances, activate a digital card, earn rewards, and access real-time FX. Everything you need to spend, save, and earn in one place.
+
+#### Morph Rails
+
+The programmable infrastructure for developers and merchants. Includes modules for payments, FX, payroll, compliance, and rewards. Permissionless, self-custodial, and scalable. Think of it as a decentralized Stripe.
+
+#### Morph Black
+
+An NFT that unlocks access to exclusive campaigns, real-world perks like lounge access, and deeper rewards across the Morph ecosystem.
+
+##### Morph Platinum
+
+A non-transferable Soulbound Token (SBT) tied to your wallet. Enables verified identity, compliance-based features, and future governance rights.
+
 
 ### Explore and Connect
 
-We believe in building a vibrant community around Morph. Join us on [Discord](https://discord.com/invite/L2Morph) to engage with other users and follow us on [Twitter](https://twitter.com/Morphl2) to stay updated with our latest news and developments.
+To get started:
+- **Set up your wallet**
+- **Use the faucet**
+- **Bridge assets**
+- **Explore Morph Zoo**
+- **Try Morph Pay**
 
-
-
-
+Join the community and stay up to date:  
+𝕏: [x.com/MorphLayer](x.com/MorphLayer)  
+Discord: [discord.gg/MorphLayer](discord.gg/MorphLayer)  
+Telegram: [t.me/MorphL2official](t.me/MorphL2official)  
