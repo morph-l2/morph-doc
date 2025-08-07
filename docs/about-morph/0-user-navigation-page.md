@@ -99,11 +99,11 @@ A non-transferable Soulbound Token (SBT) tied to your wallet. Enables verified i
 ### Explore and Connect
 
 To get started:
-- **Set up your wallet**
-- **Use the faucet**
-- **Bridge assets**
-- **Explore Morph Zoo**
-- **Try Morph Pay**
+- [**Set up your wallet**](../quick-start/2-wallet-setup.md)
+- [**Use the faucet**](../quick-start/3-faucet.md)
+- [**Bridge assets**](../quick-start/4-bridge.md)
+- [**Explore Morph Zoo**](https://www.morphl2.io/points/)
+- [**Try Morph Pay**](https://pay.morphl2.io)
 
 Join the community and stay up to date:  
 𝕏: [x.com/MorphLayer](https://x.com/MorphLayer)  
