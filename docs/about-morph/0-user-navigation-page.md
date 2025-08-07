@@ -106,6 +106,6 @@ To get started:
 - **Try Morph Pay**
 
 Join the community and stay up to date:  
-𝕏: [x.com/MorphLayer](x.com/MorphLayer)  
-Discord: [discord.gg/MorphLayer](discord.gg/MorphLayer)  
-Telegram: [t.me/MorphL2official](t.me/MorphL2official)  
+𝕏: [x.com/MorphLayer](https://x.com/MorphLayer)  
+Discord: [discord.gg/MorphLayer](https://discord.gg/MorphLayer)  
+Telegram: [t.me/MorphL2official](https://t.me/MorphL2official)  
