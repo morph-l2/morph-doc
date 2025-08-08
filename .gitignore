@@ -24,5 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 data
+build
 scripts
 build
