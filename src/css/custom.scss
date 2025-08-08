@@ -53,8 +53,7 @@
   --ifm-footer-color: #999;
 
   --border-hover-shadow: rgba(0, 22, 9, 0.10);
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
-  // --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16"><path fill="rgba(0,0,0,0)" d="M3 6L8 11L13 6" stroke="#90918D" stroke-width="1.5"></path></svg>');
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10L8 6L12 10" stroke="rgba(0,0,0,0.5)"></path></svg>');
 }
 // .menu__link--sublist-caret:after {
 //   opacity: 0.5;
@@ -105,7 +104,7 @@
 
   --border-hover-shadow: rgba(155, 255, 197, 0.30);
 
-  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>');
+  --ifm-menu-link-sublist-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10L8 6L12 10" fill="rgba(0,0,0,0.5)"></path></svg>');
 }
 .menu__link--active:not(.menu__link--sublist) {
   color: #fff;
