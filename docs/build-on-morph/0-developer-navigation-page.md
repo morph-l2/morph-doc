@@ -106,6 +106,6 @@ Find detailed API methods, contract addresses, and other useful resources.
 We are actively enhancing the network with more integrations and support infrastructure as we progress toward our mainnet launch.  
 Join our developer community:
 
-- [Discord](https://discord.com/invite/L2Morph)
-- [𝕏](https://twitter.com/Morphl2)
+- [Discord](https://discord.com/invite/MorphLayer)
+- [𝕏](https://twitter.com/MorphLayer)
 

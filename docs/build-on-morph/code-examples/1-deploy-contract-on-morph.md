@@ -180,6 +180,6 @@ Once succeeded, you can check your contract and the deployment transaction on [M
 
 ## Questions and Feedback
 
-Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/L2Morph) and find us at #dev-support channel.
+Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/MorphLayer) and find us at #dev-support channel.
 
 

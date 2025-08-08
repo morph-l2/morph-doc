@@ -137,12 +137,12 @@ const config = {
       }],
       algolia: {
         // The application ID provided by Algolia
-        appId: process.env.ALGOLIA_APP_ID,
+        appId: process.env.ALGOLIA_APP_ID || '8HKAWLQMLZ',
   
         // Public API key: it is safe to commit it
-        apiKey: process.env.ALGOLIA_API_KEY,
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY || '021dba71d50406f34ded5e71c22283e5',
   
-        indexName: process.env.ALGOLIA_INDEX_NAME,
+        indexName: process.env.ALGOLIA_INDEX_NAME || 'morph_doc',
   
         // Optional: see doc section below
         contextualSearch: true,

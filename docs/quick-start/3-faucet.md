@@ -59,7 +59,7 @@ Currently, each Discord user can only request tokens once every 24 hours.
 You can obtain Morph’s version of USDT on Holesky through our Discord faucet. Here’s how:  
 
 
-1. Join our Discord server using this [link](https://discord.com/invite/L2Morph).
+1. Join our Discord server using this [link](https://discord.com/invite/MorphLayer).
 
 2. Navigate to the *#| discord-faucet* channel.
 
