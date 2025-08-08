@@ -38,6 +38,7 @@
     "tailwindcss": "^3.4.1",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
+    "web-sdk": "1.1.33",
     "sass": "^1.71.0"
   },
   "devDependencies": {
