@@ -45,10 +45,10 @@ const userSidebar =
       type:'doc',
       id:'about-morph/user-navigation-page'
     },
-    {
-      type:'category',
-      label:'Introductory Concepts',
-      items:[
+    // {
+    //   type:'category',
+    //   label:'Introductory Concepts',
+    //   items:[
         {
           type: 'doc',
           id:'about-morph/overview-of-morph'
@@ -67,6 +67,14 @@ const userSidebar =
         },
         {
           type: 'doc',
+          id:'about-morph/morph-pay'
+        },
+        {
+          type: 'doc',
+          id:'about-morph/morph-rails'
+        },
+        {
+          type: 'doc',
           id:'about-morph/key-concepts'
         },
         {
@@ -77,8 +85,9 @@ const userSidebar =
           type: 'doc',
           id:'about-morph/faqs'
         },
-      ]
-    },
+
+    //   ]
+    // },
     {
       type:'category',
       label:'Step-by-Step Guides',

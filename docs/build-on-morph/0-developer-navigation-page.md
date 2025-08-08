@@ -6,18 +6,17 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ---
 import { CardGroup, Card } from '@site/src/components/Card'
 
-If you’re ready to build applications on Morph, you're in the right place. 
+If you’re ready to build applications on Morph, you’re in the right place.
 
 
-For those who are regular users or visiting for the first time, we recommend starting with our [For Users section](../about-morph/0-user-navigation-page.md) to explore introductory content such as definitions, our vision, key concepts, and more.
-
+For regular users or first-time visitors, we recommend starting with our [For Users section](../about-morph/0-user-navigation-page.md) section to explore introductory content such as definitions, our vision, key concepts, and more.
 
 
 ### What is Morph?
 
-Morph is the first optimistic zkEVM Ethereum Layer 2 solution that is 100% EVM compatible. Building on Morph is just like building on Ethereum. If you’re experienced in Ethereum development, you'll find your existing code, tooling, and dependencies are fully compatible with Morph.
+Morph is the first Optimistic zkEVM Ethereum Layer 2 solution that is fully EVM-compatible. Building on Morph is just like building on Ethereum. If you have Ethereum development experience, your existing code, tooling, and dependencies will work seamlessly on Morph.  
 
-We provide a one-page for Morph integration resources if you want to get started quickly.
+We provide a one-page integration guide to help you get started quickly.  
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-2">
  <Card
@@ -32,9 +31,10 @@ We provide a one-page for Morph integration resources if you want to get started
 
 ### Getting Started
 
-To help you get started, here’s a recommended navigation through our documentation:
+We recommend navigating the documentation in the following order:  
 
-**Fundamental Concepts**: Start here to learn the core components of Morph, including Morph’s Modular Design, the Decentralized Sequencer Network, and the Responsive Validity Proof system.
+**Fundamental Concepts**:  
+Learn the core components of Morph, including the Modular Design, Decentralized Sequencer Network, and Responsive Validity Proof system.
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
@@ -51,7 +51,8 @@ To help you get started, here’s a recommended navigation through our documenta
     text="General Protocol Design" />
 </CardGroup>
 
-**Developer Guides**: Access comprehensive guides on verifying smart contracts, running a Morph node, deploying contracts, and more.
+**Developer Guides**:   
+Access step-by-step guides for verifying smart contracts, running a Morph node, deploying contracts, and more.
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
@@ -80,7 +81,11 @@ To help you get started, here’s a recommended navigation through our documenta
     text="Leverage Ecosystem Infra" />
 </CardGroup>
 
-**Developer Resources**: Find detailed API methods, contract addresses and other useful developer resources.
+**Developer Resources**: 
+
+Find detailed API methods, contract addresses, and other useful resources.
+
+
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card 
     href="/docs/build-on-morph/developer-resources/contracts"
@@ -98,6 +103,9 @@ To help you get started, here’s a recommended navigation through our documenta
 
 ### Engage in Our Developer Community​
 
-We're actively enhancing our network with more integrations and support infrastructure, progressing towards our Mainnet release. Join our growing developer community. You can find us on [Discord](https://discord.com/invite/L2Morph) or follow our progress on [Twitter](https://twitter.com/Morphl2).
+We are actively enhancing the network with more integrations and support infrastructure as we progress toward our mainnet launch.  
+Join our developer community:
 
-![devintro](../../assets/docs/dev/devintro.png)
+- [Discord](https://discord.com/invite/MorphLayer)
+- [𝕏](https://twitter.com/MorphLayer)
+
