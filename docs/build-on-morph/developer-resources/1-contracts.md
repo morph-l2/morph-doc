@@ -15,14 +15,14 @@ lang: en-US
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer.morphl2.io/| https://etherscan.io/ |
 
-### Morph Holesky Testnet
+### Morph Hoodi Testnet
 
-| Network Name | Morph Holesky Testnet | Ethereum Holesky Testnet |
+| Network Name | Morph Hoodi Testnet | Ethereum Hoodi Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-quicknode-holesky.morphl2.io| https://ethereum-holesky-rpc.publicnode.com/ |
-| Chain ID | 2810 | 17000 |
+| RPC URL | https://rpc-hoodi.morphl2.io| https://ethereum-hoodi-rpc.publicnode.com/ |
+| Chain ID | 2910 | 560048 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer-holesky.morphl2.io/| https://holesky.etherscan.io/ |
+| Block Explorer URL | https://explorer-hoodi.morphl2.io/| https://hoodi.etherscan.io/ |
 
 ## Morph Mainnet Contracts
 
@@ -139,11 +139,11 @@ lang: en-US
 [BGB](https://explorer.morphl2.io/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
 
 
-## Morph Holesky Contracts
+## Morph Hoodi Contracts
 
 :::tip
 
-Please not the following is the contract address of the Morph Holesky Testnet.
+Please not the following is the contract address of the Morph Hoodi Testnet.
 
 :::
 
@@ -151,33 +151,31 @@ Please not the following is the contract address of the Morph Holesky Testnet.
 
 #### L1 Contract
 
-[Staking](https://holesky.etherscan.io/address/0x868dd5d1c268277e331b726bb438edde8221d389): 0x868dd5d1c268277e331b726bb438edde8221d389
+[Staking](https://hoodi.etherscan.io/address/0xb071de98d3310d399e370ef85c1d53a14097b0c4): 0xb071de98d3310d399e370ef85c1d53a14097b0c4
 
-[Rollup](https://holesky.etherscan.io/address/0xd8c5c541d56f59d65cf775de928ccf4a47d4985c): 0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
+[Rollup](https://hoodi.etherscan.io/address/0x57e0e6dde89dc52c01fe785774271504b1e04664): 0x57e0e6dde89dc52c01fe785774271504b1e04664
 
-[L1MessageQueueWithGasPriceOracle](https://holesky.etherscan.io/address/0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b): 0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
+[L1MessageQueueWithGasPriceOracle](https://hoodi.etherscan.io/address/0xd7f39d837f4790b215ba67e0ab63665912648dbe): 0xd7f39d837f4790b215ba67e0ab63665912648dbe
 
-[L1CrossDomainMessenger](https://holesky.etherscan.io/address/0xecc966ab425f3f5bd58085ce4ebdbf81d829126f): 0xecc966ab425f3f5bd58085ce4ebdbf81d829126f
+[L1CrossDomainMessenger](https://hoodi.etherscan.io/address/0x9b43e90d75f4a8ae2f7f8a7cb67e8f4a0b75646f): 0x9b43e90d75f4a8ae2f7f8a7cb67e8f4a0b75646f
 
 #### L2 Contract
 
-[L2ToL1MessagePasser](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000001): 0x5300000000000000000000000000000000000001
+[L2ToL1MessagePasser](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000001): 0x5300000000000000000000000000000000000001
 
-[L2Sequencer](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000003): 0x5300000000000000000000000000000000000003
+[Sequencer](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000017): 0x5300000000000000000000000000000000000017
 
-[L2Gov](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000004): 0x5300000000000000000000000000000000000004
+[Gov](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000004): 0x5300000000000000000000000000000000000004
 
-[L2Submitter](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000005): 0x5300000000000000000000000000000000000005
-
-[L2CrossDomainMessenger](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000007): 0x5300000000000000000000000000000000000007
+[L2CrossDomainMessenger](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000007): 0x5300000000000000000000000000000000000007
 
 #### L2 Tokens
 
-[L2USDT](https://explorer-holesky.morphl2.io/address/0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98):0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98
+<!-- [L2USDT](https://explorer-hoodi.morphl2.io/address/0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98):0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98 -->
 
-[L2USDC](https://explorer-holesky.morphl2.io/address/0xeA2610c28B4c5857689EAFa8b2116a617206d283):0xeA2610c28B4c5857689EAFa8b2116a617206d283
+[L2USDC](https://explorer-hoodi.morphl2.io/address/0x1178341838B764dCfFA5BCEAb1d41443Fd71a227):0x1178341838B764dCfFA5BCEAb1d41443Fd71a227
 
-[L2DAI](https://explorer-holesky.morphl2.io/address/0xAa19d46626947C6E1E5F281aE835971579827DDC):0xAa19d46626947C6E1E5F281aE835971579827DDC
+<!-- [L2DAI](https://explorer-hoodi.morphl2.io/address/0xAa19d46626947C6E1E5F281aE835971579827DDC):0xAa19d46626947C6E1E5F281aE835971579827DDC -->
 
 
 
@@ -185,38 +183,38 @@ Please not the following is the contract address of the Morph Holesky Testnet.
 
 #### L1 Gateway
 
-[L1GatewayRouter](https://holesky.etherscan.io/address/0xea593b730d745fb5fe01b6d20e6603915252c6bf): 0xea593b730d745fb5fe01b6d20e6603915252c6bf
+[L1GatewayRouter](https://hoodi.etherscan.io/address/0x83e77812f082eff8570388142f8cb0d3e4c85836): 0x83e77812f082eff8570388142f8cb0d3e4c85836
 
-[L1ETHGateway](https://holesky.etherscan.io/address/0xcc3d455481967dc97346ef1771a112d7a14c8f12): 0xcc3d455481967dc97346ef1771a112d7a14c8f12
+[L1ETHGateway](https://hoodi.etherscan.io/address/0x625849788c16315680f34ee72a5e9961cd15d581): 0x625849788c16315680f34ee72a5e9961cd15d581
 
-[L1WETHGateway](https://holesky.etherscan.io/address/0xbbdb317b50313d96823eba0fc2c1d9e469dc1906): 0xbbdb317b50313d96823eba0fc2c1d9e469dc1906
+[L1WETHGateway](https://hoodi.etherscan.io/address/0x80a9f200e457169ff560dc8b4fb2a138bba58faf): 0x80a9f200e457169ff560dc8b4fb2a138bba58faf
 
-[L1StandardERC20Gateway](https://holesky.etherscan.io/address/0xb26dafdb434ae93e3b8efde4f0193934955d86cd): 0xb26dafdb434ae93e3b8efde4f0193934955d86cd
+[L1StandardERC20Gateway](https://hoodi.etherscan.io/address/0x2d14dcfa6c0ecec2b9bbe8c2ee0e422d0a3d60ff): 0x2d14dcfa6c0ecec2b9bbe8c2ee0e422d0a3d60ff
 
 #### L2 Gateway
 
-[L2GatewayRouter](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000002): 0x5300000000000000000000000000000000000002
+[L2GatewayRouter](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000002): 0x5300000000000000000000000000000000000002
 
-[L2StandardERC20Gateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000008): 0x5300000000000000000000000000000000000008
+[L2StandardERC20Gateway](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000008): 0x5300000000000000000000000000000000000008
 
-[L2ERC721Gateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000009): 0x5300000000000000000000000000000000000009
+[L2ERC721Gateway](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000009): 0x5300000000000000000000000000000000000009
 
-[L2ERC1155Gateway](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000c): 0x530000000000000000000000000000000000000c
+[L2ERC1155Gateway](https://explorer-hoodi.morphl2.io/address/0x530000000000000000000000000000000000000c): 0x530000000000000000000000000000000000000c
 
-[L2WETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000010): 0x5300000000000000000000000000000000000010
+[L2WETHGateway](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000010): 0x5300000000000000000000000000000000000010
 
-[L2ETHGateway](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000006): 0x5300000000000000000000000000000000000006
+[L2ETHGateway](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000006): 0x5300000000000000000000000000000000000006
 
 ### Other Layer 2 Predeploys
 
-[L2TxFeeVault](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000a): 0x530000000000000000000000000000000000000a
+[L2TxFeeVault](https://explorer-hoodi.morphl2.io/address/0x530000000000000000000000000000000000000a): 0x530000000000000000000000000000000000000a
 
-[ProxyAdmin](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000b): 0x530000000000000000000000000000000000000b
+[ProxyAdmin](https://explorer-hoodi.morphl2.io/address/0x530000000000000000000000000000000000000b): 0x530000000000000000000000000000000000000b
 
-[MorphStandardERC20](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000d): 0x530000000000000000000000000000000000000d
+[MorphStandardERC20](https://explorer-hoodi.morphl2.io/address/0x530000000000000000000000000000000000000d): 0x530000000000000000000000000000000000000d
 
-[MorphStandardERC20Factory](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000e): 0x530000000000000000000000000000000000000e
+[MorphStandardERC20Factory](https://explorer-hoodi.morphl2.io/address/0x530000000000000000000000000000000000000e): 0x530000000000000000000000000000000000000e
 
-[GasPriceOracle](https://explorer-holesky.morphl2.io/address/0x530000000000000000000000000000000000000f): 0x530000000000000000000000000000000000000f
+[GasPriceOracle](https://explorer-hoodi.morphl2.io/address/0x530000000000000000000000000000000000000f): 0x530000000000000000000000000000000000000f
 
-[L2WETH](https://explorer-holesky.morphl2.io/address/0x5300000000000000000000000000000000000011): 0x5300000000000000000000000000000000000011
+[L2WETH](https://explorer-hoodi.morphl2.io/address/0x5300000000000000000000000000000000000011): 0x5300000000000000000000000000000000000011
