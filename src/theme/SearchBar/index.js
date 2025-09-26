@@ -16,7 +16,7 @@ import {createPortal} from 'react-dom';
 import translations from '@theme/SearchTranslations';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useHistory} from '@docusaurus/router';
-import AskCookbook from "@cookbookdev/docsbot/react";
+import AskCookbook from "@site/src/components/AskCookbook";
 
 // This is a public key, so it's safe to expose it here.
 const COOKBOOK_PUBLIC_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjY5ZDFiNmExMTk3NjM3NDIzOWFmODgiLCJpYXQiOjE3MTgyMTA5OTgsImV4cCI6MjAzMzc4Njk5OH0.m302WLKYHPOARN08cYT7gMb6TvRwhOijtsD39PRaj1A";

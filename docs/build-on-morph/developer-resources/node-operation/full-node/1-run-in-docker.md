@@ -8,7 +8,7 @@ This guide will help you start a full node running in the docker container using
 ## Quick Start
 
 :::note
-The instructions outlined below detail the procedure for running a full node on the mainnet. To set up and operate a **Holesky node**, you need to follow the tutorial on [`sync node from snapshot`](#sync-node-from-snapshot).
+The instructions outlined below detail the procedure for running a full node on the mainnet. To set up and operate a **Hoodi node**, you need to follow the tutorial on [`sync node from snapshot`](#sync-node-from-snapshot).
 :::
 
 1. Clone the dockerfile repository
@@ -54,12 +54,12 @@ You have the flexibility to customize the directory paths as per your requiremen
 Please note that if you have customized the **HOME** directory of your node, you need to copy the necessary configuration files to this directory. Specifically, you should copy the `node-data` and `geth-data` from `./mainnet` to your **HOME** directory.
 
 :::note
-For running a testnet node, the ```morph-node/.env_holesky``` file should be used instead of the ```morph-node/.env``` file.
+For running a testnet node, the ```morph-node/.env_hoodi``` file should be used instead of the ```morph-node/.env``` file.
 :::
 
 ### Customizing parameters
 
-The default configuration required for mainnet node startup is located in the `./mainnet` directory, while the files under `./holesky` directory is used for testnet node startup. 
+The default configuration required for mainnet node startup is located in the `./mainnet` directory, while the files under `./hoodi` directory is used for testnet node startup. 
 
 ```javascript
 └── mainnet
@@ -72,7 +72,7 @@ The default configuration required for mainnet node startup is located in the `.
         └── data
 
 // for testnet nodes
-└── holesky
+└── hoodi
     ├── geth-data
     │   └── static-nodes.json
     └── node-data
@@ -98,7 +98,7 @@ git clone https://github.com/morph-l2/run-morph-node.git
 
 The `morph-node/.env` configuration file in the repository you just cloned is designed for setting up the Morph node on the mainnet. By default, it is pre-configured to use the latest snapshot.
 
-If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the **testnet**, the corresponding file is `morph-node/.env_holesky`.)
+If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the **testnet**, the corresponding file is `morph-node/.env_hoodi`.)
 
 - **Fetch historical snapshot(Optional)**:
     
@@ -127,7 +127,7 @@ If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME*
 
     ```
     cd ./morph-node
-    make download-and-decompress-holesky-snapshot
+    make download-and-decompress-hoodi-snapshot
     ```
 
     The command will assist you in downloading and decompressing the snapshot archive.
@@ -169,5 +169,5 @@ make run-node
 For testnet, run
 
 ```
-make run-holesky-node
+make run-hoodi-node
 ```

@@ -20,10 +20,10 @@ Our decentralized sequencer design and innovative Layer 2 approach address block
 
 Website: https://www.morphl2.io/
 
-Twitter: https://twitter.com/Morphl2
+Twitter: https://x.com/MorphLayer
 
 Medium: [Morph – Medium](https://medium.com/@morphlayer2)
 
-Telegram: https://t.me/morphoffical
+Telegram: https://t.me/MorphL2official
 
 Gmail: official@morphl2.io

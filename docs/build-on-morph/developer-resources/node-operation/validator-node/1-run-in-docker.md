@@ -8,7 +8,7 @@ This guide will help you start a validator node running in the docker container 
 ### Quick Start
 
 :::info
-The following quick start steps are only applicable for running a validator node on the mainnet. To set up and operate a Holesky validator node, please refer to [**Sync from Snapshot**](#sync-from-snapshot).
+The following quick start steps are only applicable for running a validator node on the mainnet. To set up and operate a Hoodi validator node, please refer to [**Sync from Snapshot**](#sync-from-snapshot).
 :::
 
 :::note
@@ -69,7 +69,7 @@ git clone https://github.com/morph-l2/run-morph-node.git
 
 The `morph-node/.env` configuration file in the repository you just cloned is designed for setting up the Morph node on the mainnet. By default, it is pre-configured to use the latest snapshot.
 
-If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the **testnet**, the corresponding file is `morph-node/.env_holesky`.)
+If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the **testnet**, the corresponding file is `morph-node/.env_hoodi`.)
 
 You can find the historical snapshot names from [**Snapshot Information**](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information).
 
@@ -91,7 +91,7 @@ make download-and-decompress-mainnet-snapshot
 
 For the testnet:
 ```bash
-make download-and-decompress-holesky-snapshot
+make download-and-decompress-hoodi-snapshot
 ```
 
 #### 3. Set up the snapshot
@@ -123,7 +123,7 @@ The folder structure will be like
 ```
 
 #### 4. Update the Environment Variables
-Before running the node, update the `DERIVATION_START_HEIGHT` and `L1_MSG_START_HEIGHT` variables in the ```morph-node/.env``` file (or `.env_holesky` for the testnet).
+Before running the node, update the `DERIVATION_START_HEIGHT` and `L1_MSG_START_HEIGHT` variables in the ```morph-node/.env``` file (or `.env_hoodi` for the testnet).
 
 Refer to [snapshot-information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information) for the specific values of the configuration heights. Ensure that the corresponding height values match the snapshot version you are configuring.
 
@@ -146,5 +146,5 @@ make run-validator
 
 // or for testnet
 cd morph-node
-make run-holesky-validator
+make run-hoodi-validator
 ```

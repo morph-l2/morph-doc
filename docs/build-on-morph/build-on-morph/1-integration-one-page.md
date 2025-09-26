@@ -11,8 +11,8 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 | --- | --- | --- | --- |
 | Morph Mainnet | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io/](https://explorer.morphl2.io/) |
 | Ethereum Mainnet | 1 | [https://ethereum-rpc.publicnode.com/](https://ethereum-rpc.publicnode.com/) | [https://etherscan.io/](https://etherscan.io/) |
-| Morph Holesky Testnet | 2810 | [https://rpc-quicknode-holesky.morphl2.io](https://rpc-quicknode-holesky.morphl2.io) | [https://explorer-holesky.morphl2.io/](https://explorer-holesky.morphl2.io/) |
-| Holesky Testnet | 17000 | [https://ethereum-holesky-rpc.publicnode.com/](https://ethereum-holesky-rpc.publicnode.com/) | [https://holesky.etherscan.io/](https://holesky.etherscan.io/) |
+| Morph Hoodi Testnet | 2910 | [https://rpc-hoodi.morphl2.io](https://rpc-hoodi.morphl2.io) | [https://explorer-hoodi.morphl2.io/](https://explorer-hoodi.morphl2.io/) |
+| Hoodi Testnet | 560048 | [https://ethereum-hoodi-rpc.publicnode.com/](https://ethereum-hoodi-rpc.publicnode.com/) | [https://hoodi.etherscan.io/](https://hoodi.etherscan.io/) |
 
 
 To notice, we have set a rate limit for the public RPC access, currently 600 requests per minute per IP.
@@ -29,13 +29,13 @@ wss://rpc-quicknode.morphl2.io
 
 [Official Mainnet Explorer](https://explorer.morphl2.io)
 
-[Official Testnet Explorer](https://explorer-holesky.morphl2.io)
+[Official Testnet Explorer](https://explorer-hoodi.morphl2.io)
 
 [Explorer API Documentation](https://explorer.morphl2.io/api-docs)
 
 Explorer API: https://explorer-api.morphl2.io/api
 
-Testnet Explorer API: https://explorer-holesky-api.morphl2.io/api
+Testnet Explorer API: https://explorer-hoodi-api.morphl2.io/api
 
 
 For detail guide on how to verify your contract on Morph explorer, [click here](../build-on-morph/5-verify-your-smart-contracts.md)
@@ -44,7 +44,7 @@ For detail guide on how to verify your contract on Morph explorer, [click here](
 
 [Official Bridge](https://bridge.morphl2.io)
 
-[Official Testnet Bridge](https://bridge-holesky.morphl2.io)
+[Official Testnet Bridge](https://bridge-hoodi.morphl2.io)
 
 :::tip Withdrawal and Deposit Time
 
