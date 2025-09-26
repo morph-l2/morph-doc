@@ -72,5 +72,5 @@ Make sure to use the same start-up command you used before the upgrade
 ```
 
 :::note
-For holesky network, use ```--morph-holesky``` instead
+For hoodi network, use ```--morph-hoodi``` instead
 :::

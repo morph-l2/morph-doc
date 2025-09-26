@@ -53,7 +53,7 @@ cd ~/.morph
 wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/mainnet/data.zip
 
 ## testnet
-wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/holesky/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/hoodi/data.zip
 
 unzip data.zip
 ```
@@ -75,8 +75,8 @@ A complete record of historical snapshots is available [here](https://github.com
 wget -q --show-progress https://snapshot.morphl2.io/mainnet/${SNAPSHOT_NAME}.tar.gz
 tar -xzvf ${SNAPSHOT_NAME}.tar.gz
 
-## holesky
-wget -q --show-progress https://snapshot.morphl2.io/holesky/${SNAPSHOT_NAME}.tar.gz
+## hoodi
+wget -q --show-progress https://snapshot.morphl2.io/hoodi/${SNAPSHOT_NAME}.tar.gz
 tar -xzvf ${SNAPSHOT_NAME}.tar.gz
 ```
 
@@ -104,7 +104,7 @@ mv ${SNAPSHOT_NAME}/data node-data
 ```
 
 :::note
-For testnet, using ```--morph-holesky``` instead
+For testnet, using ```--morph-hoodi``` instead
 :::
 
 tail -f `geth.log` to check if the Geth is running properly, or you can also execute the below curl command to check if you are connected to the peer.
@@ -152,7 +152,7 @@ export L1_MSG_START_HEIGHT=${The height matches your snapshot}
      --log.filename ./node.log
 ```
 
-For holesky network, using
+For hoodi network, using
 ```bash
 export CHAIN_ID=17000 
 export L1MESSAGEQUEUECONTRACT=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b

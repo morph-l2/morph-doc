@@ -66,7 +66,7 @@ cd ~/.morph
 wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/mainnet/data.zip
 
 ## testnet
-wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/holesky/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/hoodi/data.zip
 
 unzip data.zip
 ```
@@ -94,8 +94,8 @@ A complete record of historical snapshots is available [here](https://github.com
 wget -q --show-progress https://snapshot.morphl2.io/mainnet/${SNAPSHOT_NAME}.tar.gz
 tar -xzvf ${SNAPSHOT_NAME}.tar.gz
 
-## holesky
-wget -q --show-progress https://snapshot.morphl2.io/holesky/${SNAPSHOT_NAME}.tar.gz
+## hoodi
+wget -q --show-progress https://snapshot.morphl2.io/hoodi/${SNAPSHOT_NAME}.tar.gz
 tar -xzvf ${SNAPSHOT_NAME}.tar.gz
 ```
 
@@ -121,7 +121,7 @@ mv ${SNAPSHOT_NAME}/data node-data
 ```
 
 :::note
-For testnet, using ```--morph-holesky``` instead
+For testnet, using ```--morph-hoodi``` instead
 :::
 
 tail -f  `geth.log` to check if the Geth is running properly, or you can also execute the curl command below to check if you are connected to the peer. 
