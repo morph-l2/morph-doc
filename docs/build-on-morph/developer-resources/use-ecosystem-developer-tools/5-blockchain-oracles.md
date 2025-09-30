@@ -15,7 +15,7 @@ Right now Pyth is deployed on Morph Mainnet, check the [contract](https://explor
 
 ![eOracle](../../../../assets/docs/dev/resources/eOracle.jpg)
 
-eOracle is currently in the progress of integrating Morph mainnet.
+eOracle is currently in the process of integrating Morph mainnet.
 
 Deployed Morph Holesky testnet [contract](https://explorer-holesky.morphl2.io/address/0xbd53b35Bf458Cd22dBDeB5Da71181daA3cFb6A10)
 
