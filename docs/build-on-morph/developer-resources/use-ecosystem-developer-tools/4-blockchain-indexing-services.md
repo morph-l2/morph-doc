@@ -7,9 +7,9 @@ lang: en-US
 
 ![goldsky](../../../../assets/docs/dev/resources/goldsky.png)
 
-We have partnered with Goldsky to provide indexing and subgraph services for Morph Holesky and Morph Mainnet.
+We have partnered with Goldsky to provide indexing and subgraph services for Morph Hoodi and Morph Mainnet.
 
-Goldsky also allow us to grant selected developers with free subgraph services now. If you want to deploy a subgraph with Goldsky, please raise a ticket in our Discord to let us know how we can help.
+Goldsky also allows us to grant selected developers with free subgraph services now. If you want to deploy a subgraph with Goldsky, please raise a ticket in our Discord to let us know how we can help.
 
 For more information, please refer to [their documentation](https://docs.goldsky.com/chains/morph).
 
@@ -17,7 +17,7 @@ For more information, please refer to [their documentation](https://docs.goldsky
 
 ![envio](../../../../assets/docs/dev/resources/envio.png)
 
-Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized for querying real-time and historical data on Morph Holesky and Morph Mainnet. 
+Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized for querying real-time and historical data on Morph Hoodi and Morph Mainnet. 
 
 Designed with a core focus on delivering superior performance and seamless developer experience, Envio empowers the next generation of consumer apps. 
 
