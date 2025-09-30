@@ -17,32 +17,32 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 Users can claim Morph ETH & USDT to fund their initial activities.
 
 
-### 3rd Party Ethereum Holesky ETH Faucet
+### 3rd Party Ethereum Hoodi ETH Faucet
 
-To use Morph's public testnet, obtain testnet ETH on Holesky, then bridge it to the Morph testnet.
+To use Morph's public testnet, obtain testnet ETH on Hoodi, then bridge it to the Morph testnet.
 
-Here are a few Holesky faucet apps:
+Here are a few Hoodi faucet apps:
 
-https://stakely.io/en/faucet/ethereum-holesky-testnet-eth
+https://stakely.io/faucet/ethereum-hoodi-testnet-eth
 
-https://faucet.quicknode.com/ethereum/holesky
+https://faucet.quicknode.com/ethereum/hoodi
 
-https://holesky-faucet.pk910.de/
+https://hoodi-faucet.pk910.de/
 
 https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account)
 
-Once you receive ETH on Holesky, it should appear in your wallet on the Holesky Network.
+Once you receive ETH on Hoodi, it should appear in your wallet on the Hoodi Network.
 
-It may take a few seconds for the funds to show. You can check the status by searching your address on the [Holesky Block Explorer](https://holesky.etherscan.io/).
+It may take a few seconds for the funds to show. You can check the status by searching your address on the [Hoodi Block Explorer](https://hoodi.etherscan.io).
 
 
-### Discord Morph Holesky Faucet
+### Discord Morph Hoodi Faucet
 
-### Morph Holesky ETH
+### Morph Hoodi ETH
 
-You can obtain the Morph Holesky ETH in our discord too for development purposes.
+You can obtain the Morph Hoodi ETH in our discord too for development purposes.
 
-Using the */morph_eth* command followed by your wallet address to receive 0.01 Morph Holesky ETH.
+Using the */morph_eth* command followed by your wallet address to receive 0.01 Morph Hoodi ETH.
 
 If successful, you will see a confirmation message.
 
@@ -56,20 +56,20 @@ Currently, each Discord user can only request tokens once every 24 hours.
 
 :::
 
-You can obtain Morph’s version of USDT on Holesky through our Discord faucet. Here’s how:  
+You can obtain Morph’s version of USDT on Hoodi through our Discord faucet. Here’s how:  
 
 
 1. Join our Discord server using this [link](https://discord.com/invite/MorphLayer).
 
 2. Navigate to the *#| discord-faucet* channel.
 
-3. Type */faucet* followed by your Holesky address.
+3. Type */faucet* followed by your Hoodi address.
 
 4. Wait for a few seconds.
 
 5. If the request is successful, you will see a confirmation message in the channel.
 
-6.  Add the Morph Holesky USDT information to your wallet.
+6.  Add the Morph Hoodi USDT information to your wallet.
 
 ~~~
 
