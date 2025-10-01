@@ -143,7 +143,7 @@ lang: en-US
 
 :::tip
 
-Please not the following is the contract address of the Morph Hoodi Testnet.
+Please note the following is the contract address of the Morph Hoodi Testnet.
 
 :::
 
