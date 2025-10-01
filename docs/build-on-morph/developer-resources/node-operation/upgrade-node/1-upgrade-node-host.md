@@ -7,7 +7,7 @@ Upgrading the node is straightforward. Simply install the new version of the nod
 
 Running the node requires two binary files: `morphnode` and `geth`. Choose to upgrade the binary files according to your specific needs.
 
-### Step1: Compile the new version of the code
+### Step 1: Compile the new version of the code
 
 You can have the released code version from [Morph release](https://github.com/morph-l2/morph/releases) page.
 
@@ -36,7 +36,7 @@ git checkout ${latestVersion}
 make geth
 ```
 
-### Step2: Stop nodes
+### Step 2: Stop nodes
 
 ```bash
 # stop morphnode process
@@ -48,7 +48,7 @@ pid=`ps -ef | grep geth | grep -v grep | awk '{print $2}'`
 kill  $pid
 ```
 
-### Step3: Restart
+### Step 3: Restart
 
 Make sure to use the same start-up command you used before the upgrade
 
