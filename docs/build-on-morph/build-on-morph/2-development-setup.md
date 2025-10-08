@@ -93,22 +93,22 @@ const provider = new ethers.providers.JsonRpcProvider(
 
 
 
-# Holesky Testnet:
+# Hoodi Testnet:
 
 ## Step 1: Network Configuration
 
 Before you start, ensure you are connected to the following networks:
 
-| Network Name | Morph Holesky Testnet | Holesky Testnet |
+| Network Name | Morph Hoodi Testnet | Hoodi Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-quicknode-holesky.morphl2.io| https://ethereum-holesky-rpc.publicnode.com/ |
-| Chain ID | 2810 | 17000 |
+| RPC URL | https://rpc-hoodi.morphl2.io/| https://ethereum-hoodi-rpc.publicnode.com/ |
+| Chain ID | 2910 | 560048 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer-holesky.morphl2.io/| https://holesky.etherscan.io/ |
+| Block Explorer URL | https://ethereum-hoodi-rpc.publicnode.com/| https://hoodi.etherscan.io/ |
 
 :::tip Websocket Connection
 
-wss://rpc-quicknode-holesky.morphl2.io
+wss://rpc-hoodi.morphl2.io
 
 :::
 
@@ -130,7 +130,7 @@ const config: HardhatUserConfig = {
   ...
   networks: {
     morphl2: {
-      url: 'https://rpc-quicknode-holesky.morphl2.io',
+      url: 'https://rpc-hoodi.morphl2.io',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       gasprice = 2000000000
@@ -158,31 +158,25 @@ Setting up a Morph  provider in an ethers script:
 import { ethers } from 'ethers';
 
 const provider = new ethers.providers.JsonRpcProvider(
-  'https://rpc-quicknode-holesky.morphl2.io'
+  'https://rpc-hoodi.morphl2.io'
 );
 ```
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need some testnet ETH. Use a faucet to acquire holesky Ether, then [bridge](https://bridge-holesky.morphl2.io) the test Ethereum Ether to the Morph testnet.
+To start building on Morph, you may need some testnet ETH. Use a faucet to acquire hoodi Ether, then [bridge](https://bridge-hoodi.morphl2.io/) the test Ethereum Ether to the Morph testnet.
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 
-Holesky ETH faucet websites:
+Hoodi ETH faucet websites:
 
-https://stakely.io/en/faucet/ethereum-holesky-testnet-eth
+https://stakely.io/faucet/ethereum-hoodi-testnet-eth
 
-https://faucet.quicknode.com/ethereum/holesky
+https://faucet.quicknode.com/ethereum/hoodi
 
-https://holesky-faucet.pk910.de/
-
-https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account)
-
-We have our own [website faucet](https://morphfaucet.com/) that can claim ETH & USDT for you initial usage.
+https://hoodi-faucet.pk910.de/
 
 
-Morph also offers a [Discord faucet](../../quick-start/3-faucet.md#morph-holesky-eth) to obtain Morph Holesky USDT & Morph Holesky ETH.
-
-Once you receive ETH on Holesky, you should see it in your wallet on the *Holesky Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Holesky Block Explorer](https://holesky.etherscan.io/)**.
+Once you receive ETH on Hoodi, you should see it in your wallet on the *Hoodi Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Hoodi Block Explorer](https://hoodi.etherscan.io/)**.
 
 
