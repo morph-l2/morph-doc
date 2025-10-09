@@ -5,13 +5,13 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-The Morph Holesky Testnet allows anyone to deploy a smart contract on Morph. This tutorial will guide you through deploying a contract on Morph Holesky using common Ethereum development tools.
+The Morph Hoodi Testnet allows anyone to deploy a smart contract on Morph. This tutorial will guide you through deploying a contract on Morph Hoodi using common Ethereum development tools.
 
 This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-deployment-demos) illustrates contract deployment with [Hardhat](https://hardhat.org/) and [Foundry](https://github.com/foundry-rs/foundry).
 
 :::tip
-  Before you start deploying the contract, you need to request test tokens from a Holesky faucet and use the
-  [bridge](https://bridge-holesky.morphl2.io) to transfer some test ETH from _Holesky_ to _Morph Holesky_. 
+  Before you start deploying the contract, you need to request test tokens from a Hoodi faucet and use the
+  [bridge](https://bridge-hoodi.morphl2.io) to transfer some test ETH from _Hoodi_ to _Morph Hoodi_. 
   
   See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
@@ -33,7 +33,7 @@ git clone https://github.com/morph-l2/morph-examples.git
 
 ### Install Dependencies
 
-If you haven't already, install [nodejs](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
+If you haven't already, install [nodejs](https://nodejs.org/en/download) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install).
 
 ```bash
 cd contract-deployment-demos/hardhat-demo
@@ -71,7 +71,7 @@ yarn test
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     }
    ```
-Then run the following command to deploy the contract on the Morph Holesky Testnet. This will run the deployment script that set the initialing parameters, you can edit the script in scripts/deploy.ts
+Then run the following command to deploy the contract on the Morph Hoodi Testnet. This will run the deployment script that set the initialing parameters, you can edit the script in scripts/deploy.ts
 
 ```bash
 yarn deploy:morphTestnet
@@ -95,8 +95,8 @@ module.exports = {
         network: 'morphTestnet',
         chainId: 2810,
         urls: {
-          apiURL: 'https://explorer-api-holesky.morphl2.io/api? ',
-          browserURL: 'https://explorer-holesky.morphl2.io/',
+          apiURL: 'https://explorer-api-hoodi.morphl2.io',
+          browserURL: 'https://explorer-hoodi.morphl2.io',
         },
       },
     ],
@@ -116,7 +116,7 @@ npx hardhat verify --network morphTestnet 0x8025985e35f1bAFfd661717f66fC5a434417
 ```
 
 
-Once succeed, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io)
+Once successful, you can check your contract and the deployment transaction on [Morph Hoodi Explorer](https://explorer-hoodi.morphl2.io)
    
 
 ## Deploy contracts with Foundry
@@ -175,11 +175,11 @@ Verification requires some flags passed to the normal verification script. You c
   --verifier blockscout --watch
 ```
 
-Once succeeded, you can check your contract and the deployment transaction on [Morph Holesky Explorer](https://explorer-holesky.morphl2.io).
+Once succeeded, you can check your contract and the deployment transaction on [Morph Hoodi Explorer](https://explorer-hoodi.morphl2.io).
 
 
 ## Questions and Feedback
 
-Thank you for participating in and developing on the Morph Holesky Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/MorphLayer) and find us at #dev-support channel.
+Thank you for participating in and developing on the Morph Hoodi Testnet! If you encounter any issues, join our [Discord](https://discord.com/invite/MorphLayer) and find us at #dev-support channel.
 
 
