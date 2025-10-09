@@ -9,10 +9,10 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 | Network | Chain ID | RPC URL | Block Explorer URL |
 | --- | --- | --- | --- |
-| Morph Mainnet | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io/](https://explorer.morphl2.io/) |
-| Ethereum Mainnet | 1 | [https://ethereum-rpc.publicnode.com/](https://ethereum-rpc.publicnode.com/) | [https://etherscan.io/](https://etherscan.io/) |
-| Morph Hoodi Testnet | 2910 | [https://rpc-hoodi.morphl2.io](https://rpc-hoodi.morphl2.io) | [https://explorer-hoodi.morphl2.io/](https://explorer-hoodi.morphl2.io/) |
-| Hoodi Testnet | 560048 | [https://ethereum-hoodi-rpc.publicnode.com/](https://ethereum-hoodi-rpc.publicnode.com/) | [https://hoodi.etherscan.io/](https://hoodi.etherscan.io/) |
+| Morph Mainnet | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io](https://explorer.morphl2.io) |
+| Ethereum Mainnet | 1 | [https://ethereum-rpc.publicnode.com](https://ethereum-rpc.publicnode.com) | [https://etherscan.io](https://etherscan.io) |
+| Morph Hoodi Testnet | 2910 | [https://rpc-hoodi.morphl2.io](https://rpc-hoodi.morphl2.io) | [https://explorer-hoodi.morphl2.io](https://explorer-hoodi.morphl2.io) |
+| Hoodi Testnet | 560048 | [https://ethereum-hoodi-rpc.publicnode.com](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
 
 
 To notice, we have set a rate limit for the public RPC access, currently 600 requests per minute per IP.
