@@ -77,23 +77,11 @@ To help you navigate through our resources, here’s a quick guide:
 </CardGroup>
 
 
-### Core Products
-
-#### Morph Pay
-
-The wallet experience for everyday use. Users can verify identity, hold multi-currency balances, activate a digital card, earn rewards, and access real-time FX. Everything you need to spend, save, and earn in one place.
+### Core Product
 
 #### Morph Rails
 
 The programmable infrastructure for developers and merchants. Includes modules for payments, FX, payroll, compliance, and rewards. Permissionless, self-custodial, and scalable. Think of it as a decentralized Stripe.
-
-#### Morph Black
-
-An NFT that unlocks access to exclusive campaigns, real-world perks like lounge access, and deeper rewards across the Morph ecosystem.
-
-##### Morph Platinum
-
-A non-transferable Soulbound Token (SBT) tied to your wallet. Enables verified identity, compliance-based features, and future governance rights.
 
 
 ### Explore and Connect
@@ -102,8 +90,6 @@ To get started:
 - [**Set up your wallet**](../quick-start/2-wallet-setup.md)
 - [**Use the faucet**](../quick-start/3-faucet.md)
 - [**Bridge assets**](../quick-start/4-bridge.md)
-- [**Explore Morph Zoo**](https://www.morphl2.io/points/)
-- [**Try Morph Pay**](https://pay.morphl2.io)
 
 Join the community and stay up to date:  
 𝕏: [x.com/MorphLayer](https://x.com/MorphLayer)  
