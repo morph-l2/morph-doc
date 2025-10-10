@@ -2,7 +2,7 @@
 title: Morph Modular Design
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 The modular design of blockchain technology, known for its improved composability, has become a prevalent trend. Morph leverages this design principle to enhance its architecture and functionality.
@@ -29,7 +29,7 @@ Morph applies this modular approach to its Layer 2 solution by dividing it into 
 ![Sequencer Network](../../assets/docs/protocol/dese/seq1.png)
 
 
-Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network).
+The Sequencer network is responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network).
 
 #### Optimistic zkEVM - Settlement
 
@@ -43,7 +43,7 @@ State verification ensures that state changes on Layer 2 are valid on Layer 1. M
 
 
 
-The [Rollup](../how-morph-works/general-protocol-design/1-rollup.md) process involves submitting Layer 2 transactions and states to Layer 1, ensuring data availability. Morph's rollup strategy maximizes efficiency by compressing block content using zk-proofs, which helps manage the cost of Layer 1 data availability. 
+The [Rollup](../how-morph-works/general-protocol-design/1-rollup.md) process involves submitting Layer 2 transactions and states to Layer 1, ensuring data availability. Morph's rollup strategy maximizes efficiency by compressing block content using zk proofs, which helps manage the cost of Layer 1 data availability. 
 
 
 ### 5 Morph Roles
