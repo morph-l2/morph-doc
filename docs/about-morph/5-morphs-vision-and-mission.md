@@ -2,7 +2,7 @@
 title: Vision & Mission
 lang: en-US
 keywords: [morph,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 Morph’s vision is to power the future of onchain consumer finance. We believe blockchain should be a practical, accessible tool that supports everyday life, not a technology reserved for specialists. Our goal is to make financial tools as seamless and essential as any other core service in the digital economy.
@@ -12,13 +12,11 @@ Morph’s vision is to power the future of onchain consumer finance. We believe 
 
 Our mission is to build a global ecosystem of onchain consumer applications on fully decentralized infrastructure. Morph was created to address the gap in blockchain solutions, where technical focus often outweighs user experience. We prioritize usability, speed, and reliability so both consumers and developers can benefit from blockchain without friction.  
 
-Morph enables this through two core products:  
-- **Morph Pay** – A smart wallet that unifies identity, multi-currency balances, digital cards, real-time FX, and rewards into a single onchain experience.
-
+Morph enables this through:  
 
 - **Morph Rails** – A permissionless, self-custodial infrastructure layer for developers and merchants. It offers programmable modules for payments, FX, payroll, compliance, and rewards, functioning like a decentralized Stripe.  
 
-Together, these products create a complete financial layer for consumers, businesses, and builders.
+This product creates a complete financial layer for consumers, businesses, and builders.
 
 
 ## Why Morph?​
