@@ -19,7 +19,7 @@ Returns information about a block by block number. In addition, it returns more 
 
 ### Returns
 
-See [JSON-RPC API | ethereum.org](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbyhash), and more fields showing as the blew
+See [JSON-RPC API | ethereum.org](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_getblockbyhash), and more fields are shown below:
 
 - withdrawTrieRoot: DATA, 32 Bytes - the root of the withdraw trie, used to prove the users’ withdrawals.
 - batchHash: DATA, 32 Bytes - the hash of the latest batch. It indicates the block is a batch point if it is not empty.
