@@ -2,7 +2,7 @@
 title: Optimistic zkEVM
 lang: en-US
 keywords: [morph,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 ![RVP](../../assets/docs/protocol/resvapro/rvpbanner1.jpg)
@@ -16,7 +16,7 @@ Layer 2 state verification traditionally falls into two categories: fraud proofs
 
 In this model, Layer 2 (L2) optimistically assumes that the state changes submitted by the sequencer are valid without actively verifying their authenticity. Instead, a challenge period is introduced before the state changes are confirmed on Layer 1 (L1). During this period, external challengers verify the sequencer's submissions based on their own synchronized network status. If they find discrepancies, challengers can trigger a challenge process on L1 to prevent incorrect states from being confirmed.
 
-**Challenge Mechanism**: Although all optimistic rollups claim to implement fraud proofs, only very a few had successfully deployed them on the mainnet. Furthermore, the challengers are often limited to several whitelisted addresses. Fraud proofs in current optimistic rollup projects can be categorized into two types:
+**Challenge Mechanism**: Although all optimistic rollups claim to implement fraud proofs, only a very few had successfully deployed them on the mainnet. Furthermore, the challengers are often limited to several whitelisted addresses. Fraud proofs in current optimistic rollup projects can be categorized into two types:
 
 **Non-Interactive Fraud Proofs**: When a new state submitted by the sequencer is challenged, L1 re-executes all corresponding L2 transactions to generate a valid state for comparison with the state submitted by the sequencer. This process incurs significant gas costs and may lead to discrepancies between L2 and L1, as some transactions might produce different outcomes on L2 compared to L1, or L1 might not be able to execute certain L2 transactions. Optimism (OP) once used this approach but abandoned it due to these issues.
 
@@ -112,7 +112,7 @@ While verifying the validity of every state submission by the sequencer through 
 
 #### The Cost of ZK-Rollup
 
-Currently, projects such as zkSync and Polygon zkEVM have launched on the mainnet, showing that generating and verifying ZK-proofs is no longer the most pressing issue. However, these ZK-proofs still face cost and efficiency constraints. For instance, the average transaction cost on zkSync Era ranges from $0.51 to as high as $310, depending on L1 gas fees. This is significantly more expensive than the transaction costs of optimistic rollup projects like Arbitrum and Optimism. In contrast, with RVP, the high cost is avoided during normal network operation by only compressing transaction data using ZK-proofs when challenged. Normal operation incurs minimal costs, maintaining efficiency and affordability.
+Currently, projects such as zkSync and Polygon zkEVM have launched on the mainnet, showing that generating and verifying ZK-proofs is no longer the most pressing issue. However, these ZK-proofs still face cost and efficiency constraints. For instance, the average transaction cost on zkSync Era ranges from \$0.51 to as high as \$310, depending on L1 gas fees. This is significantly more expensive than the transaction costs of optimistic rollup projects like Arbitrum and Optimism. In contrast, with RVP, the high cost is avoided during normal network operation by only compressing transaction data using ZK-proofs when challenged. Normal operation incurs minimal costs, maintaining efficiency and affordability.
 
 #### Block Finalization Time in ZK-Rollups
 
