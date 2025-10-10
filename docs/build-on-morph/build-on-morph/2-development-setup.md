@@ -2,7 +2,7 @@
 title: Development Setup
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 # Start Developing on Morph
@@ -28,10 +28,10 @@ Before you start, ensure you are connected to the following networks:
 
 | Network Name | Morph Mainnet | Ethereum Mainnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com/ |
+| RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com |
 | Chain ID | 2818 | 1 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer.morphl2.io/| https://etherscan.io/ |
+| Block Explorer URL | https://explorer.morphl2.io| https://etherscan.io |
 
 :::tip Websocket Connection
 
