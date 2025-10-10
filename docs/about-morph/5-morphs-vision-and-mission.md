@@ -12,13 +12,10 @@ Morph’s vision is to power the future of onchain consumer finance. We believe 
 
 Our mission is to build a global ecosystem of onchain consumer applications on fully decentralized infrastructure. Morph was created to address the gap in blockchain solutions, where technical focus often outweighs user experience. We prioritize usability, speed, and reliability so both consumers and developers can benefit from blockchain without friction.  
 
-Morph enables this through two core products:  
-- **Morph Pay** – A smart wallet that unifies identity, multi-currency balances, digital cards, real-time FX, and rewards into a single onchain experience.
-
-
+Morph enables this through:  
 - **Morph Rails** – A permissionless, self-custodial infrastructure layer for developers and merchants. It offers programmable modules for payments, FX, payroll, compliance, and rewards, functioning like a decentralized Stripe.  
 
-Together, these products create a complete financial layer for consumers, businesses, and builders.
+This creates a complete financial layer for consumers, businesses, and builders.
 
 
 ## Why Morph?​
