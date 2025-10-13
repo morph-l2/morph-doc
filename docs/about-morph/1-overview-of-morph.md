@@ -2,7 +2,7 @@
 title: Overview
 lang: en-US
 keywords: [morph,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 Morph is a blockchain designed for onchain consumer finance. It powers payments, savings, identity, and rewards through a fast, secure, and scalable infrastructure.
@@ -32,7 +32,6 @@ Consensus, execution, and data availability are separated. This allows developer
 
 ## Built for Users and Builders
 
-**Morph Pay** gives users a unified experience. It supports identity verification, multi-currency balances, digital cards, real-time FX, and reward earning.  
 **Morph Rails** provides developers with a permissionless infrastructure stack. It includes smart modules for payments, payroll, foreign exchange, compliance, and wallet integrations. Builders can compose financial logic into any application without licenses or custodians.  
 
 Morph connects consumers and developers through a single, efficient platform. It is built to support the next generation of digital finance.

@@ -9,10 +9,6 @@ description: Morph Rails. Try it now!
 
 **Morph Rails** is the infrastructure layer for permissionless, programmable payments on the Morph blockchain. It is designed for developers, merchants, and service providers to build custom payment flows, foreign exchange, payroll, invoicing, rewards, and compliance services without needing licenses or platform approval.  
 
-
-It works hand-in-hand with [Morph Pay](./morph-pay.md), which serves as the consumer-facing super-app in the Morph ecosystem. While Morph Pay onboards users and drives payment adoption, Morph Rails provides the open infrastructure that powers those transactions and enables any wallet, app, or merchant to integrate similar capabilities.  
-
-
 Morph Rails functions like an open, blockchain-based Stripe. It delivers the same flexibility and modularity Stripe offers to Web2 businesses, but in a fully self-custodial, onchain environment where developers can compose secure, compliant payment experiences without relying on centralized processors.  
 
 ## Overview
@@ -67,7 +63,7 @@ Works for wallet providers, fintech issuers, DeFi protocols, and merchants. Supp
 
 Morph Rails is the core infrastructure layer in Morph’s onchain consumer finance stack.  
 
-- Provides the rails that Morph Pay and other apps run on
+- Provides the rails that other apps run on
 
 - Enables any wallet, merchant, or developer to plug into the Morph payment network
 

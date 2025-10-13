@@ -15,7 +15,7 @@ If you are running the Docker container for the node using a custom setup, you w
 ### If You Are Using the Recommended Configuration
 For those using the [Run a full node with docker](../full-node/1-run-in-docker.md) to start the container, follow these steps to upgrade your node.
 
-#### Step1:  Update docker images version 
+#### Step 1:  Update docker images version 
 
 - Check the latest docker image version from [Docker Images](#docker-images)
 - Update the docker image version on [morph-node/docker-compose.yml](https://github.com/morph-l2/run-morph-node/blob/run_node_script/morph-node/docker-compose.yml)
@@ -44,7 +44,7 @@ For those using the [Run a full node with docker](../full-node/1-run-in-docker.m
     Optionally update the image version for go-ethereum, node, or both, depending on your requirements.
     :::
 
-#### Step2: Restart the container
+#### Step 2: Restart the container
 
 Use the following commands to stop and restart the container. The updated Docker images will be pulled automatically.
 

@@ -7,7 +7,7 @@ This guide outlines the steps to start a Morph node. The example assumes the hom
 
 ## Hardware requirements
 
-Running the morph node requires 2 processes: `geth` and `node`.  
+Running the Morph node requires 2 processes: `geth` and `node`.  
 
 - `Geth`:the Morph execution layer which needs to meet the requirements as below
   - Fast CPU with 4+ cores

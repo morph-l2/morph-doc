@@ -3,7 +3,7 @@ title: Decentralized Naming Services
 lang: en-US
 ---
 
-## SpaceID
+## Space ID
 
 ![Space ID](../../../../assets/docs/dev/resources/spaceid.png)
 
@@ -15,11 +15,11 @@ Space ID has launched the .mph domain specific for Morph. If you are looking for
 
 ### The Space ID .mph domain integration
 
-### How SpaceID works
+### How Space ID works
 
 SPACE ID aims to create a universal name service network that connects decentralized identities with the physical and digital worlds. It is progressing toward becoming a comprehensive digital identity solution for Web3. Read the details [here](https://docs.space.id/)
 
-### Key features of SpaceID
+### Key features of Space ID
 
 #### Multi-Chain Name Service
 
@@ -31,12 +31,12 @@ SPACE ID aims to streamline web3 services through the use of a single SDK to ass
 
 ### Benefits of DNS
 - Simplified Address Management: Users can use easy-to-remember names instead of long hexadecimal addresses, reducing the risk of errors in transactions.
-- Interoperability: SpaceID names can point to various types of addresses and resources, supporting multiple blockchain networks and off-chain data.
-- Decentralization: SpaceID is built on blockchain, ensuring that no single entity controls the naming system, which enhances security and censorship resistance.
+- Interoperability: Space ID names can point to various types of addresses and resources, supporting multiple blockchain networks and off-chain data.
+- Decentralization: Space ID is built on blockchain, ensuring that no single entity controls the naming system, which enhances security and censorship resistance.
 - Flexibility: Domain owners have full control over their domains, including the ability to create subdomains, update addresses, and manage metadata.
-### Use Case of SpaceID
+### Use Cases of Space ID
 - Cryptocurrency Wallets: Users can receive payments using simple names instead of complex addresses.
-- Decentralized Websites: SpaceID names can point to Greenfield content, enabling decentralized websites.
-- Identity Management: SpaceID can be used as part of a decentralized identity system, linking a user’s SpaceID to their decentralized identifiers and attestations.
-- DApps and Smart Contracts: Developers can use SpaceID to provide human-readable names for their smart contracts and decentralized applications, improving user experience.
+- Decentralized Websites: Space ID names can point to Greenfield content, enabling decentralized websites.
+- Identity Management: Space ID can be used as part of a decentralized identity system, linking a user’s Space ID to their decentralized identifiers and attestations.
+- DApps and Smart Contracts: Developers can use Space ID to provide human-readable names for their smart contracts and decentralized applications, improving user experience.
 

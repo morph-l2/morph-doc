@@ -2,7 +2,7 @@
 title: Morph Modular Design
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 The modular design of blockchain technology, known for its improved composability, has become a prevalent trend. Morph leverages this design principle to enhance its architecture and functionality.
@@ -29,7 +29,7 @@ Morph applies this modular approach to its Layer 2 solution by dividing it into 
 ![Sequencer Network](../../assets/docs/protocol/dese/seq1.png)
 
 
-Sequencer network responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network).
+The Sequencer network is responsible for the execution & consensus of the Layer 2 transactions, for more details please refer to Morph's [decentralized sequencers](../how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network).
 
 #### Optimistic zkEVM - Settlement
 
@@ -62,7 +62,7 @@ Sequencers play a crucial role in the network by:
 
 #### Prover
 
-Provers are essential for generating zk proofs when a sequencer is challenged. They synchronize Layer 2 transaction information and produce the necessary zk proofs to validate state changes.
+Provers are essential for generating zk-proofs when a sequencer is challenged. They synchronize Layer 2 transaction information and produce the necessary zk-proofs to validate state changes.
 
 #### Validator
 
@@ -92,10 +92,10 @@ The Batch Submitter is part of the sequencer, responsible for continuously obtai
 Each sequencer runs a consensus client to reach consensus with other sequencers. The current design uses the Tendermint client to ensure seamless integration and developer friendliness.
 
 #### zkEVM​
-zkEVM is part of the Prover and is a zk-friendly virtual machine used to generate zk proofs for Ethereum blocks and state changes. These zk proofs are ultimately used to prove the validity of L2 transactions and states.
+zkEVM is part of the Prover and is a zk-friendly virtual machine used to generate zk-proofs for Ethereum blocks and state changes. These zk-proofs are ultimately used to prove the validity of L2 transactions and states.
 
 #### Aggregators​
-Aggregators work with zkEVM to reduce the cost of verifying zk proofs by aggregating them for block production.
+Aggregators work with zkEVM to reduce the cost of verifying zk-proofs by aggregating them for block production.
 
 #### Layer 1 Contract​
 These contracts on Ethereum store Layer 2 transactions, execute global state changes, and bridge assets and information between Layer 2 and Layer 1. They also manage the election and governance of the sequencer set, inheriting the security of Ethereum.

@@ -10,19 +10,19 @@ lang: en-US
 
 | Network Name | Morph Mainnet | Ethereum Mainnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com/ |
+| RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com |
 | Chain ID | 2818 | 1 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer.morphl2.io/| https://etherscan.io/ |
+| Block Explorer URL | https://explorer.morphl2.io| https://etherscan.io |
 
 ### Morph Hoodi Testnet
 
 | Network Name | Morph Hoodi Testnet | Ethereum Hoodi Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-hoodi.morphl2.io| https://ethereum-hoodi-rpc.publicnode.com/ |
+| RPC URL | https://rpc-hoodi.morphl2.io| https://ethereum-hoodi-rpc.publicnode.com |
 | Chain ID | 2910 | 560048 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer-hoodi.morphl2.io/| https://hoodi.etherscan.io/ |
+| Block Explorer URL | https://explorer-hoodi.morphl2.io| https://hoodi.etherscan.io |
 
 ## Morph Mainnet Contracts
 
@@ -143,7 +143,7 @@ lang: en-US
 
 :::tip
 
-Please not the following is the contract address of the Morph Hoodi Testnet.
+Please note the following is the contract address of the Morph Hoodi Testnet.
 
 :::
 
