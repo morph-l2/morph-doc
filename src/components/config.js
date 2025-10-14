@@ -45,11 +45,11 @@ export const links = {
   explorerApi: 'https://explorer-api.morphl2.io', // /api/v2/stats
   bridge: 'https://bridge.morphl2.io',
   
-  holeskyWalletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
-  holeskyApiDocs: 'https://explorer-holesky.morphl2.io/api-docs',
-  holeskyExplorer: 'https://explorer-holesky.morphl2.io',
-  holeskyExplorerApi: 'https://explorer-api-holesky.morphl2.io',
-  holeskyBridge: 'https://bridge-holesky.morphl2.io',
+  hoodiWalletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
+  hoodiApiDocs: 'https://explorer-hoodi.morphl2.io/api-docs',
+  hoodiExplorer: 'https://explorer-hoodi.morphl2.io',
+  hoodiExplorerApi: 'https://explorer-api-hoodi.morphl2.io',
+  hoodiBridge: 'https://bridge-hoodi.morphl2.io',
 
   // social
   medium: 'https://blog.morphl2.io/',
@@ -70,8 +70,8 @@ export const links = {
 
   faucet: '',
 
-  holeskyUSDT: 'https://discord.com/channels/1156486804661338162/1199665829730582620',
-  holeskyETH: "https://holesky-faucet.pk910.de/",
+  hoodiUSDT: 'https://discord.com/channels/1156486804661338162/1199665829730582620',
+  hoodiETH: "https://hoodi-faucet.pk910.de/",
   sepoliafaucet: "https://sepoliafaucet.com/",
   usdtfaucet: "https://discord.com/channels/1156486804661338162/1199665829730582620",
 
