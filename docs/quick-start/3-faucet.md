@@ -2,7 +2,7 @@
 title: Faucet
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 
@@ -73,9 +73,9 @@ You can obtain Morph’s version of USDT on Hoodi through our Discord faucet. He
 
 ~~~
 
-Ethereum Holesky USDT address: "0xD6e9Cd5ef382b0830653d1b2007D5Ca6987FaA26"
+Ethereum Hoodi USDT address: "0x625849788c16315680f34ee72a5e9961cd15d581"
 
-Morph Holesky USDT address: "0x9E12AD42c4E4d2acFBADE01a96446e48e6764B98"
+Morph Hoodi USDT address: "0xF48EFcDb83c8478528bDDe96f1B8c736BBF5BC87"
 
 ~~~
 
