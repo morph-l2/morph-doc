@@ -10,45 +10,14 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 
 
-## 2025 Q3
+## 2025 Q4: Foundations and Rails
+Enhance EVM compatibility with EIP-7702 and ERC-20 gas support for stablecoins and BGB. Launch Morph Rails as a permissionless payment rail with modules for checkout, FX, and billing. Roll out ecosystem standards for merchants.
 
-- Launch Morph Payment Card (Phase 1)
-- Launch Morph Pay V1 (Super-App)
-- Launch first-party crypto yield products (stable return, active management)
-- KOL and campaign activations in Korea, SEA, and China
+## 2026 Q1: Scaling and Incentives
+Boost throughput with higher gas limits and onchain merchant keys. Launch the Onchain Merchant Acquiring Network and Morph Earn rewards. Kick off developer incentives.
 
-## 2025 Q4
+## 2026 Q2: Friction Free and Enterprise
+Enable zero-fee stablecoin transfers and cross-border invoicing. Introduce modular blocks for payouts and compliance, and launch Morph OTC for secure trading.
 
-- Enable gasless transactions
-- Launch Onchain FX Module with real-time stablecoin swaps
-- Expand card issuance support to additional countries and regions
-- Launch cross-chain yield products
-- Add support for EIP-2537 for batch BLS signature verification
-- SDK upgrade with recurring billing and compliance integrations
-- Roll out liquidity mining programs across DEX and CEX
-
-## 2026 Q1
-
-- Launch Morph Rails (permissionless, composable payment rail)
-- Launch Decentralized Payment Card
-- Launch Onchain Merchant Acquiring Network
-- Integrate EIP-7702 for sponsored transaction flows
-- Roll out Ecosystem Developer Incentive Plan Phase 1
-
-## 2026 Q2
-
-- Launch Morph Token Staking Mechanism
-- Launch cross-border invoice and enterprise billing product
-- Introduce token-gated ecosystem utilities (compliance API access, priority flow)
-
-## 2026 Q3
-
-- Release DID and Attestation Service
-- Enable custom gas token model for ecosystem dApps
-- Launch regulated DeFi-aligned custody and asset bridge (internal DeFi-lite infrastructure)
-
-## 2026 Q4
-
-- Upgrade to full zk-Rollup architecture for enhanced scalability and privacy
-- Finalize DAO-based governance launch
-- Fully integrate first-party service token loop: issuance → consumption → rewards
+## 2026 Q3–Q4: Privacy and Speed
+Upgrade to MPT for faster proofs, enhance read/write privacy, and open BGB staking for sequencers. Push TPS beyond 10,000 with optimized consensus.
