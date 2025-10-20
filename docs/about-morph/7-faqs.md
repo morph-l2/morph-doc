@@ -40,7 +40,6 @@ Morph’s L2 Base Fee is currently 0.001 gwei. You only need to pay the base fee
 
 Morph follows the same rules as Ethereum mainnet and other EIP-1559 networks. If your transaction is pending, you can resend it with the same nonce and a higher gas price to replace the original. Many wallets have built-in “Speed Up” or “Accelerate” features to make this easy.
 
-
 ## My transaction is still pending. What should I do?
 
 On testnet, transactions with a priority fee below 0.01 gwei will not be processed to prevent spam. Resubmit with a higher priority fee.  
@@ -49,12 +48,6 @@ On testnet, transactions with a priority fee below 0.01 gwei will not be process
 ## How long does it take to withdraw funds from Morph?
 
 Morph’s canonical bridge currently has a 48-hour challenge window on mainnet. This is part of the security model for optimistic rollups. For faster withdrawals, you can use supported third-party bridges that use liquidity pools to provide near-instant exits.
-
-
-## Does Morph support gasless transactions?
-
-Yes. Morph supports sponsored transactions through Morph Pay and developer-integrated flows. This allows dApps to cover user gas costs for smoother onboarding. Sponsored transactions will expand further with Morph Rails integrations.
-
 
 ## What is Morph Rails?
 
