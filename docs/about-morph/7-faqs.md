@@ -11,7 +11,7 @@ Morph uses a hybrid rollup architecture called Optimistic zkEVM with **Responsiv
 
 ## What Sets Morph Apart from Others?
 
-Morph is purpose-built for **onchain consumer finance** and offers both a user-facing experience and a developer infrastructure layer:
+Morph is purpose-built as a dedicated payment ecosystem and serves both everyday users and developers.
 
 - **Morph Rails** – A permissionless, composable infrastructure layer for developers and merchants to build payments, FX, payroll, compliance, and rewards directly into their applications
 
