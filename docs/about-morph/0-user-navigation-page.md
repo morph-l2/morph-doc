@@ -9,16 +9,15 @@ import { CardGroup, Card } from '@site/src/components/Card'
 
 ![userpage](../../assets/docs/about/userpage1.jpeg)
 
-We’re glad you’re here.  
-If you’re a developer looking for technical documentation, head to the [For Developers section](../build-on-morph/0-developer-navigation-page.md).  
-If you’re here to understand what Morph is and how to get started, you’re in the right place.  
+Welcome to Morph, the settlement layer for a global payment network. Morph is also the onchain home of BGB. If you're a developer looking for more information about our technology architecture and how to deploy on Morph, head directly to our technical documentation. If you're here for the first time or want to understand what we're building for the payments ecosystem, then you're in the right place. Follow along this documentation starting here.
 
 
 ### What is Morph?
 
-Morph is a high-performance blockchain built on Ethereum, designed to power the next generation of onchain consumer finance.  
-It is the consumer finance layer for the digital economy, enabling fast, low-cost, and secure transactions for people who live, earn, and transact online.  
-Our focus is simple: build products that serve real people and make blockchain useful in everyday life.  
+Morph is evolving into a dedicated payment ecosystem, the settlement layer that transforms stablecoins into everyday currency. Morph is reimagining how value flows onchain, seamless, borderless, and optimized for real-world utility.
+
+We are powering a payment-first infrastructure where over 120 million Bitget and Bitget Wallet users can transact, pay, and access DeFi with native speed and usability.
+Our mission is clear: democratize onchain payments and bridge crypto to real-world commerce, unlocking practical utility at internet scale.
 
 
 ### Getting Started
@@ -77,7 +76,7 @@ To help you navigate through our resources, here’s a quick guide:
 </CardGroup>
 
 
-### Core Products
+### Core Product
 
 #### Morph Rails
 
@@ -94,4 +93,5 @@ To get started:
 Join the community and stay up to date:  
 𝕏: [x.com/MorphLayer](https://x.com/MorphLayer)  
 Discord: [discord.gg/MorphLayer](https://discord.gg/MorphLayer)  
-Telegram: [t.me/MorphL2official](https://t.me/MorphL2official)  
+Telegram: [t.me/MorphL2official](https://t.me/MorphL2official)
+Morph Builder X: [x.com/MorphDevs](https://x.com/MorphDevs)
