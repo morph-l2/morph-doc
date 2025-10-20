@@ -7,7 +7,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 import { CardGroup, Card } from '@site/src/components/Card'
 
-![userpage](../../assets/docs/about/settlementlayer.png)
+![userpage](../../assets/docs/about/settlementlayer.jpg)
 
 Welcome to Morph, the settlement layer for a global payment network. Morph is also the onchain home of BGB. If you're a developer looking for more information about our technology architecture and how to deploy on Morph, head directly to our technical documentation. If you're here for the first time or want to understand what we're building for the payments ecosystem, then you're in the right place. Follow along this documentation starting here.
 
