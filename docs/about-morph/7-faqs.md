@@ -13,9 +13,6 @@ Morph uses a hybrid rollup architecture called Optimistic zkEVM with **Responsiv
 
 Morph is purpose-built for **onchain consumer finance** and offers both a user-facing experience and a developer infrastructure layer:
 
-- **Morph Pay** – A super-app wallet that supports identity verification, multi-currency balances, digital cards, real-time FX, yield products, and built-in rewards
-
-
 - **Morph Rails** – A permissionless, composable infrastructure layer for developers and merchants to build payments, FX, payroll, compliance, and rewards directly into their applications
 
 
@@ -58,15 +55,6 @@ Morph’s canonical bridge currently has a 48-hour challenge window on mainnet. 
 
 Yes. Morph supports sponsored transactions through Morph Pay and developer-integrated flows. This allows dApps to cover user gas costs for smoother onboarding. Sponsored transactions will expand further with Morph Rails integrations.
 
-## What is Morph Pay?
-
-Morph Pay is the primary wallet interface for the Morph ecosystem. It allows users to:  
-- Complete identity verification
-- Hold and manage multi-currency balances
-- Activate a digital payment card
-- Swap between currencies with the Onchain FX Module
-- Earn rewards and yield on idle balances
-- Access ecosystem campaigns and token-gated features
 
 ## What is Morph Rails?
 
