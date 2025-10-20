@@ -61,7 +61,7 @@ Works for wallet providers, fintech issuers, DeFi protocols, and merchants. Supp
 
 ## How Morph Rails Fits Into the Ecosystem
 
-Morph Rails is the core infrastructure layer in Morph’s onchain consumer finance stack.  
+Morph Rails is the core infrastructure layer in Morph’s onchain payment ecosystem.  
 
 - Provides the rails that other apps run on
 
