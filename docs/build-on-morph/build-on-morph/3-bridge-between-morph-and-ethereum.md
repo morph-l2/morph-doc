@@ -97,16 +97,16 @@ Currently, our canonical bridge only supports certain pre-defined tokens to be b
 
 ### Add Tokens to the gateway through Morph Bridge Frontend
 
-The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-holesky.morphl2.io/), you can simply do it with the following steps:
+The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-hoodi.morphl2.io), you can simply do it with the following steps:
 
-1. Click the token selection button on Morph Holesky Bridge
+1. Click the token selection button on Morph Hoodi Bridge
 
-![tokenlist1](../../../assets/docs/protocol/general/bridge/tokenlist/tokenlist1.png)
+![tokenlist1](../../../assets/docs/protocol/general/bridge/tokenlist/hoodiBridge.jpg)
 
 
 2. Input & Confirm your desire Ethereum token contract address under the custom token section
 
-![tokenlist2](../../../assets/docs/protocol/general/bridge/tokenlist/tokenlist2.png)
+![tokenlist2](../../../assets/docs/protocol/general/bridge/tokenlist/hoodiBridgeStep2.jpg)
 
 3. Get the Layer 2 token contract address and confirm it.
 
