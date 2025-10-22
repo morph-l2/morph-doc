@@ -37,3 +37,67 @@
 @font-face { font-family: "InterDisplay"; font-style: italic; font-weight: 800; font-display: swap; src: url("/fonts/InterDisplay-ExtraBoldItalic.woff2") format("woff2"); }
 @font-face { font-family: "InterDisplay"; font-style: normal; font-weight: 900; font-display: swap; src: url("/fonts/InterDisplay-Black.woff2") format("woff2"); }
 @font-face { font-family: "InterDisplay"; font-style: italic; font-weight: 900; font-display: swap; src: url("/fonts/InterDisplay-BlackItalic.woff2") format("woff2"); }
+
+
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-Bold.woff2") format("woff2"),
+    url("/fonts/denim/DenimINK-Bold.woff") format("woff"),
+    url("/fonts/denim/DenimINK-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-BoldItalic.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-Heavy.otf") format("ttf");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-Light.otf") format("ttf");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-Medium.woff2") format("woff2"),
+    url("/fonts/denim/DenimINK-Medium.woff") format("woff"),
+    url("/fonts/denim/DenimINK-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-Regular.woff2") format("woff2"),
+    url("/fonts/denim/DenimINK-Regular.woff") format("woff"),
+    url("/fonts/denim/DenimINK-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Denim INK";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/denim/DenimINK-WDSemiBold.otf") format("opentype");
+}

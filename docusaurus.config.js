@@ -178,8 +178,8 @@ const config = {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'logo/LogoMorphGreen-summary.svg',
-          srcDark: 'logo/LogoMorphGreen-summary.svg',
+          src: 'logo/LogoMorphBlack-summary.svg',
+          srcDark: 'logo/LogoMorphWhite-summary.svg',
         },
         items: [
           {
@@ -269,10 +269,10 @@ const config = {
                 label: "Careers",
                 href: links.careers,
               },
-              {
-                label: "Brand Kit",
-                href: links.brandkit,
-              }
+              // {
+              //   label: "Brand Kit",
+              //   href: links.brandkit,
+              // }
             ],
           },
         ],
