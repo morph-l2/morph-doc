@@ -9,8 +9,6 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 
 
-![website faucet](../../assets/docs/quick-start/faucet/web_faucet.jpg)
-
 ## Our Faucet is Live
 
 
@@ -45,8 +43,6 @@ You can obtain the Morph Hoodi ETH in our discord too for development purposes.
 Using the */morph_eth* command followed by your wallet address to receive 0.01 Morph Hoodi ETH.
 
 If successful, you will see a confirmation message.
-
-![success](../../assets/docs/quick-start/faucet/faucet_eth.png)
 
 ### ERC20 USDT
 
