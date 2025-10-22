@@ -35,7 +35,7 @@ wss://rpc-quicknode.morphl2.io
 
 Explorer API: https://explorer-api.morphl2.io/api
 
-Testnet Explorer API: https://explorer-hoodi-api.morphl2.io/api
+Testnet Explorer API: https://explorer-hoodi.morphl2.io/api-docs
 
 
 For detail guide on how to verify your contract on Morph explorer, [click here](../build-on-morph/5-verify-your-smart-contracts.md)
