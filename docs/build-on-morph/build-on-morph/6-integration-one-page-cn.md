@@ -9,10 +9,10 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 | 网络 | 链 ID | RPC URL | 区块浏览器 |
 | --- | --- | --- | --- |
-| Morph 主网 | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io/](https://explorer.morphl2.io/) |
-| Ethereum 主网 | 1 | [https://ethereum-rpc.publicnode.com/](https://ethereum-rpc.publicnode.com/) | [https://etherscan.io/](https://etherscan.io/) |
-| Morph Holesky 测试网 | 2810 | [https://rpc-quicknode-holesky.morphl2.io](https://rpc-quicknode-holesky.morphl2.io) | [https://explorer-holesky.morphl2.io/](https://explorer-holesky.morphl2.io/) |
-| Holesky 测试网 | 17000 | [https://ethereum-holesky-rpc.publicnode.com/](https://ethereum-holesky-rpc.publicnode.com/) | [https://holesky.etherscan.io/](https://holesky.etherscan.io/) |
+| Morph 主网 | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io/](https://explorer.morphl2.io) |
+| Ethereum 主网 | 1 | [https://ethereum-rpc.publicnode.com/](https://ethereum-rpc.publicnode.com) | [https://etherscan.io/](https://etherscan.io) |
+| Morph Hoodi 测试网 | 2810 | [https://rpc-quicknode-hoodi.morphl2.io](https://rpc-quicknode-hoodi.morphl2.io) | [https://explorer-hoodi.morphl2.io/](https://explorer-hoodi.morphl2.io) |
+| Hoodi 测试网 | 17000 | [https://ethereum-hoodi-rpc.publicnode.com/](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
 
 
 请注意，我们已为公共 RPC 访问设置了速率限制，目前为每个 IP 每分钟 600 次请求。
@@ -29,13 +29,13 @@ wss://rpc-quicknode.morphl2.io
 
 [官方主网浏览器](https://explorer.morphl2.io)
 
-[官方测试网浏览器](https://explorer-holesky.morphl2.io)
+[官方测试网浏览器](https://explorer-hoodi.morphl2.io)
 
 [浏览器 API 文档](https://explorer.morphl2.io/api-docs)
 
 浏览器 API: https://explorer-api.morphl2.io/api
 
-测试网浏览器 API: https://explorer-holesky-api.morphl2.io/api
+测试网浏览器 API: https://explorer-hoodi-api.morphl2.io/api
 
 
 有关如何在 Morph 浏览器上验证您的合约的详细指南，[点击这里](../build-on-morph/5-verify-your-smart-contracts.md)
@@ -44,7 +44,7 @@ wss://rpc-quicknode.morphl2.io
 
 [官方桥](https://bridge.morphl2.io)
 
-[官方测试网桥](https://bridge-holesky.morphl2.io)
+[官方测试网桥](https://bridge-hoodi.morphl2.io)
 
 :::tip 提现和存款时间
 
