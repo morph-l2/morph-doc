@@ -17,7 +17,7 @@ const config = {
 
   title: 'Morph docs – The Optimistic zkEVM Scaling Solution docs',
   tagline: '',
-  favicon: 'https://www.morphl2.io/favicon.ico',
+  favicon: '/favicon.ico',
 
   staticDirectories: ['public', 'static'],
 
