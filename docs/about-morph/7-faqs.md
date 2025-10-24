@@ -11,10 +11,7 @@ Morph uses a hybrid rollup architecture called Optimistic zkEVM with **Responsiv
 
 ## What Sets Morph Apart from Others?
 
-Morph is purpose-built for **onchain consumer finance** and offers both a user-facing experience and a developer infrastructure layer:
-
-- **Morph Pay** – A super-app wallet that supports identity verification, multi-currency balances, digital cards, real-time FX, yield products, and built-in rewards
-
+Morph is purpose-built as a dedicated payment ecosystem and serves both everyday users and developers.
 
 - **Morph Rails** – A permissionless, composable infrastructure layer for developers and merchants to build payments, FX, payroll, compliance, and rewards directly into their applications
 
@@ -43,7 +40,6 @@ Morph’s L2 Base Fee is currently 0.001 gwei. You only need to pay the base fee
 
 Morph follows the same rules as Ethereum mainnet and other EIP-1559 networks. If your transaction is pending, you can resend it with the same nonce and a higher gas price to replace the original. Many wallets have built-in “Speed Up” or “Accelerate” features to make this easy.
 
-
 ## My transaction is still pending. What should I do?
 
 On testnet, transactions with a priority fee below 0.01 gwei will not be processed to prevent spam. Resubmit with a higher priority fee.  
@@ -52,21 +48,6 @@ On testnet, transactions with a priority fee below 0.01 gwei will not be process
 ## How long does it take to withdraw funds from Morph?
 
 Morph’s canonical bridge currently has a 48-hour challenge window on mainnet. This is part of the security model for optimistic rollups. For faster withdrawals, you can use supported third-party bridges that use liquidity pools to provide near-instant exits.
-
-
-## Does Morph support gasless transactions?
-
-Yes. Morph supports sponsored transactions through Morph Pay and developer-integrated flows. This allows dApps to cover user gas costs for smoother onboarding. Sponsored transactions will expand further with Morph Rails integrations.
-
-## What is Morph Pay?
-
-Morph Pay is the primary wallet interface for the Morph ecosystem. It allows users to:  
-- Complete identity verification
-- Hold and manage multi-currency balances
-- Activate a digital payment card
-- Swap between currencies with the Onchain FX Module
-- Earn rewards and yield on idle balances
-- Access ecosystem campaigns and token-gated features
 
 ## What is Morph Rails?
 

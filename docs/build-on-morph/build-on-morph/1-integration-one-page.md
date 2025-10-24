@@ -35,7 +35,7 @@ wss://rpc-quicknode.morphl2.io
 
 Explorer API: https://explorer-api.morphl2.io/api
 
-Testnet Explorer API: https://explorer-hoodi-api.morphl2.io/api
+Testnet Explorer API: https://explorer-hoodi.morphl2.io/api-docs
 
 
 For detail guide on how to verify your contract on Morph explorer, [click here](../build-on-morph/5-verify-your-smart-contracts.md)
@@ -80,11 +80,11 @@ Each block can have 100 transactions maximum and we will keep raising the limit.
 
 ### Important Contracts
 
-We have documented all the important contracts on Morph, you can find them [here](../developer-resources/1-contracts.md)
+We have documented all the important contracts on Morph, you can find them [here](../developer-resources/1-contracts.md).
 
 ### Node Deployment
 
-Right now we support you to run the Morph node (full node and validator node) in docker and run on host.
+Right now, we support you to run the Morph node (full node and validator node) in docker and run on host.
 
 You can check the [node deployment guide](../developer-resources/node-operation/full-node/1-run-in-docker.md) for more details.
 

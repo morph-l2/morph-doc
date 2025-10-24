@@ -5,12 +5,13 @@ keywords: [morph,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-Morph’s vision is to power the future of onchain consumer finance. We believe blockchain should be a practical, accessible tool that supports everyday life, not a technology reserved for specialists. Our goal is to make financial tools as seamless and essential as any other core service in the digital economy.
+Morph is evolving into a dedicated payment ecosystem, reimagining how value flows onchain. We are creating the settlement layer that turns stablecoins into everyday currency, seamless and borderless, while unlocking utility for over 120 million Bitget and Bitget Wallet users in payments and DeFi. Morph aims to democratize onchain payments and bridge the gap between crypto and real-world utility. 
 
+**Vision:** A world in which money moves as freely as information - for everyone, everywhere.
 
 ## Bridging the Gap
 
-Our mission is to build a global ecosystem of onchain consumer applications on fully decentralized infrastructure. Morph was created to address the gap in blockchain solutions, where technical focus often outweighs user experience. We prioritize usability, speed, and reliability so both consumers and developers can benefit from blockchain without friction.  
+Our mission is to build the universal infrastructure for borderless payments and financial services, empowering developers, businesses, and users to transact and innovate on one global settlement layer. Morph exists to turn stablecoins into real everyday currency and unlock real-world utility at a global scale.  
 
 Morph enables this through:  
 
