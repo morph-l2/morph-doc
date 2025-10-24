@@ -112,13 +112,6 @@ wss://rpc-hoodi.morphl2.io
 
 :::
 
-<!--
-### Tendermint Consensus Information
-
-Tendermint RPC: https://rpc-consensus-holesky.morphl2.io
-
-Tendermint RPC Documentation: https://docs.tendermint.com/v0.34/rpc/#/
--->
 ## Step 2: Set up your development framework
 
 ### Hardhat
@@ -147,7 +140,6 @@ To deploy using Morph Public RPC, run:
 ```jsx
 forge create ... --rpc-url= --legacy
 ```
-
 
 
 ### ethers.js
