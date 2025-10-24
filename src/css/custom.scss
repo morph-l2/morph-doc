@@ -14,7 +14,7 @@
  
  /* You can override the default Infima variables here. */
 [data-theme='light'] {
-  --ifm-color-primary: #14A800;
+  --ifm-color-primary: #18C900;
   --ifm-color-primary-dark: #3fff90;
   --ifm-color-primary-darker: #2dff85;
   --ifm-color-primary-darkest: #00f768;
@@ -30,7 +30,7 @@
 
   --ifm-color-emphasis-600: #fff;
 
-  /* #14A800 */
+  /* #18C900 */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -64,7 +64,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #14A800;
+  --ifm-color-primary: #18C900;
   --ifm-color-primary-dark: #3fff90;
   --ifm-color-primary-darker: #2dff85;
   --ifm-color-primary-darkest: #00f768;
@@ -88,7 +88,7 @@
 
   --ifm-color-emphasis-200: '#fff',
 
-  --ifm-menu-color: '#14A800',
+  --ifm-menu-color: '#18C900',
   /* --ifm-menu-color: rgba(120, 124, 128, 1);
   --ifm-menu-color-active: #fff !important; */
 
@@ -112,15 +112,15 @@
 }
 .menu__link:hover {
   // background-color: #F3F7F2;
-  color: #14A800;
+  color: #18C900;
 }
 [data-theme=light] .menu__list-item--collapsed .menu__link:hover {
   // background-color: #F3F7F2;
-  color: #14A800;
+  color: #18C900;
 }
 [data-theme=dark] .menu__list-item--collapsed .menu__link:hover {
   // background-color: #F3F7F2;
-  color: #14A800;
+  color: #18C900;
 }
 .navbar.navbar--fixed-top {
   border-bottom: 1px solid #DEDEDD;
@@ -199,7 +199,7 @@
     }
     & .menu__link:hover {
       // background-color: #F3F7F2;
-      color: #14A800;
+      color: #18C900;
     }
     & .menu__link.menu__link--active {
       color: #fff;
@@ -217,7 +217,7 @@
     }
     & .menu__link:hover {
       // background-color: #F3F7F2;
-      color: #14A800;
+      color: #18C900;
     }
     & .menu__link.menu__link--active {
       color: #fff;
@@ -235,14 +235,14 @@
   color: #646560;
   & .menu__link:hover {
     // background-color: #F3F7F2;
-    color: #14A800;
+    color: #18C900;
   }
 }
 [data-theme='dark'] .theme-doc-sidebar-item-category-level-1 .menu__list-item-collapsible {
   color: #BCBDBB;
   & .menu__link:hover {
     // background-color: #F3F7F2;
-    color: #14A800;
+    color: #18C900;
   }
 }
 
@@ -550,11 +550,11 @@ height: 32px;
 
 .theme-doc-sidebar-item-link-level-1.menu__list-item .menu__link.menu__link--active:not(.menu__link--sublist) {
   background-color: var(--ifm-menu-color-background-active) / 50%;
-  color: #14A800;
+  color: #18C900;
   font-weight: 500;
 }
 .theme-doc-sidebar-item-link-level-1.menu__list-item .menu__link:hover {
-  color: #14A800;
+  color: #18C900;
 }
 .theme-doc-sidebar-item-link-level-1.menu__list-item .menu__link {
   font-family: "Inter Display";
@@ -575,6 +575,6 @@ height: 32px;
 .menu__list .theme-doc-sidebar-item-link-level-3.menu__list-item .menu__link.menu__link--active,
 .menu__list .theme-doc-sidebar-item-link-level-4.menu__list-item .menu__link.menu__link--active,
 .menu__list .theme-doc-sidebar-item-category-level-1 .menu__list-item--collapsed .menu__link.menu__link--active {
-  color: #14A800;
+  color: #18C900;
   font-weight: 500;
 }

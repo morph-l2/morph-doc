@@ -50,7 +50,7 @@ export const Card = ({
   };
 
   return <a href={href} target={href?.startsWith('http') ? "_blank" : "_self"} className={cls("no-underline items-center hover:no-underline bg-card-background cursor-pointer rounded-[4px] text-card-text border border-solid border-card-border py-5 px-4 flex flex-row", {
-    'hover:border-[#14A800] hover:text-brand': href
+    'hover:border-[#18C900] hover:text-brand': href
   })}>
     {/* <img className="w-6 h-6" src={icon} /> */}
     <ThemedImage
