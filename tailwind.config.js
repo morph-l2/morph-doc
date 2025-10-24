@@ -122,7 +122,7 @@ module.exports = {
 
             "card-background": "#F3F7F2",
             "card-text": "#21231C",
-            "card-border": "#1085001A",
+            "card-border": "#18C9001A",
 
             brand: "#18C900",
             "brand-high": "#18C900",
