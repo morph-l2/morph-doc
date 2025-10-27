@@ -6,7 +6,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ---
 
 
-![RVP](../../../assets/docs/protocol/dese/dseq1.jpg)
+![RVP](../../../assets/docs/protocol/dese/dseqnew.jpg)
 
 
 ## The Importance of Decentralized Sequencers
