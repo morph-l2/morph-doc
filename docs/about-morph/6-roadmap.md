@@ -6,18 +6,24 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 ---
 
 
-![1](../../assets/docs/about/roadmap/newroadmap.jpg)
-
+![1](../../assets/docs/about/roadmap/newroadmap2.jpg)
 
 
 ## 2025 Q4: Foundations and Rails
-Enhance EVM compatibility with EIP-7702 and ERC-20 gas support for stablecoins and BGB. Launch Morph Rails as a permissionless payment rail with modules for checkout, FX, and billing. Roll out ecosystem standards for merchants.
 
-## 2026 Q1: Scaling and Incentives
-Boost throughput with higher gas limits and onchain merchant keys. Launch the Onchain Merchant Acquiring Network and Morph Earn rewards. Kick off developer incentives.
+- Enhance EVM compatibility: Add EIP-7702, support ERC-20 for gas fees (stablecoins/BGB), and introduce new EVM precompiles and opcodes.
+- Performance improvements: Achieve block times as fast as 300ms.
 
-## 2026 Q2: Friction Free and Enterprise
-Enable zero-fee stablecoin transfers and cross-border invoicing. Introduce modular blocks for payouts and compliance, and launch Morph OTC for secure trading.
+## 2026 H1: Scaling and Incentives
 
-## 2026 Q3–Q4: Privacy and Speed
-Upgrade to MPT for faster proofs, enhance read/write privacy, and open BGB staking for sequencers. Push TPS beyond 10,000 with optimized consensus.
+- Increase scalability: Raise gas limit to 45M and expand batch processing across blobs.
+- On-chain merchant solutions: Implement merchant keys and support PBSS nodes.
+- Zero-fee stablecoins: Enable zero-fee transfers for stablecoins.
+- Consensus optimization: Improve overall system consensus.
+
+## 2026 H2: Privacy, Staking, and Speed
+
+- Privacy enhancements: Implement read/write privacy features.
+- Staking and validation: Introduce BGB sequencer staking and BLS validation on rollups.
+- Performance boost: Achieve over 10,000 transactions per second (TPS).
+- Developer tools: Launch the Reth client for further development and optimizations.
