@@ -5,7 +5,7 @@ keywords: [morph,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-![RVP](../../assets/docs/protocol/resvapro/rvpbanner1.jpg)
+![RVP](../../assets/docs/protocol/resvapro/rvpbannernew.jpg)
 
 ## Introduction to State Verification
 
