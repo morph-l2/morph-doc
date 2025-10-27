@@ -13,7 +13,7 @@ Read more about what you can get here:
 
 [QuickNode Partnership](https://quicknode.notion.site/QuickNode-Benefits-for-Morph-Developers-4baf42f78dd64f389a2405e61350a0a6)
 
-![QuickNode](../../../../assets/docs/dev/resources/quicknode.png)
+![QuickNode](../../../../assets/docs/dev/resources/quicknode2.jpg)
 
 ### Tenderly
 
