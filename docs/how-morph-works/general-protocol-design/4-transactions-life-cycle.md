@@ -23,7 +23,7 @@ When batch point is reached, each sequencer will need to construct the batch wit
 6. Batch Sequencing  
 The [selected sequencer](../general-protocol-design/1-rollup.md) will commit the batches to the Layer 1 Rollup contract for both verification and to ensure data availability.
    
-7. Batch Verification 
+7. Batch Verification  
 A batch (so do the transactions within the batch) will first go through the BLS signature verification by the rollup contract to confirm the L2 consensus results, and then a batch will go through a [challenge period](../3-optimistic-zkevm.md) to be marked as finalized, solidifying their status within the L1 and L2 state.
 
 ## Morph Transaction Status
