@@ -255,6 +255,10 @@ const developerSidebar =[
               type: 'doc',
               id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/decentralized-naming-services'
             },
+            {
+              type: 'doc',
+              id:'build-on-morph/developer-resources/use-ecosystem-developer-tools/monitoring'
+            },
           ]
         },
         {
