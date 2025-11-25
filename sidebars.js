@@ -342,11 +342,6 @@ const developerSidebar =[
         },
         {
           type: 'link',
-          href: "https://explorer-hoodi.morphl2.io/",
-          label: 'Morph Hoodi Explorer'
-        },
-        {
-          type: 'link',
           href: "https://hoodi.etherscan.io/",
           label: 'Ethereum Hoodi Explorer'
         },
