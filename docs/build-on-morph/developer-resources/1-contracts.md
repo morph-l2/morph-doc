@@ -20,7 +20,7 @@ lang: en-US
 | Network Name | Morph Hoodi Testnet | Ethereum Hoodi Testnet |
 | --- | --- | --- |
 | RPC URL | https://rpc-hoodi.morphl2.io| https://ethereum-hoodi-rpc.publicnode.com |
-| Chain ID | 2910 | 560048 |
+| Chain ID | 2810 | 560048 |
 | Currency Symbol | ETH | ETH |
 | Block Explorer URL | https://explorer-hoodi.morphl2.io| https://hoodi.etherscan.io |
 
