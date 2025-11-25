@@ -95,10 +95,6 @@ Find detailed API methods, contract addresses, and other useful resources.
     href="/docs/build-on-morph/developer-resources/dapp-examples-on-morph"
     icon="/img/cards/guide.svg"
     text="Dapp Examples" />
-  <Card
-    href="/docs/build-on-morph/developer-resources/morph-json-rpc-api-methods"
-    icon="/img/cards/tools.svg"
-    text="Morph JSON-RPC API" />
 </CardGroup>
 
 ### Engage in Our Developer Community​
@@ -106,7 +102,7 @@ Find detailed API methods, contract addresses, and other useful resources.
 We are actively enhancing the network with more integrations and support infrastructure as we progress toward our mainnet launch.  
 Join our developer community:
 
-- [Discord](https://discord.com/invite/MorphLayer)
+- [Discord](https://discord.gg/invite/MorphNetwork)
 - [𝕏](https://twitter.com/MorphLayer)  
 - [Morph Builder X](https://x.com/MorphDevs)
 

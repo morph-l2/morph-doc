@@ -53,10 +53,10 @@ export const links = {
 
   // social
   medium: 'https://blog.morphl2.io/',
-  twitter: 'https://x.com/MorphLayer',
-  telegram: 'https://t.me/MorphL2official',
+  twitter: 'https://x.com/MorphNetwork',
+  telegram: 'https://t.me/MorphGlobal',
   // 'https://t.me/+qslsWvH2_-1iMTdl',
-  discord: 'https://discord.com/invite/MorphLayer',
+  discord: 'https://discord.gg/invite/MorphNetwork',
   linkedIn: 'http://www.linkedin.com/company/morphl2',
 
   facebook: 'https://www.facebook.com/profile.php?id=61554448708419',
@@ -75,5 +75,5 @@ export const links = {
   sepoliafaucet: "https://sepoliafaucet.com/",
   usdtfaucet: "https://discord.com/channels/1156486804661338162/1199665829730582620",
 
-  community: 'https://x.com/MorphLayer',
+  community: 'https://x.com/MorphNetwork',
 }

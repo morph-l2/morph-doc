@@ -11,19 +11,19 @@ Our decentralized sequencer design and innovative Layer 2 approach address block
 1. [What is & Why Responsive Validity Proof?](https://docs.morphl2.io/docs/how-morph-works/optimistic-zkevm)
 
 
-2. [How Does RVP Run in Morph?](https://medium.com/@morphlayer2/how-does-rvp-run-in-morph-6025233a21cc)
+2. [How Does RVP Run in Morph?](https://medium.com/@morphlayer/how-does-rvp-run-in-morph-6025233a21cc)
 
 
-3. [Morph's Origins and Aspirations](https://medium.com/@morphlayer2/morphys-origins-and-aspirations-7afc0280a8e2)
+3. [Morph's Origins and Aspirations](https://medium.com/@morphlayer/morphys-origins-and-aspirations-7afc0280a8e2)
 
 ## Learn more
 
 Website: https://www.morphl2.io/
 
-Twitter: https://x.com/MorphLayer
+Twitter: https://x.com/MorphNetwork
 
-Medium: [Morph – Medium](https://medium.com/@morphlayer2)
+Medium: [Morph – Medium](https://medium.com/@morphlayer)
 
-Telegram: https://t.me/MorphL2official
+Telegram: https://t.me/MorphGlobal
 
 Gmail: official@morphl2.io
