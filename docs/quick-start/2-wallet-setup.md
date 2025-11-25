@@ -52,7 +52,7 @@ In some cases, the **Add to Wallet** feature may not work with all wallets. If t
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
 | Morph Mainnet            | https://rpc-quicknode.morphl2.io       | 2818   | https://explorer.morphl2.io      | ETH      |
 | Ethereum Mainnet            | https://ethereum-rpc.publicnode.com       | 1   | https://etherscan.io      | ETH      |
-| Morph Hoodi Testnet             | https://rpc-hoodi.morphl2.io       | 2810    | https://explorer-hoodi.morphl2.io      | ETH      |
+| Morph Hoodi Testnet             | https://rpc-hoodi.morphl2.io       | 2910    | https://explorer-hoodi.morphl2.io      | ETH      |
 | Ethereum Hoodi            | https://ethereum-hoodi-rpc.publicnode.com       | 17000    | https://hoodi.etherscan.io      | ETH      |
 
 
