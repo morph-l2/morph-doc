@@ -246,6 +246,14 @@
   }
 }
 
+.feature-p, .menu__list .menu__link.menu__link--sublist.menu__link--sublist-caret,
+.menu__list .theme-doc-sidebar-item-category-level-1 .menu__list-item--collapsed .menu__link,
+.menu__list .theme-doc-sidebar-item-link-level-2.menu__list-item .menu__link,
+.menu__list .theme-doc-sidebar-item-link-level-3.menu__list-item .menu__link,
+.menu__list .theme-doc-sidebar-item-link-level-4.menu__list-item .menu__link {
+  display: flex;
+}
+
 .main-wrapper,
 .container {
   min-height: 100%;
