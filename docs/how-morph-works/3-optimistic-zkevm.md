@@ -150,6 +150,9 @@ These addresses are responsible for monitoring the L2 state changes and respondi
 
 #### Challenger Address List
 
+- [0x731a89035F88Bde8fB7357AaAD6620F4716aC1be](https://etherscan.io/address/0x731a89035F88Bde8fB7357AaAD6620F4716aC1be) - [Hashkey](https://www.hashkey.com/)
+- [0x111bc31f5cfe920004fd17449bdb5e476c02aec5](https://etherscan.io/address/0x111bc31f5cfe920004fd17449bdb5e476c02aec5) - [Metis](https://www.metis.io/)
+- [0x3b065b18edffc7cf3d751e33d45c1fb4fd78d57b](https://etherscan.io/address/0x3b065b18edffc7cf3d751e33d45c1fb4fd78d57b) - [L2scan](https://www.l2scan.co/)
 - [0x77b29534738e3f0f297d36635d7884965c7c8ce1](https://etherscan.io/address/0x77b29534738e3f0f297d36635d7884965c7c8ce1) - [Morph](https://morphl2.io)
 - [0x95417708f67f4a5df1a447efe40c6c74e38ab832](https://etherscan.io/address/0x95417708f67f4a5df1a447efe40c6c74e38ab832) - [Morph](https://morphl2.io)
 - [0xd11f9c4f5d9b1fec2d14581d3674066442b68772](https://etherscan.io/address/0xd11f9c4f5d9b1fec2d14581d3674066442b68772) - [Morph](https://morphl2.io)
