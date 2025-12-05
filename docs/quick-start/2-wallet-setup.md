@@ -32,7 +32,7 @@ To interact with dApps on Morph, you need a compatible wallet. Below are some ex
 - **Installation**: Download MetaMask from the [official website](https://metamask.io/download/).
 
 - **Importing Configurations**: 
-- To set up MetaMask for Morph, click the "add to wallet" button on the [Morph Hoodi block explorer page](https://explorer.morphl2.io/). This will automatically import the chain ID and RPC URLs for both Morph Mainnet and Testnet.  
+- To set up MetaMask for Morph, click the "add to wallet" button on the [Morph Hoodi block explorer page](https://explorer.morph.network/). This will automatically import the chain ID and RPC URLs for both Morph Mainnet and Testnet.  
 
 - **Using Ethereum Hoodi Testnet**: 
 - Morph Testnet runs on the Ethereum Hoodi testnet as its L1. This network is already pre-configured in MetaMask. To enable it, go to the network selection dropdown, click Show/Hide test networks, and toggle it on.
@@ -50,9 +50,9 @@ In some cases, the **Add to Wallet** feature may not work with all wallets. If t
 
 | Name                      | RPC Url(s)                            | Chain ID | Block explorer             | Symbol |
 | -------- | -------------------------- | ------------- | ---------- | ------------------------------------ |
-| Morph Mainnet            | https://rpc-quicknode.morphl2.io       | 2818   | https://explorer.morphl2.io      | ETH      |
+| Morph Mainnet            | https://rpc-quicknode.morph.network       | 2818   | https://explorer.morph.network      | ETH      |
 | Ethereum Mainnet            | https://ethereum-rpc.publicnode.com       | 1   | https://etherscan.io      | ETH      |
-| Morph Hoodi Testnet             | https://rpc-hoodi.morphl2.io       | 2910    | https://explorer-hoodi.morphl2.io      | ETH      |
+| Morph Hoodi Testnet             | https://rpc-hoodi.morph.network       | 2910    | https://explorer-hoodi.morph.network      | ETH      |
 | Ethereum Hoodi            | https://ethereum-hoodi-rpc.publicnode.com       | 17000    | https://hoodi.etherscan.io      | ETH      |
 
 
