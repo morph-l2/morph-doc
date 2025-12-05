@@ -14,7 +14,7 @@ Please refer to the [Morph Season 2 - Bridge Guide.](https://morph.ghost.io/how-
 
 ## Instructions:
 
-1. Go to the Morph Hoodi Bridge: https://bridge-hoodi.morphl2.io
+1. Go to the Morph Hoodi Bridge: https://bridge-hoodi.morph.network
 2. Open MetaMask and switch to the **Hoodi** network.
 3. In the Morph Bridge app, click **Connect Wallet**, select MetaMask, and approve the connection.
 4. Ensure **Hoodi** is selected under “From” and **Morph L2** under “To”. If not, click the ↓ button to switch them.
