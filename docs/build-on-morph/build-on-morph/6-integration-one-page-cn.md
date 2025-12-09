@@ -9,9 +9,9 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 | 网络 | 链 ID | RPC URL | 区块浏览器 |
 | --- | --- | --- | --- |
-| Morph 主网 | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io/](https://explorer.morphl2.io) |
+| Morph 主网 | 2818 | [https://rpc-quicknode.morph.network](https://rpc-quicknode.morph.network) | [https://explorer.morph.network/](https://explorer.morph.network) |
 | Ethereum 主网 | 1 | [https://ethereum-rpc.publicnode.com/](https://ethereum-rpc.publicnode.com) | [https://etherscan.io/](https://etherscan.io) |
-| Morph Hoodi 测试网 | 2810 | [https://rpc-quicknode-hoodi.morphl2.io](https://rpc-quicknode-hoodi.morphl2.io) | [https://explorer-hoodi.morphl2.io/](https://explorer-hoodi.morphl2.io) |
+| Morph Hoodi 测试网 | 2810 | [https://rpc-quicknode-hoodi.morph.network](https://rpc-quicknode-hoodi.morph.network) | [https://explorer-hoodi.morph.network](https://explorer-hoodi.morph.network) |
 | Hoodi 测试网 | 17000 | [https://ethereum-hoodi-rpc.publicnode.com/](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
 
 
@@ -21,30 +21,30 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 :::tip Websocket 连接
 
-wss://rpc-quicknode.morphl2.io
+wss://rpc-quicknode.morph.network
 
 :::
 
 ### 浏览器信息
 
-[官方主网浏览器](https://explorer.morphl2.io)
+[官方主网浏览器](https://explorer.morph.network)
 
-[官方测试网浏览器](https://explorer-hoodi.morphl2.io)
+[官方测试网浏览器](https://explorer-hoodi.morph.network)
 
-[浏览器 API 文档](https://explorer.morphl2.io/api-docs)
+[浏览器 API 文档](https://explorer.morph.network/api-docs)
 
-浏览器 API: https://explorer-api.morphl2.io/api
+浏览器 API: https://explorer-api.morph.network/api
 
-测试网浏览器 API: https://explorer-hoodi-api.morphl2.io/api
+测试网浏览器 API: https://explorer-hoodi-api.morph.network/api
 
 
 有关如何在 Morph 浏览器上验证您的合约的详细指南，[点击这里](../build-on-morph/5-verify-your-smart-contracts.md)
 
 ### 桥信息
 
-[官方桥](https://bridge.morphl2.io)
+[官方桥](https://bridge.morph.network)
 
-[官方测试网桥](https://bridge-hoodi.morphl2.io)
+[官方测试网桥](https://bridge-hoodi.morph.network)
 
 :::tip 提现和存款时间
 
@@ -56,7 +56,7 @@ wss://rpc-quicknode.morphl2.io
 
 #### 新桥接资产支持：
 
-[将您的代币添加到官方桥](https://docs.morphl2.io/docs/build-on-morph/build-on-morph/bridge-between-morph-and-ethereum#add-your-token-to-the-official-bridge)
+[将您的代币添加到官方桥](https://docs.morph.network/docs/build-on-morph/build-on-morph/bridge-between-morph-and-ethereum#add-your-token-to-the-official-bridge)
 
 
 您还可以使用 LayerZero 来包装您的代币：
