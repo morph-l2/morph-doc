@@ -11,7 +11,7 @@ This [demo repo](https://github.com/morph-l2/morph-examples/tree/main/contract-d
 
 :::tip
   Before you start deploying the contract, you need to request test tokens from a Hoodi faucet and use the
-  [bridge](https://bridge-hoodi.morphl2.io) to transfer some test ETH from _Hoodi_ to _Morph Hoodi_. 
+  [bridge](https://bridge-hoodi.morph.network) to transfer some test ETH from _Hoodi_ to _Morph Hoodi_. 
   
   See our [Faucet](../../quick-start/3-faucet.md) for details.
 :::
@@ -95,8 +95,8 @@ module.exports = {
         network: 'morphTestnet',
         chainId: 2810,
         urls: {
-          apiURL: 'https://explorer-api-hoodi.morphl2.io',
-          browserURL: 'https://explorer-hoodi.morphl2.io',
+          apiURL: 'https://explorer-api-hoodi.morph.network',
+          browserURL: 'https://explorer-hoodi.morph.network',
         },
       },
     ],
@@ -116,7 +116,7 @@ npx hardhat verify --network morphTestnet 0x8025985e35f1bAFfd661717f66fC5a434417
 ```
 
 
-Once successful, you can check your contract and the deployment transaction on [Morph Hoodi Explorer](https://explorer-hoodi.morphl2.io)
+Once successful, you can check your contract and the deployment transaction on [Morph Hoodi Explorer](https://explorer-hoodi.morph.network)
    
 
 ## Deploy contracts with Foundry
@@ -175,7 +175,7 @@ Verification requires some flags passed to the normal verification script. You c
   --verifier blockscout --watch
 ```
 
-Once succeeded, you can check your contract and the deployment transaction on [Morph Hoodi Explorer](https://explorer-hoodi.morphl2.io).
+Once succeeded, you can check your contract and the deployment transaction on [Morph Hoodi Explorer](https://explorer-hoodi.morph.network).
 
 
 ## Questions and Feedback
