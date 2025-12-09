@@ -9,10 +9,10 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 | 网络 | 链 ID | RPC URL | 区块浏览器 |
 | --- | --- | --- | --- |
-| Morph 主网 | 2818 | [https://rpc-quicknode.morph.network](https://rpc-quicknode.morph.network) | [https://explorer.morph.network/](https://explorer.morph.network) |
-| Ethereum 主网 | 1 | [https://ethereum-rpc.publicnode.com/](https://ethereum-rpc.publicnode.com) | [https://etherscan.io/](https://etherscan.io) |
+| Morph 主网 | 2818 | [https://rpc-quicknode.morph.network](https://rpc-quicknode.morph.network) | [https://explorer.morph.network](https://explorer.morph.network) |
+| Ethereum 主网 | 1 | [https://ethereum-rpc.publicnode.com](https://ethereum-rpc.publicnode.com) | [https://etherscan.io](https://etherscan.io) |
 | Morph Hoodi 测试网 | 2810 | [https://rpc-quicknode-hoodi.morph.network](https://rpc-quicknode-hoodi.morph.network) | [https://explorer-hoodi.morph.network](https://explorer-hoodi.morph.network) |
-| Hoodi 测试网 | 17000 | [https://ethereum-hoodi-rpc.publicnode.com/](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
+| Hoodi 测试网 | 17000 | [https://ethereum-hoodi-rpc.publicnode.com](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
 
 
 请注意，我们已为公共 RPC 访问设置了速率限制，目前为每个 IP 每分钟 600 次请求。
