@@ -34,7 +34,7 @@ See the [Development Guides](../build-on-morph/build-on-morph/2-development-setu
 
 Morph’s L2 Base Fee is currently 0.001 gwei. You only need to pay the base fee to have your transaction confirmed, as long as block capacity is not full. Priority fees are optional unless you need faster confirmation during high activity periods. Some users may raise the priority fee for campaign participation or competitive bidding, which can cause temporary spikes in the reported “average” gas price. In these cases, manually setting the gas price close to the base fee can help reduce costs.  
 
-[View an example transaction paying only the L2 Base Fee](https://explorer.morphl2.io/tx/0x5968aa54ca3072f56ee3d26602f4e8104d1239a7b1cef6847e0306f81881bf50)
+[View an example transaction paying only the L2 Base Fee](https://explorer.morph.network/tx/0x5968aa54ca3072f56ee3d26602f4e8104d1239a7b1cef6847e0306f81881bf50)
 
 ## How can I speed up a transaction on Morph?
 
