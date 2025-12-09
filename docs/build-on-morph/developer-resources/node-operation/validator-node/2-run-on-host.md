@@ -72,11 +72,11 @@ A complete record of historical snapshots is available [here](https://github.com
 
 ```bash
 ## mainnet
-wget -q --show-progress https://snapshot.morphl2.io/mainnet/${SNAPSHOT_NAME}.tar.gz
+wget -q --show-progress https://snapshot.morph.network/mainnet/${SNAPSHOT_NAME}.tar.gz
 tar -xzvf ${SNAPSHOT_NAME}.tar.gz
 
 ## hoodi
-wget -q --show-progress https://snapshot.morphl2.io/hoodi/${SNAPSHOT_NAME}.tar.gz
+wget -q --show-progress https://snapshot.morph.network/hoodi/${SNAPSHOT_NAME}.tar.gz
 tar -xzvf ${SNAPSHOT_NAME}.tar.gz
 ```
 
