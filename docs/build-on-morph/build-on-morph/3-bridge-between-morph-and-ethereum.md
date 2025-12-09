@@ -97,7 +97,7 @@ Currently, our canonical bridge only supports certain pre-defined tokens to be b
 
 ### Add Tokens to the gateway through Morph Bridge Frontend
 
-The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-hoodi.morphl2.io), you can simply do it with the following steps:
+The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-hoodi.morph.network), you can simply do it with the following steps:
 
 1. Click the token selection button on Morph Hoodi Bridge
 
