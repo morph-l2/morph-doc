@@ -23,7 +23,7 @@ The Morph starter kit helps developers quickly and efficiently, build dApps on t
 
 [Check the tutorial](https://morph.ghost.io/developer-guide-building-a-decentralized-hotel-booking-system-on-morph-2/)
 
-This guide walks you through the process of building a decentralized hotel booking system on the MorphL2 blockchain using Solidity smart contracts and a React & Wagmi front-end. This system allows hotel owners to add rooms, manage room availability, accept bookings, and receive reviews from guests.
+This guide walks you through the process of building a decentralized hotel booking system on the Morph blockchain using Solidity smart contracts and a React & Wagmi front-end. This system allows hotel owners to add rooms, manage room availability, accept bookings, and receive reviews from guests.
 
 ## Example Dapp: Building a fractionalized real-estate dApp
 
