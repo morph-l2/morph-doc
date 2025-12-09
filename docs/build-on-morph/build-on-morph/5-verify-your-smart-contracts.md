@@ -5,7 +5,7 @@ keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
-After deploying your smart contracts, it's crucial to verify your code on our [block explorer](https://explorer-hoodi.morphl2.io). This can be automated using your development framework, such as Hardhat.
+After deploying your smart contracts, it's crucial to verify your code on our [block explorer](https://explorer-hoodi.morph.network). This can be automated using your development framework, such as Hardhat.
 
 
 
@@ -32,8 +32,8 @@ module.exports = {
         network: 'morph',
         chainId: 2818,
         urls: {
-          apiURL: 'https://explorer-api.morphl2.io/api? ',
-          browserURL: 'https://explorer.morphl2.io/',
+          apiURL: 'https://explorer-api.morph.network/api? ',
+          browserURL: 'https://explorer.morph.network/',
         },
       },
     ],
@@ -48,13 +48,13 @@ Verification with foundry requires some flags passed to the normal verification 
 ```bash
  forge verify-contract YourContractAddress Counter\
   --chain 2818 \
-  --verifier-url https://explorer-api.morphl2.io/api? \
+  --verifier-url https://explorer-api.morph.network/api? \
   --verifier blockscout --watch
 ```
 
 ## Verify with Morph explorer frontend
 
-- Visit：[Morph block explorer](https://explorer.morphl2.io)
+- Visit：[Morph block explorer](https://explorer.morph.network)
 
 We currently support 6 different ways to verify your contracts on our block explorer.
 
@@ -85,7 +85,7 @@ forge flatten --output FlattenedL2StandardBridge.sol ./contracts/L2/L2StandardBr
 #### Obtain JSON File
 
 - Can be obtained through solc
-- Can be obatined through remix compiler
+- Can be obtained through remix compiler
 
 ![sjis2](../../../assets/docs/dev/contract-verify/sjisol3.png)
 
