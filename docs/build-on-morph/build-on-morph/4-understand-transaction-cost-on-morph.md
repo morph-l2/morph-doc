@@ -63,7 +63,7 @@ And other parameters:
 
 
 :::tip
-You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph mainnet at [GasPriceOracle](https://explorer.morphl2.io/address/0x530000000000000000000000000000000000000f).
+You can read the parameter values from the GasPrice oracle contract. Morph has pre-deployed `GasPriceOracle`, accessible on Morph mainnet at [GasPriceOracle](https://explorer.morph.network/address/0x530000000000000000000000000000000000000f).
 :::
 
 
