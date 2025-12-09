@@ -3,7 +3,7 @@ title: Block Explorer
 lang: en-US
 ---
 
-Besides the native [Morph explorer](https://explorer.morphl2.io/), we have also partnered with 3rd party providers for different Morph blockchain data presentations forms.
+Besides the native [Morph explorer](https://explorer.morph.network), we have also partnered with 3rd party providers for different Morph blockchain data presentations forms.
 
 ### Socialscan
 
