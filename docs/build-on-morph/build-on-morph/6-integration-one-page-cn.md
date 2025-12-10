@@ -2,7 +2,7 @@
 title: 中文开发者集成文档
 lang: zh-CN
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 ### 网络参数
