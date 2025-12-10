@@ -2,7 +2,7 @@
 title: Deploy Contracts on Morph
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 The Morph Hoodi Testnet allows anyone to deploy a smart contract on Morph. This tutorial will guide you through deploying a contract on Morph Hoodi using common Ethereum development tools.
