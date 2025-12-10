@@ -11,5 +11,5 @@ LayerZero is a messaging protocol, not a blockchain. Using smart contracts deplo
 
 You can find our network's endpoint [here](https://docs.layerzero.network/v2/developers/evm/technical-reference/deployed-contracts#morph)
 
-We wrote a complete guide on [how to leverage LayerZero's technology on Morph:](https://morph.ghost.io/layerzero-v2-morph-seamless-cross-chain-token-transfers/)
+We wrote a complete guide on [how to leverage LayerZero's technology on Morph:](https://blog.morph.network/layerzero-v2-morph-seamless-cross-chain-token-transfers/)
 
