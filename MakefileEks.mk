@@ -22,6 +22,7 @@ healthcheck-bk-test-morph-test-qanet-to-morph-doc-qanet:
 
 
 build-bk-prod-morph-prod-mainnet-to-morph-doc:
+	./resolve_innerbuild.sh
 	source ./makefile-function.sh && MFPnpmInstall && pnpm run build:mainnet
 	cp -rf nginx_sub_mainnet.conf nginx_sub.conf
 
