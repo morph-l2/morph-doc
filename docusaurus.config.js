@@ -22,7 +22,7 @@ const config = {
   staticDirectories: ['public', 'static'],
 
   // Set the production url of your site here
-  url: 'https://docs.morphl2.io',
+  url: 'https://docs.morph.network',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -66,7 +66,7 @@ const config = {
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
           {
-            to: '/docs/about-morph/user-navigation-page',
+            to: '/docs/quick-start/welcome-to-morph',
             from: ['/', '/docs'],
           },
         ],
@@ -98,7 +98,11 @@ const config = {
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: [require.resolve('./src/css/fonts.scss'), require.resolve('./src/css/custom.scss')],
+          customCss: [
+            require.resolve('./src/css/fonts.scss'), 
+            require.resolve('./src/css/custom.scss'),
+            require.resolve('./src/css/figma-overrides.scss')
+          ],
         },
       }),
     ],
@@ -125,9 +129,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      prism: {
-        additionalLanguages: ['bash', 'diff', 'json'],
-      },
       metadata: [{
         name: 'keywords',
         content: 'Morph,EVM-equivalent,Optimistic,zkEVM'
@@ -183,26 +184,29 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            position: 'right',
-            docId: 'about-morph/user-navigation-page',
-            label: 'For Users',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'GetStartedSidebar',
+            label: 'Get Started',
           },
           {
-            type: 'doc',
-            position: 'right',
-            docId: 'build-on-morph/developer-navigation-page',
-            label: 'For Developers',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'MorphChainSidebar',
+            label: 'Morph Chain',
           },
-          
-          // {label: 'Website', position: 'left', href: 'https://www.morphl2.io',},
-          /*
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'NodeOperatorsSidebar',
+            label: 'Node Operators',
           },
-          */
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'LearnSidebar',
+            label: 'Learn',
+          },
         ],
       },
       footer: {
@@ -281,6 +285,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['bash', 'diff', 'json'],
       },
     }),
 };

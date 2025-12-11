@@ -9,12 +9,12 @@ import { CardGroup, Card } from '@site/src/components/Card'
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
-    href="https://morphl2.io"
+    href="https://morph.network"
     icon="/img/cards/logo.svg"
     darkIcon="/img/cards/logo-dark.svg"
     text="LOGO 1" />
   <Card 
-    href="https://morphl2.io"
+    href="https://morph.network"
     icon="/img/cards/logo.svg"
     text="LOGO 2" />
   <Card

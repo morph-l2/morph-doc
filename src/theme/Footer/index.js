@@ -4,18 +4,11 @@ import FooterLinks from '@theme/Footer/Links';
 import FooterLogo from '@theme/Footer/Logo';
 import FooterCopyright from '@theme/Footer/Copyright';
 import FooterLayout from '@theme/Footer/Layout';
-
-import { log } from '@site/src/components/log';
+/*** import log code ***/
 
 function Footer() {
   const {footer} = useThemeConfig();
-
-  React.useEffect(() => {
-    log({
-      page: 'docs_page',
-    });
-  }, []);
-
+  /*** log code end ***/
   if (!footer) {
     return null;
   }
