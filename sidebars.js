@@ -67,10 +67,6 @@ const userSidebar =
         },
         {
           type: 'doc',
-          id:'about-morph/morph-pay'
-        },
-        {
-          type: 'doc',
           id:'about-morph/morph-rails'
         },
         {
