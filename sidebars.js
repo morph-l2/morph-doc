@@ -2,7 +2,7 @@
  * Docusaurus Sidebar Configuration
  * 
  * Important: Each document can only belong to one sidebar.
- * Use type: 'ref' to reference documents from other sidebars.
+ * Use type: 'link' with internal paths to reference documents without jumping sidebars.
  */
 
 // @ts-check
@@ -12,19 +12,22 @@
 const GetStartedSidebar = [
   'about-morph/user-navigation-page',
   {
-    type: 'link',
-    href: 'https://explorer.morph.network',
-    label: 'Explorer',
+    type: 'html',
+    value: `<a href="https://explorer.morph.network" target="_blank" rel="noopener noreferrer" class="menu__link menu__link--icon">
+      <img src="/img/menu/explorer.svg" alt="" class="menu__link-icon" />
+      <span>Explorer</span>
+      <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules--pnpm-@docusaurus+theme-classic@3-1-1_@types+react@18-3-12_acorn@8-14-0_react-dom@18-3-1_react@18-3-1_typescript@5-2-2-node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a>`,
+    className: 'sidebar-icon-link',
   },
   {
-    type: 'link',
-    href: 'https://status.morph.network',
-    label: 'Status',
-  },
-  {
-    type: 'link',
-    href: 'https://bridge.morph.network',
-    label: 'Bridge',
+    type: 'html',
+    value: `<a href="https://bridge.morph.network" target="_blank" rel="noopener noreferrer" class="menu__link menu__link--icon">
+      <img src="/img/menu/bridge.svg" alt="" class="menu__link-icon" />
+      <span>Bridge</span>
+      <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules--pnpm-@docusaurus+theme-classic@3-1-1_@types+react@18-3-12_acorn@8-14-0_react-dom@18-3-1_react@18-3-1_typescript@5-2-2-node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a>`,
+    className: 'sidebar-icon-link',
   },
   {
     type: 'category',
@@ -90,12 +93,12 @@ const MorphChainSidebar = [
     label: 'Build on Morph',
     collapsed: false,
     items: [
-      { type: 'ref', id: 'build-on-morph/intro' },
-      { type: 'ref', id: 'build-on-morph/build-on-morph/integration-one-page' },
+      { type: 'link', href: '/docs/build-on-morph/intro', label: 'Developer Docs' },
+      { type: 'link', href: '/docs/build-on-morph/build-on-morph/integration-one-page', label: 'Integration One Page' },
       'build-on-morph/developer-resources/contracts',
-      { type: 'ref', id: 'quick-start/wallet-setup' },
-      { type: 'ref', id: 'quick-start/faucet' },
-      { type: 'ref', id: 'quick-start/bridge' },
+      { type: 'link', href: '/docs/quick-start/wallet-setup', label: 'Wallet Setup' },
+      { type: 'link', href: '/docs/quick-start/faucet', label: 'Faucet' },
+      { type: 'link', href: '/docs/quick-start/bridge', label: 'Bridge' },
     ],
   },
   {
@@ -103,9 +106,9 @@ const MorphChainSidebar = [
     label: 'Developer Guides',
     collapsed: false,
     items: [
-      { type: 'ref', id: 'build-on-morph/build-on-morph/development-setup' },
-      { type: 'ref', id: 'build-on-morph/code-examples/deploy-contract-on-morph' },
-      { type: 'ref', id: 'build-on-morph/build-on-morph/verify-your-smart-contracts' },
+      { type: 'link', href: '/docs/build-on-morph/build-on-morph/development-setup', label: 'Development Setup' },
+      { type: 'link', href: '/docs/build-on-morph/code-examples/deploy-contract-on-morph', label: 'Deploy Contracts' },
+      { type: 'link', href: '/docs/build-on-morph/build-on-morph/verify-your-smart-contracts', label: 'Verify Contracts' },
       'build-on-morph/build-on-morph/bridge-between-morph-and-ethereum',
       'build-on-morph/sdk/globals',
       'build-on-morph/developer-resources/dapp-examples-on-morph',
@@ -210,11 +213,11 @@ const LearnSidebar = [
     label: 'General Protocol Design',
     collapsed: true,
     items: [
-      { type: 'ref', id: 'how-morph-works/general-protocol-design/rollup' },
-      { type: 'ref', id: 'how-morph-works/general-protocol-design/communicate-between-morph-and-ethereum' },
-      { type: 'ref', id: 'how-morph-works/general-protocol-design/transactions-life-cycle' },
-      { type: 'ref', id: 'how-morph-works/general-protocol-design/difference-between-ethereum-and-morph' },
-      { type: 'ref', id: 'build-on-morph/build-on-morph/understand-transaction-cost-on-morph' },
+      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/rollup', label: 'Rollup' },
+      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/communicate-between-morph-and-ethereum', label: 'Communication with Ethereum' },
+      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/transactions-life-cycle', label: 'Transaction Life Cycle' },
+      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/difference-between-ethereum-and-morph', label: 'Difference from Ethereum' },
+      { type: 'link', href: '/docs/build-on-morph/build-on-morph/understand-transaction-cost-on-morph', label: 'Transaction Cost' },
     ],
   },
   {
@@ -222,12 +225,12 @@ const LearnSidebar = [
     label: 'About Morph',
     collapsed: true,
     items: [
-      { type: 'ref', id: 'about-morph/the-technology-behind-morph' },
-      { type: 'ref', id: 'about-morph/morphs-architecture' },
-      { type: 'ref', id: 'about-morph/key-concepts' },
-      { type: 'ref', id: 'about-morph/roadmap' },
-      { type: 'ref', id: 'about-morph/morphs-vision-and-mission' },
-      { type: 'ref', id: 'about-morph/morph-rails' },
+      { type: 'link', href: '/docs/about-morph/the-technology-behind-morph', label: 'Technology' },
+      { type: 'link', href: '/docs/about-morph/morphs-architecture', label: 'Architecture' },
+      { type: 'link', href: '/docs/about-morph/key-concepts', label: 'Key Concepts' },
+      { type: 'link', href: '/docs/about-morph/roadmap', label: 'Roadmap' },
+      { type: 'link', href: '/docs/about-morph/morphs-vision-and-mission', label: 'Vision & Mission' },
+      { type: 'link', href: '/docs/about-morph/morph-rails', label: 'Morph Rails' },
     ],
   },
   {
@@ -235,7 +238,7 @@ const LearnSidebar = [
     label: 'Support',
     collapsed: true,
     items: [
-      { type: 'ref', id: 'about-morph/faqs' },
+      { type: 'link', href: '/docs/about-morph/faqs', label: 'FAQs' },
     ],
   },
 ];

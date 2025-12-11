@@ -161,7 +161,7 @@ export default function FooterLayout({style, links: docusaurusLinks, logo, copyr
             display: 'flex',
             gap: '80px',
             flex: 1,
-            justifyContent: 'flex-start',
+            justifyContent: 'flex-end',
           }}
         >
           {visibleFooterLinks.map((column, index) => (

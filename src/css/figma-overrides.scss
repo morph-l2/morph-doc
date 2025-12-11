@@ -126,9 +126,9 @@ h1, h2, h3, h4, h5, h6 {
   /* Collapse icon */
   &__caret:before,
   &__link--sublist-caret:after {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
   }
 }
 
@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Logo */
 .navbar__logo {
-  margin-right: 32px;
+  margin-right: 4px;
   
   img {
     height: 28px;
