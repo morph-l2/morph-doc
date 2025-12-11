@@ -6,6 +6,7 @@ LDFLAGSSTRING +=-X main.GitDate=$(GITDATE)
 LDFLAGS := -ldflags "$(LDFLAGSSTRING)"
 
 build-bk-test-morph-test-qanet-to-morph-doc-qanet:
+	./resolve_innerbuild.sh
 	source ./makefile-function.sh && MFPnpmInstall && pnpm run build:qanet
 	cp -rf nginx_sub_qanet.conf nginx_sub.conf
 
