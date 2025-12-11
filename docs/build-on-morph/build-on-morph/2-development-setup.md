@@ -178,11 +178,6 @@ https://hoodi-faucet.pk910.de
 
 https://cloud.google.com/application/web3/faucet/ethereum (needs a Google account)
 
-<!-- We have our own [website faucet](https://morphfaucet.com) that can claim ETH & USDT for your initial usage.
-
-
-Morph also offers a [Discord faucet](../../quick-start/3-faucet.md#morph-holesky-eth) to obtain Morph Hoodi USDT & Morph Hoodi ETH. ->
-
 Once you receive ETH on Hoodi, you should see it in your wallet on the *Hoodi Network*. It may take a few seconds for them to appear, but you can check the status by looking for a transaction to your address on a **[Hoodi Block Explorer](https://hoodi.etherscan.io)**.
 
 
