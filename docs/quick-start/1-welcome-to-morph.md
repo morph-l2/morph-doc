@@ -24,5 +24,5 @@ Mainnet Beta Stage: Morph is currently in the mainnet beta phase, offering a bra
 
 ### Looking for help
 
-Having issues while developing or exploring? Join our [discord channel](https://discord.com/invite/MorphLayer) and talk to us in the right channel. We would love to hear your thoughts or feedback on how we can improve your experience, too.
+Having issues while developing or exploring? Join our [discord channel](https://discord.gg/invite/MorphNetwork) and talk to us in the right channel. We would love to hear your thoughts or feedback on how we can improve your experience, too.
 

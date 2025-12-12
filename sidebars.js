@@ -119,18 +119,18 @@ const userSidebar =
         },
         {
           type: 'link',
-          href: "https://bridge-holesky.morphl2.io/",
-          label: 'Morph Holesky Official Bridge'
+          href: "https://bridge-hoodi.morphl2.io/",
+          label: 'Morph Hoodi Official Bridge'
         },
         {
           type: 'link',
-          href: "https://explorer-holesky.morphl2.io/",
-          label: 'Morph Holesky Explorer'
+          href: "https://explorer-hoodi.morphl2.io/",
+          label: 'Morph Hoodi Explorer'
         },
         {
           type: 'link',
-          href: "https://holesky.etherscan.io/",
-          label: 'Ethereum Holesky Explorer'
+          href: "https://hoodi.etherscan.io/",
+          label: 'Ethereum Hoodi Explorer'
         },
       ]
     }
@@ -336,18 +336,14 @@ const developerSidebar =[
           id:'build-on-morph/developer-resources/dapp-examples-on-morph'
         },
         {
-          type: 'doc',
-          id:'build-on-morph/developer-resources/morph-json-rpc-api-methods'
+          type: 'link',
+          href: "https://explorer-hoodi.morphl2.io/",
+          label: 'Morph Hoodi Explorer'
         },
         {
           type: 'link',
-          href: "https://explorer-holesky.morphl2.io/",
-          label: 'Morph Holesky Explorer'
-        },
-        {
-          type: 'link',
-          href: "https://holesky.etherscan.io/",
-          label: 'Ethereum Holesky Explorer'
+          href: "https://hoodi.etherscan.io/",
+          label: 'Ethereum Hoodi Explorer'
         },
         
       

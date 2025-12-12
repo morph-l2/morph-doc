@@ -55,7 +55,7 @@ Currently, each Discord user can only request tokens once every 24 hours.
 You can obtain Morph’s version of USDT on Hoodi through our Discord faucet. Here’s how:  
 
 
-1. Join our Discord server using this [link](https://discord.com/invite/MorphLayer).
+1. Join our Discord server using this [link](https://discord.gg/invite/MorphNetwork).
 
 2. Navigate to the *#| discord-faucet* channel.
 
