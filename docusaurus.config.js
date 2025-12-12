@@ -269,10 +269,10 @@ const config = {
                 label: "Careers",
                 href: links.careers,
               },
-              // {
-              //   label: "Brand Kit",
-              //   href: links.brandkit,
-              // }
+              {
+                label: "Brand Kit",
+                href: links.brandkit,
+              }
             ],
           },
         ],
