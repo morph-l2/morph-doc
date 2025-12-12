@@ -10,7 +10,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 
 const GetStartedSidebar = [
-  'about-morph/user-navigation-page',
+  { type: 'doc', id: 'about-morph/user-navigation-page', label: 'Welcome to Morph' },
   {
     type: 'html',
     value: `<a href="https://explorer.morph.network" target="_blank" rel="noopener noreferrer" class="menu__link menu__link--icon">
@@ -31,20 +31,10 @@ const GetStartedSidebar = [
   },
   {
     type: 'category',
-    label: 'Quick Start Guides',
-    collapsed: false,
-    items: [
-      'quick-start/wallet-setup',
-      'quick-start/faucet',
-      'quick-start/bridge',
-    ],
-  },
-  {
-    type: 'category',
     label: 'Quickstart',
     collapsed: false,
     items: [
-      'build-on-morph/intro',
+      'build-on-morph/developer-navigation-page',
       'build-on-morph/build-on-morph/integration-one-page',
       'build-on-morph/build-on-morph/development-setup',
       'build-on-morph/code-examples/deploy-contract-on-morph',
@@ -54,7 +44,7 @@ const GetStartedSidebar = [
   {
     type: 'category',
     label: 'General Protocol Design',
-    collapsed: true,
+    collapsed: false,
     items: [
       'how-morph-works/general-protocol-design/rollup',
       'how-morph-works/general-protocol-design/communicate-between-morph-and-ethereum',
@@ -66,7 +56,7 @@ const GetStartedSidebar = [
   {
     type: 'category',
     label: 'Learn',
-    collapsed: true,
+    collapsed: false,
     items: [
       'about-morph/the-technology-behind-morph',
       'about-morph/morphs-architecture',
@@ -79,7 +69,7 @@ const GetStartedSidebar = [
   {
     type: 'category',
     label: 'Support',
-    collapsed: true,
+    collapsed: false,
     items: [
       'about-morph/faqs',
     ],
@@ -87,18 +77,17 @@ const GetStartedSidebar = [
 ];
 
 const MorphChainSidebar = [
-  'build-on-morph/developer-navigation-page',
   {
     type: 'category',
     label: 'Build on Morph',
     collapsed: false,
     items: [
-      { type: 'link', href: '/docs/build-on-morph/intro', label: 'Developer Docs' },
-      { type: 'link', href: '/docs/build-on-morph/build-on-morph/integration-one-page', label: 'Integration One Page' },
-      'build-on-morph/developer-resources/contracts',
-      { type: 'link', href: '/docs/quick-start/wallet-setup', label: 'Wallet Setup' },
-      { type: 'link', href: '/docs/quick-start/faucet', label: 'Faucet' },
-      { type: 'link', href: '/docs/quick-start/bridge', label: 'Bridge' },
+      { type: 'doc', id: 'build-on-morph/developer-navigation-page', label: 'Start Here' },
+      { type: 'doc', id: 'build-on-morph/build-on-morph/integration-one-page', label: 'Morph Integration One Page' },
+      { type: 'doc', id: 'build-on-morph/developer-resources/contracts', label: 'Contract Addresses' },
+      { type: 'doc', id: 'quick-start/wallet-setup', label: 'Wallet Setup' },
+      { type: 'doc', id: 'quick-start/faucet', label: 'Faucet' },
+      { type: 'doc', id: 'quick-start/bridge', label: 'Bridge' },
     ],
   },
   {
@@ -106,10 +95,10 @@ const MorphChainSidebar = [
     label: 'Developer Guides',
     collapsed: false,
     items: [
-      { type: 'link', href: '/docs/build-on-morph/build-on-morph/development-setup', label: 'Development Setup' },
-      { type: 'link', href: '/docs/build-on-morph/code-examples/deploy-contract-on-morph', label: 'Deploy Contracts' },
-      { type: 'link', href: '/docs/build-on-morph/build-on-morph/verify-your-smart-contracts', label: 'Verify Contracts' },
-      'build-on-morph/build-on-morph/bridge-between-morph-and-ethereum',
+      { type: 'doc', id: 'build-on-morph/build-on-morph/development-setup', label: 'Development Setup' },
+      { type: 'doc', id: 'build-on-morph/code-examples/deploy-contract-on-morph', label: 'Deploy Contracts on Morph' },
+      { type: 'doc', id: 'build-on-morph/build-on-morph/verify-your-smart-contracts', label: 'Verify Your Smart Contracts' },
+      { type: 'doc', id: 'build-on-morph/build-on-morph/bridge-between-morph-and-ethereum', label: 'Bridge Between Morph and Ethereum' },
       'build-on-morph/sdk/globals',
       'build-on-morph/developer-resources/dapp-examples-on-morph',
     ],
@@ -117,7 +106,7 @@ const MorphChainSidebar = [
   {
     type: 'category',
     label: 'Ecosystem Developers Tools',
-    collapsed: true,
+    collapsed: false,
     items: [
       'build-on-morph/developer-resources/use-ecosystem-developer-tools/user-onboarding',
       'build-on-morph/developer-resources/use-ecosystem-developer-tools/cross-chain-interoperability',
@@ -134,7 +123,7 @@ const MorphChainSidebar = [
   {
     type: 'category',
     label: 'Links and Tools',
-    collapsed: true,
+    collapsed: false,
     items: [
       {
         type: 'link',
@@ -197,50 +186,17 @@ const NodeOperatorsSidebar = [
 ];
 
 const LearnSidebar = [
-  'about-morph/overview-of-morph',
   {
     type: 'category',
     label: 'Fundamental Concepts',
     collapsed: false,
     items: [
-      'how-morph-works/morph-modular-design',
-      'how-morph-works/optimistic-zkevm',
-      'how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network',
+      { type: 'doc', id: 'about-morph/overview-of-morph', label: 'Overview' },
+      { type: 'doc', id: 'how-morph-works/morph-modular-design', label: 'Morph Modular Design' },
+      { type: 'doc', id: 'how-morph-works/optimistic-zkevm', label: 'Optimistic zkEVM' },
+      { type: 'doc', id: 'how-morph-works/decentralized-sequencers/morph-decentralized-sequencer-network', label: 'Morph Decentralized Sequencer Network' },
     ],
-  },
-  {
-    type: 'category',
-    label: 'General Protocol Design',
-    collapsed: true,
-    items: [
-      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/rollup', label: 'Rollup' },
-      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/communicate-between-morph-and-ethereum', label: 'Communication with Ethereum' },
-      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/transactions-life-cycle', label: 'Transaction Life Cycle' },
-      { type: 'link', href: '/docs/how-morph-works/general-protocol-design/difference-between-ethereum-and-morph', label: 'Difference from Ethereum' },
-      { type: 'link', href: '/docs/build-on-morph/build-on-morph/understand-transaction-cost-on-morph', label: 'Transaction Cost' },
-    ],
-  },
-  {
-    type: 'category',
-    label: 'About Morph',
-    collapsed: true,
-    items: [
-      { type: 'link', href: '/docs/about-morph/the-technology-behind-morph', label: 'Technology' },
-      { type: 'link', href: '/docs/about-morph/morphs-architecture', label: 'Architecture' },
-      { type: 'link', href: '/docs/about-morph/key-concepts', label: 'Key Concepts' },
-      { type: 'link', href: '/docs/about-morph/roadmap', label: 'Roadmap' },
-      { type: 'link', href: '/docs/about-morph/morphs-vision-and-mission', label: 'Vision & Mission' },
-      { type: 'link', href: '/docs/about-morph/morph-rails', label: 'Morph Rails' },
-    ],
-  },
-  {
-    type: 'category',
-    label: 'Support',
-    collapsed: true,
-    items: [
-      { type: 'link', href: '/docs/about-morph/faqs', label: 'FAQs' },
-    ],
-  },
+  }
 ];
 
 module.exports = {
