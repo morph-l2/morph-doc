@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar__items {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
 }
 
 /* Nav link styles */
@@ -746,6 +746,36 @@ blockquote {
   }
 }
 
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  
+  .breadcrumbs__link[aria-label="Home page"] {
+    display: inline-flex;
+    align-items: center;
+    
+    svg {
+      display: none;
+    }
+    
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-image: url('/img/home.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
 
 .breadcrumbs__link {
   color: var(--ifm-color-secondary);
@@ -754,6 +784,7 @@ blockquote {
   &:hover {
     color: var(--ifm-color-primary);
   }
+  
 }
 
 
@@ -778,4 +809,3 @@ blockquote {
     padding-right: 16px;
   }
 }
-
