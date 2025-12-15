@@ -116,6 +116,12 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   
+  /* Sidebar items right padding */
+  &__list .theme-doc-sidebar-item-link-level-1.menu__list-item,
+  &__list .theme-doc-sidebar-item-link-level-2.menu__list-item {
+    padding-right: 12px;
+  }
+  
   /* Separator line between categories */
   &__list-item-collapsible + &__list-item-collapsible {
     margin-top: 8px;
