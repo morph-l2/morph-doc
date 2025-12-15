@@ -1,6 +1,6 @@
 /**
- * 此脚本用于在构建时注入日志代码到 Footer/index.js
- * 使用 replace code 模式，只替换需要的部分
+ * Footer/index.js
+ * replace code
  */
 
 const fs = require('fs');
