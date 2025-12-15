@@ -4,55 +4,53 @@ export const brandMetadata = {
   keyword: 'Morph, scaling solution, Morph testnet, Morph mainnet, Morph roadmap, optimistic zk-rollup, validity proofs',
 }
 
-const docUrl = 'https://docs.morphl2.io';
+const docUrl = 'https://docs.morph.network';
 
 export const links = {
-  brand: 'https://morphl2.io/',
-  website: 'https://morphl2.io',
+  brand: 'https://morph.network/',
+  website: 'https://morph.network',
   
-  quickStart: 'https://docs.morphl2.io/',
+  quickStart: 'https://docs.morph.network/',
 
-  howItWorks: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
+  howItWorks: 'https://docs.morph.network/docs/how-morph-works/intro/',
   contractMoohism: 'https://forms.gle/9zJxWbcoDAuZKFSW8',
-  exploreMore: 'https://docs.morphl2.io/docs/how-morph-works/optimistic-zkevm',
+  exploreMore: 'https://docs.morph.network/docs/how-morph-works/optimistic-zkevm',
   
-  contactUs: 'https://morphl2.io/about',
-  terms: 'https://morphl2.io/terms',
-  policy: 'https://morphl2.io/privacy_policy',
-  about: 'https://morphl2.io/about',
-  wallet: 'https://morphl2.io/wallet',
-  build: 'https://morphl2.io/build',
-  careers: 'https://morphl2.io/careers',
-  sparkLoom: 'https://morphl2.io/sparkloom',
-  sparkLoomPdf: typeof window === 'undefined' ? 'https://morphl2.io/pdf/1.pdf' : (window.location.origin +'https://morphl2.io/pdf/1.pdf'),
+  contactUs: 'https://morph.network/about',
+  terms: 'https://morph.network/terms',
+  policy: 'https://morph.network/privacy',
+  about: 'https://morph.network/about',
+  wallet: 'https://morph.network/wallet',
+  build: 'https://morph.network/build',
+  careers: 'https://morph.network/careers',
   brandkit: 'https://morphl2brand.notion.site/Morph-brand-guideline-56eca01ef6d14212be0e9562ad1e2fc1',
   // sparkloom
   registerNow: 'https://app.buidlbox.io/morphl2/sparkloom',
   applyNow: 'https://forms.gle/6kDGru2dMzrqJgb69',
 
-  whatIsMorph: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
-  docUrl: 'https://docs.morphl2.io',
+  whatIsMorph: 'https://docs.morph.network/docs/how-morph-works/intro/',
+  docUrl: 'https://docs.morph.network',
 
   whatIsTheVotingPower: ``,
 
-  learnmore: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
-  doc: 'https://docs.morphl2.io/docs/how-morph-works/intro/',
-  walletSetup: 'https://docs.morphl2.io/docs/quick-start/wallet-setup/',
+  learnmore: 'https://docs.morph.network/docs/how-morph-works/intro/',
+  doc: 'https://docs.morph.network/docs/how-morph-works/intro/',
+  walletSetup: 'https://docs.morph.network/docs/quick-start/wallet-setup/',
 
   // start building
-  apiDocs: 'https://explorer.morphl2.io/api-docs',
-  explorer: 'https://explorer.morphl2.io',
-  explorerApi: 'https://explorer-api.morphl2.io', // /api/v2/stats
-  bridge: 'https://bridge.morphl2.io',
+  apiDocs: 'https://explorer.morph.network/api-docs',
+  explorer: 'https://explorer.morph.network',
+  explorerApi: 'https://explorer-api.morph.network', // /api/v2/stats
+  bridge: 'https://bridge.morph.network',
   
-  hoodiWalletSetup: 'https://morphl2.io/docs/quick-start/wallet-setup/',
-  hoodiApiDocs: 'https://explorer-hoodi.morphl2.io/api-docs',
-  hoodiExplorer: 'https://explorer-hoodi.morphl2.io',
-  hoodiExplorerApi: 'https://explorer-api-hoodi.morphl2.io',
-  hoodiBridge: 'https://bridge-hoodi.morphl2.io',
+  hoodiWalletSetup: 'https://morph.network/docs/quick-start/wallet-setup/',
+  hoodiApiDocs: 'https://explorer-hoodi.morph.network/api-docs',
+  hoodiExplorer: 'https://explorer-hoodi.morph.network',
+  hoodiExplorerApi: 'https://explorer-api-hoodi.morph.network',
+  hoodiBridge: 'https://bridge-hoodi.morph.network',
 
   // social
-  medium: 'https://blog.morphl2.io/',
+  medium: 'https://blog.morph.network/',
   twitter: 'https://x.com/MorphNetwork',
   telegram: 'https://t.me/MorphGlobal',
   // 'https://t.me/+qslsWvH2_-1iMTdl',
@@ -63,10 +61,10 @@ export const links = {
   tiktok: 'https://www.tiktok.com/@morphl2',
   youtube: 'https://www.youtube.com/channel/UCZW6iBpnbpCzYOrMY-RtDOw',
 
-  github: '', // https://github.com/morph-l2
+  github: 'https://github.com/morph-l2',
 
-  blog: 'https://blog.morphl2.io/',
-  forum: 'https://forum.morphl2.io',
+  blog: 'https://blog.morph.network/',
+  forum: 'https://forum.morph.network',
 
   faucet: '',
 
@@ -76,4 +74,99 @@ export const links = {
   usdtfaucet: "https://discord.com/channels/1156486804661338162/1199665829730582620",
 
   community: 'https://x.com/MorphNetwork',
+  ecosystem: 'https://www.morph.network/apps',
+
+  status: 'https://status.morph.network',
 }
+
+export const footerLinks = [
+  {
+    label: "Ecosystem",
+    // hidden: true,
+    children: [
+      {
+        label: "Apps",
+        link: links.ecosystem,
+      }
+    ],
+  },
+  {
+    label: "Developers",
+    children: [
+      {
+        label: "Docs",
+        link: links.doc,
+      },
+      {
+        label: "APIs",
+        link: links.apiDocs,
+      },
+      {
+        label: "Tools",
+        link: links.build,
+      },
+    ],
+  },
+  {
+    label: "Community",
+    children: [
+      {
+        label: "Forum",
+        link: links.forum,
+        hidden: true,
+      },
+      {
+        label: "Telegram",
+        link: links.telegram,
+      },
+      {
+        label: "Twitter",
+        link: links.twitter,
+      },
+      {
+        label: "Discord",
+        link: links.discord,
+      },
+      {
+        label: "Github",
+        link: links.github,
+      },
+    ],
+  },
+  {
+    label: "Company",
+    children: [
+      {
+        label: "About",
+        link: links.about,
+        hidden: true,
+      },
+      {
+        label: "Blog",
+        link: links.blog,
+      },
+      {
+        label: "Contact us",
+        link: links.contactUs,
+        hidden: true,
+      },
+      {
+        label: "Careers",
+        link: links.careers,
+      },
+      {
+        label: "Brand Kit",
+        link: links.brandkit,
+        // hidden: true,
+      },
+      {
+        label: "Terms of Use",
+        link: links.terms,
+      },
+      {
+        label: "Privacy Policy",
+        link: links.policy,
+      },
+    ],
+  },
+];

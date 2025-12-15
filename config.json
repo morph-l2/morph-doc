@@ -1,8 +1,8 @@
 {
   "index_name": "morph_doc",
-  "start_urls": ["https://docs.morphl2.io/"],
+  "start_urls": ["https://docs.morph.network/"],
   "sitemap_urls": [
-    "https://docs.morphl2.io/sitemap.xml"
+    "https://docs.morph.network/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": ["/tests"],
