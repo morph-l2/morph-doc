@@ -23,8 +23,6 @@ export const links = {
   wallet: 'https://morph.network/wallet',
   build: 'https://morph.network/build',
   careers: 'https://morph.network/careers',
-  sparkLoom: 'https://morph.network/sparkloom',
-  sparkLoomPdf: typeof window === 'undefined' ? 'https://morph.network/pdf/1.pdf' : (window.location.origin +'https://morph.network/pdf/1.pdf'),
   brandkit: 'https://morphl2brand.notion.site/Morph-brand-guideline-56eca01ef6d14212be0e9562ad1e2fc1',
   // sparkloom
   registerNow: 'https://app.buidlbox.io/morphl2/sparkloom',
