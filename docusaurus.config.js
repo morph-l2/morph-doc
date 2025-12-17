@@ -66,8 +66,8 @@ const config = {
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
           {
-            to: '/docs/quick-start/welcome-to-morph',
-            from: ['/', '/docs'],
+            to: '/docs/about-morph/user-navigation-page',
+            from: ['/docs'],
           },
         ],
       },
