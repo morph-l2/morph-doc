@@ -2,8 +2,8 @@
 /node_modules
 
 # Production
-# /build
-# build/
+/build
+build/
 
 # Generated files
 .docusaurus
@@ -22,3 +22,9 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.anima
+data
+build
+scripts
+build

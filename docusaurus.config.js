@@ -17,12 +17,12 @@ const config = {
 
   title: 'Morph docs – The Optimistic zkEVM Scaling Solution docs',
   tagline: '',
-  favicon: 'https://www.morphl2.io/favicon.ico',
+  favicon: '/favicon.ico',
 
   staticDirectories: ['public', 'static'],
 
   // Set the production url of your site here
-  url: 'https://docs.morphl2.io',
+  url: 'https://docs.morph.network',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -67,7 +67,7 @@ const config = {
           // /docs/oldDoc -> /docs/newDoc
           {
             to: '/docs/about-morph/user-navigation-page',
-            from: ['/', '/docs'],
+            from: ['/docs'],
           },
         ],
       },
@@ -98,7 +98,11 @@ const config = {
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: [require.resolve('./src/css/fonts.scss'), require.resolve('./src/css/custom.scss')],
+          customCss: [
+            require.resolve('./src/css/fonts.scss'), 
+            require.resolve('./src/css/custom.scss'),
+            require.resolve('./src/css/figma-overrides.scss')
+          ],
         },
       }),
     ],
@@ -125,9 +129,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      prism: {
-        additionalLanguages: ['bash', 'diff', 'json'],
-      },
       metadata: [{
         name: 'keywords',
         content: 'Morph,EVM-equivalent,Optimistic,zkEVM'
@@ -178,31 +179,34 @@ const config = {
         title: '',
         logo: {
           alt: 'Morph Doc Logo',
-          src: 'logo/LogoMorphGreen-summary.svg',
-          srcDark: 'logo/LogoMorphGreen-summary.svg',
+          src: 'logo/morph-docs-black.svg',
+          srcDark: 'logo/morph-docs-white.svg',
         },
         items: [
           {
-            type: 'doc',
-            position: 'right',
-            docId: 'about-morph/user-navigation-page',
-            label: 'For Users',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'GetStartedSidebar',
+            label: 'Get Started',
           },
           {
-            type: 'doc',
-            position: 'right',
-            docId: 'build-on-morph/developer-navigation-page',
-            label: 'For Developers',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'MorphChainSidebar',
+            label: 'Morph Chain',
           },
-          
-          // {label: 'Website', position: 'left', href: 'https://www.morphl2.io',},
-          /*
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'NodeOperatorsSidebar',
+            label: 'Node Operators',
           },
-          */
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'LearnSidebar',
+            label: 'Learn',
+          },
         ],
       },
       footer: {
@@ -269,10 +273,10 @@ const config = {
                 label: "Careers",
                 href: links.careers,
               },
-              {
-                label: "Brand Kit",
-                href: links.brandkit,
-              }
+              // {
+              //   label: "Brand Kit",
+              //   href: links.brandkit,
+              // }
             ],
           },
         ],
@@ -281,6 +285,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['bash', 'diff', 'json'],
       },
     }),
 };

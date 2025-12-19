@@ -91,7 +91,7 @@ To get started:
 - [**Bridge assets**](../quick-start/4-bridge.md)
 
 Join the community and stay up to date:  
-𝕏: [x.com/MorphLayer](https://x.com/MorphLayer)  
-Discord: [discord.gg/MorphLayer](https://discord.gg/MorphLayer)  
-Telegram: [t.me/MorphL2official](https://t.me/MorphL2official)  
+𝕏: [x.com/MorphNetwork](https://x.com/MorphNetwork)  
+Discord: [discord.gg/morphnetwork](https://discord.gg/morphnetwork)  
+Telegram: [t.me/MorphGlobal](https://t.me/MorphGlobal)  
 Morph Builder X: [x.com/MorphDevs](https://x.com/MorphDevs)

@@ -116,16 +116,16 @@ module.exports = {
             bg: "#FFF",
             card: "#F5F5F5",
             red: "#F53F5F",
-            green: "#14A800",
+            green: "#18C900",
             yellow: "#F7A01E",
             purple: "#846DFF", // brand
 
             "card-background": "#F3F7F2",
             "card-text": "#21231C",
-            "card-border": "#1085001A",
+            "card-border": "#18C9001A",
 
-            brand: "#14A800",
-            "brand-high": "#14A800",
+            brand: "#18C900",
+            "brand-high": "#18C900",
 
             "red-aid": "#FDD9DF",
             "green-aid": "#D9F7F0",
@@ -149,7 +149,7 @@ module.exports = {
             tag: "#D9F7F0",
 
             primary: {
-              DEFAULT: "#14A800",
+              DEFAULT: "#18C900",
               foreground: "#fff",
             },
 
@@ -168,7 +168,7 @@ module.exports = {
             bg: "#000", // #0B0D0C
             card: "#1A1A1A",
             red: "#F4294D",
-            green: "#14A800",
+            green: "#18C900",
             yellow: "#F7A01E",
             purple: "#846DFF",
 
@@ -176,8 +176,8 @@ module.exports = {
             "card-text": "#fff",
             "card-border": "#FFFFFF1A",
 
-            brand: "#14A800",
-            "brand-high": "#14A800",
+            brand: "#18C900",
+            "brand-high": "#18C900",
 
             "red-aid": "#3B0F17",
             "green-aid": "#0C3C1D",
@@ -201,7 +201,7 @@ module.exports = {
             tag: "#0F2518",
 
             primary: {
-              DEFAULT: "#14A800",
+              DEFAULT: "#18C900",
               foreground: "#000000",
             },
 
