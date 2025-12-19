@@ -60,7 +60,7 @@ Download the config files and make data dir
 
 ```
 cd ~/.morph
-wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/holesky/data.zip
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/hoodi/data.zip
 unzip data.zip
 ```
 
@@ -76,7 +76,7 @@ openssl rand -hex 32 > jwt-secret.txt
 *Geth*
 
 ```
-./morph/go-ethereum/build/bin/geth --morph-holesky \
+./morph/go-ethereum/build/bin/geth --morph-hoodi \
     --datadir "./geth-data" \
     --http --http.api=web3,debug,eth,txpool,net,engine \
     --authrpc.addr localhost \
@@ -132,7 +132,7 @@ curl http://localhost:26657/net_info
           },
           "id": "0fb5ce425197a462a66de015ee5fbbf103835b8a",
           "listen_addr": "tcp://0.0.0.0:26656",
-          "network": "chain-morph-holesky",
+          "network": "chain-morph-hoodi",
           "version": "0.37.0-alpha.1",
           "channels": "4020212223386061",
           "moniker": "morph-dataseed-node-1",
@@ -162,7 +162,7 @@ curl http://localhost:26657/status to check the sync status of the node
       },
       "id": "b3f34dc2ce9c4fee5449426992941aee1e09670f",
       "listen_addr": "tcp://0.0.0.0:26656",
-      "network": "chain-morph-holesky",
+      "network": "chain-morph-hoodi",
       "version": "0.37.0-alpha.1",
       "channels": "4020212223386061",
       "moniker": "my-morph-node",

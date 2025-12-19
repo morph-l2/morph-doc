@@ -2,7 +2,7 @@
 title: Developer Docs
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 Welcome to Morph’s Developer Docs!
@@ -31,6 +31,5 @@ Building on morph is just like building on Ethereum. If you’re experienced in 
 ## Engage in Our Developer Community
 
 We're actively enhancing our network with more integrations and support infrastructure, progressing towards our Mainnet release.
-
 
 Join our growing developer community. You can find us on [Discord](https://discord.gg/invite/MorphNetwork), join our discussion forum, or follow our progress on [Twitter](https://x.com/MorphNetwork).

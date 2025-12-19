@@ -62,11 +62,11 @@ To help you navigate through our resources, here’s a quick guide:
 
 <CardGroup className="md:grid-cols-2 xl:grid-cols-3">
   <Card
-    href="https://bridge.morphl2.io/"
+    href="https://bridge.morph.network/"
     icon="./img/cards/bridge.svg"
     text="Morph Bridge" />
   <Card 
-    href="https://explorer.morphl2.io/"
+    href="https://explorer.morph.network/"
     icon="/img/cards/guide.svg"
     text="Morph Explorer" />
   <Card

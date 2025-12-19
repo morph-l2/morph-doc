@@ -28,21 +28,21 @@ Before you start, ensure you are connected to the following networks:
 
 | Network Name | Morph Mainnet | Ethereum Mainnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-quicknode.morphl2.io| https://ethereum-rpc.publicnode.com |
+| RPC URL | https://rpc-quicknode.morph.network| https://ethereum-rpc.publicnode.com |
 | Chain ID | 2818 | 1 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer.morphl2.io| https://etherscan.io |
+| Block Explorer URL | https://explorer.morph.network| https://etherscan.io |
 
 :::tip Websocket Connection
 
-wss://rpc-quicknode.morphl2.io
+wss://rpc-quicknode.morph.network
 
 :::
 
 <!--
 ### Tendermint Consensus Information
 
-Tendermint RPC: https://rpc-consensus-holesky.morphl2.io
+Tendermint RPC: https://rpc-consensus-holesky.morph.network
 
 Tendermint RPC Documentation: https://docs.tendermint.com/v0.34/rpc/#/
 -->
@@ -59,7 +59,7 @@ const config: HardhatUserConfig = {
   ...
   networks: {
     morphl2: {
-      url: 'https://rpc-quicknode.morphl2.io',
+      url: 'https://rpc-quicknode.morph.network',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       gasprice = 1000000000
@@ -87,7 +87,7 @@ Setting up a Morph  provider in an ethers script:
 import { ethers } from 'ethers';
 
 const provider = new ethers.providers.JsonRpcProvider(
-  'https://rpc-quicknode.morphl2.io'
+  'https://rpc-quicknode.morph.network'
 );
 ```
 
@@ -101,17 +101,24 @@ Before you start, ensure you are connected to the following networks:
 
 | Network Name | Morph Hoodi Testnet | Hoodi Testnet |
 | --- | --- | --- |
-| RPC URL | https://rpc-hoodi.morphl2.io| https://ethereum-hoodi-rpc.publicnode.com |
+| RPC URL | https://rpc-hoodi.morph.network| https://ethereum-hoodi-rpc.publicnode.com |
 | Chain ID | 2910 | 560048 |
 | Currency Symbol | ETH | ETH |
-| Block Explorer URL | https://explorer-hoodi.morphl2.io| https://hoodi.etherscan.io |
+| Block Explorer URL | https://explorer-hoodi.morph.network| https://hoodi.etherscan.io |
 
 :::tip Websocket Connection
 
-wss://rpc-hoodi.morphl2.io
+wss://rpc-hoodi.morph.network
 
 :::
 
+<!--
+### Tendermint Consensus Information
+
+Tendermint RPC: https://rpc-consensus-holesky.morph.network
+
+Tendermint RPC Documentation: https://docs.tendermint.com/v0.34/rpc/#/
+-->
 ## Step 2: Set up your development framework
 
 ### Hardhat
@@ -123,7 +130,7 @@ const config: HardhatUserConfig = {
   ...
   networks: {
     morphl2: {
-      url: 'https://rpc-hoodi.morphl2.io',
+      url: 'https://rpc-hoodi.morph.network',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       gasprice = 2000000000
@@ -150,13 +157,13 @@ Setting up a Morph  provider in an ethers script:
 import { ethers } from 'ethers';
 
 const provider = new ethers.providers.JsonRpcProvider(
-  'https://rpc-hoodi.morphl2.io'
+  'https://rpc-hoodi.morph.network'
 );
 ```
 
 ## Step 3: Acquire Ether
 
-To start building on Morph, you may need some testnet ETH. Use a faucet to acquire Hoodi Ether, then [bridge](https://bridge-hoodi.morphl2.io) the test Ethereum Ether to the Morph testnet.
+To start building on Morph, you may need some testnet ETH. Use a faucet to acquire Hoodi Ether, then [bridge](https://bridge-hoodi.morph.network) the test Ethereum Ether to the Morph testnet.
 
 Each faucet has its own rules and requirements, so you may need to try a few before finding one that works for you.
 

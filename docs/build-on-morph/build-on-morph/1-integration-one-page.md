@@ -9,9 +9,9 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 | Network | Chain ID | RPC URL | Block Explorer URL |
 | --- | --- | --- | --- |
-| Morph Mainnet | 2818 | [https://rpc-quicknode.morphl2.io](https://rpc-quicknode.morphl2.io) | [https://explorer.morphl2.io](https://explorer.morphl2.io) |
+| Morph Mainnet | 2818 | [https://rpc-quicknode.morph.network](https://rpc-quicknode.morph.network) | [https://explorer.morph.network](https://explorer.morph.network) |
 | Ethereum Mainnet | 1 | [https://ethereum-rpc.publicnode.com](https://ethereum-rpc.publicnode.com) | [https://etherscan.io](https://etherscan.io) |
-| Morph Hoodi Testnet | 2910 | [https://rpc-hoodi.morphl2.io](https://rpc-hoodi.morphl2.io) | [https://explorer-hoodi.morphl2.io](https://explorer-hoodi.morphl2.io) |
+| Morph Hoodi Testnet | 2910 | [https://rpc-hoodi.morph.network](https://rpc-hoodi.morph.network) | [https://explorer-hoodi.morph.network](https://explorer-hoodi.morph.network) |
 | Hoodi Testnet | 560048 | [https://ethereum-hoodi-rpc.publicnode.com](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
 
 
@@ -21,30 +21,30 @@ If you need higher tps, please contact our team for private RPC access. You can 
 
 :::tip Websocket Connection
 
-wss://rpc-quicknode.morphl2.io
+wss://rpc-quicknode.morph.network
 
 :::
 
 ### Explorer Information
 
-[Official Mainnet Explorer](https://explorer.morphl2.io)
+[Official Mainnet Explorer](https://explorer.morph.network)
 
-[Official Testnet Explorer](https://explorer-hoodi.morphl2.io)
+[Official Testnet Explorer](https://explorer-hoodi.morph.network)
 
-[Explorer API Documentation](https://explorer.morphl2.io/api-docs)
+[Explorer API Documentation](https://explorer.morph.network/api-docs)
 
-Explorer API: https://explorer-api.morphl2.io/api
+Explorer API: https://explorer-api.morph.network/api
 
-Testnet Explorer API: https://explorer-hoodi.morphl2.io/api-docs
+Testnet Explorer API: https://explorer-hoodi.morph.network/api-docs
 
 
 For detail guide on how to verify your contract on Morph explorer, [click here](../build-on-morph/5-verify-your-smart-contracts.md)
 
 ### Bridge Information
 
-[Official Bridge](https://bridge.morphl2.io)
+[Official Bridge](https://bridge.morph.network)
 
-[Official Testnet Bridge](https://bridge-hoodi.morphl2.io)
+[Official Testnet Bridge](https://bridge-hoodi.morph.network)
 
 :::tip Withdrawal and Deposit Time
 
@@ -56,7 +56,7 @@ Deposit needs to wait for 2 Ethereum epoch (about 13~20 min).
 
 #### New Bridge Asset Support:
 
-[Add your Token to the Official Bridge](https://docs.morphl2.io/docs/build-on-morph/build-on-morph/bridge-between-morph-and-ethereum#add-your-token-to-the-official-bridge)
+[Add your Token to the Official Bridge](https://docs.morph.network/docs/build-on-morph/build-on-morph/bridge-between-morph-and-ethereum#add-your-token-to-the-official-bridge)
 
 
 You can also use LayerZero to wrap your token:

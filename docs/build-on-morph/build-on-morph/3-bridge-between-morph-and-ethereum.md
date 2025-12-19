@@ -2,7 +2,7 @@
 title: Bridge between Morph and Ethereum
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
-description: Upgrade your blockchain experience with Morph - the secure decentralized, cost0efficient, and high-performing optimistic zk-rollup solution. Try it now!
+description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
 ---
 
 Please first review our documentation on [Communication Between Morph and Ethereum](../../how-morph-works/general-protocol-design/2-communicate-between-morph-and-ethereum.md) for some required fundamental knowledge. 
@@ -97,7 +97,7 @@ Currently, our canonical bridge only supports certain pre-defined tokens to be b
 
 ### Add Tokens to the gateway through Morph Bridge Frontend
 
-The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-hoodi.morphl2.io), you can simply do it with the following steps:
+The easiest way to support your token is to manually add it on our [canonical bridge frontend](https://bridge-hoodi.morph.network), you can simply do it with the following steps:
 
 1. Click the token selection button on Morph Hoodi Bridge
 

@@ -7,17 +7,27 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 
 ## Deposit from Ethereum to Morph Mainnet
 
+### Instructions:
 
-Please refer to the [Morph Season 2 - Bridge Guide.](https://morph.ghost.io/how-to-bridge-eth-to-morph-official-bridge/)
+1. Go to the Morph Bridge: https://bridge.morph.network
+2. Open MetaMask and switch to the **Ethereum** network.
+3. In the Morph Bridge app, click **Connect Wallet**, select MetaMask, and approve the connection.
+4. Ensure **Ethereum** is selected under “From” and **Morph** under “To”. If not, click the “Deposit” tab or click the ↓ button found on the top right to switch them.
+5. Select the token you want to transfer.
+6. Click **Send** to start the deposit.
+7. A confirmation window will appear. Click **Deposit**.
+8. In MetaMask, click **Confirm**. Once the transaction finalizes, the token will be deducted from your Ethereum wallet.
+9. To check the status, click the **Transactions** button in the bridge app.
 
-# Deposit from Ethereum Hoodi to Morph Testnet
 
-## Instructions:
+## Deposit from Ethereum Hoodi to Morph Testnet
 
-1. Go to the Morph Hoodi Bridge: https://bridge-hoodi.morphl2.io
+### Instructions:
+
+1. Go to the Morph Hoodi Bridge: https://bridge-hoodi.morph.network
 2. Open MetaMask and switch to the **Hoodi** network.
 3. In the Morph Bridge app, click **Connect Wallet**, select MetaMask, and approve the connection.
-4. Ensure **Hoodi** is selected under “From” and **Morph L2** under “To”. If not, click the ↓ button to switch them.
+4. Ensure **Hoodi** is selected under “From” and **Morph Hoodi** under “To”. If not, click the “Deposit” tab or click the ↓ button found on the top right to switch them.
 5. Select the token you want to transfer.
 6. Click **Send** to start the deposit.
 
@@ -31,7 +41,7 @@ If this is your first time transferring an ERC20 token, you need to approve the 
 
 
 
-## How long does it take for a token to arrive to Morph Testnet ?
+## How long does it take for a token to arrive to Morph Testnet?
 
 A deposit from Hoodi to Morph Testnet typically takes **8–14 minutes** (time for the block to become Safe on Hoodi) before appearing in your Morph wallet.  
 
@@ -80,7 +90,3 @@ For deposits (L1 → L2), once your transaction is confirmed as Safe on Hoodi (8
 2. Click **Claim Withdrawal**.
 3. Confirm the transaction in your wallet.
 4. Wait for the withdrawal to complete.
-
-
-
-
