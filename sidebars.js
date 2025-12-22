@@ -51,6 +51,8 @@ const GetStartedSidebar = [
       'how-morph-works/general-protocol-design/transactions-life-cycle',
       'how-morph-works/general-protocol-design/difference-between-ethereum-and-morph',
       'build-on-morph/build-on-morph/understand-transaction-cost-on-morph',
+      'about-morph/eip7702',
+      'about-morph/altfeetx',
     ],
   },
   {
