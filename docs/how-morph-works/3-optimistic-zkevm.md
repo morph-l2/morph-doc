@@ -155,6 +155,7 @@ These addresses are responsible for monitoring the L2 state changes and respondi
 - [0x3b065b18edffc7cf3d751e33d45c1fb4fd78d57b](https://etherscan.io/address/0x3b065b18edffc7cf3d751e33d45c1fb4fd78d57b) - [L2scan](https://www.l2scan.co/)
 - [0xa609285fF6F2a0Dfdeb03cc33d78d8a47A691497](https://etherscan.io/address/0xa609285fF6F2a0Dfdeb03cc33d78d8a47A691497) - [Tenderly](https://tenderly.co/)
 - [0x8b8bc0EB904fDD2862a6433d020F15bBc8a7b13e](https://etherscan.io/address/0x8b8bc0EB904fDD2862a6433d020F15bBc8a7b13e) - [Redstone](https://www.redstone.finance/)
+- [0xAa54d89A2B420F286Db0C19732D07abe08E6b442](https://etherscan.io/address/0xAa54d89A2B420F286Db0C19732D07abe08E6b442) - [Redstone](https://www.redstone.finance/)
 - [0x77b29534738e3f0f297d36635d7884965c7c8ce1](https://etherscan.io/address/0x77b29534738e3f0f297d36635d7884965c7c8ce1) - [Morph](https://morph.network)
 - [0x95417708f67f4a5df1a447efe40c6c74e38ab832](https://etherscan.io/address/0x95417708f67f4a5df1a447efe40c6c74e38ab832) - [Morph](https://morph.network)
 - [0xd11f9c4f5d9b1fec2d14581d3674066442b68772](https://etherscan.io/address/0xd11f9c4f5d9b1fec2d14581d3674066442b68772) - [Morph](https://morph.network)
