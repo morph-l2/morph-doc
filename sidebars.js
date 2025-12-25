@@ -102,7 +102,6 @@ const MorphChainSidebar = [
       { type: 'doc', id: 'build-on-morph/build-on-morph/verify-your-smart-contracts', label: 'Verify Your Smart Contracts' },
       { type: 'doc', id: 'build-on-morph/build-on-morph/bridge-between-morph-and-ethereum', label: 'Bridge Between Morph and Ethereum' },
       { type: 'doc', id: 'build-on-morph/developer-resources/rpc-playground', label: 'HTTP RPC Playground' },
-      { type: 'doc', id: 'build-on-morph/developer-resources/rpc-websocket-playground', label: 'WebSocket RPC Playground' },
       'build-on-morph/sdk/globals',
       'build-on-morph/developer-resources/dapp-examples-on-morph',
     ],
