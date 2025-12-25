@@ -1,0 +1,2935 @@
+{
+  "generatedAt": "2025-12-19T07:40:37.421Z",
+  "summary": {
+    "totalMethods": 65,
+    "networks": {
+      "mainnet": {
+        "name": "Morph Mainnet",
+        "chainId": 2818,
+        "supported": 37,
+        "unsupported": 28,
+        "supportRate": "56.92%"
+      },
+      "hoodi": {
+        "name": "Morph Hoodi",
+        "chainId": 2910,
+        "supported": 37,
+        "unsupported": 28,
+        "supportRate": "56.92%"
+      },
+      "qanet": {
+        "name": "Morph Qanet",
+        "chainId": 53077,
+        "supported": 38,
+        "unsupported": 27,
+        "supportRate": "58.46%"
+      }
+    }
+  },
+  "networks": {
+    "mainnet": {
+      "name": "Morph Mainnet",
+      "chainId": 2818,
+      "rpcUrl": "https://rpc.morphl2.io",
+      "total": 65,
+      "supported": 37,
+      "unsupported": 28,
+      "supportedMethods": [
+        {
+          "method": "eth_accounts",
+          "params": [],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_blockNumber",
+          "params": [],
+          "result": "0x1265e51"
+        },
+        {
+          "method": "eth_call",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "0x"
+        },
+        {
+          "method": "eth_chainId",
+          "params": [],
+          "result": "0xb02"
+        },
+        {
+          "method": "eth_estimateGas",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "0xcf08"
+        },
+        {
+          "method": "eth_createAccessList",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "[Error: contract creation without any data provided]"
+        },
+        {
+          "method": "eth_feeHistory",
+          "params": [
+            "0x0",
+            "0x0",
+            []
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBalance",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_gasPrice",
+          "params": [],
+          "result": "0x50940f2"
+        },
+        {
+          "method": "eth_getBlockByHash",
+          "params": [
+            "0x0",
+            false
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getBlockByNumber",
+          "params": [
+            "0x0",
+            false
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBlockReceipts",
+          "params": [
+            "0x0"
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBlockTransactionCountByHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getBlockTransactionCountByNumber",
+          "params": [
+            "0x0"
+          ],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_getCode",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getFilterChanges",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: filter not found]"
+        },
+        {
+          "method": "eth_getFilterLogs",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: filter not found]"
+        },
+        {
+          "method": "eth_getProof",
+          "params": [
+            "0x0",
+            [],
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getLogs",
+          "params": [
+            {}
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getStorageAt",
+          "params": [
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getTransactionByBlockHashAndIndex",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getTransactionByBlockNumberAndIndex",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getTransactionByHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getTransactionCount",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getTransactionReceipt",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getUncleCountByBlockHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getUncleCountByBlockNumber",
+          "params": [
+            "0x0"
+          ],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_maxPriorityFeePerGas",
+          "params": [],
+          "result": "0x4f9feb2"
+        },
+        {
+          "method": "eth_newBlockFilter",
+          "params": [],
+          "result": "0x9949884259bf913f4c2f09a87c03a9cf"
+        },
+        {
+          "method": "eth_newFilter",
+          "params": [
+            {}
+          ],
+          "result": "0x1443e2e14bf62df22ece819845c6055e"
+        },
+        {
+          "method": "eth_newPendingTransactionFilter",
+          "params": [],
+          "result": "0xdea03651ed51bdb32d70141c833a9a57"
+        },
+        {
+          "method": "eth_sendRawTransaction",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type hexutil.Bytes]"
+        },
+        {
+          "method": "eth_sign",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_sendTransaction",
+          "params": [
+            {}
+          ],
+          "result": "[Error: unknown account]"
+        },
+        {
+          "method": "eth_signTransaction",
+          "params": [
+            {}
+          ],
+          "result": "[Error: gas not specified]"
+        },
+        {
+          "method": "eth_syncing",
+          "params": [],
+          "result": "false"
+        },
+        {
+          "method": "eth_uninstallFilter",
+          "params": [
+            "0x0"
+          ],
+          "result": "false"
+        }
+      ],
+      "unsupportedMethods": [
+        {
+          "method": "debug_getRawHeader",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawHeader does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawBlock",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawBlock does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getBadBlocks",
+          "params": [],
+          "error": "the method debug_getBadBlocks does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawReceipts",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawReceipts does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawTransaction",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawTransaction does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_exchangeCapabilities",
+          "params": [
+            []
+          ],
+          "error": "the method engine_exchangeCapabilities does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_exchangeTransitionConfigurationV1",
+          "params": [
+            {}
+          ],
+          "error": "the method engine_exchangeTransitionConfigurationV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV2",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV1",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV3",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getBlobsV2",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getBlobsV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getBlobsV1",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getBlobsV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadBodiesByHashV1",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getPayloadBodiesByHashV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadBodiesByRangeV1",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadBodiesByRangeV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV1",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV2",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV4",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV3",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV5",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV1",
+          "params": [
+            {}
+          ],
+          "error": "the method engine_newPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV6",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV6 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV2",
+          "params": [
+            null
+          ],
+          "error": "the method engine_newPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV4",
+          "params": [
+            {},
+            [],
+            "0x0",
+            []
+          ],
+          "error": "the method engine_newPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV3",
+          "params": [
+            {},
+            [],
+            "0x0"
+          ],
+          "error": "the method engine_newPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV5",
+          "params": [
+            {},
+            [],
+            "0x0",
+            []
+          ],
+          "error": "the method engine_newPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_blobBaseFee",
+          "params": [],
+          "error": "the method eth_blobBaseFee does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_coinbase",
+          "params": [],
+          "error": "the method eth_coinbase does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_simulateV1",
+          "params": [
+            null,
+            "0x0"
+          ],
+          "error": "the method eth_simulateV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      ],
+      "supportRate": "56.92%"
+    },
+    "hoodi": {
+      "name": "Morph Hoodi",
+      "chainId": 2910,
+      "rpcUrl": "https://rpc-hoodi.morphl2.io",
+      "total": 65,
+      "supported": 37,
+      "unsupported": 28,
+      "supportedMethods": [
+        {
+          "method": "eth_accounts",
+          "params": [],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_blockNumber",
+          "params": [],
+          "result": "0x1e5beb"
+        },
+        {
+          "method": "eth_call",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "0x"
+        },
+        {
+          "method": "eth_chainId",
+          "params": [],
+          "result": "0xb5e"
+        },
+        {
+          "method": "eth_estimateGas",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "0xcf08"
+        },
+        {
+          "method": "eth_createAccessList",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "[Error: contract creation without any data provided]"
+        },
+        {
+          "method": "eth_feeHistory",
+          "params": [
+            "0x0",
+            "0x0",
+            []
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBalance",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_gasPrice",
+          "params": [],
+          "result": "0x1e8480"
+        },
+        {
+          "method": "eth_getBlockByHash",
+          "params": [
+            "0x0",
+            false
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getBlockByNumber",
+          "params": [
+            "0x0",
+            false
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBlockReceipts",
+          "params": [
+            "0x0"
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBlockTransactionCountByHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getBlockTransactionCountByNumber",
+          "params": [
+            "0x0"
+          ],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_getCode",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getFilterChanges",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: filter not found]"
+        },
+        {
+          "method": "eth_getFilterLogs",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: filter not found]"
+        },
+        {
+          "method": "eth_getProof",
+          "params": [
+            "0x0",
+            [],
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getLogs",
+          "params": [
+            {}
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getStorageAt",
+          "params": [
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getTransactionByBlockHashAndIndex",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getTransactionByBlockNumberAndIndex",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getTransactionByHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getTransactionCount",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getTransactionReceipt",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getUncleCountByBlockHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getUncleCountByBlockNumber",
+          "params": [
+            "0x0"
+          ],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_maxPriorityFeePerGas",
+          "params": [],
+          "result": "0xf4240"
+        },
+        {
+          "method": "eth_newBlockFilter",
+          "params": [],
+          "result": "0x5e4e2cf9c6b26cf65a20a3dc5f621270"
+        },
+        {
+          "method": "eth_newFilter",
+          "params": [
+            {}
+          ],
+          "result": "0x7d3a8934e7121a5f945854d2f5336105"
+        },
+        {
+          "method": "eth_newPendingTransactionFilter",
+          "params": [],
+          "result": "0x2281736cadcc30e57b2ac2f199c72471"
+        },
+        {
+          "method": "eth_sendRawTransaction",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type hexutil.Bytes]"
+        },
+        {
+          "method": "eth_sign",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_sendTransaction",
+          "params": [
+            {}
+          ],
+          "result": "[Error: unknown account]"
+        },
+        {
+          "method": "eth_signTransaction",
+          "params": [
+            {}
+          ],
+          "result": "[Error: gas not specified]"
+        },
+        {
+          "method": "eth_syncing",
+          "params": [],
+          "result": "false"
+        },
+        {
+          "method": "eth_uninstallFilter",
+          "params": [
+            "0x0"
+          ],
+          "result": "false"
+        }
+      ],
+      "unsupportedMethods": [
+        {
+          "method": "debug_getRawHeader",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawHeader does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawBlock",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawBlock does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getBadBlocks",
+          "params": [],
+          "error": "the method debug_getBadBlocks does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawReceipts",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawReceipts does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawTransaction",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawTransaction does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_exchangeCapabilities",
+          "params": [
+            []
+          ],
+          "error": "the method engine_exchangeCapabilities does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_exchangeTransitionConfigurationV1",
+          "params": [
+            {}
+          ],
+          "error": "the method engine_exchangeTransitionConfigurationV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV2",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV1",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV3",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getBlobsV2",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getBlobsV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getBlobsV1",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getBlobsV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadBodiesByHashV1",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getPayloadBodiesByHashV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadBodiesByRangeV1",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadBodiesByRangeV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV1",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV2",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV4",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV3",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV5",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV1",
+          "params": [
+            {}
+          ],
+          "error": "the method engine_newPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV6",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV6 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV2",
+          "params": [
+            null
+          ],
+          "error": "the method engine_newPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV4",
+          "params": [
+            {},
+            [],
+            "0x0",
+            []
+          ],
+          "error": "the method engine_newPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV3",
+          "params": [
+            {},
+            [],
+            "0x0"
+          ],
+          "error": "the method engine_newPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV5",
+          "params": [
+            {},
+            [],
+            "0x0",
+            []
+          ],
+          "error": "the method engine_newPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_blobBaseFee",
+          "params": [],
+          "error": "the method eth_blobBaseFee does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_coinbase",
+          "params": [],
+          "error": "the method eth_coinbase does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_simulateV1",
+          "params": [
+            null,
+            "0x0"
+          ],
+          "error": "the method eth_simulateV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      ],
+      "supportRate": "56.92%"
+    },
+    "qanet": {
+      "name": "Morph Qanet",
+      "chainId": 53077,
+      "rpcUrl": "http://l2-qa-morph-senquencer-0.bitkeep.tools",
+      "total": 65,
+      "supported": 38,
+      "unsupported": 27,
+      "supportedMethods": [
+        {
+          "method": "debug_getBadBlocks",
+          "params": [],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_accounts",
+          "params": [],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_blockNumber",
+          "params": [],
+          "result": "0xa087c"
+        },
+        {
+          "method": "eth_call",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "0x"
+        },
+        {
+          "method": "eth_chainId",
+          "params": [],
+          "result": "0xcf55"
+        },
+        {
+          "method": "eth_estimateGas",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "0xcf08"
+        },
+        {
+          "method": "eth_createAccessList",
+          "params": [
+            {},
+            "0x0"
+          ],
+          "result": "[Error: contract creation without any data provided]"
+        },
+        {
+          "method": "eth_feeHistory",
+          "params": [
+            "0x0",
+            "0x0",
+            []
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBalance",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_gasPrice",
+          "params": [],
+          "result": "0xf4240"
+        },
+        {
+          "method": "eth_getBlockByHash",
+          "params": [
+            "0x0",
+            false
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getBlockByNumber",
+          "params": [
+            "0x0",
+            false
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBlockReceipts",
+          "params": [
+            "0x0"
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getBlockTransactionCountByHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getBlockTransactionCountByNumber",
+          "params": [
+            "0x0"
+          ],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_getCode",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getFilterChanges",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: filter not found]"
+        },
+        {
+          "method": "eth_getFilterLogs",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: filter not found]"
+        },
+        {
+          "method": "eth_getProof",
+          "params": [
+            "0x0",
+            [],
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getLogs",
+          "params": [
+            {}
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getStorageAt",
+          "params": [
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getTransactionByBlockHashAndIndex",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getTransactionByBlockNumberAndIndex",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[object]"
+        },
+        {
+          "method": "eth_getTransactionByHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getTransactionCount",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_getTransactionReceipt",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getUncleCountByBlockHash",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        {
+          "method": "eth_getUncleCountByBlockNumber",
+          "params": [
+            "0x0"
+          ],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_maxPriorityFeePerGas",
+          "params": [],
+          "result": "0x0"
+        },
+        {
+          "method": "eth_newBlockFilter",
+          "params": [],
+          "result": "0x624ca475aba6a51d3cc91c02bb30c310"
+        },
+        {
+          "method": "eth_newFilter",
+          "params": [
+            {}
+          ],
+          "result": "0xab76edd89c9736d9bc99bc27e8150fb1"
+        },
+        {
+          "method": "eth_newPendingTransactionFilter",
+          "params": [],
+          "result": "0xfa80bf9f93f84bc3c09809879abcd8bf"
+        },
+        {
+          "method": "eth_sendRawTransaction",
+          "params": [
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type hexutil.Bytes]"
+        },
+        {
+          "method": "eth_sign",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        {
+          "method": "eth_sendTransaction",
+          "params": [
+            {}
+          ],
+          "result": "[Error: unknown account]"
+        },
+        {
+          "method": "eth_signTransaction",
+          "params": [
+            {}
+          ],
+          "result": "[Error: gas not specified]"
+        },
+        {
+          "method": "eth_syncing",
+          "params": [],
+          "result": "false"
+        },
+        {
+          "method": "eth_uninstallFilter",
+          "params": [
+            "0x0"
+          ],
+          "result": "false"
+        }
+      ],
+      "unsupportedMethods": [
+        {
+          "method": "debug_getRawHeader",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawHeader does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawBlock",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawBlock does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawReceipts",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawReceipts does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "debug_getRawTransaction",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method debug_getRawTransaction does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_exchangeCapabilities",
+          "params": [
+            []
+          ],
+          "error": "the method engine_exchangeCapabilities does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_exchangeTransitionConfigurationV1",
+          "params": [
+            {}
+          ],
+          "error": "the method engine_exchangeTransitionConfigurationV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV2",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV1",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_forkchoiceUpdatedV3",
+          "params": [
+            {},
+            {}
+          ],
+          "error": "the method engine_forkchoiceUpdatedV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getBlobsV2",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getBlobsV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getBlobsV1",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getBlobsV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadBodiesByHashV1",
+          "params": [
+            []
+          ],
+          "error": "the method engine_getPayloadBodiesByHashV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadBodiesByRangeV1",
+          "params": [
+            "0x0",
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadBodiesByRangeV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV1",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV2",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV4",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV3",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV5",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV1",
+          "params": [
+            {}
+          ],
+          "error": "the method engine_newPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_getPayloadV6",
+          "params": [
+            "0x0"
+          ],
+          "error": "the method engine_getPayloadV6 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV2",
+          "params": [
+            null
+          ],
+          "error": "the method engine_newPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV4",
+          "params": [
+            {},
+            [],
+            "0x0",
+            []
+          ],
+          "error": "the method engine_newPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV3",
+          "params": [
+            {},
+            [],
+            "0x0"
+          ],
+          "error": "the method engine_newPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "engine_newPayloadV5",
+          "params": [
+            {},
+            [],
+            "0x0",
+            []
+          ],
+          "error": "the method engine_newPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_blobBaseFee",
+          "params": [],
+          "error": "the method eth_blobBaseFee does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_coinbase",
+          "params": [],
+          "error": "the method eth_coinbase does not exist/is not available",
+          "errorCode": -32601
+        },
+        {
+          "method": "eth_simulateV1",
+          "params": [
+            null,
+            "0x0"
+          ],
+          "error": "the method eth_simulateV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      ],
+      "supportRate": "58.46%"
+    }
+  },
+  "methods": [
+    {
+      "method": "debug_getRawHeader",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method debug_getRawHeader does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method debug_getRawHeader does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method debug_getRawHeader does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "debug_getRawBlock",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method debug_getRawBlock does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method debug_getRawBlock does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method debug_getRawBlock does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "debug_getBadBlocks",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method debug_getBadBlocks does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method debug_getBadBlocks does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "debug_getRawReceipts",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method debug_getRawReceipts does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method debug_getRawReceipts does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method debug_getRawReceipts does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "debug_getRawTransaction",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method debug_getRawTransaction does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method debug_getRawTransaction does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method debug_getRawTransaction does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_exchangeCapabilities",
+      "params": [
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_exchangeCapabilities does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_exchangeCapabilities does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_exchangeCapabilities does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_exchangeTransitionConfigurationV1",
+      "params": [
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_exchangeTransitionConfigurationV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_exchangeTransitionConfigurationV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_exchangeTransitionConfigurationV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_forkchoiceUpdatedV2",
+      "params": [
+        {},
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV2 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_forkchoiceUpdatedV1",
+      "params": [
+        {},
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_forkchoiceUpdatedV3",
+      "params": [
+        {},
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_forkchoiceUpdatedV3 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getBlobsV2",
+      "params": [
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getBlobsV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getBlobsV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getBlobsV2 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getBlobsV1",
+      "params": [
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getBlobsV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getBlobsV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getBlobsV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadBodiesByHashV1",
+      "params": [
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadBodiesByHashV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadBodiesByHashV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadBodiesByHashV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadBodiesByRangeV1",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadBodiesByRangeV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadBodiesByRangeV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadBodiesByRangeV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadV1",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadV2",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadV4",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadV3",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadV5",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_newPayloadV1",
+      "params": [
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_newPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_getPayloadV6",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV6 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_getPayloadV6 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_getPayloadV6 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_newPayloadV2",
+      "params": [
+        null
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_newPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV2 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_newPayloadV4",
+      "params": [
+        {},
+        [],
+        "0x0",
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_newPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV4 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_newPayloadV3",
+      "params": [
+        {},
+        [],
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_newPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV3 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "engine_newPayloadV5",
+      "params": [
+        {},
+        [],
+        "0x0",
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method engine_newPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method engine_newPayloadV5 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "eth_accounts",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "eth_blobBaseFee",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method eth_blobBaseFee does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method eth_blobBaseFee does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method eth_blobBaseFee does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "eth_blockNumber",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x1265e51"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x1e5beb"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0xa087c"
+        }
+      }
+    },
+    {
+      "method": "eth_call",
+      "params": [
+        {},
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0x"
+        }
+      }
+    },
+    {
+      "method": "eth_chainId",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0xb02"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0xb5e"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0xcf55"
+        }
+      }
+    },
+    {
+      "method": "eth_coinbase",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method eth_coinbase does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method eth_coinbase does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method eth_coinbase does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "eth_estimateGas",
+      "params": [
+        {},
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0xcf08"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0xcf08"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0xcf08"
+        }
+      }
+    },
+    {
+      "method": "eth_createAccessList",
+      "params": [
+        {},
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: contract creation without any data provided]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: contract creation without any data provided]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: contract creation without any data provided]"
+        }
+      }
+    },
+    {
+      "method": "eth_feeHistory",
+      "params": [
+        "0x0",
+        "0x0",
+        []
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "eth_getBalance",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        }
+      }
+    },
+    {
+      "method": "eth_gasPrice",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x50940f2"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x1e8480"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0xf4240"
+        }
+      }
+    },
+    {
+      "method": "eth_getBlockByHash",
+      "params": [
+        "0x0",
+        false
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        }
+      }
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "0x0",
+        false
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "eth_getBlockReceipts",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "eth_getBlockTransactionCountByHash",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        }
+      }
+    },
+    {
+      "method": "eth_getBlockTransactionCountByNumber",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x0"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x0"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0x0"
+        }
+      }
+    },
+    {
+      "method": "eth_getCode",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        }
+      }
+    },
+    {
+      "method": "eth_getFilterChanges",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: filter not found]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: filter not found]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: filter not found]"
+        }
+      }
+    },
+    {
+      "method": "eth_getFilterLogs",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: filter not found]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: filter not found]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: filter not found]"
+        }
+      }
+    },
+    {
+      "method": "eth_getProof",
+      "params": [
+        "0x0",
+        [],
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        }
+      }
+    },
+    {
+      "method": "eth_getLogs",
+      "params": [
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        }
+      }
+    },
+    {
+      "method": "eth_getTransactionByBlockHashAndIndex",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        }
+      }
+    },
+    {
+      "method": "eth_getTransactionByBlockNumberAndIndex",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[object]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[object]"
+        }
+      }
+    },
+    {
+      "method": "eth_getTransactionByHash",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        }
+      }
+    },
+    {
+      "method": "eth_getTransactionCount",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        }
+      }
+    },
+    {
+      "method": "eth_getTransactionReceipt",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        }
+      }
+    },
+    {
+      "method": "eth_getUncleCountByBlockHash",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Hash]"
+        }
+      }
+    },
+    {
+      "method": "eth_getUncleCountByBlockNumber",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x0"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x0"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0x0"
+        }
+      }
+    },
+    {
+      "method": "eth_maxPriorityFeePerGas",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x4f9feb2"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0xf4240"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0x0"
+        }
+      }
+    },
+    {
+      "method": "eth_newBlockFilter",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x9949884259bf913f4c2f09a87c03a9cf"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x5e4e2cf9c6b26cf65a20a3dc5f621270"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0x624ca475aba6a51d3cc91c02bb30c310"
+        }
+      }
+    },
+    {
+      "method": "eth_newFilter",
+      "params": [
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0x1443e2e14bf62df22ece819845c6055e"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x7d3a8934e7121a5f945854d2f5336105"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0xab76edd89c9736d9bc99bc27e8150fb1"
+        }
+      }
+    },
+    {
+      "method": "eth_newPendingTransactionFilter",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "0xdea03651ed51bdb32d70141c833a9a57"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "0x2281736cadcc30e57b2ac2f199c72471"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "0xfa80bf9f93f84bc3c09809879abcd8bf"
+        }
+      }
+    },
+    {
+      "method": "eth_sendRawTransaction",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type hexutil.Bytes]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type hexutil.Bytes]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type hexutil.Bytes]"
+        }
+      }
+    },
+    {
+      "method": "eth_sign",
+      "params": [
+        "0x0",
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: invalid argument 0: json: cannot unmarshal hex string of odd length into Go value of type common.Address]"
+        }
+      }
+    },
+    {
+      "method": "eth_sendTransaction",
+      "params": [
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: unknown account]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: unknown account]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: unknown account]"
+        }
+      }
+    },
+    {
+      "method": "eth_signTransaction",
+      "params": [
+        {}
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "[Error: gas not specified]"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "[Error: gas not specified]"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "[Error: gas not specified]"
+        }
+      }
+    },
+    {
+      "method": "eth_simulateV1",
+      "params": [
+        null,
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": false,
+          "error": "the method eth_simulateV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "hoodi": {
+          "supported": false,
+          "error": "the method eth_simulateV1 does not exist/is not available",
+          "errorCode": -32601
+        },
+        "qanet": {
+          "supported": false,
+          "error": "the method eth_simulateV1 does not exist/is not available",
+          "errorCode": -32601
+        }
+      }
+    },
+    {
+      "method": "eth_syncing",
+      "params": [],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "false"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "false"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "false"
+        }
+      }
+    },
+    {
+      "method": "eth_uninstallFilter",
+      "params": [
+        "0x0"
+      ],
+      "support": {
+        "mainnet": {
+          "supported": true,
+          "result": "false"
+        },
+        "hoodi": {
+          "supported": true,
+          "result": "false"
+        },
+        "qanet": {
+          "supported": true,
+          "result": "false"
+        }
+      }
+    }
+  ]
+}
