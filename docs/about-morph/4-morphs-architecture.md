@@ -78,6 +78,9 @@ We commissioned a full security audit from Sherlock, and the results are publicl
 
 The Trail of Bits team conducted an in-depth audit of our codebase, including verification of implemented fixes. The complete report is available here [Trail of Bits Audit Report](https://github.com/morph-l2/audits/blob/main/tob/Morph%20-%20Comprehensive%20Report%20with%20Fix%20Review.pdf).   
 
+### Blocksec Audit Report:
+
+We commissioned Blocksec to conduct a full security audit of Morph’s EmeraId upgrade. The audit assessed the upgrade’s robustness and adherence to security best practices and was executed according to an agreed scope and testing plan tailored for this implementation. The audit report is available here [Blocksec Audit Report](https://github.com/morph-l2/audits/blob/main/blocksec/blocksec_morph_emerald_upgrade_v1.0-signed.pdf).
 
 ### Audit Scope:
 
