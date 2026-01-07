@@ -48,12 +48,32 @@ function convertDetailsToMarkdown(content) {
   });
 }
 
+// Extract title from frontmatter
+function getTitleFromFrontmatter(content) {
+  const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!frontmatterMatch) return null;
+
+  const frontmatter = frontmatterMatch[1];
+  const titleMatch = frontmatter.match(/^title:\s*(.+)$/m);
+  if (titleMatch) return titleMatch[1].trim();
+  
+  return null;
+}
+
 // Clean markdown content for raw display
 function cleanMarkdownForDisplay(content, filepath) {
   const fileDir = filepath.replace(/[^/]*$/, '');
 
+  // Extract title from frontmatter before stripping it
+  const title = getTitleFromFrontmatter(content);
+
   // Strip YAML front matter
   content = content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+
+  // Add title as h1 heading if extracted from frontmatter
+  if (title) {
+    content = `# ${title}\n\n${content}`;
+  }
 
   // Remove import statements
   content = content.replace(/^import\s+.*?from\s+['"].*?['"];?\s*$/gm, '');
@@ -101,7 +121,7 @@ function cleanMarkdownForDisplay(content, filepath) {
       
       // For interactive components, add a placeholder note
       const interactiveComponents = {
-        'ApiExplorer': '> 🔧 **Interactive Component**: This page contains an interactive API explorer. Please visit the web page to use this feature.',
+        'ApiExplorer': '> **Interactive Component**: This page contains an interactive API explorer. Please visit the web page to use this feature.',
         'Tabs': '', // Already handled by convertTabsToMarkdown
         'TabItem': '',
         'CodeBlock': '', // Code blocks are usually fine
@@ -112,7 +132,7 @@ function cleanMarkdownForDisplay(content, filepath) {
       }
       
       // For other unknown components, add a generic note
-      return `> 📦 **Component**: \`<${componentName} />\` - This is an interactive component. Please visit the web page for full functionality.`;
+      return `> **Component**: \`<${componentName} />\` - This is an interactive component. Please visit the web page for full functionality.`;
     }
   );
 
