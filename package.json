@@ -28,6 +28,7 @@
     "@morui/theme": "^2.1.0",
     "autoprefixer": "^10.4.17",
     "classnames": "^2.5.1",
+    "docusaurus-markdown-source-plugin": "^2.0.1",
     "docusaurus-plugin-sass": "^0.2.5",
     "dotenv": "^16.0.3",
     "lottie-react": "^2.4.0",
@@ -35,10 +36,10 @@
     "prism-react-renderer": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.1",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
-    "sass": "^1.71.0"
+    "sass": "^1.71.0",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.1.1",

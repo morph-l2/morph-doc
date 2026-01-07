@@ -47,6 +47,8 @@ const config = {
 
   plugins: [
     'docusaurus-plugin-sass',
+    // Use local plugin instead of npm package to fix /docs/ path
+    require.resolve('./plugins/markdown-source-plugin.js'),
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
