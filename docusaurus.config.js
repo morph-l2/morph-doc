@@ -198,12 +198,6 @@ const config = {
             label: 'Morph Chain',
           },
           {
-            type: 'doc',
-            docId: 'build-on-morph/sdk/js-sdk',
-            position: 'left',
-            label: 'JS SDK',
-          },
-          {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'NodeOperatorsSidebar',
