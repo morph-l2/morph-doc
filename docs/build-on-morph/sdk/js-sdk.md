@@ -1,10 +1,10 @@
 ---
-title: Morph Client SDK Documentation
+title: Morph SDK
 lang: en-US
 description: Official JavaScript/TypeScript SDK for interacting with the Morph Network.
 ---
 
-# Morph Client SDK Documentation
+# Morph SDK
 
 > Official JavaScript/TypeScript SDK for interacting with the Morph Network
 
@@ -23,9 +23,9 @@ description: Official JavaScript/TypeScript SDK for interacting with the Morph N
 
 ## Introduction
 
-Morph Client SDK is the official JavaScript/TypeScript toolkit for interacting with the Morph Network. Its core capability is support for **Alt Fee Transactions**—a Morph-specific transaction type that lets users pay gas with ERC-20 tokens instead of ETH.
+Morph SDK is the official JavaScript/TypeScript toolkit for interacting with the Morph Network. Its core capability is support for **Alt Fee Transactions**—a Morph-specific transaction type that lets users pay gas with ERC-20 tokens instead of ETH.
 
-### Why choose the Morph Client SDK?
+### Why choose the Morph SDK?
 
 Compared with using base libraries (Viem/Ethers) directly, the SDK offers:
 
