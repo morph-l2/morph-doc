@@ -12,17 +12,27 @@ const darkCodeTheme = themes.dracula;
 
 import { links } from './src/components/config'
 
+/**
+ * SEO constants
+ */
+const SITE_URL = process.env.MORPH_DOCS_URL || 'https://docs.morph.network';
+const SITE_NAME = 'Morph Docs';
+const DEFAULT_TITLE = 'Morph Docs | Developer Documentation for Morph Network';
+const DEFAULT_DESCRIPTION = 'Official developer documentation for Morph Network - the secure settlement layer for global crypto payments. Learn how to build on Morph with comprehensive guides, API references, and tutorials.';
+const DEFAULT_OG_IMAGE = 'https://morph.network/share/share-morph.jpeg';
+const TWITTER_HANDLE = '@MorphNetwork';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 
-  title: 'Morph docs – The Optimistic zkEVM Scaling Solution docs',
-  tagline: '',
+  title: DEFAULT_TITLE,
+  tagline: 'Build the future of crypto payments on Morph',
   favicon: '/favicon.ico',
 
   staticDirectories: ['public', 'static'],
 
   // Set the production url of your site here
-  url: 'https://docs.morph.network',
+  url: SITE_URL,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -128,16 +138,153 @@ const config = {
       type: 'text/css',
     },
   ],
+  // add head tags for SEO
+  headTags: [
+    // Open Graph tags
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:type',
+        content: 'website',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:site_name',
+        content: SITE_NAME,
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:locale',
+        content: 'en_US',
+      },
+    },
+    // Twitter Card tags
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:site',
+        content: TWITTER_HANDLE,
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:creator',
+        content: TWITTER_HANDLE,
+      },
+    },
+    // other SEO tags
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'author',
+        content: 'Morph',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'canonical',
+        href: SITE_URL,
+      },
+    },
+    // hreflang meta tags
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        hreflang: 'en',
+        href: SITE_URL,
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate',
+        hreflang: 'x-default',
+        href: SITE_URL,
+      },
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{
-        name: 'keywords',
-        content: 'Morph,EVM-equivalent,Optimistic,zkEVM'
-      }, {
-        name: 'google-site-verification',
-        content: '-GPotcMH5Ecuj8EnU-Tasmm8TOZXEHWEPD5qP5d0FEU'
-      }],
+      // SEO metadata 
+      metadata: [
+        // base meta tags
+        {
+          name: 'keywords',
+          content: 'Morph, Morph Network, crypto payment gateway, blockchain documentation, developer docs, EVM-equivalent, optimistic zkEVM, scaling solution, stablecoin infrastructure, BGB',
+        },
+        {
+          name: 'description',
+          content: DEFAULT_DESCRIPTION,
+        },
+        // Google site verification
+        {
+          name: 'google-site-verification',
+          content: '-GPotcMH5Ecuj8EnU-Tasmm8TOZXEHWEPD5qP5d0FEU',
+        },
+        // robots tags
+        {
+          name: 'robots',
+          content: 'index, follow',
+        },
+        // Open Graph additional tags
+        {
+          property: 'og:title',
+          content: DEFAULT_TITLE,
+        },
+        {
+          property: 'og:description',
+          content: DEFAULT_DESCRIPTION,
+        },
+        {
+          property: 'og:image',
+          content: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+        },
+        {
+          property: 'og:image:width',
+          content: '1200',
+        },
+        {
+          property: 'og:image:height',
+          content: '630',
+        },
+        {
+          property: 'og:image:alt',
+          content: 'Morph Docs - Developer Documentation',
+        },
+        {
+          property: 'og:url',
+          content: SITE_URL,
+        },
+        // Twitter Card additional tags
+        {
+          name: 'twitter:title',
+          content: DEFAULT_TITLE,
+        },
+        {
+          name: 'twitter:description',
+          content: DEFAULT_DESCRIPTION,
+        },
+        {
+          name: 'twitter:image',
+          content: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+        },
+      ],
       algolia: {
         // The application ID provided by Algolia
         appId: process.env.ALGOLIA_APP_ID || '8HKAWLQMLZ',
@@ -167,8 +314,8 @@ const config = {
   
         //... other Algolia params
       },
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // social sharing image (recommended size: 1200x630)
+      image: DEFAULT_OG_IMAGE,
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
