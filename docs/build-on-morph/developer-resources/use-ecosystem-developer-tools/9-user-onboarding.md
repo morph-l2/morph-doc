@@ -7,7 +7,7 @@ lang: en-US
 
 ## Openfort
 
-[Openfort](https://openfort.io/docs/?utm_source=optimism&utm_medium=docs&utm_campaign=backlinks) is an open-source wallet infrastructure solution. The core offerings include embedded wallets, global wallets and AA infrastructure (Paymaster and Bundler. It enables rapid integration of wallet functionality, intuitive onboarding, and stablecoin flows.
+[Openfort](https://openfort.io/docs/?utm_source=optimism&utm_medium=docs&utm_campaign=backlinks) is an open-source wallet infrastructure solution. The core offerings include embedded wallets, global wallets and AA infrastructure (Paymaster and Bundler). It enables rapid integration of wallet functionality, intuitive onboarding, and stablecoin flows.
 
 ## Reown (prev. known as WalletConnect)
 
