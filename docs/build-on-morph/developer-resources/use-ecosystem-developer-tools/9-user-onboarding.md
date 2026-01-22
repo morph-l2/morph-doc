@@ -5,6 +5,10 @@ lang: en-US
 
 # User Onboarding
 
+## Openfort
+
+[Openfort](https://openfort.io/docs/?utm_source=optimism&utm_medium=docs&utm_campaign=backlinks): is an open-source wallet infrastructure solution. The core offerings include embedded wallets, global wallets and AA infrastructure (Paymaster and Bundler. It enables rapid integration of wallet functionality, intuitive onboarding, and stablecoin flows.
+
 ## Reown (prev. known as WalletConnect)
 
 **[Reown](https://reown.com/?utm_source=morph&utm_medium=docs&utm_campaign=backlinks)** gives developers the tools to build user experiences that make digital ownership effortless, intuitive, and secure.
