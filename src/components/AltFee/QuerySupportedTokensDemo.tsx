@@ -57,35 +57,37 @@ export default function QuerySupportedTokensDemo() {
   };
 
   return (
-    <div className="card margin--md">
-      <div className="card__body">
-        <div className="margin-bottom--sm">
-          <strong>Query Supported Tokens (Testnet)</strong>
+    <div className="card alt-fee-card">
+      <div className="card__body alt-fee-card__body">
+        <div className="alt-fee-card__header">
+          <strong>Query Supported Tokens</strong>
         </div>
-        <div className="margin-bottom--sm">
-          <label htmlFor="supported-tokens-network">Network: </label>
-          <select
-            id="supported-tokens-network"
-            value={network}
-            onChange={(event) =>
-              setNetwork(event.target.value as "mainnet" | "testnet")
-            }
-            style={{ width: "20%", padding: "8px", marginTop: "4px" }}
+        <div className="alt-fee-toolbar">
+          <div className="w-full flex flex-row gap gap-4 items-center">
+            <label htmlFor="supported-tokens-network">Network</label>
+            <select
+              id="supported-tokens-network"
+              value={network}
+              onChange={(event) =>
+                setNetwork(event.target.value as "mainnet" | "testnet")
+              }
+              className="alt-fee-select alt-fee-select--sm"
+            >
+              <option value="testnet">Hoodi Testnet</option>
+              <option value="mainnet">Mainnet</option>
+            </select>
+          </div>
+          <button
+            className="button button--primary alt-fee-button"
+            onClick={handleQuery}
+            disabled={isLoading}
           >
-            <option value="testnet">Hoodi Testnet</option>
-            <option value="mainnet">Mainnet</option>
-          </select>
+            {isLoading ? "Querying..." : "Query supported tokens"}
+          </button>
         </div>
-        <button
-          className="button button--primary margin-bottom--sm"
-          onClick={handleQuery}
-          disabled={isLoading}
-        >
-          {isLoading ? "Querying..." : "Query supported tokens"}
-        </button>
-        {status && <div className="margin-bottom--sm">{status}</div>}
+        {status && <div className="alt-fee-status">{status}</div>}
         {tokens && tokens.length > 0 && (
-          <div className="margin-bottom--sm">
+          <div className="alt-fee-table">
             <table>
               <thead>
                 <tr>
@@ -122,8 +124,12 @@ export default function QuerySupportedTokensDemo() {
             <pre>{rawResult}</pre>
           </div>
         )}
-        <div className="margin-top--sm text--muted">
-          This query uses <a href={rpcUrl(network)} target="_blank" rel="noopener noreferrer">Morph {network === "mainnet" ? "Mainnet" : "Hoodi Testnet"} RPC</a>.
+        <div className="alt-fee-footnote text--muted">
+          This query uses{" "}
+          <a href={rpcUrl(network)} target="_blank" rel="noopener noreferrer">
+            Morph {network === "mainnet" ? "Mainnet" : "Hoodi Testnet"} RPC
+          </a>
+          .
         </div>
       </div>
     </div>

@@ -1,3 +1,137 @@
+// Alt Fee demo styling
+.alt-fee-card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.alt-fee-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.alt-fee-card__header {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.alt-fee-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.alt-fee-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alt-fee-field--stacked {
+  grid-column: span 2;
+}
+
+.alt-fee-field--inline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.alt-fee-input,
+.alt-fee-select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+}
+
+.alt-fee-input:focus,
+.alt-fee-select:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.35);
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.alt-fee-input--inline {
+  margin-top: 4px;
+}
+
+.alt-fee-select--sm {
+  min-width: 200px;
+  width: auto;
+}
+
+.alt-fee-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.alt-fee-field--inline label {
+  margin: 0;
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+}
+
+.alt-fee-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.alt-fee-button {
+  padding: 0.45rem 1rem;
+}
+
+.alt-fee-status {
+  min-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alt-fee-note {
+  font-size: 12px;
+}
+
+.alt-fee-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.alt-fee-table th,
+.alt-fee-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  text-align: left;
+  font-size: 14px;
+}
+
+.alt-fee-table thead th {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.alt-fee-footnote {
+  font-size: 12px;
+}
+
+@media (max-width: 996px) {
+  .alt-fee-form {
+    grid-template-columns: 1fr;
+  }
+
+  .alt-fee-field--stacked {
+    grid-column: span 1;
+  }
+
+  .alt-fee-select--sm {
+    width: 100%;
+  }
+}
 html body {
   font-family: 'Inter Variable', 'Inter Display', 'Inter', sans-serif;
   font-optical-sizing: auto;

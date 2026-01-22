@@ -118,112 +118,111 @@ export default function AltFeeQuickStartDemo() {
   };
 
   return (
-    <div className="card margin--md">
-      <div className="card__body">
-        <div className="margin-bottom--sm">
+    <div className="card alt-fee-card">
+      <div className="card__body alt-fee-card__body">
+        <div className="alt-fee-card__header">
           <strong>Interactive Demo (Testnet Only)</strong>
         </div>
-        <div>
-          <label htmlFor="alt-fee-private-key">privateKey</label>
-          <input
-            id="alt-fee-private-key"
-            type="password"
-            placeholder="0x..."
-            value={privateKey}
-            onChange={(event) => setPrivateKey(event.target.value)}
-            autoComplete="off"
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
-          />
-          <div className="margin-top--sm text--muted text-sm text-warning">
-            All operations are performed locally on this page. Your private key
-            is not stored.
-          </div>
-        </div>
-        <div className="margin-top--sm">
-          <label htmlFor="alt-fee-to-address">Recipient address</label>
-          <input
-            id="alt-fee-to-address"
-            type="text"
-            placeholder="0x... (leave empty to send to self)"
-            value={toAddress}
-            onChange={(event) => setToAddress(event.target.value)}
-            autoComplete="off"
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
-          />
-        </div>
-        <div className="margin-top--sm">
-          <label htmlFor="alt-fee-amount">Amount (ETH)</label>
-          <input
-            id="alt-fee-amount"
-            type="text"
-            inputMode="decimal"
-            placeholder="0.001"
-            value={amountEth}
-            onChange={(event) => setAmountEth(event.target.value)}
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
-          />
-        </div>
-        <div className="margin-top--sm">
-          <label htmlFor="alt-fee-gas-payment">Gas payment</label>
-          <select
-            id="alt-fee-gas-payment"
-            value={gasPayment}
-            onChange={(event) =>
-              setGasPayment(event.target.value as "token" | "native")
-            }
-            style={{ width: "100%", padding: "8px", marginTop: "4px" }}
-          >
-            <option value="token">Token (Alt Fee)</option>
-            <option value="native">Native ETH</option>
-          </select>
-        </div>
-        {gasPayment === "token" && (
-          <div className="margin-top--sm">
-            <label htmlFor="alt-fee-token-id">Gas fee token</label>
-            <select
-              id="alt-fee-token-id"
-              value={feeTokenId}
-              onChange={(event) => setFeeTokenId(event.target.value)}
-              style={{ width: "100%", padding: "8px", marginTop: "4px" }}
-            >
-              <option value="4">Token ID 4 (USDT)</option>
-              <option value="6">Token ID 6 (USDC)</option>
-              <option value="custom">Custom token ID</option>
-            </select>
-            {feeTokenId === "custom" && (
-              <input
-                type="number"
-                placeholder="Token ID"
-                value={customFeeTokenId}
-                onChange={(event) => setCustomFeeTokenId(event.target.value)}
-                style={{ width: "100%", padding: "8px", marginTop: "8px" }}
-              />
-            )}
-            <label
-              htmlFor="alt-fee-limit"
-              style={{ display: "block", marginTop: "8px" }}
-            >
-              Fee limit (token amount, integer)
-            </label>
+        <div className="alt-fee-form">
+          <div className="alt-fee-field">
+            <label htmlFor="alt-fee-private-key">privateKey</label>
             <input
-              id="alt-fee-limit"
+              id="alt-fee-private-key"
+              type="password"
+              placeholder="0x..."
+              value={privateKey}
+              onChange={(event) => setPrivateKey(event.target.value)}
+              autoComplete="off"
+              className="alt-fee-input"
+            />
+            <div className="alt-fee-note text--muted text-sm text-warning">
+              All operations are performed locally on this page. Your private key
+              is not stored.
+            </div>
+          </div>
+          <div className="alt-fee-field">
+            <label htmlFor="alt-fee-to-address">Recipient address</label>
+            <input
+              id="alt-fee-to-address"
               type="text"
-              inputMode="numeric"
-              placeholder="252637086960555000"
-              value={feeLimit}
-              onChange={(event) => setFeeLimit(event.target.value)}
-              style={{ width: "100%", padding: "8px", marginTop: "4px" }}
+              placeholder="0x... (leave empty to send to self)"
+              value={toAddress}
+              onChange={(event) => setToAddress(event.target.value)}
+              autoComplete="off"
+              className="alt-fee-input"
             />
           </div>
-        )}
-        <button
-          className="button button--primary margin-top--sm py-0"
-          onClick={handleSend}
-          disabled={isSending}
-        >
-          {isSending ? "Sending..." : "Send transaction"}
-        </button>
-        <div className="margin-top--sm">
+          <div className="alt-fee-field">
+            <label htmlFor="alt-fee-amount">Amount (ETH)</label>
+            <input
+              id="alt-fee-amount"
+              type="text"
+              inputMode="decimal"
+              placeholder="0.001"
+              value={amountEth}
+              onChange={(event) => setAmountEth(event.target.value)}
+              className="alt-fee-input"
+            />
+          </div>
+          <div className="alt-fee-field">
+            <label htmlFor="alt-fee-gas-payment">Gas payment</label>
+            <select
+              id="alt-fee-gas-payment"
+              value={gasPayment}
+              onChange={(event) =>
+                setGasPayment(event.target.value as "token" | "native")
+              }
+              className="alt-fee-select"
+            >
+              <option value="token">Token (Alt Fee)</option>
+              <option value="native">Native ETH</option>
+            </select>
+          </div>
+          {gasPayment === "token" && (
+            <div className="alt-fee-field alt-fee-field--stacked">
+              <label htmlFor="alt-fee-token-id">Gas fee token</label>
+              <select
+                id="alt-fee-token-id"
+                value={feeTokenId}
+                onChange={(event) => setFeeTokenId(event.target.value)}
+                className="alt-fee-select"
+              >
+                <option value="4">Token ID 4 (USDT)</option>
+                <option value="6">Token ID 6 (USDC)</option>
+                <option value="custom">Custom token ID</option>
+              </select>
+              {feeTokenId === "custom" && (
+                <input
+                  type="number"
+                  placeholder="Token ID"
+                  value={customFeeTokenId}
+                  onChange={(event) => setCustomFeeTokenId(event.target.value)}
+                  className="alt-fee-input alt-fee-input--inline"
+                />
+              )}
+              <label htmlFor="alt-fee-limit">Fee limit (token amount, integer)</label>
+              <input
+                id="alt-fee-limit"
+                type="text"
+                inputMode="numeric"
+                placeholder="252637086960555000"
+                value={feeLimit}
+                onChange={(event) => setFeeLimit(event.target.value)}
+                className="alt-fee-input"
+              />
+            </div>
+          )}
+        </div>
+        <div className="alt-fee-actions">
+          <button
+            className="button button--primary alt-fee-button"
+            onClick={handleSend}
+            disabled={isSending}
+          >
+            {isSending ? "Sending..." : "Send transaction"}
+          </button>
+        </div>
+        <div className="alt-fee-status">
           {status && <div>{status}</div>}
           {txHash && (
             <div>
@@ -238,9 +237,11 @@ export default function AltFeeQuickStartDemo() {
             </div>
           )}
         </div>
-        <div className="margin-top--sm text--muted">
+        <div className="alt-fee-footnote text--muted">
           This demo sends a transaction on Morph Hoodi Testnet. You still need a
           small testnet balance for gas.
+        </div>
+        <div>
         </div>
       </div>
     </div>

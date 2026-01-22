@@ -31,24 +31,27 @@ export default function ChainConfigDemo() {
   const data = useMemo(() => networkOptions[network], [network]);
 
   return (
-    <div className="card margin--md">
-      <div className="card__body">
-        <div className="margin-bottom--sm">
+    <div className="card alt-fee-card">
+      <div className="card__body alt-fee-card__body">
+        <div className="alt-fee-card__header">
           <strong>Chain Config Quick View</strong>
         </div>
-        <div className="margin-bottom--sm">
-          <label htmlFor="chain-config-network">Network: </label>
-          <select
-            id="chain-config-network"
-            value={network}
-            onChange={(event) => setNetwork(event.target.value as NetworkKey)}
-            style={{ width: "20%", padding: "8px", marginTop: "4px" }}
-          >
-            <option value="testnet">Hoodi Testnet</option>
-            <option value="mainnet">Mainnet</option>
-          </select>
+        <div className="alt-fee-toolbar">
+          <div className="w-full flex flex-row gap gap-4 items-center">
+            <label htmlFor="chain-config-network">Network</label>
+            <select
+              id="chain-config-network"
+              value={network}
+              onChange={(event) => setNetwork(event.target.value as NetworkKey)}
+              className="alt-fee-select alt-fee-select--sm"
+            >
+              <option value="testnet">Hoodi Testnet</option>
+              <option value="mainnet">Mainnet</option>
+            </select>
+          </div>
         </div>
-        <table>
+        <div className="alt-fee-table">
+          <table>
           <tbody>
             <tr>
               <th>Name</th>
@@ -86,7 +89,8 @@ export default function ChainConfigDemo() {
               </td>
             </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </div>
   );
