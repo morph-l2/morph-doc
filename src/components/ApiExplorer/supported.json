@@ -30,7 +30,7 @@
     "mainnet": {
       "name": "Morph Mainnet",
       "chainId": 2818,
-      "rpcUrl": "https://rpc.morphl2.io",
+      "rpcUrl": "https://rpc.morph.network",
       "total": 65,
       "supported": 37,
       "unsupported": 28,
@@ -534,7 +534,7 @@
     "hoodi": {
       "name": "Morph Hoodi",
       "chainId": 2910,
-      "rpcUrl": "https://rpc-hoodi.morphl2.io",
+      "rpcUrl": "https://rpc-hoodi.morph.network",
       "total": 65,
       "supported": 37,
       "unsupported": 28,

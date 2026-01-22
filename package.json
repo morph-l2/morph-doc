@@ -25,6 +25,7 @@
     "@docusaurus/theme-common": "3.1.1",
     "@docusaurus/theme-search-algolia": "3.1.1",
     "@mdx-js/react": "3.0.1",
+    "@morph-network/viem": "^0.1.0",
     "@morui/theme": "^2.1.0",
     "autoprefixer": "^10.4.17",
     "classnames": "^2.5.1",
@@ -39,7 +40,8 @@
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
     "sass": "^1.71.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "viem": "^2.44.4"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.1.1",

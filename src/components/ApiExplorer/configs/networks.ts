@@ -6,13 +6,13 @@
 export const MORPH_MAINNET = {
   name: 'Morph Mainnet',
   chainId: 2818,
-  rpcUrl: 'https://rpc.morphl2.io',
-  wsUrl: 'wss://rpc.morphl2.io',
+  rpcUrl: 'https://rpc.morph.network',
+  wsUrl: 'wss://rpc.morph.network',
 };
 
 export const MORPH_HOODI = {
   name: 'Morph Hoodi',
   chainId: 2910,
-  rpcUrl: 'https://rpc-hoodi.morphl2.io',
-  wsUrl: 'wss://rpc-hoodi.morphl2.io',
+  rpcUrl: 'https://rpc-hoodi.morph.network',
+  wsUrl: 'wss://rpc-hoodi.morph.network',
 };
