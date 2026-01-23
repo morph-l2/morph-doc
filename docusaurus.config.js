@@ -253,7 +253,7 @@ const config = {
         },
         {
           property: 'og:image',
-          content: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+          content: `${DEFAULT_OG_IMAGE}`,
         },
         {
           property: 'og:image:width',
@@ -282,7 +282,7 @@ const config = {
         },
         {
           name: 'twitter:image',
-          content: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+          content: `${DEFAULT_OG_IMAGE}`,
         },
       ],
       algolia: {
