@@ -206,7 +206,6 @@ export default function AltFeeQuickStartDemo() {
                 className="alt-fee-select"
               >
                 <option value="4">Token ID 4 (USDT)</option>
-                <option value="6">Token ID 6 (USDC)</option>
                 <option value="custom">Custom token ID</option>
               </select>
               {feeTokenId === "custom" && (
