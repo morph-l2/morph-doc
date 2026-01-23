@@ -139,7 +139,7 @@ export default function AltFeeQuickStartDemo() {
     <div className="card alt-fee-card">
       <div className="card__body alt-fee-card__body">
         <div className="alt-fee-card__header">
-          <strong>Interactive Demo (Testnet Only)</strong>
+          <strong>Interactive Demo (Morph Hoodi Testnet Only)</strong>
         </div>
         <div className="alt-fee-form">
           <div className="alt-fee-field">
