@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPublicClient, createWalletClient, http, parseEther } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { morphHoodiTestnet } from "@morph-network/viem";
@@ -6,6 +6,7 @@ import { morphHoodiTestnet } from "@morph-network/viem";
 export default function AltFeeQuickStartDemo() {
   const [privateKey, setPrivateKey] = useState("");
   const [toAddress, setToAddress] = useState("");
+  const [lastDerivedAddress, setLastDerivedAddress] = useState("");
   const [amountEth, setAmountEth] = useState("0.001");
   const [gasPayment, setGasPayment] = useState<"token" | "native">("token");
   const [feeTokenId, setFeeTokenId] = useState("4");
@@ -15,6 +16,23 @@ export default function AltFeeQuickStartDemo() {
   const [txHash, setTxHash] = useState("");
   const [isSending, setIsSending] = useState(false);
   const rpcUrl = "https://rpc-hoodi.morph.network";
+
+  useEffect(() => {
+    const normalizedKey = privateKey.trim();
+    if (!/^0x[0-9a-fA-F]{64}$/.test(normalizedKey)) {
+      return;
+    }
+
+    try {
+      const account = privateKeyToAccount(normalizedKey as `0x${string}`);
+      if (!toAddress.trim() || toAddress === lastDerivedAddress) {
+        setToAddress(account.address);
+      }
+      setLastDerivedAddress(account.address);
+    } catch {
+      // Ignore invalid private key decoding.
+    }
+  }, [privateKey, toAddress, lastDerivedAddress]);
 
   const handleSend = async () => {
     setStatus("");
