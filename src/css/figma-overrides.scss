@@ -817,7 +817,11 @@ blockquote {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  padding: 12px 12px;
+  padding: 12px 16px;
+}
+
+.card__body .button {
+  padding: 10px 10px;
 }
 
 .button--primary {
