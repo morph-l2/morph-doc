@@ -118,6 +118,8 @@ lang: en-US
 
 [WBTC](https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599): 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
 
+[BGB](https://etherscan.io/address/0x54D2252757e1672EEaD234D27B1270728fF90581): 0x54D2252757e1672EEaD234D27B1270728fF90581
+
 <!--
 [wstETH](https://etherscan.io/address/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0): 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0
 -->
@@ -136,7 +138,9 @@ lang: en-US
 
 [weETH](https://explorer.morph.network/address/0x7DCC39B4d1C53CB31e1aBc0e358b43987FEF80f7): 0x7DCC39B4d1C53CB31e1aBc0e358b43987FEF80f7
 
-[BGB](https://explorer.morph.network/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
+[BGB(old)](https://explorer.morph.network/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
+
+[BGB](https://explorer.morph.network/address/0x389c08bc23a7317000a1fd76c7c5b0cb0b4640b5): 0x389c08bc23a7317000a1fd76c7c5b0cb0b4640b5
 
 
 ## Morph Hoodi Contracts
