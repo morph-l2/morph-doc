@@ -131,8 +131,8 @@
 
 .alt-fee-modal {
   width: min(560px, 92vw);
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color)/0.8;
+  // border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
   padding: 20px;
@@ -154,8 +154,45 @@
 }
 
 .alt-fee-modal__header {
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 24px;
   font-weight: 600;
+}
+
+.alt-fee-modal__close {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.alt-fee-modal__close:hover {
+  background: rgba(17, 24, 39, 0.06);
+  // border-color: rgba(17, 24, 39, 0.12);
+  transform: translateY(-1px);
+}
+
+.alt-fee-modal__close:active {
+  transform: translateY(0);
+}
+
+[data-theme='dark'] .alt-fee-modal__close:hover {
+  background: rgba(243, 244, 246, 0.08);
+  border-color: rgba(243, 244, 246, 0.2);
 }
 
 .alt-fee-modal__body {
