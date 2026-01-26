@@ -548,7 +548,7 @@ console.log("Recovered from:", recoveredFrom);
 
 #### Utility
 
-##### `numeric(value)`
+##### `numericCore(value)`
 
 Convert between number, bigint, and hex.
 
@@ -572,24 +572,24 @@ Convert between number, bigint, and hex.
 **Example:**
 
 ```typescript
-import { numeric } from "@morph-network/viem";
+import { numericCore } from "@morph-network/viem";
 
 // Convert types
-numeric(0).hex();       // "0x"
-numeric(1).hex();       // "0x1"
-numeric(255).hex();     // "0xff"
-numeric(256n).hex();    // "0x100"
-numeric("0x10").hex();  // "0x10"
+numericCore(0).hex();       // "0x"
+numericCore(1).hex();       // "0x1"
+numericCore(255).hex();     // "0xff"
+numericCore(256n).hex();    // "0x100"
+numericCore("0x10").hex();  // "0x10"
 
 // Other conversions
-numeric("0xff").number();  // 255
-numeric(100).bigint();     // 100n
-numeric(1000).uint16();    // "0x03e8"
+numericCore("0xff").number();  // 255
+numericCore(100).bigint();     // 100n
+numericCore(1000).uint16();    // "0x03e8"
 
 // In a transaction
 const tx = {
-  feeTokenID: numeric(6).hex(),
-  feeLimit: numeric(252637086960555000n).hex(),
+  feeTokenID: numericCore(6).hex(),
+  feeLimit: numericCore(252637086960555000n).hex(),
 };
 ```
 
