@@ -1,6 +1,6 @@
 {
   "index_name": "morph_doc",
-  "start_urls": ["https://docs.morph.network/"],
+  "start_urls": ["https://docs.morph.network"],
   "sitemap_urls": [
     "https://docs.morph.network/sitemap.xml"
   ],

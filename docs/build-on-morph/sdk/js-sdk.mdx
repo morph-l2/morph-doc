@@ -4,6 +4,10 @@ lang: en-US
 description: Official JavaScript/TypeScript SDK for interacting with the Morph Network.
 ---
 
+import AltFeeQuickStartDemo from "@site/src/components/AltFee/AltFeeQuickStartDemo";
+import QuerySupportedTokensDemo from "@site/src/components/AltFee/QuerySupportedTokensDemo";
+import ChainConfigDemo from "@site/src/components/AltFee/ChainConfigDemo";
+
 # Morph SDK
 
 > Official JavaScript/TypeScript SDK for interacting with the Morph Network
@@ -150,7 +154,8 @@ import { privateKeyToAccount } from "viem/accounts";
 import { morphHoodiTestnet } from "@morph-network/viem";
 
 // 1. Create account
-const account = privateKeyToAccount("0x...");
+const privateKey = "<YOUR_PRIVATE_KEY>";
+const account = privateKeyToAccount(privateKey);
 
 // 2. Public Client (read)
 const publicClient = createPublicClient({
@@ -174,13 +179,13 @@ async function sendAltFeeTransaction() {
   const hash = await walletClient.sendTransaction({
     account,
     to: "0x...",
-    value: parseEther("0.01"),
+    value: parseEther("0.001"),
     nonce,
     gas: 100000n,
     maxFeePerGas: 15000000n,
     maxPriorityFeePerGas: 14000000n,
     // Alt Fee fields
-    feeTokenID: 6,                          // Token Registry ID
+    feeTokenID: 4,                          // Token Registry ID for USDT
     feeLimit: 252637086960555000n,          // Max token payment
   });
 
@@ -189,6 +194,9 @@ async function sendAltFeeTransaction() {
 
 sendAltFeeTransaction();
 ```
+
+<AltFeeQuickStartDemo />
+
 
 ### Ethers v6 quick start
 
@@ -209,13 +217,13 @@ async function main() {
   // 3. Send Alt Fee Transaction
   const tx = await signer.sendTransaction({
     to: "0x...",
-    value: parseEther("0.01"),
+    value: parseEther("0.001"),
     chainId: MORPH_HOODI_TESTNET.chainId,
     gasLimit: 100000n,
     maxFeePerGas: 15000000n,
     maxPriorityFeePerGas: 14000000n,
     // Alt Fee fields
-    feeTokenID: 6,
+    feeTokenID: 4,
     feeLimit: 252637086960555000n,
   });
 
@@ -296,6 +304,8 @@ async function getTokenInfo(tokenId: number) {
 }
 ```
 
+<QuerySupportedTokensDemo />
+
 ---
 
 ## API Reference
@@ -343,7 +353,7 @@ import { morphHoodiTestnet } from "@morph-network/viem";
 morphHoodiTestnet.id           // 2910
 morphHoodiTestnet.name         // "Morph Hoodi Testnet"
 morphHoodiTestnet.nativeCurrency // { name: "Ethereum", symbol: "ETH", decimals: 18 }
-morphHoodiTestnet.rpcUrls.default.http // ["https://rpc-hoodi.morphl2.io"]
+morphHoodiTestnet.rpcUrls.default.http // ["https://rpc-hoodi.morph.network"]
 ```
 
 **Usage:**
@@ -359,6 +369,8 @@ const client = createWalletClient({
   transport: http(),
 });
 ```
+
+<ChainConfigDemo />
 
 ---
 
@@ -390,7 +402,7 @@ const serialized = serializeTransaction({
   maxFeePerGas: 15000000n,
   maxPriorityFeePerGas: 14000000n,
   nonce: 0,
-  feeTokenID: 6,
+  feeTokenID: 4,
   feeLimit: 252637086960555000n,
 });
 
@@ -423,7 +435,7 @@ const serialized = serializeAltFeeTransaction({
   maxFeePerGas: 15316544n,
   maxPriorityFeePerGas: 14116544n,
   nonce: 5,
-  feeTokenID: 6,
+  feeTokenID: 4,
   feeLimit: 252637086960555000n,
   accessList: [],
 });
@@ -466,7 +478,7 @@ console.log(tx);
 //   chainId: 2910,
 //   to: "0x...",
 //   value: 10000000000000000n,
-//   feeTokenID: 6,
+//   feeTokenID: 4,
 //   feeLimit: 252637086960555000n,
 //   ...
 // }
@@ -536,7 +548,7 @@ console.log("Recovered from:", recoveredFrom);
 
 #### Utility
 
-##### `numeric(value)`
+##### `numericCore(value)`
 
 Convert between number, bigint, and hex.
 
@@ -560,24 +572,24 @@ Convert between number, bigint, and hex.
 **Example:**
 
 ```typescript
-import { numeric } from "@morph-network/viem";
+import { numericCore } from "@morph-network/viem";
 
 // Convert types
-numeric(0).hex();       // "0x"
-numeric(1).hex();       // "0x1"
-numeric(255).hex();     // "0xff"
-numeric(256n).hex();    // "0x100"
-numeric("0x10").hex();  // "0x10"
+numericCore(0).hex();       // "0x"
+numericCore(1).hex();       // "0x1"
+numericCore(255).hex();     // "0xff"
+numericCore(256n).hex();    // "0x100"
+numericCore("0x10").hex();  // "0x10"
 
 // Other conversions
-numeric("0xff").number();  // 255
-numeric(100).bigint();     // 100n
-numeric(1000).uint16();    // "0x03e8"
+numericCore("0xff").number();  // 255
+numericCore(100).bigint();     // 100n
+numericCore(1000).uint16();    // "0x03e8"
 
 // In a transaction
 const tx = {
-  feeTokenID: numeric(6).hex(),
-  feeLimit: numeric(252637086960555000n).hex(),
+  feeTokenID: numericCore(6).hex(),
+  feeLimit: numericCore(252637086960555000n).hex(),
 };
 ```
 
@@ -603,7 +615,7 @@ const tx: AltFeeTransaction = {
   data: "0x",
   accessList: [],
   // Alt Fee fields
-  feeTokenID: 6,
+  feeTokenID: 4,
   feeLimit: 252637086960555000n,
 };
 ```
@@ -664,8 +676,8 @@ const signer = MorphSigner.from(browserSigner);
 // Alt Fee tx supported now
 await signer.sendTransaction({
   to: "0x...",
-  value: parseEther("0.01"),
-  feeTokenID: 6,
+  value: parseEther("0.001"),
+  feeTokenID: 4,
   feeLimit: 252637086960555000n,
 });
 ```

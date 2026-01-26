@@ -1,3 +1,308 @@
+// Alt Fee demo styling
+.alt-fee-card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.alt-fee-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.alt-fee-card__header {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.alt-fee-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.alt-fee-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alt-fee-field--stacked {
+  grid-column: span 2;
+}
+
+.alt-fee-field--inline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.alt-fee-input,
+.alt-fee-select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+}
+
+.alt-fee-input:focus,
+.alt-fee-select:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.35);
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.alt-fee-input--inline {
+  margin-top: 4px;
+}
+
+.alt-fee-select--sm {
+  min-width: 200px;
+  width: auto;
+}
+
+.alt-fee-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.alt-fee-field--inline label {
+  margin: 0;
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+}
+
+.alt-fee-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.alt-fee-button {
+  padding: 0.45rem 1rem;
+}
+
+.alt-fee-status {
+  min-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alt-fee-note {
+  font-size: 12px;
+}
+
+.alt-fee-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.alt-fee-table th,
+.alt-fee-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  text-align: left;
+  font-size: 14px;
+}
+
+.alt-fee-table thead th {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.alt-fee-footnote {
+  font-size: 12px;
+}
+
+.alt-fee-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.alt-fee-modal {
+  width: min(560px, 92vw);
+  background: var(--ifm-background-surface-color)/0.8;
+  // border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.alt-fee-modal--mono {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme='dark'] .alt-fee-modal--mono {
+  background: #0b0f14;
+  border-color: #2a2f36;
+  color: #f3f4f6;
+}
+
+.alt-fee-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.alt-fee-modal__close {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.alt-fee-modal__close:hover {
+  background: rgba(17, 24, 39, 0.06);
+  // border-color: rgba(17, 24, 39, 0.12);
+  transform: translateY(-1px);
+}
+
+.alt-fee-modal__close:active {
+  transform: translateY(0);
+}
+
+[data-theme='dark'] .alt-fee-modal__close:hover {
+  background: rgba(243, 244, 246, 0.08);
+  border-color: rgba(243, 244, 246, 0.2);
+}
+
+.alt-fee-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alt-fee-modal__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.alt-fee-modal__value {
+  word-break: break-all;
+  text-align: right;
+  color: var(--ifm-font-color-base);
+}
+
+.alt-fee-modal--mono .alt-fee-modal__value,
+[data-theme='dark'] .alt-fee-modal--mono .alt-fee-modal__value {
+  color: inherit;
+}
+
+.alt-fee-modal--mono .text--muted {
+  color: #4b5563;
+}
+
+[data-theme='dark'] .alt-fee-modal--mono .text--muted {
+  color: #9ca3af;
+}
+
+.alt-fee-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.alt-fee-modal__btn {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.alt-fee-modal__btn--ghost {
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.alt-fee-modal__btn--ghost:hover {
+  background: #f3f4f6;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.alt-fee-modal__btn--ghost:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.alt-fee-modal__btn--solid {
+  background: #111827;
+  border-color: #111827;
+  color: #ffffff;
+}
+
+.alt-fee-modal__btn--solid:hover {
+  background: #0b0f14;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.alt-fee-modal__btn--solid:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme='dark'] .alt-fee-modal__btn--ghost {
+  background: transparent;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+[data-theme='dark'] .alt-fee-modal__btn--ghost:hover {
+  background: rgba(243, 244, 246, 0.08);
+}
+
+[data-theme='dark'] .alt-fee-modal__btn--solid {
+  background: #f3f4f6;
+  border-color: #f3f4f6;
+  color: #0b0f14;
+}
+
+@media (max-width: 996px) {
+  .alt-fee-form {
+    grid-template-columns: 1fr;
+  }
+
+  .alt-fee-field--stacked {
+    grid-column: span 1;
+  }
+
+  .alt-fee-select--sm {
+    width: 100%;
+  }
+}
 html body {
   font-family: 'Inter Variable', 'Inter Display', 'Inter', sans-serif;
   font-optical-sizing: auto;
@@ -683,7 +988,11 @@ blockquote {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  padding: 12px 16px;
+  padding: 12px 12px;
+}
+
+.card__body .button {
+  padding: 10px 10px;
 }
 
 .button--primary {
