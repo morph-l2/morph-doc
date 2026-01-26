@@ -11,7 +11,7 @@ export default function AltFeeQuickStartDemo() {
   const [gasPayment, setGasPayment] = useState<"token" | "native">("token");
   const [feeTokenId, setFeeTokenId] = useState("4");
   const [customFeeTokenId, setCustomFeeTokenId] = useState("");
-  const [feeLimit, setFeeLimit] = useState("252637086960555000");
+  const [feeLimit, setFeeLimit] = useState("0");
   const [status, setStatus] = useState("");
   const [txHash, setTxHash] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -222,7 +222,7 @@ export default function AltFeeQuickStartDemo() {
                 id="alt-fee-limit"
                 type="text"
                 inputMode="numeric"
-                placeholder="252637086960555000"
+                placeholder="0"
                 value={feeLimit}
                 onChange={(event) => setFeeLimit(event.target.value)}
                 className="alt-fee-input"
