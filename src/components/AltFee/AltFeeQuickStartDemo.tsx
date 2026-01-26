@@ -3,6 +3,16 @@ import { createPublicClient, createWalletClient, http, parseEther } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { morphHoodiTestnet } from "@morph-network/viem";
 
+type ConfirmPayload = {
+  accountAddress: `0x${string}`;
+  recipient: `0x${string}`;
+  amountEth: string;
+  value: bigint;
+  gasPayment: "token" | "native";
+  feeTokenId?: number;
+  feeLimit?: string;
+};
+
 export default function AltFeeQuickStartDemo() {
   const [privateKey, setPrivateKey] = useState("");
   const [toAddress, setToAddress] = useState("");
@@ -15,6 +25,7 @@ export default function AltFeeQuickStartDemo() {
   const [status, setStatus] = useState("");
   const [txHash, setTxHash] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const [confirmData, setConfirmData] = useState<ConfirmPayload | null>(null);
   const rpcUrl = "https://rpc-hoodi.morph.network";
 
   useEffect(() => {
@@ -34,7 +45,57 @@ export default function AltFeeQuickStartDemo() {
     }
   }, [privateKey, toAddress, lastDerivedAddress]);
 
-  const handleSend = async () => {
+  const executeSend = async (payload: ConfirmPayload) => {
+    setStatus("");
+    setTxHash("");
+
+    try {
+      setIsSending(true);
+      const account = privateKeyToAccount(privateKey.trim() as `0x${string}`);
+
+      const publicClient = createPublicClient({
+        chain: morphHoodiTestnet,
+        transport: http(rpcUrl),
+      });
+
+      const walletClient = createWalletClient({
+        account,
+        chain: morphHoodiTestnet,
+        transport: http(rpcUrl),
+      });
+
+      const nonce = await publicClient.getTransactionCount({
+        address: account.address,
+      });
+
+      const hash = await walletClient.sendTransaction({
+        account,
+        to: payload.recipient,
+        value: payload.value,
+        nonce,
+        gas: 100000n,
+        maxFeePerGas: 15000000n,
+        maxPriorityFeePerGas: 14000000n,
+        ...(payload.gasPayment === "token"
+          ? {
+              // Alt Fee fields
+              feeTokenID: payload.feeTokenId ?? 0,
+              feeLimit: BigInt(payload.feeLimit ?? "0"),
+            }
+          : {}),
+      });
+
+      setTxHash(hash);
+      setStatus("Sent successfully.");
+      console.log("Transaction hash:", hash);
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Send failed.");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  const handleSend = () => {
     setStatus("");
     setTxHash("");
 
@@ -70,9 +131,10 @@ export default function AltFeeQuickStartDemo() {
       return;
     }
 
-    let parsedFeeTokenId = 0;
+    let parsedFeeTokenId: number | undefined;
     if (gasPayment === "token") {
-      const tokenInput = feeTokenId === "custom" ? customFeeTokenId.trim() : feeTokenId.trim();
+      const tokenInput =
+        feeTokenId === "custom" ? customFeeTokenId.trim() : feeTokenId.trim();
       if (!tokenInput) {
         setStatus("Please select a gas fee token.");
         return;
@@ -88,51 +150,32 @@ export default function AltFeeQuickStartDemo() {
       }
     }
 
-    try {
-      setIsSending(true);
-      const account = privateKeyToAccount(normalizedKey as `0x${string}`);
+    const account = privateKeyToAccount(normalizedKey as `0x${string}`);
+    const recipient = (resolvedTo || account.address) as `0x${string}`;
 
-      const publicClient = createPublicClient({
-        chain: morphHoodiTestnet,
-        transport: http(rpcUrl),
-      });
+    setConfirmData({
+      accountAddress: account.address,
+      recipient,
+      amountEth: trimmedAmount,
+      value,
+      gasPayment,
+      feeTokenId: parsedFeeTokenId,
+      feeLimit: gasPayment === "token" ? feeLimit.trim() : undefined,
+    });
+  };
 
-      const walletClient = createWalletClient({
-        account,
-        chain: morphHoodiTestnet,
-        transport: http(rpcUrl),
-      });
-
-      const nonce = await publicClient.getTransactionCount({
-        address: account.address,
-      });
-
-      const recipient = (resolvedTo || account.address) as `0x${string}`;
-      const hash = await walletClient.sendTransaction({
-        account,
-        to: recipient,
-        value,
-        nonce,
-        gas: 100000n,
-        maxFeePerGas: 15000000n,
-        maxPriorityFeePerGas: 14000000n,
-        ...(gasPayment === "token"
-          ? {
-              // Alt Fee fields
-              feeTokenID: parsedFeeTokenId,
-              feeLimit: BigInt(feeLimit.trim()),
-            }
-          : {}),
-      });
-
-      setTxHash(hash);
-      setStatus("Sent successfully.");
-      console.log("Transaction hash:", hash);
-    } catch (error) {
-      setStatus(error instanceof Error ? error.message : "Send failed.");
-    } finally {
-      setIsSending(false);
+  const handleConfirmSend = async () => {
+    if (!confirmData || isSending) {
+      return;
     }
+    const payload = confirmData;
+    setConfirmData(null);
+    await executeSend(payload);
+  };
+
+  const handleCancelConfirm = () => {
+    setConfirmData(null);
+    setStatus("Transaction cancelled.");
   };
 
   return (
@@ -258,8 +301,77 @@ export default function AltFeeQuickStartDemo() {
           This demo sends a transaction on Morph Hoodi Testnet. You still need a
           small testnet balance for gas.
         </div>
-        <div>
-        </div>
+        {confirmData && (
+          <div className="alt-fee-modal-overlay">
+            <div
+              className="alt-fee-modal alt-fee-modal--mono"
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className="alt-fee-modal__header">Confirm transaction</div>
+              <div className="alt-fee-modal__body">
+                <div className="alt-fee-modal__row">
+                  <span className="text--muted">From</span>
+                  <span className="alt-fee-modal__value">
+                    {confirmData.accountAddress}
+                  </span>
+                </div>
+                <div className="alt-fee-modal__row">
+                  <span className="text--muted">To</span>
+                  <span className="alt-fee-modal__value">
+                    {confirmData.recipient}
+                  </span>
+                </div>
+                <div className="alt-fee-modal__row">
+                  <span className="text--muted">Amount</span>
+                  <span className="alt-fee-modal__value">
+                    {confirmData.amountEth} ETH
+                  </span>
+                </div>
+                <div className="alt-fee-modal__row">
+                  <span className="text--muted">Gas payment</span>
+                  <span className="alt-fee-modal__value">
+                    {confirmData.gasPayment === "token"
+                      ? "Token (Alt Fee)"
+                      : "Native ETH"}
+                  </span>
+                </div>
+                {confirmData.gasPayment === "token" && (
+                  <>
+                    <div className="alt-fee-modal__row">
+                      <span className="text--muted">Fee token ID</span>
+                      <span className="alt-fee-modal__value">
+                        {confirmData.feeTokenId}
+                      </span>
+                    </div>
+                    <div className="alt-fee-modal__row">
+                      <span className="text--muted">Fee limit</span>
+                      <span className="alt-fee-modal__value">
+                        {confirmData.feeLimit}
+                      </span>
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="alt-fee-modal__footer">
+                <button
+                  className="button button--secondary px-6 alt-fee-modal__btn alt-fee-modal__btn--ghost"
+                  onClick={handleCancelConfirm}
+                  disabled={isSending}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="button button--primary px-6 alt-fee-modal__btn alt-fee-modal__btn--solid"
+                  onClick={handleConfirmSend}
+                  disabled={isSending}
+                >
+                  {isSending ? "Sending..." : "Confirm"}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
