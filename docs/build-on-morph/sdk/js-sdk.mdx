@@ -234,12 +234,13 @@ async function main() {
 ### Ethers v5 quick start
 
 ```typescript
-import { ethers, providers } from "ethers";
+import { providers, utils } from "ethers";
 import { MorphSigner, MORPH_HOODI_TESTNET } from "@morph-network/ethers5";
 
 async function main() {
   // 1. Provider
   const provider = new providers.Web3Provider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
 
   // 2. Wrap signer
   const web3Signer = provider.getSigner();
@@ -248,17 +249,17 @@ async function main() {
   // 3. Send Alt Fee Transaction
   const tx = await signer.sendTransaction({
     to: "0x...",
-    value: ethers.utils.parseEther("0.001"),
+    value: utils.parseEther("0.001"),
     chainId: MORPH_HOODI_TESTNET.chainId,
-    gasLimit: ethers.BigNumber.from(100000),
-    maxFeePerGas: ethers.BigNumber.from(15000000),
-    maxPriorityFeePerGas: ethers.BigNumber.from(14000000),
+    gasLimit: utils.hexlify(100000),
+    maxFeePerGas: utils.parseUnits("0.015", "gwei"),
+    maxPriorityFeePerGas: utils.parseUnits("0.014", "gwei"),
     // Alt Fee fields
     feeTokenID: 4,
-    feeLimit: ethers.BigNumber.from("252637086960555000"),
+    feeLimit: utils.parseUnits("1", 6), // 1 USDT/USDC
   });
 
-  console.log("Transaction response:", tx);
+  console.log("Transaction hash:", tx.hash);
 }
 ```
 
@@ -428,7 +429,7 @@ import { serializeAltFeeTransaction } from "@morph-network/viem";
 
 const serialized = serializeAltFeeTransaction({
   chainId: 2910,
-  to: "0x92be4a7c135314932b481c4c5a9e391644b91fe5",
+  to: "0x...",
   value: 10000000000000000n,
   gas: 1000000n,
   maxFeePerGas: 15316544n,
@@ -663,7 +664,7 @@ Factory to wrap an Ethers Signer with Morph Alt Fee support.
 **Example:**
 
 ```typescript
-import { BrowserProvider } from "ethers";
+import { BrowserProvider, parseEther } from "ethers";
 import { MorphSigner } from "@morph-network/ethers";
 
 const provider = new BrowserProvider(window.ethereum);
@@ -706,13 +707,15 @@ Sign standard or Alt Fee transactions.
 | `maxPriorityFeePerGas` | `bigint` | Yes | Max priority fee |
 | `nonce` | `number` | No | Tx nonce |
 | `feeTokenID` | `number` | No* | Token ID (required for Alt Fee) |
-| `feeLimit` | `bigint` | No* | Token fee cap (required for Alt Fee) |
+| `feeLimit` | `bigint \| Hex` | No* | Token fee cap (required for Alt Fee). Accepts bigint or hex string. |
 
 **Example:**
 
 ```typescript
+import { parseEther } from "ethers";
+
 const signedTx = await signer.signTransaction({
-  to: "0x78fE92CBB534C4d35A8cB0F3F2C58a5AA7DF2DA6",
+  to: "0x...",
   chainId: 2910,
   value: parseEther("0.001"),
   gasLimit: 1000000n,
@@ -736,8 +739,10 @@ Send standard or Alt Fee transactions.
 **Example:**
 
 ```typescript
+import { parseEther } from "ethers";
+
 const txResponse = await signer.sendTransaction({
-  to: "0x78fE92CBB534C4d35A8cB0F3F2C58a5AA7DF2DA6",
+  to: "0x...",
   chainId: 2910,
   value: parseEther("0.001"),
   gasLimit: 1000000n,
@@ -765,8 +770,10 @@ Estimate gas, including Alt Fee support.
 **Example:**
 
 ```typescript
+import { parseEther } from "ethers";
+
 const gasEstimate = await signer.estimateGas({
-  to: "0x78fE92CBB534C4d35A8cB0F3F2C58a5AA7DF2DA6",
+  to: "0x...",
   chainId: 2910,
   value: parseEther("0.001"),
   gasLimit: 1000000n,
@@ -790,10 +797,13 @@ Populate missing fields (nonce/gasLimit/etc.).
 **Example:**
 
 ```typescript
+import { parseEther } from "ethers";
+
 const populatedTx = await signer.populateTransaction({
-  to: "0x78fE92CBB534C4d35A8cB0F3F2C58a5AA7DF2DA6",
+  to: "0x...",
   value: parseEther("0.001"),
   feeTokenID: 3,
+  feeLimit: 1000000n, // Required for Alt Fee transactions
 });
 
 console.log("Populated tx:", populatedTx);
@@ -820,39 +830,44 @@ const signer = MorphSigner.from(web3Signer);
 ```
 
 ```typescript
-import { ethers } from "ethers";
+import { utils } from "ethers";
 
 const signedTx = await signer.signTransaction({
   to: "0x...",
   chainId: 2910,
-  value: ethers.utils.parseEther("0.001"),
-  gasLimit: ethers.BigNumber.from(1000000),
-  maxFeePerGas: ethers.BigNumber.from(15316544),
-  maxPriorityFeePerGas: ethers.BigNumber.from(14116544),
+  value: utils.parseEther("0.001"),
+  gasLimit: utils.hexlify(1000000),
+  maxFeePerGas: utils.hexlify(15316544),
+  maxPriorityFeePerGas: utils.hexlify(14116544),
   feeTokenID: 2,
-  feeLimit: ethers.BigNumber.from("252637086960555000"),
+  feeLimit: "0x0381653dfd7f0f8", // hex string or bigint
 });
 ```
 
 ```typescript
+import { utils } from "ethers";
+
 const txResponse = await signer.sendTransaction({
   to: "0x...",
   chainId: 2910,
-  value: ethers.utils.parseEther("0.001"),
-  gasLimit: ethers.BigNumber.from(1000000),
-  maxFeePerGas: ethers.BigNumber.from(15316544),
-  maxPriorityFeePerGas: ethers.BigNumber.from(14116544),
+  value: utils.parseEther("0.001"),
+  gasLimit: utils.hexlify(1000000),
+  maxFeePerGas: utils.hexlify(15316544),
+  maxPriorityFeePerGas: utils.hexlify(14116544),
   feeTokenID: 3,
+  feeLimit: utils.parseUnits("1", 6), // Required! 1 USDT/USDC
 });
 ```
 
 ```typescript
+import { utils } from "ethers";
+
 const gasEstimate = await signer.estimateGas({
   to: "0x...",
   chainId: 2910,
-  value: ethers.utils.parseEther("0.001"),
+  value: utils.parseEther("0.001"),
   feeTokenID: 3,
-  feeLimit: ethers.BigNumber.from("252637086960555000"),
+  feeLimit: utils.parseUnits("1", 6),
 });
 
 console.log("Estimated gas:", gasEstimate.toString());
@@ -867,8 +882,10 @@ Chain definitions as a standalone package, so you can reuse Morph networks acros
 **Example:**
 
 ```typescript
-import { morphMainnet, morphHoodiTestnet } from "@morph-network/chain";
+import { MORPH_MAINNET, MORPH_HOODI_TESTNET } from "@morph-network/chain";
 
-console.log(morphMainnet.id); // 2818
-console.log(morphHoodiTestnet.rpcUrls.default.http[0]); // https://rpc-hoodi.morph.network
+console.log(MORPH_MAINNET.chainId); // 2818
+console.log(MORPH_HOODI_TESTNET.rpcUrl); // https://rpc-hoodi.morphl2.io
 ```
+
+> **Note:** The viem-style chain objects (`morphMainnet`, `morphHoodiTestnet`) are only exported from `@morph-network/viem`, not from `@morph-network/chain`.
