@@ -308,7 +308,18 @@ export default function AltFeeQuickStartDemo() {
               role="dialog"
               aria-modal="true"
             >
-              <div className="alt-fee-modal__header">Confirm transaction</div>
+              <div className="alt-fee-modal__header">
+                <span>Confirm transaction</span>
+                <button
+                  type="button"
+                  className="alt-fee-modal__close"
+                  onClick={handleCancelConfirm}
+                  aria-label="Close"
+                  disabled={isSending}
+                >
+                  ×
+                </button>
+              </div>
               <div className="alt-fee-modal__body">
                 <div className="alt-fee-modal__row">
                   <span className="text--muted">From</span>
