@@ -302,17 +302,17 @@ export default function AltFeeQuickStartDemo() {
           small testnet balance for gas.
         </div>
         {confirmData && (
-          <div className="alt-fee-modal-overlay">
+          <div className="fixed inset-0 bg-modal-overlay backdrop-blur-[10px] backdrop-opacity-100 flex items-center justify-center z-[9999]">
             <div
-              className="alt-fee-modal alt-fee-modal--mono"
+              className="max-w-[520px] mx-0 bg-modal-bg rounded-lg w-[92vw] shadow-[0_24px_72px_rgba(0,0,0,0.18)]"
               role="dialog"
               aria-modal="true"
             >
-              <div className="alt-fee-modal__header">
+              <div className="text-lg xl:text-xl font-semibold leading-6 px-6 xl:px-8 pt-6 xl:pt-8 pb-4 xl:pb-6 text-modal-title flex items-center justify-between">
                 <span>Confirm transaction</span>
                 <button
                   type="button"
-                  className="alt-fee-modal__close"
+                  className="absolute p-0 top-4 xl:top-7 right-4 xl:right-7 z-10 cursor-pointer flex justify-center items-center rounded-full hover:bg-bg-img w-8 h-8 text-modal-title text-2xl leading-none"
                   onClick={handleCancelConfirm}
                   aria-label="Close"
                   disabled={isSending}
@@ -320,28 +320,28 @@ export default function AltFeeQuickStartDemo() {
                   ×
                 </button>
               </div>
-              <div className="alt-fee-modal__body">
-                <div className="alt-fee-modal__row">
-                  <span className="text--muted">From</span>
-                  <span className="alt-fee-modal__value">
+              <div className="px-6 xl:px-8 flex flex-col gap-4">
+                <div className="flex justify-between gap-3 text-sm items-center">
+                  <span className="text-modal-text">From</span>
+                  <span className="text-modal-title text-right break-all">
                     {confirmData.accountAddress}
                   </span>
                 </div>
-                <div className="alt-fee-modal__row">
-                  <span className="text--muted">To</span>
-                  <span className="alt-fee-modal__value">
+                <div className="flex justify-between gap-3 text-sm items-center">
+                  <span className="text-modal-text">To</span>
+                  <span className="text-modal-title text-right break-all">
                     {confirmData.recipient}
                   </span>
                 </div>
-                <div className="alt-fee-modal__row">
-                  <span className="text--muted">Amount</span>
-                  <span className="alt-fee-modal__value">
+                <div className="flex justify-between gap-3 text-sm items-center">
+                  <span className="text-modal-text">Amount</span>
+                  <span className="text-modal-title text-right">
                     {confirmData.amountEth} ETH
                   </span>
                 </div>
-                <div className="alt-fee-modal__row">
-                  <span className="text--muted">Gas payment</span>
-                  <span className="alt-fee-modal__value">
+                <div className="flex justify-between gap-3 text-sm items-center">
+                  <span className="text-modal-text">Gas payment</span>
+                  <span className="text-modal-title text-right">
                     {confirmData.gasPayment === "token"
                       ? "Token (Alt Fee)"
                       : "Native ETH"}
@@ -349,31 +349,31 @@ export default function AltFeeQuickStartDemo() {
                 </div>
                 {confirmData.gasPayment === "token" && (
                   <>
-                    <div className="alt-fee-modal__row">
-                      <span className="text--muted">Fee token ID</span>
-                      <span className="alt-fee-modal__value">
+                    <div className="flex justify-between gap-3 text-sm items-center">
+                      <span className="text-modal-text">Fee token ID</span>
+                      <span className="text-modal-title text-right">
                         {confirmData.feeTokenId}
                       </span>
                     </div>
-                    <div className="alt-fee-modal__row">
-                      <span className="text--muted">Fee limit</span>
-                      <span className="alt-fee-modal__value">
+                    <div className="flex justify-between gap-3 text-sm items-center">
+                      <span className="text-modal-text">Fee limit</span>
+                      <span className="text-modal-title text-right">
                         {confirmData.feeLimit}
                       </span>
                     </div>
                   </>
                 )}
               </div>
-              <div className="alt-fee-modal__footer">
+              <div className="px-6 xl:px-8 pt-4 xl:pt-6 pb-6 xl:pb-8 flex justify-end gap-3">
                 <button
-                  className="button button--secondary px-6 alt-fee-modal__btn alt-fee-modal__btn--ghost"
+                  className="button button--secondary px-6 rounded-md border border-modal-content-border bg-transparent !text-modal-title hover:opacity-80 transition-opacity"
                   onClick={handleCancelConfirm}
                   disabled={isSending}
                 >
                   Cancel
                 </button>
                 <button
-                  className="button button--primary px-6 alt-fee-modal__btn alt-fee-modal__btn--solid"
+                  className="button button--primary px-6 rounded-md bg-modal-link text-white hover:opacity-80 transition-opacity"
                   onClick={handleConfirmSend}
                   disabled={isSending}
                 >

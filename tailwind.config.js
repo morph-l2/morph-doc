@@ -158,6 +158,21 @@ module.exports = {
               500: "#1A1A1A",
               600: "#999",
             },
+
+            // ============ Modal 组件 ============
+            overlay: "rgba(0, 0, 0, 0.5)",
+            "modal-bg": "#FFFFFF",
+            "modal-overlay": "rgba(0, 0, 0, 0.5)",
+            "modal-title": "#1F201C",
+            "modal-text": "#8C8C91",
+            "modal-text-2": "#B3B3B9",
+            "modal-text-3": "#0E0E11",
+            "modal-text-4": "#636367",
+            "modal-link": "#18C900",
+            "modal-content-bg": "#F9F9FA",
+            "modal-content-border": "#E8E8EB",
+            "modal-step-active": "#0E0E11",
+            "modal-step-inactive": "#8C8C91",
           }, // light theme colors
         },
         dark: {
@@ -231,6 +246,21 @@ module.exports = {
             "base-color": "#3CFFC8",
 
             divider: "#666",
+
+            // ============ Modal 组件 ============
+            overlay: "rgba(0, 0, 0, 0.6)",
+            "modal-bg": "#18191B",
+            "modal-overlay": "rgba(0, 0, 0, 0.6)",
+            "modal-title": "#FFFFFF",
+            "modal-text": "rgba(255, 255, 255, 0.6)",
+            "modal-text-2": "#B3B3B9",
+            "modal-text-3": "#FFFFFF",
+            "modal-text-4": "#B3B3B9",
+            "modal-link": "#18C900",
+            "modal-content-bg": "#242428",
+            "modal-content-border": "#303035",
+            "modal-step-active": "#18C900",
+            "modal-step-inactive": "#B3B3B9",
           }, // dark theme colors
         },
         // ... custom themes
