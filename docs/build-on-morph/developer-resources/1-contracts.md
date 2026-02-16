@@ -136,7 +136,11 @@ lang: en-US
 
 [weETH](https://explorer.morph.network/address/0x7DCC39B4d1C53CB31e1aBc0e358b43987FEF80f7): 0x7DCC39B4d1C53CB31e1aBc0e358b43987FEF80f7
 
-[BGB](https://explorer.morph.network/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
+[BGB (old)](https://explorer.morph.network/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
+
+[BGB](https://explorer.morph.network/address/0x389C08Bc23A7317000a1FD76c7c5B0cb0b4640b5): 0x389C08Bc23A7317000a1FD76c7c5B0cb0b4640b5
+
+[USDT0](https://explorer.morph.network/address/0xe7cd86e13AC4309349F30B3435a9d337750fC82D): 0xe7cd86e13AC4309349F30B3435a9d337750fC82D
 
 
 ## Morph Hoodi Contracts
