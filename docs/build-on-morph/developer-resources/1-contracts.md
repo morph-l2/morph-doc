@@ -130,7 +130,7 @@ lang: en-US
 
 [WBTC](https://explorer.morph.network/address/0x803DcE4D3f4Ae2e17AF6C51343040dEe320C149D): 0x803DcE4D3f4Ae2e17AF6C51343040dEe320C149D
 
-[USDC](https://explorer.morph.network/address/0xe34c91815d7fc18A9e2148bcD4241d0a5848b693): 0xe34c91815d7fc18A9e2148bcD4241d0a5848b693
+[USDC.e](https://explorer.morph.network/address/0xe34c91815d7fc18A9e2148bcD4241d0a5848b693): 0xe34c91815d7fc18A9e2148bcD4241d0a5848b693
 
 [DAI](https://explorer.morph.network/address/0xef8A24599229D002B28bA2F5C0eBdD3c0EFFbed4): 0xef8A24599229D002B28bA2F5C0eBdD3c0EFFbed4
 
@@ -139,6 +139,8 @@ lang: en-US
 [BGB (old)](https://explorer.morph.network/address/0x55d1f1879969bdbB9960d269974564C58DBc3238): 0x55d1f1879969bdbB9960d269974564C58DBc3238
 
 [BGB](https://explorer.morph.network/address/0x389C08Bc23A7317000a1FD76c7c5B0cb0b4640b5): 0x389C08Bc23A7317000a1FD76c7c5B0cb0b4640b5
+
+[USDC](https://explorer.morph.network/address/0xCfb1186F4e93D60E60a8bDd997427D1F33bc372B): 0xCfb1186F4e93D60E60a8bDd997427D1F33bc372B
 
 [USDT0](https://explorer.morph.network/address/0xe7cd86e13AC4309349F30B3435a9d337750fC82D): 0xe7cd86e13AC4309349F30B3435a9d337750fC82D
 
