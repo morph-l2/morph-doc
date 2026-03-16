@@ -138,7 +138,9 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
      --l2.jwt-secret ./jwt-secret.txt \
      --l2.eth http://localhost:8545 \
      --l2.engine http://localhost:8551 \
-     --log.filename ./node.log 
+     --log.filename ./node.log \
+     --mainnet
+     --l1.rpc=<Your_Ethereum_L1_RPC_URL>
 ```
 
 tail -f node.log to check if the node is running properly, and you can also execute the command curl to check your node connection status.
