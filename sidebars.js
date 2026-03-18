@@ -166,6 +166,7 @@ const NodeOperatorsSidebar = [
     items: [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
       'build-on-morph/developer-resources/node-operation/full-node/run-on-host',
+      'build-on-morph/developer-resources/node-operation/full-node/run-mpt-node',
       'build-on-morph/developer-resources/node-operation/prune-state',
     ],
   },
