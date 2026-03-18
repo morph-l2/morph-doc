@@ -88,6 +88,7 @@ const MorphChainSidebar = [
       { type: 'doc', id: 'build-on-morph/developer-navigation-page', label: 'Start Here' },
       { type: 'doc', id: 'build-on-morph/build-on-morph/integration-one-page', label: 'Morph Integration One Page' },
       { type: 'doc', id: 'build-on-morph/developer-resources/contracts', label: 'Contract Addresses' },
+      { type: 'doc', id: 'build-on-morph/developer-resources/usdc-on-morph', label: 'USDC on Morph' },
       { type: 'doc', id: 'quick-start/wallet-setup', label: 'Wallet Setup' },
       { type: 'doc', id: 'quick-start/faucet', label: 'Faucet' },
       { type: 'doc', id: 'quick-start/bridge', label: 'Bridge' },
