@@ -62,10 +62,10 @@ Examples:
 
 | Component | Image |
 |-----------|-------|
-| geth | `ghcr.io/morph-l2/go-ethereum:2.2.0` |
-| node | `ghcr.io/morph-l2/node:0.5.1` |
+| geth | `ghcr.io/morph-l2/go-ethereum:2.2.1` |
+| node | `ghcr.io/morph-l2/node:0.5.2` |
 
-A Morph release that includes MPT support and Jade fork configuration is required. **morph-v2.2.0** or later is recommended.
+A Morph release that includes MPT support and Jade fork configuration is required. **morph-v2.2.1** or later is recommended.
 
 ## Run a Full MPT Node with Docker
 
@@ -90,7 +90,7 @@ cd run-morph-node/morph-node
 Make sure the `geth` service uses the latest recommended Morph geth image:
 
 ```yaml
-image: ghcr.io/morph-l2/go-ethereum:2.2.0
+image: ghcr.io/morph-l2/go-ethereum:2.2.1
 ```
 
 If your local checkout still uses an older tag, update `morph-node/docker-compose.yml` before starting the node.
@@ -295,7 +295,7 @@ cd morph
 git checkout ${RELEASE_VERSION}
 ```
 
-**morph-v2.2.0** or later is recommended.
+**morph-v2.2.1** or later is recommended.
 
 #### 2. Build geth
 
