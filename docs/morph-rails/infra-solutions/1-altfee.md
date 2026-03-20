@@ -9,7 +9,7 @@ description: AltFee is Morph's native gas abstraction mechanism that allows tran
 
 Every blockchain transaction requires gas paid in the chain's native token (typically ETH). This creates a critical UX barrier: users and agents must acquire, hold, and manage ETH balances solely for transaction fees. For payment use cases, this is impractical — imagine requiring merchants to hold a separate "fee currency" just to accept credit cards.
 
-**AltFee** is Morph's native gas abstraction mechanism. It allows any transaction to pay gas fees in approved ERC-20 tokens (e.g., USDC, USDT, BGB) instead of ETH.
+**AltFee** is Morph's native gas abstraction mechanism. It allows any transaction to pay gas fees in approved ERC-20 tokens (e.g., USDC, USDT0, BGB) instead of ETH.
 
 ## How It Works
 
@@ -25,6 +25,7 @@ Every blockchain transaction requires gas paid in the chain's native token (typi
 |-------|-----------------|----------|
 | USDC | `0xe34c91815d7fc18A9e2148bcD4241d0a5848b693` | — |
 | BGB | `0x389C08Bc23A7317000a1FD76c7c5B0cb0b4640b5` | 4 |
+| USDT0 | `0xe7cd86e13AC4309349F30B3435a9d337750fC82D` | — |
 
 ## Key Properties
 
