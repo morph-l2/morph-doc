@@ -353,6 +353,12 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'MorphRailsSidebar',
+            label: 'Morph Rails',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'LearnSidebar',
             label: 'Learn',
           },
