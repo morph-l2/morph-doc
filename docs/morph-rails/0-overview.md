@@ -2,80 +2,63 @@
 title: What is Morph Rails?
 lang: en-US
 keywords: [morph,morph rails,payment,payfi,layer2,middleware]
-description: Morph Rails is a programmable payment middleware layer built on Morph, transforming raw on-chain primitives into production-ready payment services.
+description: Morph Rails is a programmable payment middleware layer constructed atop the Morph blockchain network, abstracting raw on-chain operations into production-grade payment services.
 ---
 
-## What is Morph Rails?
+## 1. Overview
 
-Morph Rails is a programmable payment middleware layer built on top of Morph. It sits between the base blockchain infrastructure and end-user payment applications, transforming raw on-chain primitives into production-ready payment services.
+### 1.1 What is Morph Rails?
 
-Think of Morph Rails as **"Stripe for on-chain payments."** Just as Stripe abstracts the complexity of card networks, bank APIs, and compliance into a clean developer experience, Morph Rails abstracts blockchain complexity — gas management, transaction monitoring, reconciliation, and settlement — into a unified payment stack.
+**Morph Rails** is a programmable payment middleware layer constructed atop the Morph blockchain network. Positioned between the underlying blockchain infrastructure and terminal payment applications, it abstracts raw on-chain operations into production-grade payment services.
 
-### Core Design Principles
+This middleware encapsulates the inherent complexities of blockchain interactions—including gas management, transaction monitoring, reconciliation, and settlement—into a unified, streamlined payment technology stack. It delivers a concise yet robust developer experience, analogous to leading payment platforms in traditional finance, but architected specifically for the on-chain economy.
 
-- **Programmable** — Every payment flow is configurable via SDK, API, CLI, or MCP. Developers and agents can compose custom payment logic without touching raw blockchain calls.
-- **Self-Custodial** — Morph Rails never holds user or merchant funds. All settlements occur directly on-chain. The middleware orchestrates; it does not custody.
-- **Permissionless** — Any developer, merchant, or AI agent can integrate without approval gates or minimum volume requirements.
-- **Full-Stack** — Unlike protocol-only solutions, Morph Rails provides the complete vertical: infrastructure, middleware services, agentic tooling, and merchant-facing portals.
+**Core Architectural Principles:**
 
-## Architecture
+- **Programmability** — All payment workflows are configurable via SDK, API, CLI, or MCP interfaces. Developers and autonomous agents may compose custom payment logic without direct manipulation of underlying blockchain primitives.
+- **Non-Custodial Architecture** — Morph Rails maintains no custody of user or merchant funds. All settlement operations execute directly on-chain. The middleware functions purely as an orchestration layer, devoid of asset custody capabilities.
+- **Permissionless Access** — Any developer, merchant, or AI agent may integrate without undergoing approval workflows or meeting minimum transaction volume thresholds.
+- **Full-Stack Solution** — Unlike protocol-only implementations, Morph Rails delivers a complete vertical stack: infrastructure layer, middleware services, agentic tooling suite, and merchant-facing portals.
 
-Morph Rails operates as a four-layer architecture:
+### 1.2 Technical Architecture and Workflow
 
-| Layer | Components | Description |
-|-------|-----------|-------------|
-| **Infrastructure** | AltFee, Reference Key | Protocol-level primitives for gas abstraction and transaction indexing |
-| **Middleware** | Private Transactions | Privacy-preserving payment services with compliance support |
-| **Agentic** | x402 Facilitator, Morph Skill, CLI, MCP | AI-native payment tooling for autonomous agents |
-| **Application** | SDK, API, Portal | Developer and merchant-facing interfaces |
+<!-- TODO: Add architecture diagram at static/assets/docs/morph-rails/overview-architecture.png -->
 
-## Transaction Flows
+**Transaction Flow: Merchant Payment Scenario**
 
-### Merchant Payment Flow
+1. Customer initiates USDC payment request through payment application;
+2. Morph Rails receives payment request via SDK/API interface;
+3. Middleware executes security validation (AML screening, risk scoring);
+4. AltFee module performs gas abstraction—user pays gas fees denominated in USDC;
+5. Transaction is submitted to Morph network with attached Reference Key;
+6. On-chain settlement confirmation completed, merchant receives funds directly;
+7. Merchant queries transaction history using Reference Key for reconciliation purposes.
 
-1. A customer initiates a USDC payment through a payment app.
-2. Morph Rails receives the payment request via SDK/API.
-3. The middleware performs security checks (AML screening, risk scoring).
-4. AltFee abstracts gas — the user pays in USDC, not ETH.
-5. The transaction is submitted to the Morph L2 with a Reference Key attached.
-6. On-chain settlement is confirmed; the merchant receives funds directly.
-7. The merchant queries transaction history using the Reference Key for reconciliation.
+**Transaction Flow: AI Agent Payment Scenario**
 
-### AI Agent Payment Flow
+1. AI agent discovers paid API endpoint through Morph Skill Hub;
+2. Agent transmits HTTP request, server responds with `402 Payment Required` status;
+3. x402 Facilitator automatically constructs and cryptographically signs payment transaction;
+4. Gas fees are paid in USDC via AltFee—agent maintains zero ETH balance;
+5. Payment settles on-chain, API returns requested data payload;
+6. Entire workflow completes programmatically without human intervention.
 
-1. An AI agent discovers a paid API endpoint via Morph Skill Hub.
-2. The agent sends an HTTP request; the server responds with `402 Payment Required`.
-3. The x402 Facilitator constructs and signs the payment automatically.
-4. Gas is paid in USDC via AltFee — the agent holds zero ETH.
-5. The payment settles on-chain; the API responds with the requested data.
-6. The entire flow completes programmatically with zero human intervention.
+---
 
-## Who Can Use Morph Rails?
+### 1.3 Target User Segments
 
-### SMBs & Independent Developers
+**Small and Medium Enterprises (SMEs) and Independent Developers**
 
-Traditional payment providers impose onboarding thresholds that exclude small businesses — monthly volume requirements, minimum ticket sizes, lengthy KYC processes. Morph Rails has none of these. A wallet address is your merchant identity. Integrate in 5 minutes. Accept payments from $0.001 to $1,000,000 through the same flow.
+Traditional payment service providers impose prohibitive barriers to entry for small businesses—including monthly transaction volume requirements, minimum ticket size restrictions, and protracted KYC procedures. Morph Rails imposes none of these constraints. A wallet address serves as merchant identity. Integration is achievable within 5 minutes. Payment processing ranges from $0.001 to $1,000,000 through a unified workflow. Business models constrained by legacy risk-control frameworks—such as high-frequency microtransactions, digital goods, and virtual services—operate natively on Morph Rails.
 
-### AI Agents & Automated Services
+**AI Agents and Automated Service Infrastructure**
 
-AI agents require fully programmatic payments with zero human intervention. Morph Rails' Agentic Payment layer is purpose-built for this: agents authenticate with wallet signatures, discover services through the Skill Hub, negotiate and execute payments via x402, and settle on-chain — all without a human in the loop.
+AI agents require fully programmable payment capabilities with zero human intervention. Traditional payment rails mandate manual KYC completion, require human-readable invoicing, and cannot support real-time micropayments between autonomous systems. Morph Rails' Agentic Payment layer is purpose-engineered for this paradigm: agents authenticate via wallet signatures, discover services through the Skill Hub, negotiate and execute payments via x402 protocol, and settle on-chain—all without human participation in the workflow.
 
-### International / Cross-Border Businesses
+**International and Cross-Border Commerce**
 
-Cross-border payments today are fragmented across local payment networks, burdened by opaque FX fees and multi-day settlement cycles. Morph Rails settles in seconds, in USDC, with on-chain transparency. One integration covers every geography.
+Contemporary cross-border payment infrastructure is fragmented across localized payment networks, burdened by opaque foreign exchange fees and multi-day settlement cycles. A merchant in Southeast Asia receiving payments from European customers may incur 3–5% losses to intermediaries and experience 3–7 day settlement delays. Morph Rails settles in seconds, denominated in USDC, with complete on-chain transparency. A single integration provides global coverage.
 
-### Online-Native Innovative Business Models
+**Online-Native Innovative Business Models**
 
-Paid content platforms, API usage billing, in-game purchases, creator tipping, micro-SaaS — these high-frequency, low-value payment scenarios are either unprofitable or impossible on traditional rails. A $0.10 API call incurs a $0.30 Stripe fee. On Morph Rails, the same transaction costs a fraction of a cent in gas, payable in stablecoins via AltFee.
-
-## Component Summary
-
-| Layer | Component | Target User | Interface |
-|-------|-----------|-------------|-----------|
-| Infrastructure | AltFee | All | Protocol-native |
-| Infrastructure | Reference Key | Merchants | API / SDK |
-| Middleware | Private Transactions | Enterprise / Consumer | SDK / API |
-| Agentic | x402 Facilitator | AI Agents | HTTP 402 / MCP |
-| Agentic | Morph Skill Hub | AI Agents | Skills CLI |
-| Agentic | Morph Rails CLI | Agents / DevOps | CLI (JSON) |
-| Agentic | MCP Server | AI Frameworks | MCP Protocol |
+Paid content platforms, API consumption billing, in-game purchases, creator tipping mechanisms, micro-SaaS offerings—these high-frequency, low-value payment scenarios are either economically unviable or technically impossible on traditional payment rails. A $0.10 API call incurs a $0.30 processing fee on Stripe. On Morph Rails, the equivalent transaction costs a fraction of a cent in gas fees, payable in stablecoins via AltFee abstraction.

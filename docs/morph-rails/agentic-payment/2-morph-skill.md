@@ -1,19 +1,21 @@
 ---
 title: Morph Skill Hub
 lang: en-US
-keywords: [morph,skill hub,AI agent,payment skills,registry]
-description: Morph Skill Hub is a registry and distribution platform for AI agent payment skills, providing modular packages that teach agents how to perform payment operations.
+keywords: [morph,skill hub,AI agent,payment skills,registry,modular framework]
+description: Morph Skills is an extensible, modular framework of self-contained modules that teach AI agents how to perform payment-related tasks on Morph.
 ---
 
-## What is Morph Skill Hub?
+## What is Morph Skill?
 
-Morph Skill Hub is a registry and distribution platform for AI agent payment skills. A "skill" is a modular package that teaches an AI agent how to perform specific payment operations on Morph — check balances, send payments, swap tokens, query transactions, and more.
+Morph Skills is an extensible, modular framework designed to enhance the capabilities of the Morph ecosystem. At its core, a Skill is a self-contained, context-aware module — similar to a smart contract or a specialized agent — that can be deployed within or alongside the Morph network. These skills encapsulate complex on-chain and off-chain functionalities behind a simple, standardized interface, allowing them to perform sophisticated operations efficiently. Powered by Morph's high-throughput and low-latency infrastructure, they can handle everything from automated cross-chain asset management and data oracle integrations to custom protocol extensions.
+
+In simple terms, a Skill is a modular package that teaches an AI agent how to carry out specific payment-related tasks on Morph — such as checking balances, sending payments, swapping tokens, querying transactions, and more.
 
 ## Why Skills Instead of SDKs?
 
 Traditional SDKs are designed for human developers who read documentation, write code, and debug errors. AI agents operate differently: they need structured, machine-readable instructions with clear input/output contracts. Skills provide exactly this — a self-contained package of capabilities that an agent can discover, install, and execute without human guidance.
 
-## Core Skills
+## Core Skills Available
 
 | Skill | Description |
 |-------|-------------|
@@ -22,34 +24,5 @@ Traditional SDKs are designed for human developers who read documentation, write
 | `morph-bridge` | Cross-chain asset bridging |
 | `morph-altfee` | Gas abstraction with ERC-20 tokens |
 | `morph-explorer` | On-chain data queries (tx, blocks, tokens) |
-| `morph-x402` | x402 payment protocol integration |
 
-## Skill Discovery & Installation
-
-```bash
-# Search for available skills
-morph-skills find "payment"
-
-# Install a skill
-morph-skills add morph/morph-skill@morph-wallet
-
-# List installed skills
-morph-skills list
-```
-
-## Skill Architecture
-
-Each skill is a self-contained directory containing:
-
-```
-morph-wallet/
-├── SKILL.md          # Machine-readable capability description and usage instructions
-├── scripts/          # Executable scripts (Python/JS) for on-chain operations
-├── references/       # Context documents, examples, and best practices
-└── _meta.json        # Version, author, and dependency metadata
-```
-
-- **`SKILL.md`** — The primary interface for AI agents. Contains structured descriptions of available actions, required parameters, expected outputs, and usage examples.
-- **`scripts/`** — Executable logic that performs on-chain operations. Skills abstract blockchain complexity so agents don't need to construct raw transactions.
-- **`references/`** — Supporting documentation including contract ABIs, token lists, and best practices.
-- **`_meta.json`** — Metadata for versioning, dependency resolution, and skill discovery.
+To explore more Skills and view the full documentation, please visit [GitHub](https://github.com/morph-l2/morph-skill).
