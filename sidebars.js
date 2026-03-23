@@ -223,24 +223,24 @@ const MorphRailsSidebar = [
       { type: 'doc', id: 'morph-rails/infra-solutions/reference-key', label: 'Reference Key' },
     ],
   },
-  {
-    type: 'category',
-    label: 'Middleware Service',
-    collapsed: false,
-    items: [
-      { type: 'doc', id: 'morph-rails/middleware-service/private-transactions', label: 'Private Transactions' },
-    ],
-  },
+  // {
+  //   type: 'category',
+  //   label: 'Middleware Service',
+  //   collapsed: false,
+  //   items: [
+  //     { type: 'doc', id: 'morph-rails/middleware-service/private-transactions', label: 'Private Transactions' },
+  //   ],
+  // },
   {
     type: 'category',
     label: 'Agentic Payment',
     collapsed: false,
     items: [
-      { type: 'doc', id: 'morph-rails/agentic-payment/overview', label: 'Overview' },
+      // { type: 'doc', id: 'morph-rails/agentic-payment/overview', label: 'Overview' },
       { type: 'doc', id: 'morph-rails/agentic-payment/x402-facilitator', label: 'x402 Facilitator' },
       { type: 'doc', id: 'morph-rails/agentic-payment/morph-skill', label: 'Morph Skill Hub' },
-      { type: 'doc', id: 'morph-rails/agentic-payment/morph-rails-cli', label: 'Morph Rails CLI' },
-      { type: 'doc', id: 'morph-rails/agentic-payment/mcp', label: 'MCP' },
+      // { type: 'doc', id: 'morph-rails/agentic-payment/morph-rails-cli', label: 'Morph Rails CLI' },
+      // { type: 'doc', id: 'morph-rails/agentic-payment/mcp', label: 'MCP' },
     ],
   },
 ];
