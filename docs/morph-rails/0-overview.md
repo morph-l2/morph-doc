@@ -13,6 +13,8 @@ description: Morph Rails is a programmable payment middleware layer constructed 
 
 This middleware encapsulates the inherent complexities of blockchain interactions—including gas management, transaction monitoring, reconciliation, and settlement—into a unified, streamlined payment technology stack. It delivers a concise yet robust developer experience, analogous to leading payment platforms in traditional finance, but architected specifically for the on-chain economy.
 
+![Morph Rails Architecture](/assets/docs/morph-rails/overview-architecture.png)
+
 **Core Architectural Principles:**
 
 - **Programmability** — All payment workflows are configurable via SDK, API, CLI, or MCP interfaces. Developers and autonomous agents may compose custom payment logic without direct manipulation of underlying blockchain primitives.
@@ -21,8 +23,6 @@ This middleware encapsulates the inherent complexities of blockchain interaction
 - **Full-Stack Solution** — Unlike protocol-only implementations, Morph Rails delivers a complete vertical stack: infrastructure layer, middleware services, agentic tooling suite, and merchant-facing portals.
 
 ### 1.2 Technical Architecture and Workflow
-
-<!-- TODO: Add architecture diagram at static/assets/docs/morph-rails/overview-architecture.png -->
 
 **Transaction Flow: Merchant Payment Scenario**
 
