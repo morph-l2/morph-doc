@@ -26,7 +26,7 @@ Running the Morph node requires 2 processes: `geth` and `node`.
 
 
 :::tip
-According to limitations of the current geth implementation, we only support archive mode for launching a Geth.  So the storage size of Geth will constantly increase along with blocks produced. 
+For zkTrie nodes, only archive mode (`--gcmode=archive`) is supported. For MPT nodes, archive mode is not required but is still used by default in reference commands. See [Run a Full MPT Node](./3-run-mpt-node.md) for MPT-specific details.
 :::
 
 ## Build executable binary
@@ -164,4 +164,9 @@ The returned `"latest_block_height"` indicates the latest block height this node
 
 
 ### Sync from genesis block
-Start the execution client and consensus client directly without downloading snapshot.
+
+You can sync from genesis by starting the execution client and consensus client directly without downloading a snapshot. Use the same startup commands shown above, but skip the snapshot download steps.
+
+:::tip
+Syncing from genesis is much slower than restoring from a snapshot and is **not recommended** for most operators.
+:::

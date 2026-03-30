@@ -3,10 +3,10 @@ title: Upgrade node running from docker
 lang: en-US
 ---
 
-:::warning Jade Fork — migration required
-If you are upgrading for the **Jade Fork** (zkTrie → MPT), this general upgrade guide is **not sufficient**. You must prepare a new MPT data directory and use the MPT-specific startup commands.
+:::warning Jade Fork — image update required
+To sync past the **Jade Fork** height, update your images to **geth:2.2.1** / **node:0.5.2** or later, then restart. This guide covers that process — existing zkTrie nodes only need an image update.
 
-See the dedicated guide: [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md)
+If you also want to **migrate to MPT storage** (optional), use the dedicated guide instead: [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md)
 :::
 
 ## Docker Images

@@ -25,7 +25,7 @@ After the [Jade Fork](../upgrade-node/0-jade-fork-overview.md), nodes run with `
 ### zkTrie Nodes (pre-Jade Fork)
 
 :::caution
-This section only applies to legacy zkTrie nodes that have **not yet migrated** to MPT. After the Jade Fork, all nodes should be running in MPT mode. See the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md) for migration details.
+This section only applies to nodes still running with zkTrie state storage. After the Jade Fork, MPT storage is recommended for new deployments, but existing zkTrie nodes that updated their binaries can continue operating normally. See the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md) for details.
 :::
 
 For nodes still running with zkTrie state storage, use the zkTrie-specific prune command:

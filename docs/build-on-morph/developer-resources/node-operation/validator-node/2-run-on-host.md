@@ -100,7 +100,7 @@ mv ${SNAPSHOT_NAME}/data node-data
 ```bash title="Script for starting mainnet geth"
 ./morph/go-ethereum/build/bin/geth --morph \
     --datadir "./geth-data" \
-    --http --http.api=web3,debug,eth,txpool,net,engine \
+    --http --http.api=web3,debug,eth,txpool,net,engine,morph \
     --authrpc.addr localhost \
     --authrpc.vhosts="localhost" \
     --authrpc.port 8551 \

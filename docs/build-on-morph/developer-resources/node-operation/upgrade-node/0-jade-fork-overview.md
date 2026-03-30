@@ -65,19 +65,30 @@ If you want to switch to MPT storage, you need to: stop the old node, prepare a 
 
 ### What if I miss the fork time?
 
-Your node will stop processing new blocks at the fork height. To recover, perform the full upgrade procedure — prepare an MPT data directory, restore from an MPT snapshot, and start with `--morph-mpt`. Your node will then sync forward from the snapshot.
+Your node will stop processing new blocks at the fork height. To recover, update your binaries to **morph-v2.2.1** or later and restart with the same startup command. Your node will resume syncing from where it stopped.
 
-### Can I roll back to zkTrie after upgrading?
+If you also want to migrate to MPT storage at this point, follow the [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md) or [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md) guide instead.
 
-**No.** The Jade Fork is a one-way upgrade. Once the network passes the fork height, all new blocks use MPT format. There is no supported path to revert to zkTrie.
+### Can I roll back from MPT storage to zkTrie?
+
+**No.** If you have migrated your node to MPT storage (i.e. you are running with `--morph-mpt`), there is no supported path to revert to zkTrie data. The migration is one-way.
+
+If you only updated your binaries and are still running a zkTrie node, no rollback is needed — you can downgrade the binary if necessary, though this is not recommended.
 
 ### My node crashes after upgrading — how do I debug?
 
+First, determine which upgrade path you took:
+
+**Binary update only (zkTrie node):**
+1. **Verify binary versions** — ensure you are running `geth >= 2.2.1` and `node >= 0.5.2`.
+2. **Check `geth` logs** for startup errors. Make sure you are using the same startup command as before — do not add `--morph-mpt` to a zkTrie node.
+
+**Migrated to MPT storage:**
 1. **Check `geth` logs** for errors related to state storage or trie access. Common causes:
-   - Starting `geth` without the `--morph-mpt` flag
-   - Using an old zkTrie data directory instead of a fresh MPT directory
+   - Missing `--morph-mpt` flag in the startup command
+   - Accidentally pointing at the old zkTrie data directory
 2. **Verify binary versions** — ensure you are running `geth >= 2.2.1` and `node >= 0.5.2`.
-3. **Verify data directory** — confirm you are pointing at the MPT data directory, not the old zkTrie one.
+3. **Verify the data directory** — confirm `--datadir` points at the fresh MPT data directory, not the old zkTrie one.
 4. **Re-download the MPT snapshot** if the data appears corrupted.
 
 ### Where can I get help?

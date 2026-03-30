@@ -33,7 +33,7 @@ The **Jade** fork is the time-based point at which blocks use MPT format instead
 | Mainnet | 2026-04-08 06:00:00 UTC |
 
 :::tip Already running a zkTrie node?
-If you have an existing zkTrie node and need to migrate for the Jade Fork, use the dedicated upgrade guides instead:
+If you have an existing zkTrie node and want to migrate to MPT storage, use the dedicated upgrade guides instead:
 
 - [Jade Fork Upgrade — Host](../upgrade-node/3-jade-fork-upgrade-host.md)
 - [Jade Fork Upgrade — Docker](../upgrade-node/4-jade-fork-upgrade-docker.md)

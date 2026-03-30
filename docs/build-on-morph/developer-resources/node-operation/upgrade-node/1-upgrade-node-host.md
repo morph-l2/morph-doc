@@ -3,10 +3,10 @@ title: Upgrade node running on the host
 lang: en-US
 ---
 
-:::warning Jade Fork — migration required
-If you are upgrading for the **Jade Fork** (zkTrie → MPT), this general upgrade guide is **not sufficient**. You must prepare a new MPT data directory and start with `--morph-mpt`.
+:::warning Jade Fork — binary update required
+To sync past the **Jade Fork** height, update your binaries to **morph-v2.2.1** or later, then restart. This guide covers that process — existing zkTrie nodes only need a binary update.
 
-See the dedicated guide: [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md)
+If you also want to **migrate to MPT storage** (optional), use the dedicated guide instead: [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md)
 :::
 
 Upgrading the node is straightforward. Simply install the new version of the node executable file and replace the previous version. Then, stop the currently running node and restart it with the updated version. Node will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
@@ -17,28 +17,28 @@ Running the node requires two binary files: `morphnode` and `geth`. Choose to up
 
 You can have the released code version from [Morph release](https://github.com/morph-l2/morph/releases) page.
 
-```js
+```bash
 git clone https://github.com/morph-l2/morph.git
 
-// checkout the latest version of the source code you need
+# checkout the latest version of the source code you need
 git checkout ${latestVersion}
 
-// install geth
+# install geth
 make geth
 
-// install morphnode
+# install morphnode
 cd ./morph/node && make build
 ```
 
 #### If you only update the Geth version
 Check the `Geth` version from [go-ethereum](https://github.com/morph-l2/go-ethereum/releases)
 
-```js
+```bash
 git clone https://github.com/morph-l2/go-ethereum.git
 
 git checkout ${latestVersion}
 
-// install geth
+# install geth
 make geth
 ```
 

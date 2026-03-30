@@ -6,7 +6,11 @@ lang: en-US
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide walks you through upgrading an existing **host-based (source-built)** Morph node from zkTrie to MPT for the Jade Fork.
+This guide walks you through **optionally migrating** an existing **host-based (source-built)** Morph node from zkTrie to MPT storage.
+
+:::note
+This migration is **not required** to sync past the Jade Fork. Existing zkTrie nodes only need a binary update to morph-v2.2.1 or later — see the general [Upgrade Node — Host](./1-upgrade-node-host.md) guide for that. Follow this guide only if you want to switch to MPT storage.
+:::
 
 :::caution
 zkTrie data is **not** compatible with MPT. Do **not** reuse your old data directory. You must prepare a fresh MPT data directory or restore from an MPT snapshot.
