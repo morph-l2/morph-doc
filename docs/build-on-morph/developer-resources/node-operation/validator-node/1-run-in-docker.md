@@ -5,6 +5,12 @@ lang: en-US
 
 This guide will help you start a validator node running in the docker container using [run-morph-node](https://github.com/morph-l2/run-morph-node)
 
+:::warning Jade Fork — MPT is now required
+After the **Jade Fork**, all nodes (including validators) must run in MPT mode. The instructions below describe the **legacy zkTrie** startup flow. For the Jade Fork migration, see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
+
+Validator nodes follow the same MPT data migration steps as full nodes. After preparing the MPT data directory, use `make run-validator` (or `make run-hoodi-validator`) with the updated MPT images and entrypoint.
+:::
+
 ### Quick Start
 
 :::info

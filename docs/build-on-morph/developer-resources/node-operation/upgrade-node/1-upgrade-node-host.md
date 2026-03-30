@@ -3,6 +3,12 @@ title: Upgrade node running on the host
 lang: en-US
 ---
 
+:::warning Jade Fork — migration required
+If you are upgrading for the **Jade Fork** (zkTrie → MPT), this general upgrade guide is **not sufficient**. You must prepare a new MPT data directory and start with `--morph-mpt`.
+
+See the dedicated guide: [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md)
+:::
+
 Upgrading the node is straightforward. Simply install the new version of the node executable file and replace the previous version. Then, stop the currently running node and restart it with the updated version. Node will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
 
 Running the node requires two binary files: `morphnode` and `geth`. Choose to upgrade the binary files according to your specific needs.

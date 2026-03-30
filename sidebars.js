@@ -168,7 +168,6 @@ const NodeOperatorsSidebar = [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
       'build-on-morph/developer-resources/node-operation/full-node/run-on-host',
       'build-on-morph/developer-resources/node-operation/full-node/run-mpt-node',
-      'build-on-morph/developer-resources/node-operation/prune-state',
     ],
   },
   {
@@ -182,11 +181,29 @@ const NodeOperatorsSidebar = [
   },
   {
     type: 'category',
+    label: 'Forks & Network Upgrades',
+    collapsed: false,
+    items: [
+      'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-overview',
+      'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-upgrade-host',
+      'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-upgrade-docker',
+    ],
+  },
+  {
+    type: 'category',
     label: 'Upgrade Node',
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-docker',
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-host',
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Maintenance',
+    collapsed: false,
+    items: [
+      'build-on-morph/developer-resources/node-operation/prune-state',
     ],
   },
 ];

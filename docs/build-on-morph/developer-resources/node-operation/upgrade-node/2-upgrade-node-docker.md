@@ -3,6 +3,12 @@ title: Upgrade node running from docker
 lang: en-US
 ---
 
+:::warning Jade Fork — migration required
+If you are upgrading for the **Jade Fork** (zkTrie → MPT), this general upgrade guide is **not sufficient**. You must prepare a new MPT data directory and use the MPT-specific startup commands.
+
+See the dedicated guide: [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md)
+:::
+
 ## Docker Images
 
 - `go-ethereum:` [ghcr.io/morph-l2/go-ethereum](https://github.com/morph-l2/go-ethereum/pkgs/container/go-ethereum)

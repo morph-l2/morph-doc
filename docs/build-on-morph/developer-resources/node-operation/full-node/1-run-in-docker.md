@@ -5,6 +5,12 @@ lang: en-US
 
 This guide will help you start a full node running in the docker container using [run-morph-node](https://github.com/morph-l2/run-morph-node)
 
+:::warning Jade Fork — MPT is now required
+After the **Jade Fork**, all nodes must run in MPT mode. If you are setting up a new node, see [Run a Full MPT Node](./3-run-mpt-node.md) instead. If you are migrating an existing zkTrie node, see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
+
+The instructions below describe the **legacy zkTrie** startup flow and will not produce a node that can sync past the Jade Fork height.
+:::
+
 ## Quick Start
 
 :::note
@@ -25,7 +31,7 @@ make run-node
 
 The command `make run-node` takes the `../mainnet` as your node's **Home** directory by default. There will be two folders in the **Home** directory named `geth-data` and `node-data`, serving as data directories for the execution client and consensus client of the Morph node, respectively.
 
-This command will also generate the `secret-jwt.txt` file under **Home** directory for the authentication during RPC calls between the execution client and consensus client.
+This command will also generate the `jwt-secret.txt` file under **Home** directory for the authentication during RPC calls between the execution client and consensus client.
 
 ## Advanced Usage
 
