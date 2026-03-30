@@ -161,7 +161,7 @@ export L1_MSG_START_HEIGHT=${The height matches your snapshot}
 For hoodi network, using
 ```bash
 export CHAIN_ID=17000 
-export L1MESSAGEQUEUECONTRACT=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
+export L1MESSAGEQUEUE_CONTRACT=0x778d1d9a4d8b6b9ade36d967a9ac19455ec3fd0b
 export ROLLUP=0xd8c5c541d56f59d65cf775de928ccf4a47d4985c
 export DERIVATION_START_HEIGHT=${The height matches your snapshot}
 export L1_MSG_START_HEIGHT=${The height matches your snapshot}

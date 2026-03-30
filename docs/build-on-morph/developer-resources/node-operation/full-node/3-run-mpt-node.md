@@ -76,11 +76,11 @@ A Morph release that includes MPT support and Jade fork configuration is require
 
 ## Run a Full MPT Node with Docker
 
-This section follows the same general flow as the existing [Docker docs](./run-in-docker), but uses the MPT-specific startup path.
+This section follows the same general flow as the existing [Docker docs](./1-run-in-docker.md), but uses the MPT-specific startup path.
 
 Reference materials:
 
-- [Run a full node with docker](./run-in-docker)
+- [Run a full node with docker](./1-run-in-docker.md)
 - [`run-morph-node`](https://github.com/morph-l2/run-morph-node)
 
 ### Quick Start
@@ -263,7 +263,7 @@ This section follows the same general flow as the existing [source-based docs](.
 
 Reference materials:
 
-- [Run a full node from source](./run-on-host)
+- [Run a full node from source](./2-run-on-host.md)
 
 ### Hardware Requirements
 
