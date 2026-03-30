@@ -5,10 +5,10 @@ lang: en-US
 
 This guide outlines the steps to start a Morph node. The example assumes the home directory is `~/.morph`
 
-:::warning Jade Fork — MPT is now required
-After the **Jade Fork**, all nodes must run in MPT mode. If you are setting up a new node, see [Run a Full MPT Node](./3-run-mpt-node.md) instead. If you are migrating an existing zkTrie node, see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
+:::warning Jade Fork — binary update required
+After the **Jade Fork**, you must update your binaries to **morph-v2.2.1** or later to sync past the fork height. Existing zkTrie nodes that update their binaries can continue to process new blocks without changing their storage format.
 
-The instructions below describe the **legacy zkTrie** startup flow and will not produce a node that can sync past the Jade Fork height.
+If you are setting up a **new node**, see [Run a Full MPT Node](./3-run-mpt-node.md) — MPT is recommended for all new deployments. If you want to migrate an existing zkTrie node to MPT, see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
 :::
 
 ## Hardware requirements

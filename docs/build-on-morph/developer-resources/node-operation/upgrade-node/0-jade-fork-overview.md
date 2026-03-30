@@ -21,10 +21,12 @@ The **Jade Fork** is a network upgrade that migrates Morph's state storage from 
 
 ## Impact on Node Operators
 
-This upgrade is **mandatory**. After the fork activates at the scheduled time, any node that has not been upgraded will stall at the fork height and stop syncing new blocks.
+A **binary update** is mandatory. After the fork activates at the scheduled time, any node running binaries older than **morph-v2.2.1** will stall at the fork height and stop syncing new blocks.
+
+Existing zkTrie nodes that update their binaries can continue to process new MPT-format blocks without changing their storage format — just as MPT nodes could process zkTrie blocks before the fork. However, MPT storage is recommended for all new deployments.
 
 :::danger
-zkTrie data is **not** compatible with MPT. You cannot reuse your existing zkTrie data directory for an MPT node. A fresh MPT data directory (or an MPT snapshot restore) is required.
+If you choose to migrate to MPT storage, zkTrie data is **not** compatible with MPT. You cannot reuse your existing zkTrie data directory for an MPT node. A fresh MPT data directory (or an MPT snapshot restore) is required.
 :::
 
 ## Upgrade Path
@@ -33,7 +35,7 @@ Choose the path that matches your current setup:
 
 ### Fresh deployment (no existing node)
 
-Follow the [Run a Full MPT Node](../full-node/3-run-mpt-node.md) guide directly. No migration steps are needed.
+Follow the [Run a Full MPT Node](../full-node/3-run-mpt-node.md) guide directly. MPT is recommended for all new deployments.
 
 ### Already running a node with `--morph-mpt`
 
@@ -44,9 +46,13 @@ Your node is already using MPT state storage. You only need to update your binar
 
 Then restart your node with the same startup command.
 
-### Running a zkTrie node (most common)
+### Running a zkTrie node — binary update only
 
-You need to perform the full migration: stop the old node, prepare a new MPT data directory, and start with `--morph-mpt`. Follow the guide for your deployment method:
+If you want to keep your zkTrie storage, simply update your binaries to **morph-v2.2.1** or later and restart. Your node will continue to sync new blocks normally.
+
+### Running a zkTrie node — migrate to MPT storage (optional)
+
+If you want to switch to MPT storage, you need to: stop the old node, prepare a new MPT data directory, and start with `--morph-mpt`. Follow the guide for your deployment method:
 
 - **Host (source-built):** [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md)
 - **Docker:** [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md)
