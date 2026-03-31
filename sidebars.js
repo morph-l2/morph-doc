@@ -180,18 +180,11 @@ const NodeOperatorsSidebar = [
   },
   {
     type: 'category',
-    label: 'Upgrade Node',
+    label: 'Upgrade & Forks',
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-host',
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-docker',
-    ],
-  },
-  {
-    type: 'category',
-    label: 'Forks & Network Upgrades',
-    collapsed: false,
-    items: [
       'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-overview',
     ],
   },
