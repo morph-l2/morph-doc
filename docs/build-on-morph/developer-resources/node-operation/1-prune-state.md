@@ -12,7 +12,7 @@ The hardware is important, **make sure the SSD meets: solid-state drive(SSD), 8k
 
 ### MPT Nodes (post-Jade Fork)
 
-After the [Jade Fork](../upgrade-node/0-jade-fork-overview.md), nodes run with `--morph-mpt` and use standard MPT state storage. Use the standard prune command:
+After the [Jade Fork](./upgrade-node/0-jade-fork-overview.md), nodes run with `--morph-mpt` and use standard MPT state storage. Use the standard prune command:
 
 1. Stop the node, including the consensus client (`morphnode`) and the execution client (`geth`).
 2. Run the prune command:
@@ -25,7 +25,7 @@ After the [Jade Fork](../upgrade-node/0-jade-fork-overview.md), nodes run with `
 ### zkTrie Nodes (pre-Jade Fork)
 
 :::caution
-This section only applies to nodes still running with zkTrie state storage. After the Jade Fork, MPT storage is recommended for new deployments, but existing zkTrie nodes that updated their binaries can continue operating normally. See the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md) for details.
+This section only applies to nodes still running with zkTrie state storage. After the Jade Fork, MPT storage is recommended for new deployments, but existing zkTrie nodes that updated their binaries can continue operating normally. See the [Jade Fork Overview](./upgrade-node/0-jade-fork-overview.md) for details.
 :::
 
 For nodes still running with zkTrie state storage, use the zkTrie-specific prune command:
