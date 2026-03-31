@@ -1,179 +1,208 @@
 ---
-title: Run a full node with docker
+title: Run a full node with Docker
 lang: en-US
 ---
 
-This guide will help you start a full node running in the docker container using [run-morph-node](https://github.com/morph-l2/run-morph-node)
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-:::warning Jade Fork — binary update required
-After the **Jade Fork**, you must update your binaries to **morph-v2.2.1** or later to sync past the fork height. Existing zkTrie nodes that update their binaries can continue to process new blocks without changing their storage format.
+This guide will help you start a full node running in a Docker container using [run-morph-node](https://github.com/morph-l2/run-morph-node).
 
-If you are setting up a **new node**, see [Run a Full MPT Node](./3-run-mpt-node.md) — MPT is recommended for all new deployments. If you want to migrate an existing zkTrie node to MPT, see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
-:::
+New deployments use **MPT** (Merkle Patricia Trie) state storage by default.
+
+### Recommended Versions
+
+| Component | Image |
+|-----------|-------|
+| geth | `ghcr.io/morph-l2/go-ethereum:2.2.1` |
+| node | `ghcr.io/morph-l2/node:0.5.2` |
 
 ## Quick Start
 
-:::note
-The instructions outlined below detail the procedure for running a full node on the mainnet. To set up and operate a **Hoodi node**, you need to follow the tutorial on [`sync node from snapshot`](#sync-node-from-snapshot).
-:::
-
-1. Clone the dockerfile repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/morph-l2/run-morph-node.git
+cd run-morph-node/morph-node
 ```
-2. Run the following command
+
+### 2. Check the geth image version
+
+Make sure the `geth` service in `morph-node/docker-compose.yml` uses the latest recommended image:
+
+```yaml
+image: ghcr.io/morph-l2/go-ethereum:2.2.1
+```
+
+If your local checkout uses an older tag, update it before starting the node.
+
+### 3. Prepare the MPT environment overrides
+
+The Docker MPT flow uses `.env_mpt` as an override on top of `.env` for mainnet or `.env_hoodi` for Hoodi.
+
+Example `.env_mpt`:
 
 ```bash
-cd run-morph-node/morph-node
-make run-node
+# MPT-specific overrides
+GETH_ENTRYPOINT_FILE=./entrypoint-geth-mpt.sh
+
+# Use the published MPT snapshot names for the target network
+MAINNET_MPT_SNAPSHOT_NAME=mpt-snapshot-20260312-1
+HOODI_MPT_SNAPSHOT_NAME=mpt-snapshot-20260312-1
 ```
 
-The command `make run-node` takes the `../mainnet` as your node's **Home** directory by default. There will be two folders in the **Home** directory named `geth-data` and `node-data`, serving as data directories for the execution client and consensus client of the Morph node, respectively.
+:::caution
+For MPT nodes, the snapshot name **must** use the `mpt-snapshot-*` prefix. Do not use the standard `snapshot-*` name here.
+:::
 
-This command will also generate the `jwt-secret.txt` file under **Home** directory for the authentication during RPC calls between the execution client and consensus client.
+### 4. Download and decompress the MPT snapshot
+
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
+
+```bash
+make download-and-decompress-mainnet-mpt-snapshot
+```
+
+This downloads from:
+
+```
+https://snapshot.morphl2.io/mainnet/mpt-snapshot-20260312-1.tar.gz
+```
+
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
+
+```bash
+make download-and-decompress-hoodi-mpt-snapshot
+```
+
+This downloads from:
+
+```
+https://snapshot.morphl2.io/hoodi/mpt-snapshot-20260312-1.tar.gz
+```
+
+</TabItem>
+</Tabs>
+
+### 5. Set up the snapshot data
+
+After downloading, place the decompressed data under the directory specified by `MORPH_HOME`. For example, if the snapshot folder is named `mpt-snapshot-20260312-1`:
+
+```bash
+mv ./mpt-snapshot-20260312-1/geth ${MORPH_HOME}/geth-data
+mkdir -p ${MORPH_HOME}/node-data/data
+mv ./mpt-snapshot-20260312-1/data/* ${MORPH_HOME}/node-data/data
+```
+
+The directory structure should look like this:
+
+```
+└── ${MORPH_HOME}
+    ├── geth-data
+    │   ├── static-nodes.json
+    │   └── geth
+    └── node-data
+        ├── config
+        │   ├── config.toml
+        │   └── genesis.json
+        └── data
+```
+
+### 6. Run the node
+
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
+
+```bash
+make run-mainnet-mpt-node
+```
+
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
+
+```bash
+make run-hoodi-mpt-node
+```
+
+</TabItem>
+</Tabs>
+
+These commands start `geth` with the MPT entrypoint and run the consensus client using the selected environment.
 
 ## Advanced Usage
 
-With the [Quick Start](#quick-start) guide above, you can quickly start a node using the default configuration files. However, we also support customizing the node's data directory and parameter settings.
+### Customizing the data directory
 
-### Customizing Data Directory
-The host directory paths that are mounted by the Docker container are specified in the ```morph-node/.env``` file.
+The host directories mounted by Docker are controlled by the environment files.
 
-```js title="morph-node/.env"
-// HOME folder for morph node
+Example:
+
+```bash
 MORPH_HOME=../mainnet
-// Flag indicates the network for execution client.
 MORPH_FLAG=morph
-// Location of the jwt file for the authentication between clients
 JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
-// The entrypoint shell script for start execution client  
-GETH_ENTRYPOINT_FILE=./entrypoint-geth.sh
-// The snapshot name for Morph node 
-MAINNET_SNAPSHOT_NAME=snapshot-20241218-1
-
-......
+GETH_ENTRYPOINT_FILE=./entrypoint-geth-mpt.sh
 ```
 
-You have the flexibility to customize the directory paths as per your requirements. 
+If you customize `MORPH_HOME`, make sure the `geth-data` and `node-data` directories exist under that location and contain the required config files.
 
-Please note that if you have customized the **HOME** directory of your node, you need to copy the necessary configuration files to this directory. Specifically, you should copy the `node-data` and `geth-data` from `./mainnet` to your **HOME** directory.
-
-:::note
-For running a testnet node, the ```morph-node/.env_hoodi``` file should be used instead of the ```morph-node/.env``` file.
-:::
+For testnet, use `.env_hoodi` together with `.env_mpt`.
 
 ### Customizing parameters
 
-The default configuration required for mainnet node startup is located in the `./mainnet` directory, while the files under `./hoodi` directory is used for testnet node startup. 
+To customize the execution client startup command, edit:
 
-```javascript
-└── mainnet
-    ├── geth-data
-    │   └── static-nodes.json
-    └── node-data
-        ├── config
-        │   ├── config.toml
-        │   └── genesis.json
-        └── data
-
-// for testnet nodes
-└── hoodi
-    ├── geth-data
-    │   └── static-nodes.json
-    └── node-data
-        ├── config
-        │   ├── config.toml
-        │   └── genesis.json
-        └── data
+```
+morph-node/entrypoint-geth-mpt.sh
 ```
 
-If you wish to modify the Geth startup command, you can do so by editing the ```./morph-node/entrypoint-geth.sh``` file. For adjustments to the Tendermint-related configuration parameters, you should modify the `node-data/config/config.toml` file.
+To customize consensus-layer parameters, edit:
 
-## Sync node from snapshot
+```
+mainnet/node-data/config/config.toml   # for mainnet
+hoodi/node-data/config/config.toml     # for Hoodi
+```
 
-We suggest starting your node sync from a snapshot to speed up the process of syncing your node to the latest state. 
+:::tip
+The current reference MPT entrypoint still uses `--gcmode=archive` by default. If you want to run a pruned MPT node, customize the `geth` flags in `entrypoint-geth-mpt.sh` after validating your operational requirements.
+:::
 
-### Clone the dockerfile repository
+## Verify the Node
+
+Check whether `geth` is connected to peers:
 
 ```bash
-git clone https://github.com/morph-l2/run-morph-node.git
+curl -X POST -H 'Content-Type: application/json' \
+  --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' \
+  localhost:8545
 ```
 
-### Acquire the snapshot you need
+Check the consensus client status:
 
-The `morph-node/.env` configuration file in the repository you just cloned is designed for setting up the Morph node on the mainnet. By default, it is pre-configured to use the latest snapshot.
-
-If you need a historical snapshot, you must manually update the **SNAPSHOT_NAME** in the `morph-node/.env` file. (Note: For the **testnet**, the corresponding file is `morph-node/.env_hoodi`.)
-
-- **Fetch historical snapshot(Optional)**:
-    
-    The historical snapshots are recorded in [snapshot-information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information)
-
-    ```js
-    // ...
-
-    MAINNET_SNAPSHOT_NAME={your expected snapshot name} 
-
-    // ...
-    ```
-
-- **Execute download and decompress the snapshot for your network**:
-    
-    Run the following command to download and decompress the snapshot for your network:
-
-    **For mainnet**:
-
-    ```
-    cd ./morph-node
-    make download-and-decompress-mainnet-snapshot
-    ```
-
-    **For testnet**:
-
-    ```
-    cd ./morph-node
-    make download-and-decompress-hoodi-snapshot
-    ```
-
-    The command will assist you in downloading and decompressing the snapshot archive.
-
-### Set up the snapshot data
-
-After downloading, locate the snapshot by placing the decompressed data files in the correct directory specified by the **MORPH_HOME** path in your `.env` file. Ensure the data files align with the node's expected structure to allow seamless synchronization.
-
-For example, if the snapshot folder is named ```snapshot-20241218-1```, 
-- move the directory ```snapshot-20241218-1/geth``` to the ```${MORPH_HOME}/geth-data``` directory 
-- move the contents from ```snapshot-20241218-1/data``` to the ```${NODE_DATA_DIR}/data``` directory.
-
-```
-mv ./morph-node/snapshot-20241218-1/geth ${MORPH_HOME}/geth-data
-mv ./morph-node/snapshot-20241218-1/data/* ${MORPH_HOME}/node-data/data
+```bash
+curl http://localhost:26657/status
 ```
 
-The folder structure will be like 
+When `catching_up` becomes `false`, the node has finished catching up.
 
-```javascript
-└── ${MORPH_HOME}
-    ├── geth-data // data directory for geth
-    │   └── static-nodes.json
-    │   └── geth // directory from snapshot/geth   
-    └── node-data // data directory for node
-        ├── config
-        │   ├── config.toml
-        │   └── genesis.json
-        └── data // data directory from snapshot/node
-```
+## MPT Snapshot Naming
 
-### 4. Run the Node
-With the snapshot and configuration files ready, navigate to the `morph-node` folder under your cloned repository, and start the node using the provided command
+MPT snapshots use dedicated links and do **not** use the standard `snapshot-*` naming pattern.
+
+| Type | Naming Pattern | Example |
+|------|---------------|---------|
+| Standard snapshot | `snapshot-YYYYMMDD-N` | `snapshot-20260312-1` |
+| MPT snapshot | `mpt-snapshot-YYYYMMDD-N` | `mpt-snapshot-20260312-1` |
+
+Use the dedicated MPT snapshot URL pattern:
 
 ```
-make run-node
+https://snapshot.morphl2.io/<network>/mpt-snapshot-YYYYMMDD-N.tar.gz
 ```
 
-For testnet, run
+Examples:
 
-```
-make run-hoodi-node
-```
+- `https://snapshot.morphl2.io/mainnet/mpt-snapshot-20260312-1.tar.gz`
+- `https://snapshot.morphl2.io/hoodi/mpt-snapshot-20260312-1.tar.gz`

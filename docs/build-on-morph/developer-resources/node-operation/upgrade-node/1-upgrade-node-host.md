@@ -3,12 +3,6 @@ title: Upgrade node running on the host
 lang: en-US
 ---
 
-:::warning Jade Fork — binary update required
-To sync past the **Jade Fork** height, update your binaries to **morph-v2.2.1** or later, then restart. This guide covers that process — existing zkTrie nodes only need a binary update.
-
-If you also want to **migrate to MPT storage** (optional), use the dedicated guide instead: [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md)
-:::
-
 Upgrading the node is straightforward. Simply install the new version of the node executable file and replace the previous version. Then, stop the currently running node and restart it with the updated version. Node will automatically use the data of your old node and sync the latest blocks that were mined since you shut down the old software.
 
 Running the node requires two binary files: `morphnode` and `geth`. Choose to upgrade the binary files according to your specific needs.
@@ -69,12 +63,12 @@ Make sure to use the same start-up command you used before the upgrade
     --authrpc.jwtsecret=./jwt-secret.txt \
     --log.filename=./geth.log
 
-## start node    
+## start node
 ./morph/node/build/bin/morphnode --home ./node-data \
      --l2.jwt-secret ./jwt-secret.txt \
      --l2.eth http://localhost:8545 \
      --l2.engine http://localhost:8551 \
-     --log.filename ./node.log 
+     --log.filename ./node.log
 ```
 
 :::note

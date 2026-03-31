@@ -167,7 +167,6 @@ const NodeOperatorsSidebar = [
     items: [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
       'build-on-morph/developer-resources/node-operation/full-node/run-on-host',
-      'build-on-morph/developer-resources/node-operation/full-node/run-mpt-node',
     ],
   },
   {
@@ -194,8 +193,6 @@ const NodeOperatorsSidebar = [
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-overview',
-      'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-upgrade-host',
-      'build-on-morph/developer-resources/node-operation/upgrade-node/jade-fork-upgrade-docker',
     ],
   },
   {

@@ -35,7 +35,10 @@ Choose the path that matches your current setup:
 
 ### Fresh deployment (no existing node)
 
-Follow the [Run a Full MPT Node](../full-node/3-run-mpt-node.md) guide directly. MPT is recommended for all new deployments.
+Follow the full node guides directly — MPT is the default for all new deployments:
+
+- [Run a full node with Docker](../full-node/1-run-in-docker.md)
+- [Run a full node from source](../full-node/2-run-on-host.md)
 
 ### Already running a node with `--morph-mpt`
 
@@ -50,24 +53,29 @@ Then restart your node with the same startup command.
 
 If you want to keep your zkTrie storage, simply update your binaries to **morph-v2.2.1** or later and restart. Your node will continue to sync new blocks normally.
 
+- **Host:** [Upgrade Node — Host](./1-upgrade-node-host.md)
+- **Docker:** [Upgrade Node — Docker](./2-upgrade-node-docker.md)
+
 ### Running a zkTrie node — migrate to MPT storage (optional)
 
-If you want to switch to MPT storage, you need to: stop the old node, prepare a new MPT data directory, and start with `--morph-mpt`. Follow the guide for your deployment method:
+If you want to switch to MPT storage, you need to: stop the old node, prepare a new MPT data directory, and start with `--morph-mpt`. Follow the full node guides for the MPT setup steps:
 
-- **Host (source-built):** [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md)
-- **Docker:** [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md)
+- **Host:** [Run a full node from source](../full-node/2-run-on-host.md)
+- **Docker:** [Run a full node with Docker](../full-node/1-run-in-docker.md)
+
+:::warning
+Do **not** reuse your existing zkTrie data directory. You must prepare a fresh MPT data directory or restore from an MPT snapshot.
+:::
 
 ## FAQ / Troubleshooting
 
 ### Can I reuse my zkTrie data directory?
 
-**No.** zkTrie and MPT data formats are incompatible. You must prepare a fresh MPT data directory or restore from an MPT snapshot. See the [MPT snapshot naming](../full-node/3-run-mpt-node.md#mpt-snapshot-naming) section for details.
+**No.** zkTrie and MPT data formats are incompatible. You must prepare a fresh MPT data directory or restore from an MPT snapshot. See the [MPT snapshot naming](../full-node/1-run-in-docker.md#mpt-snapshot-naming) section for details.
 
 ### What if I miss the fork time?
 
 Your node will stop processing new blocks at the fork height. To recover, update your binaries to **morph-v2.2.1** or later and restart with the same startup command. Your node will resume syncing from where it stopped.
-
-If you also want to migrate to MPT storage at this point, follow the [Jade Fork Upgrade — Host](./3-jade-fork-upgrade-host.md) or [Jade Fork Upgrade — Docker](./4-jade-fork-upgrade-docker.md) guide instead.
 
 ### Can I roll back from MPT storage to zkTrie?
 

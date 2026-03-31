@@ -5,10 +5,8 @@ lang: en-US
 
 This guide will help you start a validator node running in the docker container using [run-morph-node](https://github.com/morph-l2/run-morph-node)
 
-:::warning Jade Fork — binary update required
-After the **Jade Fork**, you must update your images to **geth:2.2.1** / **node:0.5.2** or later to sync past the fork height. Existing zkTrie validators that update their images can continue to process new blocks without changing their storage format.
-
-If you want to migrate an existing zkTrie validator to MPT storage, follow the same data migration steps as for full nodes — see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
+:::tip
+For new validator deployments, MPT is the default storage format. See the [full node Docker guide](../full-node/1-run-in-docker.md) for MPT setup details, then follow this guide for validator-specific configuration.
 :::
 
 ### Quick Start

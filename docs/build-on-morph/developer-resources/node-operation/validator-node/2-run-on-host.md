@@ -6,10 +6,8 @@ lang: en-US
 
 This guide describes the approach to running a Morph validator node. If you are unfamiliar with the validator duties, please refer to our [optimistic zkEVM](../../../../how-morph-works/3-optimistic-zkevm.md) design.
 
-:::warning Jade Fork — binary update required
-After the **Jade Fork**, you must update your binaries to **morph-v2.2.1** or later to sync past the fork height. Existing zkTrie validators that update their binaries can continue to process new blocks without changing their storage format.
-
-If you want to migrate an existing zkTrie validator to MPT storage, follow the same data migration steps as for full nodes — see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
+:::tip
+For new validator deployments, MPT is the default storage format. See the [full node source guide](../full-node/2-run-on-host.md) for MPT setup details, then follow this guide for validator-specific configuration.
 :::
 
 Create the folder `~/.morph` as our home directory for this example.

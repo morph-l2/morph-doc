@@ -3,144 +3,193 @@ title: Run a full node from source
 lang: en-US
 ---
 
-This guide outlines the steps to start a Morph node. The example assumes the home directory is `~/.morph`
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-:::warning Jade Fork — binary update required
-After the **Jade Fork**, you must update your binaries to **morph-v2.2.1** or later to sync past the fork height. Existing zkTrie nodes that update their binaries can continue to process new blocks without changing their storage format.
+This guide outlines the steps to start a Morph node from source. The example assumes the home directory is `~/.morph`.
 
-If you are setting up a **new node**, see [Run a Full MPT Node](./3-run-mpt-node.md) — MPT is recommended for all new deployments. If you want to migrate an existing zkTrie node to MPT, see the [Jade Fork Overview](../upgrade-node/0-jade-fork-overview.md).
-:::
+New deployments use **MPT** (Merkle Patricia Trie) state storage by default.
 
-## Hardware requirements
+### Recommended Versions
 
-Running the Morph node requires 2 processes: `geth` and `node`.  
+**morph-v2.2.1** or later is recommended.
 
-- `Geth`:the Morph execution layer which needs to meet the requirements as below
-  - Fast CPU with 4+ cores
-  - 32GB+ RAM
-  - High-performance SSD with at least 1TB of free space
-  - 25+ MBit/sec download Internet service
+## Hardware Requirements
 
+Running a Morph node requires two processes:
 
-- `Node`:the Morph consensus layer embedded tendermint which needs to meet the [tendermint hardware requirements](https://docs.tendermint.com/v0.34/tendermint-core/running-in-production.html#processor-and-memory). 
+| Process | Description |
+|---------|-------------|
+| `geth`  | Morph execution layer |
+| `node`  | Morph consensus layer |
 
+Recommended hardware:
 
-:::tip
-For zkTrie nodes, only archive mode (`--gcmode=archive`) is supported. For MPT nodes, archive mode is not required but is still used by default in reference commands. See [Run a Full MPT Node](./3-run-mpt-node.md) for MPT-specific details.
-:::
+- Fast CPU with 4+ cores
+- 32GB+ RAM
+- High-performance SSD with at least 1TB of free space
+- 25+ MBit/sec download bandwidth
 
-## Build executable binary
+## Build Executable Binaries
 
-### Clone morph
+### 1. Clone Morph
 
-```
-mkdir -p ~/.morph 
+```bash
+mkdir -p ~/.morph
 cd ~/.morph
 git clone https://github.com/morph-l2/morph.git
 ```
 
-Next, you need to check out a release version. You can find the available release versions on the [Morph Releases](https://github.com/morph-l2/morph/releases) page. It is recommended to use the latest release version.
+Check out a release that includes MPT support and the Jade fork configuration.
 
-```
+```bash
 cd morph
 git checkout ${RELEASE_VERSION}
 ```
 
-### Build Geth
+### 2. Build geth
 
-Notice: You need C compiler to build geth
+A C compiler is required to build `geth`.
 
-```
+```bash
 make geth
 ```
 
-### Build Node
+### 3. Build the node
 
-```
-cd ~/.morph/morph/node 
+```bash
+cd ~/.morph/morph/node
 make build
 ```
 
 ## Config Preparation
 
-1. Download the config files and make data dir
+### 1. Download config files and create the data directory
 
-```
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
+
+```bash
 cd ~/.morph
-
-## mainnet
 wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/mainnet/data.zip
-
-## testnet
-wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/hoodi/data.zip
-
 unzip data.zip
 ```
 
-2. Create a shared secret with node
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
 
+```bash
+cd ~/.morph
+wget https://raw.githubusercontent.com/morph-l2/run-morph-node/main/hoodi/data.zip
+unzip data.zip
 ```
+
+</TabItem>
+</Tabs>
+
+### 2. Create the shared JWT secret
+
+```bash
 cd ~/.morph
 openssl rand -hex 32 > jwt-secret.txt
 ```
 
-## Start Node
-Mainnet nodes support synchronization from either the genesis block or a snapshot block, while testnet nodes only support synchronization from snapshots.
+## Start the Node
 
-### Sync from snapshot(Recommended)
-You should build the binary and prepare the config files in the above steps first, then download the snapshot.
+Mainnet and Hoodi MPT nodes are best started from an MPT snapshot.
 
-#### Download snapshot
-Download the latest snapshot corresponding to either the mainnet or testnet network. 
+### Sync from Snapshot (Recommended)
 
-A complete record of historical snapshots is available [here](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information). Below is an example of how to download a snapshot
+First build the binaries and prepare the config files as shown above. Then download an MPT snapshot.
 
-```bash
-## mainnet
-wget -q --show-progress https://snapshot.morphl2.io/mainnet/${SNAPSHOT_NAME}.tar.gz
-tar -xzvf ${SNAPSHOT_NAME}.tar.gz
+#### Download the MPT snapshot
 
-## hoodi
-wget -q --show-progress https://snapshot.morphl2.io/hoodi/${SNAPSHOT_NAME}.tar.gz
-tar -xzvf ${SNAPSHOT_NAME}.tar.gz
-```
+Use the dedicated MPT snapshot links, **not** the standard `snapshot-*` links.
 
-Extracting snapshot data to the data directory your node points to 
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
 
 ```bash
-mv ${SNAPSHOT_NAME}/geth geth-data
-mv ${SNAPSHOT_NAME}/data node-data
+wget -q --show-progress https://snapshot.morphl2.io/mainnet/mpt-snapshot-20260312-1.tar.gz
+tar -xzvf mpt-snapshot-20260312-1.tar.gz
 ```
 
-#### Start execution client
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
 
-```bash title="Script for starting mainnet geth"
+```bash
+wget -q --show-progress https://snapshot.morphl2.io/hoodi/mpt-snapshot-20260312-1.tar.gz
+tar -xzvf mpt-snapshot-20260312-1.tar.gz
+```
+
+</TabItem>
+</Tabs>
+
+If a newer MPT snapshot is available, replace `mpt-snapshot-20260312-1` with the latest published value.
+
+#### Set up the snapshot data
+
+Move the snapshot data into the prepared data directories:
+
+```bash
+mkdir -p ~/.morph/node-data/data
+mv mpt-snapshot-20260312-1/geth ~/.morph/geth-data
+mv mpt-snapshot-20260312-1/data/* ~/.morph/node-data/data
+```
+
+#### Start the execution client
+
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
+
+```bash
 ./morph/go-ethereum/build/bin/geth --morph \
+    --morph-mpt \
     --datadir "./geth-data" \
     --http --http.api=web3,debug,eth,txpool,net,engine,morph \
     --authrpc.addr localhost \
     --authrpc.vhosts="localhost" \
     --authrpc.port 8551 \
     --authrpc.jwtsecret=./jwt-secret.txt \
+    --gcmode=archive \
     --log.filename=./geth.log
-
 ```
 
-:::note
-For Hoodi testnet, use `--morph-hoodi` instead of `--morph`.
-:::
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
 
-tail -f `geth.log` to check if the Geth is running properly, or you can also execute the curl command below to check if you are connected to peers.
+```bash
+./morph/go-ethereum/build/bin/geth --morph-hoodi \
+    --morph-mpt \
+    --datadir "./geth-data" \
+    --http --http.api=web3,debug,eth,txpool,net,engine,morph \
+    --authrpc.addr localhost \
+    --authrpc.vhosts="localhost" \
+    --authrpc.port 8551 \
+    --authrpc.jwtsecret=./jwt-secret.txt \
+    --gcmode=archive \
+    --log.filename=./geth.log
+```
+
+</TabItem>
+</Tabs>
+
+Follow the `geth` log:
+
+```bash
+tail -f geth.log
+```
+
+Check whether `geth` is connected to peers:
 
 ```bash
 curl -X POST -H 'Content-Type: application/json' \
   --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' \
   localhost:8545
-
-{"jsonrpc":"2.0","id":74,"result":"0x6"}
 ```
 
-#### Start consensus client
+#### Start the consensus client
+
 ```bash
 ./morph/node/build/bin/morphnode --home ./node-data \
     --l2.jwt-secret ./jwt-secret.txt \
@@ -149,7 +198,11 @@ curl -X POST -H 'Content-Type: application/json' \
     --log.filename ./node.log
 ```
 
-tail -f `node.log` to check if the node is running properly.
+Follow the node log:
+
+```bash
+tail -f node.log
+```
 
 #### Check sync status
 
@@ -157,16 +210,33 @@ tail -f `node.log` to check if the node is running properly.
 curl http://localhost:26657/status
 ```
 
-The returned `"catching_up"` indicates whether the node is still syncing. When `catching_up` becomes `false`, the node has finished catching up.
+When `catching_up` becomes `false`, the node has finished catching up.
 
-The returned `"latest_block_height"` indicates the latest block height this node has synced.
+### Sync from Genesis Block
 
+You can also start an MPT node from genesis without downloading a snapshot.
 
+In that case:
 
-### Sync from genesis block
-
-You can sync from genesis by starting the execution client and consensus client directly without downloading a snapshot. Use the same startup commands shown above, but skip the snapshot download steps.
+- Prepare a fresh MPT data directory
+- Start `geth` with `--morph-mpt`
+- Start the consensus client after `geth` is running
 
 :::tip
-Syncing from genesis is much slower than restoring from a snapshot and is **not recommended** for most operators.
+This method is much slower than restoring from an MPT snapshot and is **not recommended** for most operators.
 :::
+
+## MPT Snapshot Naming
+
+MPT snapshots use dedicated links and do **not** use the standard `snapshot-*` naming pattern.
+
+| Type | Naming Pattern | Example |
+|------|---------------|---------|
+| Standard snapshot | `snapshot-YYYYMMDD-N` | `snapshot-20260312-1` |
+| MPT snapshot | `mpt-snapshot-YYYYMMDD-N` | `mpt-snapshot-20260312-1` |
+
+Use the dedicated MPT snapshot URL pattern:
+
+```
+https://snapshot.morphl2.io/<network>/mpt-snapshot-YYYYMMDD-N.tar.gz
+```
