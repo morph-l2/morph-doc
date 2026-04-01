@@ -1,5 +1,5 @@
 ---
-title: MorphTx Technical Specification
+title: MorphTx Developer Guide
 lang: en-US
 ---
 
@@ -576,20 +576,276 @@ Estimates L1 data fee for a transaction. Input is `TransactionArgs` — Morph fi
 
 ---
 
-## 7. Alt Fee Mechanism
+## 7. Go SDK Development Guide
 
-### 7.1 Concept
+### 7.1 Using `ethclient`
+
+```go
+client, _ := ethclient.Dial("http://localhost:8545")
+
+// Query transactions by Reference
+results, err := client.GetTransactionHashesByReference(ctx,
+    common.HexToReference("0x1234..."),
+    nil, // offset, default 0
+    nil, // limit, default 100
+)
+```
+
+### 7.2 Using Contract Bindings (`accounts/abi/bind`)
+
+**Source**: `accounts/abi/bind/base.go`
+
+Morph fields in `TransactOpts`:
+
+```go
+type TransactOpts struct {
+    // ... standard fields ...
+    FeeTokenID uint16
+    FeeLimit   *big.Int
+    Version    *uint8             // nil = auto-detect
+    Reference  *common.Reference
+    Memo       *[]byte
+}
+```
+
+**Usage example:**
+
+```go
+auth, _ := bind.NewKeyedTransactorWithChainID(key, chainID)
+auth.FeeTokenID = 1
+auth.FeeLimit = big.NewInt(1000000)
+
+// V1 transaction (with Reference and Memo)
+v1 := types.MorphTxVersion1
+auth.Version = &v1
+ref := common.HexToReference("0x1234...")
+auth.Reference = &ref
+memo := []byte("payment for order #123")
+auth.Memo = &memo
+```
+
+**Auto-detect logic (`morphTxVersion`):**
+
+```
+if Version == nil:
+    if Reference or Memo exists → V1
+    else → V0
+else:
+    Use specified version and validate parameter compatibility
+```
+
+**Transaction type auto-selection**: When `FeeTokenID != 0` or `Version != nil` or Reference/Memo exists, `BoundContract.transact()` calls `createMorphTx()` instead of `createDynamicTx()`.
+
+### 7.3 Direct Transaction Construction
+
+```go
+// V0 Example: Pay gas with token ID=1
+tx := types.NewTx(&types.MorphTx{
+    ChainID:    big.NewInt(2818),
+    Nonce:      1,
+    GasTipCap:  big.NewInt(1e9),
+    GasFeeCap:  big.NewInt(2e9),
+    Gas:        21000,
+    To:         &toAddr,
+    Value:      big.NewInt(1e18),
+    FeeTokenID: 1,
+    FeeLimit:   big.NewInt(5e17),
+    Version:    types.MorphTxVersion0,
+})
+
+// V1 Example: Pay with ETH + attach Reference and Memo
+ref := common.HexToReference("0xabcd...")
+memo := []byte("hello morph")
+tx := types.NewTx(&types.MorphTx{
+    ChainID:    big.NewInt(2818),
+    Nonce:      1,
+    GasTipCap:  big.NewInt(1e9),
+    GasFeeCap:  big.NewInt(2e9),
+    Gas:        21000,
+    To:         &toAddr,
+    Value:      big.NewInt(1e18),
+    FeeTokenID: 0,         // ETH
+    Version:    types.MorphTxVersion1,
+    Reference:  &ref,
+    Memo:       &memo,
+})
+
+// Sign
+signer := types.NewEmeraldSigner(big.NewInt(2818))
+signedTx, _ := types.SignTx(tx, signer, privateKey)
+
+// Serialize (for sending raw transaction)
+rawBytes, _ := signedTx.MarshalBinary()
+```
+
+### 7.4 Using `CallMsg`
+
+```go
+msg := ethereum.CallMsg{
+    From:       fromAddr,
+    To:         &toAddr,
+    Gas:        0,
+    GasFeeCap:  big.NewInt(2e9),
+    GasTipCap:  big.NewInt(1e9),
+    Value:      big.NewInt(0),
+    Data:       calldata,
+    FeeTokenID: 1,
+    FeeLimit:   big.NewInt(5e17),
+    Version:    types.MorphTxVersion0,
+}
+```
+
+---
+
+## 8. Other Language SDK Guide
+
+### 8.1 Transaction Type Identifier
+
+- EIP-2718 type byte: **`0x7F`** (127)
+- This is a typed transaction following the standard envelope format
+
+### 8.2 Encoding Implementation
+
+#### V0 Encoding
+
+```python
+raw_bytes = [0x7F] + rlp_encode([
+    chain_id,           # big integer
+    nonce,              # uint64
+    max_priority_fee,   # big integer (gasTipCap)
+    max_fee,            # big integer (gasFeeCap)
+    gas_limit,          # uint64
+    to,                 # 20 bytes or empty (contract creation)
+    value,              # big integer
+    data,               # bytes
+    access_list,        # [[address, [storage_keys]], ...]
+    fee_token_id,       # uint16 (MUST be > 0)
+    fee_limit,          # big integer
+    v,                  # big integer (0 or 1)
+    r,                  # big integer
+    s,                  # big integer
+])
+```
+
+#### V1 Encoding
+
+```python
+raw_bytes = [0x7F, 0x01] + rlp_encode([
+    chain_id,
+    nonce,
+    max_priority_fee,
+    max_fee,
+    gas_limit,
+    to,
+    value,
+    data,
+    access_list,
+    fee_token_id,       # uint16 (can be 0)
+    fee_limit,          # big integer
+    reference,          # bytes (0 or 32 bytes)
+    memo,               # bytes (0~64 bytes)
+    v,
+    r,
+    s,
+])
+```
+
+### 8.3 Signing Implementation
+
+#### V0 Signing Hash
+
+```python
+sig_hash = keccak256(
+    [0x7F] + rlp_encode([
+        chain_id, nonce, max_priority_fee, max_fee, gas_limit,
+        to, value, data, access_list, fee_token_id, fee_limit
+    ])
+)
+```
+
+#### V1 Signing Hash
+
+```python
+sig_hash = keccak256(
+    [0x7F] + rlp_encode([
+        chain_id, nonce, max_priority_fee, max_fee, gas_limit,
+        to, value, data, access_list, fee_token_id, fee_limit,
+        version, reference, memo
+    ])
+)
+```
+
+**Key differences:**
+- V0 signing hash does **not** include `version`/`reference`/`memo`
+- V1 signing hash includes `version` (value=1), `reference` (pointer may be nil), `memo` (pointer may be nil)
+- In Go, nil pointers encode as RLP empty string (`0x80`) — other language SDKs must handle this correctly
+
+#### Signing & Recovery
+
+- Use standard **secp256k1 ECDSA** to sign the `sig_hash`
+- V value is the recovery identifier: **0 or 1** (NOT 27/28)
+- To recover the sender address, add 27 to V and use `ecrecover`
+
+### 8.4 Decoding Implementation
+
+```python
+# Pseudocode
+
+def decode_morph_tx(raw_bytes):
+    assert raw_bytes[0] == 0x7F  # type byte
+    payload = raw_bytes[1:]
+
+    first_byte = payload[0]
+    if first_byte >= 0xC0 or first_byte == 0x00:
+        # V0: direct RLP decode
+        fields = rlp_decode(payload)  # 14 fields
+        assert fields[9] > 0  # feeTokenID must be non-zero
+        return MorphTxV0(fields)
+
+    elif first_byte == 0x01:
+        # V1: skip version byte
+        fields = rlp_decode(payload[1:])  # 16 fields
+        reference = fields[11]  # 0 or 32 bytes
+        memo = fields[12]       # 0~64 bytes
+        return MorphTxV1(fields)
+
+    else:
+        raise Error("unsupported version")
+```
+
+### 8.5 JSON-RPC Field Mapping
+
+| Go Field | JSON Field | Type | Description |
+|----------|-----------|------|-------------|
+| `GasTipCap` | `maxPriorityFeePerGas` | hex big int | EIP-1559 priority fee |
+| `GasFeeCap` | `maxFeePerGas` | hex big int | EIP-1559 fee cap |
+| `FeeTokenID` | `feeTokenID` | hex uint16 | Token ID |
+| `FeeLimit` | `feeLimit` | hex big int | Token fee cap |
+| `Version` | `version` | hex uint64 | Version (V1+ only) |
+| `Reference` | `reference` | hex bytes32 | Reference key (V1+ only) |
+| `Memo` | `memo` | hex bytes | Memo (V1+ only) |
+
+> **Note on type differences:**
+> - `TransactionArgs` (sending): `version` is `hexutil.Uint16`
+> - `RPCTransaction` (querying): `version` is `hexutil.Uint64`
+> - `txJSON` (JSON serialization): `version` is `hexutil.Uint64`
+
+---
+
+## 9. Alt Fee Mechanism
+
+### 9.1 Concept
 
 Alt Fee allows users to pay transaction gas fees using on-chain registered ERC-20 tokens (e.g., USDT, USDC) instead of ETH. Unlike Paymaster-based models that require extra contract calls and external bundlers, Alt Fee is handled directly at the **protocol level**, reducing overhead and improving efficiency.
 
-### 7.2 Key Fields
+### 9.2 Key Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `FeeTokenID` | `uint16` | Token's on-chain registry ID (`0` = ETH, `> 0` = token) |
 | `FeeLimit` | `*big.Int` | Maximum token amount the user is willing to pay |
 
-### 7.3 Fee Conversion
+### 9.3 Fee Conversion
 
 The system follows EIP-1559 to calculate fees in ETH, then converts to the selected token using an on-chain oracle rate:
 
@@ -605,21 +861,21 @@ Token rates are maintained by oracle services and stored in the **Token Registry
 0x5300000000000000000000000000000000000021
 ```
 
-### 7.4 Constraint Rules
+### 9.4 Constraint Rules
 
 1. **V0 must use Alt Fee**: `FeeTokenID > 0`
 2. **V1 Alt Fee is optional**: `FeeTokenID` can be 0 (use ETH)
 3. **FeeLimit is linked to FeeTokenID**: If `FeeTokenID == 0`, then `FeeLimit` must be nil/0
 4. **Token must be active**: Tx pool and execution check whether the token is in active state
 
-### 7.5 Alt Fee in Gas Estimation
+### 9.5 Alt Fee in Gas Estimation
 
 When using `eth_estimateGas`:
 - If `FeeTokenID` is set, the node queries the user's **token balance** instead of ETH balance
 - L1 Data Fee is converted to token units at the current exchange rate
 - `FeeLimit` participates in the payable gas cap calculation
 
-### 7.6 Fee Info in Receipts
+### 9.6 Fee Info in Receipts
 
 After execution, the receipt contains:
 - `feeRate`: ETH/token exchange rate used at execution time
@@ -628,13 +884,13 @@ After execution, the receipt contains:
 
 ---
 
-## 8. Reference Index System
+## 10. Reference Index System
 
-### 8.1 Concept
+### 10.1 Concept
 
 Reference is a **32-byte on-chain index key** that allows users to associate multiple transactions with the same identifier, queryable via RPC.
 
-### 8.2 Storage Mechanism
+### 10.2 Storage Mechanism
 
 **Source**: `core/rawdb/accessors_reference_index.go`
 
@@ -643,17 +899,17 @@ Reference is a **32-byte on-chain index key** that allows users to associate mul
 - **Value**: Empty (leverages key ordering for range queries)
 - **Sort order**: Naturally ascending by `blockTimestamp` + `txIndex`
 
-### 8.3 Querying
+### 10.3 Querying
 
 Use `morph_getTransactionHashesByReference` RPC (see [Section 6.2](#62-morph-namespace-public)).
 
-### 8.4 Use Cases
+### 10.4 Use Cases
 
 - **Order systems**: Hash an order ID as Reference, query all related transactions
 - **Batch operations**: Use a batch identifier as Reference, track all transactions in a batch
 - **Cross-system correlation**: Map external system IDs to References
 
-### 8.5 Important Notes
+### 10.5 Important Notes
 
 - Reference is only available in **V1 MorphTx**
 - Reference indexing begins after the **Jade fork**
@@ -662,7 +918,7 @@ Use `morph_getTransactionHashesByReference` RPC (see [Section 6.2](#62-morph-nam
 
 ---
 
-## 9. Receipt Extensions
+## 11. Receipt Extensions
 
 **Source**: `core/state_processor.go`, `core/types/receipt.go`
 
@@ -680,3 +936,208 @@ MorphTx receipts include these extension fields:
 | `Memo` | `*[]byte` | V1+ only | Memo |
 
 ---
+
+## 12. Common Pitfalls
+
+### Pitfall 1: `gasPrice` Overrides MorphTx Type Detection
+
+**Problem**: In `eth_sendTransaction` params, if you set both `gasPrice` AND MorphTx fields (e.g., `feeTokenID`), `gasPrice` overrides the final type to `LegacyTxType`, silently discarding all Morph fields.
+
+```go
+// internal/ethapi/transaction_args.go → toTransaction()
+usedType := types.LegacyTxType
+switch {
+case ..MorphTx conditions..:
+    usedType = types.MorphTxType    // ① First identified as MorphTx
+...
+}
+if args.GasPrice != nil {
+    usedType = types.LegacyTxType   // ② But gasPrice overrides!
+}
+```
+
+**Solution**: Always use `maxFeePerGas` and `maxPriorityFeePerGas` with MorphTx. Never set `gasPrice`.
+
+### Pitfall 2: V0 vs V1 `FeeTokenID` Semantics
+
+| | V0 | V1 |
+|---|---|---|
+| `FeeTokenID == 0` | ❌ Invalid | ✅ Valid (means use ETH) |
+| Purpose | Alt Fee only | General-purpose MorphTx, Alt Fee optional |
+
+If migrating from V0 to V1, note that `FeeTokenID` is no longer required.
+
+### Pitfall 3: V1 Signing Hash Includes nil Pointer RLP Encoding
+
+In the V1 signing hash, `reference` and `memo` participate in RLP encoding **even when nil** (nil encodes as `0x80`). Other language SDK implementations must handle this correctly.
+
+### Pitfall 4: Submitting V1 Transactions Before Jade Fork
+
+Before Jade fork activation:
+- `eth_sendTransaction`'s `setDefaults` will directly reject
+- `eth_sendRawTransaction` will be rejected at tx pool entry
+- Even if you can construct a V1 transaction, block validation will reject it
+
+### Pitfall 5: RPC `version` Field Only Appears for V1+
+
+V0 transactions' `RPCTransaction` does NOT include `version`, `reference`, or `memo` fields (`omitempty`). SDKs must handle missing fields:
+
+- If `version` is missing → default to V0
+- If `reference` is missing → nil
+- If `memo` is missing → nil
+
+### Pitfall 6: V0 Encoding Rejects `FeeTokenID == 0`
+
+V0 format validates `FeeTokenID != 0` at both encoding and decoding time:
+- You cannot construct a V0 transaction with `FeeTokenID == 0`
+- If you receive a transaction claiming to be V0 but with `FeeTokenID == 0`, decoding will fail
+
+---
+
+## 13. Appendix: Full Call Path Diagrams
+
+### 13.1 Send Transaction (`eth_sendTransaction`)
+
+```
+User JSON-RPC request
+    │
+    ▼
+PublicTransactionPoolAPI.SendTransaction()
+    │
+    ├→ args.setDefaults(ctx, backend)
+    │    ├→ Fill maxFeePerGas / maxPriorityFeePerGas (EIP-1559)
+    │    ├→ Fill nonce
+    │    ├→ isMorphTxArgs() → true?
+    │    │    ├→ Check Jade fork status
+    │    │    ├→ Infer version (V0/V1)
+    │    │    └→ validateMorphTxVersion()
+    │    ├→ Validate memo length
+    │    └→ DoEstimateGas() → estimate gas (with Alt Fee logic)
+    │
+    ├→ args.toTransaction()
+    │    └→ Construct types.MorphTx{...}
+    │       └→ types.NewTx(data)
+    │
+    ├→ wallet.SignTx(account, tx, chainID)
+    │    └→ keystore.SignTx()
+    │         └→ types.SignTx(tx, LatestSignerForChainID(chainID), key)
+    │              └→ NewEmeraldSigner → modernSigner.Hash → MorphTx.sigHash
+    │
+    └→ SubmitTransaction()
+         └→ backend.SendTx() → enters tx pool
+              └→ TxPool.validateTx()
+                   ├→ Check eip1559 active
+                   ├→ Check Jade fork (V1)
+                   ├→ ValidateMorphTxVersion()
+                   ├→ Check token active (Alt Fee)
+                   └→ Check balance (ETH or token)
+```
+
+### 13.2 Send Raw Transaction (`eth_sendRawTransaction`)
+
+```
+User submits raw bytes (0x7F || inner_payload)
+    │
+    ▼
+PublicTransactionPoolAPI.SendRawTransaction()
+    │
+    ├→ tx.UnmarshalBinary(rawBytes)
+    │    └→ decodeTyped(rawBytes)
+    │         ├→ rawBytes[0] == 0x7F → inner = new(MorphTx)
+    │         └→ inner.decode(rawBytes[1:])
+    │              ├→ First byte version detection
+    │              ├→ V0: decodeV0MorphTxRLP()
+    │              └→ V1: decodeV1MorphTxRLP()
+    │
+    └→ SubmitTransaction()
+         └→ (same as above)
+```
+
+### 13.3 Query Transaction
+
+```
+eth_getTransactionByHash
+    │
+    ▼
+NewRPCTransaction(tx, ...)
+    ├→ types.Sender(signer, tx) → recover sender
+    ├→ tx.RawSignatureValues() → V, R, S
+    ├→ case types.MorphTxType:
+    │    ├→ Fill accessList, chainID, gasFeeCap, gasTipCap
+    │    ├→ Fill feeTokenID, feeLimit
+    │    └→ if tx.Version() >= V1:
+    │         └→ Fill version, reference, memo
+    └→ Return RPCTransaction JSON
+```
+
+### 13.4 Block Validation
+
+```
+BlockValidator.ValidateBody(block)
+    │
+    ├→ isJadeFork = config.IsJadeFork(block.Time())
+    │
+    └→ for tx in block.Transactions():
+         ├→ if !isJadeFork && tx.IsMorphTx() && tx.Version() == V1:
+         │    └→ return ErrMorphTxV1NotYetActive
+         └→ tx.ValidateMorphTxVersion()
+              └→ Check version/field validity
+```
+
+### 13.5 Execution & Receipt Generation
+
+```
+StateProcessor.applyTransaction(tx)
+    │
+    ├→ tx.AsMessage(signer, baseFee)
+    │    ├→ ValidateMorphTxVersion()
+    │    └→ Construct Message{feeTokenID, version, reference, memo, ...}
+    │
+    ├→ ApplyMessage(evm, msg, gasPool)
+    │    └→ StateTransition.Execute()
+    │         ├→ buyGas() → if Alt Fee, query token balance & rate
+    │         ├→ EVM execution
+    │         └→ refundGas() → refund unused gas (ETH or token)
+    │
+    └→ Build Receipt
+         ├→ receipt.FeeTokenID = tx.FeeTokenID()
+         ├→ receipt.FeeLimit = tx.FeeLimit()
+         ├→ receipt.FeeRate = result.FeeRate
+         ├→ receipt.TokenScale = result.TokenScale
+         ├→ receipt.L1Fee = result.L1DataFee
+         └→ if tx.Version() >= V1:
+              ├→ receipt.Version = tx.Version()
+              ├→ receipt.Reference = tx.Reference()
+              └→ receipt.Memo = tx.Memo()
+```
+
+---
+
+## Appendix B: Source File Index
+
+| File Path | Responsibility |
+|-----------|---------------|
+| `core/types/morph_tx.go` | MorphTx struct, encoding/decoding, signing hash |
+| `core/types/transaction.go` | TxData interface, type constant (0x7F), version validation, AsMessage |
+| `core/types/transaction_signing.go` | Signer interface, modernSigner, SignTx, NewEmeraldSigner |
+| `core/types/transaction_marshalling.go` | JSON serialization/deserialization |
+| `core/types/receipt.go` | Receipt struct and Morph extension fields |
+| `core/types/hashing.go` | prefixedRlpHash |
+| `internal/ethapi/transaction_args.go` | RPC param handling, version inference, validation |
+| `internal/ethapi/api.go` | RPCTransaction, SendTransaction, Receipt serialization, PublicMorphAPI |
+| `internal/ethapi/backend.go` | morph namespace registration |
+| `core/tx_pool.go` | Tx pool validation, Jade fork check, V1 cleanup |
+| `core/block_validator.go` | Block validation MorphTx checks |
+| `core/state_processor.go` | Post-execution receipt population |
+| `core/state_transition.go` | Alt Fee deduction and refund logic |
+| `core/blockchain.go` | Reference index maintenance |
+| `core/rawdb/accessors_reference_index.go` | Reference index read/write |
+| `accounts/abi/bind/base.go` | Contract binding TransactOpts and createMorphTx |
+| `accounts/external/backend.go` | External signer MorphTx field passing |
+| `signer/core/apitypes/types.go` | Clef signer SendTxArgs.ToTransaction |
+| `ethclient/ethclient.go` | Go client wrapper |
+| `rpc/types.go` | ReferenceQueryArgs / ReferenceTransactionResult |
+| `rollup/fees/rollup_fee.go` | L1 data fee calculation with MorphTx serialization |
+| `params/config.go` | EmeraldTime, JadeForkTime configuration |
+| `common/types.go` | Reference type, MaxMemoLength |
+| `interfaces.go` | CallMsg Morph fields |
