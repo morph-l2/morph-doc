@@ -53,7 +53,15 @@ const GetStartedSidebar = [
       'how-morph-works/general-protocol-design/difference-between-ethereum-and-morph',
       'build-on-morph/build-on-morph/understand-transaction-cost-on-morph',
       'about-morph/eip7702',
-      'about-morph/altfeetx',
+      { type: 'category',
+        label: 'MorphTx Technical Specification', 
+        link: { type: 'doc', id:'about-morph/morphtx'}, 
+        collapsed: false,
+        items: [
+          'about-morph/altfeetx'
+        ]
+      },
+      
     ],
   },
   {
