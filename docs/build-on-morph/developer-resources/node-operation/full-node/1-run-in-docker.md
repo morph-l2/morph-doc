@@ -1,208 +1,169 @@
 ---
-title: Run a full node with Docker
+title: Run a full node
 lang: en-US
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide will help you start a full node running in a Docker container using [run-morph-node](https://github.com/morph-l2/run-morph-node).
+This guide will help you start a full node using [run-morph-node](https://github.com/morph-l2/run-morph-node).
 
-New deployments use **MPT** (Merkle Patricia Trie) state storage by default.
+:::tip Already running a node?
+If you are upgrading an existing **zkTrie node**, do **not** redeploy from scratch. Follow the [Upgrade & Forks](../upgrade-node/0-jade-fork-overview.md) guide instead.
+:::
 
-### Recommended Versions
+## Hardware Requirements
 
-| Component | Image |
-|-----------|-------|
-| geth | `ghcr.io/morph-l2/go-ethereum:2.2.1` |
-| node | `ghcr.io/morph-l2/node:0.5.2` |
+| Resource | Minimum |
+|----------|---------|
+| CPU | 4+ cores |
+| RAM | 32 GB |
+| Disk | 1 TB SSD |
+| Network | 25+ Mbit/s download |
 
 ## Quick Start
 
 ### 1. Clone the repository
+
+<Tabs>
+<TabItem value="docker" label="Docker">
 
 ```bash
 git clone https://github.com/morph-l2/run-morph-node.git
 cd run-morph-node/morph-node
 ```
 
-### 2. Check the geth image version
-
-Make sure the `geth` service in `morph-node/docker-compose.yml` uses the latest recommended image:
-
-```yaml
-image: ghcr.io/morph-l2/go-ethereum:2.2.1
-```
-
-If your local checkout uses an older tag, update it before starting the node.
-
-### 3. Prepare the MPT environment overrides
-
-The Docker MPT flow uses `.env_mpt` as an override on top of `.env` for mainnet or `.env_hoodi` for Hoodi.
-
-Example `.env_mpt`:
+</TabItem>
+<TabItem value="binary" label="Binary">
 
 ```bash
-# MPT-specific overrides
-GETH_ENTRYPOINT_FILE=./entrypoint-geth-mpt.sh
-
-# Use the published MPT snapshot names for the target network
-MAINNET_MPT_SNAPSHOT_NAME=mpt-snapshot-20260312-1
-HOODI_MPT_SNAPSHOT_NAME=mpt-snapshot-20260312-1
+git clone --recurse-submodules https://github.com/morph-l2/run-morph-node.git
+cd run-morph-node/morph-node
+make build
 ```
 
-:::caution
-For MPT nodes, the snapshot name **must** use the `mpt-snapshot-*` prefix. Do not use the standard `snapshot-*` name here.
+Building `geth` requires a C compiler (gcc / clang).
+
+</TabItem>
+</Tabs>
+
+### 2. Download the snapshot
+
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
+
+```bash
+make download-and-decompress-mainnet-snapshot
+```
+
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
+
+```bash
+make download-and-decompress-hoodi-snapshot
+```
+
+</TabItem>
+</Tabs>
+
+### 3. Set up the snapshot data
+
+<Tabs>
+<TabItem value="mainnet" label="Mainnet">
+
+```bash
+mv ./mpt-snapshot-*/geth ../mainnet/geth-data
+mkdir -p ../mainnet/node-data/data
+mv ./mpt-snapshot-*/data/* ../mainnet/node-data/data
+```
+
+</TabItem>
+<TabItem value="hoodi" label="Hoodi">
+
+```bash
+mv ./mpt-snapshot-*/geth ../hoodi/geth-data
+mkdir -p ../hoodi/node-data/data
+mv ./mpt-snapshot-*/data/* ../hoodi/node-data/data
+```
+
+</TabItem>
+</Tabs>
+
+### 4. Run the node
+
+<Tabs>
+<TabItem value="docker" label="Docker — Mainnet">
+
+```bash
+make run-node
+```
+
+</TabItem>
+<TabItem value="docker-hoodi" label="Docker — Hoodi">
+
+```bash
+make run-hoodi-node
+```
+
+</TabItem>
+<TabItem value="binary" label="Binary — Mainnet">
+
+```bash
+make run-node-binary
+```
+
+</TabItem>
+<TabItem value="binary-hoodi" label="Binary — Hoodi">
+
+```bash
+make run-hoodi-node-binary
+```
+
+</TabItem>
+</Tabs>
+
+To stop a binary-mode node:
+
+```bash
+make stop-binary
+```
+
+:::info Running a ZK (legacy) node?
+Use `make run-zk-node` (Docker) or `make run-zk-node-binary` (Binary) instead.
 :::
 
-### 4. Download and decompress the MPT snapshot
-
-<Tabs>
-<TabItem value="mainnet" label="Mainnet">
+## Verify the Node
 
 ```bash
-make download-and-decompress-mainnet-mpt-snapshot
+# Check geth peer connections
+curl -X POST -H 'Content-Type: application/json' \
+  --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' \
+  localhost:8545
+
+# Check consensus client sync status
+curl http://localhost:26657/status
 ```
 
-This downloads from:
-
-```
-https://snapshot.morphl2.io/mainnet/mpt-snapshot-20260312-1.tar.gz
-```
-
-</TabItem>
-<TabItem value="hoodi" label="Hoodi">
-
-```bash
-make download-and-decompress-hoodi-mpt-snapshot
-```
-
-This downloads from:
-
-```
-https://snapshot.morphl2.io/hoodi/mpt-snapshot-20260312-1.tar.gz
-```
-
-</TabItem>
-</Tabs>
-
-### 5. Set up the snapshot data
-
-After downloading, place the decompressed data under the directory specified by `MORPH_HOME`. For example, if the snapshot folder is named `mpt-snapshot-20260312-1`:
-
-```bash
-mv ./mpt-snapshot-20260312-1/geth ${MORPH_HOME}/geth-data
-mkdir -p ${MORPH_HOME}/node-data/data
-mv ./mpt-snapshot-20260312-1/data/* ${MORPH_HOME}/node-data/data
-```
-
-The directory structure should look like this:
-
-```
-└── ${MORPH_HOME}
-    ├── geth-data
-    │   ├── static-nodes.json
-    │   └── geth
-    └── node-data
-        ├── config
-        │   ├── config.toml
-        │   └── genesis.json
-        └── data
-```
-
-### 6. Run the node
-
-<Tabs>
-<TabItem value="mainnet" label="Mainnet">
-
-```bash
-make run-mainnet-mpt-node
-```
-
-</TabItem>
-<TabItem value="hoodi" label="Hoodi">
-
-```bash
-make run-hoodi-mpt-node
-```
-
-</TabItem>
-</Tabs>
-
-These commands start `geth` with the MPT entrypoint and run the consensus client using the selected environment.
+When `catching_up` is `false`, the node has finished syncing.
 
 ## Advanced Usage
 
 ### Customizing the data directory
 
-The host directories mounted by Docker are controlled by the environment files.
-
-Example:
+By default, data is stored under `../mainnet` or `../hoodi`. To use a different path, set `MORPH_HOME` in the env file:
 
 ```bash
-MORPH_HOME=../mainnet
-MORPH_FLAG=morph
-JWT_SECRET_FILE=${MORPH_HOME}/jwt-secret.txt
-GETH_ENTRYPOINT_FILE=./entrypoint-geth-mpt.sh
+MORPH_HOME=/your/custom/path
 ```
 
-If you customize `MORPH_HOME`, make sure the `geth-data` and `node-data` directories exist under that location and contain the required config files.
+### Customizing geth flags
 
-For testnet, use `.env_hoodi` together with `.env_mpt`.
-
-### Customizing parameters
-
-To customize the execution client startup command, edit:
-
-```
-morph-node/entrypoint-geth-mpt.sh
-```
-
-To customize consensus-layer parameters, edit:
-
-```
-mainnet/node-data/config/config.toml   # for mainnet
-hoodi/node-data/config/config.toml     # for Hoodi
-```
+Edit `morph-node/entrypoint-geth.sh` to change geth startup flags.
 
 :::tip
-The current reference MPT entrypoint still uses `--gcmode=archive` by default. If you want to run a pruned MPT node, customize the `geth` flags in `entrypoint-geth-mpt.sh` after validating your operational requirements.
+`entrypoint-geth.sh` sets `--gcmode=archive` by default. Remove or change it to run a pruned node. Geth's default (without the flag) is full node mode.
 :::
 
-## Verify the Node
+### Sync from genesis
 
-Check whether `geth` is connected to peers:
-
-```bash
-curl -X POST -H 'Content-Type: application/json' \
-  --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}' \
-  localhost:8545
-```
-
-Check the consensus client status:
-
-```bash
-curl http://localhost:26657/status
-```
-
-When `catching_up` becomes `false`, the node has finished catching up.
-
-## MPT Snapshot Naming
-
-MPT snapshots use dedicated links and do **not** use the standard `snapshot-*` naming pattern.
-
-| Type | Naming Pattern | Example |
-|------|---------------|---------|
-| Standard snapshot | `snapshot-YYYYMMDD-N` | `snapshot-20260312-1` |
-| MPT snapshot | `mpt-snapshot-YYYYMMDD-N` | `mpt-snapshot-20260312-1` |
-
-Use the dedicated MPT snapshot URL pattern:
-
-```
-https://snapshot.morphl2.io/<network>/mpt-snapshot-YYYYMMDD-N.tar.gz
-```
-
-Examples:
-
-- `https://snapshot.morphl2.io/mainnet/mpt-snapshot-20260312-1.tar.gz`
-- `https://snapshot.morphl2.io/hoodi/mpt-snapshot-20260312-1.tar.gz`
+You can skip the snapshot steps and run the node directly. This is much slower and **not recommended** for most operators.

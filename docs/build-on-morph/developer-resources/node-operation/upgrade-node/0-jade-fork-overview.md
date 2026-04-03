@@ -37,15 +37,14 @@ Choose the path that matches your current setup:
 
 Follow the full node guides directly — MPT is the default for all new deployments:
 
-- [Run a full node with Docker](../full-node/1-run-in-docker.md)
-- [Run a full node from source](../full-node/2-run-on-host.md)
+- [Run a full node](../full-node/1-run-in-docker.md)
 
 ### Already running a node with `--morph-mpt`
 
 Your node is already using MPT state storage. You only need to update your binaries to the latest version:
 
 - **geth:** `ghcr.io/morph-l2/go-ethereum:2.2.1` or later
-- **node:** `ghcr.io/morph-l2/node:0.5.2` or later
+- **node:** `ghcr.io/morph-l2/node:0.5.3` or later
 
 Then restart your node with the same startup command.
 
@@ -60,8 +59,7 @@ If you want to keep your zkTrie storage, simply update your binaries to **morph-
 
 If you want to switch to MPT storage, you need to: stop the old node, prepare a new MPT data directory, and start with `--morph-mpt`. Follow the full node guides for the MPT setup steps:
 
-- **Host:** [Run a full node from source](../full-node/2-run-on-host.md)
-- **Docker:** [Run a full node with Docker](../full-node/1-run-in-docker.md)
+- [Run a full node](../full-node/1-run-in-docker.md)
 
 :::warning
 Do **not** reuse your existing zkTrie data directory. You must prepare a fresh MPT data directory or restore from an MPT snapshot.

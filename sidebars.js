@@ -162,20 +162,11 @@ const MorphChainSidebar = [
 const NodeOperatorsSidebar = [
   {
     type: 'category',
-    label: 'Full Node',
+    label: 'Run Node',
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
-      'build-on-morph/developer-resources/node-operation/full-node/run-on-host',
-    ],
-  },
-  {
-    type: 'category',
-    label: 'Validator',
-    collapsed: false,
-    items: [
       'build-on-morph/developer-resources/node-operation/validator-node/run-in-docker',
-      'build-on-morph/developer-resources/node-operation/validator-node/run-on-host',
     ],
   },
   {

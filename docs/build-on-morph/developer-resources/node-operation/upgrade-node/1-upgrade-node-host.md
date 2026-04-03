@@ -50,27 +50,4 @@ kill  $pid
 
 ### Step3: Restart
 
-Make sure to use the same start-up command you used before the upgrade
-
-```bash
-## start geth
-./morph/go-ethereum/build/bin/geth --morph \
-    --datadir "./geth-data" \
-    --http --http.api=web3,debug,eth,txpool,net,engine,morph \
-    --authrpc.addr localhost \
-    --authrpc.vhosts="localhost" \
-    --authrpc.port 8551 \
-    --authrpc.jwtsecret=./jwt-secret.txt \
-    --log.filename=./geth.log
-
-## start node
-./morph/node/build/bin/morphnode --home ./node-data \
-     --l2.jwt-secret ./jwt-secret.txt \
-     --l2.eth http://localhost:8545 \
-     --l2.engine http://localhost:8551 \
-     --log.filename ./node.log
-```
-
-:::note
-For hoodi network, use ```--morph-hoodi``` instead
-:::
+Restart `geth` and `morphnode` using the same startup command you used before the upgrade.
