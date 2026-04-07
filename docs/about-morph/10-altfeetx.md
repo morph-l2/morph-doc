@@ -1,5 +1,5 @@
 ---
-title: AltFeeTx Technical Specification
+title: Alternative Fee 
 lang: en-US
 ---
 
