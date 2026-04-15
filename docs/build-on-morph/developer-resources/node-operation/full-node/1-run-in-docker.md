@@ -64,11 +64,6 @@ The default snapshot is pre-configured in `morph-node/.env` / `morph-node/.env_h
 # Snapshot name (find available versions in the repo README)
 MAINNET_MPT_SNAPSHOT_NAME=mpt-snapshot-YYYYMMDD-N    # mainnet
 HOODI_MPT_SNAPSHOT_NAME=mpt-snapshot-YYYYMMDD-N      # Hoodi
-
-# Heights must match your snapshot — find the correct values in the repo README
-DERIVATION_START_HEIGHT=<height matching your snapshot>
-L1_MSG_START_HEIGHT=<height matching your snapshot>
-MORPH_NODE_DERIVATION_BASE_HEIGHT=<base height matching your snapshot>
 ```
 
 See [Snapshot Information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information) for available snapshots and their corresponding height values.
