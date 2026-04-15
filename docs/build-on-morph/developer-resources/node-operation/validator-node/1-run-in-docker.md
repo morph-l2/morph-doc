@@ -12,17 +12,6 @@ This guide covers running a Morph validator node using [run-morph-node](https://
 The `validator.privateKey` flag is a required parameter but is currently unused — challenges from third-party addresses are not yet accepted. Use `0x0000000000000000000000000000000000000000000000000000000000000001`.
 :::
 
-## Prerequisites
-
-A validator node requires Layer 1 RPC access. Set these values in `morph-node/.env` (mainnet) or `morph-node/.env_hoodi` (Hoodi) before starting:
-
-```bash
-L1_ETH_RPC=<your L1 execution client RPC URL>
-L1_BEACON_CHAIN_RPC=<your L1 beacon chain RPC URL>
-```
-
-All other configuration is pre-set in the repository.
-
 ## Quick Start
 
 ### 1. Clone the repository
@@ -47,11 +36,33 @@ make build
 </TabItem>
 </Tabs>
 
-### 2. Configure L1 RPC URLs
+### 2. Configure L1 RPC endpoints
 
-Edit `.env` (mainnet) or `.env_hoodi` (Hoodi) and fill in your L1 RPC endpoints.
+A validator requires L1 access to fetch rollup data. Set the following in `morph-node/.env` (mainnet) or `morph-node/.env_hoodi` (Hoodi):
 
-### 3. Download the snapshot
+```bash
+L1_ETH_RPC=<your L1 execution client RPC URL>
+L1_BEACON_CHAIN_RPC=<your L1 beacon chain RPC URL>
+```
+
+### 3. Select a snapshot version (optional)
+
+The default snapshot is pre-configured in `morph-node/.env` / `morph-node/.env_hoodi`. To use a different version, update the following variables in the env file before downloading:
+
+```bash
+# Snapshot name (find available versions in the repo README)
+MAINNET_MPT_SNAPSHOT_NAME=mpt-snapshot-YYYYMMDD-N    # mainnet
+HOODI_MPT_SNAPSHOT_NAME=mpt-snapshot-YYYYMMDD-N      # Hoodi
+
+# Heights must match your snapshot — find the correct values in the repo README
+DERIVATION_START_HEIGHT=<height matching your snapshot>
+L1_MSG_START_HEIGHT=<height matching your snapshot>
+MORPH_NODE_DERIVATION_BASE_HEIGHT=<base height matching your snapshot>
+```
+
+See [Snapshot Information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information) for available snapshots and their corresponding height values.
+
+### 4. Download the snapshot
 
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
@@ -70,7 +81,7 @@ make download-and-decompress-hoodi-snapshot
 </TabItem>
 </Tabs>
 
-### 4. Set up the snapshot data
+### 5. Set up the snapshot data
 
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
@@ -93,13 +104,19 @@ mv ./mpt-snapshot-*/data/* ../hoodi/node-data/data
 </TabItem>
 </Tabs>
 
-### 5. Run the validator
+### 6. Run the validator
 
 <Tabs>
 <TabItem value="docker" label="Docker — Mainnet">
 
 ```bash
 make run-validator
+
+# To stop:
+make stop-validator
+
+# To remove containers:
+make rm-validator
 ```
 
 </TabItem>
@@ -107,6 +124,12 @@ make run-validator
 
 ```bash
 make run-hoodi-validator
+
+# To stop:
+make stop-validator
+
+# To remove containers:
+make rm-validator
 ```
 
 </TabItem>
@@ -114,6 +137,9 @@ make run-hoodi-validator
 
 ```bash
 make run-validator-binary
+
+# To stop:
+make stop-binary
 ```
 
 </TabItem>
@@ -121,16 +147,13 @@ make run-validator-binary
 
 ```bash
 make run-hoodi-validator-binary
+
+# To stop:
+make stop-binary
 ```
 
 </TabItem>
 </Tabs>
-
-To stop a binary-mode node:
-
-```bash
-make stop-binary
-```
 
 ## Verify the Node
 
@@ -146,3 +169,4 @@ root hash or withdrawal hash is not equal  originStateRootHash=0x... deriveState
 ```
 
 This means the validator found an inconsistency between the sequencer submission and its own derivation.
+

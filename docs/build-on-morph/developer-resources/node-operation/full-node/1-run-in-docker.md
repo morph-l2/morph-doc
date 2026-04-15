@@ -47,7 +47,33 @@ Building `geth` requires a C compiler (gcc / clang).
 </TabItem>
 </Tabs>
 
-### 2. Download the snapshot
+### 2. Configure L1 RPC endpoints
+
+Set your L1 RPC endpoints in `morph-node/.env` (mainnet) or `morph-node/.env_hoodi` (Hoodi):
+
+```bash
+L1_ETH_RPC=<your L1 execution client RPC URL>
+L1_BEACON_CHAIN_RPC=<your L1 beacon chain RPC URL>
+```
+
+### 3. Select a snapshot version (optional)
+
+The default snapshot is pre-configured in `morph-node/.env` / `morph-node/.env_hoodi`. To use a different version, update the following variables in the env file before downloading:
+
+```bash
+# Snapshot name (find available versions in the repo README)
+MAINNET_MPT_SNAPSHOT_NAME=mpt-snapshot-YYYYMMDD-N    # mainnet
+HOODI_MPT_SNAPSHOT_NAME=mpt-snapshot-YYYYMMDD-N      # Hoodi
+
+# Heights must match your snapshot — find the correct values in the repo README
+DERIVATION_START_HEIGHT=<height matching your snapshot>
+L1_MSG_START_HEIGHT=<height matching your snapshot>
+MORPH_NODE_DERIVATION_BASE_HEIGHT=<base height matching your snapshot>
+```
+
+See [Snapshot Information](https://github.com/morph-l2/run-morph-node?tab=readme-ov-file#snapshot-information) for available snapshots and their corresponding height values.
+
+### 4. Download the snapshot
 
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
@@ -66,7 +92,7 @@ make download-and-decompress-hoodi-snapshot
 </TabItem>
 </Tabs>
 
-### 3. Set up the snapshot data
+### 5. Set up the snapshot data
 
 <Tabs>
 <TabItem value="mainnet" label="Mainnet">
@@ -89,13 +115,19 @@ mv ./mpt-snapshot-*/data/* ../hoodi/node-data/data
 </TabItem>
 </Tabs>
 
-### 4. Run the node
+### 6. Run the node
 
 <Tabs>
 <TabItem value="docker" label="Docker — Mainnet">
 
 ```bash
 make run-node
+
+# To stop:
+make stop-node
+
+# To remove containers:
+make rm-node
 ```
 
 </TabItem>
@@ -103,6 +135,12 @@ make run-node
 
 ```bash
 make run-hoodi-node
+
+# To stop:
+make stop-node
+
+# To remove containers:
+make rm-node
 ```
 
 </TabItem>
@@ -110,6 +148,9 @@ make run-hoodi-node
 
 ```bash
 make run-node-binary
+
+# To stop:
+make stop-binary
 ```
 
 </TabItem>
@@ -117,16 +158,13 @@ make run-node-binary
 
 ```bash
 make run-hoodi-node-binary
+
+# To stop:
+make stop-binary
 ```
 
 </TabItem>
 </Tabs>
-
-To stop a binary-mode node:
-
-```bash
-make stop-binary
-```
 
 :::info Running a ZK (legacy) node?
 Use `make run-zk-node` (Docker) or `make run-zk-node-binary` (Binary) instead.
