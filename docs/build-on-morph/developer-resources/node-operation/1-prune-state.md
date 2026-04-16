@@ -10,9 +10,9 @@ To prune a Geth node at least 200 GB of free disk space is recommended. This mea
 
 The hardware is important, **make sure the SSD meets: solid-state drive(SSD), 8k IOPS, 500 MB/S throughput, read latency < 1ms.**
 
-### MPT Nodes (post-Jade Fork)
+### MPT Nodes
 
-After the [Jade Fork](./upgrade-node/0-jade-fork-overview.md), nodes run with `--morph-mpt` and use standard MPT state storage. Use the standard prune command:
+After migrating to MPT storage, nodes run with `--morph-mpt` and use standard MPT state storage. Use the standard prune command:
 
 :::note
 After switching to MPT storage, pruning is only supported after the node has synced **at least 128 blocks**. Do not attempt to prune immediately after migration.
@@ -26,10 +26,10 @@ After switching to MPT storage, pruning is only supported after the node has syn
    It will take several hours to finish.
 3. Start the node once it is done.
 
-### zkTrie Nodes (pre-Jade Fork)
+### zkTrie Nodes (legacy)
 
 :::caution
-This section only applies to nodes still running with zkTrie state storage **before** migrating to MPT. Once you switch to an MPT node, the zkTrie prune command is no longer supported. See the [Jade Fork Overview](./upgrade-node/0-jade-fork-overview.md) for details.
+This section only applies to nodes still running with zkTrie state storage **before** migrating to MPT. Once you switch to an MPT node, the zkTrie prune command is no longer supported. See the [zkTrie -> MPT migration guide](./upgrade-node/0-zktrie-to-mpt-migration.md) for details.
 :::
 
 For nodes still running with zkTrie state storage, use the zkTrie-specific prune command:

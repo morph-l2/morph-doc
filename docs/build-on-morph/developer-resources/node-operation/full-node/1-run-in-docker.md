@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 This guide will help you start a full node using [run-morph-node](https://github.com/morph-l2/run-morph-node).
 
 :::tip Already running a node?
-If you are upgrading an existing **zkTrie node**, do **not** redeploy from scratch. Follow the [Upgrade & Forks](../upgrade-node/0-jade-fork-overview.md) guide instead.
+If you are upgrading an existing **zkTrie node**, do **not** redeploy from scratch. Follow the [zkTrie -> MPT migration](../upgrade-node/0-zktrie-to-mpt-migration.md) guide instead.
 :::
 
 ## Hardware Requirements
