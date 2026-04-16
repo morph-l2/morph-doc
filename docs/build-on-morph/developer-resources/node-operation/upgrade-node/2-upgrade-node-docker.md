@@ -13,20 +13,20 @@ lang: en-US
 If you are running the Docker container for the node using a custom setup, you will need to manually update the Docker image version and restart the container.
 
 ### If You Are Using the Recommended Configuration
-For those using the [Run a full node with docker](../full-node/1-run-in-docker.md) to start the container, follow these steps to upgrade your node.
+For those using the [Run a full node with Docker](../full-node/1-run-in-docker.md) to start the container, follow these steps to upgrade your node.
 
-#### Step 1:  Update docker images version 
+#### Step 1:  Update docker images version
 
 - Check the latest docker image version from [Docker Images](#docker-images)
 - Update the docker image version on [morph-node/docker-compose.yml](https://github.com/morph-l2/run-morph-node/blob/run_node_script/morph-node/docker-compose.yml)
-    
+
     ```yaml title="morph-node/docker-compose.yml"
-    services:  
-    geth: 
+    services:
+    geth:
         container_name: morph-geth
         image: ghcr.io/morph-l2/go-ethereum:{update_version} ## Specify the Geth image version
         restart: unless-stopped
-    
+
     # ...
 
     node:
@@ -35,7 +35,7 @@ For those using the [Run a full node with docker](../full-node/1-run-in-docker.m
         geth:
             condition: service_started
         image: ghcr.io/morph-l2/node:{update_version} ## Specify the Node image version
-    
+
     # ...
 
     ```
@@ -56,13 +56,12 @@ make stop-node
 make run-node
 ```
 
-If you are running a **validator**, use these commands instead: 
+If you are running a **validator**, use these commands instead:
 ```bash
 make stop-validator
 make run-validator
 ```
 
-:::note 
-Ensure that the startup parameters for the Docker container remain consistent with your previous configuration. If you previously used a custom setup, verify that the configuration and directory paths match your earlier setup. For details, please refer to [**Advanced Usage**](../full-node/1-run-in-docker.md#advanced-usage) 
+:::note
+Ensure that the startup parameters for the Docker container remain consistent with your previous configuration. If you previously used a custom setup, verify that the configuration and directory paths match your earlier setup. For details, please refer to [**Advanced Usage**](../full-node/1-run-in-docker.md#advanced-usage)
 :::
-

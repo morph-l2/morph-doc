@@ -170,22 +170,11 @@ const MorphChainSidebar = [
 const NodeOperatorsSidebar = [
   {
     type: 'category',
-    label: 'Full Node',
+    label: 'Run Node',
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
-      'build-on-morph/developer-resources/node-operation/full-node/run-on-host',
-      'build-on-morph/developer-resources/node-operation/full-node/run-mpt-node',
-      'build-on-morph/developer-resources/node-operation/prune-state',
-    ],
-  },
-  {
-    type: 'category',
-    label: 'Validator',
-    collapsed: false,
-    items: [
       'build-on-morph/developer-resources/node-operation/validator-node/run-in-docker',
-      'build-on-morph/developer-resources/node-operation/validator-node/run-on-host',
     ],
   },
   {
@@ -193,8 +182,17 @@ const NodeOperatorsSidebar = [
     label: 'Upgrade Node',
     collapsed: false,
     items: [
-      'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-docker',
+      'build-on-morph/developer-resources/node-operation/upgrade-node/zktrie-to-mpt-migration',
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-host',
+      'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-docker',
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Maintenance',
+    collapsed: false,
+    items: [
+      'build-on-morph/developer-resources/node-operation/prune-state',
     ],
   },
 ];
