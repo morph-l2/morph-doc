@@ -8,10 +8,6 @@ import TabItem from '@theme/TabItem';
 
 This guide covers running a Morph validator node using [run-morph-node](https://github.com/morph-l2/run-morph-node). If you are unfamiliar with validator duties, refer to the [optimistic zkEVM](../../../../how-morph-works/3-optimistic-zkevm.md) design overview.
 
-:::note
-The `validator.privateKey` flag is a required parameter but is currently unused — challenges from third-party addresses are not yet accepted. Use `0x0000000000000000000000000000000000000000000000000000000000000001`.
-:::
-
 ## Quick Start
 
 ### 1. Clone the repository
