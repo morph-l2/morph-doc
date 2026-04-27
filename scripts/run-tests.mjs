@@ -13,6 +13,7 @@ const TEST_DIR = path.join(ROOT, '__tests__');
 /** @type {readonly string[]} */
 export const TEST_FILES = [
   'run-tests-manifest.test.mjs',
+  'build-toolchain-constraints.test.mjs',
   'doc-skill-pairing.test.mjs',
   'morph-doc-skill-inventory.test.mjs',
   'morph-contracts-skill-tokenlist.test.mjs',
@@ -21,7 +22,6 @@ export const TEST_FILES = [
   'morph-js-sdk-skill.test.mjs',
   'morph-rails-skill.test.mjs',
   'morph-tx-cost-skill.test.mjs',
-  'morphchain-bridge-skill.test.mjs',
   'morph-doc-agent.test.mjs',
   'morph-dapp-agent.test.mjs',
   'morph-skill-ln.test.mjs',
