@@ -1,6 +1,6 @@
 /**
  * Morph Network Configuration
- * Hardcoded network info to avoid @morphchain/core dependency
+ * Hardcoded network info to avoid @morphnetwork/core dependency
  */
 
 export const MORPH_MAINNET = {

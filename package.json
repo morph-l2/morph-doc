@@ -3,6 +3,9 @@
   "version": "4.0.0",
   "private": true,
   "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "skill-ln": "bash scripts/morph-skill-ln",
+    "agent-ln": "bash scripts/morph-agent-ln",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -23,6 +26,7 @@
     "@docusaurus/plugin-client-redirects": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
     "@docusaurus/theme-common": "3.1.1",
+    "@docusaurus/theme-mermaid": "3.1.1",
     "@docusaurus/theme-search-algolia": "3.1.1",
     "@mdx-js/react": "3.0.1",
     "@morph-network/viem": "0.1.0",

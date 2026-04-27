@@ -26,5 +26,25 @@ yarn-error.log*
 .anima
 data
 build
-scripts
+# scripts
 build
+examples
+.cursor
+.claude
+.openclaw
+
+# __tests__
+# run-tests.mjs
+content
+
+# agent
+skills-plan
+memory
+USER.md
+SOUL.md
+TOOLS.md
+IDENTITY.md
+HEARTBEAT.md
+
+# dapp agent
+planning

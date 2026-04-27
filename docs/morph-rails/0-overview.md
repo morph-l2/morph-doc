@@ -3,6 +3,7 @@ title: What is Morph Rails?
 lang: en-US
 keywords: [morph,morph rails,payment,payfi,layer2,middleware]
 description: Morph Rails is a programmable payment middleware layer constructed atop the Morph blockchain network, abstracting raw on-chain operations into production-grade payment services.
+doc_skill_id: morph-rails
 ---
 
 ## 1. Overview

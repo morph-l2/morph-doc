@@ -2,6 +2,7 @@
 title: Morph SDK
 lang: en-US
 description: Official JavaScript/TypeScript SDK for interacting with the Morph Network.
+doc_skill_id: morph-js-sdk
 ---
 
 import AltFeeQuickStartDemo from "@site/src/components/AltFee/AltFeeQuickStartDemo";
@@ -35,7 +36,7 @@ Compared with using base libraries (Viem/Ethers) directly, the SDK offers:
 
 | Feature | Base libs only | Morph SDK |
 |---------|---------------|-----------|
-| **Alt Fee Transaction support** | ❌ Manual serialize/deserialize needed | ✅ Built-in, just add `feeTokenID` + `feeLimit` |
+| **Alt Fee Transaction support** | ❌ Manual serialize/deserialize needed | ✅ Built-in: add `feeTokenID` (required for token gas); `feeLimit` is optional |
 | **Tx type 0x7f** | ❌ Unsupported without forking/patching | ✅ Fully supported |
 | **Morph chain config** | ❌ Manual chainId/RPC setup | ✅ Mainnet & Testnet presets |
 | **Token Registry access** | ❌ Manage ABI yourself | ✅ ABI + addresses exported |
@@ -81,8 +82,8 @@ Compared with using base libraries (Viem/Ethers) directly, the SDK offers:
 Alt Fee Transaction (type `0x7f`) lets users pay gas with registered ERC-20 tokens (e.g., USDT/USDC) instead of ETH.
 
 **Key fields:**
-- `feeTokenID`: Token ID in the Token Registry
-- `feeLimit`: Max token amount the user is willing to pay
+- `feeTokenID`: Token ID in the Token Registry (required when paying gas in that token)
+- `feeLimit` (optional): Max token amount the user authorizes for gas; if omitted, the chain may use the sender’s token balance as the effective cap (see [AltFeeTx spec](/about-morph/10-altfeetx))
 
 ---
 
@@ -706,8 +707,8 @@ Sign standard or Alt Fee transactions.
 | `maxFeePerGas` | `bigint` | Yes | Max fee |
 | `maxPriorityFeePerGas` | `bigint` | Yes | Max priority fee |
 | `nonce` | `number` | No | Tx nonce |
-| `feeTokenID` | `number` | No* | Token ID (required for Alt Fee) |
-| `feeLimit` | `bigint \| Hex` | No* | Token fee cap (required for Alt Fee). Accepts bigint or hex string. |
+| `feeTokenID` | `number` | No* | Token ID (required for Alt Fee / type `0x7f`) |
+| `feeLimit` | `bigint \| Hex` | No* | Optional token fee cap. If set, must be ≥ 0. Accepts bigint or hex string. |
 
 **Example:**
 
@@ -803,7 +804,7 @@ const populatedTx = await signer.populateTransaction({
   to: "0x...",
   value: parseEther("0.001"),
   feeTokenID: 3,
-  feeLimit: 1000000n, // Required for Alt Fee transactions
+  feeLimit: 1000000n, // optional: explicit cap in token units
 });
 
 console.log("Populated tx:", populatedTx);
@@ -855,7 +856,7 @@ const txResponse = await signer.sendTransaction({
   maxFeePerGas: utils.hexlify(15316544),
   maxPriorityFeePerGas: utils.hexlify(14116544),
   feeTokenID: 3,
-  feeLimit: utils.parseUnits("1", 6), // Required! 1 USDT/USDC
+  feeLimit: utils.parseUnits("1", 6), // optional: e.g. 1 USDT/USDC cap
 });
 ```
 

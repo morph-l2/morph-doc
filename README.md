@@ -16,6 +16,38 @@ Our decentralized sequencer design and innovative Layer 2 approach address block
 
 3. [Morph's Origins and Aspirations](https://medium.com/@morphlayer/morphys-origins-and-aspirations-7afc0280a8e2)
 
+## AI assistant workspace (Claude Code & OpenClaw)
+
+This repo includes agent-oriented docs at the root:
+
+| File | Purpose |
+|------|---------|
+| [`VISION.md`](./VISION.md) | Morph doc intelligence vision: **documentation as SKILL**, external brain for Morph-facing agents, developer toolchain (Cursor / Claude Code / OpenClaw). |
+| [`AGENTS.md`](./AGENTS.md) | Shared operating instructions: architecture, commands, `docs/` vs `skills/`, testing expectations. OpenClaw loads this when the workspace is this directory. |
+| [`CLAUDE.md`](./CLAUDE.md) | Entry point for [Claude Code](https://docs.anthropic.com/en/docs/claude-code/claude-md); points to `AGENTS.md` for project facts. |
+
+### Point OpenClaw workspace at this repository
+
+So file tools and session bootstrap use this clone as the agent home:
+
+1. Edit `~/.openclaw/openclaw.json` on the machine that runs the OpenClaw gateway.
+2. Set the workspace to **this repo’s absolute path** (adjust for your machine), for example:
+
+```json5
+{
+  "agent": {
+    "workspace": "/Users/you/path/to/morph-doc"
+  }
+}
+```
+
+If your config uses the `agents.defaults` shape instead, set `agents.defaults.workspace` to the same path—follow the keys your OpenClaw version documents.
+
+3. Restart the gateway or run `openclaw setup` if you need missing workspace files seeded.
+4. If you maintain `AGENTS.md` yourself and do not want bootstrap to recreate defaults, you can set `agent.skipBootstrap` / `skipBootstrap` per [OpenClaw Agent Workspace](https://docs.openclaw.ai/concepts/agent-workspace) docs.
+
+Optional OpenClaw files in the same directory (see OpenClaw docs): `SOUL.md`, `USER.md`, `TOOLS.md`, `memory/`, etc. `USER.md` is listed in `.gitignore` for local-only preferences.
+
 ## Learn more
 
 Website: https://www.morphl2.io/
