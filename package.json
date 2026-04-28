@@ -51,6 +51,11 @@
     "pre-commit": "^1.2.2",
     "typescript": "~5.2.2"
   },
+  "pnpm": {
+    "overrides": {
+      "webpack": "5.105.4"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.5%",
