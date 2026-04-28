@@ -61,6 +61,11 @@
       "webpack": "5.96.1"
     }
   },
+  "pnpm": {
+    "overrides": {
+      "webpack": "5.105.4"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.5%",
