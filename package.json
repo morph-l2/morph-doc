@@ -12,10 +12,11 @@
     "build:mainnet": "docusaurus build",
     "deploy:mainnet": "docusaurus serve --port 8080",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "pnpm run build && wrangler deploy",
     "clear": "docusaurus clear",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "preview": "pnpm run build && wrangler dev"
   },
   "dependencies": {
     "@docsearch/react": "^3.5.2",
@@ -49,7 +50,8 @@
     "@docusaurus/types": "3.1.1",
     "@types/react": "^18.2.29",
     "pre-commit": "^1.2.2",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "wrangler": "^4.85.0"
   },
   "browserslist": {
     "production": [
