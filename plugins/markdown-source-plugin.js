@@ -2,9 +2,18 @@ const fs = require('fs-extra');
 const path = require('path');
 
 /**
- * Local Docusaurus plugin to copy raw markdown files to build output
- * Modified to output files under /docs/ path to match HTML URLs
+ * Local Docusaurus plugin to copy cleaned markdown files into build output
+ * so static hosting can serve plain `.md` alongside HTML (paths mirror site routes).
+ *
+ * Sources: docs/, skills/, agents/ → build/docs/, build/skills/, build/agents/
  */
+
+/** @type {{ sourceSubdir: string; outSubdir: string; urlPrefix: string }[]} */
+const MARKDOWN_EXPORT_SOURCES = [
+  { sourceSubdir: 'docs', outSubdir: 'docs', urlPrefix: '/docs/' },
+  { sourceSubdir: 'skills', outSubdir: 'skills', urlPrefix: '/skills/' },
+  { sourceSubdir: 'agents', outSubdir: 'agents', urlPrefix: '/agents/' },
+];
 
 // Convert Tabs/TabItem components to readable markdown format
 function convertTabsToMarkdown(content) {
@@ -48,20 +57,23 @@ function convertDetailsToMarkdown(content) {
   });
 }
 
-// Extract title from frontmatter
+// Extract title from frontmatter (fallback `name` for SKILL/agent defs without `title`)
 function getTitleFromFrontmatter(content) {
   const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!frontmatterMatch) return null;
 
   const frontmatter = frontmatterMatch[1];
   const titleMatch = frontmatter.match(/^title:\s*(.+)$/m);
-  if (titleMatch) return titleMatch[1].trim();
-  
+  if (titleMatch) return titleMatch[1].trim().replace(/^["']|["']$/g, '');
+  const nameMatch = frontmatter.match(/^name:\s*(.+)$/m);
+  if (nameMatch) return nameMatch[1].trim().replace(/^["']|["']$/g, '');
+
   return null;
 }
 
-// Clean markdown content for raw display
-function cleanMarkdownForDisplay(content, filepath) {
+// Clean markdown content for raw display (urlPrefix fixes relative img/ links for each docs plugin route)
+function cleanMarkdownForDisplay(content, filepath, urlPrefix = '/docs/') {
+  const base = urlPrefix.endsWith('/') ? urlPrefix.slice(0, -1) : urlPrefix;
   const fileDir = filepath.replace(/[^/]*$/, '');
 
   // Extract title from frontmatter before stripping it
@@ -140,7 +152,7 @@ function cleanMarkdownForDisplay(content, filepath) {
   content = content.replace(
     /!\[([^\]]*)\]\((\.\/)?img\/([^)]+)\)/g,
     (match, alt, relPrefix, filename) => {
-      return `![${alt}](/docs/${fileDir}img/${filename})`;
+      return `![${alt}](${base}/${fileDir}img/${filename})`;
     }
   );
 
@@ -267,51 +279,68 @@ module.exports = function markdownSourcePlugin(context, options) {
     name: 'markdown-source-plugin-local',
 
     async postBuild({ outDir }) {
-      const docsDir = path.join(context.siteDir, 'docs');
-      // Output to /docs/ subdirectory to match HTML URLs
-      const buildDir = path.join(outDir, 'docs');
+      let totalCopied = 0;
 
-      console.log('[markdown-source-plugin-local] Copying markdown source files to /docs/...');
+      for (const { sourceSubdir, outSubdir, urlPrefix } of MARKDOWN_EXPORT_SOURCES) {
+        const sourceDir = path.join(context.siteDir, sourceSubdir);
+        if (!fs.existsSync(sourceDir)) {
+          console.warn(
+            `[markdown-source-plugin-local] Skip missing directory: ${sourceSubdir}`
+          );
+          continue;
+        }
 
-      const mdFiles = findMarkdownFiles(docsDir);
+        const buildDir = path.join(outDir, outSubdir);
+        console.log(
+          `[markdown-source-plugin-local] Copying markdown source files to /${outSubdir}/...`
+        );
 
-      let copiedCount = 0;
+        const mdFiles = findMarkdownFiles(sourceDir);
 
-      for (const mdFile of mdFiles) {
-        const sourcePath = path.join(docsDir, mdFile);
+        for (const mdFile of mdFiles) {
+          const sourcePath = path.join(sourceDir, mdFile);
 
-        try {
-          // Read content first to extract id/slug from frontmatter
-          const content = await fs.readFile(sourcePath, 'utf8');
-          
-          // Get the output path (uses id from frontmatter or removes numeric prefix)
-          const outputPath = getOutputPath(mdFile, content);
-          const destPath = path.join(buildDir, outputPath);
+          try {
+            const content = await fs.readFile(sourcePath, 'utf8');
+            const outputPath = getOutputPath(mdFile, content);
+            const destPath = path.join(buildDir, outputPath);
 
-          await fs.ensureDir(path.dirname(destPath));
+            await fs.ensureDir(path.dirname(destPath));
 
-          const cleanedContent = cleanMarkdownForDisplay(content, outputPath);
+            const cleanedContent = cleanMarkdownForDisplay(
+              content,
+              outputPath,
+              urlPrefix
+            );
 
-          await fs.writeFile(destPath, cleanedContent, 'utf8');
-          copiedCount++;
+            await fs.writeFile(destPath, cleanedContent, 'utf8');
+            totalCopied++;
 
-          if (mdFile !== outputPath) {
-            console.log(`  ✓ Processed: ${mdFile} → docs/${outputPath}`);
-          } else {
-            console.log(`  ✓ Processed: docs/${outputPath}`);
+            if (mdFile !== outputPath) {
+              console.log(`  ✓ Processed: ${sourceSubdir}/${mdFile} → ${outSubdir}/${outputPath}`);
+            } else {
+              console.log(`  ✓ Processed: ${outSubdir}/${outputPath}`);
+            }
+          } catch (error) {
+            console.error(
+              `  ✗ Failed to process ${sourceSubdir}/${mdFile}:`,
+              error.message
+            );
           }
-        } catch (error) {
-          console.error(`  ✗ Failed to process docs/${mdFile}:`, error.message);
         }
       }
 
-      console.log(`[markdown-source-plugin-local] Successfully copied ${copiedCount} markdown files`);
+      console.log(
+        `[markdown-source-plugin-local] Successfully copied ${totalCopied} markdown files (docs + skills + agents)`
+      );
 
-      // Copy image directories
+      // Copy image directories from docs/ only (site images live under docs)
+      const docsDir = path.join(context.siteDir, 'docs');
       console.log('[markdown-source-plugin-local] Copying image directories...');
       const imgDirCount = await copyImageDirectories(docsDir, outDir);
-      console.log(`[markdown-source-plugin-local] Successfully copied ${imgDirCount} image directories`);
+      console.log(
+        `[markdown-source-plugin-local] Successfully copied ${imgDirCount} image directories`
+      );
     },
   };
 };
-

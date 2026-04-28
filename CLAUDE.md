@@ -10,10 +10,11 @@ Optional personal overrides: `CLAUDE.local.md` (git-ignored). Nested `CLAUDE.md`
 
 ## What this repo is
 
-A Docusaurus 3.1.1 site (`morph-doc`) that doubles as the source of truth for **Morph Agent Skills**. Two linked surfaces:
+A Docusaurus 3.1.1 site (`morph-doc`) that doubles as the source of truth for **Morph Agent Skills** and agent definitions. Linked surfaces:
 
 - `docs/**/*.mdx|.md` — human-readable documentation. Long-form content, tables, demos.
 - `skills/<skill-id>/SKILL.md` — routable, executable summaries for AI agents. Each declares YAML frontmatter (`name`, `description`, `last_verified`, `verified_against`).
+- `agents/*.md` — agent role definitions (also routed at `/agents/` on the built site).
 
 Pairing is enforced: MDX pages marked `doc_skill_id: <id>` must match a `skills/<id>/SKILL.md` whose `name` equals `<id>`. See `__tests__/doc-skill-pairing.test.mjs`.
 

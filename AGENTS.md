@@ -13,7 +13,7 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 - **Vision (docs-as-SKILL, external brain, toolchain):** [`VISION.md`](./VISION.md) — write and review MDX/SKILL pairs against this contract so models can instantiate behavior reliably.
 - **Human-readable docs:** `docs/` (MDX). Prefer linking to the authoritative page instead of duplicating long specs in chat.
 - **Executable topic summaries:** `skills/<skill-id>/SKILL.md` (see [`skills/README.md`](./skills/README.md)). Use these for routing and concise procedures.
-- **Agent sub-definition:** [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) — skill authoring from a single goal. Canonical skill path is **`skills/<skill-id>/`** at repo root; see [`skills/README.md`](./skills/README.md) to symlink into Cursor / Claude Code / OpenClaw global dirs. When in doubt, treat `docs/` + `skills/` as the product source of truth.
+- **Agent sub-definition:** `agents/*.md` (also published under `/agents/` on the doc site; navbar **Agents**). Start with [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) for skill authoring from a single goal. Canonical skill path is **`skills/<skill-id>/`** at repo root; see [`skills/README.md`](./skills/README.md) to symlink into Cursor / Claude Code / OpenClaw global dirs. When in doubt, treat `docs/` + `skills/` as the product source of truth.
 
 ## Development commands
 
@@ -45,6 +45,8 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 
 - `docs/` — MDX content (`build-on-morph/`, `about-morph/`, `how-morph-works/`, `morph-rails/`, …)
   - `docs/build-on-morph/sdk/{classes,enumerations,functions,interfaces,type-aliases,variables}/` — **typedoc-generated API reference**; do **not** hand-edit these files or add frontmatter (including `doc_skill_id`), they will be overwritten on regeneration. See [`VISION.md`](./VISION.md) § Pairing Policy.
+- `skills/` — executable SKILL topics (mirrored on the site at `/skills/`)
+- `agents/` — agent role definitions (mirrored on the site at `/agents/`)
 - `src/components/` — React (`MorphRpc/`, `AltFee/`, `ApiExplorer/`, …)
 - `static/` — assets
 - `plugins/` — custom Docusaurus plugins
@@ -52,7 +54,7 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 
 ### Configuration
 
-- `docusaurus.config.js` — main config, sidebars reference
+- `docusaurus.config.js` — main config, sidebars reference (`sidebars.js`, `sidebars-skills.js`, `sidebars-agents.js`)
 - `sidebars.js` — nav (Get Started, Morph Chain, Node Operators, Learn, Morph Rails)
 - `tailwind.config.js` — theme tokens
 - `config.json` — Algolia DocSearch
@@ -63,7 +65,7 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 
 ### Plugins
 
-- Markdown source plugin: `plugins/markdown-source-plugin.js`
+- Markdown source plugin: `plugins/markdown-source-plugin.js` — post-build exports cleaned `.md` into `build/docs/`, `build/skills/`, and `build/agents/` (mirrors site routes)
 - Client redirects, Sass plugin, Mermaid theme
 
 ## Documentation structure (sidebar)
@@ -73,6 +75,8 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 3. **Node Operators** — full node, validators  
 4. **Learn** — concepts and architecture  
 5. **Morph Rails** — infrastructure (e.g. AltFee, Reference Key)
+6. **Agent Skills** — `skills/` SKILL playbooks (site path `/skills/`)
+7. **Agents** — `agents/*.md` role definitions (site path `/agents/`)
 
 ## Component patterns
 

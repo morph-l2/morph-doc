@@ -1,5 +1,5 @@
 /**
- * MarkdownActionsDropdown + Root injection: eligible pathnames (docs + skills plugins).
+ * MarkdownActionsDropdown + Root injection: eligible pathnames (docs + skills + agents plugins).
  */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -16,6 +16,7 @@ const ROOT = path.join(__dirname, '..');
 assert.equal(isMarkdownActionsPathname('/docs/foo/bar'), true);
 assert.equal(isMarkdownActionsPathname('/skills/README'), true);
 assert.equal(isMarkdownActionsPathname('/skills/morphchain-bridge/SKILL'), true);
+assert.equal(isMarkdownActionsPathname('/agents/morph-doc-agent'), true);
 assert.equal(isMarkdownActionsPathname('/blog/post'), false);
 assert.equal(isMarkdownActionsPathname('/'), false);
 assert.equal(isMarkdownActionsPathname(''), false);

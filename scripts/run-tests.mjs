@@ -31,9 +31,12 @@ export const TEST_FILES = [
   'morph-dapp-code-review-skill.test.mjs',
   'morph-dapp-workflow-skill.test.mjs',
   'agent-driven-development-workflow-doc.test.mjs',
+  'agents-sidebar.test.mjs',
   'examples-viem-alt-fee.test.mjs',
   'is-alt-fee.test.mjs',
   'markdown-actions-routes.test.mjs',
+  'markdown-source-export.test.mjs',
+  'mdx-navigation-pages.test.mjs',
 ];
 
 function main() {

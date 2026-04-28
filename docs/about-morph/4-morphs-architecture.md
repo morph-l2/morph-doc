@@ -57,7 +57,7 @@ This modular architecture enhances flexibility, adaptability, and composability 
 
 Morph’s architecture is further defined by five pivotal roles: Sequencers, Validators, Nodes, Provers, and Layer 1 (Ethereum). Each role carries specific responsibilities and uses distinct components to fulfill its function, contributing to the seamless operation of the network.  
 
-For a deeper understanding of Morph’s architecture, please visit our comprehensive [Developer Docs](../build-on-morph/0-developer-navigation-page.md).
+For a deeper understanding of Morph’s architecture, please visit our comprehensive [Developer Docs](../build-on-morph/0-developer-navigation-page.mdx).
 
 ## Safety and Security
 

@@ -78,6 +78,20 @@ const config = {
         rehypePlugins: [rehypeKatex],
       }),
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'agents',
+        path: 'agents',
+        routeBasePath: 'agents',
+        sidebarPath: require.resolve('./sidebars-agents.js'),
+        editUrl: ({ docPath }) =>
+          `https://github.com/morph-l2/morph-doc/edit/main/agents/${docPath}`,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      }),
+    ],
     'docusaurus-plugin-sass',
     // Use local plugin instead of npm package to fix /docs/ path
     require.resolve('./plugins/markdown-source-plugin.js'),
@@ -390,7 +404,7 @@ const config = {
             sidebarId: 'SkillsSidebar',
             docsPluginId: 'skills',
             label: 'Agent Skills',
-          },
+          }
         ],
       },
       footer: {
