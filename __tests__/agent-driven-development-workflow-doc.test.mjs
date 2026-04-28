@@ -48,7 +48,7 @@ const DISPATCH_TARGETS = [
   '/skills/morph-tx-cost/SKILL',
   '/skills/morph-rails/SKILL',
   '/skills/morph-skill-ln/SKILL',
-  '/skills/morph-full-node-run-on-host/SKILL',
+  '/skills/morph-full-node-run-in-docker/SKILL',
 ];
 for (const link of DISPATCH_TARGETS) {
   assert.ok(

@@ -13,8 +13,8 @@ const ROOT = path.join(__dirname, '..');
 const PAIRS = [
   {
     docRelative:
-      'docs/build-on-morph/developer-resources/node-operation/full-node/2-run-on-host.md',
-    expectedId: 'morph-full-node-run-on-host',
+      'docs/build-on-morph/developer-resources/node-operation/full-node/1-run-in-docker.md',
+    expectedId: 'morph-full-node-run-in-docker',
   },
   {
     docRelative: 'docs/build-on-morph/sdk/js-sdk.mdx',

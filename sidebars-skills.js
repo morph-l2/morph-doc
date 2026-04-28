@@ -34,7 +34,7 @@ const SkillsSidebar = [
     label: 'Skill playbooks',
     collapsed: false,
     items: [
-      { type: 'doc', id: 'morph-full-node-run-on-host/SKILL', label: 'Morph Full Node (host)' },
+      { type: 'doc', id: 'morph-full-node-run-in-docker/SKILL', label: 'Morph Full Node (host)' },
       { type: 'doc', id: 'morph-js-sdk/SKILL', label: 'Morph JS/TS SDK' },
       { type: 'doc', id: 'morph-rails/SKILL', label: 'Morph Rails' },
       { type: 'doc', id: 'morph-skill-ln/SKILL', label: 'morph-skill-ln (symlink script)' },

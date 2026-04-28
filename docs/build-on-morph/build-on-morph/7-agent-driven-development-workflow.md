@@ -33,7 +33,7 @@ single Skill — the Skill then self-describes its own steps.
 | Compute or display transaction fees (L1 + L2) | [`morph-tx-cost`](/skills/morph-tx-cost/SKILL) | Explains `GasPriceOracle.getL1Fee` and gas math. |
 | Route to Morph Rails (Alt Fee, Reference Key, …) | [`morph-rails`](/skills/morph-rails/SKILL) | Product-level rails overview. |
 | Install Skills into Cursor / Claude Code / OpenClaw | [`morph-skill-ln`](/skills/morph-skill-ln/SKILL) | Symlink script. |
-| Run a Morph full node on a host | [`morph-full-node-run-on-host`](/skills/morph-full-node-run-on-host/SKILL) | Node operations, not dApp dev. |
+| Run a Morph full node on a host | [`morph-full-node-run-in-docker`](/skills/morph-full-node-run-in-docker/SKILL) | Node operations, not dApp dev. |
 
 Rule of thumb: **if there is no planning document yet and the task spans multiple files across
 contract / SDK / frontend, start from `morph-dapp-workflow`. Otherwise go to a single

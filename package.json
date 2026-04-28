@@ -18,7 +18,8 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "prepare": "husky"
   },
   "dependencies": {
     "@docsearch/react": "^3.5.2",
@@ -52,14 +53,10 @@
     "@docusaurus/tsconfig": "3.1.1",
     "@docusaurus/types": "3.1.1",
     "@types/react": "^18.2.29",
+    "husky": "^9.1.7",
     "pre-commit": "^1.2.2",
     "typescript": "~5.4.5",
     "webpack": "5.96.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "webpack": "5.96.1"
-    }
   },
   "pnpm": {
     "overrides": {
