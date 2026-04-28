@@ -24,7 +24,7 @@ In Morph’s L2 rollup lifecycle, block states progress as follows:
 
 ### Typical time to reach each state
 
-- **Sequencer confirmed / unsafe (`latest`):** Typically within 2–4 seconds, reflecting the L2 block production time.
+- **Sequencer confirmed / unsafe (`latest`):** Typically within 0.3 seconds, reflecting the L2 block production time.
 - **Published to Ethereum / safe (`safe`):** Typically within 5–10 minutes, up to 12 hours in the worst case (e.g., if data submission is delayed).
 - **Finalized (`finalized`):** Typically within 15–20 minutes, up to 12 hours in the worst case (waiting for L1 finality).
 
