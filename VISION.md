@@ -13,6 +13,8 @@ This file describes how **morph-doc** binds "human-readable documentation" to "e
 - **Flows and facts for specific topics:** `docs/**/*.mdx` / `docs/**/*.md` and the corresponding `skills/<skill-id>/SKILL.md`
 - **Skills overview (directory conventions, division with `docs/`, symlinks & `morph-skill-ln`):** [`skills/README.md`](./skills/README.md)
 
+**LLM Wiki alignment.** Morph-doc follows the same **three-layer** pattern as the [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) idea (immutable sources, a maintained knowledge surface, and schema that disciplines agents). Here **maintainer-owned `docs/` (MDX)** is the wiki body—canonical facts and long-form narrative—**`skills/`** supplies **routing and the execution contract** (playbooks, self-checks, pointers into docs), and **`AGENTS.md` / `CLAUDE.md`** hold the workspace-level operational schema.
+
 This VISION does not repeat CLI commands or directory trees; it only defines **goals, contracts, and self-checks**.
 
 ---
