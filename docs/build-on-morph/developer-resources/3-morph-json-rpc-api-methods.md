@@ -1,6 +1,7 @@
 ---
 title: Morph JSON-RPC API Methods
 lang: en-US
+doc_skill_id: morph-rpc-api
 ---
 
 Most methods are similar to Ethereum's. For those methods, we recommend you visit [Ethereum JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods). 

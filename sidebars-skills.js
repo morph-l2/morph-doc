@@ -34,12 +34,15 @@ const SkillsSidebar = [
     label: 'Skill playbooks',
     collapsed: false,
     items: [
+      { type: 'doc', id: 'morph-bridge/SKILL', label: 'Morph Bridge (L1↔L2)' },
+      { type: 'doc', id: 'morph-contracts/SKILL', label: 'Morph Contract Addresses' },
       { type: 'doc', id: 'morph-full-node-run-in-docker/SKILL', label: 'Morph Full Node (host)' },
       { type: 'doc', id: 'morph-js-sdk/SKILL', label: 'Morph JS/TS SDK' },
       { type: 'doc', id: 'morph-rails/SKILL', label: 'Morph Rails' },
+      { type: 'doc', id: 'morph-rpc-api/SKILL', label: 'Morph JSON-RPC API' },
       { type: 'doc', id: 'morph-skill-ln/SKILL', label: 'morph-skill-ln (symlink script)' },
       { type: 'doc', id: 'morph-tx-cost/SKILL', label: 'Morph Transaction Fees' },
-      { type: 'doc', id: 'morph-contracts/SKILL', label: 'Morph Contract Addresses' },
+      { type: 'doc', id: 'morph-verify-contracts/SKILL', label: 'Verify Smart Contracts' },
     ],
   },
 ];

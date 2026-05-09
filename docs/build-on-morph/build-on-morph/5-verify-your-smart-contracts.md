@@ -3,6 +3,7 @@ title: Verify Your Smart Contracts
 lang: en-US
 keywords: [morph,ethereum,rollup,layer2,validity proof,optimistic zk-rollup]
 description: Upgrade your blockchain experience with Morph - the secure decentralized, cost-efficient, and high-performing optimistic zk-rollup solution. Try it now!
+doc_skill_id: morph-verify-contracts
 ---
 
 After deploying your smart contracts, it's crucial to verify your code on our [block explorer](https://explorer-hoodi.morph.network). This can be automated using your development framework, such as Hardhat.
@@ -32,7 +33,7 @@ module.exports = {
         network: 'morph',
         chainId: 2818,
         urls: {
-          apiURL: 'https://explorer-api.morph.network/api? ',
+          apiURL: 'https://explorer-api.morph.network/api?',
           browserURL: 'https://explorer.morph.network/',
         },
       },

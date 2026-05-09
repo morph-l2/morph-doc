@@ -12,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const PKG = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 
-const PINNED = '5.96.1';
+const PINNED = '5.105.4';
 
 assert.equal(
   PKG.pnpm?.overrides?.webpack,
