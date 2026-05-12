@@ -38,6 +38,21 @@ const PAIRS = [
       'docs/build-on-morph/build-on-morph/7-agent-driven-development-workflow.md',
     expectedId: 'morph-dapp-workflow',
   },
+  {
+    docRelative:
+      'docs/build-on-morph/build-on-morph/3-bridge-between-morph-and-ethereum.md',
+    expectedId: 'morph-bridge',
+  },
+  {
+    docRelative:
+      'docs/build-on-morph/build-on-morph/5-verify-your-smart-contracts.md',
+    expectedId: 'morph-verify-contracts',
+  },
+  {
+    docRelative:
+      'docs/build-on-morph/developer-resources/3-morph-json-rpc-api-methods.md',
+    expectedId: 'morph-rpc-api',
+  },
 ];
 
 function parseFrontmatterField(content, field) {

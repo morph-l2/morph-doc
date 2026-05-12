@@ -1,0 +1,82 @@
+[
+  {
+    "query": "we're shipping a Morph mainnet dashboard (chain 2818) and need viem + @morph-network/viem to send an Alt Fee tx paying gas in USDC — wallet is privy, feeTokenID/feeLimit keep failing simulation, can you walk the exact client setup and tx type 0x7f fields from our repo docs?",
+    "should_trigger": true
+  },
+  {
+    "query": "hoodi testnet morph 2910 viem createWalletClient custom chain morphNetwork preset fee tokens list",
+    "should_trigger": true
+  },
+  {
+    "query": "PM asked for 'gas in erc20 on morph' without mentioning viem — implement estimateGas + sendTransaction pattern for Morph L2 only using npm packages from morph network org",
+    "should_trigger": true
+  },
+  {
+    "query": "debug: eth_sendRawTransaction returns invalid transaction type on Morph after copying a mainnet-only ethers v6 snippet — need Morph-specific adapter or tx envelope",
+    "should_trigger": true
+  },
+  {
+    "query": "compare @morph-network/ethers vs @morph-network/ethers5 for our internal tool; which preset matches morph chain id 2818 and how to wire JsonRpcProvider",
+    "should_trigger": true
+  },
+  {
+    "query": "token registry RPC method name + response shape for supported fee tokens on Morph (not generic ethereum)",
+    "should_trigger": true
+  },
+  {
+    "query": "write a minimal next.js server action that uses viem on morph mainnet to read balance — but the tricky part is AltFee batching limits and feeLimit math from morph docs",
+    "should_trigger": true
+  },
+  {
+    "query": "our CI script needs to assert chainId and rpc url for morph l2 in env — what's the canonical table from morph doc skill not blog posts",
+    "should_trigger": true
+  },
+  {
+    "query": "migrate wallet connector from wagmi default chains to morph only; user txs are standard eip1559 eth gas — still need morph sdk?",
+    "should_trigger": true
+  },
+  {
+    "query": "i typed morph fee token id wrong and got reverted — need the skill playbook steps to cross-check feeTokenID vs registry before opening a ticket",
+    "should_trigger": true
+  },
+  {
+    "query": "list every morph mainnet bridge gateway contract address and l1/l2 messenger for our security questionnaire — no javascript, just addresses",
+    "should_trigger": false
+  },
+  {
+    "query": "why is my metamask gas estimate on morph so much higher than ethereum for same opcode trace — formula and oracle calls only, no npm packages",
+    "should_trigger": false
+  },
+  {
+    "query": "solidity contract review: our L2 contract uses block.basefee assumptions from ethereum — security checklist only",
+    "should_trigger": false
+  },
+  {
+    "query": "configure hardhat to verify contracts on morphscan from CI — foundry/etherscan api key rotation",
+    "should_trigger": false
+  },
+  {
+    "query": "run morph full node in docker on aws and prune disk — ops doc not js sdk",
+    "should_trigger": false
+  },
+  {
+    "query": "explain morph rails x402 payment flow vs raw chain txs — payfi middleware conceptual",
+    "should_trigger": false
+  },
+  {
+    "query": "add morph chain to rainbowkit chain list using only public rpc url from random blog — no morph-network packages",
+    "should_trigger": false
+  },
+  {
+    "query": "write ethers v5 code for uniswap swap on ethereum mainnet chainId 1 — unrelated chain",
+    "should_trigger": false
+  },
+  {
+    "query": "json-rpc eth_call batching best practices for morph node — rpc methods doc not js sdk skill",
+    "should_trigger": false
+  },
+  {
+    "query": "draft a new morph-doc SKILL for morph-tx-cost only — authoring workflow not sdk integration",
+    "should_trigger": false
+  }
+]

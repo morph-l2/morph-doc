@@ -16,6 +16,7 @@ export const TEST_FILES = [
   'build-toolchain-constraints.test.mjs',
   'doc-skill-pairing.test.mjs',
   'morph-doc-skill-inventory.test.mjs',
+  'skill-trigger-eval-examples.test.mjs',
   'morph-contracts-skill-tokenlist.test.mjs',
   'skills-sidebar.test.mjs',
   'vision-md.test.mjs',

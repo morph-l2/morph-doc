@@ -6,7 +6,7 @@ title: Morph Skills
 
 # morph-doc Skills
 
-This page is the entry point for the **Agent Skill system in the morph-doc repository**: it explains the **division of responsibility between `skills/` and `docs/`**, the **conventions and validation**, and how to **one-click or manually** symlink skill directories into the global loading paths for Cursor / Claude Code / OpenClaw.
+This page is the entry point for the **Agent Skill system in the morph-doc repository**: it explains the **division of responsibility between `skills/` and `docs/`**, the **conventions and validation**, and how to **one-click or manually** symlink skill directories into the global loading paths for IDE/agent runtimes that support project-local skills (e.g. Claude Code, OpenClaw, Cursor, Windsurf).
 
 - **Vision & contract (doc-as-SKILL, `doc_skill_id`):** [`VISION.md`](https://github.com/morph-l2/morph-doc/blob/main/VISION.md) (repo root)
 - **Generate or audit a Skill from a single target:** [`agents/morph-doc-agent.md`](https://github.com/morph-l2/morph-doc/blob/main/agents/morph-doc-agent.md)
@@ -16,15 +16,61 @@ This page is the entry point for the **Agent Skill system in the morph-doc repos
 
 ## What is `skills/`
 
-- **Canonical path**: **`skills/<skill-id>/`** under the repo root, with **`SKILL.md`** as the main file (e.g. `skills/morph-js-sdk/SKILL.md`). Skills have been migrated out of `.cursor/skills`; **do not** treat `.cursor/skills` as the authoritative in-repo path.
+- **Canonical path**: **`skills/<skill-id>/`** under the repo root, with **`SKILL.md`** as the main file (e.g. `skills/morph-js-sdk/SKILL.md`). **Do not** treat per-IDE symlink mirrors inside the repo (hidden config trees created by your editor) as the authoritative copy — edit **`skills/<id>/`** only.
 - **Relationship to human docs**: Long-form content, tables, and demos live in **`docs/`** as the source of truth; Skills provide **routable summaries, execution steps, and pointers** — avoiding full duplication of MDX pages. When binding to a specific page, use **`doc_skill_id`** in the MDX frontmatter; its value must match the `skills/<skill-id>/` directory name and the **`name`** field in `SKILL.md` (validation: `__tests__/doc-skill-pairing.test.mjs`).
 - **Inventory & frontmatter checks**: `__tests__/morph-doc-skill-inventory.test.mjs` runs basic consistency checks on `skills/*/SKILL.md`.
+- **Tuning `description` (trigger rate)**: If a Skill is under-used in the IDE, use the **skill-creator** *Description Optimization* loop (eval set → optional HTML review → `run_loop` → merge `best_description`). See [Tuning description trigger rates](#tuning-description-trigger-rates).
 
 ---
 
 ## Using within this repo
 
-When you open **morph-doc** directly in Cursor / IDE, the model reads the **`skills/`** directory from the project, so **no additional symlinks** to other local directories are usually needed.
+When you open **morph-doc** directly in your IDE, the model reads the **`skills/`** directory from the project, so **no additional symlinks** to other local directories are usually needed.
+
+---
+
+## Tuning description trigger rates
+
+IDE routing depends mainly on the YAML **`description`** in `skills/<id>/SKILL.md` (plus `name`). If a Skill should fire more often (or less often for near-miss prompts), follow the **Description Optimization** section in the **skill-creator** skill (see that skill's `SKILL.md`; the install location is defined by your IDE or agent product — use its docs to find the checkout that contains `scripts/run_loop.py`): build a **trigger eval set**, optionally review it with `assets/eval_review.html` from that skill, run the automated loop, then land the winning text here.
+
+### 1. Trigger eval set (JSON)
+
+- Format: a JSON **array** of objects `{ "query": "...", "should_trigger": true|false }`.
+- Target about **20 rows**: roughly half **should_trigger** (real user prompts that *should* load this Skill) and half **near-miss negatives** (share vocabulary but should route elsewhere — e.g. `morph-contracts` for address-only tables, `morph-tx-cost` for fee formula without SDK packages).
+- Queries should be **concrete** (paths, chain IDs, error messages, package names); avoid toy prompts like "read a file" — models may not consult a Skill for trivial one-step tasks.
+- **Example file** checked into this repo (copy and edit for another Skill id): `scripts/skill-trigger-evals.morph-js-sdk.example.json`.
+
+### 2. Optional human review
+
+From the skill-creator directory, open `assets/eval_review.html`, substitute the placeholders for your eval JSON / Skill name / current `description`, export the reviewed set (see skill-creator `SKILL.md` Step 2).
+
+### 3. Optimization loop (requires Claude Code / `claude` CLI)
+
+Run from your **skill-creator** checkout — the directory that contains the `scripts/` package next to `SKILL.md` (your IDE or agent docs explain where skills are installed on disk), not from morph-doc's Python env:
+
+```bash
+cd /path/to/skill-creator   # must contain scripts/run_loop.py; see skill-creator install docs
+
+python -m scripts.run_loop \
+  --eval-set /ABS/PATH/TO/morph-doc/scripts/skill-trigger-evals.YOUR_SKILL.example.json \
+  --skill-path /ABS/PATH/TO/morph-doc/skills/YOUR_SKILL_ID \
+  --model sonnet \
+  --max-iterations 5 \
+  --runs-per-query 3 \
+  --holdout 0.4 \
+  --verbose \
+  --results-dir /ABS/PATH/TO/morph-doc/.local/skill-desc-opt
+```
+
+- Adjust `--model` to the model you actually use in the IDE so trigger scores match reality.
+- The command prints JSON including **`best_description`** and can write `report.html` under `--results-dir`.
+- **Headless / CI:** pass `--report none` if you cannot open a browser.
+
+### 4. Land changes in morph-doc
+
+1. Replace the `description:` field in `skills/<id>/SKILL.md` (keep `name` and directory aligned; do not paste the full Skill body into `description`).
+2. Run **`npm test`**; fix `morph-doc-skill-inventory` if `description` no longer matches trigger-phrase heuristics.
+3. If you changed **facts** or re-pointed canonical docs, update **`last_verified`** / **`verified_against`** per `VISION.md` and `CLAUDE.md`.
 
 ---
 
