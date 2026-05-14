@@ -15,6 +15,20 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 - **Executable topic summaries:** `skills/<skill-id>/SKILL.md` (see [`skills/README.md`](./skills/README.md)). Use these for routing and concise procedures.
 - **Agent sub-definition:** `agents/*.md` (also published under `/agents/` on the doc site; navbar **Agents**). Start with [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) for skill authoring from a single goal. Canonical skill path is **`skills/<skill-id>/`** at repo root; see [`skills/README.md`](./skills/README.md) to symlink into Cursor / Claude Code / OpenClaw global dirs. When in doubt, treat `docs/` + `skills/` as the product source of truth.
 
+### Three-layer model (knowledge base, brain, connector)
+
+Use morph-doc as Morph’s **versioned knowledge base** and **external brain** for agents. Three layers:
+
+| Layer | Role | In this repo |
+|-------|------|----------------|
+| **Knowledge base** | Canonical facts, long-form narrative, tables, demos (humans + search) | `docs/**/*.mdx` |
+| **Brain** | Reliable behavior: stepwise playbooks, self-checks; authority in Git, not chat memory alone | `skills/<skill-id>/SKILL.md`, plus `__tests__/` where behavior must stay tied to docs |
+| **Connector** | Routes intent to the right surface: YAML `name` / `description` (tool routing), optional MDX `doc_skill_id` (page–skill pairing), **Related Skills** for handoffs without copying sibling bodies | Same `SKILL.md` files; pairing and policy in [`VISION.md`](./VISION.md); symlink and trigger tuning in [`skills/README.md`](./skills/README.md) |
+
+**Connector contract:** Skills do not duplicate full MDX. They connect prompts → **Execution Steps** → pointers into `docs/` → optional sibling skill links.
+
+**Mnemonic:** write facts in `docs/`; write how to be found and executed in `skills/`; keep pairing testable (`doc_skill_id`, `npm test`).
+
 ## Development commands
 
 ### Local development
@@ -44,7 +58,7 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 ### Key directories
 
 - `docs/` — MDX content (`build-on-morph/`, `about-morph/`, `how-morph-works/`, `morph-rails/`, …)
-  - `docs/build-on-morph/sdk/{classes,enumerations,functions,interfaces,type-aliases,variables}/` — **typedoc-generated API reference**; do **not** hand-edit these files or add frontmatter (including `doc_skill_id`), they will be overwritten on regeneration. See [`VISION.md`](./VISION.md) § Pairing Policy.
+  - `docs/build-on-morph/sdk/{classes,enumerations,functions,interfaces,type-aliases,variables}/` — **typedoc-generated API reference**; do **not** hand-edit these files or add frontmatter (including `doc_skill_id`), they will be overwritten on regeneration. See [`VISION.md`](./VISION.md) (Pairing Policy).
 - `skills/` — executable SKILL topics (mirrored on the site at `/skills/`)
 - `agents/` — agent role definitions (mirrored on the site at `/agents/`)
 - `src/components/` — React (`MorphRpc/`, `AltFee/`, `ApiExplorer/`, …)
