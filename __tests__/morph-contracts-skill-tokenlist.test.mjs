@@ -1,6 +1,7 @@
 /**
  * Keep skills/morph-contracts/SKILL.md in sync with morph-bridge mainnet tokenList.json
  * when the bridge repo is present (sibling: ../morph-bridge/...).
+ * In CI (process.env.CI), the token list path must exist — no silent skip.
  */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -27,6 +28,11 @@ function normAddr(a) {
 
 function main() {
   if (!fs.existsSync(TOKEN_LIST_PATH)) {
+    if (process.env.CI) {
+      assert.fail(
+        `morph-contracts-skill-tokenlist: required in CI, missing token list at ${TOKEN_LIST_PATH}`,
+      );
+    }
     console.log(
       'morph-contracts-skill-tokenlist: skip (no morph-bridge tokenList at %s)',
       TOKEN_LIST_PATH,

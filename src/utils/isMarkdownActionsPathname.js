@@ -6,10 +6,9 @@
  */
 function isMarkdownActionsPathname(pathname) {
   if (typeof pathname !== 'string' || !pathname) return false;
-  return (
-    pathname.startsWith('/docs/') ||
-    pathname.startsWith('/skills/') ||
-    pathname.startsWith('/agents/')
+  const bases = ['/docs', '/skills', '/agents'];
+  return bases.some(
+    (base) => pathname === base || pathname.startsWith(`${base}/`)
   );
 }
 

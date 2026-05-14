@@ -1,7 +1,7 @@
 ---
 name: morph-dapp-codegen
 description: "Morph dApp TDD codegen: take a planning document produced by morph-dapp-planning, write failing tests first, then implementation, looping tests + lint to green for Solidity / JS SDK / frontend code. Use ONLY when planning/<feature-id>.md already exists on disk — never use this skill for a fresh requirement that has no planning document yet (run morph-dapp-planning or morph-dapp-workflow first). Use when the user has an approved planning file and wants to run the Red→Green loop, land code against it, or backfill tests."
-last_verified: 2026-04-30
+last_verified: 2026-05-14
 verified_against:
   - docs/build-on-morph/sdk/js-sdk.mdx
   - docs/build-on-morph/developer-resources/1-contracts.md
@@ -50,8 +50,10 @@ run the full suite → wrap up**.
    - Solidity: `forge test` / `npx hardhat test`
    - JS/TS: `npm test` (the morph-doc project goes through
      `node scripts/run-tests.mjs`; new test files must be registered in `TEST_FILES`)
-5. Commit the tests immediately with a message like
-   `test: add failing tests for <feature-id>`.
+5. Stage the failing tests (`git add …`). **Do not `git commit` by default** — obtain
+   explicit user approval first (e.g. they say to commit, or they enable an explicit
+   "allow autocommit" convention for this run). This matches Phase 3: no auto-commit
+   unless the user explicitly asks.
 
 ### Phase 2 — Green: write the implementation
 
@@ -85,7 +87,7 @@ run the full suite → wrap up**.
    - Files changed
    - Tests added / updated
    - Diffs from the planning document, if any
-4. **Do not auto commit** unless the user explicitly asks.
+4. **Do not auto commit in any phase** (including Red) unless the user explicitly asks.
 
 ## Morph-specific codegen checklist
 

@@ -2,7 +2,7 @@
  * Whether a tx/request payload is AltFee per Morph rules (type, feeTokenID, optional feeLimit).
  * CommonJS so Node test runners can `require()` it without package `"type":"module"`.
  *
- * 1) type: omitted/null → skip; 127 / 127n / "0x7f" / "altFee" (case-insensitive) → proceed; otherwise false
+ * 1) type: omitted/null → skip; 127 / 127n / "0x7f" (any hex letter case, optional outer whitespace) / "altFee" (case-insensitive) → proceed; otherwise false
  * 2) When type is explicitly AltFee: feeTokenID null/omitted → throw (upstream contract violation)
  * 3) Core: feeTokenID present and &gt; 0; feeLimit optional — if provided must be &gt;= 0 and finite, else false
  *
@@ -18,8 +18,9 @@ function isAltFeeTypeExplicit(type) {
   if (type === 127) return true;
   if (typeof type === 'bigint' && type === 127n) return true;
   if (typeof type === 'string') {
-    if (type === '0x7f' || type === '0X7F') return true;
-    if (type.toLowerCase() === 'altfee') return true;
+    const normalized = type.trim().toLowerCase();
+    if (normalized === '0x7f') return true;
+    if (normalized === 'altfee') return true;
   }
   return false;
 }

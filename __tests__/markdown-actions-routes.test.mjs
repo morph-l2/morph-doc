@@ -14,6 +14,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 
 assert.equal(isMarkdownActionsPathname('/docs/foo/bar'), true);
+assert.equal(isMarkdownActionsPathname('/docs'), true, 'docs landing');
+assert.equal(isMarkdownActionsPathname('/skills'), true, 'skills landing');
+assert.equal(isMarkdownActionsPathname('/agents'), true, 'agents landing');
 assert.equal(isMarkdownActionsPathname('/skills/README'), true);
 assert.equal(isMarkdownActionsPathname('/skills/morphchain-bridge/SKILL'), true);
 assert.equal(isMarkdownActionsPathname('/agents/morph-doc-agent'), true);

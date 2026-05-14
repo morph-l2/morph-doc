@@ -17,6 +17,7 @@ assert.ok(content.includes('morphHoodiTestnet'), 'Viem snippet should include mo
 assert.ok(content.includes('MorphSigner'), 'Ethers snippet should include MorphSigner');
 assert.ok(content.includes('feeTokenID'), 'examples should include feeTokenID');
 assert.ok(content.includes('feeLimit'), 'examples should include feeLimit');
-assert.match(content, /```typescript\n[\s\S]*```\n[\s\S]*```typescript/, 'should include at least two typescript fenced blocks');
+const tsBlocks = content.match(/```typescript\r?\n[\s\S]*?```/g) ?? [];
+assert.ok(tsBlocks.length >= 2, 'should include at least two closed typescript fenced blocks');
 
 console.log('morph-js-sdk-skill: ok');

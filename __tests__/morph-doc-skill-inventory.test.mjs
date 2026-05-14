@@ -41,9 +41,28 @@ function parseIsoDate(value) {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
   if (!match) return null;
   const [, y, mo, d] = match;
-  const dt = new Date(Date.UTC(Number(y), Number(mo) - 1, Number(d)));
-  return Number.isNaN(dt.getTime()) ? null : dt;
+  const year = Number(y);
+  const month = Number(mo);
+  const day = Number(d);
+  const dt = new Date(Date.UTC(year, month - 1, day));
+  if (Number.isNaN(dt.getTime())) return null;
+  // Reject normalized overflow dates (e.g. 2026-02-31 → 2026-03-03)
+  if (
+    dt.getUTCFullYear() !== year ||
+    dt.getUTCMonth() + 1 !== month ||
+    dt.getUTCDate() !== day
+  ) {
+    return null;
+  }
+  return dt;
 }
+
+assert.equal(parseIsoDate('2026-02-31'), null, 'parseIsoDate rejects overflow calendar day');
+assert.equal(parseIsoDate('2026-02-29'), null, 'parseIsoDate rejects non-leap Feb 29');
+assert.ok(parseIsoDate('2024-02-29'), 'parseIsoDate accepts leap-day when valid');
+assert.ok(parseIsoDate('2026-05-14'), 'parseIsoDate accepts valid YYYY-MM-DD');
+assert.equal(parseIsoDate('2026-13-01'), null, 'parseIsoDate rejects invalid month');
+assert.equal(parseIsoDate('2026/05/14'), null, 'parseIsoDate rejects non-ISO separators');
 
 const entries = fs.readdirSync(SKILLS_DIR, { withFileTypes: true });
 const skillDirs = entries.filter((e) => e.isDirectory()).map((e) => e.name);

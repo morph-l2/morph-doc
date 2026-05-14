@@ -13,10 +13,13 @@ const SIDEBAR_FILE = path.join(ROOT, 'sidebars-skills.js');
 
 const entries = fs.readdirSync(SKILLS_DIR, { withFileTypes: true });
 const expectedIds = entries
-  .filter((e) => e.isDirectory())
-  .map((e) => e.name)
-  .sort()
-  .map((id) => `${id}/SKILL`);
+  .filter(
+    (e) =>
+      e.isDirectory() &&
+      fs.existsSync(path.join(SKILLS_DIR, e.name, 'SKILL.md'))
+  )
+  .map((e) => `${e.name}/SKILL`)
+  .sort();
 
 const sidebarSrc = fs.readFileSync(SIDEBAR_FILE, 'utf8');
 const listed = [...sidebarSrc.matchAll(/id:\s*['"]([^'"]+)['"]/g)]

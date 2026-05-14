@@ -1,7 +1,7 @@
 ---
 name: morph-dapp-planning
 description: "Morph dApp planning: turn a product requirement (optionally + API doc + Figma URL) into a testable Morph dApp planning document covering Goals, Test Cases, Target Files, and Morph chain/contract/SDK constraints. Use when the user provides a Morph product requirement, feature description, API doc, or Figma link and wants to draft or revise planning output before coding. Trigger on requests to break a requirement into a buildable plan, planning work, or to align product inputs × API × Figma. Not for generating implementation code (see morph-dapp-codegen)."
-last_verified: 2026-04-27
+last_verified: 2026-05-14
 verified_against:
   - docs/build-on-morph/sdk/js-sdk.mdx
   - docs/build-on-morph/developer-resources/1-contracts.md
@@ -103,8 +103,8 @@ Minimum sections:
 - Morph-specific constraints (see Morph Constraints below)
 
 ## Target Files
-- impl: <relative path>
-- test: <relative path>
+- impl: <relative path> — if the file does not exist yet, append **`(new in Stage 2)`** (or an explicit *will be created in Stage 2* note on the same line)
+- test: <relative path> — same rule
 
 ## Morph Constraints
 - Chain / RPC: presets from morph-network/chain; do not hard-code chainId / RPC
@@ -130,7 +130,7 @@ have verifiable anchors:
 
 - [ ] Every Goal maps to at least one Test Case
 - [ ] Test Cases cover at least one error branch
-- [ ] Each `Target Files` entry has a paired impl / test path that exists
+- [ ] Each `Target Files` impl/test pair lists concrete relative paths that **either** exist on disk now **or** are explicitly marked for greenfield work (e.g. **`(new in Stage 2)`** on the line, or an explicit *will be created in Stage 2* note)
 - [ ] If Alt Fee is involved, the planning document states the source of `feeTokenID`
       (and of `feeLimit` if the product uses an explicit cap)
 - [ ] Any contract address, chainId, or RPC mentioned cites an in-repo authoritative

@@ -1,9 +1,11 @@
 ---
 name: morph-verify-contracts
 description: "Verify smart contracts on the Morph block explorer (Blockscout) using Hardhat, Foundry, or the explorer UI. Use when the user wants to verify a deployed contract on Morph Mainnet (chainId 2818) or Hoodi Testnet (chainId 2910), set up etherscan/blockscout config in hardhat.config.js, run forge verify-contract, or manually verify via Solidity/Vyper methods on explorer.morph.network."
-last_verified: 2026-05-09
+last_verified: 2026-05-14
 verified_against:
   - docs/build-on-morph/build-on-morph/5-verify-your-smart-contracts.md
+  - docs/build-on-morph/code-examples/1-deploy-contract-on-morph.md
+  - src/components/config.js
 ---
 
 # Verify Smart Contracts on Morph (Execution Playbook)
@@ -23,7 +25,7 @@ Block explorers:
 | Network | Chain ID | Explorer API URL |
 |---------|----------|-----------------|
 | Morph Mainnet | 2818 | `https://explorer-api.morph.network/api?` |
-| Hoodi Testnet | 2910 | `https://explorer-api-hoodi.morph.network/api?` (see doc for exact URL) |
+| Hoodi Testnet | 2910 | `https://explorer-api-hoodi.morph.network` |
 
 ## Execution Steps
 
@@ -37,7 +39,7 @@ Block explorers:
        network: 'morph',
        chainId: 2818,
        urls: {
-         apiURL: 'https://explorer-api.morph.network/api? ',
+         apiURL: 'https://explorer-api.morph.network/api?',
          browserURL: 'https://explorer.morph.network/',
        },
      }],

@@ -32,9 +32,9 @@ assert.match(
 
 const lockPath = path.join(ROOT, 'pnpm-lock.yaml');
 assert.ok(fs.existsSync(lockPath), 'pnpm-lock.yaml exists');
-const lockHead = fs.readFileSync(lockPath, 'utf8').slice(0, 800);
+const lockContent = fs.readFileSync(lockPath, 'utf8');
 assert.match(
-  lockHead,
+  lockContent,
   new RegExp(`overrides:\\s*\\n\\s*webpack:\\s*${PINNED.replace(/\./g, '\\.')}`),
   'pnpm-lock.yaml must record webpack override',
 );

@@ -24,6 +24,8 @@ assert.equal(isAltFee({ type: 127, feeTokenID: 1 }), true);
 assert.equal(isAltFee({ type: 127n, feeTokenID: 1 }), true);
 assert.equal(isAltFee({ type: '0x7f', feeTokenID: 1 }), true);
 assert.equal(isAltFee({ type: '0X7F', feeTokenID: 1 }), true);
+assert.equal(isAltFee({ type: '0x7F', feeTokenID: 1 }), true, 'mixed-case hex digits');
+assert.equal(isAltFee({ type: ' 0x7f ', feeTokenID: 1 }), true, 'trimmed hex string');
 assert.equal(isAltFee({ type: 'altFee', feeTokenID: 1 }), true);
 assert.equal(isAltFee({ type: 'ALtFEE', feeTokenID: 1 }), true, 'altFee is case-insensitive');
 
@@ -66,6 +68,8 @@ assert.equal(isAltFee({ feeTokenID: 4, feeLimit: null }), true, 'null treated as
 // helpers (for other tests in this file or future reuse)
 assert.equal(isAltFeeTypeExplicit(127), true);
 assert.equal(isAltFeeTypeExplicit(126), false);
+assert.equal(isAltFeeTypeExplicit('0x7F'), true);
+assert.equal(isAltFeeTypeExplicit('0X7f'), true);
 assert.equal(isPositiveFeeTokenId(1), true);
 assert.equal(isPositiveFeeTokenId(0), false);
 assert.equal(isFeeLimitValid(0), true);

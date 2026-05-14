@@ -66,6 +66,11 @@ This SKILL only describes **how to use the script to create symlinks**; conventi
 - **`--dry-run`** only prints commands, does not write to the filesystem.
 - **`--unlink`** does not delete real directories under `skills/`, only removes links in agent directories.
 
+## Related Skills
+
+- `morph-dapp-workflow` — orchestrated dApp flow; points here when child skills are not symlinked yet (`skills/README.md` + `scripts/morph-skill-ln`)
+- `morph-js-sdk` / `morph-contracts` — common Morph topic skills users link for chain/SDK work (parallel **agent** definitions use `scripts/morph-agent-ln`; see **`skills/README.md`** → *Linking agents*)
+
 ## Self-Check
 
 - [ ] Does it point to `skills/README.md` as the overview entry point?

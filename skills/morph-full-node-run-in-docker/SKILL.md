@@ -32,3 +32,8 @@ Primary guide (covers both Docker and binary with tabs):
 9. Verify: `curl localhost:8545` for geth peers; `curl localhost:26657/status` — synced when `catching_up` is `false`.
 
 Do not fabricate snapshot names, make targets, or URLs not present in the doc; open the primary doc to verify when in doubt.
+
+## Related Skills
+
+- `morph-contracts` — Mainnet / Hoodi chain IDs and public RPC references when wiring `L1_ETH_RPC` / `L1_BEACON_CHAIN_RPC` or checking network context
+- `morph-rpc-api` — Morph JSON-RPC surface when validating a running node or comparing behavior to hosted endpoints

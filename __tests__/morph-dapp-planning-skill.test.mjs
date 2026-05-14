@@ -46,4 +46,10 @@ for (const anchor of [
   );
 }
 
+assert.ok(
+  content.includes('(new in Stage 2)') &&
+    content.includes('will be created in Stage 2'),
+  'Target Files / Self-Check should document greenfield paths (Stage 2 marker)',
+);
+
 console.log('morph-dapp-planning-skill: ok');

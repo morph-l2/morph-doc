@@ -23,7 +23,7 @@ function parseFrontmatter(raw) {
   const desc = /^description:\s*(.+)$/m.exec(fm);
   return {
     name: name ? name[1].trim().replace(/^["']|["']$/g, '') : null,
-    description: desc ? desc[1].trim() : null,
+    description: desc ? desc[1].trim().replace(/^["']|["']$/g, '') : null,
   };
 }
 
