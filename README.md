@@ -16,6 +16,10 @@ Our decentralized sequencer design and innovative Layer 2 approach address block
 
 3. [Morph's Origins and Aspirations](https://medium.com/@morphlayer/morphys-origins-and-aspirations-7afc0280a8e2)
 
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for pull-request expectations, local commands, and the team norm **Morph knowledge base: Skills as connectors** (knowledge base, brain, and connector roles).
+
 ## AI assistant workspace (Claude Code & OpenClaw)
 
 This repo includes agent-oriented docs at the root:
