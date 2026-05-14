@@ -22,6 +22,7 @@ assert.match(
 );
 
 const requiredSubstrings = [
+  'CLAUDE.md',
   'AGENTS.md',
   'VISION.md',
   'doc_skill_id',
@@ -31,6 +32,7 @@ const requiredSubstrings = [
   'Related Skills',
   'sidebars-skills.js',
   'Three layers',
+  'Working with Claude Code',
 ];
 for (const s of requiredSubstrings) {
   assert.ok(

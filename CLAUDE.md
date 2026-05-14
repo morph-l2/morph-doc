@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Canonical handbook
 
-Day-to-day architecture, commands, and conventions live in [`AGENTS.md`](./AGENTS.md) — read it first. The doc–skill contract (why this repo exists as an "external brain" for Morph-facing agents) is in [`VISION.md`](./VISION.md). This file only captures what Claude Code specifically needs on top of those.
+Day-to-day architecture, commands, and conventions live in [`AGENTS.md`](./AGENTS.md) — read it first. The doc–skill contract (why this repo exists as an "external brain" for Morph-facing agents) is in [`VISION.md`](./VISION.md). **Contributor norms** (pull requests, three-layer model, Skills-as-connectors checklist) live in [`CONTRIBUTING.md`](./CONTRIBUTING.md). This file only captures what Claude Code specifically needs on top of those.
 
 Optional personal overrides: `CLAUDE.local.md` (git-ignored). Nested `CLAUDE.md` files in subfolders may apply when working only in those paths.
 

@@ -6,10 +6,22 @@ This repository is the Morph documentation site (Docusaurus) and the **source of
 
 | Doc | Purpose |
 |-----|---------|
+| [`CLAUDE.md`](./CLAUDE.md) | Claude Code workspace entry: commands, skill authoring loop, links to AGENTS.md / VISION.md / CONTRIBUTING.md |
 | [`AGENTS.md`](./AGENTS.md) | Commands, directories, tests, day-to-day agent workspace operations |
 | [`VISION.md`](./VISION.md) | Documentation-as-SKILL vision, pairing policy, freshness metadata |
 | [`skills/README.md`](./skills/README.md) | `skills/` conventions, symlinks (`npm run skill-ln`), optional trigger-eval workflow |
 | [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) | How to author or revise one Skill from a single goal |
+
+## Working with Claude Code
+
+Claude Code reads root [`CLAUDE.md`](./CLAUDE.md) when this repository is the active project. Use it together with this document: `CLAUDE.md` carries commands and the skill loop; **Morph knowledge base: Skills as connectors** (above) is the team contract for `docs/` / `skills/` / tests.
+
+- **Workspace root**: Open the **morph-doc** clone as the project root so paths (`docs/`, `skills/`, `__tests__/`) and `npm test` match CI and the guards described in `CLAUDE.md`.
+- **Global skills (optional)**: Run `npm run skill-ln` so `skills/<id>/` are symlinked into your global Claude skills directory (paths vary by install; see [`skills/README.md`](./skills/README.md)). Then other projects’ Claude Code sessions can load Morph skills without opening this repo.
+- **Global agents (optional)**: `npm run agent-ln` symlinks `agents/*.md` for tools that read global agent definitions.
+- **Single-topic Skill work**: Follow [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md); `CLAUDE.md` already routes the common “new or revise a Skill” loop there.
+- **Personal overrides**: Add a git-ignored `CLAUDE.local.md` at the repo root for machine-specific notes (see “Optional personal overrides” in [`CLAUDE.md`](./CLAUDE.md)).
+- **Verify before merge**: Run `npm test` after doc or skill edits (same expectation as `CLAUDE.md`).
 
 ## Morph knowledge base: Skills as connectors
 
