@@ -65,6 +65,16 @@ When the user asks for a new skill or a revision, follow [`agents/morph-doc-agen
 
 See `VISION.md` for the pairing policy (which doc types require a skill) and the freshness contract.
 
+## Mandatory self-check (docs / skills PRs)
+
+Before you finish or hand off work that touches `docs/`, `skills/`, or pairing metadata, confirm all five items below (mirrors the **Collaboration checklist** in [`CONTRIBUTING.md`](./CONTRIBUTING.md)):
+
+- **Pairing:** For **actionable** or **fact-table** scope per `VISION.md`, is every MDX `doc_skill_id` (when present) aligned with `skills/<id>/SKILL.md` (`name` equals folder name), and is that SKILL updated in the same change set?
+- **Connector contract:** Does each affected Skill stay pointer-first—**Execution Steps** plus links into concrete `docs/` sections—not a paste of full MDX; use **Related Skills** and `references/` only as directed pointers?
+- **Freshness:** If you changed on-chain facts, contract addresses, RPC endpoints, or package versions, did you re-stamp **`last_verified`** / **`verified_against`** on every affected Skill in this same change set?
+- **Inventory:** For any **new** `skills/<id>/` directory, did you register it in **`sidebars-skills.js`**, run **`npm test`**, and fix failures without weakening unrelated guards?
+- **Routing (if you touched discovery):** If you changed how a Skill should be selected, did you update YAML **`description`** (and eval JSON if you maintain one) per **Tuning description trigger rates** in `skills/README.md`?
+
 ## Repo-specific conventions
 
 - **Never copy content between `docs/` and `skills/`.** Skills point into docs; docs never embed skill playbooks.

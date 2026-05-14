@@ -14,6 +14,7 @@ const TEST_DIR = path.join(ROOT, '__tests__');
 export const TEST_FILES = [
   'run-tests-manifest.test.mjs',
   'build-toolchain-constraints.test.mjs',
+  'claude-md.test.mjs',
   'contributing-md.test.mjs',
   'doc-skill-pairing.test.mjs',
   'morph-doc-skill-inventory.test.mjs',

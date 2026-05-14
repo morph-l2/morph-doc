@@ -6,7 +6,7 @@ This repository is the Morph documentation site (Docusaurus) and the **source of
 
 | Doc | Purpose |
 |-----|---------|
-| [`CLAUDE.md`](./CLAUDE.md) | Claude Code workspace entry: commands, skill authoring loop, links to AGENTS.md / VISION.md / CONTRIBUTING.md |
+| [`CLAUDE.md`](./CLAUDE.md) | Claude Code workspace entry: commands, skill loop, **Mandatory self-check (docs / skills PRs)**, links to AGENTS.md / VISION.md / CONTRIBUTING.md |
 | [`AGENTS.md`](./AGENTS.md) | Commands, directories, tests, day-to-day agent workspace operations |
 | [`VISION.md`](./VISION.md) | Documentation-as-SKILL vision, pairing policy, freshness metadata |
 | [`skills/README.md`](./skills/README.md) | `skills/` conventions, symlinks (`npm run skill-ln`), optional trigger-eval workflow |
@@ -34,6 +34,8 @@ Team norms for treating this repository as Morph’s **versioned knowledge base*
 3. **Connector (Skill)**: Connects a short user or tool prompt to the right material—routing via YAML `name` / `description`, pairing MDX pages via `doc_skill_id`, and handing off via **Related Skills** without copying sibling Skill bodies.
 
 ### Collaboration checklist
+
+These items are **mandatory self-check bullets** in root [`CLAUDE.md`](./CLAUDE.md) for Claude Code sessions; keep both places aligned when you change norms.
 
 - For **actionable** or **fact-table** topics, follow the pairing policy in `VISION.md`: keep `skills/<id>/SKILL.md` in sync, with `doc_skill_id` matching the Skill `name` and directory name (enforced by `__tests__/doc-skill-pairing.test.mjs` and related guards).
 - Skill bodies follow the **connector contract**: execution steps + pointers to specific `docs/` sections + optional Related Skills; large tables may live under `references/` with guidance in the Skill on when to open them.

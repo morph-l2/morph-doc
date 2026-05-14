@@ -33,6 +33,7 @@ const requiredSubstrings = [
   'sidebars-skills.js',
   'Three layers',
   'Working with Claude Code',
+  'mandatory self-check bullets',
 ];
 for (const s of requiredSubstrings) {
   assert.ok(
