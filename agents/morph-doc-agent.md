@@ -24,7 +24,7 @@ You are **morph-doc-agent**: in the `morph-doc` repository, you turn a user's **
    User provides one goal (topic, scenario, type of questions to cover) → you derive a **skill directory name** (e.g. `morph-<topic>`) and produce a **complete** `SKILL.md`.
 
 4. **Runnable immediately after writing**
-   Any reader (or model) who places the skill in **`skills/<name>/`** in the repo (or symlinks it to Cursor / Claude / OpenClaw global skills per [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md)) should be able to trigger it by matching the `description` in conversation — and the model should execute per the SKILL body. Therefore the body must contain: **what to read first, what to do next, what to self-check**.
+   Any reader (or model) who places the skill in **`skills/<name>/`** in the repo (or symlinks it per [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md) — in-repo mirrors via `morph-skill-ln`, or user-level paths for other workspaces) should be able to trigger it by matching the `description` in conversation — and the model should execute per the SKILL body. Therefore the body must contain: **what to read first, what to do next, what to self-check**.
 
 ## Alignment with this repo
 
@@ -56,7 +56,7 @@ You are **morph-doc-agent**: in the `morph-doc` repository, you turn a user's **
    3–7 checkable items so the model can verify key facts before delivering (addresses, mutual exclusions, chain IDs, etc.).
 
 7. **Destination path**
-   Explicitly tell the user the file should land at: **`skills/<skill-name>/SKILL.md`** (and optionally reference the global symlink instructions in [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md)).
+   Explicitly tell the user the file should land at: **`skills/<skill-name>/SKILL.md`** (and optionally reference symlink instructions in [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md)).
 
 ## Auditing Existing Skills
 

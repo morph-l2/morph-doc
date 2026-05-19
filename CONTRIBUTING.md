@@ -18,8 +18,9 @@ This repository is the Morph documentation site (Docusaurus) and the **source of
 Claude Code reads root [`CLAUDE.md`](./CLAUDE.md) when this repository is the active project. Use it together with this document: `CLAUDE.md` carries commands and the skill loop; **Morph knowledge base: Skills as connectors** (above) is the team contract for `docs/` / `skills/` / tests.
 
 - **Workspace root**: Open the **morph-doc** clone as the project root so paths (`docs/`, `skills/`, `__tests__/`) and `npm test` match CI and the guards described in `CLAUDE.md`.
-- **Global skills (optional)**: Run `npm run skill-ln` so `skills/<id>/` are symlinked into your global Claude skills directory (paths vary by install; see [`skills/README.md`](./skills/README.md)). Then other projects’ Claude Code sessions can load Morph skills without opening this repo.
-- **Global agents (optional)**: `npm run agent-ln` symlinks `agents/*.md` for tools that read global agent definitions. Agent frontmatter should include `name`, `description`, and `model` (see `__tests__/morph-dapp-agent.test.mjs`).
+- **In-repo skill mirrors (optional)**: Run `npm run skill-ln` so `skills/<id>/` are symlinked into **`.cursor/skills`**, **`.claude/skills`**, etc. under this repo (see [`skills/README.md`](./skills/README.md)). Use that when your editor expects mirror paths; opening morph-doc often already loads `skills/` directly.
+- **Skills in other workspaces (optional)**: To load Morph skills without opening morph-doc, symlink into your tool’s **user-level** skills directory (e.g. `~/.cursor/skills`); `morph-skill-ln` does not write there — see **Using Morph skills from another repository** in [`skills/README.md`](./skills/README.md).
+- **In-repo agent mirrors (optional)**: `npm run agent-ln` symlinks `agents/*.md` into **`.cursor/agents`**, **`.claude/agents`**, etc. under this repo. Agent frontmatter should include `name`, `description`, and `model` (see `__tests__/morph-dapp-agent.test.mjs`).
 - **Single-topic Skill work**: Follow [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md); `CLAUDE.md` already routes the common “new or revise a Skill” loop there.
 - **dApp harness planning output**: `planning/<feature-id>.md` is gitignored by default — local workflow state; commit only when the team wants planning docs in the PR.
 - **Personal overrides**: Add a git-ignored `CLAUDE.local.md` at the repo root for machine-specific notes (see “Optional personal overrides” in [`CLAUDE.md`](./CLAUDE.md)).
@@ -42,7 +43,7 @@ These items are **mandatory self-check bullets** in root [`CLAUDE.md`](./CLAUDE.
 - For **actionable** or **fact-table** topics, follow the pairing policy in `VISION.md`: keep `skills/<id>/SKILL.md` in sync, with `doc_skill_id` matching the Skill `name` and directory name (enforced by `__tests__/doc-skill-pairing.test.mjs` and related guards).
 - Skill bodies follow the **connector contract**: execution steps + pointers to specific `docs/` sections + optional Related Skills; large tables may live under `references/` with guidance in the Skill on when to open them.
 - When changing on-chain facts, contract addresses, RPC endpoints, or package versions, update `last_verified` / `verified_against` on affected Skills in the same PR (see `VISION.md`).
-- Register new skill directories in `sidebars-skills.js`. To load skills globally in an IDE across clones, use `npm run skill-ln` (see `skills/README.md`).
+- Register new skill directories in `sidebars-skills.js`. For in-repo IDE mirror paths on a fresh clone, use `npm run skill-ln` (see `skills/README.md`).
 - To tighten or relax how often a Skill is selected, see **Tuning description trigger rates** in `skills/README.md` and maintain an eval JSON modeled on `scripts/skill-trigger-evals.*.example.json`.
 
 ### Mnemonic

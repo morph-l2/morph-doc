@@ -178,20 +178,25 @@ All Skills live in
 Two ways to make them available to your agent:
 
 1. **Inside `morph-doc`** — open this repo in Cursor / Claude Code / OpenClaw / Windsurf
-   and the agent loads `skills/*/SKILL.md` automatically.
-2. **From any other project** — symlink skills and agents into your tool's global directories:
+   and the agent loads `skills/*/SKILL.md` automatically. If your editor only reads
+   `.cursor/skills` (etc.), run once from the repo root: `npm run skill-ln` and
+   `npm run agent-ln` (see [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md)).
+2. **From any other project** — symlink each needed skill into your tool's **user-level**
+   skills directory (paths vary by install), or open morph-doc as the workspace. Example
+   for one skill (repeat per id or use a shell loop):
 
    ```bash
-   ./scripts/morph-skill-ln \
-     morph-dapp-planning \
-     morph-dapp-codegen \
-     morph-dapp-code-review \
-     morph-dapp-workflow \
-     morph-js-sdk \
-     morph-contracts \
-     morph-tx-cost
-   ./scripts/morph-agent-ln morph-dapp-agent morph-doc-agent
+   MORPH_DOC_ROOT="/absolute/path/to/morph-doc"
+   for id in morph-dapp-planning morph-dapp-codegen morph-dapp-code-review \
+     morph-dapp-workflow morph-js-sdk morph-contracts morph-tx-cost; do
+     ln -sfn "${MORPH_DOC_ROOT}/skills/${id}" "${HOME}/.cursor/skills/${id}"
+   done
+   ln -sfn "${MORPH_DOC_ROOT}/agents/morph-dapp-agent.md" "${HOME}/.cursor/agents/morph-dapp-agent.md"
+   ln -sfn "${MORPH_DOC_ROOT}/agents/morph-doc-agent.md" "${HOME}/.cursor/agents/morph-doc-agent.md"
    ```
+
+   Adjust `~/.cursor/skills` / `~/.cursor/agents` for Claude Code, OpenClaw, or Windsurf
+   per [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md).
 
 Once installed, phrase your request so the router can route:
 

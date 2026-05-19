@@ -65,6 +65,22 @@ for (const agentLink of ['/agents/morph-dapp-agent', '/agents/morph-doc-agent'])
   );
 }
 
+assert.match(
+  content,
+  /npm run skill-ln/,
+  'dispatcher doc should document in-repo skill-ln alias',
+);
+assert.match(
+  content,
+  /user-level/i,
+  'dispatcher doc should distinguish user-level symlinks for other workspaces',
+);
+assert.doesNotMatch(
+  content,
+  /morph-skill-ln \\\s*\n\s*morph-dapp-planning/,
+  'morph-skill-ln accepts at most one skill-id positional argument',
+);
+
 for (const anchor of [
   'WORKFLOW_REVIEW_BASE',
   'gitignore',

@@ -6,11 +6,11 @@ title: Morph Skills
 
 # morph-doc Skills
 
-This page is the entry point for the **Agent Skill system in the morph-doc repository**: it explains the **division of responsibility between `skills/` and `docs/`**, the **conventions and validation**, and how to **one-click or manually** symlink skill directories into the global loading paths for IDE/agent runtimes that support project-local skills (e.g. Claude Code, OpenClaw, Cursor, Windsurf).
+This page is the entry point for the **Agent Skill system in the morph-doc repository**: it explains the **division of responsibility between `skills/` and `docs/`**, the **conventions and validation**, and how to **mirror** canonical `skills/<id>/` directories into **in-repo** IDE discovery paths (e.g. `.cursor/skills/`) or, when needed, into **user-level** skill directories for other workspaces.
 
 - **Vision & contract (doc-as-SKILL, `doc_skill_id`):** [`VISION.md`](https://github.com/morph-l2/morph-doc/blob/main/VISION.md) (repo root)
 - **Generate or audit a Skill from a single target:** [`agents/morph-doc-agent.md`](https://github.com/morph-l2/morph-doc/blob/main/agents/morph-doc-agent.md)
-- **Only care about "how to link globally":** see [One-click Script `morph-skill-ln`](#one-click-script-morph-skill-ln) and [Manual Commands](#manual-symlink-commands) below; topic skill **[morph-skill-ln](/skills/morph-skill-ln/SKILL)**.
+- **Only care about symlinks / `morph-skill-ln`:** see [IDE discovery paths (in-repo mirrors)](#ide-discovery-paths-in-repo-mirrors) and [One-click script `morph-skill-ln`](#one-click-script-morph-skill-ln); topic skill **[morph-skill-ln](/skills/morph-skill-ln/SKILL)**.
 
 ---
 
@@ -19,13 +19,15 @@ This page is the entry point for the **Agent Skill system in the morph-doc repos
 - **Canonical path**: **`skills/<skill-id>/`** under the repo root, with **`SKILL.md`** as the main file (e.g. `skills/morph-js-sdk/SKILL.md`). **Do not** treat per-IDE symlink mirrors inside the repo (hidden config trees created by your editor) as the authoritative copy — edit **`skills/<id>/`** only.
 - **Relationship to human docs**: Long-form content, tables, and demos live in **`docs/`** as the source of truth; Skills provide **routable summaries, execution steps, and pointers** — avoiding full duplication of MDX pages. When binding to a specific page, use **`doc_skill_id`** in the MDX frontmatter; its value must match the `skills/<skill-id>/` directory name and the **`name`** field in `SKILL.md` (validation: `__tests__/doc-skill-pairing.test.mjs`).
 - **Inventory & frontmatter checks**: `__tests__/morph-doc-skill-inventory.test.mjs` runs basic consistency checks on `skills/*/SKILL.md`.
-- **Tuning `description` (trigger rate)**: If a Skill is under-used in the IDE, use the **skill-creator** *Description Optimization* loop (eval set → optional HTML review → `run_loop` → merge `best_description`). See [Tuning description trigger rates](#tuning-description-trigger-rates).
+- **Tuning `description` (trigger rate)**: If a Skill is under-used in the IDE, build a morph-doc eval JSON, run **skill-creator** *Description Optimization*, then merge `best_description`. See [Tuning description trigger rates](#tuning-description-trigger-rates).
 
 ---
 
 ## Using within this repo
 
-When you open **morph-doc** directly in your IDE, the model reads the **`skills/`** directory from the project, so **no additional symlinks** to other local directories are usually needed.
+When **morph-doc** is the workspace root, many agents already load **`skills/<id>/SKILL.md`** from the canonical tree — **symlinks are optional** in that case.
+
+Run **`npm run skill-ln`** (or `./scripts/morph-skill-ln`) when your tool only discovers skills under **`.cursor/skills`**, **`.claude/skills`**, **`.openclaw/skills`**, or **`.windsurf/skills`** inside the repo. Those paths are **mirrors** of `skills/<id>/`, not a second source of truth. Typical first-time setup on a fresh clone: link once if your editor expects the mirror paths.
 
 ---
 
@@ -33,40 +35,29 @@ When you open **morph-doc** directly in your IDE, the model reads the **`skills/
 
 IDE routing depends mainly on the YAML **`description`** in `skills/<id>/SKILL.md` (plus `name`). If a Skill should fire more often (or less often for near-miss prompts), follow the **Description Optimization** section in the **skill-creator** skill (see that skill's `SKILL.md`; the install location is defined by your IDE or agent product — use its docs to find the checkout that contains `scripts/run_loop.py`): build a **trigger eval set**, optionally review it with `assets/eval_review.html` from that skill, run the automated loop, then land the winning text here.
 
+**Prerequisites:** the **skill-creator** skill installed on your machine (separate from morph-doc); the automated loop additionally requires the **Claude Code / `claude` CLI**. Without those, hand-edit `description` and run **`npm test`**.
+
 ### 1. Trigger eval set (JSON)
 
 - Format: a JSON **array** of objects `{ "query": "...", "should_trigger": true|false }`.
-- Target about **20 rows**: roughly half **should_trigger** (real user prompts that *should* load this Skill) and half **near-miss negatives** (share vocabulary but should route elsewhere — e.g. `morph-contracts` for address-only tables, `morph-tx-cost` for fee formula without SDK packages).
+- **Minimum 16 rows** for checked-in examples: at least **8** `should_trigger: true` and **8** `false` (`__tests__/skill-trigger-eval-examples.test.mjs`). **~20 rows** (roughly half positive, half near-miss negatives) is a good target — positives are real user prompts that *should* load this Skill; negatives share vocabulary but should route elsewhere (e.g. `morph-contracts` for address-only tables, `morph-tx-cost` for fee formula without SDK packages).
 - Queries should be **concrete** (paths, chain IDs, error messages, package names); avoid toy prompts like "read a file" — models may not consult a Skill for trivial one-step tasks.
 - **Example file** checked into this repo (copy and edit for another Skill id): `scripts/skill-trigger-evals.morph-js-sdk.example.json`.
 
-### 2. Optional human review
+### 2. Run the loop (skill-creator)
 
-From the skill-creator directory, open `assets/eval_review.html`, substitute the placeholders for your eval JSON / Skill name / current `description`, export the reviewed set (see skill-creator `SKILL.md` Step 2).
+Steps 2–3 (optional HTML review, `python -m scripts.run_loop`, flags, and reports) live in **skill-creator** → **Description Optimization** — do not duplicate that CLI here; it changes with the upstream skill.
 
-### 3. Optimization loop (requires Claude Code / `claude` CLI)
+When you run it against morph-doc, point:
 
-Run from your **skill-creator** checkout — the directory that contains the `scripts/` package next to `SKILL.md` (your IDE or agent docs explain where skills are installed on disk), not from morph-doc's Python env:
+- **`--eval-set`** at `scripts/skill-trigger-evals.<skill-id>.example.json` (copy from the `morph-js-sdk` example)
+- **`--skill-path`** at `skills/<skill-id>/`
 
-```bash
-cd /path/to/skill-creator   # must contain scripts/run_loop.py; see skill-creator install docs
+`--results-dir` is optional (see skill-creator). If you want reports under this clone, pick any writable path under **`.local/`** (e.g. `.local/skill-desc-opt`) — that folder is **not in git** (`.gitignore` ignores `.local/`) and is **created by the loop on first run**, so you will not see it until you actually run description optimization.
 
-python -m scripts.run_loop \
-  --eval-set /ABS/PATH/TO/morph-doc/scripts/skill-trigger-evals.YOUR_SKILL.example.json \
-  --skill-path /ABS/PATH/TO/morph-doc/skills/YOUR_SKILL_ID \
-  --model sonnet \
-  --max-iterations 5 \
-  --runs-per-query 3 \
-  --holdout 0.4 \
-  --verbose \
-  --results-dir /ABS/PATH/TO/morph-doc/.local/skill-desc-opt
-```
+Merge the loop’s **`best_description`** into the Skill below.
 
-- Adjust `--model` to the model you actually use in the IDE so trigger scores match reality.
-- The command prints JSON including **`best_description`** and can write `report.html` under `--results-dir`.
-- **Headless / CI:** pass `--report none` if you cannot open a browser.
-
-### 4. Land changes in morph-doc
+### 3. Land changes in morph-doc
 
 1. Replace the `description:` field in `skills/<id>/SKILL.md` (keep `name` and directory aligned; do not paste the full Skill body into `description`).
 2. Run **`npm test`**; fix `morph-doc-skill-inventory` if `description` no longer matches trigger-phrase heuristics.
@@ -74,18 +65,31 @@ python -m scripts.run_loop \
 
 ---
 
-## Reusing in any project (symlink into each tool's skills directory)
+## IDE discovery paths (in-repo mirrors)
 
-If you want a Skill to be available in conversations **without opening morph-doc**, symlink the corresponding directory to the global skills path of each tool (macOS / Linux).
+`morph-skill-ln` and `morph-agent-ln` write **project-local** symlinks under the **morph-doc repo root** — for example `<root>/.cursor/skills/<skill-id>` → `<root>/skills/<skill-id>`. They do **not** install into `~/.cursor/skills` or other user-home paths.
 
-### One-click Script `morph-skill-ln`
+### Using Morph skills from another repository
 
-Run from the **morph-doc repo root**. When no repo root is provided, the default is the parent directory of the script; you can also specify it with **`-r` / `--root`** or the environment variable **`MORPH_DOC_ROOT`** (priority: `-r` > `MORPH_DOC_ROOT` > default).
-
-**Selecting target agents**: use **`-a` / `--agent`** (repeatable). Built-in names **`cursor`**, **`claude`**, **`openclaw`**, **`windsurf`**, **`codex`** map to **`<root>/.cursor/skills`**, **`.claude/skills`**, **`.openclaw/skills`**, **`.windsurf/skills`**, **`.codex/skills`** respectively (all pointing to `<root>/skills/<id>`). When no `--agent` is specified, defaults to **cursor + claude + openclaw + windsurf**. Other tools can be specified with a **repo-relative path** (must contain `/` or start with `.`), e.g. **`--agent .windsurf/skills`** is equivalent to built-in **`windsurf`**, or **`--agent mytool/skills`** for a custom directory.
+To load Morph skills while a **different** folder is the workspace, symlink into that tool's **user-level** skills directory (paths vary by install; see each product's docs):
 
 ```bash
-./scripts/morph-skill-ln                              # batch; default root + four agents above
+MORPH_DOC_ROOT="/absolute/path/to/morph-doc"
+SKILL_ID="morph-js-sdk"
+mkdir -p "${HOME}/.cursor/skills"
+ln -sfn "${MORPH_DOC_ROOT}/skills/${SKILL_ID}" "${HOME}/.cursor/skills/${SKILL_ID}"
+```
+
+Repeat for other tools (`~/.claude/skills`, etc.) as needed. Alternatively, open **morph-doc** as the workspace or include it in a multi-root setup.
+
+### One-click script `morph-skill-ln`
+
+Run from the **morph-doc repo root** (`npm run skill-ln` is equivalent). When no repo root is provided, the default is the parent directory of the script; you can also specify it with **`-r` / `--root`** or the environment variable **`MORPH_DOC_ROOT`** (priority: `-r` > `MORPH_DOC_ROOT` > default).
+
+**Selecting target agents**: use **`-a` / `--agent`** (repeatable). Built-in names **`cursor`**, **`claude`**, **`openclaw`**, **`windsurf`**, **`codex`** map to **`<root>/.cursor/skills`**, **`.claude/skills`**, **`.openclaw/skills`**, **`.windsurf/skills`**, **`.codex/skills`** respectively (all pointing to `<root>/skills/<id>`). When no `--agent` is specified, defaults to **cursor + claude + openclaw + windsurf**. Other tools can be specified with a **repo-relative path** (must contain `/` or start with `.`), e.g. **`--agent .windsurf/skills`** is equivalent to built-in **`windsurf`**, or **`--agent mytool/skills`** for a custom directory under `<root>/`.
+
+```bash
+npm run skill-ln                                      # batch; default root + four agents above
 ./scripts/morph-skill-ln morph-js-sdk                 # single skill id
 ./scripts/morph-skill-ln -a cursor -a claude          # only link Cursor and Claude Code
 ./scripts/morph-skill-ln -r /path/to/morph-doc -a windsurf
@@ -99,7 +103,7 @@ To specify the path via environment variable:
 
 ```bash
 export MORPH_DOC_ROOT="/absolute/path/to/morph-doc"
-./scripts/morph-skill-ln
+npm run skill-ln
 ```
 
 For equivalent manual commands and tool notes, see the next two sections; for behavior details and troubleshooting, see **`skills/morph-skill-ln/SKILL.md`**.
@@ -165,10 +169,10 @@ Other directories can be added with **`--agent <repo-relative-path>`** (must con
 
 Agent definitions (files under `agents/<name>.md`, e.g. `morph-doc-agent`, `morph-dapp-agent`) are symlinked separately from skills, because they live as **single `.md` files** rather than directories, and they land in **`.cursor/agents/`** / **`.claude/agents/`** (not `…/skills/`).
 
-Use the parallel script `scripts/morph-agent-ln` — same flag surface as `morph-skill-ln`:
+Use the parallel script `scripts/morph-agent-ln` (`npm run agent-ln`) — same flag surface as `morph-skill-ln`:
 
 ```bash
-./scripts/morph-agent-ln                              # batch; default root + cursor/claude/openclaw/windsurf
+npm run agent-ln                                      # batch; default root + cursor/claude/openclaw/windsurf
 ./scripts/morph-agent-ln morph-dapp-agent             # single agent name (with or without .md)
 ./scripts/morph-agent-ln -a cursor -a claude          # only link Cursor and Claude Code
 ./scripts/morph-agent-ln --dry-run                    # only print mkdir/ln, no writes
@@ -185,10 +189,4 @@ Built-in `--agent` names map to repo-relative paths:
 | **Windsurf** | `.windsurf/agents/<name>.md` |
 | **Codex compatible** | `.codex/agents/<name>.md` |
 
-Skills and agents are linked independently — running only `morph-skill-ln` will not expose `agents/*.md` to your IDE, and vice versa. Typical first-time setup: run both once.
-
----
-
-## Correspondence with `doc_skill_id`
-
-Docs paired with MDX use `doc_skill_id` in their frontmatter; its value must match both the `skills/<skill-id>/` directory name and the `name` field in `SKILL.md`. Validation: `__tests__/doc-skill-pairing.test.mjs` in the repo root.
+Skills and agents are linked independently — running only `morph-skill-ln` will not expose `agents/*.md` to your IDE, and vice versa. Typical first-time setup on a fresh clone: run **`npm run skill-ln`** and **`npm run agent-ln`** once if your editor expects the in-repo mirror paths.

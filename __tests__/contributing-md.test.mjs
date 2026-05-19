@@ -34,6 +34,9 @@ const requiredSubstrings = [
   'Three layers',
   'Working with Claude Code',
   'mandatory self-check bullets',
+  'npm run skill-ln',
+  'In-repo skill mirrors',
+  'user-level',
 ];
 for (const s of requiredSubstrings) {
   assert.ok(

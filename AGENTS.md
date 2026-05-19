@@ -13,7 +13,7 @@ This is the Morph Documentation website (Docusaurus 3.1.1). Morph is an optimist
 - **Vision (docs-as-SKILL, external brain, toolchain):** [`VISION.md`](./VISION.md) — write and review MDX/SKILL pairs against this contract so models can instantiate behavior reliably.
 - **Human-readable docs:** `docs/` (MDX). Prefer linking to the authoritative page instead of duplicating long specs in chat.
 - **Executable topic summaries:** `skills/<skill-id>/SKILL.md` (see [`skills/README.md`](./skills/README.md)). Use these for routing and concise procedures.
-- **Agent sub-definition:** `agents/*.md` (also published under `/agents/` on the doc site; navbar **Agents**). Start with [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) for skill authoring from a single goal. Canonical skill path is **`skills/<skill-id>/`** at repo root; see [`skills/README.md`](./skills/README.md) to symlink into Cursor / Claude Code / OpenClaw global dirs. When in doubt, treat `docs/` + `skills/` as the product source of truth.
+- **Agent sub-definition:** `agents/*.md` (also published under `/agents/` on the doc site; navbar **Agents**). Start with [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) for skill authoring from a single goal. Canonical skill path is **`skills/<skill-id>/`** at repo root; see [`skills/README.md`](./skills/README.md) for in-repo IDE mirrors (`npm run skill-ln`) and optional user-level symlinks for other workspaces. When in doubt, treat `docs/` + `skills/` as the product source of truth.
 
 ### Three-layer model (knowledge base, brain, connector)
 

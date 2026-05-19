@@ -28,7 +28,7 @@ Child SKILLs the workflow hands off to:
 
 Fact-table SKILLs are **already referenced by the four child SKILLs above via their `verified_against` and `Related Skills` sections** — do not re-list them here; load them transitively only when the executing child SKILL tells you to.
 
-If any of the four files above is missing from the current IDE, stop and point the user at [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md) (use `scripts/morph-skill-ln` to symlink into Cursor / Claude Code / OpenClaw global dirs).
+If any of the four files above is missing from the current IDE, stop and point the user at [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md) (use `npm run skill-ln` for in-repo mirrors, or user-level symlinks when working outside morph-doc).
 
 ## Routing rules
 
