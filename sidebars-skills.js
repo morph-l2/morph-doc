@@ -43,6 +43,22 @@ const SkillsSidebar = [
       { type: 'doc', id: 'morph-skill-ln/SKILL', label: 'morph-skill-ln (symlink script)' },
       { type: 'doc', id: 'morph-tx-cost/SKILL', label: 'Morph Transaction Fees' },
       { type: 'doc', id: 'morph-verify-contracts/SKILL', label: 'Verify Smart Contracts' },
+      {
+        type: 'category',
+        label: 'Morph Skill (external pack)',
+        link: { type: 'doc', id: 'morph-skill/index' },
+        collapsed: true,
+        items: [
+          { type: 'doc', id: 'morph-skill/morph-wallet', label: 'Wallet' },
+          { type: 'doc', id: 'morph-skill/morph-explorer', label: 'Explorer' },
+          { type: 'doc', id: 'morph-skill/morph-identity', label: 'Identity (EIP-8004)' },
+          { type: 'doc', id: 'morph-skill/morph-dex', label: 'DEX' },
+          { type: 'doc', id: 'morph-skill/morph-bridge', label: 'Bridge (cross-chain swap)' },
+          { type: 'doc', id: 'morph-skill/morph-7702', label: 'EIP-7702 Delegation' },
+          { type: 'doc', id: 'morph-skill/morph-x402', label: 'x402 Payment' },
+          { type: 'doc', id: 'morph-skill/morph-altfee', label: 'Alt-fee Gas' },
+        ],
+      },
     ],
   },
 ];

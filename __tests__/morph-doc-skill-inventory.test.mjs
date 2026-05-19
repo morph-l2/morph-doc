@@ -65,7 +65,11 @@ assert.equal(parseIsoDate('2026-13-01'), null, 'parseIsoDate rejects invalid mon
 assert.equal(parseIsoDate('2026/05/14'), null, 'parseIsoDate rejects non-ISO separators');
 
 const entries = fs.readdirSync(SKILLS_DIR, { withFileTypes: true });
-const skillDirs = entries.filter((e) => e.isDirectory()).map((e) => e.name);
+// `morph-skill/` mirrors github.com/morph-l2/morph-skill as flat .md siblings
+// (index.md + per-skill .md), not the <id>/SKILL.md convention enforced here.
+const skillDirs = entries
+  .filter((e) => e.isDirectory() && e.name !== 'morph-skill')
+  .map((e) => e.name);
 
 assert.ok(skillDirs.length > 0, 'skills/ should contain at least one skill directory');
 

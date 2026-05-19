@@ -24,7 +24,9 @@ const expectedIds = entries
 const sidebarSrc = fs.readFileSync(SIDEBAR_FILE, 'utf8');
 const listed = [...sidebarSrc.matchAll(/id:\s*['"]([^'"]+)['"]/g)]
   .map((m) => m[1])
-  .filter((id) => id !== 'README');
+  // README and the morph-skill/* mirror pages (flat .md files, not <id>/SKILL.md
+  // dirs) are excluded from the directory-sync check.
+  .filter((id) => id !== 'README' && !id.startsWith('morph-skill/'));
 
 listed.sort();
 const sortedExpected = [...expectedIds].sort();

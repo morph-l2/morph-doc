@@ -8,6 +8,11 @@ verified_against:
 
 # Morph Bridge (Execution Playbook)
 
+> **Looking for cross-chain swap (Bulbaswap, 6 chains)?** This page covers the
+> **native L1↔L2 bridge** (deposit / withdraw via the canonical gateway).
+> For multi-chain swap with JWT order management, see
+> [morph-skill · Bridge (cross-chain swap)](/skills/morph-skill/morph-bridge).
+
 ## Authoritative Documentation (single source of truth)
 
 `docs/build-on-morph/build-on-morph/3-bridge-between-morph-and-ethereum.md`
