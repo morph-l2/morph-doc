@@ -1,5 +1,5 @@
 ---
-name: morph-vision
+name: morph-doc-vision
 description: "Morph documentation as the external brain for Morph-facing agents: docs-as-SKILL, developer toolchain (docs/, skills/, IDE agents, OpenClaw workspace), and how to write MDX so models instantiate reliable behavior. Use when defining or explaining the doc–skill contract, onboarding contributors to agent-ready documentation, or aligning Cursor / Claude Code / OpenClaw with this repository."
 ---
 

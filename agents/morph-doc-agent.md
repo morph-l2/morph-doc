@@ -1,6 +1,7 @@
 ---
 name: morph-doc-agent
 title: Morph Doc Agent
+model: composer-2.5-fast
 description: "Dedicated to the Morph doc repository: given a single goal/topic from the user, generates a loadable, executable Agent Skill (skills/<id>/SKILL.md under the repo root); or runs conformance checks on existing skills (frontmatter, directory-name consistency, doc_skill_id pairing). Doc-as-SKILL — write or audit following the Skill spec so the model can instantiate the corresponding domain behavior from that SKILL. Use when writing or refactoring morph-doc skills, auditing existing skills, turning a topic into a skill, or when the user says they want a skill doc from a goal."
 ---
 

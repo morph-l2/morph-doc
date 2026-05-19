@@ -11,6 +11,7 @@ This repository is the Morph documentation site (Docusaurus) and the **source of
 | [`VISION.md`](./VISION.md) | Documentation-as-SKILL vision, pairing policy, freshness metadata |
 | [`skills/README.md`](./skills/README.md) | `skills/` conventions, symlinks (`npm run skill-ln`), optional trigger-eval workflow |
 | [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md) | How to author or revise one Skill from a single goal |
+| [`agents/morph-dapp-agent.md`](./agents/morph-dapp-agent.md) | End-to-end dApp delivery — routes to harness Skills (`morph-dapp-workflow`, etc.) |
 
 ## Working with Claude Code
 
@@ -18,8 +19,9 @@ Claude Code reads root [`CLAUDE.md`](./CLAUDE.md) when this repository is the ac
 
 - **Workspace root**: Open the **morph-doc** clone as the project root so paths (`docs/`, `skills/`, `__tests__/`) and `npm test` match CI and the guards described in `CLAUDE.md`.
 - **Global skills (optional)**: Run `npm run skill-ln` so `skills/<id>/` are symlinked into your global Claude skills directory (paths vary by install; see [`skills/README.md`](./skills/README.md)). Then other projects’ Claude Code sessions can load Morph skills without opening this repo.
-- **Global agents (optional)**: `npm run agent-ln` symlinks `agents/*.md` for tools that read global agent definitions.
+- **Global agents (optional)**: `npm run agent-ln` symlinks `agents/*.md` for tools that read global agent definitions. Agent frontmatter should include `name`, `description`, and `model` (see `__tests__/morph-dapp-agent.test.mjs`).
 - **Single-topic Skill work**: Follow [`agents/morph-doc-agent.md`](./agents/morph-doc-agent.md); `CLAUDE.md` already routes the common “new or revise a Skill” loop there.
+- **dApp harness planning output**: `planning/<feature-id>.md` is gitignored by default — local workflow state; commit only when the team wants planning docs in the PR.
 - **Personal overrides**: Add a git-ignored `CLAUDE.local.md` at the repo root for machine-specific notes (see “Optional personal overrides” in [`CLAUDE.md`](./CLAUDE.md)).
 - **Verify before merge**: Run `npm test` after doc or skill edits (same expectation as `CLAUDE.md`).
 

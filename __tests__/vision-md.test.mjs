@@ -29,7 +29,7 @@ function parseFrontmatter(raw) {
 
 const fm = parseFrontmatter(content);
 assert.ok(fm, 'VISION.md frontmatter parseable');
-assert.equal(fm.name, 'morph-vision', 'VISION.md name is morph-vision');
+assert.equal(fm.name, 'morph-doc-vision', 'VISION.md name is morph-doc-vision');
 assert.ok(fm.description && fm.description.length > 20, 'VISION.md description is non-trivial');
 
 const headings = [

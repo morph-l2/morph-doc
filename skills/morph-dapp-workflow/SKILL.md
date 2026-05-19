@@ -1,7 +1,7 @@
 ---
 name: morph-dapp-workflow
-description: "Morph dApp end-to-end workflow orchestrator: chain planning → TDD implementation → multi-dimension review for Morph contract / JS SDK / frontend changes. Use when the user asks to take a Morph feature from idea to merge-ready code, runs the full planning-to-review pipeline, or wants a single command that walks through planning output, implementation, and review. Trigger when the user wants to push a Morph requirement straight from product description to mergeable code, or wants an end-to-end pipeline. For atomic tasks, call the matching child skill directly instead of this workflow."
-last_verified: 2026-04-30
+description: "Morph dApp end-to-end workflow SKILL (stage orchestrator): chain planning → TDD implementation → multi-dimension review for Morph contract / JS SDK / frontend changes. Use when the user explicitly invokes this workflow skill to run staged gates from idea to merge-ready code. For IDE agent routing, wrap-up artifacts, and single-step dispatch, prefer morph-dapp-agent. For atomic tasks (planning-only, codegen-only, review-only), call the matching child skill directly instead of this workflow."
+last_verified: 2026-05-19
 verified_against:
   - skills/morph-dapp-planning/SKILL.md
   - skills/morph-dapp-codegen/SKILL.md
@@ -46,6 +46,19 @@ Any missing → stop and point the user at `skills/README.md` to symlink via
 > then **stop and wait for explicit user confirmation** before advancing. Never chain
 > stages in a single reply.
 
+### Step 0 — Record review baseline (fresh run)
+
+At the **start** of a new workflow run (before Stage 1 edits), in a git checkout:
+
+1. Run `git status` and surface any unexpected dirty state to the user.
+2. Record `WORKFLOW_REVIEW_BASE=$(git rev-parse HEAD)` and tell the user the SHA in one line
+   (this is the diff base for Stage 3).
+3. If not a git repo or `git rev-parse` fails, note that Stage 3 will use
+   `morph-dapp-code-review`'s built-in fallbacks (`origin/main...HEAD`, then working tree).
+
+When **resuming** mid-pipeline, confirm with the user whether to keep the original
+`WORKFLOW_REVIEW_BASE` or re-record after `git pull`.
+
 ### Stage 1 — Planning
 
 1. Read `skills/morph-dapp-planning/SKILL.md` and execute its full flow verbatim.
@@ -71,7 +84,10 @@ Any missing → stop and point the user at `skills/README.md` to symlink via
 
 ### Stage 3 — Review
 
-1. Read `skills/morph-dapp-code-review/SKILL.md` and execute its full flow verbatim, using the commit recorded at the start of this workflow as the base.
+1. Read `skills/morph-dapp-code-review/SKILL.md` and execute its full flow verbatim. Pass
+   `WORKFLOW_REVIEW_BASE` from Step 0 as the review base (`git diff
+   $WORKFLOW_REVIEW_BASE...HEAD` or equivalent). If Step 0 was skipped or the variable is
+   unset, follow that skill's **Input identification** fallbacks in order.
 2. Pass the Stage 1 planning document path so the planning-compliance dimension is enabled.
 3. **Output to user**: emit the full review report inline.
 4. Proceed directly to Stage 4 (no user gate needed between Review and Wrap-up).
@@ -89,6 +105,10 @@ Any missing → stop and point the user at `skills/README.md` to symlink via
 Simple rule: each stage's output file IS the state. When resuming, **always confirm the
 feature-id with the user first** — do not infer it from whatever planning file happens to
 exist on disk.
+
+**Planning artifacts (`planning/`):** `planning/<feature-id>.md` is local workflow state.
+The repo `.gitignore` excludes `planning/` by default — commit a planning doc only when the
+team wants it in a PR; otherwise keep it locally or attach it to the ticket.
 
 | Existing artifact | Inferred phase | Suggested entry |
 |---|---|---|
@@ -111,9 +131,11 @@ before starting.
 - Does the final output include all three: the planning document path, the changed-file list, and
   the review report?
 - Was auto-commit / auto-push avoided?
+- Was `WORKFLOW_REVIEW_BASE` recorded at Step 0 (or a fallback documented for Stage 3)?
 
 ## Related Skills
 
+- `morph-dapp-agent`: IDE agent entry — routes to this workflow or atomic child skills
 - `morph-dapp-planning` / `morph-dapp-codegen` / `morph-dapp-code-review`: the three
   atomic flows orchestrated by this workflow
 - `morph-js-sdk` / `morph-contracts` / `morph-tx-cost`: Morph domain fact-tables,

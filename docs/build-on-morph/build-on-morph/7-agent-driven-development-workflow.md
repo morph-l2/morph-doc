@@ -17,6 +17,21 @@ Both humans and Morph-facing agents (Cursor, Claude Code, OpenClaw, Windsurf, Co
 from the same source: this page plus the SKILL files under
 [`skills/`](https://github.com/morph-l2/morph-doc/tree/main/skills).
 
+## Agent definitions (IDE sub-agents)
+
+Skills are the **executable playbooks**; **agents** are pointer-only roles that route to
+them without copying SKILL bodies. Install agent files with `npm run agent-ln` (see
+[`morph-skill-ln`](/skills/morph-skill-ln/SKILL) — **Linking agents**).
+
+| Role | Agent | When to use |
+|---|---|---|
+| End-to-end dApp delivery (routing + wrap-up) | [`morph-dapp-agent`](/agents/morph-dapp-agent) | Prefer in Cursor / Claude Code when you want explicit stage routing, gates, and three wrap-up artifacts (planning path, changed files, review report). |
+| Author or audit a Skill | [`morph-doc-agent`](/agents/morph-doc-agent) | One goal → `skills/<id>/SKILL.md`, or inventory / `doc_skill_id` pairing audit. |
+
+For the staged pipeline body (Step 0 baseline commit, per-stage gates), load
+[`morph-dapp-workflow`](/skills/morph-dapp-workflow/SKILL) — usually via `morph-dapp-agent`
+for full runs.
+
 ## Pick your entry Skill
 
 Scan the left column and pick the first row that matches your task. Each row points to a
@@ -24,7 +39,7 @@ single Skill — the Skill then self-describes its own steps.
 
 | If the task is… | Invoke this Skill | Notes |
 |---|---|---|
-| End-to-end: product brief / Figma / API doc → merge-ready code | [`morph-dapp-workflow`](/skills/morph-dapp-workflow/SKILL) | Orchestrator. Chains the three stages below with a gate after each. |
+| End-to-end: product brief / Figma / API doc → merge-ready code | [`morph-dapp-agent`](/agents/morph-dapp-agent) → [`morph-dapp-workflow`](/skills/morph-dapp-workflow/SKILL) | Agent routes; workflow SKILL runs staged gates (records review base at Step 0). |
 | Turn requirements into planning output | [`morph-dapp-planning`](/skills/morph-dapp-planning/SKILL) | Outputs `planning/<feature-id>.md` with Goals / Test Cases / Target Files / Morph Constraints. |
 | Implement an approved planning document (Red → Green TDD) | [`morph-dapp-codegen`](/skills/morph-dapp-codegen/SKILL) | Requires a planning file. Never auto-commits. |
 | Review a diff / PR / working tree | [`morph-dapp-code-review`](/skills/morph-dapp-code-review/SKILL) | Four-dimension review (Security / Performance / Code Quality / Planning compliance), P0/P1/P2. |
@@ -36,8 +51,11 @@ single Skill — the Skill then self-describes its own steps.
 | Run a Morph full node on a host | [`morph-full-node-run-in-docker`](/skills/morph-full-node-run-in-docker/SKILL) | Node operations, not dApp dev. |
 
 Rule of thumb: **if there is no planning document yet and the task spans multiple files across
-contract / SDK / frontend, start from `morph-dapp-workflow`. Otherwise go to a single
-Skill.**
+contract / SDK / frontend, start from [`morph-dapp-agent`](/agents/morph-dapp-agent) (or invoke
+`morph-dapp-workflow` directly). Otherwise go to a single Skill.**
+
+**Planning files:** `planning/<feature-id>.md` is gitignored by default — local workflow
+state unless your team commits it for review.
 
 ## Quick decision tree
 
@@ -93,8 +111,9 @@ When you do invoke the orchestrator, the three stages wire together like this:
 ```
 
 Each arrow is a **gate**: blocking items must be cleared before the next stage runs.
-Resuming is implicit — the presence of `planning/<id>.md` (and later, landed tests) tells
-the orchestrator where to pick up.
+At workflow **Step 0**, record `WORKFLOW_REVIEW_BASE=$(git rev-parse HEAD)` so Stage 3
+reviews `git diff $WORKFLOW_REVIEW_BASE...HEAD`. Resuming is implicit — the presence of
+`planning/<id>.md` (and later, landed tests) tells the orchestrator where to pick up.
 
 ### Stage 1 — Planning
 
@@ -160,8 +179,7 @@ Two ways to make them available to your agent:
 
 1. **Inside `morph-doc`** — open this repo in Cursor / Claude Code / OpenClaw / Windsurf
    and the agent loads `skills/*/SKILL.md` automatically.
-2. **From any other project** — symlink them into your tool's global skills directory
-   using the [`morph-skill-ln`](/skills/morph-skill-ln/SKILL) script:
+2. **From any other project** — symlink skills and agents into your tool's global directories:
 
    ```bash
    ./scripts/morph-skill-ln \
@@ -172,12 +190,13 @@ Two ways to make them available to your agent:
      morph-js-sdk \
      morph-contracts \
      morph-tx-cost
+   ./scripts/morph-agent-ln morph-dapp-agent morph-doc-agent
    ```
 
 Once installed, phrase your request so the router can route:
 
-- Whole feature: *"Use morph-dapp-workflow to take this requirement from planning to review-ready
-  code."*
+- Whole feature: *"Use morph-dapp-agent to take this requirement from planning to review-ready
+  code."* (or invoke `morph-dapp-workflow` directly)
 - Single stage: *"Use morph-dapp-codegen against `planning/reward-claim.md`."*
 - Fact lookup: *"Use morph-contracts to list the L2-side bridge addresses on Hoodi."*
 
@@ -197,6 +216,7 @@ your own scripts.
 
 ## See also
 
+- Agents: [`morph-dapp-agent`](/agents/morph-dapp-agent), [`morph-doc-agent`](/agents/morph-doc-agent)
 - Planning: [`morph-dapp-planning`](/skills/morph-dapp-planning/SKILL)
 - TDD implementation: [`morph-dapp-codegen`](/skills/morph-dapp-codegen/SKILL)
 - Multi-dimension review: [`morph-dapp-code-review`](/skills/morph-dapp-code-review/SKILL)

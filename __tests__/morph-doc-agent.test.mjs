@@ -23,9 +23,16 @@ function field(name) {
 }
 
 assert.equal(field('name'), 'morph-doc-agent', 'frontmatter name');
+const model = field('model');
+assert.ok(model && model.length > 0, 'frontmatter should declare a default model');
 const desc = field('description');
 assert.ok(desc && desc.length > 20, 'description should be non-empty and substantive');
 assert.match(desc, /SKILL|skill/i, 'description should mention SKILL/skill');
+assert.match(
+  desc,
+  /Use when|when the user/i,
+  'description should include trigger phrasing so IDE routing can match it',
+);
 assert.match(content, /frontmatter|YAML/i, 'body should stress frontmatter/YAML');
 assert.match(content, /skills\/<.*>\/SKILL\.md|skills\/morph-/i, 'should point to skills/<id>/SKILL.md path');
 assert.match(

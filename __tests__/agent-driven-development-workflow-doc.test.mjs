@@ -26,6 +26,7 @@ assert.match(
 );
 
 for (const heading of [
+  '## Agent definitions',
   '## Pick your entry Skill',
   '## Quick decision tree',
   '## The end-to-end path: morph-dapp-workflow',
@@ -57,7 +58,16 @@ for (const link of DISPATCH_TARGETS) {
   );
 }
 
+for (const agentLink of ['/agents/morph-dapp-agent', '/agents/morph-doc-agent']) {
+  assert.ok(
+    content.includes(agentLink),
+    `dispatcher doc must link to agent definitions; missing ${agentLink}`,
+  );
+}
+
 for (const anchor of [
+  'WORKFLOW_REVIEW_BASE',
+  'gitignore',
   'morph-dapp-workflow',
   'feeTokenID',
   'feeLimit',

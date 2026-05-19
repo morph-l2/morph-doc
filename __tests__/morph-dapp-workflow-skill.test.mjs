@@ -53,4 +53,16 @@ assert.ok(
   'workflow must explicitly forbid auto commit/push'
 );
 
+assert.match(
+  content,
+  /WORKFLOW_REVIEW_BASE|git rev-parse HEAD/i,
+  'workflow should document review baseline recording (Step 0)',
+);
+
+assert.match(
+  content,
+  /planning\/.*gitignore|\.gitignore.*planning/i,
+  'workflow should note that planning/ is gitignored by default',
+);
+
 console.log('morph-dapp-workflow-skill: ok');
