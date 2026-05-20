@@ -78,20 +78,20 @@ Copy from `scripts/skill-trigger-evals.morph-js-sdk.example.json` and tailor que
 ```bash
 npm run skill-creator:run-eval -- morph-js-sdk
 # optional: pass through run_eval.py flags after --
-# npm run skill-creator:run-eval -- morph-js-sdk -- --runs-per-query 1 --num-workers 4
+# npm run skill-creator:run-eval -- morph-js-sdk -- --runs-per-query 3 --num-workers 4
 ```
 
-Calls upstream `run_eval.py` via `claude -p` (default 3 runs per query). JSON goes to stdout; a copy is saved under `.local/skill-run-eval/<skill-id>/results.json` unless you pass `--out` or set `MORPH_SKILL_CREATOR_RUN_EVAL_OUT`.
+Calls upstream `run_eval.py` via `claude -p` (**1 run per query** by default; pass `--runs-per-query 3` after `--` for higher confidence). JSON goes to stdout; a copy is saved under `.local/skill-run-eval/<skill-id>/results.json` unless you pass `--out` or set `MORPH_SKILL_CREATOR_RUN_EVAL_OUT`.
 
 ### Step 4 — Description optimization loop
 
 ```bash
 npm run skill-creator:desc-loop -- morph-js-sdk
 # optional extra flags after --
-# npm run skill-creator:desc-loop -- morph-js-sdk -- --max-iterations 3 --holdout 0.3
+# npm run skill-creator:desc-loop -- morph-js-sdk -- --max-iterations 3 --holdout 0.3 --runs-per-query 3
 ```
 
-Results under `.local/skill-desc-opt/<skill-id>/`. Merge printed **`best_description`** into `skills/<id>/SKILL.md`, then:
+Uses upstream `run_loop.py` with **1 `claude -p` run per eval query** by default (same as `run-eval`). Results under `.local/skill-desc-opt/<skill-id>/`. Merge printed **`best_description`** into `skills/<id>/SKILL.md`, then:
 
 1. Re-stamp **`last_verified`** if you re-read sources.
 2. Run **`npm test`**.

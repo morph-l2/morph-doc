@@ -229,6 +229,8 @@ function cmdRunEval(skillId, extraArgs) {
     skillDir,
     '--model',
     model,
+    '--runs-per-query',
+    '1',
     '--verbose',
     ...extraArgs,
   ];
@@ -291,6 +293,8 @@ function cmdDescLoop(skillId, extraArgs) {
     skillDir,
     '--model',
     model,
+    '--runs-per-query',
+    '1',
     '--results-dir',
     resultsDir,
     '--verbose',
