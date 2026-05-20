@@ -9,6 +9,7 @@
 const AgentsSidebar = [
   { type: 'doc', id: 'morph-doc-agent', label: 'Morph Doc Agent' },
   { type: 'doc', id: 'morph-dapp-agent', label: 'Morph dApp Agent' },
+  { type: 'doc', id: 'morph-skill-creator-agent', label: 'Morph Skill Creator Agent' },
 ];
 
 module.exports = {

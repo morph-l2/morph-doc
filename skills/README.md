@@ -31,11 +31,27 @@ Run **`npm run skill-ln`** (or `./scripts/morph-skill-ln`) when your tool only d
 
 ---
 
+## Skill testing & improvement (skill-creator bridge)
+
+Morph-doc ships a bridge Skill and CLI so you do not hand-wire paths to upstream [Anthropic skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator):
+
+| Step | Command |
+|------|---------|
+| Install upstream into `vendor/skill-creator` | `npm run skill-creator:install` |
+| Verify Python / path / optional `claude` CLI | `npm run skill-creator:check` |
+| Static Morph guards for one Skill | `npm run skill-creator:validate -- <skill-id>` |
+| LLM trigger eval (`claude -p`, one shot) | `npm run skill-creator:run-eval -- <skill-id>` |
+| Description trigger optimization loop | `npm run skill-creator:desc-loop -- <skill-id>` |
+
+Playbook: **[`skills/morph-skill-creator/SKILL.md`](./morph-skill-creator/SKILL.md)** · Agent: **[Morph Skill Creator Agent](/agents/morph-skill-creator-agent)**
+
+Behavioral evals (outputs + assertions + viewer) still follow the upstream skill-creator `SKILL.md`; add `skills/<id>/evals/evals.json` from `scripts/skill-behavior-evals.template.json`.
+
 ## Tuning description trigger rates
 
-IDE routing depends mainly on the YAML **`description`** in `skills/<id>/SKILL.md` (plus `name`). If a Skill should fire more often (or less often for near-miss prompts), follow the **Description Optimization** section in the **skill-creator** skill (see that skill's `SKILL.md`; the install location is defined by your IDE or agent product — use its docs to find the checkout that contains `scripts/run_loop.py`): build a **trigger eval set**, optionally review it with `assets/eval_review.html` from that skill, run the automated loop, then land the winning text here.
+IDE routing depends mainly on the YAML **`description`** in `skills/<id>/SKILL.md` (plus `name`). After you have a trigger eval JSON, run **`npm run skill-creator:run-eval -- <skill-id>`** (one-shot LLM trigger test via upstream `run_eval.py`) or **`npm run skill-creator:desc-loop -- <skill-id>`** (iterative description optimization via `run_loop.py`) — see **Skill testing & improvement** above. Manual path: follow the **Description Optimization** section in the upstream **skill-creator** `SKILL.md`.
 
-**Prerequisites:** the **skill-creator** skill installed on your machine (separate from morph-doc); the automated loop additionally requires the **Claude Code / `claude` CLI**. Without those, hand-edit `description` and run **`npm test`**.
+**Prerequisites:** skill-creator installed (`npm run skill-creator:install` or user-level checkout); description loop requires the **Claude Code / `claude` CLI**. Without those, hand-edit `description` and run **`npm test`**.
 
 ### 1. Trigger eval set (JSON)
 

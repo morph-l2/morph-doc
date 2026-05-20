@@ -5,6 +5,11 @@
   "scripts": {
     "test": "node scripts/run-tests.mjs",
     "skill-freshness:report": "node scripts/skill-freshness-report.mjs",
+    "skill-creator:check": "node scripts/morph-skill-creator.mjs check",
+    "skill-creator:install": "node scripts/morph-skill-creator.mjs install",
+    "skill-creator:validate": "node scripts/morph-skill-creator.mjs validate",
+    "skill-creator:run-eval": "node scripts/morph-skill-creator.mjs run-eval",
+    "skill-creator:desc-loop": "node scripts/morph-skill-creator.mjs desc-loop",
     "skill-ln": "bash scripts/morph-skill-ln",
     "agent-ln": "bash scripts/morph-agent-ln",
     "docusaurus": "docusaurus",

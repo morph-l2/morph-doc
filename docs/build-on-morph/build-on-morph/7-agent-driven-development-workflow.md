@@ -27,6 +27,7 @@ them without copying SKILL bodies. Install agent files with `npm run agent-ln` (
 |---|---|---|
 | End-to-end dApp delivery (routing + wrap-up) | [`morph-dapp-agent`](/agents/morph-dapp-agent) | Prefer in Cursor / Claude Code when you want explicit stage routing, gates, and three wrap-up artifacts (planning path, changed files, review report). |
 | Author or audit a Skill | [`morph-doc-agent`](/agents/morph-doc-agent) | One goal → `skills/<id>/SKILL.md`, or inventory / `doc_skill_id` pairing audit. |
+| Test / improve Skill routing & benchmarks | [`morph-skill-creator-agent`](/agents/morph-skill-creator-agent) → [`morph-skill-creator`](/skills/morph-skill-creator/SKILL) | [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) bridge: `npm run skill-creator:*`, trigger evals, `desc-loop`, `evals/evals.json`. |
 
 For the staged pipeline body (Step 0 baseline commit, per-stage gates), load
 [`morph-dapp-workflow`](/skills/morph-dapp-workflow/SKILL) — usually via `morph-dapp-agent`
@@ -48,6 +49,7 @@ single Skill — the Skill then self-describes its own steps.
 | Compute or display transaction fees (L1 + L2) | [`morph-tx-cost`](/skills/morph-tx-cost/SKILL) | Explains `GasPriceOracle.getL1Fee` and gas math. |
 | Route to Morph Rails (Alt Fee, Reference Key, …) | [`morph-rails`](/skills/morph-rails/SKILL) | Product-level rails overview. |
 | Install Skills into Cursor / Claude Code / OpenClaw | [`morph-skill-ln`](/skills/morph-skill-ln/SKILL) | Symlink script. |
+| Test or improve a Skill (routing / benchmarks) | [`morph-skill-creator`](/skills/morph-skill-creator/SKILL) | Requires `npm run skill-creator:install`; `desc-loop` needs `claude` CLI. |
 | Run a Morph full node on a host | [`morph-full-node-run-in-docker`](/skills/morph-full-node-run-in-docker/SKILL) | Node operations, not dApp dev. |
 
 Rule of thumb: **if there is no planning document yet and the task spans multiple files across

@@ -16,6 +16,7 @@ const SkillsSidebar = [
     items: [
       { type: 'link', label: 'Morph Doc Agent', href: '/agents/morph-doc-agent' },
       { type: 'link', label: 'Morph dApp Agent', href: '/agents/morph-dapp-agent' },
+      { type: 'link', label: 'Morph Skill Creator Agent', href: '/agents/morph-skill-creator-agent' },
     ],
   },
   {
@@ -41,6 +42,7 @@ const SkillsSidebar = [
       { type: 'doc', id: 'morph-rails/SKILL', label: 'Morph Rails' },
       { type: 'doc', id: 'morph-rpc-api/SKILL', label: 'Morph JSON-RPC API' },
       { type: 'doc', id: 'morph-skill-ln/SKILL', label: 'morph-skill-ln (symlink script)' },
+      { type: 'doc', id: 'morph-skill-creator/SKILL', label: 'Skill testing (skill-creator)' },
       { type: 'doc', id: 'morph-tx-cost/SKILL', label: 'Morph Transaction Fees' },
       { type: 'doc', id: 'morph-verify-contracts/SKILL', label: 'Verify Smart Contracts' },
       {
