@@ -36,6 +36,16 @@ const evalPath = resolveTriggerEvalSetPath(ROOT, 'morph-js-sdk');
 assert.ok(evalPath, 'morph-js-sdk trigger eval example should resolve');
 assert.ok(evalPath.includes('skill-trigger-evals.morph-js-sdk'), evalPath);
 
+const bridgeEval = resolveTriggerEvalSetPath(ROOT, 'morph-bridge');
+assert.ok(bridgeEval, 'morph-bridge trigger eval example should resolve');
+assert.ok(bridgeEval.includes('skill-trigger-evals.morph-bridge'), bridgeEval);
+
+assert.equal(
+  resolveTriggerEvalSetPath(ROOT, 'morph-tx-cost'),
+  null,
+  'morph-tx-cost should have no trigger eval until added',
+);
+
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'morph-skill-creator-'));
 const fakeCreator = path.join(tmp, 'skill-creator');
 fs.mkdirSync(path.join(fakeCreator, 'scripts'), { recursive: true });
@@ -59,7 +69,7 @@ assert.match(help.stdout, /run-eval/);
 
 const missingEval = spawnSync(
   process.execPath,
-  ['scripts/morph-skill-creator.mjs', 'run-eval', 'morph-bridge'],
+  ['scripts/morph-skill-creator.mjs', 'run-eval', 'morph-tx-cost'],
   {
     cwd: ROOT,
     encoding: 'utf8',
