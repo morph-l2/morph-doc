@@ -18,6 +18,7 @@ export const TEST_FILES = [
   'contributing-md.test.mjs',
   'doc-skill-pairing.test.mjs',
   'morph-doc-skill-inventory.test.mjs',
+  'skill-freshness-report.test.mjs',
   'skill-trigger-eval-examples.test.mjs',
   'skills-readme.test.mjs',
   'morph-contracts-skill-tokenlist.test.mjs',

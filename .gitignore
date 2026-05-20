@@ -54,3 +54,4 @@ research
 
 # skill-creator description optimization (--results-dir); see skills/README.md
 .local
+vendor/skill-creator

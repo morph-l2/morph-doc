@@ -1,0 +1,143 @@
+# Skill freshness bot (Phase 1) — see scripts/skill-freshness-bot.DESIGN.md
+#
+# - Does NOT run on pull_request (freshness stays warn-only in npm test).
+# - Opens or updates a single tracking Issue on default branch when warnings exist.
+
+name: skill-freshness-bot
+
+on:
+  schedule:
+    # Mondays 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Generate freshness report
+        run: |
+          mkdir -p .local
+          node scripts/skill-freshness-report.mjs --json --out .local/skill-freshness-report.json
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-freshness-report
+          path: .local/skill-freshness-report.json
+          retention-days: 30
+
+      - name: Sync tracking issue
+        uses: actions/github-script@v7
+        env:
+          REPORT_PATH: .local/skill-freshness-report.json
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync(process.env.REPORT_PATH, 'utf8'));
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const titlePrefix = '[skill-freshness] Weekly re-verify queue';
+            const botLabel = 'skill-freshness';
+
+            const list = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'all',
+              labels: botLabel,
+              per_page: 100,
+            });
+            const existing = list.data.find((i) => i.title.startsWith(titlePrefix));
+
+            if (report.warningCount === 0) {
+              if (existing) {
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: existing.number,
+                  body: [
+                    '✅ **skill-freshness-bot**: no warnings in the latest scan.',
+                    '',
+                    `- Generated: \`${report.generatedAt}\``,
+                    `- Skills scanned: ${report.skillCount}`,
+                    '',
+                    'Closing this tracking issue. It will reopen on the next scheduled run if warnings return.',
+                  ].join('\n'),
+                });
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number: existing.number,
+                  state: 'closed',
+                });
+              }
+              core.info('No freshness warnings; tracking issue closed or none needed.');
+              return;
+            }
+
+            const tableHeader =
+              '| Skill | Code | last_verified | Age (days) |\n|-------|------|---------------|------------|';
+            const tableRows = report.warnings.map((w) => {
+              const lv = w.lastVerified ?? '—';
+              const age = w.ageDays ?? '—';
+              return `| \`${w.skillId}\` | ${w.code} | ${lv} | ${age} |`;
+            });
+
+            const body = [
+              '## Skill freshness report',
+              '',
+              'Automated scan from [`skill-freshness-bot`](.github/workflows/skill-freshness-bot.yml).',
+              'Human-reported factual errors should still use the **skill-drift** issue template.',
+              '',
+              `**Threshold:** ${report.thresholdDays} days — see [VISION.md § Skill Verification Metadata](https://github.com/${owner}/${repo}/blob/main/VISION.md#skill-verification-metadata-freshness-contract)`,
+              '',
+              tableHeader,
+              ...tableRows,
+              '',
+              '### Maintainer checklist',
+              '',
+              '- [ ] Re-read each listed Skill against its `verified_against` paths',
+              '- [ ] Update `last_verified` to today (UTC `YYYY-MM-DD`) in the same PR as any fact fix',
+              '- [ ] Run `npm test`',
+              '',
+              `**Run:** ${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`,
+              `**Generated:** \`${report.generatedAt}\``,
+              `**Warnings:** ${report.warningCount} (${report.staleCount} stale)`,
+            ].join('\n');
+
+            const title = `${titlePrefix} (${report.warningCount} warning${report.warningCount === 1 ? '' : 's'})`;
+
+            if (existing) {
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: existing.number,
+                title,
+                body,
+                state: 'open',
+              });
+              core.info(`Updated issue #${existing.number}`);
+              return;
+            }
+
+            const created = await github.rest.issues.create({
+              owner,
+              repo,
+              title,
+              body,
+              labels: [botLabel, 'bot'],
+            });
+            core.info(`Created issue #${created.data.number}`);

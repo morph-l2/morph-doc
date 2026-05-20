@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "node scripts/run-tests.mjs",
+    "skill-freshness:report": "node scripts/skill-freshness-report.mjs",
     "skill-ln": "bash scripts/morph-skill-ln",
     "agent-ln": "bash scripts/morph-agent-ln",
     "docusaurus": "docusaurus",
