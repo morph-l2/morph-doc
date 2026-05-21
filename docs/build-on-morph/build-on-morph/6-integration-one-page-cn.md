@@ -11,7 +11,7 @@ description: Upgrade your blockchain experience with Morph - the secure decentra
 | --- | --- | --- | --- |
 | Morph 主网 | 2818 | [https://rpc-quicknode.morph.network](https://rpc-quicknode.morph.network) | [https://explorer.morph.network](https://explorer.morph.network) |
 | Ethereum 主网 | 1 | [https://ethereum-rpc.publicnode.com](https://ethereum-rpc.publicnode.com) | [https://etherscan.io](https://etherscan.io) |
-| Morph Hoodi 测试网 | 2810 | [https://rpc-quicknode-hoodi.morph.network](https://rpc-quicknode-hoodi.morph.network) | [https://explorer-hoodi.morph.network](https://explorer-hoodi.morph.network) |
+| Morph Hoodi 测试网 | 2910 | [https://rpc-hoodi.morph.network/](https://rpc-hoodi.morph.network/) | [https://explorer-hoodi.morph.network](https://explorer-hoodi.morph.network) |
 | Hoodi 测试网 | 17000 | [https://ethereum-hoodi-rpc.publicnode.com](https://ethereum-hoodi-rpc.publicnode.com) | [https://hoodi.etherscan.io](https://hoodi.etherscan.io) |
 
 
