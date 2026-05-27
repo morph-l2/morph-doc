@@ -1,0 +1,302 @@
+#!/usr/bin/env bash
+# Symlink agents/<name>.md in the morph-doc repo into each Agent's agents directory, or remove symlinks with --unlink (see --help).
+# Usage: see skills/README.md § Linking agents (parallel to scripts/morph-skill-ln)
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEFAULT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+DRY_RUN=0
+UNLINK=0
+MODE="all"
+ROOT_PATH=""
+RAW_AGENTS=()
+POSITIONAL=()
+
+usage() {
+  cat <<'EOF'
+morph-agent-ln — Create or remove Agent definition symlinks inside the morph-doc repo (project-local agents directories for each tool)
+
+Usage:
+  morph-agent-ln [options] [agent-name]
+  When agent-name is omitted: batch-process all files under agents/morph-*.md (same list for --unlink).
+  agent-name may be given with or without the .md extension (e.g. morph-dapp-agent or morph-dapp-agent.md).
+
+Path:
+  -r, --root PATH   Absolute path to the morph-doc repo root (parent of agents/).
+                    Omit to use: -r flag / MORPH_DOC_ROOT env var / repo root inferred from script location.
+
+Targets:
+  -a, --agent ARG   Repeatable. ARG is one of:
+                    • Built-in name: cursor | claude | openclaw | windsurf | codex
+                    • Or a repo-relative path (must contain / or start with .)
+                    When no --agent is specified, defaults to: cursor claude openclaw windsurf
+
+Actions:
+      --unlink      Remove symlinks (delete <agent-name>.md from the selected --agent directories;
+                    only symbolic links are deleted — regular files are skipped with a warning).
+                    Does not run ln.
+
+Other:
+      --dry-run     Print commands that would be executed without writing anything
+  -h, --help        Show this help
+
+Environment variables:
+  MORPH_DOC_ROOT    Used as repo root when -r/--root is not provided
+
+Examples:
+  ./scripts/morph-agent-ln -a cursor -a claude
+  ./scripts/morph-agent-ln --unlink -a cursor morph-dapp-agent
+  ./scripts/morph-agent-ln --unlink --root /path/to/morph-doc --dry-run
+EOF
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run)
+      DRY_RUN=1
+      shift
+      ;;
+    --unlink)
+      UNLINK=1
+      shift
+      ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    -r | --root)
+      if [[ -z "${2:-}" ]]; then
+        echo "Option $1 requires a PATH argument" >&2
+        exit 1
+      fi
+      ROOT_PATH="$2"
+      shift 2
+      ;;
+    -a | --agent)
+      if [[ -z "${2:-}" ]]; then
+        echo "Option $1 requires an ARG (built-in name or repo-relative path)" >&2
+        exit 1
+      fi
+      RAW_AGENTS+=("$2")
+      shift 2
+      ;;
+    -*)
+      echo "Unknown option: $1 (use --help)" >&2
+      exit 1
+      ;;
+    *)
+      POSITIONAL+=("$1")
+      shift
+      ;;
+  esac
+done
+
+if [[ ${#POSITIONAL[@]} -gt 1 ]]; then
+  echo "At most one agent-name may be specified; got: ${POSITIONAL[*]}" >&2
+  exit 1
+fi
+if [[ ${#POSITIONAL[@]} -eq 1 ]]; then
+  MODE="single"
+  AGENT_ARG="${POSITIONAL[0]}"
+  AGENT_ARG="${AGENT_ARG%.md}"
+fi
+
+if [[ -n "$ROOT_PATH" ]]; then
+  if [[ ! -d "$ROOT_PATH" ]]; then
+    echo "Not a directory: ${ROOT_PATH}" >&2
+    exit 1
+  fi
+  MORPH_DOC_ROOT="$(cd "$ROOT_PATH" && pwd)"
+else
+  MORPH_DOC_ROOT="${MORPH_DOC_ROOT:-$DEFAULT_ROOT}"
+fi
+
+AGENTS_ROOT="${MORPH_DOC_ROOT}/agents"
+# Single agent with --unlink: allow agents/<name>.md to no longer exist; still remove links in agent directories
+if [[ "$UNLINK" -eq 1 && "$MODE" == "single" ]]; then
+  :
+elif [[ ! -d "$AGENTS_ROOT" ]]; then
+  echo "agents directory not found: ${AGENTS_ROOT} (check -r/--root or MORPH_DOC_ROOT)" >&2
+  exit 1
+fi
+
+normalize_agent_subpath() {
+  local key="$1"
+  case "$key" in
+    *..*)
+      echo "--agent path must not contain ..: $key" >&2
+      return 1
+      ;;
+  esac
+  case "$key" in
+    cursor) echo ".cursor/agents"; return 0 ;;
+    claude) echo ".claude/agents"; return 0 ;;
+    openclaw) echo ".openclaw/agents"; return 0 ;;
+    windsurf) echo ".windsurf/agents"; return 0 ;;
+    codex) echo ".codex/agents"; return 0 ;;
+  esac
+  case "$key" in
+    */* | .*)
+      local p="${key#./}"
+      [[ -n "$p" ]] || {
+        echo "Invalid --agent path: $key" >&2
+        return 1
+      }
+      echo "$p"
+      return 0
+      ;;
+  esac
+  echo "Unknown --agent: $key (built-in: cursor claude openclaw windsurf codex; or a repo-relative path such as .windsurf/agents)" >&2
+  return 1
+}
+
+AGENT_SUBPATHS=()
+append_unique() {
+  local sp="$1"
+  local i n=${#AGENT_SUBPATHS[@]}
+  for ((i = 0; i < n; i++)); do
+    [[ "${AGENT_SUBPATHS[i]}" == "$sp" ]] && return 0
+  done
+  AGENT_SUBPATHS+=("$sp")
+}
+
+register_agent_arg() {
+  local raw="$1"
+  local sp
+  sp="$(normalize_agent_subpath "$raw")" || return 1
+  append_unique "$sp"
+}
+
+if [[ ${#RAW_AGENTS[@]} -eq 0 ]]; then
+  register_agent_arg cursor
+  register_agent_arg claude
+  register_agent_arg openclaw
+  register_agent_arg windsurf
+else
+  for raw in "${RAW_AGENTS[@]}"; do
+    register_agent_arg "$raw" || exit 1
+  done
+fi
+
+mkdir_p_global() {
+  [[ "$UNLINK" -eq 1 ]] && return 0
+  local parts=()
+  local sp d i
+  for ((i = 0; i < ${#AGENT_SUBPATHS[@]}; i++)); do
+    sp="${AGENT_SUBPATHS[i]}"
+    d="${MORPH_DOC_ROOT}/${sp}"
+    parts+=("$d")
+  done
+  if [[ ${#parts[@]} -eq 0 ]]; then
+    return 0
+  fi
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "mkdir -p $(printf ' %q' "${parts[@]}")"
+    return 0
+  fi
+  mkdir -p "${parts[@]}"
+}
+
+link_one() {
+  local name="$1"
+  local src="${MORPH_DOC_ROOT}/agents/${name}.md"
+  if [[ ! -f "$src" ]]; then
+    echo "Skipping (file not found): ${src}" >&2
+    return 1
+  fi
+  src="$(cd "$(dirname "$src")" && pwd)/$(basename "$src")"
+
+  local sp d i
+  for ((i = 0; i < ${#AGENT_SUBPATHS[@]}; i++)); do
+    sp="${AGENT_SUBPATHS[i]}"
+    d="${MORPH_DOC_ROOT}/${sp}/${name}.md"
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+      echo "ln -sfn \"${src}\" \"${d}\""
+    else
+      ln -sfn "${src}" "${d}"
+    fi
+  done
+  echo "Linked: ${name}"
+}
+
+unlink_one() {
+  local name="$1"
+  local sp d i removed=0
+  for ((i = 0; i < ${#AGENT_SUBPATHS[@]}; i++)); do
+    sp="${AGENT_SUBPATHS[i]}"
+    d="${MORPH_DOC_ROOT}/${sp}/${name}.md"
+    if [[ ! -e "$d" ]] && [[ ! -L "$d" ]]; then
+      echo "Skipping (does not exist): ${d}" >&2
+      continue
+    fi
+    if [[ -L "$d" ]]; then
+      if [[ "$DRY_RUN" -eq 1 ]]; then
+        echo "rm -f $(printf '%q' "$d")"
+      else
+        rm -f "$d"
+      fi
+      echo "Removed link: ${d}"
+      removed=$((removed + 1))
+    else
+      echo "Skipping (not a symlink, not deleted): ${d}" >&2
+    fi
+  done
+  if [[ "$removed" -eq 0 ]]; then
+    return 1
+  fi
+  return 0
+}
+
+if [[ "$UNLINK" -eq 1 ]]; then
+  if [[ "$MODE" == "single" ]]; then
+    unlink_one "${AGENT_ARG}" || {
+      echo "Could not remove any symlinks (path does not exist or is not a symlink): ${AGENT_ARG}" >&2
+      exit 1
+    }
+    exit 0
+  fi
+
+  count=0
+  shopt -s nullglob
+  for f in "${AGENTS_ROOT}"/morph-*.md; do
+    [[ -f "$f" ]] || continue
+    name="$(basename "$f" .md)"
+    if unlink_one "$name"; then
+      count=$((count + 1))
+    fi
+  done
+  shopt -u nullglob
+
+  if [[ "$count" -eq 0 ]]; then
+    echo "No symlinks removed (no matching agents/morph-*.md or no symlinks found at targets)" >&2
+    exit 1
+  fi
+  echo "Done. Processed ${count} agent(s)."
+  exit 0
+fi
+
+mkdir_p_global
+
+if [[ "$MODE" == "single" ]]; then
+  link_one "${AGENT_ARG}" || exit 1
+  exit 0
+fi
+
+count=0
+shopt -s nullglob
+for f in "${AGENTS_ROOT}"/morph-*.md; do
+  [[ -f "$f" ]] || continue
+  name="$(basename "$f" .md)"
+  if link_one "$name"; then
+    count=$((count + 1))
+  fi
+done
+shopt -u nullglob
+
+if [[ "$count" -eq 0 ]]; then
+  echo "No linkable agents/morph-*.md found" >&2
+  exit 1
+fi
+
+echo "Done. ${count} agent(s) linked."

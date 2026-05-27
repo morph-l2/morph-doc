@@ -1,0 +1,17 @@
+{
+  "skill_name": "REPLACE_WITH_SKILL_ID",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Realistic user prompt that should exercise this Morph Skill (include chainId, package names, or doc paths as appropriate).",
+      "expected_output": "What a correct agent response must include (e.g. cites docs/build-on-morph/... section, uses morph-contracts for addresses, lists Execution Steps).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Second prompt — edge case or common failure mode.",
+      "expected_output": "Success criteria; add assertions in eval_metadata.json during the skill-creator run.",
+      "files": []
+    }
+  ]
+}

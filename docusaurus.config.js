@@ -55,7 +55,43 @@ const config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+    /** .md = CommonMark；.mdx = MDX（skills/SKILL.md 等需避免被当作 MDX） */
+    format: 'detect',
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'skills',
+        path: 'skills',
+        routeBasePath: 'skills',
+        sidebarPath: require.resolve('./sidebars-skills.js'),
+        editUrl: ({ docPath }) =>
+          `https://github.com/morph-l2/morph-doc/edit/main/skills/${docPath}`,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      }),
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'agents',
+        path: 'agents',
+        routeBasePath: 'agents',
+        sidebarPath: require.resolve('./sidebars-agents.js'),
+        editUrl: ({ docPath }) =>
+          `https://github.com/morph-l2/morph-doc/edit/main/agents/${docPath}`,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      }),
+    ],
     'docusaurus-plugin-sass',
     // Use local plugin instead of npm package to fix /docs/ path
     require.resolve('./plugins/markdown-source-plugin.js'),
@@ -347,6 +383,13 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'SkillsSidebar',
+            docsPluginId: 'skills',
+            label: 'Agent Skills',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'NodeOperatorsSidebar',
             label: 'Node Operators',
           },
@@ -361,7 +404,7 @@ const config = {
             position: 'left',
             sidebarId: 'LearnSidebar',
             label: 'Learn',
-          },
+          }
         ],
       },
       footer: {

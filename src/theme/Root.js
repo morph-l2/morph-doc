@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from '@docusaurus/router';
 import { createRoot } from 'react-dom/client';
 import MarkdownActionsDropdown from '../components/MarkdownActionsDropdown';
+import { isMarkdownActionsPathname } from '../utils/isMarkdownActionsPathname';
 
 export default function Root({ children }) {
   const { hash, pathname } = useLocation();
@@ -42,8 +43,7 @@ export default function Root({ children }) {
     let containerElement = null;
 
     const injectDropdown = () => {
-      // Only inject on docs pages
-      if (!pathname.startsWith('/docs/')) return;
+      if (!isMarkdownActionsPathname(pathname)) return;
 
       // Check if already injected anywhere on the page
       if (document.querySelector('.markdown-actions-container')) return;

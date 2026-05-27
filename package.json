@@ -3,6 +3,15 @@
   "version": "4.0.0",
   "private": true,
   "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "skill-freshness:report": "node scripts/skill-freshness-report.mjs",
+    "skill-creator:check": "node scripts/morph-skill-creator.mjs check",
+    "skill-creator:install": "node scripts/morph-skill-creator.mjs install",
+    "skill-creator:validate": "node scripts/morph-skill-creator.mjs validate",
+    "skill-creator:run-eval": "node scripts/morph-skill-creator.mjs run-eval",
+    "skill-creator:desc-loop": "node scripts/morph-skill-creator.mjs desc-loop",
+    "skill-ln": "bash scripts/morph-skill-ln",
+    "agent-ln": "bash scripts/morph-agent-ln",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -15,7 +24,8 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "prepare": "husky"
   },
   "dependencies": {
     "@docsearch/react": "^3.5.2",
@@ -23,6 +33,7 @@
     "@docusaurus/plugin-client-redirects": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
     "@docusaurus/theme-common": "3.1.1",
+    "@docusaurus/theme-mermaid": "3.1.1",
     "@docusaurus/theme-search-algolia": "3.1.1",
     "@mdx-js/react": "3.0.1",
     "@morph-network/viem": "0.1.0",
@@ -48,8 +59,15 @@
     "@docusaurus/tsconfig": "3.1.1",
     "@docusaurus/types": "3.1.1",
     "@types/react": "^18.2.29",
+    "husky": "^9.1.7",
     "pre-commit": "^1.2.2",
-    "typescript": "~5.2.2"
+    "typescript": "~5.4.5",
+    "webpack": "5.105.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "webpack": "5.105.4"
+    }
   },
   "pnpm": {
     "overrides": {

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "our backend needs to deposit 2 ETH from Ethereum mainnet to Morph L2 via L1GatewayRouter — what payable depositETH args and gasLimit should we use, and where is the canonical gateway address for chain 2818?",
+    "should_trigger": true
+  },
+  {
+    "query": "withdraw USDC from Morph hoodi testnet 2910 back to L1: user already called withdrawERC20 on L2 gateway — walk proveAndRelayMessage and GET /getProof?nonce= steps from morph docs",
+    "should_trigger": true
+  },
+  {
+    "query": "after L1 deposit of our custom ERC-20, how do we resolve the L2 token address with getL2ERC20Address on L1GatewayRouter — don't pick the gateway manually",
+    "should_trigger": true
+  },
+  {
+    "query": "batch indexer stuck: L2→L1 withdrawal finalized in Rollup but frontend can't relay — need withdrawalRoots check + proof fields index leaf proof root from morph bridge API",
+    "should_trigger": true
+  },
+  {
+    "query": "PM wants programmatic bridge script: depositERC20 on L1 then wait for sequencer — not bulbaswap, native morph canonical bridge only",
+    "should_trigger": true
+  },
+  {
+    "query": "how much ETH to attach on withdrawETH for L1 fee when bridging from Morph — docs say 0.005 ETH suggested, confirm before we ship automation",
+    "should_trigger": true
+  },
+  {
+    "query": "add our ERC-20 to Morph Bridge token list UI — what gateway listing flow and L1/L2 gateway pairing does morph-doc describe for custom tokens?",
+    "should_trigger": true
+  },
+  {
+    "query": "solidity integration test: call depositETH on L1GatewayRouter then assert L2 balance — point me to morph bridge playbook not generic optimism tutorial",
+    "should_trigger": true
+  },
+  {
+    "query": "user confused native L1↔L2 bridge vs cross-chain swap — they want deposit/withdraw via gateway routers only, which morph skill covers that?",
+    "should_trigger": true
+  },
+  {
+    "query": "finalize pending L2 withdrawal to ethereum: challenge period passed, have batch index — need morph prove relay message calldata shape from official bridge doc",
+    "should_trigger": true
+  },
+  {
+    "query": "list morph mainnet L1GatewayRouter L2 gateway and messenger addresses for security questionnaire — addresses only, no deposit flow",
+    "should_trigger": false
+  },
+  {
+    "query": "configure viem @morph-network/viem Alt Fee tx type 0x7f feeTokenID on morph 2818 — sdk packages not bridge routers",
+    "should_trigger": false
+  },
+  {
+    "query": "why total fee on morph is l1Fee plus l2Fee for a simple transfer — gas price oracle math without bridging",
+    "should_trigger": false
+  },
+  {
+    "query": "bulbaswap JWT order API swap ETH across six chains including morph — cross-chain swap not canonical gateway",
+    "should_trigger": false
+  },
+  {
+    "query": "run morph full node docker prune state on aws — node operator doc not bridge",
+    "should_trigger": false
+  },
+  {
+    "query": "verify smart contract on morphscan from hardhat — etherscan plugin only",
+    "should_trigger": false
+  },
+  {
+    "query": "morph rails x402 facilitator payment middleware — payfi not L1 deposit",
+    "should_trigger": false
+  },
+  {
+    "query": "eth_getBlockByNumber batching limits for morph json-rpc — rpc api skill not bridge",
+    "should_trigger": false
+  },
+  {
+    "query": "write a new morph-doc SKILL for morph-tx-cost fee display — skill authoring workflow",
+    "should_trigger": false
+  },
+  {
+    "query": "uniswap v3 swap on ethereum mainnet chainId 1 with ethers — unrelated L1 only dex",
+    "should_trigger": false
+  }
+]

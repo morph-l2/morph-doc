@@ -1,6 +1,7 @@
 ---
 title: Contract Addresses
 lang: en-US
+doc_skill_id: morph-contracts
 ---
 
 

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { isMarkdownActionsPathname } from '../../utils/isMarkdownActionsPathname';
 
 export default function MarkdownActionsDropdown() {
   const [copied, setCopied] = useState(false);
@@ -8,8 +9,7 @@ export default function MarkdownActionsDropdown() {
   // Get pathname from window.location
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
 
-  // Only show on docs pages (not blog, homepage, etc.)
-  const isDocsPage = currentPath.startsWith('/docs/');
+  const showMarkdownActions = isMarkdownActionsPathname(currentPath);
 
   // Handle click outside to close dropdown
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function MarkdownActionsDropdown() {
     };
   }, [isOpen]);
 
-  if (!isDocsPage) {
+  if (!showMarkdownActions) {
     return null;
   }
 

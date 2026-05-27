@@ -1,6 +1,7 @@
 ---
 title: Run a full node
 lang: en-US
+doc_skill_id: morph-full-node-run-in-docker
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,0 +1,2 @@
+# Python deps for vendor/skill-creator (quick_validate.py, etc.)
+PyYAML>=6.0

@@ -1,0 +1,4 @@
+node __tests__/doc-skill-pairing.test.mjs
+node __tests__/morph-doc-skill-inventory.test.mjs
+node __tests__/skills-sidebar.test.mjs
+npm run build

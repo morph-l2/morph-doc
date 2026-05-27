@@ -1,0 +1,103 @@
+name: Skill feedback / drift report
+description: Report that a morph-doc Skill (or its paired MDX) gave incorrect, stale, or unroutable guidance.
+title: "[skill-drift] <skill-id>: <one-line summary>"
+labels:
+  - skill-drift
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to flag a Skill drift. This template powers the
+        feedback loop for the **Docs-as-SKILL** contract described in
+        [`VISION.md`](https://github.com/morph-l2/morph-doc/blob/main/VISION.md).
+        The doc maintainer triages every `skill-drift` issue.
+
+  - type: input
+    id: skill-id
+    attributes:
+      label: Skill ID
+      description: Directory name under `skills/`, e.g. `morph-contracts`, `morph-js-sdk`. Leave blank if you are reporting an MDX page with no paired Skill.
+      placeholder: morph-contracts
+    validations:
+      required: false
+
+  - type: input
+    id: doc-path
+    attributes:
+      label: Related doc path
+      description: Path relative to repo root, e.g. `docs/build-on-morph/developer-resources/1-contracts.md`. Optional if unknown.
+      placeholder: docs/...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Drift category
+      description: Pick the best fit; maintainers may relabel during triage.
+      options:
+        - Stale fact (address / chainId / RPC / token changed)
+        - Wrong routing (Skill triggered for unrelated question)
+        - Missing routing (question should match a Skill but did not)
+        - Executable snippet no longer runs
+        - Self-check item failed during real use
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe the prompt, the Skill that fired (if any), and the answer you received.
+      placeholder: |
+        Prompt: "...the user's question..."
+        Skill fired: morph-contracts
+        Answer given: "..."
+        What was wrong: "..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+      placeholder: |
+        - Expected fact: ...
+        - Source of truth: ...
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source (optional)
+      description: Link or path to the canonical value (chain explorer, source code, JSON registry, etc.).
+      placeholder: https://... or morph-bridge/public/morph-list/src/mainnet/tokenList.json
+    validations:
+      required: false
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent / IDE where this occurred
+      options:
+        - Cursor
+        - Claude Code
+        - OpenClaw
+        - Windsurf
+        - Codex
+        - Web chat
+        - Other
+        - Not applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Version info, chain (Mainnet / Hoodi), package versions, screenshots, etc.
+    validations:
+      required: false
