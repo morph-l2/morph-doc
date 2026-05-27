@@ -26,7 +26,12 @@ function parseArgs(argv) {
     const a = argv[i];
     if (a === '--json') {
       json = true;
-    } else if (a === '--out' && argv[i + 1]) {
+    } else if (a === '--out') {
+      const next = argv[i + 1];
+      if (!next || next.startsWith('-')) {
+        console.error('Error: --out requires a file path (not another flag).');
+        process.exit(1);
+      }
       outPath = argv[++i];
     } else if (a === '-h' || a === '--help') {
       console.log(`Usage: node scripts/skill-freshness-report.mjs [--json] [--out <path>]`);

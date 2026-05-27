@@ -29,12 +29,14 @@ const dropdownSrc = fs.readFileSync(
   path.join(ROOT, 'src/components/MarkdownActionsDropdown/index.js'),
   'utf8'
 );
-assert.ok(
-  rootSrc.includes("from '../utils/isMarkdownActionsPathname'"),
+assert.match(
+  rootSrc,
+  /from\s+['"]\.\.\/utils\/isMarkdownActionsPathname(?:\.js)?['"]/,
   'Root.js should use isMarkdownActionsPathname'
 );
-assert.ok(
-  dropdownSrc.includes("from '../../utils/isMarkdownActionsPathname'"),
+assert.match(
+  dropdownSrc,
+  /from\s+['"]\.\.\/\.\.\/utils\/isMarkdownActionsPathname(?:\.js)?['"]/,
   'MarkdownActionsDropdown should use isMarkdownActionsPathname'
 );
 assert.ok(

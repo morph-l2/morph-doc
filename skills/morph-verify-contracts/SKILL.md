@@ -79,6 +79,12 @@ For all methods: **Compiler version and Optimization settings must exactly match
 - Flattened Solidity: imported files must be inlined; use `forge flatten --output Flat.sol ./contracts/X.sol`.
 - Multi-part files: adjust import paths to same-level references; submit all dependency files together.
 
+## Related Skills
+
+- `morph-contracts` — deployed addresses and explorer base URLs
+- `morph-js-sdk` — chain objects when verification scripts use the Morph SDK
+- `morph-bridge` — gateway contracts if verifying bridge-related deployments
+
 ## Self-Check
 
 - [ ] Chain ID matches the target network (2818 mainnet / 2910 Hoodi).

@@ -18,22 +18,20 @@ assert.match(
   'frontmatter name should be morph-rails'
 );
 assert.ok(content.includes('description:'), 'should include description field');
-assert.ok(
-  content.includes('docs/morph-rails/0-overview.md'),
-  'should cite 0-overview as source of truth'
-);
-assert.ok(
-  content.includes('docs/about-morph/morph-rails.md'),
-  'should cite about-morph morph-rails'
-);
-assert.ok(
-  content.includes('docs/morph-rails/agentic-payment/1-x402-facilitator.md'),
-  'should route x402 details to 1-x402-facilitator doc'
-);
-assert.ok(
-  content.includes('docs/about-morph/10-altfeetx.md'),
-  'should route AltFee signing to 10-altfeetx doc'
-);
+const REQUIRED_DOC_PATHS = [
+  'docs/morph-rails/0-overview.md',
+  'docs/about-morph/morph-rails.md',
+  'docs/morph-rails/agentic-payment/1-x402-facilitator.md',
+  'docs/about-morph/10-altfeetx.md',
+];
+
+for (const relPath of REQUIRED_DOC_PATHS) {
+  assert.ok(content.includes(relPath), `should reference ${relPath}`);
+  assert.ok(
+    fs.existsSync(path.join(ROOT, relPath)),
+    `referenced doc is missing: ${relPath}`,
+  );
+}
 assert.ok(
   content.includes('morph-js-sdk'),
   'should route to morph-js-sdk'

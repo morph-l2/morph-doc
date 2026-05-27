@@ -197,10 +197,19 @@ function cmdValidate(skillId) {
   if (r.stdout) process.stdout.write(r.stdout);
   if (r.stderr) process.stderr.write(r.stderr);
   if (r.status !== 0) {
-    console.warn(
-      '\nNote: morph-doc Skills use last_verified / verified_against — upstream quick_validate may reject them.',
-      '\nTreat morph inventory + npm test as authoritative for Morph metadata.',
-    );
+    const detail = [r.stderr, r.stdout].filter(Boolean).join('\n').trim();
+    const morphMetadataOnly =
+      /last_verified/i.test(detail) && /verified_against/i.test(detail);
+    if (morphMetadataOnly) {
+      console.warn(
+        '\nNote: upstream quick_validate rejects Morph `last_verified` / `verified_against`.',
+        '\nTreat morph inventory + npm test as authoritative for Morph metadata.',
+      );
+    } else {
+      throw new Error(
+        `upstream quick_validate failed (exit ${r.status ?? 'unknown'})${detail ? `:\n${detail}` : ''}`,
+      );
+    }
   } else {
     console.log('upstream quick_validate: ok');
   }

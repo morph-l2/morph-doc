@@ -59,6 +59,13 @@ When transferring as much ETH as possible from a user's balance, you must subtra
 | Viem/Ethers client, chain preset, SDK package names | **`skills/morph-js-sdk/SKILL.md`** + `docs/build-on-morph/sdk/js-sdk.mdx` |
 | Mainnet / Hoodi contract and RPC quick reference | **`skills/morph-contracts/SKILL.md`** (if installed) |
 
+## Related Skills
+
+- `morph-js-sdk` — RPC/client usage for `eth_gasPrice`, `eth_estimateGas`, adapters
+- `morph-contracts` — `GasPriceOracle` and network constants
+- `morph-bridge` — L1↔L2 bridge fees (distinct from per-tx L1 data fee on L2)
+- Alt Fee signing: `docs/about-morph/10-altfeetx.md` (not duplicated here)
+
 ## Common Boundary Confusion
 
 - **This skill**: explains **ETH-denominated** L2+L1 fee structure, display, and RPC errors.

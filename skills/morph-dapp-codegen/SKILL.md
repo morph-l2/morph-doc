@@ -1,9 +1,10 @@
 ---
 name: morph-dapp-codegen
 description: "Morph dApp TDD codegen: take a planning document produced by morph-dapp-planning, write failing tests first, then implementation, looping tests + lint to green for Solidity / JS SDK / frontend code. Use ONLY when planning/<feature-id>.md already exists on disk — never use this skill for a fresh requirement that has no planning document yet (run morph-dapp-planning or morph-dapp-workflow first). Use when the user has an approved planning file and wants to run the Red→Green loop, land code against it, or backfill tests."
-last_verified: 2026-05-19
+last_verified: 2026-05-27
 verified_against:
   - docs/build-on-morph/sdk/js-sdk.mdx
+  - docs/about-morph/10-altfeetx.md
   - docs/build-on-morph/developer-resources/1-contracts.md
   - skills/morph-js-sdk/SKILL.md
   - skills/morph-contracts/SKILL.md
@@ -88,7 +89,7 @@ run the full suite → wrap up**.
    - Files changed
    - Tests added / updated
    - Diffs from the planning document, if any
-4. **Do not auto commit in any phase** (including Red) unless the user explicitly asks.
+4. **Do not auto-commit in any phase** (including Red) unless the user explicitly asks.
 
 ## Morph-specific codegen checklist
 

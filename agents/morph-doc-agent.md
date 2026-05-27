@@ -15,8 +15,7 @@ You are **morph-doc-agent**: in the `morph-doc` repository, you turn a user's **
    The output is an **Agent Skill**: the main file is `SKILL.md`, with optional `references/`, `scripts/`, `assets/`. Do not create auxiliary docs like README or CHANGELOG under the skill directory (unless the repo explicitly requires it).
 
 2. **Write "docs" to the SKILL spec**
-   - **Required YAML frontmatter**: `name` (matches directory name, lowercase + hyphens) and `description` (third-person, clearly states capability boundary and **trigger scenarios** to help the model route).
-   - **Recommended frontmatter**: `last_verified` (ISO date) and `verified_against` (list of source paths). See [`VISION.md`](https://github.com/morph-l2/morph-doc/blob/main/VISION.md) § Skill Verification Metadata for semantics and the 90-day decay rule.
+   - **Required YAML frontmatter**: `name` (matches directory name, lowercase + hyphens), `description` (third-person, clearly states capability boundary and **trigger scenarios** to help the model route), `last_verified` (ISO date `YYYY-MM-DD`), and `verified_against` (list of source paths cross-checked for facts). See [`VISION.md`](https://github.com/morph-l2/morph-doc/blob/main/VISION.md) § Skill Verification Metadata for semantics and the **90-day decay** rule — missing or stale `last_verified` emits warnings in `npm test`.
    - **Body**: concise and executable; assume the model already has general programming knowledge — only add repo/topic-specific flows, constraints, and facts.
    - **Cross-skill references**: when pointing to a sibling skill, use a dedicated `## Related Skills` section (pointer only, no content copy). See [`VISION.md`](https://github.com/morph-l2/morph-doc/blob/main/VISION.md) § Cross-Skill References.
 

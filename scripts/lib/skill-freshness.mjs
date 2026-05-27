@@ -115,6 +115,16 @@ export function collectFreshnessWarnings(skillsDir, options = {}) {
     }
 
     const ageDays = Math.floor((now - lastVerified.getTime()) / MS_PER_DAY);
+    if (ageDays < 0) {
+      warnings.push({
+        skillId,
+        code: 'future_last_verified',
+        message: `skills/${skillId}/SKILL.md last_verified is in the future: ${lastVerifiedRaw}`,
+        ageDays,
+        lastVerified: lastVerifiedRaw,
+      });
+      continue;
+    }
     if (ageDays > thresholdDays) {
       warnings.push({
         skillId,

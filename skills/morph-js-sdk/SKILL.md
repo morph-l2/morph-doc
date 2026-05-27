@@ -76,6 +76,12 @@ await signer.sendTransaction({
 4. **Site Demo**: The React Demo referenced in `js-sdk.mdx` only runs inside the Docusaurus site; when helping users in IDE, use the static code blocks from the doc — do not assume `@site/...` components can be imported.
 5. **Do not fabricate exports**: Function names, types, and re-exported chain objects follow the doc and installed package `d.ts`; when uncertain, ask the user to paste their `package.json` version or copy the API table from the doc themselves.
 
+## Related Skills
+
+- `morph-contracts` — chain IDs, RPC URLs, predeploy and bridge contract addresses
+- `morph-tx-cost` — total fee (L2 execution + L1 data) before Alt Fee token payment
+- `morph-rails` — PayFi / x402 / Reference Key routing when the question is payment rails, not raw SDK API
+
 ## Self-Check
 
 - Is the answer backed by `js-sdk.mdx`?

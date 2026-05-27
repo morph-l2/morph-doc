@@ -41,7 +41,7 @@ EIP-7702 EOA delegation and atomic batch calls on Morph L2 via tx type `0x04`.
 Delegated EOAs have on-chain code starting with `0xef0100` followed by the
 20-byte delegate address. Authorization hash format:
 
-```
+```text
 keccak256(0x05 || RLP([chainId, contract, nonce]))
 ```
 

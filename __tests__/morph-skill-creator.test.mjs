@@ -41,9 +41,9 @@ assert.ok(bridgeEval, 'morph-bridge trigger eval example should resolve');
 assert.ok(bridgeEval.includes('skill-trigger-evals.morph-bridge'), bridgeEval);
 
 assert.equal(
-  resolveTriggerEvalSetPath(ROOT, 'morph-tx-cost'),
+  resolveTriggerEvalSetPath(ROOT, '__nonexistent-skill-for-test__'),
   null,
-  'morph-tx-cost should have no trigger eval until added',
+  'unknown skill id should resolve to no trigger eval set',
 );
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'morph-skill-creator-'));
@@ -52,10 +52,29 @@ fs.mkdirSync(path.join(fakeCreator, 'scripts'), { recursive: true });
 fs.writeFileSync(path.join(fakeCreator, 'SKILL.md'), '---\nname: skill-creator\n---\n', 'utf8');
 fs.writeFileSync(path.join(fakeCreator, 'scripts', 'run_loop.py'), '# stub\n', 'utf8');
 fs.writeFileSync(path.join(fakeCreator, 'scripts', 'run_eval.py'), '# stub\n', 'utf8');
+fs.writeFileSync(path.join(fakeCreator, 'scripts', 'quick_validate.py'), '# stub\n', 'utf8');
+fs.writeFileSync(
+  path.join(fakeCreator, 'scripts', 'aggregate_benchmark.py'),
+  '# stub\n',
+  'utf8',
+);
 
 const prev = process.env.MORPH_SKILL_CREATOR_ROOT;
 process.env.MORPH_SKILL_CREATOR_ROOT = fakeCreator;
 assert.equal(resolveSkillCreatorInstall()?.root, fakeCreator);
+
+const incomplete = path.join(tmp, 'skill-creator-incomplete');
+fs.mkdirSync(path.join(incomplete, 'scripts'), { recursive: true });
+fs.writeFileSync(path.join(incomplete, 'SKILL.md'), '---\nname: skill-creator\n---\n', 'utf8');
+fs.writeFileSync(path.join(incomplete, 'scripts', 'run_loop.py'), '# stub\n', 'utf8');
+fs.writeFileSync(path.join(incomplete, 'scripts', 'run_eval.py'), '# stub\n', 'utf8');
+process.env.MORPH_SKILL_CREATOR_ROOT = incomplete;
+assert.throws(
+  () => resolveSkillCreatorInstall(),
+  /incomplete|missing/i,
+  'resolveSkillCreatorInstall should throw when helper scripts are missing',
+);
+process.env.MORPH_SKILL_CREATOR_ROOT = fakeCreator;
 if (prev === undefined) delete process.env.MORPH_SKILL_CREATOR_ROOT;
 else process.env.MORPH_SKILL_CREATOR_ROOT = prev;
 

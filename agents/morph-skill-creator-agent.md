@@ -21,6 +21,7 @@ You are **morph-skill-creator-agent**: improve and verify **morph-doc** `skills/
 | Bridge playbook | `skills/morph-skill-creator/SKILL.md` |
 | CLI | `scripts/morph-skill-creator.mjs` |
 | Upstream | `MORPH_SKILL_CREATOR_ROOT` or `vendor/skill-creator` after `npm run skill-creator:install` |
+| IDE mirrors / symlink | [`skills/README.md`](https://github.com/morph-l2/morph-doc/blob/main/skills/README.md) — `npm run skill-ln` / `morph-skill-ln` |
 | Authoring sibling | `agents/morph-doc-agent.md` |
 
 ## Routing

@@ -13,9 +13,11 @@ const SKILL_PATH = path.join(ROOT, 'skills/morph-dapp-code-review/SKILL.md');
 
 const content = fs.readFileSync(SKILL_PATH, 'utf8');
 
-assert.match(content, /^---\r?\n[\s\S]*?\r?\n---/, 'should have YAML frontmatter');
-assert.match(content, /^name:\s*morph-dapp-code-review\s*$/m, 'name must equal directory');
-assert.match(content, /Use when|当用户/i, 'description should include trigger phrasing');
+const fm = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+assert.ok(fm, 'should have YAML frontmatter');
+const frontmatter = fm[1];
+assert.match(frontmatter, /^name:\s*morph-dapp-code-review\s*$/m, 'name must equal directory');
+assert.match(frontmatter, /Use when|当用户/i, 'description should include trigger phrasing');
 
 for (const heading of [
   '## When to use',

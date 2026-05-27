@@ -120,6 +120,12 @@ export MORPH_IDENTITY_REGISTRY="0x8004A818BFB912233c491871b3d84c89A494BD9e"
 export MORPH_REPUTATION_REGISTRY="0x8004B663056A597Dffe9eCcC1965A193B7388713"
 ```
 
+## Related Skills
+
+- `morph-bridge` — L1↔L2 native bridge deposit/withdraw flows
+- `morph-js-sdk` — client adapters and chain presets
+- `morph-tx-cost` — L2 + L1 fee estimation and RPC errors
+
 ## Self-Check
 
 - [ ] Are general contract addresses deferred to `1-contracts.md` as the authoritative source?

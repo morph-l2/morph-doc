@@ -21,6 +21,7 @@ for (const f of ["package.json", "send-alt-fee.mjs", ".env.example"]) {
 
 const check = spawnSync(process.execPath, ["--check", SCRIPT], {
   encoding: "utf8",
+  timeout: 15000,
 });
 assert.equal(check.status, 0, check.stderr || "node --check send-alt-fee.mjs");
 
@@ -31,6 +32,7 @@ const dry = spawnSync(
     cwd: EXAMPLE_DIR,
     encoding: "utf8",
     env: { ...process.env, MORPH_DRY_RUN: "1" },
+    timeout: 15000,
   }
 );
 assert.equal(dry.status, 0, dry.stderr || dry.stdout);

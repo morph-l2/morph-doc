@@ -68,8 +68,10 @@ This SKILL only describes **how to use the script to create symlinks**; conventi
 
 ## Related Skills
 
-- `morph-dapp-workflow` — orchestrated dApp flow; points here when child skills are not symlinked yet (`skills/README.md` + `scripts/morph-skill-ln`)
-- `morph-js-sdk` / `morph-contracts` — common Morph topic skills users link for chain/SDK work (parallel **agent** definitions use `scripts/morph-agent-ln`; see **`skills/README.md`** → *Linking agents*)
+- `skills/README.md` ([Skills overview](/skills/)) — IDE mirror paths and `npm run skill-ln` / `morph-skill-ln` usage
+- `morph-agent-ln` — symlink `agents/<name>.md` into `.cursor/.claude/.openclaw/.windsurf/agents` (pair with skill links above)
+- `morph-dapp-workflow` — orchestrated dApp flow; points here when child skills are not symlinked yet
+- `morph-js-sdk` / `morph-contracts` — common Morph topic skills users link for chain/SDK work
 
 ## Self-Check
 

@@ -30,6 +30,7 @@ assert.match(desc, /skill-creator|eval/i);
 assert.match(desc, /Use when|when the user/i);
 assert.match(content, /morph-skill-creator\/SKILL\.md|skills\/morph-skill-creator/);
 assert.match(content, /morph-doc-agent/);
+assert.match(content, /skills\/README\.md|skill-ln/i);
 assert.match(content, /npm test/);
 
 console.log('morph-skill-creator-agent: ok');

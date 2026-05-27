@@ -22,6 +22,8 @@ function run(args, env = {}) {
     cwd: ROOT,
     encoding: 'utf8',
     env: { ...process.env, ...env },
+    timeout: 15000,
+    maxBuffer: 1024 * 1024,
   });
   return { status: r.status, stdout: r.stdout ?? '', stderr: r.stderr ?? '' };
 }

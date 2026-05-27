@@ -53,7 +53,7 @@ Supported IDs (from upstream):
 
 ## Fee formula
 
-```
+```text
 feeLimit >= (gasFeeCap × gasLimit + L1DataFee) × tokenScale / feeRate
 ```
 

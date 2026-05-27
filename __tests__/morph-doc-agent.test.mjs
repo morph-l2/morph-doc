@@ -34,6 +34,16 @@ assert.match(
   'description should include trigger phrasing so IDE routing can match it',
 );
 assert.match(content, /frontmatter|YAML/i, 'body should stress frontmatter/YAML');
+assert.match(
+  content,
+  /last_verified.*verified_against|verified_against.*last_verified/i,
+  'should require last_verified and verified_against in frontmatter guidance',
+);
+assert.doesNotMatch(
+  content,
+  /Recommended frontmatter.*last_verified/i,
+  'last_verified should not be labeled optional/recommended only',
+);
 assert.match(content, /skills\/<.*>\/SKILL\.md|skills\/morph-/i, 'should point to skills/<id>/SKILL.md path');
 assert.match(
   content,

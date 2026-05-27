@@ -10,87 +10,40 @@ upstream_repo: https://github.com/morph-l2/morph-skill
 
 # Morph Bridge (Cross-chain Swap)
 
-> **Looking for the L1↔L2 native bridge?** This page covers Bulbaswap-based
-> cross-chain swap across **6 chains** with JWT order management. For Morph's
-> canonical L1↔L2 deposit / withdraw via `L1GatewayRouter` and
-> `proveAndRelayMessage`, see [Morph Bridge (L1↔L2)](/skills/morph-bridge/SKILL).
+> **L1↔L2 native bridge?** Use [Morph Bridge (L1↔L2)](/skills/morph-bridge/SKILL) — `L1GatewayRouter`, deposits, withdrawals, and `proveAndRelayMessage`. This page is the **Bulbaswap cross-chain swap** mirror only.
 
-Cross-chain swap via the Bulbaswap Cross-Chain Swap API. Stateful orders
-require JWT auth obtained from `bridge-login`.
+## Prompt triggers
 
-## Canonical reference
+| Trigger | CLI / flow |
+|---------|------------|
+| List chains or tokens | `bridge-chains`, `bridge-tokens`, `bridge-token-search` |
+| Quote or balance (no JWT) | `bridge-quote`, `bridge-balance` |
+| Authenticate for orders | `bridge-login` (EIP-191 → 24h JWT) |
+| Create / submit / one-shot swap | `bridge-make-order`, `bridge-submit-order`, `bridge-swap` |
+| Track orders | `bridge-order`, `bridge-history` |
 
-[`skills/morph-bridge/SKILL.md` ↗](https://github.com/morph-l2/morph-skill/blob/main/skills/morph-bridge/SKILL.md)
+## Execution Steps
 
-## Supported chains
+1. **Disambiguate bridge type** — cross-chain swap (this page) vs Morph L1↔L2 native bridge ([`skills/morph-bridge/SKILL.md`](/skills/morph-bridge/SKILL)).
+2. **Read-only path** — run `bridge-chains` / `bridge-tokens` / `bridge-quote` / `bridge-balance` without JWT.
+3. **Stateful swap path** — `bridge-login` → `bridge-make-order` (unsigned txs) → sign locally → `bridge-submit-order`; or use `bridge-swap` for make+sign+submit when the user approves one-shot execution.
+4. **Confirm before writes** — get explicit user approval before `bridge-make-order`, `bridge-submit-order`, or `bridge-swap`.
+5. **On auth errors** — JWT expires after 24h; re-run `bridge-login`.
 
-| Chain ID | Name |
-|---|---|
-| `morph` | Morph |
-| `eth` | Ethereum |
-| `base` | Base |
-| `bnb` | BNB Chain |
-| `arbitrum` | Arbitrum |
-| `matic` | Polygon |
+## Deep links
 
-## When to use
+- Upstream playbook: [`github.com/morph-l2/morph-skill` — morph-bridge SKILL](https://github.com/morph-l2/morph-skill/blob/main/skills/morph-bridge/SKILL.md)
+- L1↔L2 native bridge (this repo): [`skills/morph-bridge/SKILL.md`](/skills/morph-bridge/SKILL)
+- BGW social wallet handoff: [social-wallet-integration](https://github.com/morph-l2/morph-skill/blob/main/docs/social-wallet-integration.md)
 
-- Bridge tokens across the 6 supported chains
-- Get a cross-chain swap quote
-- Search tokens on multiple chains; check balance + USD price on any chain
-- Create, sign, submit, or track cross-chain swap orders
+## Safety (short)
 
-## Capability summary
+- Private keys stay local (EIP-191 in `bridge-login` only); never send keys to the API.
+- JWT in `Authorization: Bearer` headers; re-auth on expiry.
+- Native tokens use `""` in the API; CLI normalizes this.
 
-### No-auth (read-only)
+## Related Skills
 
-| Command | Flags | Purpose |
-|---|---|---|
-| `bridge-chains` | (no flags) | List supported chains |
-| `bridge-tokens` | `[--chain <chain>]` | List tokens (optionally on a single chain) |
-| `bridge-token-search` | `--keyword <kw> [--chain <chain>]` | Search tokens by keyword |
-| `bridge-quote` | `--from-chain --from-token --amount --to-chain --to-token --from-address` | Cross-chain swap quote |
-| `bridge-balance` | `--chain --token --address` | Token balance + USD price on any chain |
-
-### Auth setup
-
-| Command | Flags | Purpose |
-|---|---|---|
-| `bridge-login` | `--private-key` | EIP-191 sign → 24h JWT |
-
-### JWT-required
-
-| Command | Flags | Purpose |
-|---|---|---|
-| `bridge-make-order` | `--jwt --from-chain --from-contract --from-amount --to-chain --to-contract --to-address --market [--slippage] [--feature]` | Create an order (returns unsigned txs) |
-| `bridge-submit-order` | `--jwt --order-id --signed-txs` | Submit signed txs to the API |
-| `bridge-swap` | `--jwt --from-chain --from-contract --from-amount --to-chain --to-contract [--to-address] --market [--slippage] [--feature] --private-key` | One-step: make + sign + submit |
-| `bridge-order` | `--jwt --order-id` | Track an order by ID |
-| `bridge-history` | `--jwt [--page] [--page-size] [--status]` | List user's order history |
-
-`--to-address` defaults to sender address if omitted on `bridge-swap`.
-
-## Safety rules (from upstream)
-
-- Private keys are only used locally for EIP-191 message signing in
-  `bridge-login`. They are never sent to the API.
-- JWT tokens are sent as `Authorization: Bearer <token>` headers. They expire
-  after 24 hours.
-- Always confirm with the user before executing `bridge-make-order` or
-  `bridge-swap`.
-- Always confirm with the user before executing `bridge-submit-order`.
-- JWT expiry: re-authenticate via `bridge-login` if you hit auth errors.
-- Native token format: the Bridge API uses empty string `""` for native
-  tokens; the CLI handles this automatically.
-
-## Cross-skill integration
-
-- Pair `bridge-token-search` with `dex-quote` ([morph-dex](./morph-dex)) when
-  the user wants on-Morph swap as well as cross-chain
-- Pair `bridge-balance` with `balance` / `token-balance`
-  ([morph-wallet](./morph-wallet)) for full multi-chain portfolio view
-- Compare `bridge-quote` rates against `dex-quote` rates before deciding
-  same-chain vs cross-chain
-- [BGW ↗](https://github.com/morph-l2/morph-skill/blob/main/docs/social-wallet-integration.md):
-  Social Login Wallet users should route execution through BGW's swap flow;
-  this skill still provides quotes and route reasoning
+- [morph-dex](./morph-dex) — on-Morph swap quotes (`dex-quote`)
+- [morph-wallet](./morph-wallet) — balances across chains
+- [Morph Bridge (L1↔L2)](/skills/morph-bridge/SKILL) — canonical L1↔L2 deposit/withdraw

@@ -78,7 +78,7 @@ Hoodi testnet supported via the env overrides.
 
 The signed payload must match `AgentWalletSet(agentId,newWallet,owner,deadline)`
 on `ERC8004IdentityRegistry`, and the deadline must stay within the contract's
-**5 minute window**.
+**5-minute window**.
 
 ## Cross-skill integration
 

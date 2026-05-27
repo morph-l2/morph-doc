@@ -43,7 +43,7 @@ payer; Facilitator calls `receiveWithAuthorization` on the USDC contract).
 | `x402-register` | `--private-key 0x… [--save] [--name myagent]` | Register wallet → HMAC credentials |
 | `x402-verify` | `--payload '{…}' --requirements '{…}' --name myagent` | Verify payment signature (no on-chain action) |
 | `x402-settle` | `--payload '…' --requirements '…' --name myagent` | Settle on-chain (USDC transfer) |
-| `x402-server` | `--pay-to 0x… --price 0.001 [--port 9000] [--path /api/data] [--dev | --name myagent]` | Run a paid HTTP server |
+| `x402-server` | `--pay-to 0x… --price 0.001 [--port 9000] [--path /api/data] [--dev or --name myagent]` | Run a paid HTTP server |
 
 `x402-server` exposes:
 - `/api/free` — free, returns 200

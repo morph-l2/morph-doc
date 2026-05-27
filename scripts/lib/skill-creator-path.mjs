@@ -31,12 +31,23 @@ export function resolveSkillCreatorInstall() {
     const runEval = path.join(root, 'scripts', 'run_eval.py');
     const skillMd = path.join(root, 'SKILL.md');
     if (fs.existsSync(runLoop) && fs.existsSync(skillMd)) {
+      const quickValidate = path.join(root, 'scripts', 'quick_validate.py');
+      const aggregateBenchmark = path.join(root, 'scripts', 'aggregate_benchmark.py');
+      const required = { runLoop, runEval, quickValidate, aggregateBenchmark };
+      const missing = Object.entries(required)
+        .filter(([, p]) => !fs.existsSync(p))
+        .map(([key]) => key);
+      if (missing.length > 0) {
+        throw new Error(
+          `skill-creator install at ${root} is incomplete; missing: ${missing.join(', ')}`,
+        );
+      }
       return {
         root,
         runLoop,
         runEval,
-        quickValidate: path.join(root, 'scripts', 'quick_validate.py'),
-        aggregateBenchmark: path.join(root, 'scripts', 'aggregate_benchmark.py'),
+        quickValidate,
+        aggregateBenchmark,
       };
     }
   }

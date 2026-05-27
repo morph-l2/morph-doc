@@ -56,6 +56,13 @@ Skill Hub / discovery endpoint → HTTP `402 Payment Required` → **x402 Facili
 | Merchant order reconciliation, on-chain reference lookup | `docs/morph-rails/infra-solutions/2-reference-key.md` (check the page for mainnet availability timeline) |
 | Agent-side Skill list, `morph-wallet` / `morph-altfee` etc. | `docs/morph-rails/agentic-payment/2-morph-skill.md`, [morph-skill GitHub](https://github.com/morph-l2/morph-skill) |
 
+## Related Skills
+
+- `morph-js-sdk` — JS/TS client, chain preset, Alt Fee signing helpers
+- `morph-tx-cost` — ETH-denominated L2+L1 fee model (before token gas)
+- `morph-contracts` — contract addresses and chain IDs for Rails demos
+- External pack: `skills/morph-skill/morph-x402.md`, `skills/morph-skill/morph-altfee.md` — CLI/runtime mirrors (see `docs/morph-rails/agentic-payment/2-morph-skill.md`)
+
 ## Common Boundary Confusion
 
 - **Morph Rails ≠ x402 only**: x402 is one key protocol for **Agent-to-Agent micropayments** within the Rails ecosystem; use this skill when discussing the full payment stack, and open **`1-x402-facilitator.md`** for verify/settle/HMAC/CLI details.
