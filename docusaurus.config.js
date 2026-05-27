@@ -383,6 +383,13 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'SkillsSidebar',
+            docsPluginId: 'skills',
+            label: 'Agent Skills',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'NodeOperatorsSidebar',
             label: 'Node Operators',
           },
@@ -397,13 +404,6 @@ const config = {
             position: 'left',
             sidebarId: 'LearnSidebar',
             label: 'Learn',
-          },
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'SkillsSidebar',
-            docsPluginId: 'skills',
-            label: 'Agent Skills',
           }
         ],
       },
