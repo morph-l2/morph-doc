@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 This guide will help you start a full node using [run-morph-node](https://github.com/morph-l2/run-morph-node).
 
+:::info Single node type
+There is no longer a separate "validator node" to run. Every node verifies the chain against L1; the verification method is selected by `DERIVATION_VERIFY_MODE`. If you want a node that derives blocks from L1 like the former validator, set it to `layer1` — see [Batch verification mode](#batch-verification-mode) below.
+:::
+
 :::tip Already running a node?
 If you are upgrading an existing **zkTrie node**, do **not** redeploy from scratch. Follow the [zkTrie -> MPT migration](../upgrade-node/0-zktrie-to-mpt-migration.md) guide instead.
 :::
@@ -178,6 +182,25 @@ curl http://localhost:26657/status
 ```
 
 When `catching_up` is `false`, the node has finished syncing.
+
+### Batch verification mode
+
+Every node verifies batches against L1. The method is controlled by `DERIVATION_VERIFY_MODE` in `morph-node/.env` / `.env_hoodi`:
+
+| Mode | Behavior |
+|------|----------|
+| `local` (default) | Rebuilds blob bytes from local L2 blocks and compares versioned hashes against L1. No beacon-blob fetch on the happy path — lighter weight. |
+| `layer1` | Pulls the L1 beacon blob, decodes it, and derives blocks via the engine. This is equivalent to the **former validator node** that derives from L1. |
+
+:::tip Want the old validator behavior?
+If you want a node that derives from L1 the way the previous validator node did, set `DERIVATION_VERIFY_MODE=layer1` in your env file. The default (`local`) is sufficient for most operators.
+:::
+
+If a node detects a mismatch between the sequencer's submission and its own verification, it logs a line such as:
+
+```
+root hash or withdrawal hash is not equal  originStateRootHash=0x... deriveStateRootHash=0x...
+```
 
 ## Advanced Usage
 

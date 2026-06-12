@@ -174,7 +174,6 @@ const NodeOperatorsSidebar = [
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
-      'build-on-morph/developer-resources/node-operation/validator-node/run-in-docker',
     ],
   },
   {
