@@ -13,63 +13,43 @@ If you are setting up a node from scratch, just follow [Run a full node](../full
 
 - **Single node type.** There is no longer a separate *validator node*. Every node runs the same way (`make run-node`) and verifies the chain against L1. The `validator` Docker Compose service and the `make run-validator` / `stop-validator` / `*-validator-binary` targets have been removed.
 - **Batch verification is now configurable** via `DERIVATION_VERIFY_MODE` (see below). The previous validator behavior — deriving from L1 — is now an opt-in mode rather than a separate node.
-- **Some environment variables are now required for every node** (previously only the validator set them).
+- **Almost no new configuration.** Everything except the L1 beacon RPC endpoint uses per-network defaults baked into the binary, so for most operators upgrading the binary is enough.
 
 ## Environment variables
 
-### New
+For most operators the **only** variable you may need to add is `L1_BEACON_CHAIN_RPC`. Everything else (rollup / deposit contract addresses, derivation heights) uses per-network defaults selected by the network flag — you don't need to set them.
 
-| Variable | Default | Purpose |
-|----------|---------|---------|
-| `DERIVATION_VERIFY_MODE` | `local` | Batch verification mode. `local` rebuilds the blob from local L2 blocks and compares versioned hashes against L1 (no beacon fetch on the happy path). `layer1` pulls the L1 beacon blob, decodes it, and derives blocks via the engine — **equivalent to the former validator node**. Leave empty for the default. |
+| Variable | Required? | Notes |
+|----------|-----------|-------|
+| `L1_BEACON_CHAIN_RPC` | **Yes** | L1 beacon chain RPC endpoint. The node exits at startup without it — add it if your node doesn't already have one. |
+| `DERIVATION_VERIFY_MODE` | Optional | Batch verification mode. Default `local` (rebuild blob from local L2 blocks and compare versioned hashes against L1). Set `layer1` to pull the L1 beacon blob and derive via the engine — **equivalent to the former validator node**. |
 
-:::tip Want the old validator behavior?
-If you previously ran a validator node to derive from L1, set `DERIVATION_VERIFY_MODE=layer1` in your env file. Otherwise the default (`local`) is sufficient for most operators.
+:::tip Were you running a validator?
+A validator was simply a node that derives from L1. To keep that behavior, add a single variable — `DERIVATION_VERIFY_MODE=layer1`. Nothing else changes.
 :::
 
-### Now required for all nodes
-
-These were only needed by the validator before; every node needs them now:
-
-| Variable | Purpose |
-|----------|---------|
-| `L1_BEACON_CHAIN_RPC` | L1 beacon chain RPC endpoint. |
-| `L1MESSAGEQUEUE_CONTRACT` | Deposit (L1 message queue) contract address. |
-| `DERIVATION_START_HEIGHT` | Must match your snapshot (see the run-morph-node README). |
-| `L2_BASE_HEIGHT` | Must match your snapshot. |
-
-### Not operator configuration
-
-Do **not** set `L1_SEQUENCER_CONTRACT` or `CONSENSUS_SWITCH_HEIGHT`. These use per-network hard-coded defaults in the binary. Setting them (especially `CONSENSUS_SWITCH_HEIGHT=-1`) would override the built-in consensus-switch activation height.
+Do **not** set `L1_SEQUENCER_CONTRACT` or `CONSENSUS_SWITCH_HEIGHT` — they use per-network hard-coded defaults; setting them (especially `CONSENSUS_SWITCH_HEIGHT=-1`) would override the built-in consensus-switch activation height.
 
 ## If your node is already running
 
-This is an **in-place upgrade** — your existing MPT data is preserved, so there is no need to re-download a snapshot or resync from scratch. You swap the node image/binary, adjust the env file, and restart.
+This is an **in-place upgrade** — your existing data is preserved, so there is no need to re-download a snapshot or resync. In most cases you simply swap the binary/image and restart.
 
 :::caution Upgrade before the consensus switch height
-The network switches consensus from the Tendermint validator set to the centralized sequencer at a fixed L2 block height that is built into the new release. A node still running the **old** binary when the chain reaches that height will stop following the chain correctly. **Upgrade before the network reaches the switch height** to avoid downtime.
+The network switches consensus from the Tendermint validator set to the centralized sequencer at a fixed L2 block height built into the new release. Upgrade in good time, before the chain reaches that height, so your node follows the switch without interruption.
 :::
 
 Steps:
 
-1. **Pull the updated node image / binary** that includes the centralized-sequencer changes — bump the `node` image tag in `morph-node/docker-compose.yml` (Docker), or pull the new source and `make build` (binary).
-2. **Stop your current node:**
+1. **Pull the updated node image / binary** — bump the `node` image tag in `morph-node/docker-compose.yml` (Docker), or pull the new source and `make build` (binary).
+2. **Make sure `L1_BEACON_CHAIN_RPC` is set** in your env file (`morph-node/.env` or `.env_hoodi`). A former validator already has it; a plain full node that ran without it must add it now. No other variables need changing.
+3. **Former validators only:** add `DERIVATION_VERIFY_MODE=layer1` to keep deriving from L1. Otherwise the default (`local`) applies — nothing to set.
+4. **Restart the node** (it resumes from your existing data):
 
    ```bash
-   make stop-node     # Docker
-   # or: make stop-binary   (binary mode)
+   make stop-node && make run-node          # mainnet (Docker)
+   make stop-node && make run-hoodi-node    # Hoodi (Docker)
    ```
-
-   If you were running a validator, stop it — there is no separate validator service anymore; you will start a single node.
-3. **Update your env file** (`morph-node/.env` or `.env_hoodi`) to include the variables now required for all nodes (`L1_BEACON_CHAIN_RPC`, `L1MESSAGEQUEUE_CONTRACT`, `DERIVATION_START_HEIGHT`, `L2_BASE_HEIGHT`). If you previously ran a plain full node without `L1_BEACON_CHAIN_RPC`, add it now.
-4. **(Optional) choose a verification mode.** Set `DERIVATION_VERIFY_MODE=layer1` to keep the former validator's L1-derivation behavior; otherwise leave it unset for the default (`local`).
-5. **Restart the node** (it resumes from your existing data):
-
-   ```bash
-   make run-node        # mainnet
-   make run-hoodi-node  # Hoodi
-   ```
-6. **Confirm it is following the chain** — see [Verify](#verify) below.
+5. **Confirm it is following the chain** — see [Verify](#verify) below.
 
 ## Verify
 
