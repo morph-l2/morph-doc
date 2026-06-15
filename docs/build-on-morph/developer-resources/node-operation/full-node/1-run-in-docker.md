@@ -12,10 +12,6 @@ This guide will help you start a full node using [run-morph-node](https://github
 There is no longer a separate "validator node" to run. Every node verifies the chain against L1; the verification method is selected by `DERIVATION_VERIFY_MODE`. If you want a node that derives blocks from L1 like the former validator, set it to `layer1` — see [Batch verification mode](#batch-verification-mode) below.
 :::
 
-:::tip Already running a node?
-If you are upgrading an existing **zkTrie node**, do **not** redeploy from scratch. Follow the [zkTrie -> MPT migration](../upgrade-node/0-zktrie-to-mpt-migration.md) guide instead.
-:::
-
 ## Hardware Requirements
 
 | Resource | Minimum |
