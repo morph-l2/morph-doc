@@ -102,7 +102,6 @@ Find detailed API methods, contract addresses, and other useful resources.
 We are actively enhancing the network with more integrations and support infrastructure as we progress toward our mainnet launch.  
 Join our developer community:
 
-- [Discord](https://discord.gg/invite/MorphNetwork)
 - [𝕏](https://twitter.com/MorphLayer)  
 - [Morph Builder X](https://x.com/MorphDevs)
 

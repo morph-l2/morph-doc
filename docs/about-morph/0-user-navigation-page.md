@@ -92,6 +92,4 @@ To get started:
 
 Join the community and stay up to date:  
 𝕏: [x.com/MorphNetwork](https://x.com/MorphNetwork)  
-Discord: [discord.gg/morphnetwork](https://discord.gg/morphnetwork)  
-Telegram: [t.me/MorphGlobal](https://t.me/MorphGlobal)  
 Morph Builder X: [x.com/MorphDevs](https://x.com/MorphDevs)

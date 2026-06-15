@@ -400,16 +400,8 @@ const config = {
                 href: links.forum,
               },
               {
-                label: "Telegram",
-                href: links.telegram,
-              },
-              {
                 label: "Twitter",
                 href: links.twitter,
-              },
-              {
-                label: "Discord",
-                href: links.discord,
               },
             ],
           },

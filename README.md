@@ -24,6 +24,4 @@ Twitter: https://x.com/MorphNetwork
 
 Medium: [Morph – Medium](https://medium.com/@morphlayer)
 
-Telegram: https://t.me/MorphGlobal
-
 Gmail: official@morphl2.io

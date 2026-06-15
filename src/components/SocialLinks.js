@@ -1,4 +1,4 @@
-import { Discord, Github, LinkedIn, Medium, Telegram, TwitterX } from './logo';
+import { Github, LinkedIn, Medium, TwitterX } from './logo';
 
 import Link from './Link';
 import React from 'react';
@@ -11,18 +11,10 @@ const socialLinks = [{
   img: (fill, size) => <TwitterX fill={fill} size={size} />,
   log_name: 'twitter:_click',
 }, {
-  label: 'Discord',
-  link: links.discord,
-  img: (fill, size) => <Discord fill={fill} size={size} />,
-}, {
   label: 'Medium',
   link: links.medium,
   img: (fill, size) => <Medium fill={fill} size={size} />,
   log_name: 'medium:_click',
-}, {
-  label: 'Telegram',
-  link: links.telegram,
-  img: (fill, size) => <Telegram fill={fill} size={size} />,
 }, {
   label: 'Github',
   link: links.github,

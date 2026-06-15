@@ -9,7 +9,7 @@ lang: en-US
 
 We have partnered with Goldsky to provide indexing and subgraph services for Morph Hoodi and Morph Mainnet.
 
-Goldsky also allows us to grant selected developers with free subgraph services now. If you want to deploy a subgraph with Goldsky, please raise a ticket in our Discord to let us know how we can help.
+Goldsky also allows us to grant selected developers with free subgraph services now. If you want to deploy a subgraph with Goldsky, please reach out to us on X to let us know how we can help.
 
 For more information, please refer to [their documentation](https://docs.goldsky.com/chains/morph).
 

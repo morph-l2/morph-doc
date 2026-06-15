@@ -52,9 +52,6 @@ export const links = {
   // social
   medium: 'https://blog.morph.network/',
   twitter: 'https://x.com/MorphNetwork',
-  telegram: 'https://t.me/MorphGlobal',
-  // 'https://t.me/+qslsWvH2_-1iMTdl',
-  discord: 'https://discord.gg/invite/MorphNetwork',
   linkedIn: 'http://www.linkedin.com/company/morphl2',
 
   facebook: 'https://www.facebook.com/profile.php?id=61554448708419',
@@ -68,10 +65,8 @@ export const links = {
 
   faucet: '',
 
-  hoodiUSDT: 'https://discord.com/channels/1156486804661338162/1199665829730582620',
   hoodiETH: "https://hoodi-faucet.pk910.de/",
   sepoliafaucet: "https://sepoliafaucet.com/",
-  usdtfaucet: "https://discord.com/channels/1156486804661338162/1199665829730582620",
 
   community: 'https://x.com/MorphNetwork',
   ecosystem: 'https://www.morph.network/apps',
@@ -116,16 +111,8 @@ export const footerLinks = [
         hidden: true,
       },
       {
-        label: "Telegram",
-        link: links.telegram,
-      },
-      {
         label: "Twitter",
         link: links.twitter,
-      },
-      {
-        label: "Discord",
-        link: links.discord,
       },
       {
         label: "Github",
