@@ -28,3 +28,20 @@ data
 build
 scripts
 build
+
+# Local workspace files
+.claude/
+.local/
+.openclaw/
+DREAMS.md
+HEARTBEAT.md
+IDENTITY.md
+README.zh.md
+SOUL.md
+TOOLS.md
+USER.md
+examples/
+memory/
+planning/
+research/
+vendor/
