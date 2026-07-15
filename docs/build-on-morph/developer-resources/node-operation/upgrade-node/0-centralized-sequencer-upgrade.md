@@ -11,7 +11,7 @@ If you are setting up a node from scratch, just follow [Run a full node](../full
 
 ## What changed
 
-- **Single node type.** There is no longer a separate *validator node*. Every node runs the same way (`make run-node`) and verifies the chain against L1. The `validator` Docker Compose service and the `make run-validator` / `stop-validator` / `*-validator-binary` targets have been removed.
+- **Single node type.** There is no longer a separate *validator node* — every node runs the same binary and verifies the chain against L1. Your existing `run-morph-node` validator commands still work unchanged; a validator is now simply the single node running in `layer1` mode.
 - **Batch verification is now configurable** via `DERIVATION_VERIFY_MODE` (see below). The previous validator behavior — deriving from L1 — is now an opt-in mode rather than a separate node.
 - **Almost no new configuration.** Everything except the L1 beacon RPC endpoint uses per-network defaults baked into the binary, so for most operators upgrading the binary is enough.
 
@@ -25,7 +25,7 @@ For most operators the **only** variable you may need to add is `L1_BEACON_CHAIN
 | `DERIVATION_VERIFY_MODE` | Optional | Batch verification mode. Default `local` (rebuild blob from local L2 blocks and compare versioned hashes against L1). Set `layer1` to pull the L1 beacon blob and derive via the engine — **equivalent to the former validator node**. |
 
 :::tip Were you running a validator?
-A validator was simply a node that derives from L1. To keep that behavior, add a single variable — `DERIVATION_VERIFY_MODE=layer1`. Nothing else changes.
+If your node already passes the old `--validator` flag, **you don't need to change anything — just upgrade the binary.** `--validator` is now a deprecated alias for `--derivation.verify-mode=layer1`, so it keeps deriving from L1 exactly as before (it only logs a deprecation warning). Migrate to `DERIVATION_VERIFY_MODE=layer1` when convenient, as `--validator` will be removed in a future release.
 :::
 
 Do **not** set `L1_SEQUENCER_CONTRACT` or `CONSENSUS_SWITCH_HEIGHT` — they use per-network hard-coded defaults; setting them (especially `CONSENSUS_SWITCH_HEIGHT=-1`) would override the built-in consensus-switch activation height.
@@ -42,7 +42,7 @@ Steps:
 
 1. **Pull the updated node image / binary** — bump the `node` image tag in `morph-node/docker-compose.yml` (Docker), or pull the new source and `make build` (binary).
 2. **Make sure `L1_BEACON_CHAIN_RPC` is set** in your env file (`morph-node/.env` or `.env_hoodi`). A former validator already has it; a plain full node that ran without it must add it now. No other variables need changing.
-3. **Former validators only:** add `DERIVATION_VERIFY_MODE=layer1` to keep deriving from L1. Otherwise the default (`local`) applies — nothing to set.
+3. **Former validators:** nothing to change — the existing `--validator` flag still selects L1 derivation (it now aliases `DERIVATION_VERIFY_MODE=layer1`). For new setups, prefer `DERIVATION_VERIFY_MODE=layer1`. Plain full nodes need nothing here; the default is `local`.
 4. **Restart the node** (it resumes from your existing data):
 
    ```bash
