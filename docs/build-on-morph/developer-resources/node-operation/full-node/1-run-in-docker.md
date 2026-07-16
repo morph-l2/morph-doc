@@ -194,7 +194,7 @@ If you want a node that derives from L1 the way the previous validator node did,
 
 If a node detects a mismatch between the sequencer's submission and its own verification, it logs a line such as:
 
-```
+```text
 root hash or withdrawal hash is not equal  originStateRootHash=0x... deriveStateRootHash=0x...
 ```
 

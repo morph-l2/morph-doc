@@ -66,6 +66,6 @@ Steps:
 
 Check sync status as usual (see [Run a full node → Verify the Node](../full-node/1-run-in-docker.md#verify-the-node)). Every node verifies batches against L1; if it detects a mismatch you will see a log line such as:
 
-```
+```text
 root hash or withdrawal hash is not equal  originStateRootHash=0x... deriveStateRootHash=0x...
 ```
