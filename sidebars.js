@@ -174,7 +174,6 @@ const NodeOperatorsSidebar = [
     collapsed: false,
     items: [
       'build-on-morph/developer-resources/node-operation/full-node/run-in-docker',
-      'build-on-morph/developer-resources/node-operation/validator-node/run-in-docker',
     ],
   },
   {
@@ -182,7 +181,7 @@ const NodeOperatorsSidebar = [
     label: 'Upgrade Node',
     collapsed: false,
     items: [
-      'build-on-morph/developer-resources/node-operation/upgrade-node/zktrie-to-mpt-migration',
+      'build-on-morph/developer-resources/node-operation/upgrade-node/centralized-sequencer-upgrade',
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-host',
       'build-on-morph/developer-resources/node-operation/upgrade-node/upgrade-node-docker',
     ],

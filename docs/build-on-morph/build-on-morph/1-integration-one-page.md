@@ -84,7 +84,7 @@ We have documented all the important contracts on Morph, you can find them [here
 
 ### Node Deployment
 
-Right now, we support you to run the Morph node (full node and validator node) in docker and run on host.
+Right now, we support you to run the Morph node in docker and run on host.
 
 You can check the [node deployment guide](../developer-resources/node-operation/full-node/1-run-in-docker.md) for more details.
 

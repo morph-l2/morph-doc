@@ -56,12 +56,6 @@ make stop-node
 make run-node
 ```
 
-If you are running a **validator**, use these commands instead:
-```bash
-make stop-validator
-make run-validator
-```
-
 :::note
 Ensure that the startup parameters for the Docker container remain consistent with your previous configuration. If you previously used a custom setup, verify that the configuration and directory paths match your earlier setup. For details, please refer to [**Advanced Usage**](../full-node/1-run-in-docker.md#advanced-usage)
 :::

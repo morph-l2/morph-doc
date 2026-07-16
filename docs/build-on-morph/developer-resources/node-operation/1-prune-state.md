@@ -29,7 +29,7 @@ After switching to MPT storage, pruning is only supported after the node has syn
 ### zkTrie Nodes (legacy)
 
 :::caution
-This section only applies to nodes still running with zkTrie state storage **before** migrating to MPT. Once you switch to an MPT node, the zkTrie prune command is no longer supported. See the [zkTrie -> MPT migration guide](./upgrade-node/0-zktrie-to-mpt-migration.md) for details.
+This section only applies to nodes still running with zkTrie state storage **before** migrating to MPT. Once you switch to an MPT node, the zkTrie prune command is no longer supported.
 :::
 
 For nodes still running with zkTrie state storage, use the zkTrie-specific prune command:
